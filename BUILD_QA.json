@@ -1,0 +1,17 @@
+{
+  "records": 422,
+  "source_embedded_images": 550,
+  "website_image_entries": 603,
+  "families": [
+    "AN",
+    "BN",
+    "CN",
+    "EN",
+    "FN",
+    "IS",
+    "JN"
+  ],
+  "collections": 19,
+  "missing_references": [],
+  "codes_unique": true
+}

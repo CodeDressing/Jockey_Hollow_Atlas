@@ -1,6 +1,6 @@
 services:
   - type: web
+    name: jockey-hollow-atlas
     runtime: static
-    name: mycoscope-atlas
-    buildCommand: echo "No build step required"
     staticPublishPath: .
+    buildCommand: ""
