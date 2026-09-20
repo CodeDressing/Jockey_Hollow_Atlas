@@ -22,6 +22,32 @@ function mergeDrivePhotos(){
   const archives=new Map();
   for(const p of drivePhotos){
     let target=p.specimen?byCode.get(String(p.specimen).toUpperCase()):null;
+    if(!target && p.specimen){
+      const collection=p.collection||driveCollection(p.folder);
+      const code=String(p.specimen).toUpperCase();
+      target={
+        code,
+        site:collection,
+        family:driveFamily(collection),
+        collection,
+        status:'Drive-only accession — photographed source preserved; master dossier not yet present',
+        archiveIndex:null,
+        sourceLine:'Explicit specimen accession recovered from the Google Drive filename/path. This record is kept separate rather than merged by visual similarity.',
+        summary:{
+          'Record type':'Drive-only explicit accession',
+          'Provenance':p.folder?`Rutgers / ${p.folder}`:'Rutgers Google Drive',
+          'Assignment rule':'Accession derived from explicit source filename/path only; no visual-similarity assignment.'
+        },
+        completeness:[
+          ['Photo provenance','Yes'],
+          ['Explicit specimen accession','Yes'],
+          ['Master dossier present','No']
+        ],
+        images:[]
+      };
+      data.push(target);
+      byCode.set(code,target);
+    }
     if(!target){
       const collection=p.collection||driveCollection(p.folder);
       const code=`${collection}-DRIVE-ARCHIVE`;
