@@ -1,0 +1,1 @@
+window.DRIVE_PHOTOS = [];
