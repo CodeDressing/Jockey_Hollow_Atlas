@@ -234,7 +234,7 @@ def main():
                     "collection":collection,
                     "family":family_for(collection),
                     "specimen":specimen,
-                    "category":category_for(p.name),
+                    "category":category_for(p.name,specimen),
                     "filename":p.name,
                     "caption":f"Google Drive source — {p.name}",
                     "original":orig_rel.as_posix(),
@@ -263,6 +263,36 @@ def main():
 
     qa["drive_data_entries"]=len(photos)
     qa["missing_generated_paths"]=missing_paths
+
+    # Pairing audit: report which master specimens have both wild/in-situ and lab macro photographs.
+    base_text=DATA_JS.read_text(encoding="utf-8",errors="replace")
+    base_blocks={}
+    for m in re.finditer(r'\{\s*"code"\s*:\s*"([^"]+)"([\s\S]*?)(?=\n\s*\{\s*"code"|\n\s*\]\s*;?)',base_text):
+        code=m.group(1)
+        block=m.group(2)
+        cats=re.findall(r'"category"\s*:\s*"([^"]+)"',block)
+        base_blocks[code]=set(cats)
+
+    imported_by_code={}
+    for p in photos:
+        if p.get("specimen"):
+            imported_by_code.setdefault(p["specimen"],set()).add(p["category"])
+
+    pairing=[]
+    for code in codes:
+        cats=set(base_blocks.get(code,set())) | set(imported_by_code.get(code,set()))
+        has_wild="Wild / field context" in cats
+        has_lab="Source macro / specimen" in cats
+        pairing.append({
+            "code":code,
+            "has_wild":has_wild,
+            "has_lab":has_lab,
+            "paired":has_wild and has_lab
+        })
+    qa["pairing_audit"]=pairing
+    qa["pairing_complete_count"]=sum(1 for x in pairing if x["paired"])
+    qa["missing_wild_codes"]=[x["code"] for x in pairing if not x["has_wild"]]
+    qa["missing_lab_codes"]=[x["code"] for x in pairing if not x["has_lab"]]
     qa["represented_total"]=qa["imported"]+qa["duplicate_existing"]+qa["duplicate_within_drive"]
     qa["all_source_images_represented"]=(qa["represented_total"]==qa["scanned_images"] and not qa["failed"] and not missing_paths)
     QA_PATH.write_text(json.dumps(qa,ensure_ascii=False,indent=2),encoding="utf-8")
@@ -274,6 +304,9 @@ def main():
     print(f"Drive duplicates:     {qa['duplicate_within_drive']}")
     print(f"Attached to master:   {qa['attached_to_master']}")
     print(f"Unassigned archives:  {qa['unassigned_archive']}")
+    print(f"Wild + lab paired:     {qa['pairing_complete_count']} / {len(codes)}")
+    print(f"Missing wild records:  {len(qa['missing_wild_codes'])}")
+    print(f"Missing lab records:   {len(qa['missing_lab_codes'])}")
     print(f"Failed:               {len(qa['failed'])}")
     print(f"All represented:      {qa['all_source_images_represented']}")
     print(f"QA report:            {QA_PATH}")
