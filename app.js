@@ -1,5 +1,6 @@
 const masterData=window.ATLAS_DATA||[];
 const drivePhotos=window.DRIVE_PHOTOS||[];
+const movieMedia=window.MOVIE_MEDIA||[];
 const masterCount=masterData.length;
 const data=masterData;
 
@@ -98,6 +99,53 @@ function mergeDrivePhotos(){
 }
 mergeDrivePhotos();
 
+function mergeMovies(){
+  const byCode=new Map(data.map(s=>[String(s.code||'').toUpperCase(),s]));
+  for(const m of movieMedia){
+    const code=String(m.code||'JN1-MOVIES').toUpperCase();
+    let target=byCode.get(code);
+    if(!target){
+      target={
+        code,
+        site:m.collection||'JN1 Movies',
+        family:m.family||'JN',
+        collection:m.collection||'JN1 Movies',
+        status:'Movie collection — verified laboratory video archive',
+        archiveIndex:null,
+        sourceLine:'Video media retained as a separate movie collection. Source filename and web-playable derivative are both preserved; no specimen assignment is inferred unless explicitly encoded.',
+        summary:{
+          'Record type':'Movie / video collection',
+          'Provenance':'Rutgers laboratory media',
+          'Assignment rule':'Separate movie collection; no visual-similarity specimen assignment.'
+        },
+        completeness:[
+          ['Video provenance','Yes'],
+          ['Source filename preserved','Yes'],
+          ['Specimen accession verified','No']
+        ],
+        images:[],
+        movies:[]
+      };
+      data.push(target);byCode.set(code,target);
+    }
+    target.movies=target.movies||[];
+    if(target.movies.some(v=>v.filename===m.filename||v.driveView===m.drive_view)) continue;
+    target.movies.push({
+      category:m.category||'Movie / video',
+      filename:m.filename,
+      sourceFilename:m.source_filename||m.filename,
+      caption:m.caption||m.filename,
+      preview:m.preview,
+      driveView:m.drive_view,
+      poster:m.poster||'',
+      sourceRelpath:m.source_relpath||'',
+      durationSeconds:m.duration_seconds||null,
+      note:m.web_derivative_note||''
+    });
+  }
+}
+mergeMovies();
+
 const $=id=>document.getElementById(id);
 let current=data[0]?.code||null,filter='',family='ALL',collection='ALL',imageType='ALL';
 const esc=s=>String(s??'').replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
@@ -127,9 +175,9 @@ function fillFilters(){
 }
 function renderList(){
   const rows=filtered();
-  $('specList').innerHTML=rows.map(s=>`<button class="spec-btn ${s.code===current?'active':''}" data-code="${esc(s.code)}"><strong>${esc(s.code)}</strong><small>${esc(s.collection)} · ${(s.images||[]).length} images</small></button>`).join('');
+  $('specList').innerHTML=rows.map(s=>`<button class="spec-btn ${s.code===current?'active':''}" data-code="${esc(s.code)}"><strong>${esc(s.code)}</strong><small>${esc(s.collection)} · ${(s.images||[]).length} images${(s.movies||[]).length?` · ${(s.movies||[]).length} movies`:''}</small></button>`).join('');
   document.querySelectorAll('.spec-btn').forEach(b=>b.onclick=()=>setCurrent(b.dataset.code));
-  $('mSpec').innerHTML=rows.map(s=>`<option value="${esc(s.code)}" ${s.code===current?'selected':''}>${esc(s.code)} — ${(s.images||[]).length} images</option>`).join('');
+  $('mSpec').innerHTML=rows.map(s=>`<option value="${esc(s.code)}" ${s.code===current?'selected':''}>${esc(s.code)} — ${(s.images||[]).length} images${(s.movies||[]).length?` · ${(s.movies||[]).length} movies`:''}</option>`).join('');
   const archiveCount=Math.max(0,data.length-masterCount);
   $('resultCount').textContent=`${rows.length} of ${data.length} records · ${masterCount} master + ${archiveCount} Drive archive`;
 }
@@ -157,9 +205,11 @@ function renderSpec(){
   const pairStatus=hasWild&&hasLab?'COMPLETE':(!hasWild&&!hasLab?'MISSING WILD + LAB':(!hasWild?'MISSING WILD':'MISSING LAB'));
   const pairClass=hasWild&&hasLab?'yes':'no';
   const galleries=Object.entries(groups).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map(im=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-caption="${esc(im.caption)}" data-name="${esc(im.filename)}"><img loading="lazy" src="${esc(im.thumb)}" alt="${esc(im.caption)}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${esc(im.caption)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}</div></article>`).join('')}</div></section>`).join('');
+  const movieRows=(s.movies||[]).filter(m=>imageType==='ALL'||imageType==='Movie / video');
+  const movieGallery=movieRows.length?`<section class="section"><h2>Movie / video <span>${movieRows.length}</span></h2><div class="gallery">${movieRows.map(m=>`<article class="image-card movie-card"><div class="movie-wrap">${m.preview?`<iframe src="${esc(m.preview)}" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>`:`<img src="${esc(m.poster)}" alt="${esc(m.caption)}">`}</div><div class="caption"><strong>${esc(m.caption)}</strong><code>${esc(m.sourceFilename||m.filename)}</code>${m.durationSeconds?`<small class="drive-source">Duration: ${Math.round(m.durationSeconds)} seconds</small>`:''}${m.note?`<small class="drive-source">${esc(m.note)}</small>`:''}${m.driveView?`<a class="movie-link" href="${esc(m.driveView)}" target="_blank" rel="noopener">Open movie in Drive</a>`:''}</div></article>`).join('')}</div></section>`:'';
   const eyebrow=s.archiveIndex?`MASTER RECORD ${s.archiveIndex} / ${masterCount}`:'DRIVE ARCHIVE';
-  $('main').innerHTML=`<div class="spec-head"><div><div class="eyebrow">${eyebrow}</div><h1>${esc(s.code)}</h1><p class="status">${esc(s.status)}</p></div><div class="navBtns"><button onclick="nav(-1)">← Previous</button><button onclick="nav(1)">Next →</button></div></div><div class="hero"><div class="summary-grid">${sum}</div><aside class="card"><h3>Data completeness</h3><div class="matrix"><div>Wild + lab pairing</div><div class="${pairClass}">${pairStatus}</div>${mat}</div>${s.sourceLine?`<div class="sourceLine"><strong>Source / provenance</strong><p>${esc(s.sourceLine)}</p></div>`:''}</aside></div>${galleries||'<div class="empty">No images match the selected image filter.</div>'}`;
-  $('recordCount').textContent=`${(s.images||[]).length} source images · ${esc(s.collection)} · ${esc(s.family)}`;
+  $('main').innerHTML=`<div class="spec-head"><div><div class="eyebrow">${eyebrow}</div><h1>${esc(s.code)}</h1><p class="status">${esc(s.status)}</p></div><div class="navBtns"><button onclick="nav(-1)">← Previous</button><button onclick="nav(1)">Next →</button></div></div><div class="hero"><div class="summary-grid">${sum}</div><aside class="card"><h3>Data completeness</h3><div class="matrix"><div>Wild + lab pairing</div><div class="${pairClass}">${pairStatus}</div>${mat}</div>${s.sourceLine?`<div class="sourceLine"><strong>Source / provenance</strong><p>${esc(s.sourceLine)}</p></div>`:''}</aside></div>${galleries||''}${movieGallery||''}${(!galleries&&!movieGallery)?'<div class="empty">No media match the selected filter.</div>':''}`;
+  $('recordCount').textContent=`${(s.images||[]).length} source images${(s.movies||[]).length?` · ${(s.movies||[]).length} movies`:''} · ${esc(s.collection)} · ${esc(s.family)}`;
   document.querySelectorAll('.image-wrap').forEach(el=>el.onclick=()=>openViewer(el.dataset.file,el.dataset.caption,el.dataset.name));
 }
 function syncSearch(v){
