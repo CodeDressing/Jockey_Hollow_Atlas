@@ -29,7 +29,7 @@ function mergeDrivePhotos(){
       target={
         code,
         site:collection,
-        family:driveFamily(collection),
+        family:p.family||driveFamily(collection),
         collection,
         status:'Drive-only accession — photographed source preserved; master dossier not yet present',
         archiveIndex:null,
