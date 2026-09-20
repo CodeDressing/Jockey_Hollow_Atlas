@@ -1,0 +1,30 @@
+MYCOSCOPE - RENDER DEPLOYMENT
+
+This package is ready to deploy as a Render Static Site.
+
+Recommended workflow:
+1. Create a new GitHub repository, e.g. mycoscope-atlas.
+2. Upload ALL contents of this folder to the ROOT of the repository.
+   Important: index.html, app.js, data.js, styles.css, assets/, and render.yaml must all sit at repository root.
+3. Commit the files.
+4. In Render, create a new Blueprint or Static Site from that GitHub repository.
+
+If using the included render.yaml as a Blueprint:
+- Render will detect a static site.
+- Service name: mycoscope-atlas
+- Build command: echo "No build step required"
+- Publish path: .
+
+If creating a Static Site manually instead:
+- Build Command: echo "No build step required"
+- Publish Directory: .
+
+After deployment, open the generated onrender.com URL and test:
+- specimen navigation
+- search
+- image click-to-open
+- zoom and pan
+- 100% view
+- Original button
+
+Do not remove or rename the assets directory unless data.js is updated accordingly.
