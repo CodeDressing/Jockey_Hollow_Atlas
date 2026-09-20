@@ -50,6 +50,18 @@ def load_codes():
     return sorted(set(codes), key=lambda c: len(norm_code_text(c)), reverse=True)
 
 def detect_specimen(rel:str,codes):
+    # First preserve any explicit accession in the source filename/path, even if
+    # that accession is not yet present in the 422-record master. This prevents
+    # photographed specimens such as AN2-F17/AN2-F20 from disappearing into a
+    # generic archive bucket.
+    upper=rel.upper()
+    m=re.search(r'(?<![A-Z0-9])([A-Z]{2}\d+)-?F\s*(\d+)(?:\s*\(([A-Z])\))?',upper)
+    if m:
+        code=f"{m.group(1)}-F{int(m.group(2))}"
+        if m.group(3):
+            code+=f"({m.group(3)})"
+        return code
+
     compact=norm_code_text(rel)
     for code in codes:
         ck=norm_code_text(code)
@@ -165,6 +177,7 @@ def category_for(name:str):
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("rutgers_folder",type=Path)
+    ap.add_argument("--collection",default="",help="Optional collection filter such as AN2. When set, only that collection is imported.")
     ap.add_argument("--max-original",type=int,default=4096)
     ap.add_argument("--max-thumb",type=int,default=1200)
     ap.add_argument("--quality",type=int,default=93)
@@ -175,6 +188,16 @@ def main():
         raise SystemExit(f"Rutgers folder not found: {src}")
 
     files=sorted([p for p in src.rglob("*") if p.is_file() and p.suffix.lower() in IMAGE_EXTS])
+    if args.collection:
+        want=args.collection.upper()
+        filtered=[]
+        for p in files:
+            rel=p.relative_to(src)
+            specimen=detect_specimen(rel.as_posix(),load_codes())
+            collection=detect_collection(rel,specimen)
+            if collection.upper()==want:
+                filtered.append(p)
+        files=filtered
     if not files:
         raise SystemExit("No supported images found in the Rutgers folder.")
 
@@ -184,6 +207,7 @@ def main():
     photos=[]
     qa={
         "source_root":str(src),
+        "collection_filter":args.collection.upper() if args.collection else "ALL",
         "scanned_images":len(files),
         "imported":0,
         "duplicate_existing":0,
