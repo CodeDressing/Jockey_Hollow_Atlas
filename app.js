@@ -257,71 +257,167 @@ window.onresize=()=>viewer.classList.contains('open')&&fit();
 fillFilters();renderList();renderSpec();
 
 
-/* Optional MycoScope Field Run entry experience */
+/* Optional MycoScope Hyphae Run entry experience */
 (function initEntryExperience(){
   const gate=$('entryGate');
   if(!gate) return;
   const enter=()=>{gate.classList.add('hidden');document.body.style.overflow='hidden'};
-  const candidates=data.filter(s=>(s.images||[]).some(im=>im.thumb||im.original)&&s.collection);
   $('gateCount').textContent=` · ${data.length} RECORDS`;
   $('enterAtlas').onclick=enter;
   $('skipGame').onclick=enter;
 
-  let round=0,score=0,currentAnswer='',locked=false;
-  const totalRounds=5;
+  const game=$('hyphaeGame');
+  const canvas=$('hyphaeCanvas');
+  const ctx=canvas?.getContext('2d');
+  const overlay=$('hyphaeOverlay');
+  const scoreEl=$('hyphaeScore'),growthEl=$('hyphaeGrowth'),livesEl=$('hyphaeLives');
 
-  function shuffled(arr){return [...arr].sort(()=>Math.random()-.5)}
-  function newRound(){
-    if(!candidates.length){enter();return}
-    locked=false;
-    $('nextRound').hidden=true;
-    $('gameFeedback').textContent='';
-    const specimen=candidates[Math.floor(Math.random()*candidates.length)];
-    const usable=(specimen.images||[]).filter(im=>im.thumb||im.original);
-    const media=usable[Math.floor(Math.random()*usable.length)];
-    currentAnswer=specimen.collection;
-    const pool=[...new Set(data.map(s=>s.collection).filter(Boolean).filter(x=>x!==currentAnswer))];
-    const choices=shuffled([currentAnswer,...shuffled(pool).slice(0,2)]);
-    $('gameImage').src=media.thumb||media.original;
-    $('gameImage').alt=`Fungal specimen from ${specimen.code}`;
-    $('gameProgress').textContent=`Round ${round+1} / ${totalRounds}`;
-    $('gameScore').textContent=score;
-    $('gameChoices').innerHTML=choices.map(c=>`<button type="button" data-choice="${esc(c)}">${esc(c)}</button>`).join('');
-    $('gameChoices').querySelectorAll('button').forEach(btn=>btn.onclick=()=>answer(btn));
+  let running=false,raf=0,last=0,score=0,lives=3,growth=0;
+  let pointer=null;
+  let player={x:canvas.width/2,y:canvas.height/2,r:9,speed:175};
+  let trail=[],nutrients=[],hazards=[],water=[],spawnClock=0;
+
+  function rand(min,max){return Math.random()*(max-min)+min}
+  function reset(){
+    cancelAnimationFrame(raf);
+    running=false;last=0;score=0;lives=3;growth=0;spawnClock=0;
+    player={x:canvas.width/2,y:canvas.height/2,r:9,speed:175};
+    trail=[{x:player.x,y:player.y,w:2,life:1}];
+    nutrients=[];hazards=[];water=[];
+    for(let i=0;i<7;i++) spawnNutrient();
+    for(let i=0;i<4;i++) spawnHazard();
+    for(let i=0;i<2;i++) spawnWater();
+    updateHud();draw();
+    overlay.classList.remove('hidden');
+    overlay.innerHTML='<strong>Grow a living mycelial network</strong><span>Collect amber nutrients, chain hyphae, and dodge green contamination.</span><button id="startHyphae" type="button">Start Game</button>';
+    $('startHyphae').onclick=start;
   }
+  function updateHud(){
+    scoreEl.textContent=score;
+    growthEl.textContent=Math.min(100,Math.round(growth))+'%';
+    livesEl.textContent=lives;
+  }
+  function spawnNutrient(){nutrients.push({x:rand(24,canvas.width-24),y:rand(24,canvas.height-24),r:rand(5,9),pulse:rand(0,Math.PI*2)})}
+  function spawnHazard(){hazards.push({x:rand(28,canvas.width-28),y:rand(28,canvas.height-28),r:rand(10,17),vx:rand(-28,28),vy:rand(-28,28)})}
+  function spawnWater(){water.push({x:rand(28,canvas.width-28),y:rand(28,canvas.height-28),r:8})}
+  function start(){
+    if(running)return;
+    overlay.classList.add('hidden');
+    running=true;last=performance.now();
+    raf=requestAnimationFrame(loop);
+  }
+  function endGame(){
+    running=false;cancelAnimationFrame(raf);
+    overlay.classList.remove('hidden');
+    overlay.innerHTML=`<strong>Colony collapsed</strong><span>Final score: ${score} · Network growth: ${Math.round(growth)}%</span><button id="startHyphae" type="button">Grow Again</button>`;
+    $('startHyphae').onclick=()=>{reset();start()};
+  }
+  const keys=new Set();
+  window.addEventListener('keydown',e=>{if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','w','a','s','d','W','A','S','D'].includes(e.key)){keys.add(e.key.toLowerCase());if(running)e.preventDefault()}});
+  window.addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()));
 
-  function answer(btn){
-    if(locked)return;
-    locked=true;
-    const chosen=btn.dataset.choice;
-    $('gameChoices').querySelectorAll('button').forEach(b=>{
-      b.disabled=true;
-      if(b.dataset.choice===currentAnswer)b.classList.add('correct');
-    });
-    if(chosen===currentAnswer){
-      score++;
-      $('gameFeedback').textContent='Correct · field record matched.';
-    }else{
-      btn.classList.add('wrong');
-      $('gameFeedback').textContent=`Not this time · correct collection: ${currentAnswer}`;
+  function canvasPoint(e){
+    const r=canvas.getBoundingClientRect();
+    return {x:(e.clientX-r.left)*canvas.width/r.width,y:(e.clientY-r.top)*canvas.height/r.height};
+  }
+  canvas.addEventListener('pointerdown',e=>{pointer=canvasPoint(e);canvas.setPointerCapture?.(e.pointerId)});
+  canvas.addEventListener('pointermove',e=>{if(pointer)pointer=canvasPoint(e)});
+  canvas.addEventListener('pointerup',()=>pointer=null);
+  canvas.addEventListener('pointercancel',()=>pointer=null);
+
+  function hit(a,b,extra=0){return Math.hypot(a.x-b.x,a.y-b.y)<a.r+b.r+extra}
+  function update(dt){
+    let dx=0,dy=0;
+    if(keys.has('arrowleft')||keys.has('a'))dx-=1;
+    if(keys.has('arrowright')||keys.has('d'))dx+=1;
+    if(keys.has('arrowup')||keys.has('w'))dy-=1;
+    if(keys.has('arrowdown')||keys.has('s'))dy+=1;
+    if(pointer){dx=pointer.x-player.x;dy=pointer.y-player.y}
+    const mag=Math.hypot(dx,dy)||1;
+    if(dx||dy){player.x+=dx/mag*player.speed*dt;player.y+=dy/mag*player.speed*dt}
+    player.x=Math.max(player.r,Math.min(canvas.width-player.r,player.x));
+    player.y=Math.max(player.r,Math.min(canvas.height-player.r,player.y));
+    trail.push({x:player.x,y:player.y,w:Math.min(7,2+growth/22),life:1});
+    if(trail.length>900)trail.shift();
+
+    for(const h of hazards){
+      h.x+=h.vx*dt;h.y+=h.vy*dt;
+      if(h.x<h.r||h.x>canvas.width-h.r)h.vx*=-1;
+      if(h.y<h.r||h.y>canvas.height-h.r)h.vy*=-1;
     }
-    $('gameScore').textContent=score;
-    round++;
-    $('nextRound').hidden=false;
-    $('nextRound').textContent=round>=totalRounds?'Enter Atlas':'Next specimen';
+
+    for(let i=nutrients.length-1;i>=0;i--){
+      if(hit(player,nutrients[i],2)){
+        nutrients.splice(i,1);score+=10;growth=Math.min(100,growth+4);spawnNutrient();
+      }
+    }
+    for(let i=water.length-1;i>=0;i--){
+      if(hit(player,water[i],2)){
+        water.splice(i,1);score+=5;growth=Math.min(100,growth+2);player.speed=Math.min(245,player.speed+8);spawnWater();
+      }
+    }
+    for(const h of hazards){
+      if(hit(player,h,-2)){
+        lives--;growth=Math.max(0,growth-10);player.x=canvas.width/2;player.y=canvas.height/2;
+        h.x=rand(28,canvas.width-28);h.y=rand(28,canvas.height-28);
+        updateHud();
+        if(lives<=0){endGame();return}
+      }
+    }
+
+    spawnClock+=dt;
+    if(spawnClock>6){spawnClock=0;if(hazards.length<10)spawnHazard()}
+    score+=dt>0?0:0;
+    updateHud();
+  }
+  function branch(x1,y1,x2,y2,alpha,w){
+    ctx.strokeStyle=`rgba(226,239,225,${alpha})`;ctx.lineWidth=w;ctx.lineCap='round';
+    ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();
+  }
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle='#07100b';ctx.fillRect(0,0,canvas.width,canvas.height);
+
+    for(let i=1;i<trail.length;i++){
+      const a=trail[i-1],b=trail[i];
+      const alpha=Math.max(.08,i/trail.length*.42);
+      branch(a.x,a.y,b.x,b.y,alpha,b.w||2);
+      if(i%17===0){
+        const ang=Math.atan2(b.y-a.y,b.x-a.x)+(Math.random()>.5?1:-1)*rand(.5,1.1);
+        const len=rand(6,18);
+        branch(b.x,b.y,b.x+Math.cos(ang)*len,b.y+Math.sin(ang)*len,alpha*.65,1);
+      }
+    }
+
+    for(const n of nutrients){
+      n.pulse+=.05;const rr=n.r+Math.sin(n.pulse)*1.2;
+      ctx.fillStyle='#d7a84a';ctx.beginPath();ctx.arc(n.x,n.y,rr,0,Math.PI*2);ctx.fill();
+      ctx.strokeStyle='rgba(255,226,153,.35)';ctx.lineWidth=2;ctx.beginPath();ctx.arc(n.x,n.y,rr+5,0,Math.PI*2);ctx.stroke();
+    }
+    for(const w of water){
+      ctx.fillStyle='#79b8d3';ctx.beginPath();ctx.arc(w.x,w.y,w.r,0,Math.PI*2);ctx.fill();
+      ctx.strokeStyle='rgba(170,221,244,.4)';ctx.beginPath();ctx.arc(w.x,w.y,w.r+5,0,Math.PI*2);ctx.stroke();
+    }
+    for(const h of hazards){
+      ctx.fillStyle='#4f7d48';ctx.beginPath();ctx.arc(h.x,h.y,h.r,0,Math.PI*2);ctx.fill();
+      ctx.strokeStyle='rgba(127,186,110,.35)';ctx.lineWidth=3;ctx.beginPath();ctx.arc(h.x,h.y,h.r+4,0,Math.PI*2);ctx.stroke();
+      for(let i=0;i<5;i++){const a=i*Math.PI*2/5;branch(h.x,h.y,h.x+Math.cos(a)*(h.r+7),h.y+Math.sin(a)*(h.r+7),.28,1)}
+    }
+    ctx.fillStyle='#f2eee0';ctx.beginPath();ctx.arc(player.x,player.y,player.r,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='rgba(242,238,224,.18)';ctx.beginPath();ctx.arc(player.x,player.y,player.r+9,0,Math.PI*2);ctx.fill();
+  }
+  function loop(t){
+    if(!running)return;
+    const dt=Math.min(.033,(t-last)/1000||0);last=t;update(dt);draw();
+    if(running)raf=requestAnimationFrame(loop);
   }
 
-  $('playFieldRun').onclick=()=>{
-    $('fieldGame').hidden=false;
-    $('playFieldRun').disabled=true;
-    $('playFieldRun').textContent='Field Run Active';
-    round=0;score=0;newRound();
-    $('fieldGame').scrollIntoView({behavior:'smooth',block:'nearest'});
+  $('playHyphaeRun').onclick=()=>{
+    game.hidden=false;
+    $('playHyphaeRun').disabled=true;
+    $('playHyphaeRun').textContent='Hyphae Run Active';
+    reset();
+    game.scrollIntoView({behavior:'smooth',block:'nearest'});
   };
-  $('nextRound').onclick=()=>{
-    if(round>=totalRounds){
-      $('gameFeedback').textContent=`Field Run complete · ${score} / ${totalRounds}`;
-      setTimeout(enter,450);
-    }else newRound();
-  };
+  $('restartHyphae').onclick=()=>{reset();start()};
 })();
