@@ -255,3 +255,73 @@ window.onkeydown=e=>{if(e.key==='Escape')closeViewer()};
 window.onresize=()=>viewer.classList.contains('open')&&fit();
 
 fillFilters();renderList();renderSpec();
+
+
+/* Optional MycoScope Field Run entry experience */
+(function initEntryExperience(){
+  const gate=$('entryGate');
+  if(!gate) return;
+  const enter=()=>{gate.classList.add('hidden');document.body.style.overflow='hidden'};
+  const candidates=data.filter(s=>(s.images||[]).some(im=>im.thumb||im.original)&&s.collection);
+  $('gateCount').textContent=` · ${data.length} RECORDS`;
+  $('enterAtlas').onclick=enter;
+  $('skipGame').onclick=enter;
+
+  let round=0,score=0,currentAnswer='',locked=false;
+  const totalRounds=5;
+
+  function shuffled(arr){return [...arr].sort(()=>Math.random()-.5)}
+  function newRound(){
+    if(!candidates.length){enter();return}
+    locked=false;
+    $('nextRound').hidden=true;
+    $('gameFeedback').textContent='';
+    const specimen=candidates[Math.floor(Math.random()*candidates.length)];
+    const usable=(specimen.images||[]).filter(im=>im.thumb||im.original);
+    const media=usable[Math.floor(Math.random()*usable.length)];
+    currentAnswer=specimen.collection;
+    const pool=[...new Set(data.map(s=>s.collection).filter(Boolean).filter(x=>x!==currentAnswer))];
+    const choices=shuffled([currentAnswer,...shuffled(pool).slice(0,2)]);
+    $('gameImage').src=media.thumb||media.original;
+    $('gameImage').alt=`Fungal specimen from ${specimen.code}`;
+    $('gameProgress').textContent=`Round ${round+1} / ${totalRounds}`;
+    $('gameScore').textContent=score;
+    $('gameChoices').innerHTML=choices.map(c=>`<button type="button" data-choice="${esc(c)}">${esc(c)}</button>`).join('');
+    $('gameChoices').querySelectorAll('button').forEach(btn=>btn.onclick=()=>answer(btn));
+  }
+
+  function answer(btn){
+    if(locked)return;
+    locked=true;
+    const chosen=btn.dataset.choice;
+    $('gameChoices').querySelectorAll('button').forEach(b=>{
+      b.disabled=true;
+      if(b.dataset.choice===currentAnswer)b.classList.add('correct');
+    });
+    if(chosen===currentAnswer){
+      score++;
+      $('gameFeedback').textContent='Correct · field record matched.';
+    }else{
+      btn.classList.add('wrong');
+      $('gameFeedback').textContent=`Not this time · correct collection: ${currentAnswer}`;
+    }
+    $('gameScore').textContent=score;
+    round++;
+    $('nextRound').hidden=false;
+    $('nextRound').textContent=round>=totalRounds?'Enter Atlas':'Next specimen';
+  }
+
+  $('playFieldRun').onclick=()=>{
+    $('fieldGame').hidden=false;
+    $('playFieldRun').disabled=true;
+    $('playFieldRun').textContent='Field Run Active';
+    round=0;score=0;newRound();
+    $('fieldGame').scrollIntoView({behavior:'smooth',block:'nearest'});
+  };
+  $('nextRound').onclick=()=>{
+    if(round>=totalRounds){
+      $('gameFeedback').textContent=`Field Run complete · ${score} / ${totalRounds}`;
+      setTimeout(enter,450);
+    }else newRound();
+  };
+})();
