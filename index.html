@@ -1,27 +1,39 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0d1113"><title>MycoScope — Complete Master Collection</title><link rel="stylesheet" href="styles.css"></head><body><div id="entryGate" class="entry-gate" aria-label="MycoScope field access">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0d1113"><title>MycoScope — Complete Master Collection</title><link rel="stylesheet" href="styles.css"></head><body><div id="entryGate" class="entry-gate" aria-label="MycoScope fungal game access">
   <div class="entry-grid"></div>
-  <div class="entry-panel">
-    <div class="entry-kicker">FIELD RESEARCH TERMINAL · NODE NJ-01</div>
+  <div class="entry-panel game-shell">
+    <div class="entry-kicker">MYCOSCOPE · FUNGAL ARCADE</div>
     <h1>MYCOSCOPE</h1>
     <p class="entry-subtitle">Jockey Hollow Fungal Atlas</p>
-    <div class="entry-status"><span class="status-dot"></span> DATABASE ONLINE <span id="gateCount"></span></div>
-    <p class="entry-copy">Enter the research atlas immediately, or run a short fungal field challenge first.</p>
+    <div class="entry-status"><span class="status-dot"></span> ATLAS ONLINE <span id="gateCount"></span></div>
+    <p class="entry-copy">Enter the atlas now, or play <strong>Hyphae Run</strong> — a standalone fungi game with no connection to specimen data.</p>
     <div class="entry-actions">
       <button id="enterAtlas" class="entry-primary">Enter Atlas</button>
-      <button id="playFieldRun" class="entry-secondary">Play Field Run</button>
+      <button id="playHyphaeRun" class="entry-secondary">Play Hyphae Run</button>
     </div>
-    <div id="fieldGame" class="field-game" hidden>
-      <div class="game-head">
-        <div><strong>FIELD RUN</strong><small id="gameProgress">Round 1 / 5</small></div>
-        <div class="game-score">Score <span id="gameScore">0</span></div>
+    <div id="hyphaeGame" class="hyphae-game" hidden>
+      <div class="hyphae-hud">
+        <div><strong>HYPHAE RUN</strong><small>Grow the network. Feed the colony. Avoid contamination.</small></div>
+        <div class="hud-stats">
+          <span>Score <b id="hyphaeScore">0</b></span>
+          <span>Growth <b id="hyphaeGrowth">0%</b></span>
+          <span>Lives <b id="hyphaeLives">3</b></span>
+        </div>
       </div>
-      <div class="game-image-wrap"><img id="gameImage" alt="Fungal specimen challenge"></div>
-      <p id="gamePrompt" class="game-prompt">Which collection contains this specimen?</p>
-      <div id="gameChoices" class="game-choices"></div>
-      <div id="gameFeedback" class="game-feedback" aria-live="polite"></div>
+      <div class="hyphae-stage">
+        <canvas id="hyphaeCanvas" width="720" height="420" aria-label="Hyphae Run fungal game"></canvas>
+        <div id="hyphaeOverlay" class="hyphae-overlay">
+          <strong>Grow a living mycelial network</strong>
+          <span>Collect amber nutrients, chain hyphae, and dodge green contamination.</span>
+          <button id="startHyphae" type="button">Start Game</button>
+        </div>
+      </div>
+      <div class="hyphae-help">
+        <span>Move: WASD / Arrow Keys / drag or touch</span>
+        <span>Amber = nutrient · Green = contamination · Blue = water burst</span>
+      </div>
       <div class="game-actions">
+        <button id="restartHyphae" type="button">Restart</button>
         <button id="skipGame" type="button">Skip game · Enter Atlas</button>
-        <button id="nextRound" type="button" hidden>Next specimen</button>
       </div>
     </div>
     <div class="entry-foot">SPECIMEN ARCHIVE · FIELD NOTES · MICROSCOPY · MEDIA</div>
