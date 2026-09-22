@@ -261,7 +261,10 @@ fillFilters();renderList();renderSpec();
 (function initEntryExperience(){
   const gate=$('entryGate');
   if(!gate) return;
-  const enter=()=>{gate.classList.add('hidden');document.body.style.overflow='hidden'};
+  const enter=()=>{
+    gate.classList.add('hidden');
+    document.body.style.overflow=window.matchMedia('(max-width: 900px)').matches?'auto':'hidden';
+  };
   $('gateCount').textContent=` · ${data.length} RECORDS`;
   $('enterAtlas').onclick=enter;
   $('skipGame').onclick=enter;
