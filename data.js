@@ -782,7 +782,7 @@ window.ATLAS_DATA = [
     "status": "VISIBLE SPORE DEPOSIT — MICROSCOPY DOCUMENTED",
     "sourceLine": "SOURCE IMAGES: Source spore-print photograph: AN2-F34SP.JPG; verified user-supplied AN2-F34 spore-print preparation views and microscopy fields SPMV1-SPMV5 added 2026-09-24.",
     "summary": {
-      "Growth / description": "One laboratory spore-print photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Growth / description": "The source record includes a laboratory spore-print photograph; two additional verified foil/slide spore-print preparation views were supplied 2026-09-24. Fruit-body morphology and an in-nature field view are not included in this source record.",
       "Size": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
       "Color": "Deposit pale tan to light brown, with patchy radial concentration.",
       "Cap / Pileus": "Not supplied. The source photograph documents the print surface rather than the intact fruit body.",
@@ -796,9 +796,9 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "AN2-F34SP.JPG",
-        "caption": "Source macro / specimen - source image 1",
+        "caption": "Spore print / preparation - original AN2-F34 source image",
         "original": "assets/originals/AN2-F34SP.JPG",
         "thumb": "assets/thumbs/AN2-F34SP.jpg",
         "masterEmbedded": true
@@ -816,15 +816,15 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Measurements",
-        "Not documented"
+        "Partial"
       ],
       [
         "Species resolved",
