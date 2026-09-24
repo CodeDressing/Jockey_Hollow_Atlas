@@ -591,33 +591,34 @@ window.ATLAS_DATA = [
     "family": "AN",
     "site": "AN2",
     "collection": "AN2",
-    "status": "VISIBLE SPORE DEPOSIT MICROSCOPY PENDING",
-    "sourceLine": "SOURCE IMAGES: Source spore-print photographs: AN2-F25SP.JPG, AN2-25SP.JPG",
+    "status": "VISIBLE SPORE DEPOSIT — MICROSCOPY DOCUMENTED",
+    "sourceLine": "SOURCE IMAGES: Source spore-print photographs: AN2-F25SP.JPG, AN2-25SP.JPG; verified user-supplied microscopy series AN2-F25 SPMV1.png through AN2-F25 SPMV7.png added 2026-09-24.",
     "summary": {
       "Growth / description": "Two laboratory spore-print views are supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
       "Size": "Not documented; no calibrated measurement scale is visible in the supplied photographs.",
       "Color": "Deposit light to medium cinnamon-brown, with uneven density across the paper.",
       "Cap / Pileus": "Not supplied. The source photographs document the print surface rather than the intact fruit body.",
       "Hymenophore": "Not supplied. Radial deposition patterns are visible, but hymenophore structure cannot be evaluated from the print photographs alone.",
-      "Spores": "Two views show an uneven, partial radial spore deposit ranging from light brown to cinnamon-brown. Microscopy, mount medium, magnification, and calibrated spore measurements remain pending.",
+      "Spores": "Two source views show an uneven, partial radial spore deposit ranging from light brown to cinnamon-brown. Seven microscopy fields supplied 2026-09-24 show abundant rounded to broadly ellipsoid brownish spores. Annotated linear measurements visible across SPMV2, SPMV3, SPMV5, SPMV6, and SPMV7 span approximately 3.25-8.31 µm. Because objective/magnification, mount medium, stain, and measurement-axis conventions were not supplied, these values are recorded as on-image measurements rather than interpreted as a formal spore-size range.",
       "Stem / Stipe": "Not supplied or reliably visible in the source print record.",
       "Veil": "Not supplied or reliably visible in the source print record.",
       "Base / Substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
-      "Microscopy record": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas."
+      "Microscopy record": "Seven microscopy images (AN2-F25 SPMV1.png through AN2-F25 SPMV7.png) were supplied 2026-09-24 and accession-linked by filename. SPMV2, SPMV3, SPMV5, SPMV6, and SPMV7 contain on-image measurements; SPMV1 and SPMV4 are unannotated microscopy fields. Visible annotated values range from approximately 3.25 to 8.31 µm. Objective/magnification, mount medium, stain, and measurement-axis conventions were not supplied, so no species identification is inferred from microscopy alone.",
+      "Source completeness note": "The original source record contains two spore-print photographs. Seven verified microscopy fields were added 2026-09-24. Field/in-situ imagery is still not documented in this source record."
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "AN2-F25SP.JPG",
-        "caption": "Source macro / specimen - source image 1",
+        "caption": "Spore print / preparation - source image 1",
         "original": "assets/originals/AN2-F25SP.JPG",
         "thumb": "assets/thumbs/AN2-F25SP.jpg",
         "masterEmbedded": true
       },
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "AN2-25SP.JPG",
-        "caption": "Source macro / specimen - source image 2",
+        "caption": "Spore print / preparation - source image 2",
         "original": "assets/originals/AN2-25SP.JPG",
         "thumb": "assets/thumbs/AN2-25SP.jpg",
         "masterEmbedded": true
@@ -635,15 +636,15 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Measurements",
-        "Not documented"
+        "Partial"
       ],
       [
         "Species resolved",
