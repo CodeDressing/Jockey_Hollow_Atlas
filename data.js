@@ -55,7 +55,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Single broad agaricoid fruit body photographed in the laboratory beside a metric ruler; the specimen is incomplete and the original field orientation is not preserved.",
+      "Dimensions": "Pileus approximately 5 cm across from the visible ruler; measurement is approximate because of camera angle.",
+      "Macroscopic color": "Pileus pale gray-green to olive cream with scattered tan-brown marks; exposed stipe tissue off-white to cream.",
+      "Pileus — form / profile": "Pileus broadly convex to nearly plane, smooth to finely matte, with a low uneven central area and a rounded, slightly irregular margin.",
+      "Pileus — surface / ornamentation": "Pileus broadly convex to nearly plane, smooth to finely matte, with a low uneven central area and a rounded, slightly irregular margin.",
+      "Pileus — margin": "Pileus broadly convex to nearly plane, smooth to finely matte, with a low uneven central area and a rounded, slightly irregular margin.",
+      "Hymenophore": "Only a small pale portion of the underside is visible near the edge of the photograph. Lamellae, pores, teeth, and attachment cannot be characterized reliably from this view.",
+      "Stipe": "A stout pale cream stipe or stipe fragment is partly visible beyond the pileus; most of its length and its attachment are obscured.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are confirmed in the supplied laboratory view.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy was supplied. Spore-print color, spore dimensions, ornamentation, basidia, cystidia, hyphal features, and reagent reactions remain pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original base, substrate, and field attachment are not shown. The specimen is displayed on laboratory paper beside other collections.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source laboratory photograph: AN2-F1.JPG"
+    }
   },
   {
     "code": "AN2-F2",
@@ -113,7 +130,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Single medium-sized agaricoid fruit body photographed in the laboratory beside a metric ruler, with pileus and curved stipe visible.",
+      "Dimensions": "Pileus approximately 5 cm across; visible stipe approximately 8 cm long. Values are approximate because of perspective.",
+      "Macroscopic color": "Pileus tan-brown to ochre-brown; stipe yellow-ochre to brown with darker longitudinal handling or age marks.",
+      "Pileus — form / profile": "Pileus broadly convex to nearly plane, dry-looking and finely matte, with an even to slightly undulating margin and scattered dark surface marks.",
+      "Pileus — surface / ornamentation": "Pileus broadly convex to nearly plane, dry-looking and finely matte, with an even to slightly undulating margin and scattered dark surface marks.",
+      "Pileus — margin": "Pileus broadly convex to nearly plane, dry-looking and finely matte, with an even to slightly undulating margin and scattered dark surface marks.",
+      "Hymenophore": "The fertile underside is not exposed clearly enough to determine whether lamellae, pores, or another hymenophore are present.",
+      "Stipe": "Stipe long, curved, moderately stout, and longitudinally fibrous to streaked; base is darkened and appears broken or trimmed.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are confirmed in the supplied laboratory view.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy was supplied. Spore-print color, spore dimensions, ornamentation, basidia, cystidia, hyphal features, and reagent reactions remain pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "No intact basal attachment or field substrate is preserved in the supplied laboratory image.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source laboratory photograph: AN2-F2.JPG"
+    }
   },
   {
     "code": "AN2-F3",
@@ -171,7 +205,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Single dark, robust fruit body photographed in the laboratory beside a metric ruler, with a rounded textured pileus and narrow dark stipe.",
+      "Dimensions": "Pileus approximately 5 to 6 cm across; visible stipe approximately 6 cm long. Measurements are approximate because of perspective.",
+      "Macroscopic color": "Pileus very dark brown to nearly black; stipe dark brown-black with a small ochre-orange basal attachment remnant.",
+      "Pileus — form / profile": "Pileus rounded to broadly convex with a strongly uneven, coarsely wrinkled, pitted, or wart-like surface. The margin is thick-looking and irregular.",
+      "Pileus — surface / ornamentation": "Pileus rounded to broadly convex with a strongly uneven, coarsely wrinkled, pitted, or wart-like surface.",
+      "Pileus — margin": "The margin is thick-looking and irregular.",
+      "Hymenophore": "The fertile underside is not shown. No reliable hymenophore character can be assigned from the supplied dorsal view.",
+      "Stipe": "Stipe slender relative to the pileus, dark, nearly cylindrical, and slightly curved, with a small ochre-brown tissue remnant at the base.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are confirmed in the supplied laboratory view.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy was supplied. Spore-print color, spore dimensions, ornamentation, basidia, cystidia, hyphal features, and reagent reactions remain pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "A small fragment of orange-brown attachment tissue is retained; the original substrate and ecological context are not shown.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source laboratory photograph: AN2-F3.JPG"
+    }
   },
   {
     "code": "AN2-F4",
@@ -229,7 +280,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Two small, incomplete fruit bodies or cap fragments photographed in the laboratory beside a metric ruler; both are detached from their original substrate.",
+      "Dimensions": "Each visible pileus is approximately 2 cm across; exact dimensions are limited by camera angle and fragmentation.",
+      "Macroscopic color": "Pilei ochre-tan to orange-brown with darker centers and margins; attached tissue dark brown to black.",
+      "Pileus — form / profile": "Pilei small, thin, irregularly convex to shallowly plane, with uneven or scalloped margins and finely matte surfaces.",
+      "Pileus — surface / ornamentation": "Pilei small, thin, irregularly convex to shallowly plane, with uneven or scalloped margins and finely matte surfaces.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "The undersides are not presented clearly enough to characterize lamellae, pores, teeth, or attachment features.",
+      "Stipe": "Only short, dark, slender attachment or stipe fragments are visible; complete stipe morphology is not preserved.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are confirmed in the supplied laboratory view.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy was supplied. Spore-print color, spore dimensions, ornamentation, basidia, cystidia, hyphal features, and reagent reactions remain pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original bases, substrate, and field orientation are absent from the supplied laboratory view.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source laboratory photograph: AN2-F4.JPG"
+    }
   },
   {
     "code": "AN2-F5",
@@ -287,7 +355,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Single broad agaricoid pileus with a detached or separated stipe section, photographed in the laboratory beside a metric ruler.",
+      "Dimensions": "Pileus approximately 6 to 7 cm across; visible stipe section approximately 6 cm long. Measurements are approximate.",
+      "Macroscopic color": "Pileus pale tan to gray-brown with darker brown central mottling; stipe yellow-tan to brown with darker basal staining.",
+      "Pileus — form / profile": "Pileus broadly convex to nearly plane, dry-looking and finely matte, with an uneven mottled disc and a thick, slightly irregular margin.",
+      "Pileus — surface / ornamentation": "Pileus broadly convex to nearly plane, dry-looking and finely matte, with an uneven mottled disc and a thick, slightly irregular margin.",
+      "Pileus — margin": "Pileus broadly convex to nearly plane, dry-looking and finely matte, with an uneven mottled disc and a thick, slightly irregular margin.",
+      "Hymenophore": "The fertile underside is not visible in the supplied image, so hymenophore type and attachment remain unrecorded.",
+      "Stipe": "Stipe section moderately stout, yellow-tan, fibrous, and darker toward the broken basal end; cap-to-stipe attachment is not shown.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are confirmed in the supplied laboratory view.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy was supplied. Spore-print color, spore dimensions, ornamentation, basidia, cystidia, hyphal features, and reagent reactions remain pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The retained stipe section bears dark soil or organic staining, but the original field substrate is not documented in this record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source laboratory photograph: AN2-F5.JPG"
+    }
   },
   {
     "code": "AN2-F6",
@@ -311,7 +396,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "AN2-F6SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/AN2-F6SP.JPG",
@@ -331,7 +416,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -345,7 +430,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "A very faint pale tan-gray trace is visible with scattered debris; deposit color is not reliable.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "An extremely faint pale tan-gray trace may represent a partial deposit, but it cannot be separated confidently from debris. Result remains inconclusive.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: AN2-F6SP.JPG"
+    }
   },
   {
     "code": "AN2-F7",
@@ -403,7 +505,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One large and one smaller agaricoid pileus with separated stipe material, photographed together in the laboratory beside a metric ruler.",
+      "Dimensions": "Larger pileus approximately 6 cm across; smaller pileus approximately 4 cm across. Measurements are approximate because of overlap and perspective.",
+      "Macroscopic color": "Pilei warm orange-brown to cinnamon with darker central zones; stipe tissue ochre-tan with darker soil-stained areas.",
+      "Pileus — form / profile": "Pilei broadly convex to nearly plane, smooth to finely matte, with subtly darker discs and even to slightly irregular margins.",
+      "Pileus — surface / ornamentation": "Pilei broadly convex to nearly plane, smooth to finely matte, with subtly darker discs and even to slightly irregular margins.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No clear underside view is supplied. Lamellae, pores, teeth, and attachment cannot be documented from the dorsal laboratory photograph.",
+      "Stipe": "Separated stipe material is moderately stout, ochre-tan to brown, fibrous, and irregularly broken; attachment to either pileus is not established.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are confirmed in the supplied laboratory view.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy was supplied. Spore-print color, spore dimensions, ornamentation, basidia, cystidia, hyphal features, and reagent reactions remain pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Dark soil and organic debris adhere to portions of the stipe material; original substrate and collection orientation remain undocumented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source laboratory photograph: AN2-F7.JPG"
+    }
   },
   {
     "code": "AN2-F8",
@@ -427,7 +546,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "AN2-F8SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/AN2-F8SP.JPG",
@@ -447,7 +566,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -461,7 +580,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "A very faint tan-brown partial trace is visible; deposit color is not reliable.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "A very faint tan-brown streak or partial trace is present, but the supplied photograph does not establish a definite controlled spore deposit.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: AN2-F8SP.JPG"
+    }
   },
   {
     "code": "AN2-F13",
@@ -519,7 +655,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "The deposit appears pale gray to whitish in the supplied photograph.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "A faint, pale circular-to-radial deposit pattern is visible macroscopically. Microscopy and calibrated spore measurements remain pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: AN2-F13.JPG"
+    }
   },
   {
     "code": "AN2-F21",
@@ -584,7 +737,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Single robust agaricoid fruit body photographed in two laboratory views, including the pileus, stipe, base, and fertile underside.",
+      "Dimensions": "Not documented; no calibrated ruler is visible in the supplied specimen photographs.",
+      "Macroscopic color": "Pileus muted rose-brown to pinkish tan; hymenophore pale pink-tan; stipe cream to pale pinkish buff with dark soil marks.",
+      "Pileus — form / profile": "Pileus broadly convex with a smooth to finely matte rose-brown surface, a thick slightly incurved margin, and minor collection abrasions.",
+      "Pileus — surface / ornamentation": "Pileus broadly convex with a smooth to finely matte rose-brown surface, a thick slightly incurved margin, and minor collection abrasions.",
+      "Pileus — margin": "Pileus broadly convex with a smooth to finely matte rose-brown surface, a thick slightly incurved margin, and minor collection abrasions.",
+      "Hymenophore": "Fertile surface appears finely poroid rather than lamellate, pale pink-tan to buff, with very small closely spaced pores. Tube depth and bruising reaction are not documented.",
+      "Stipe": "Stipe stout, central to slightly off-center, cream to pale pinkish buff, longitudinally fibrous, and slightly enlarged toward the base.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible in the supplied views.",
+      "Spore print / macroscopic deposit": "A dense circular reddish cinnamon-brown to rust-brown spore deposit is documented on white paper, with a central gap corresponding to the stipe position. Calibrated microscopy and spore measurements remain pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end is intact to slightly broken and retains dark soil and small organic debris. Original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source laboratory photographs: an2-f21.JPG, an2-f21v2.JPG; spore-print photograph: AN2-F21 SPOREPRINT.JPG"
+    }
   },
   {
     "code": "AN2-F25",
@@ -651,7 +821,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Two laboratory spore-print views are supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photographs.",
+      "Macroscopic color": "Deposit light to medium cinnamon-brown, with uneven density across the paper.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photographs document the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied. Radial deposition patterns are visible, but hymenophore structure cannot be evaluated from the print photographs alone.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "Two source views show an uneven, partial radial spore deposit ranging from light brown to cinnamon-brown. Seven microscopy fields supplied 2026-09-24 show abundant rounded to broadly ellipsoid brownish spores. Annotated linear measurements visible across SPMV2, SPMV3, SPMV5, SPMV6, and SPMV7 span approximately 3.25-8.31 µm. Because objective/magnification, mount medium, stain, and measurement-axis conventions were not supplied, these values are recorded as on-image measurements rather than interpreted as a formal spore-size range.",
+      "Microscopy": "Seven microscopy images (AN2-F25 SPMV1.png through AN2-F25 SPMV7.png) were supplied 2026-09-24 and accession-linked by filename. SPMV2, SPMV3, SPMV5, SPMV6, and SPMV7 contain on-image measurements; SPMV1 and SPMV4 are unannotated microscopy fields. Visible annotated values range from approximately 3.25 to 8.31 µm. Objective/magnification, mount medium, stain, and measurement-axis conventions were not supplied, so no species identification is inferred from microscopy alone.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print photographs: AN2-F25SP.JPG, AN2-25SP.JPG; verified user-supplied microscopy series AN2-F25 SPMV1.png through AN2-F25 SPMV7.png added 2026-09-24."
+    }
   },
   {
     "code": "AN2-F31",
@@ -674,7 +861,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "AN2-F31SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/AN2-F31SP.JPG",
@@ -682,7 +869,7 @@ window.ATLAS_DATA = [
         "masterEmbedded": true
       },
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "AN2-F31SPV2.JPG",
         "caption": "Source macro / specimen - source image 2",
         "original": "assets/originals/AN2-F31SPV2.JPG",
@@ -702,7 +889,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -716,7 +903,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Two laboratory views show a specimen fragment remaining on the print paper; an exposed, completed print and an in-nature field view are not supplied.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photographs.",
+      "Macroscopic color": "Specimen fragment brown to dark brown; reliable spore-print color is not established in the supplied views.",
+      "Pileus — form / profile": "A partial brown specimen fragment is present on the paper, but the views do not establish complete pileus form, surface, margin, or attachment.",
+      "Pileus — surface / ornamentation": "A partial brown specimen fragment is present on the paper, but the views do not establish complete pileus form, surface, margin, or attachment.",
+      "Pileus — margin": "A partial brown specimen fragment is present on the paper, but the views do not establish complete pileus form, surface, margin, or attachment.",
+      "Hymenophore": "Not sufficiently exposed or resolved for a reliable source-derived description.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "The print attempt is documented with the specimen still in place. An exposed deposit is not sufficiently visible to establish print color or density; microscopy and calibrated measurements remain pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source laboratory print-attempt photographs: AN2-F31SP.JPG, AN2-F31SPV2.JPG"
+    }
   },
   {
     "code": "AN2-F32",
@@ -740,7 +944,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "AN2-F32SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/AN2-F32SP.JPG",
@@ -760,7 +964,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -774,7 +978,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "No reliable spore-deposit color can be distinguished from the light paper and scattered debris.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "No definite spore deposit is distinguishable from scattered debris in the supplied photograph. Print result is inconclusive; microscopy and calibrated measurements remain pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: AN2-F32SP.JPG"
+    }
   },
   {
     "code": "AN2-F34",
@@ -833,7 +1054,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "The source record includes a laboratory spore-print photograph; two additional verified foil/slide spore-print preparation views were supplied 2026-09-24. Fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "Deposit pale tan to light brown, with patchy radial concentration.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied. A radial deposition pattern is visible, but hymenophore structure cannot be evaluated from the print photograph alone.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "A broad, patchy radial deposit is visible, pale tan to light brown and uneven in density. Five annotated microscopy fields supplied 2026-09-24 document repeated elongate to ellipsoid brownish spores. Visible annotations across the fields include long-axis measurements approximately 9.07-12.12 µm and short-axis measurements approximately 2.18-5.21 µm. Mount medium and objective/magnification were not supplied, so no taxonomic identification is inferred from these images alone.",
+      "Microscopy": "Five annotated microscopy images (AN2-F34 SPMV1.png through AN2-F34 SPMV5.png) were supplied 2026-09-24 and accession-linked by filename. They contain multiple on-image spore measurements. Objective/magnification and mount/stain were not supplied; therefore the atlas records the morphology and visible measurements without inferring species identity.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print photograph: AN2-F34SP.JPG; verified user-supplied AN2-F34 spore-print preparation views and microscopy fields SPMV1-SPMV5 added 2026-09-24."
+    }
   },
   {
     "code": "AN2-F36",
@@ -857,7 +1095,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "AN2-F36SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/AN2-F36SP.JPG",
@@ -877,7 +1115,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -891,7 +1129,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "Extremely faint pale gray-brown trace; deposit color remains uncertain.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "An extremely faint pale gray-brown radial trace may be present, but the deposit is insufficient for a confident print-color determination. Microscopy and calibrated measurements remain pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: AN2-F36SP.JPG"
+    }
   },
   {
     "code": "AN2-F38",
@@ -915,7 +1170,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "AN2-F38SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/AN2-F38SP.JPG",
@@ -935,7 +1190,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -949,7 +1204,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "No reliable spore-deposit color is visible against the light paper.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "No definite spore deposit is visible in the supplied photograph. Print result is inconclusive; microscopy and calibrated measurements remain pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: AN2-F38SP.JPG"
+    }
   },
   {
     "code": "AN2-F40",
@@ -973,7 +1245,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "AN2-F40SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/AN2-F40SP.JPG",
@@ -993,7 +1265,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -1007,7 +1279,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "No reliable deposit color can be distinguished from the light paper and scattered debris.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "No definite spore deposit is distinguishable from the pale surface and scattered debris. Print result is inconclusive; microscopy remains pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: AN2-F40SP.JPG"
+    }
   },
   {
     "code": "AN2-F41",
@@ -1032,7 +1321,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "AN2-F41SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/AN2-F41SP.JPG",
@@ -1052,7 +1341,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -1066,7 +1355,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "Deposit faint pale gray-brown to light brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied. A faint circular deposition pattern is visible, but hymenophore structure cannot be evaluated from the print photograph alone.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "A faint pale gray-brown to light-brown circular deposit is visible. Microscopy, mount medium, magnification, and calibrated spore measurements remain pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print photograph: AN2-F41SP.JPG"
+    }
   },
   {
     "code": "AN3-F2",
@@ -1124,7 +1430,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "COLOR",
+      "Macroscopic color": "Several minute pale cream to off-white fungal fragments associated with dark soil and organic debris. The material is incomplete and lacks an intact, confidently…",
+      "Pileus — form / profile": "No complete pileus is preserved. The photographed structures are small irregular pale fragments with narrow lobed or frayed termini; a conventional cap outline cannot be established.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No intact lamellae, pores, teeth, or other fertile surface can be characterized confidently from the fragmented material. Some pale linear folds are present but are insufficient for hymenophore assignment.",
+      "Stipe": "No intact differentiated stipe can be confirmed. Several narrow pale pieces may represent stipe or supporting tissue, but original orientation is not preserved.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, universal-veil remnants, or volva are demonstrable on the preserved fragments.",
+      "Spore print / macroscopic deposit": "Microscopy pending",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Several fragments retain compact dark soil and fine organic material. Exact substrate association and original attachment points are not preserved.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: an3-f2.JPG"
+    }
   },
   {
     "code": "AN3-F4",
@@ -1182,7 +1505,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "COLOR",
+      "Macroscopic color": "Irregular pale cream to yellowish, compact fungal body photographed beside a ruler, with a smooth to finely uneven outer surface, localized brown soil staining, and no…",
+      "Pileus — form / profile": "No conventional pileus is clearly differentiated. The body is irregularly ovoid to lobed, pale cream-yellow, with uneven collected margins and localized abrasion.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No lamellae, obvious pores, or teeth are exposed clearly enough in the supplied F4 view to characterize the fertile surface.",
+      "Stipe": "No discrete stipe is visible in the photographed F4 material; attachment tissue is short, irregular, and partly obscured by debris.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, universal-veil remnants, or volva can be demonstrated from the supplied F4 image.",
+      "Spore print / macroscopic deposit": "Microscopy pending",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Dark soil and organic debris adhere to one side of the specimen; the original substrate relationship is incompletely preserved.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph used for F4: an3-f4v2.JPG"
+    }
   },
   {
     "code": "AN3-F7",
@@ -1247,7 +1587,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus orange-brown to reddish cinnamon, broadly convex to shallowly plane, smooth to finely matte, with a slightly darker central area and minor collection damage.",
+      "Pileus — surface / ornamentation": "Pileus orange-brown to reddish cinnamon, broadly convex to shallowly plane, smooth to finely matte, with a slightly darker central area and minor collection damage.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae crowded, cinnamon to reddish brown, narrow to moderately broad, with numerous lamellulae. Exact attachment cannot be confirmed because the cap and stipe are detached.",
+      "Stipe": "Stipe stout to moderately robust, white to cream, cylindrical to slightly tapering, fibrous, and detached from the pileus; basal end retains dark soil.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Clavate image has an enlarged pale pink-tan base with soil and plant debris; agaricoid images show a stout white stipe with compact dark soil at the base. Label reconciliation is required before assigning…",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "AN3-F8",
@@ -1312,7 +1669,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus medium brown to cinnamon, broadly convex to nearly plane, smooth to finely matte, with a slightly darker central disc.",
+      "Pileus — surface / ornamentation": "Pileus medium brown to cinnamon, broadly convex to nearly plane, smooth to finely matte, with a slightly darker central disc.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae crowded, dark brown to chocolate-brown, relatively narrow, with numerous lamellulae; attachment appears adnate to narrowly adnexed in the photographed underside.",
+      "Stipe": "Stipe short to moderately stout, pale cream to tan, fibrous, with a bulky soil-bearing basal region; specimen is sectioned and partly detached.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains compact dark soil, fine roots, and organic debris; no distinct volva or pronounced basal bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: IMG_0803.jpeg, IMG_0804.jpeg"
+    }
   },
   {
     "code": "AN3-F11",
@@ -1370,7 +1744,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus small, tan to orange-brown, convex to shallowly plane, with a darker central patch and thin margin.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Pileus small, tan to orange-brown, convex to shallowly plane, with a darker central patch and thin margin.",
+      "Hymenophore": "Fertile surface is not exposed clearly enough to characterize gills, pores, or attachment reliably.",
+      "Stipe": "Stipe extremely slender, pale tan to yellow-brown, smooth to finely fibrillose, slightly curved, and soil-bearing at the base.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Clavate image has an enlarged pale pink-tan base with soil and plant debris; agaricoid images show a stout white stipe with compact dark soil at the base. Label reconciliation is required before assigning…",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "AN3-F12",
@@ -1435,7 +1826,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "COLOR",
+      "Macroscopic color": "Small brown agaricoid basidiome represented by a detached rounded pileus and a very slender pale tan stipe. The underside view shows strongly developed tan-brown…",
+      "Pileus — form / profile": "Pileus small, dark chestnut-brown, rounded to convex and smooth to finely matte, with minor cracking or collection damage near the margin.",
+      "Pileus — surface / ornamentation": "Pileus small, dark chestnut-brown, rounded to convex and smooth to finely matte, with minor cracking or collection damage near the margin.",
+      "Pileus — margin": "Pileus small, dark chestnut-brown, rounded to convex and smooth to finely matte, with minor cracking or collection damage near the margin.",
+      "Hymenophore": "Lamellae tan to cinnamon-brown, moderately crowded to crowded, somewhat irregular and interspersed with shorter lamellulae. Exact attachment cannot be confirmed because cap and stipe are detached.",
+      "Stipe": "Stipe extremely slender, pale tan to beige, smooth to finely fibrillose, curved at the distal end, and detached from the pileus.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "Microscopy pending",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end is incomplete and carries little adhering substrate. Original substrate relationship is not preserved.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: an3-f12.JPG, an3-f12v2.JPG"
+    }
   },
   {
     "code": "AN3-F13",
@@ -1500,7 +1908,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus small to medium, dark brown, convex to hemispherical, smooth to finely matte; surface detail is limited by focus.",
+      "Pileus — surface / ornamentation": "Pileus small to medium, dark brown, convex to hemispherical, smooth to finely matte; surface detail is limited by focus.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Fertile surface is not resolved clearly enough in the supplied soft-focused images to characterize gill spacing, attachment, or pore structure reliably.",
+      "Stipe": "Stipe moderately stout, brown to reddish brown, curved and fibrous, with a soil-bearing base; cap and stipe appear partly separated.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants are discernible in the soft-focused views.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains compact dark soil and organic debris; no distinct volva or pronounced bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "AN3-F14",
@@ -1558,7 +1983,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus brown to ochre-brown, irregularly convex to shallowly plane, roughened and damaged, with an uneven collected margin.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Pileus brown to ochre-brown, irregularly convex to shallowly plane, roughened and damaged, with an uneven collected margin.",
+      "Hymenophore": "Lamellae crowded, yellow-brown to ochre, moderately broad and irregular, with shorter lamellulae; exact attachment is uncertain because the specimen is broken.",
+      "Stipe": "Stipe moderately stout, pale cream to tan, fibrous, detached from the pileus, with a soil-bearing basal end.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains compact dark soil and organic debris; no distinct volva or pronounced bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "AN3-F16",
@@ -1623,7 +2065,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "COLOR",
+      "Macroscopic color": "Small rounded brown fungal fruit body with a densely velvety to finely granular outer surface, photographed with leaf-litter material at the base. The intact views do…",
+      "Pileus — form / profile": "Visible fruit body rounded to hemispherical or cushion-like, densely fine-velvety to granular, warm brown, with a localized pale damaged area. A conventional cap margin is poorly differentiated.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "A conventional cap margin is poorly differentiated.",
+      "Hymenophore": "No lamellae, pores, teeth, or other exposed fertile-surface structure is visible in the correctly labeled F16 photographs; hymenophore type remains unresolved.",
+      "Stipe": "No clearly differentiated central stipe is visible in the correctly labeled F16 views; the lower portion is short and partly obscured by litter.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "Microscopy pending",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Fruit body is associated with brown leaf litter and minor organic debris; exact point of attachment and substrate remain incompletely documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs used for F16: an3-f16.JPG, an3-f16v2.JPG"
+    }
   },
   {
     "code": "AN3-F17",
@@ -1681,7 +2140,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "No conventional pileus is differentiated; upper portion is elongated, club- to spindle-shaped, dark bluish-black to black, and finely textured.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No gills, pores, or teeth are visible; any fertile surface appears integrated into the dark clavate upper portion.",
+      "Stipe": "Stalk narrow, dark brown to black, curved, and differentiated from the broader elongated upper body.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures are visible; conventional agaricoid veil terminology may not apply to this morphology.",
+      "Spore print / macroscopic deposit": "No controlled spore deposit or calibrated microscopy supplied. Spore-bearing structures, ascus/basidial identity, spore morphology, and other microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base remains attached to compact dark soil and fine root debris; exact host or substrate association is not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "AN3-F18",
@@ -1739,7 +2215,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "COLOR",
+      "Macroscopic color": "Thin white to cream resupinate-to-effused fungal patches developing on a dark bark-covered twig. Multiple discrete crustose to narrowly reflexed patches are present…",
+      "Pileus — form / profile": "No conventional pileus is developed. Fruiting tissue occurs as thin irregular crustose to narrowly shelf-like patches, several with slightly raised or lobed margins.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Surface appears finely textured to minutely poroid or hydnoid in places, but pore or tooth dimensions cannot be resolved reliably from the photograph. True lamellae are absent.",
+      "Stipe": "No stipe is present; fruiting patches are sessile and directly attached to the woody substrate.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures are present; conventional agaricoid veil terminology is not applicable.",
+      "Spore print / macroscopic deposit": "Microscopy pending",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Directly associated with a bark-covered twig, strongly supporting a lignicolous growth habit.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: an3-f18.JPG"
+    }
   },
   {
     "code": "AN3-F19",
@@ -1804,7 +2297,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus broad, smooth to finely matte, chestnut to medium brown, convex, with a slightly darker central zone and localized collection damage.",
+      "Pileus — surface / ornamentation": "Pileus broad, smooth to finely matte, chestnut to medium brown, convex, with a slightly darker central zone and localized collection damage.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Hymenophore poroid; underside pale cream to gray-tan with extremely fine, densely packed pores. True lamellae are absent.",
+      "Stipe": "Stipe long and curved, reddish brown to tan, longitudinally fibrous, paler toward the apex and lower exposed context, with a soil-bearing base.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Basidiospore dimensions, pore trama, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains compact dark soil and organic debris; no distinct volva or pronounced bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "AN3-F20",
@@ -1869,7 +2379,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "A tiny cap-like brown fragment is present, but shape, margin, and surface details cannot be characterized reliably from the soft-focused image.",
+      "Pileus — surface / ornamentation": "A tiny cap-like brown fragment is present, but shape, margin, and surface details cannot be characterized reliably from the soft-focused image.",
+      "Pileus — margin": "A tiny cap-like brown fragment is present, but shape, margin, and surface details cannot be characterized reliably from the soft-focused image.",
+      "Hymenophore": "No gills, pores, teeth, or other fertile surface are resolved confidently.",
+      "Stipe": "Several hairlike brown pieces may represent stipe fragments, but none can be assigned confidently because the specimen is highly fragmented and soft-focused.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite veil structures are discernible in the supplied photograph.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-bearing structures and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original substrate relationship is not preserved; only minute dark debris remains with the fragments.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: an3-f20.jpeg"
+    }
   },
   {
     "code": "AN3-F21",
@@ -1927,7 +2454,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "COLOR",
+      "Macroscopic color": "Small highly fragmented brown agaricoid specimen represented by a detached cap fragment, a narrow broken stipe, and a long dark hairlike or twig-like fragment.…",
+      "Pileus — form / profile": "Pileus preserved only as a small brown fragment, thin-fleshed and irregularly torn.",
+      "Pileus — surface / ornamentation": "Complete outline, margin, and surface characters cannot be reconstructed confidently.",
+      "Pileus — margin": "Complete outline, margin, and surface characters cannot be reconstructed confidently.",
+      "Hymenophore": "A small fragment shows radial fold- or lamella-like structures, but spacing and attachment cannot be characterized reliably because the cap is broken.",
+      "Stipe": "One narrow pale brown stipe fragment is present, broken at both ends and detached from the cap. The long dark linear object may be plant or woody debris rather than fungal tissue.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, universal-veil remnants, or volva are demonstrable.",
+      "Spore print / macroscopic deposit": "Microscopy pending",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original basal attachment is not preserved. Sparse organic debris is present; substrate relationship remains unknown.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: an3-f21.JPG"
+    }
   },
   {
     "code": "AN3-F22",
@@ -1985,7 +2529,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus minute, pale yellow to cream, rounded to convex and thin, with details limited by overexposure.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Fertile surface is not resolved in the overexposed, soft-focused photograph; gill spacing or attachment cannot be characterized.",
+      "Stipe": "Stipe exceptionally slender, brown, slightly curved, and incompletely preserved.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original base is not preserved clearly enough to characterize; no distinct volva or bulb can be assessed.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "AN3-F24",
@@ -2050,7 +2611,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "COLOR",
+      "Macroscopic color": "Minute brown agaricoid basidiome represented by a small rounded pileus and a detached exceptionally slender stipe. The second view exposes a dark central attachment zone…",
+      "Pileus — form / profile": "Pileus minute, circular to rounded, convex in profile, medium brown, smooth to finely matte, with a slightly darker central area.",
+      "Pileus — surface / ornamentation": "Pileus minute, circular to rounded, convex in profile, medium brown, smooth to finely matte, with a slightly darker central area.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Underside shows a central darker attachment zone with faint radial structures consistent with fine lamellae, but image softness prevents reliable assessment of spacing or attachment.",
+      "Stipe": "Stipe exceptionally slender, pale tan-brown, slightly curved and fragile, detached from the pileus and broken at the base.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible at the photographed scale.",
+      "Spore print / macroscopic deposit": "Microscopy pending",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original basal attachment and substrate are not preserved.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: an3-f24.JPG, an3-f24v2.JPG"
+    }
   },
   {
     "code": "AN3-F25",
@@ -2108,7 +2686,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus incomplete, yellow-orange to ochre, curved and irregularly wavy, with torn margins and localized darkening from damage.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Fertile surface is partly exposed and appears to comprise closely set yellow-brown lamellae or ridge-like folds; spacing and attachment cannot be characterized reliably because the cap is damaged.",
+      "Stipe": "Stipe long and slender, pale tan-brown, slightly curved and fibrous, with a damaged or cut basal end.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end is cut or incomplete with little adhering debris; no distinct bulb or volva can be assessed.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "AN3-F26",
@@ -2166,7 +2761,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "No pileus is preserved in the supplied fragment.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No gills, pores, teeth, or other fertile surface are preserved.",
+      "Stipe": "Extremely slender pale pinkish-cream to tan stem-like tissue, slightly curved and isolated; orientation cannot be established confidently.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures are visible on the isolated fragment.",
+      "Spore print / macroscopic deposit": "No controlled spore deposit or calibrated microscopy supplied. Spore-bearing structures and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original base or substrate attachment is not preserved in the supplied fragment.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "AN3-F28",
@@ -2231,7 +2843,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "No conventional pileus is differentiated; structures are minute cup- to shallow-disc-shaped with smooth pale tan-buff surfaces and delicate margins.",
+      "Pileus — surface / ornamentation": "No conventional pileus is differentiated; structures are minute cup- to shallow-disc-shaped with smooth pale tan-buff surfaces and delicate margins.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No lamellae, pores, or teeth are visible. The smooth concave inner surface is the likely fertile surface, but microscopy is required to confirm its nature.",
+      "Stipe": "No distinct central stipe is present; attachment appears sessile or reduced to a very short basal point.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures are present; conventional agaricoid veil terminology is not applicable to this cup/disc morphology.",
+      "Spore print / macroscopic deposit": "No controlled spore deposit or calibrated microscopy supplied. Ascus/basidial identity, spore morphology, excipular or hyphal characters, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original substrate is absent or incompletely preserved; one fragment carries a small amount of dark adhering debris.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "AN3-F29",
@@ -2296,7 +2925,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus broad and fleshy, reddish brown to maroon-brown, irregularly plane to shallowly depressed, dry to finely matte, heavily soil-stained and torn.",
+      "Pileus — surface / ornamentation": "Pileus broad and fleshy, reddish brown to maroon-brown, irregularly plane to shallowly depressed, dry to finely matte, heavily soil-stained and torn.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae crowded, cream to tan, broad and somewhat irregular/wavy, with lamellulae present; a central attachment scar is visible, but exact attachment is limited by detachment and damage.",
+      "Stipe": "Stipe stout, cream-white, fibrous, detached and broken, with pale exposed context at the fractured end.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants are visible on the supplied material.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original base/substrate relationship is incompletely preserved; adhering soil and organic debris are present, with no distinct volva visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "AN3-F31",
@@ -2361,7 +3007,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Broad pale yellow-olive agaricoid basidiome with crowded cream lamellae and stout pale stipe; cap and stipe are detached in the supplied views.",
+      "Dimensions": "Medium-to-large robust agaricoid basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus pale yellow-olive to buff; lamellae cream; stipe white-cream; basal soil dark brown.",
+      "Pileus — form / profile": "Pileus pale yellow-olive to buff, broadly convex to nearly plane, smooth to finely matte, with darker olive-brown mottling and minor damage.",
+      "Pileus — surface / ornamentation": "Pileus pale yellow-olive to buff, broadly convex to nearly plane, smooth to finely matte, with darker olive-brown mottling and minor damage.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae crowded, cream to pale buff, narrow to moderately broad, with numerous lamellulae; exact attachment cannot be confirmed because cap and stipe are detached.",
+      "Stipe": "Stipe stout to moderately robust, white to cream, cylindrical to slightly tapering, fibrous, and detached from the pileus; basal end retains dark soil.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end of the detached stipe retains compact dark soil and fine organic debris. No distinct volva, pronounced basal bulb, or rooting extension is visible in the supplied views.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: an3-f31.JPG, an3-f31v2.JPG Source photograph: an3-f31.jpeg"
+    }
   },
   {
     "code": "AN3-F32",
@@ -2419,7 +3082,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Elongated red-to-black clavate or stinkhorn-like fungal structure with a tapered dark distal end and an enlarged pale pink-tan basal body bearing soil and plant debris; no conventional cap, gills, or pores are visible.",
+      "Dimensions": "Minute delicate basidiome; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Distal end black to very dark brown; elongated shaft deep red to crimson; enlarged basal tissue pale pink-tan to brown with dark soil and plant debris.",
+      "Pileus — form / profile": "No conventional pileus is differentiated. The reproductive structure is an elongated clavate to fusiform body, with the upper portion grading into a darkened distal tip rather than forming a discrete cap.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No gills, pores, or teeth are visible. Any fertile surface is not morphologically separable from the dark distal portion in the supplied photograph.",
+      "Stipe": "Elongated shaft narrow to moderately thick, deep red to crimson, tapering toward a blackened distal end; tissue is fleshy/fibrous rather than a conventional agaricoid stipe.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal tissue is enlarged, pale pink-tan to brown, and retains compact soil, fine roots, and plant debris. A separate volva-like structure or distinct rooting extension cannot be confirmed from the photograph.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: an3-f32.jpg Source photograph: an3-f32v3.JPG"
+    }
   },
   {
     "code": "AN3-F33",
@@ -2484,7 +3164,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Labeled specimen set contains morphologically inconsistent fragments: some photographs show an agaricoid cap with brown lamellae and pale stout stipe, while others show a bolete-like cap with a dark poroid hymenophore and elongated pale-brown stipe. Treat as…",
+      "Dimensions": "Multiple medium fragments/specimens; no calibrated scale visible. Direct measurements required after label reconciliation.",
+      "Macroscopic color": "Agaricoid fragments: ochre-brown cap/lamellae with pale tan stipe. Poroid fragment: brown pileus, very dark olive-brown to blackish pore surface, pale tan-brown stipe.",
+      "Pileus — form / profile": "Photographs show more than one cap morphology: irregular ochre-brown agaricoid fragments and a separate broad brown bolete-like pileus. A single pileus description is therefore not defensible for the entire…",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Contradictory hymenophores are visible within the same F33 photo set: true lamellae in some images and a fine, dark poroid surface in others. This strongly suggests mixed material or a labeling mismatch; do…",
+      "Stipe": "Stipes differ among photographed fragments: one pale, stout, fibrous stipe is associated with the lamellate material, while the poroid material shows a longer pale tan-brown stipe. Association should be…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Soil/organic debris remains on several fragments, but base morphology and substrate relationship cannot be interpreted reliably until the mixed accession is reconciled.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: an3-f33.JPG, an3-f33v2.JPG, an3-f33v3.JPG, an3-f33v4.JPG Source photographs: an3-f33.jpeg, an3-f33v2.jpeg"
+    }
   },
   {
     "code": "AN3-F34",
@@ -2549,7 +3246,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "COLOR",
+      "Macroscopic color": "Small brown agaricoid basidiome represented by a detached circular pileus and a short stout tan-brown stipe fragment. A ruler in the photographs provides approximate…",
+      "Pileus — form / profile": "Pileus circular to broadly convex, medium to dark brown, smooth to finely matte, with a somewhat darker central zone and even to slightly incurved margin.",
+      "Pileus — surface / ornamentation": "Pileus circular to broadly convex, medium to dark brown, smooth to finely matte, with a somewhat darker central zone and even to slightly incurved margin.",
+      "Pileus — margin": "Pileus circular to broadly convex, medium to dark brown, smooth to finely matte, with a somewhat darker central zone and even to slightly incurved margin.",
+      "Hymenophore": "Underside is only partly resolved. A pale central attachment zone and faint radial structures are visible, but spacing and exact attachment cannot be characterized confidently from the supplied views.",
+      "Stipe": "Stipe short to moderately stout, tan-brown, slightly tapered and fibrous, detached from the pileus; basal end retains compact dark soil.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "Microscopy pending",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains dark soil and organic debris. No distinct volva or pronounced basal bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: an3-f34.JPG, an3-f34v2.JPG, an3-f34v3.JPG"
+    }
   },
   {
     "code": "AN3-F36",
@@ -2614,7 +3328,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "COLOR",
+      "Macroscopic color": "Small brown agaricoid basidiome represented by a detached rounded pileus and a short stout pale brown stipe. A ruler is present in both views for approximate scale.",
+      "Pileus — form / profile": "Pileus rounded, convex to shallowly plane, medium brown to olive-brown, smooth to finely matte, with a slightly darker marginal band and pale central attachment scar visible in one orientation.",
+      "Pileus — surface / ornamentation": "Pileus rounded, convex to shallowly plane, medium brown to olive-brown, smooth to finely matte, with a slightly darker marginal band and pale central attachment scar visible in one orientation.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Fertile surface is not exposed sharply enough to determine confidently whether lamellae, pores, or a smooth hymenium are present. The pale central scar indicates prior stipe attachment.",
+      "Stipe": "Stipe short and stout, tan-brown, slightly tapered, fibrous, detached from the pileus, and darker at the soil-bearing basal end.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, universal-veil remnants, or volva are visible in the supplied views.",
+      "Spore print / macroscopic deposit": "Microscopy pending",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains a small amount of compact dark soil and organic debris; no discrete volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: an3-f36.JPG, an3-f36v2.JPG"
+    }
   },
   {
     "code": "AN3-F37",
@@ -2679,7 +3410,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Several minute red-orange agaricoid basidiomata/fragments with tiny convex caps and slender orange-red stipes; specimens are incomplete and fertile surfaces are not resolved.",
+      "Dimensions": "Minute fragmented basidiomata; no calibrated scale visible.",
+      "Macroscopic color": "Pilei vivid red-orange to orange; stipes orange-red to yellow-orange; adhering soil/organic debris dark brown.",
+      "Pileus — form / profile": "Pilei minute, red-orange to orange, rounded to convex and smooth to finely matte; several are detached or incomplete.",
+      "Pileus — surface / ornamentation": "Pilei minute, red-orange to orange, rounded to convex and smooth to finely matte; several are detached or incomplete.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Fertile surfaces are not resolved clearly enough to characterize lamellae, spacing, or attachment reliably.",
+      "Stipe": "Stipes very slender, orange-red to yellow-orange, curved and fragile; several pieces are broken or detached.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Several fragments retain small amounts of dark soil/organic debris; the original substrate association is not preserved clearly.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: an3-f37.JPG Source photograph: IMG_0806.jpeg"
+    }
   },
   {
     "code": "AN3-F38",
@@ -2744,7 +3492,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute pale cream agaricoid basidiome with a small rounded cap and exceptionally slender dark brown stipe; the photograph is soft-focused and partly overexposed.",
+      "Dimensions": "Minute delicate basidiome; no calibrated scale visible.",
+      "Macroscopic color": "Pileus pale cream to buff; stipe medium to dark brown, darker distally.",
+      "Pileus — form / profile": "Pileus minute, pale cream to buff, rounded to shallowly convex, smooth to finely matte; details are limited by overexposure and scale.",
+      "Pileus — surface / ornamentation": "Pileus minute, pale cream to buff, rounded to shallowly convex, smooth to finely matte; details are limited by overexposure and scale.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Fertile surface is not resolved clearly enough to characterize lamellae, pores, spacing, or attachment.",
+      "Stipe": "Stipe exceptionally slender, medium to dark brown, slightly curved and fragile; attachment to the cap is visible but the basal end is incompletely preserved.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are discernible at the photographed scale.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore morphology and fertile-surface microcharacters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original base/substrate junction is not preserved clearly enough to characterize.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: an3-f38.JPG, an3-f38v2.JPG"
+    }
   },
   {
     "code": "AN3-F39",
@@ -2809,7 +3574,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Cluster of small agaricoid basidiomata with yellow-orange stipes and olive-brown to brown caps, arising from a common soil/forest-debris base; several caps are detached.",
+      "Dimensions": "Small clustered basidiomata; no calibrated scale visible.",
+      "Macroscopic color": "Pilei olive-brown to medium brown; stipes vivid yellow-orange; basal soil, roots, and organic debris dark brown.",
+      "Pileus — form / profile": "Pilei small, olive-brown to brown, convex to bell-shaped, smooth to finely matte; several caps are detached or collapsed.",
+      "Pileus — surface / ornamentation": "Pilei small, olive-brown to brown, convex to bell-shaped, smooth to finely matte; several caps are detached or collapsed.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Fertile surfaces are incompletely exposed and not sharp enough to characterize gill spacing or attachment confidently.",
+      "Stipe": "Stipes slender, vivid yellow-orange, smooth to finely fibrillose, straight to slightly curved, and clustered from common basal material.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Basidiospore dimensions and other microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Cluster remains attached to compact dark soil, fine roots, and forest organic debris; no distinct volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: an3-f39.JPG, an3-f39v2.JPG"
+    }
   },
   {
     "code": "AN3-F40",
@@ -2874,7 +3656,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small brown cap-like basidiome fragment attached to compact soil/organic debris; upper surface is rounded and concentrically wrinkled to faintly zonate, while the underside is not shown.",
+      "Dimensions": "Small fragmentary basidiome; no calibrated scale visible.",
+      "Macroscopic color": "Upper surface tan to medium brown with darker concentric wrinkles/zones; attached debris dark brown.",
+      "Pileus — form / profile": "Visible upper surface rounded to broadly convex, tan to medium brown, with conspicuous concentric wrinkling or shallow zoning and a fairly even margin.",
+      "Pileus — surface / ornamentation": "Visible upper surface rounded to broadly convex, tan to medium brown, with conspicuous concentric wrinkling or shallow zoning and a fairly even margin.",
+      "Pileus — margin": "Visible upper surface rounded to broadly convex, tan to medium brown, with conspicuous concentric wrinkling or shallow zoning and a fairly even margin.",
+      "Hymenophore": "Underside/fertile surface is not exposed in the supplied photograph, so gills, pores, teeth, or a smooth hymenium cannot be characterized.",
+      "Stipe": "No distinct central stipe is visible; the fruit body appears sessile or attached through a short obscured base.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Compact soil and organic debris remain attached at the base; the exact substrate or host association is not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: an3-f40.JPG Source photograph: IMG_0805.jpeg"
+    }
   },
   {
     "code": "AN3-F41",
@@ -2939,7 +3738,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Mixed/ambiguous F41 accession: one supplied image shows an elongated red-to-black clavate structure with enlarged pale basal tissue, whereas two companion images show a large gray-tan agaricoid basidiome with crowded cream lamellae and a stout white stipe.…",
+      "Dimensions": "Medium-to-large robust agaricoid basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Clavate image: black distal end, deep red shaft, pale pink-tan basal tissue. Agaricoid images: gray-tan to brown pileus, cream lamellae, white to cream stipe, dark soil.",
+      "Pileus — form / profile": "Two incompatible pileus states are represented: the clavate image has no differentiated pileus, while the companion agaricoid images show a broad fleshy gray-tan to brown cap with darker central staining and…",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "The clavate image shows no gills or pores. The companion agaricoid images show crowded cream to pale-buff lamellae with numerous lamellulae. This contradiction indicates mixed or mislabeled material.",
+      "Stipe": "Clavate image: deep red elongated shaft tapering to a blackened distal end. Agaricoid images: stout white to cream cylindrical/fibrous stipe, detached from the pileus and soil-bearing at the base.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No conventional annulus or cortina is visible. Expanded basal tissue may represent developmental or peridial tissue, but this cannot be determined confidently from a single photograph.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Clavate image has an enlarged pale pink-tan base with soil and plant debris; agaricoid images show a stout white stipe with compact dark soil at the base. Label reconciliation is required before assigning…",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: an3-f41.JPG, an3-f41v2.JPG, an3-f41v3.JPG"
+    }
   },
   {
     "code": "AN3-F42",
@@ -2998,7 +3814,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute delicate fruit body associated with a slender twig/litter fragment, bearing a very small pale tan to cream terminal cap- or cup-like structure on a thin pale brown stalk; the photograph is limited by scale and orientation.",
+      "Dimensions": "Minute delicate basidiome; no calibrated scale visible.",
+      "Macroscopic color": "Terminal structure pale tan to cream; slender stalk pale tan-brown; associated twig/litter brown; adhering debris dark brown.",
+      "Pileus — form / profile": "Terminal structure minute, pale tan to cream, rounded to shallowly cup- or cap-like and delicate; exact orientation and margin characters are difficult to resolve from the single view.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Terminal structure minute, pale tan to cream, rounded to shallowly cup- or cap-like and delicate; exact orientation and margin characters are difficult to resolve from the single view.",
+      "Hymenophore": "No gills, pores, teeth, or other fertile-surface structures are resolved confidently at the photographed scale.",
+      "Stipe": "Stalk very slender, pale tan-brown, curved and fragile, arising from or remaining attached to a thin woody/litter fragment.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied; microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base remains associated with a narrow twig or litter fragment and sparse organic debris; exact attachment and host/substrate relationship require closer examination.Source photograph: an3-f42.JPGMicroscope…",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN1-F1",
@@ -3063,7 +3896,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Pale tan, highly branched to ribbon-like fungal specimen attached to a compact dark substrate mass. Two views show numerous elongated, finger-like lobes or divided folds radiating outward from a common basal region.",
+      "Dimensions": "Small specimen; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Fungal tissue pale tan to buff; basal substrate dark brown.",
+      "Pileus — form / profile": "No conventional single cap is evident. The visible fruiting tissue is divided into multiple narrow, flattened to finger-like branches or folds.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No discrete gills or pores are clearly resolved. Fertile-surface type cannot be determined confidently from these photographs alone.",
+      "Stipe": "No distinct central stipe is evident; the branched tissue appears to arise from a common basal attachment.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, volva, or veil remnants visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Compact dark-brown soil, litter, or woody material remains firmly attached at the base.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f1.jpg, bn1-f1v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F2",
@@ -3128,7 +3978,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute pale agaricoid specimen with cream-buff cap, warm brown lamellae, extremely slender pale stipe, and soil-bearing basal tissue.",
+      "Dimensions": "Minute basidiome; ruler indicates pileus about 0.9–1.0 cm across and stipe roughly 3 cm long.",
+      "Macroscopic color": "Pileus cream to pale buff; lamellae tan to warm brown; stipe cream; basal soil dark brown.",
+      "Pileus — form / profile": "Pileus tiny, circular to slightly irregular, convex to shallowly plane, pale cream-buff with a slightly darker center and thin margin.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Pileus tiny, circular to slightly irregular, convex to shallowly plane, pale cream-buff with a slightly darker center and thin margin.",
+      "Hymenophore": "Lamellae warm tan to brown, moderately close, radiating from a small central attachment zone; shorter lamellulae are visible.",
+      "Stipe": "Stipe very slender, pale cream, smooth to finely fibrillose and slightly curved, with dark soil attached at the base. Ruler suggests approximately 3 cm length and near 0.1 cm diameter.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "A faint pale tan deposit is visible near the cap, but it is not sufficiently distinct to assign a controlled spore-print color. Confirmed spore-print color and calibrated microscopy remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains compact dark soil and organic debris. No distinct bulb or volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f2.jpg, bn1-f2v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F3",
@@ -3186,7 +4053,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Fragmentary pale cream to buff specimen consisting primarily of a long, narrow, curved stem-like or fibrous structure with two smaller detached fragments.",
+      "Dimensions": "Small fragmentary specimen; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cream to pale yellow-buff with slightly darker tan streaking.",
+      "Pileus — form / profile": "No intact cap is present in the supplied photograph.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No intact hymenophore is visible; gills, pores, or other fertile structures cannot be characterized.",
+      "Stipe": "A long, slender, curved pale structure is present and appears fibrous where broken.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal attachment and original substrate are not preserved clearly enough for characterization.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn1-f3.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F4",
@@ -3244,7 +4128,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Very small, delicate, dark-capped mushroom with an extremely slender, threadlike stipe. The specimen is shown intact with a small amount of dark substrate attached at the base.",
+      "Dimensions": "Minute fruit body; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cap dark brown; stipe medium to dark brown; basal debris dark brown to black.",
+      "Pileus — form / profile": "Cap tiny, conical to narrowly bell-shaped, darker toward the apex and apparently thin-fleshed.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Underside is not shown clearly enough for reliable characterization.",
+      "Stipe": "Very long relative to cap diameter, extremely slender, wiry, curved, and brown.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, volva, or veil remnants visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented in the supplied photograph. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Small clump of dark organic material remains attached to the base.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn1-f4.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F5",
@@ -3309,7 +4210,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small yellow agaricoid specimen with a detached cap and a long, slender pale-yellow stipe; one view exposes warm orange-brown lamellae beneath the cap.",
+      "Dimensions": "Small basidiome; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cap golden yellow to ochre-yellow; lamellae orange-brown; stipe pale yellow to yellow-tan, darker and soil-stained at the base.",
+      "Pileus — form / profile": "Pileus small, convex to hemispherical, smooth to finely radially striate toward the margin.",
+      "Pileus — surface / ornamentation": "Pileus small, convex to hemispherical, smooth to finely radially striate toward the margin.",
+      "Pileus — margin": "Pileus small, convex to hemispherical, smooth to finely radially striate toward the margin.",
+      "Hymenophore": "Lamellae orange-brown, moderately spaced, with shorter lamellulae visible. Exact attachment should be confirmed from an intact specimen.",
+      "Stipe": "Stipe long, slender, curved, pale yellow, longitudinally fibrous, with dark organic debris at the basal end.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No persistent annulus or volval remnant visible.",
+      "Spore print / macroscopic deposit": "A faint circular deposit may be present on the foil surface, but print color is not secure from the photograph alone. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains dark soil or organic material.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f5.jpg, bn1-f5v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F6",
@@ -3374,7 +4292,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Several minute brown rounded fungal bodies or cap fragments. Two views show compact hemispherical forms with small pieces of pale-brown tissue or substrate attached.",
+      "Dimensions": "Minute specimens; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Medium brown to dark tan, with paler buff tissue on broken or attached surfaces.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Undersides are not exposed clearly enough for reliable characterization.",
+      "Stipe": "No intact stipe is visible; only small broken attachment remnants are present.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Small pale to brown fragments remain attached to some specimens; substrate identity is uncertain.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f6.jpg, bn1-f6v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F7",
@@ -3432,7 +4367,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute delicate agaricoid basidiomata with orange-apricot strongly striate caps and exceptionally long, dark, hairlike stipes.",
+      "Dimensions": "Minute basidiomata; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus apricot-orange to tan-orange; lamellae pale orange-tan; stipes dark reddish brown to nearly black.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae appear pale orange-tan and relatively widely spaced beneath the tiny caps; exact attachment is difficult to confirm from the photographed orientation.",
+      "Stipe": "top 0.1 all the way height 5.0 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Microscopy pending. No controlled spore deposit is visible.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal ends retain minute fragments of soil or organic matter; no distinct bulb or volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn1-f7.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F8",
@@ -3497,7 +4449,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Two thick, cup- to disc-like fungal fruit bodies photographed in two views. The exposed fertile surfaces are smooth and salmon-brown to cinnamon-brown, while the outer surfaces are much darker and appear densely textured or soil-stained. A narrow pale rim is…",
+      "Dimensions": "Small to moderate specimens; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Inner fertile surface salmon-brown to reddish-cinnamon; margin pale cream to whitish; exterior dark brown to nearly black with adhering debris.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No gills or pores. The hymenial surface appears smooth and occupies the upper interior of each cup/disc.",
+      "Stipe": "No distinct elongated stipe visible; attachment appears basal and short.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy is required for ascospore or basidiospore determination, spore shape, pigmentation, and measurements.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Dark soil, organic debris, and possibly decayed woody material remain attached to the exterior and base.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f8.jpg, bn1-f8v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F9",
@@ -3555,7 +4524,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Very delicate, pale, translucent agaricoid specimens with extremely long dark threadlike stipes and tiny nearly white caps.",
+      "Dimensions": "Minute basidiomata; no scale visible. Direct measurement required.",
+      "Macroscopic color": "Caps translucent white to pale cream with slightly tan central discs; stipes dark brown to nearly black.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Pale lamellae are visible through the thin cap tissue; spacing appears relatively wide for the cap size.",
+      "Stipe": "less than 0.1 all the way height 4.0 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "One specimen retains a small pale organic fragment at the base; precise substrate association is uncertain.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn1-f9.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F10",
@@ -3620,7 +4606,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small delicate pale agaricoid basidiome with circular cream cap, darker central disc, pale lamellae, and a slender cream stipe attached to organic debris.",
+      "Dimensions": "Small specimen; no calibrated scale visible. Direct measurements required.",
+      "Macroscopic color": "Pileus cream to pale buff with tan-brown center; lamellae cream; stipe cream; basal debris dark brown.",
+      "Pileus — form / profile": "Pileus small, circular, convex to shallowly plane, cream to pale buff with a darker tan-brown central disc.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Margin thin, translucent-striate, and even to faintly scalloped.6.2 cm",
+      "Hymenophore": "Lamellae pale cream, moderately spaced to close, and relatively thick. Attachment appears adnate to narrowly decurrent; lamellulae are visible.",
+      "Stipe": "Stipe slender, cream to pale tan, smooth to finely fibrillose, and somewhat curved. Basal tissue retains dark organic debris.Top 0.8 all the way through height 4.1 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible on the small specimens.",
+      "Spore print / macroscopic deposit": "Microscopy image and controlled spore print pending. Spore-print color, basidiospore dimensions and shape, basidia, cystidia, pileipellis, clamps, and reagent reactions remain undocumented.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base appears to arise from dark soil and organic material. No distinct bulb, volva, or rooting extension can be confirmed.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f10.jpg, bn1-f10v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F11",
@@ -3685,7 +4688,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small subglobose to pear-shaped gasteroid basidiome with a dense reticulate-cracked tan surface and pale basal attachment tissue.",
+      "Dimensions": "Small basidiome; no calibrated scale visible. Direct measurement is required.",
+      "Macroscopic color": "Outer surface tan to cinnamon-brown with pale cream reticulation; basal tissue cream to off-white with attached soil.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No external lamellae or exposed pore layer are visible. Fertile tissue is enclosed within the gasteroid fruit body.",
+      "Stipe": "No true differentiated stipe is evident; a short narrowed basal attachment region is present.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Conventional annulus/cortina terminology is not applicable to this enclosed gasteroid form.",
+      "Spore print / macroscopic deposit": "Microscopy pending. Internal gleba and mature spore mass are not exposed in the supplied views.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal tissue retains compact soil and organic debris. Substrate association is terrestrial from the preserved base, but exact habitat is not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f11.jpg, bn1-f11v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F12",
@@ -3750,7 +4770,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small orange agaricoid specimen represented by an orange pileus, pale lamellae, and a detached pale stipe with soil-bearing base.",
+      "Dimensions": "Small basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus orange to orange-red; lamellae cream to pale yellow; stipe cream to yellowish white; basal soil dark brown.",
+      "Pileus — form / profile": "Pileus orange to orange-red, small, smooth, convex to shallowly plane, with a thin even margin and slightly darker central area.",
+      "Pileus — surface / ornamentation": "Pileus orange to orange-red, small, smooth, convex to shallowly plane, with a thin even margin and slightly darker central area.",
+      "Pileus — margin": "Pileus orange to orange-red, small, smooth, convex to shallowly plane, with a thin even margin and slightly darker central area.",
+      "Hymenophore": "Lamellae pale cream to yellowish, close to moderately close, radiating evenly from the stipe attachment. Attachment appears adnate to narrowly adnexed in the visible fragment.",
+      "Stipe": "Stipe pale cream to yellowish white, slender, cylindrical, and slightly curved; basal region is soil-stained. A second detached cap-and-stipe fragment is visible.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Basidiospore dimensions, spore-print color, basidia, cystidia, pileipellis, clamps, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal portion carries a compact dark soil mass. No distinct bulb or volva is visible in the supplied photograph.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn1-f12.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photographs: bn1-f12.jpg, bn1-f12v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F13",
@@ -3808,7 +4845,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Pale cream agaricoid specimen represented by a broad detached pileus with pale lamellae and a separate curved stipe.",
+      "Dimensions": "Medium to large specimen; no calibrated scale visible. Exact dimensions require direct measurement.",
+      "Macroscopic color": "Pileus cream to pale tan; lamellae cream to buff; stipe pale cream.",
+      "Pileus — form / profile": "Pileus broad, cream to pale tan, depressed to irregularly plane, dry to matte, with scattered adhering soil and organic particles.",
+      "Pileus — surface / ornamentation": "Pileus broad, cream to pale tan, depressed to irregularly plane, dry to matte, with scattered adhering soil and organic particles.",
+      "Pileus — margin": "Margin is wavy and somewhat damaged.0.9 cm",
+      "Hymenophore": "Lamellae cream to pale buff, close to moderately close, and apparently adnate to narrowly decurrent in the visible portion. Lamellulae are present.",
+      "Stipe": "Stipe pale cream to buff, cylindrical, gently curved, and longitudinally fibrillose. Both ends are detached; the intact pileus junction and basal structures are not preserved.Top 0.1 cm all the way through…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants visible. The detached material prevents certainty.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamps, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base not preserved in the supplied view. No bulb, volva, rooting extension, or substrate association can be evaluated.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn1-f13.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F14",
@@ -3873,7 +4927,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Collection of minute brown agaricoid mushrooms with very long, wiry reddish-brown stipes and small dark brown caps, including one specimen exposing tightly arranged dark lamellae.",
+      "Dimensions": "Minute to very small basidiomata; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Caps dark reddish brown to chestnut-brown; stipes reddish brown to dark brown, becoming nearly black toward some basal sections; lamellae dark brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae dark brown, crowded to moderately crowded, thin and delicate. Exact attachment is difficult to determine because of the small size and collapsed condition.",
+      "Stipe": "top 0.1 all the way down height 4.6 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus or other persistent veil structures are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print is visible. Microscopy is required for spore dimensions, pigmentation, germ-pore characters, cystidia, and pileipellis structure.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal ends carry small particles of dark soil and organic debris. No volva or bulb is evident.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f14.jpg, bn1-f14v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F15",
@@ -3938,7 +5009,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute brown agaricoid specimen with a tiny radially striate cap and an exceptionally long, hairlike dark stipe.",
+      "Dimensions": "Minute cap with an exceptionally long filiform stipe; no calibrated scale visible.",
+      "Macroscopic color": "Pileus medium to dark brown; lamellae brownish tan; stipe very dark brown.",
+      "Pileus — form / profile": "Pileus minute, brown to dark tan, convex to shallowly plane, with a darker central zone and finely striate to grooved radial surface.",
+      "Pileus — surface / ornamentation": "Pileus minute, brown to dark tan, convex to shallowly plane, with a darker central zone and finely striate to grooved radial surface.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae are visible on the tiny detached pileus and appear brownish tan, relatively widely spaced for the minute cap. Exact attachment cannot be confirmed from the separated material.",
+      "Stipe": "Stipe extraordinarily long, threadlike, dark brown to nearly black, smooth, wiry, and fragile, with little differentiation from apex to base. Top less than 0.1 cm all the way down height4.4 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, volval remnants, or other veil structures are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original base and substrate junction are not preserved. The extremely slender stipe appears detached or broken; no bulb or volva can be evaluated.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f15.jpg, bn1-f15v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F16",
@@ -4003,7 +5091,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Tan fibrous agaricoid specimen with darker central disc, conspicuously fibrillose cap surface, pinkish lamellae, pale curved stipe, and a visible salmon-pink spore deposit.",
+      "Dimensions": "Small to medium basidiomata; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus gray-buff to tan with dark brown center; lamellae salmon-pink to pinkish brown; stipe pale cream; spore deposit salmon-pink.",
+      "Pileus — form / profile": "Pileus tan to gray-buff with a distinctly darker brown central disc; surface is finely fibrous to scaly and conspicuously hairy or fibrillose toward the margin.",
+      "Pileus — surface / ornamentation": "Pileus tan to gray-buff with a distinctly darker brown central disc; surface is finely fibrous to scaly and conspicuously hairy or fibrillose toward the margin.",
+      "Pileus — margin": "Pileus tan to gray-buff with a distinctly darker brown central disc; surface is finely fibrous to scaly and conspicuously hairy or fibrillose toward the margin. Margin thin and somewhat ragged.",
+      "Hymenophore": "Lamellae crowded to close, pinkish tan to salmon-brown, irregularly wavy and somewhat forked in appearance. Attachment appears adnate to narrowly adnexed, but specimen damage limits certainty.",
+      "Stipe": "Stipe pale cream to buff, slender and slightly curved, longitudinally fibrillose, with a soil-bearing basal end. A detached broken stipe fragment is also present.Top.03 cm mid 0.6 cm base 0.6 cm height 4.2",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are evident. The photographed material does not show a persistent ring.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains compact dark soil and organic debris. No distinct volva is visible; the intact substrate junction is only partially preserved.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f16.jpg, bn1-f16v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F17",
@@ -4068,7 +5173,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large damaged agaricoid basidiome with broad salmon-orange pileus, crowded pale lamellae, thick cream stipe fragments, and a faint pale spore deposit on the collection surface.",
+      "Dimensions": "Large robust basidiome; no calibrated ruler visible in these photographs. Direct measurement is required.",
+      "Macroscopic color": "Pileus salmon-orange to pinkish tan; lamellae cream to yellow-buff; stipe cream to pale tan.",
+      "Pileus — form / profile": "Pileus large, fleshy, orange-pink to salmon, broadly convex to irregularly plane, with extensive bruising, abrasion, and adhering debris.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Margin is damaged and uneven.",
+      "Hymenophore": "Lamellae cream to pale yellow-buff, crowded, broad, and strongly radiating from the stipe attachment. Some gills are damaged and broken near the margin.",
+      "Stipe": "Stipe stout, cream to pale buff, longitudinally fibrous, and broken into several pieces. The photographed specimen shows thick, firm context rather than a delicate hollow stipe. Top 1.9 mid 2.5 base 0.5 height…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible in the preserved material.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal portion is incomplete and soil-stained; no distinct volva or bulb is evident.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f17.jpg, bn1-f17v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photographs: bn1-f17.jpg, bn1-f17v2.jpg"
+    }
   },
   {
     "code": "BN1-F18",
@@ -4126,7 +5248,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small dark-brown mushroom represented by a detached cap and a pale, curved stipe segment with adherent woody or soil debris.",
+      "Dimensions": "Small specimen; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cap very dark brown to nearly black-brown; stipe pale cream to buff with faint yellow-brown staining near the base.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not visible in the supplied image.",
+      "Stipe": "top o.2 cm mid 0.2 base 0.1 height 4.0 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No clear annulus or volval structure visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Brown woody or soil fragments remain attached around the basal end.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn1-f18.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F19",
@@ -4191,7 +5330,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute vivid red agaricoid fragments with orange-red cap pieces, pale orange-cream lamellae, and long hairlike reddish-brown stipes.",
+      "Dimensions": "Minute basidiomata; ruler indicates cap roughly 0.6–0.8 cm and longest stipe approximately 3.5–4.0 cm.",
+      "Macroscopic color": "Pileus vivid red to orange-red; lamellae pale orange-cream; stipes reddish brown to dark brown with paler tips.",
+      "Pileus — form / profile": "Pileus fragments vivid red to orange-red, smooth to finely matte, thin and delicate, with a rounded margin. Ruler indicates the larger cap is roughly 0.6–0.8 cm across.",
+      "Pileus — surface / ornamentation": "Pileus fragments vivid red to orange-red, smooth to finely matte, thin and delicate, with a rounded margin.",
+      "Pileus — margin": "Pileus fragments vivid red to orange-red, smooth to finely matte, thin and delicate, with a rounded margin.",
+      "Hymenophore": "Lamellae pale cream to orange-cream, moderately spaced, and visible on the detached cap fragment. Attachment cannot be confirmed with confidence from the separated material.",
+      "Stipe": "Stipes exceptionally slender and filiform, reddish brown to dark brown, with paler apical portions. Ruler suggests the longer fragment is about 3.5–4.0 cm and the shorter roughly 2.5–3.0 cm; diameter is less…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible on the delicate stipe fragments.",
+      "Spore print / macroscopic deposit": "No controlled spore deposit is evident. Spore-print color, microscopic spore dimensions, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal attachments are incompletely preserved and the stipes are detached. No distinct bulb or volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn1-f19.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photographs: bn1-f19.jpg, bn1-f19v2.jpg"
+    }
   },
   {
     "code": "BN1-F20",
@@ -4249,7 +5405,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Reddish-brown agaricoid specimens represented by several pilei and detached slender stipes, with brownish lamellae and soil-stained basal tissue.",
+      "Dimensions": "Small to medium basidiomata; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus reddish brown to chestnut; lamellae cinnamon-brown; stipes orange-brown to tan; basal soil dark brown.",
+      "Pileus — form / profile": "Pileus reddish brown to chestnut, convex to broadly plane, smooth to finely matte, with a darker center and subtle radial translucency. Margin is thin and slightly wavy.Big cap 3.2 cmSmallest cap 1.1 cm",
+      "Pileus — surface / ornamentation": "Pileus reddish brown to chestnut, convex to broadly plane, smooth to finely matte, with a darker center and subtle radial translucency.",
+      "Pileus — margin": "Margin is thin and slightly wavy.Big cap 3.2 cmSmallest cap 1.1 cm",
+      "Hymenophore": "Lamellae brownish orange to cinnamon-brown, moderately close, with a darker central attachment zone visible on the detached cap. Attachment appears adnate to narrowly adnexed.",
+      "Stipe": "Stipes slender, orange-brown to tan, smooth to finely fibrillose, and several are detached. One fragment retains a darker soil-coated basal end.Biggest stem top 0.4cm all the way height 2.8 cm Smallest stem…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are evident in the supplied material.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal ends retain dark soil and organic debris on some stipes. No volva, distinct bulb, or rooting extension is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn1-f20.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F21",
@@ -4314,7 +5487,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Pale cream to tan agaricoid specimen shown in fragmented condition, with a detached stipe and a cap fragment exposing the lamellae.",
+      "Dimensions": "Small to medium basidiome; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cap and gills pale cream to buff-tan; stipe off-white to cream with darker soil-stained basal tissue.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae cream to buff, moderately crowded, uneven from breakage, and visibly radiating from the central attachment region.",
+      "Stipe": "top 0.6 mid 0.5 base 0.3 cm height 2.7 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No persistent annulus or volval structure is clearly visible in the supplied material.",
+      "Spore print / macroscopic deposit": "A faint pale deposit may be present on the foil, but print color is not secure from the photograph alone. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains dark soil or organic debris; precise substrate association is uncertain.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f21.jpg, bn1-f21v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F22",
@@ -4379,7 +5569,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Cluster of minute delicate agaricoid basidiomata with translucent pale caps, darker central discs, and very slender reddish-brown stipes.",
+      "Dimensions": "Minute basidiomata; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus pale apricot to tan with darker orange-brown center; lamellae cream; stipe reddish brown to orange-brown.",
+      "Pileus — form / profile": "Pilei tiny, convex to nearly plane, pale tan to apricot with a darker orange-brown central disc and strongly translucent-striate margins.0.6 cm",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae pale cream, moderately spaced, and broadly attached to slightly decurrent on the visible specimen. Lamellulae are sparse to moderate.",
+      "Stipe": "Stipes extremely slender, filiform, reddish brown to orange-brown, smooth, and fragile. At least one fruit body is attached to a small soil/organic fragment.Top les than 0.1 cm all the way height 2.2 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, volval remnants, or other veil structures are visible on the delicate stipes.",
+      "Spore print / macroscopic deposit": "Microscopy image and controlled spore print pending. Spore-print color, basidiospore dimensions, Q ratio, ornamentation, basidia, cystidia, pileipellis, clamps, and reagent reactions remain undocumented.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal tissue is attached to dark soil and decomposed organic matter. No distinct bulb, volva, or rooting extension is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f22.jpg, bn1-f22v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F23",
@@ -4444,7 +5651,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f23.jpg, bn1-f23v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F24",
@@ -4509,7 +5733,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large pink to rose agaricoid specimen with broad damaged pileus, crowded pale lamellae, and a stout detached pale stipe.",
+      "Dimensions": "Large robust specimen; no calibrated scale visible. Direct physical measurements are required.",
+      "Macroscopic color": "Pileus rose-pink to salmon with cream exposed context; lamellae cream to pale buff; stipe cream to tan.",
+      "Pileus — form / profile": "Pileus large, fleshy, depressed to irregularly plane, pink to rose-red with broad cream abrasions and adhering forest debris.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Margin is uneven and damaged.7.2 cm",
+      "Hymenophore": "Lamellae cream to pale buff, close to crowded, broad, and apparently adnate to slightly decurrent. Numerous lamellulae are visible; edges are somewhat irregular from damage.",
+      "Stipe": "Stipe long, stout, pale cream to buff, longitudinally fibrillose and curved. The basal end retains a small amount of soil and debris; interior appears solid to fibrous.Top 2.2 cm mid 1.7 cm base 1.1 cm height…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible. Fragmentation prevents confirmation of complete absence.",
+      "Spore print / macroscopic deposit": "No controlled spore print or microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamps, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base is incomplete and mostly cleanly detached. No bulb, volva, rooting extension, or attached substrate is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f24.jpg, bn1-f24v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F25",
@@ -4567,7 +5808,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small compact orange-brown fungal fragment with an irregularly folded, lobed surface and minor dark debris at one edge.",
+      "Dimensions": "Small fragment; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Orange-brown to cinnamon with slightly darker central folds and paler outer tissue.",
+      "Pileus — form / profile": "Irregularly lobed and folded rather than forming a clearly intact conventional cap.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No discrete gills or pores are confidently visible at this scale. The exposed surface appears wrinkled and folded.",
+      "Stipe": "No distinct stipe visible.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Minor dark debris is attached along the lower edge; original substrate is not identifiable from the photograph.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn1f25.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F26",
@@ -4625,7 +5883,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Fragmentary woody material bearing pale cream fungal-looking tissue and fibrous, torn structures. Two views show multiple splintered pieces rather than an intact fruit body.",
+      "Dimensions": "Fragmentary sample; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Wood medium to dark brown; associated pale tissue cream to off-white, with localized tan to reddish-brown areas.",
+      "Pileus — form / profile": "No intact pileus is present.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No complete hymenophore is preserved. Some pale folded or fibrous tissue is present, but its fertile-surface type cannot be established from these photographs alone.",
+      "Stipe": "No intact stipe visible.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The sample is directly associated with decayed or splintered woody substrate.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f26.jpg, bn1-f26v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F27",
@@ -4690,7 +5965,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f27.jpg, bn1-f27v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F28",
@@ -4748,7 +6040,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Fragmented small orange basidiomata represented mainly by slender orange stipes and soil-bearing basal clusters; intact pilei are not preserved in the supplied view.",
+      "Dimensions": "Small fragmented basidiomata; no calibrated scale visible.",
+      "Macroscopic color": "Stipes vivid orange to yellow-orange; exposed context pale yellow-orange; attached soil dark brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Hymenophore is not adequately shown; gill or pore configuration cannot be determined from this photograph.",
+      "Stipe": "top 0.1 mid 0.1 base 0.2 height 2.1",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants can be confirmed from the fragmented material.",
+      "Spore print / macroscopic deposit": "Microscopy pending. No controlled spore deposit is evident.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Multiple basal ends remain attached to compact dark soil and fine organic debris; no distinct volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn1-f28.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F29",
@@ -4813,7 +6122,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Brown agaricoid specimens with broad tawny caps, dense brownish lamellae, long pale fibrous stipes, and damaged margins.",
+      "Dimensions": "Medium to large basidiomata; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus tawny to orange-brown; lamellae tan to cinnamon; stipe cream to pale buff.",
+      "Pileus — form / profile": "Pileus large, tawny to orange-brown, broadly convex to plane, thick-fleshed, with a smooth to finely fibrillose surface and irregular damaged margin.",
+      "Pileus — surface / ornamentation": "Pileus large, tawny to orange-brown, broadly convex to plane, thick-fleshed, with a smooth to finely fibrillose surface and irregular damaged margin.",
+      "Pileus — margin": "Pileus large, tawny to orange-brown, broadly convex to plane, thick-fleshed, with a smooth to finely fibrillose surface and irregular damaged margin.",
+      "Hymenophore": "Lamellae orange-brown to tan, broad, close to crowded and somewhat wavy; the detached condition prevents confident determination of attachment.",
+      "Stipe": "Stipe stout to moderately robust, cream to pale tan, fibrous, and detached or broken; the intact base is not fully preserved.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print is shown. Spore-print color and calibrated microscopy remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal tissue is soil-stained and incomplete; no distinct volva or bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f29.jpg, bn1-f29v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photograph: bn1-f29.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F30",
@@ -4878,7 +6204,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Broad orange-brown agaricoid specimen with an irregular lobed pileus; photographs emphasize the cap surface and broken margin, with the attachment area only partly preserved.",
+      "Dimensions": "Medium broad pileus; no calibrated scale visible. Direct measurement is required.",
+      "Macroscopic color": "Pileus tawny-orange to brownish orange with darker central and marginal areas; exposed context pale orange-tan.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "The underside is not sufficiently exposed in the supplied photographs for a reliable hymenophore description.",
+      "Stipe": "A complete differentiated stipe is not preserved in the views; attachment architecture is obscured by fragmentation.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants can be confirmed.",
+      "Spore print / macroscopic deposit": "Microscopy pending. No controlled spore print is shown.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original substrate junction is not preserved; one dark compact fragment of soil or organic material is visible near the pileus.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f30.jpg, bn1-f30v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F31",
@@ -4943,7 +6286,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Medium pale cream agaricoid specimen with broad cap, crowded cream lamellae, long pale stipe, attached forest debris, and a clearly visible white spore print.",
+      "Dimensions": "Ruler indicates pileus approximately 3.5–4.0 cm across and stipe approximately 5.5–6.0 cm long.",
+      "Macroscopic color": "Pileus cream to off-white with pale buff center; lamellae cream; stipe cream to pale buff; basal debris brown; spore deposit white.",
+      "Pileus — form / profile": "Pileus broad, cream to off-white, circular to slightly irregular, convex to nearly plane with a subtle warmer central disc and thin margin.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Pileus broad, cream to off-white, circular to slightly irregular, convex to nearly plane with a subtle warmer central disc and thin margin.",
+      "Hymenophore": "Lamellae cream to off-white, close to crowded and thin, with numerous lamellulae. Attachment appears adnate to narrowly adnexed in the underside view.",
+      "Stipe": "Stipe long, pale cream to buff, slender to moderately robust, gently curved and finely fibrillose, with adhering forest debris at the basal end. Top 0.1 cm mid 0.2 cm base 0. 3c height 6.0cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end carries leaf, soil, and woody debris. No distinct bulb, volva, or rooting extension is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f31.jpg, bn1-f31v2.jpg, bn1-f31v3.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F32",
@@ -5008,7 +6368,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Medium tawny-orange agaricoid specimen with broad ochre cap, crowded orange-brown lamellae, stout pale-orange stipe, and soil-bearing base.",
+      "Dimensions": "Ruler indicates pileus about 4 cm across; overall basidiome roughly 4–5 cm tall in the photographed orientation.",
+      "Macroscopic color": "Pileus tawny to ochre-orange; lamellae cinnamon-orange; stipe pale ochre; basal soil dark brown.",
+      "Pileus — form / profile": "Pileus tawny to ochre-orange, broadly convex to nearly plane, with a paler irregular depressed or damaged central area and adhering debris.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae orange-brown to cinnamon-ochre, close to crowded and somewhat thick; attachment appears adnate to slightly decurrent, but the photographed angle limits certainty.",
+      "Stipe": "Stipe stout, cylindrical to slightly tapering, pale ochre to orange-tan, with a soil-bearing basal end. Ruler suggests roughly 2.5–3.0 cm exposed length and about 0.7–0.9 cm maximum thickness.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy is shown. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamps, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal region retains compact soil and fine rootlike debris. No distinct volva or pronounced basal bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f32.jpg, bn1-f32v2.jpg, bn1-f32v3.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photographs: bn1-f32.jpg, bn1-f32v2.jpg"
+    }
   },
   {
     "code": "BN1-F33",
@@ -5073,7 +6450,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Irregular white fungal fragments with thick pale context and extensive dark soil/organic debris adhering to one face; intact growth form is not preserved.",
+      "Dimensions": "Two irregular fragments; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Fungal tissue white to cream; adhering soil and organic material dark brown.",
+      "Pileus — form / profile": "No conventional pileus is preserved. Fragments are thick, irregular, white to cream, and fleshy to firm, with dark soil coating portions of one side.3.2 cm",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "The fertile surface cannot be confidently resolved from the photographs. No definite lamellae or organized pores are visible on the exposed pale tissue.",
+      "Stipe": "A differentiated central stipe is not visible. The material consists of irregular thick white fungal tissue with soil adhering to one surface.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures can be confirmed from the irregular fragments; annulus and volva are not evident.",
+      "Spore print / macroscopic deposit": "Microscopy and a controlled spore deposit are pending. Spore-bearing structures, basidiospore dimensions, hyphal construction, cystidia, clamps, and reagent reactions remain undocumented.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Fragments bear heavy dark soil and organic material on one face, suggesting direct contact with ground or woody substrate. Attachment architecture is not preserved.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f33.jpg, bn1-f33v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F34",
@@ -5138,7 +6532,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute orange-red agaricoid specimen with strongly striate cap, pale orange lamellae, very slender brown stipe, attached soil/organic debris, and a conspicuous white radial spore deposit.",
+      "Dimensions": "Minute basidiome; no calibrated scale visible. Direct measurement is required.",
+      "Macroscopic color": "Pileus orange-red; lamellae pale orange to orange-cream; stipe reddish brown; spore deposit white.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae pale orange to orange-cream, relatively widely spaced, and clearly visible in the underside view; exact attachment remains difficult to determine.",
+      "Stipe": "top 0.1 cm mid 0.1 base 0.5 height 2.5",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Visible white radial spore deposit on the collection surface. Microscopic dimensions, ornamentation, basidia, cystidia, pileipellis, clamps, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains a compact fragment of dark decomposed organic matter and soil. No bulb or volva is evident.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f34.jpg, bn1-f34v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F35",
@@ -5203,7 +6614,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Orange-brown agaricoid specimen represented by a detached pileus, exposed lamellae, and a separate brownish stipe with soil-coated base.",
+      "Dimensions": "Small to medium basidiome; no calibrated scale visible. Direct measurement is required.",
+      "Macroscopic color": "Pileus tawny to orange-brown; lamellae orange-ochre; stipe tan to dark brown; basal soil dark brown.",
+      "Pileus — form / profile": "Pileus orange-brown to tawny, convex to broadly plane, smooth to finely matte, with a slightly darker central zone and a thin even margin.2.8 cm",
+      "Pileus — surface / ornamentation": "Pileus orange-brown to tawny, convex to broadly plane, smooth to finely matte, with a slightly darker central zone and a thin even margin.2.8 cm",
+      "Pileus — margin": "Pileus orange-brown to tawny, convex to broadly plane, smooth to finely matte, with a slightly darker central zone and a thin even margin.2.8 cm",
+      "Hymenophore": "Lamellae orange to ochre, moderately close, and relatively thick. Attachment appears adnate to narrowly adnexed in the detached cap view.",
+      "Stipe": "Stipe medium-length, cylindrical, tan to brown, darker toward the soil-coated base, with a fibrous to fibrillose surface.Top 0.3 mid 0.4 base 0.5 cm height 3.4 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible in the preserved fragments.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamps, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end is dark with adhering soil and organic particles. No distinct volva, bulb, or rooting extension is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f35.jpg, bn1-f35v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F36",
@@ -5261,7 +6689,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Two detached polyporoid fragments with dense fine pores and brown to cream zonation; no conventional lamellae or central stipe are present.",
+      "Dimensions": "Two small to medium fragments; no calibrated scale visible.",
+      "Macroscopic color": "Fertile surface cream to pale buff with pinkish-brown to cinnamon-brown staining; context pale cream; darker brown areas toward one fragment margin.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Hymenophore distinctly poroid, with numerous minute closely packed circular to slightly angular pores over a broad pale surface.",
+      "Stipe": "No differentiated central stipe is visible; the specimen is consistent with a sessile or laterally attached polyporoid growth form.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Veil structures are absent and not applicable to the preserved polyporoid fragments.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore deposit pending. Basidiospore dimensions, basidia, cystidia, hyphal system, clamp connections, and reagent reactions remain undocumented.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original attachment to woody substrate is not preserved in the fragments. Host identity and decay stage are not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn1-f36.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F37",
@@ -5319,7 +6764,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN1-F38",
@@ -5384,7 +6846,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Collection of brown agaricoid basidiomata with radially fibrillose caps, cinnamon-brown lamellae, long pale stipes, and a clearly visible rusty-brown spore deposit.",
+      "Dimensions": "Multiple medium basidiomata; no calibrated ruler visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus chestnut to dark brown; lamellae rusty cinnamon-brown; stipes cream to tan; spore deposit rusty reddish brown.",
+      "Pileus — form / profile": "Pilei medium to large, chestnut to dark brown, broadly convex to nearly plane, radially fibrillose to finely striate, with darker central discs and irregular damaged margins.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae cinnamon to rusty brown, crowded to close, broad and somewhat wavy; attachment appears adnate to narrowly adnexed.",
+      "Stipe": "Stipe long, slender, cream to pale tan, fibrous and gently curved, with darker soil at the base.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains soil and organic debris; no distinct volva or pronounced bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f38.jpg, bn1-f38v2.jpg, bn1-f38v3.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photographs: bn1-f38.jpg, bn1-f38v2.jpg"
+    }
   },
   {
     "code": "BN1-F39",
@@ -5449,7 +6928,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Woody bark segment bearing numerous small orange-tan sessile fungal patches and narrow shelf-like or curled lobes distributed along the surface.",
+      "Dimensions": "Woody segment about 10–11 cm long; individual fungal patches mostly sub-centimeter to roughly 1–2 cm.",
+      "Macroscopic color": "Basidiomata orange-tan to salmon; bark gray-brown; minor green lichen/moss present.",
+      "Pileus — form / profile": "No single conventional pileus is differentiated.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Fertile surface is not confidently resolved in the photographs. True lamellae are absent; some patches appear smooth to finely wrinkled or irregularly poroid, requiring microscopy for confirmation.",
+      "Stipe": "No differentiated stipe is present. Fruiting bodies are sessile and arise directly from the bark surface.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus or other veil structures are present; veil terminology is not applicable to these sessile crust/shelf-like fruiting bodies.",
+      "Spore print / macroscopic deposit": "No controlled spore deposit or calibrated microscopy is supplied. Spore dimensions, basidia, cystidia, hyphal construction, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Directly attached to bark on a woody segment approximately 10–11 cm long. Host identity is not recorded; bark also bears minor lichen/moss growth.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f39.jpg, bn1-f39v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photograph: bn1-f39.jpg"
+    }
   },
   {
     "code": "BN1-F40",
@@ -5514,7 +7010,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute delicate agaricoid basidiomata with vivid orange-red caps, pale lamellae, and extremely slender two-toned stipes.",
+      "Dimensions": "Minute basidiomata; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus vivid orange-red; lamellae pale cream; stipe cream to orange-red, becoming reddish toward the base.",
+      "Pileus — form / profile": "Pilei minute, smooth, convex to nearly plane, vivid orange-red to red-orange, with a thin even margin and slight central darkening.Big 1.1 cm Small 0.8 cm",
+      "Pileus — surface / ornamentation": "Pilei minute, smooth, convex to nearly plane, vivid orange-red to red-orange, with a thin even margin and slight central darkening.Big 1.1 cm Small 0.8 cm",
+      "Pileus — margin": "Pilei minute, smooth, convex to nearly plane, vivid orange-red to red-orange, with a thin even margin and slight central darkening.Big 1.1 cm Small 0.8 cm",
+      "Hymenophore": "Lamellae pale cream, moderately spaced, and broadly attached; attachment appears adnate to slightly decurrent in the detached cap view.",
+      "Stipe": "Stipes very slender and filiform, pale near the apex and grading to orange-red or reddish brown toward the base. Surface appears smooth and fragile.Big stem top 0.1 cm all the way height 3.2 cm Smaller less…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible on the photographed specimens.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore print pending. Spore-print color, basidiospore dimensions, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain undocumented.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal portions are not fully preserved; one stipe end carries dark adhering soil. No volva or bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn1-f40.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F41",
@@ -5579,7 +7092,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f41.jpg, bn1-f41v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F42",
@@ -5644,7 +7174,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f42.jpg, bn1-f42v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F43",
@@ -5709,7 +7256,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Sessile white to cream polyporoid growth forming overlapping shelves along a bark-covered woody branch; underside appears toothed to labyrinthine.",
+      "Dimensions": "Multiple small shelves distributed along a branch segment; no calibrated scale visible.",
+      "Macroscopic color": "Basidiome white to cream; fertile surface cream; bark gray-green to brown.",
+      "Pileus — form / profile": "Thin semicircular to irregular shelf-like pilei, cream to pale buff, with smooth to finely tomentose upper surfaces and wavy pale margins.Multiple fruiting bodies2.5 cm",
+      "Pileus — surface / ornamentation": "Thin semicircular to irregular shelf-like pilei, cream to pale buff, with smooth to finely tomentose upper surfaces and wavy pale margins.Multiple fruiting bodies2.5 cm",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Hymenophore toothlike to irregularly poroid, cream to off-white, with elongated labyrinthine structures visible beneath the shelf margins. True lamellae are absent.",
+      "Stipe": "A conventional central stipe is absent; fruiting bodies are sessile to laterally attached along the woody substrate.Top 0.1 all the way height 3.2",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Veil structures are absent and not applicable to this sessile polyporoid growth form.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore print pending. Basidiospore dimensions, basidia, cystidia, hyphal system, clamp connections, and reagent reactions remain undocumented.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basidiome is directly attached to bark on a woody branch. Growth is effused-reflexed with multiple shelf margins. Host identity and decay stage are not recorded.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f43.jpg, bn1-f43v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F44",
@@ -5767,7 +7331,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Highly fragmented minute orange-brown fungal material consisting of several curled or folded pieces with no intact cap-to-stipe architecture preserved.",
+      "Dimensions": "Minute fragments; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Fragments orange-brown to tawny, with darker brown folds and pale exposed interior tissue.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "A complete hymenophore cannot be evaluated. Some fragments show folded or ridge-like tissue, but organized lamellae or pores cannot be confirmed confidently.",
+      "Stipe": "No intact differentiated stipe is preserved in the supplied material.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Veil structures cannot be evaluated because of fragmentation.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore collection pending. No definitive spore deposit is visible.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original base and substrate association are not preserved in the photographed fragments.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn1-f44.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F45",
@@ -5832,7 +7413,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn1-f45.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F46",
@@ -5897,7 +7495,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small pale agaricoid specimens represented by two thin pilei and several detached slender stipes, with attached soil and organic debris.",
+      "Dimensions": "Small basidiomata; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus cream to pale buff; lamellae cream; stipes cream to light tan; adherent soil dark brown.",
+      "Pileus — form / profile": "Pilei pale cream to buff, small, convex to shallowly depressed, smooth to faintly translucent, with thin irregular margins.",
+      "Pileus — surface / ornamentation": "Pilei pale cream to buff, small, convex to shallowly depressed, smooth to faintly translucent, with thin irregular margins. Surface bears scattered soil particles.1.9cm",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae pale cream, moderately spaced, and relatively broad for the small pileus. Attachment appears adnate to slightly decurrent in the visible fragment, but damage prevents certainty.",
+      "Stipe": "Stipes very slender, curved, pale cream to tan, and smooth to finely fibrillose. Several are detached or broken; interiors and exact pileus attachments are incompletely shown.Top 0.4 cm mid 0.5 cm base 0.6 cm…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants are visible. The small size and damaged condition limit certainty.",
+      "Spore print / macroscopic deposit": "No controlled spore deposit or calibrated microscopy was supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamps, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal portions retain soil and organic debris. No distinct volva or rooting extension is visible. Original substrate and host association are not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f46.jpg, bn1-f46v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F47",
@@ -5955,7 +7570,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Medium brown agaricoid specimen represented by a sectioned pileus with pale lamellae and a detached curved pale stipe.",
+      "Dimensions": "No calibrated ruler visible. Exact dimensions should be entered from the preserved specimen.",
+      "Macroscopic color": "Pileus medium brown to chestnut; lamellae pale cream; context cream; stipe cream to pale buff.",
+      "Pileus — form / profile": "Pileus smooth to finely matte, brown to chestnut, broadly convex, with a thick pale context visible in section.",
+      "Pileus — surface / ornamentation": "Pileus smooth to finely matte, brown to chestnut, broadly convex, with a thick pale context visible in section.",
+      "Pileus — margin": "Margin appears entire to slightly incurved.4.0 cm",
+      "Hymenophore": "True lamellae are present, pale cream, moderately spaced, and relatively thick. Attachment appears adnate to narrowly adnexed in the sectioned cap, though the detached condition prevents complete confirmation.",
+      "Stipe": "Stipe pale cream to buff, curved, cylindrical to slightly tapering, longitudinally fibrillose, and apparently solid. Both ends are detached; pileus attachment and basal architecture are not preserved.Top 0.9cm…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, volval remnants, or other veil structures are visible on the photographed cap and detached stipe. Fragmentation limits certainty.",
+      "Spore print / macroscopic deposit": "Microscopy image and controlled spore print pending. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain undocumented.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base and substrate junction not intact in the photographs; the detached lower stipe is pale and cleanly broken. No bulb, volva, rooting extension, or attached substrate can be confirmed.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn1-f47.jpg, bn1-f47v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN1-F48",
@@ -6014,7 +7646,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Mixed small orange-yellow agaricoid collection including a delicate pale yellow specimen with long slender stipe and additional collapsed orange-brown cap fragments.",
+      "Dimensions": "Small basidiomata; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus pale yellow to orange-yellow; lamellae yellow to pale ochre; stipe cream-yellow to pale tan; basal soil dark brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Visible lamellae are pale yellow to ochre, moderately spaced and thin on the intact specimen. Fragmented caps show crowded folded lamellae but attachment cannot be determined reliably.",
+      "Stipe": "top 0.1 cm all the way height 4.1cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore print pending. No definitive deposit is documented in the supplied photograph.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal ends retain compact dark soil and organic debris. No distinct volva or pronounced bulb is evident.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn1-f48.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN2-F1",
@@ -6079,7 +7728,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large robust boletoid basidiome with a strongly mottled gray-brown pileus, a pale gray-tan poroid hymenophore, a long curved gray-brown stipe, and an enlarged pale soil-bearing base.",
+      "Dimensions": "Large basidiome; no calibrated whole-specimen scale visible. Direct measurements of pileus diameter, stipe length/diameter, and pore density remain…",
+      "Macroscopic color": "Pileus taupe to gray-brown with irregular dark brown patches and pale abrasions; pore surface gray-tan to pale brown; stipe gray-brown; basal context cream to off-white…",
+      "Pileus — form / profile": "Broadly convex, thick, dry-appearing, strongly mottled and coarsely scurfy/scaly; margin thick and somewhat irregular.",
+      "Pileus — surface / ornamentation": "Broadly convex, thick, dry-appearing, strongly mottled and coarsely scurfy/scaly; margin thick and somewhat irregular.",
+      "Pileus — margin": "Broadly convex, thick, dry-appearing, strongly mottled and coarsely scurfy/scaly; margin thick and somewhat irregular.",
+      "Hymenophore": "Poroid, not lamellate; pores fine to medium, crowded, round to slightly angular, gray-tan to brownish gray.",
+      "Stipe": "Long, stout, curved, gray-brown, densely fibrillose/scurfy; slightly tapered toward the apex and expanding into the base.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or volva visible in the photographs.",
+      "Spore print / macroscopic deposit": "Spore print not documented. Microscopic spore morphology, dimensions, and basidial characters pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Enlarged pale irregular base with adhering dark soil and organic debris; terrestrial collection indicated.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: BN2-F1.JPG, BN2-F1v2.JPG, BN2-F1v3.JPG"
+    }
   },
   {
     "code": "BN2-F2",
@@ -6144,7 +7810,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large agaricoid basidiome with a broad tawny to reddish-brown pileus, conspicuous yellow exposed context at abraded areas, vivid yellow lamellae, and a long curved yellow-brown stipe.",
+      "Dimensions": "Large basidiome; no calibrated whole-specimen scale visible. Direct pileus diameter and stipe dimensions remain required.",
+      "Macroscopic color": "Pileus tawny, cinnamon to reddish-brown; exposed context bright yellow; lamellae vivid sulfur- to golden-yellow; stipe yellow-ochre with olive-brown streaking; basal…",
+      "Pileus — form / profile": "Broadly convex to nearly plane, smooth to matte, with multiple peeled/abraded patches exposing yellow underlying tissue; margin somewhat irregular from handling.",
+      "Pileus — surface / ornamentation": "Broadly convex to nearly plane, smooth to matte, with multiple peeled/abraded patches exposing yellow underlying tissue; margin somewhat irregular from handling.",
+      "Pileus — margin": "Broadly convex to nearly plane, smooth to matte, with multiple peeled/abraded patches exposing yellow underlying tissue; margin somewhat irregular from handling.",
+      "Hymenophore": "Lamellate; gills bright yellow, close to crowded, moderately broad and somewhat wavy. Attachment appears adnate to shallowly sinuate in the available view but should be confirmed directly.",
+      "Stipe": "Long, curved, yellow-brown to ochre, longitudinally fibrillose, slightly tapered, with soil adhering at the base.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or volva visible.",
+      "Spore print / macroscopic deposit": "Spore print not documented. Microscopic spore morphology and dimensions pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Terrestrial; basal end retains dark soil and organic debris.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: BN2-F2.JPG, BN2-F2v2.JPG"
+    }
   },
   {
     "code": "BN2-F3",
@@ -6209,7 +7892,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Dense dark brown to nearly black tangled filamentous mass accompanied by abundant fine dark particulate material. No intact pileus, stipe, or other complete basidiome architecture is preserved in the photographed sample.",
+      "Dimensions": "Small compact mass; no calibrated scale visible. Direct measurement is required.",
+      "Macroscopic color": "Filamentous material dark brown to black-brown; loose particulate material dark brown to black.",
+      "Pileus — form / profile": "No differentiated pileus demonstrable in the preserved material.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No lamellae, pores, teeth, or other macroscopic hymenophore can be demonstrated from the photographs.",
+      "Stipe": "No differentiated stipe; sample consists predominantly of tangled hairlike or rootlike filaments.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not demonstrable.",
+      "Spore print / macroscopic deposit": "Fine dark powder is present, but it cannot be designated a spore deposit from photographs alone. Microscopic examination is required to determine whether spores or other fungal propagules are present.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Associated with dark soil/organic debris; original substrate relationship is uncertain.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: BN2-F3.JPG, BN2-F3v2.JPG"
+    }
   },
   {
     "code": "BN2-F4",
@@ -6274,7 +7974,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute brown agaricoid basidiome arising from a compact moss-and-leaf-litter substrate, with a small brown pileus, visible brown lamellae, and an exceptionally slender elongated stipe.",
+      "Dimensions": "Minute basidiome; no calibrated scale visible. Direct pileus diameter and stipe length measurements remain required.",
+      "Macroscopic color": "Pileus brown to cinnamon-brown; lamellae medium brown; stipe pale to medium brown; attached moss and litter green-brown to dark brown.",
+      "Pileus — form / profile": "Small, thin, convex to nearly plane, approximately circular, with a slightly uneven delicate margin; surface appears dry.",
+      "Pileus — surface / ornamentation": "Small, thin, convex to nearly plane, approximately circular, with a slightly uneven delicate margin; surface appears dry.",
+      "Pileus — margin": "Small, thin, convex to nearly plane, approximately circular, with a slightly uneven delicate margin; surface appears dry.",
+      "Hymenophore": "Lamellate; gills brown, radiating from the stipe, moderately spaced to close. Precise attachment is not fully resolved in the photographs.",
+      "Stipe": "Very long relative to cap diameter, filiform, slender, pale-to-medium brown, smooth to finely fibrillose.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or volva visible.",
+      "Spore print / macroscopic deposit": "Spore print not documented. Microscopic characters pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Stipe emerges directly from a compact clump of moss, dead leaves, and organic litter; terrestrial/litter-associated collection.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: BN2-F4.JPG, BN2-F4v2.JPG"
+    }
   },
   {
     "code": "BN2-F5",
@@ -6339,7 +8056,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute pale cream agaricoid basidiome preserved in fragmented condition. A tiny cap shows a pale radial lamellar surface, while the stipe is represented by delicate detached elements.",
+      "Dimensions": "Minute basidiome; no calibrated scale visible. Cap appears only a few millimeters across; direct measurement is required.",
+      "Macroscopic color": "Pileus and lamellae cream to off-white; stipe tissue pale cream to tan. A separate elongated linear fragment is darker tan-brown.",
+      "Pileus — form / profile": "Tiny, thin, shallowly convex to nearly plane, pale cream, with an irregular/damaged margin.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Tiny, thin, shallowly convex to nearly plane, pale cream, with an irregular/damaged margin.",
+      "Hymenophore": "Lamellate; gills pale cream, moderately spaced and radially arranged. Attachment cannot be confirmed because the cap is detached.",
+      "Stipe": "Exceptionally slender, pale and fragmented. The long darker linear element in the photographs may represent plant/root debris and should not be assigned to the stipe without direct examination.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or volva visible.",
+      "Spore print / macroscopic deposit": "Spore print not documented. Microscopic spore morphology and dimensions pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original basal attachment and substrate relationship are not preserved clearly.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: BN2-F5.JPG, BN2-F5v2.JPG, BN2-F5v3.JPG"
+    }
   },
   {
     "code": "BN2-F6",
@@ -6397,7 +8131,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small dark clavate to spatulate fruit body with an expanded black-brown distal portion, a narrow dark stalk, and an irregular branched, soil-bearing basal attachment. No conventional cap, lamellae, or pores are visible.",
+      "Dimensions": "Small fruit body; no calibrated scale visible. Direct total length and fertile-head dimensions remain required.",
+      "Macroscopic color": "Expanded distal portion black to very dark brown; stalk dark brown to blackish; basal attachment yellow-brown to brown with adhering soil.",
+      "Pileus — form / profile": "No conventional pileus is differentiated; the distal portion is expanded and smoothly rounded to spatulate.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No gills, pores, or teeth visible. If fertile, the hymenial surface is likely integrated with the expanded distal portion; microscopic confirmation is required.",
+      "Stipe": "Narrow, dark, somewhat flattened to cylindrical stalk connecting the distal portion to the basal attachment.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No conventional veil structures visible.",
+      "Spore print / macroscopic deposit": "Spore deposit not documented. Ascospore/basidiospore characters and reproductive structures pending microscopy.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Irregular branched/root-like base with adhering soil and fine organic debris; terrestrial association indicated.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: BN2-F6.JPG"
+    }
   },
   {
     "code": "BN2-F7",
@@ -6462,7 +8213,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small-to-medium pale tan agaricoid basidiome preserved as a detached stipe and a damaged pileus. The exposed underside shows numerous pale lamellae, and the stipe retains a compact soil-bearing base.",
+      "Dimensions": "Small to medium basidiome; no calibrated scale visible. Direct pileus and stipe measurements remain required.",
+      "Macroscopic color": "Pileus tan to ochre-buff; lamellae cream to pale buff; stipe pale tan; adhering basal soil dark brown to nearly black.",
+      "Pileus — form / profile": "Thin-fleshed and fragile, convex to nearly plane when intact; specimen is split and damaged, with an irregular broken margin.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Thin-fleshed and fragile, convex to nearly plane when intact; specimen is split and damaged, with an irregular broken margin.",
+      "Hymenophore": "Lamellate; gills cream to pale buff, close to crowded, narrow to moderate in breadth, with numerous shorter lamellulae. Attachment cannot be confirmed because the pileus is detached.",
+      "Stipe": "Long, slender to moderate, pale tan, fibrous/fibrillose, detached from the pileus; base retains a compact mass of dark soil.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or volva visible.",
+      "Spore print / macroscopic deposit": "Spore print not documented. Microscopic characters pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Terrestrial; dark soil remains attached to the basal end of the stipe.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: BN2-F7.JPG, BN2-F7v2.JPG"
+    }
   },
   {
     "code": "BN2-F8",
@@ -6527,7 +8295,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute pale litter-associated agaricoid basidiomata preserved on fragments of dead brown leaves. The fruit bodies are extremely delicate, with tiny whitish cap-like structures borne on hairlike pale stipes.",
+      "Dimensions": "Minute; caps appear only a few millimeters across or less. No calibrated scale is present, so direct measurement is required.",
+      "Macroscopic color": "Basidiomata white to cream or very pale beige; stipes translucent-white to pale tan; leaf substrate medium to dark brown.",
+      "Pileus — form / profile": "Tiny, thin, shallowly convex to disc-like, pale and delicate.",
+      "Pileus — surface / ornamentation": "Margin and surface ornamentation cannot be resolved reliably at this scale.",
+      "Pileus — margin": "Margin and surface ornamentation cannot be resolved reliably at this scale.",
+      "Hymenophore": "Fertile-surface architecture is not sufficiently resolved in the photographs; gill spacing and attachment should be established under magnification.",
+      "Stipe": "Very slender, hairlike, pale to translucent, several millimeters long, attached directly to leaf material.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or volva visible.",
+      "Spore print / macroscopic deposit": "Spore print not documented. Microscopic spore morphology and dimensions pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Directly associated with dead leaf litter; photographs strongly support a litter-associated habit.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: BN2-F8.JPG, BN2-F8V2.JPG"
+    }
   },
   {
     "code": "BN2-F9",
@@ -6592,7 +8377,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large, heavily fragmented and contorted pale tan to gray-brown fleshy fungal basidiome with broad lobed and folded tissue and a complex soil-bearing basal portion. The photographed material is too damaged to assign a reliable taxonomic group from…",
+      "Dimensions": "Large fragmentary specimen; no calibrated scale is present. Direct measurements of the preserved tissue are required.",
+      "Macroscopic color": "Outer surfaces pale tan, beige to gray-brown; exposed context cream to off-white; adhering soil and organic debris dark brown to nearly black.",
+      "Pileus — form / profile": "Broad, thick, irregular and strongly contorted, with overlapping lobes and torn margins. Surface appears dry to matte and locally fibrous from damage; a single intact pileus outline cannot be reconstructed…",
+      "Pileus — surface / ornamentation": "Surface appears dry to matte and locally fibrous from damage; a single intact pileus outline cannot be reconstructed…",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No intact lamellae, pores, teeth, or other fertile surface are exposed clearly enough for confident hymenophore assignment. Several folded surfaces are present, but collection damage prevents interpretation.",
+      "Stipe": "No conventional intact central stipe can be reconstructed. Thick folded and branching supporting tissue merges into the basal mass and is heavily damaged.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, universal-veil remnants, or volva can be demonstrated on the preserved material.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-bearing structures, spore morphology, hyphal characters, and diagnostic microfeatures remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal region is irregular and heavily embedded in compact dark soil and forest organic debris, supporting a terrestrial collection. Original attachment architecture is partly destroyed.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: BN2-F9.JPG, BN2-F9v2.JPG"
+    }
   },
   {
     "code": "BN2-F10",
@@ -6657,7 +8459,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Compact, rounded pale fungal body with a cream to peach-tan surface and substantial dark soil attached to one side. No conventional pileus, lamellae, or stipe are clearly differentiated in the supplied views.",
+      "Dimensions": "Small compact fruit body; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Surface cream, pale peach to tan; exposed tissue off-white; adhering soil and organic debris dark brown to black.",
+      "Pileus — form / profile": "No conventional pileus is identifiable. The body is irregularly subglobose to lobed, with a smooth to finely uneven surface and localized abrasion.",
+      "Pileus — surface / ornamentation": "The body is irregularly subglobose to lobed, with a smooth to finely uneven surface and localized abrasion.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No lamellae, pores, teeth, or smooth hymenial surface can be identified confidently from the exterior photographs.",
+      "Stipe": "No distinct differentiated stipe is visible.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, universal-veil remnants, or volva can be demonstrated.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Internal fertile tissue, spore morphology, and reproductive structures remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "One side remains embedded in compact dark soil and forest organic debris; terrestrial association is strongly supported.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: BN2-F10.JPG, BN2-F10v2.JPG"
+    }
   },
   {
     "code": "BN2-F11",
@@ -6722,7 +8541,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Leafless forked woody twig submitted as the specimen-associated material. No visible fungal basidiome, stromatic body, crust, bracket, or other reproductive structure is evident in the supplied photographs.",
+      "Dimensions": "Small branched twig segment; no calibrated scale visible.",
+      "Macroscopic color": "Bark dark brown to gray-brown throughout.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No fungal hymenophore is visible.",
+      "Stipe": "Not applicable; the visible structure is woody plant material.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not applicable.",
+      "Spore print / macroscopic deposit": "Not assessable from the supplied photographs. Any fungal colonization would require microscopy or closer inspection of the bark surface.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The photographed object itself is a woody twig/substrate fragment. No attached macroscopic fungal fruiting body is visible.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: BN2-F11.JPG, BN2-F11v2.JPG"
+    }
   },
   {
     "code": "BN2-F12",
@@ -6780,7 +8616,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small orange-red agaricoid basidiome with a shallowly depressed to funnel-like pileus, pale yellowish lamellae, and a short slender pale stipe with a soil-darkened base.",
+      "Dimensions": "Small basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus orange-red to rust-orange; lamellae pale yellow to cream-yellow; stipe pale yellow-tan with dark basal soil.",
+      "Pileus — form / profile": "Small, irregularly rounded, shallowly depressed to funnel-shaped, smooth to finely matte, with an uneven thin margin.",
+      "Pileus — surface / ornamentation": "Small, irregularly rounded, shallowly depressed to funnel-shaped, smooth to finely matte, with an uneven thin margin.",
+      "Pileus — margin": "Small, irregularly rounded, shallowly depressed to funnel-shaped, smooth to finely matte, with an uneven thin margin.",
+      "Hymenophore": "Lamellae pale yellow to cream, moderately spaced, and appearing to descend slightly toward the stipe. Exact attachment should be confirmed on a fresh intact specimen.",
+      "Stipe": "Short to moderately slender, pale yellow-tan, smooth to finely fibrillose, slightly curved, with adhering soil at the base.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "Spore print not documented. Microscopic spore morphology, dimensions, and hymenial characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains dark soil and fine organic debris, supporting a terrestrial collection.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: BN2-F12.JPG"
+    }
   },
   {
     "code": "BN2-F13",
@@ -6845,7 +8698,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Compact pale cream to yellowish fungal body with an irregular folded, reticulate to sponge-like upper surface and a darker soil-bearing underside. The specimen is damaged and lacks a clearly differentiated conventional cap and stipe.",
+      "Dimensions": "Small compact fruit body; no calibrated scale visible. Direct measurement is required.",
+      "Macroscopic color": "Upper surface pale cream to yellow-cream; recessed folds grayish cream; basal soil and organic debris dark brown.",
+      "Pileus — form / profile": "No conventional circular pileus is differentiated. The exposed upper body is irregular, thick, and strongly folded or reticulate, with a coarse labyrinthine appearance.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No true lamellae are visible. The exposed surface appears irregularly folded or poroid-labyrinthine, but the fertile-surface type cannot be assigned confidently from the photographs alone.",
+      "Stipe": "No distinct central stipe is visible; the fruit body appears compact and broadly attached.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No conventional veil structures are visible.",
+      "Spore print / macroscopic deposit": "No spore print or calibrated microscopy supplied. Spore morphology, reproductive structures, and tissue organization remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Underside retains compact dark soil, leaf fragments, and organic debris; terrestrial collection is indicated.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: BN2-F13.JPG, BN2-F13v2.JPG"
+    }
   },
   {
     "code": "BN2-F14",
@@ -6910,7 +8780,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Medium agaricoid basidiome with a smooth olive-brown to gray-brown pileus, pale cream lamellae, and a long stout white stipe with soil-bearing base.",
+      "Dimensions": "Medium robust basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus olive-brown to gray-brown; lamellae cream to pale buff; stipe white to cream; basal soil dark brown.",
+      "Pileus — form / profile": "Broadly convex to shallowly plane, smooth to finely matte, olive-brown to muted gray-brown, with an even to slightly irregular margin.",
+      "Pileus — surface / ornamentation": "Broadly convex to shallowly plane, smooth to finely matte, olive-brown to muted gray-brown, with an even to slightly irregular margin.",
+      "Pileus — margin": "Broadly convex to shallowly plane, smooth to finely matte, olive-brown to muted gray-brown, with an even to slightly irregular margin.",
+      "Hymenophore": "Lamellae pale cream to buff, moderately crowded, and moderately broad. Attachment appears adnate to narrowly adnexed in the available views, but should be confirmed on an intact fresh specimen.",
+      "Stipe": "Long, stout, white to cream, cylindrical to slightly tapering, smooth to finely fibrillose; basal end retains dark soil.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "Spore print not documented. Microscopic spore morphology, dimensions, basidia, cystidia, and pileipellis remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Terrestrial; basal end retains compact dark soil and fine organic debris.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: BN2-F14.JPG, BN2-F14V3.JPG"
+    }
   },
   {
     "code": "BN2-F15",
@@ -6975,7 +8862,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small yellow-brown agaricoid basidiome with a rounded to shallowly convex cap, brown to olive-brown lamellae, and an exceptionally slender pale yellow-tan stipe with compact soil-bearing base.",
+      "Dimensions": "Small delicate basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus yellow-brown to ochre; lamellae olive-brown to medium brown; stipe pale yellow-tan; basal soil dark brown.",
+      "Pileus — form / profile": "Small, rounded, convex to shallowly plane, finely matte, yellow-brown to ochre with a slightly darker central zone.",
+      "Pileus — surface / ornamentation": "Small, rounded, convex to shallowly plane, finely matte, yellow-brown to ochre with a slightly darker central zone.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae medium brown to olive-brown, moderately crowded, narrow to moderately broad, with shorter lamellulae visible. Attachment appears adnate to narrowly adnexed but should be confirmed fresh.",
+      "Stipe": "Very slender, pale yellow-tan, smooth to finely fibrillose, slightly curved, and proportionally long relative to cap diameter.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "Spore print not documented. Microscopic spore morphology and dimensions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains a compact clump of dark soil and organic debris; terrestrial association indicated.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: BN2-F15.JPG, BN2-F15v2.JPG"
+    }
   },
   {
     "code": "BN2-F16",
@@ -7033,7 +8937,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute brown agaricoid basidiome with a tiny dark brown cap and a long hairlike pale-brown stipe. The specimen is extremely delicate and photographed at limited scale.",
+      "Dimensions": "Minute basidiome; no calibrated scale visible. Direct measurement under magnification is required.",
+      "Macroscopic color": "Pileus medium to dark brown; lamellae brown; stipe pale tan to light brown.",
+      "Pileus — form / profile": "Tiny, convex to shallowly bell-shaped, smooth to finely matte, with a darker central disc and thin margin.",
+      "Pileus — surface / ornamentation": "Tiny, convex to shallowly bell-shaped, smooth to finely matte, with a darker central disc and thin margin.",
+      "Pileus — margin": "Tiny, convex to shallowly bell-shaped, smooth to finely matte, with a darker central disc and thin margin.",
+      "Hymenophore": "Fine brown lamellae are visible beneath the cap, but spacing and exact attachment cannot be resolved confidently at the photographed scale.",
+      "Stipe": "Extremely slender, hairlike, pale tan-brown, slightly curved and fragile.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are discernible.",
+      "Spore print / macroscopic deposit": "Spore print not documented. Microscopic spore morphology and dimensions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal attachment is not clearly preserved in the photograph; ecological substrate remains undocumented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: BN2-F16.JPG"
+    }
   },
   {
     "code": "BN2-F17",
@@ -7099,7 +9020,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small fragmented tan-brown agaricoid basidiome with a detached circular pileus, pale cream lamellae, and broken pale stipe tissue with soil-bearing remnants.",
+      "Dimensions": "Small basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus tan to cinnamon-brown; lamellae cream to pale buff; stipe cream to pale tan; basal debris dark brown.",
+      "Pileus — form / profile": "Small, circular to broadly convex, tan-brown, smooth to finely matte, with a somewhat darker center and irregularly torn margin from collection damage.",
+      "Pileus — surface / ornamentation": "Small, circular to broadly convex, tan-brown, smooth to finely matte, with a somewhat darker center and irregularly torn margin from collection damage.",
+      "Pileus — margin": "Small, circular to broadly convex, tan-brown, smooth to finely matte, with a somewhat darker center and irregularly torn margin from collection damage.",
+      "Hymenophore": "Lamellae cream to pale buff, crowded to moderately crowded, relatively narrow, with numerous lamellulae. Attachment cannot be confirmed because cap and stipe are detached.",
+      "Stipe": "Stipe represented by a long pale broken fragment and additional basal tissue; pale cream to tan, fibrous, and incomplete.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "Spore print not documented. Microscopic spore morphology, dimensions, basidia, cystidia, and pileipellis remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Broken basal tissue retains compact dark soil and organic debris; terrestrial association indicated.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: BN2-F17.JPG, BN2-F17v2.JPG"
+    }
   },
   {
     "code": "BN4-F1",
@@ -7164,7 +9102,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small polyporoid bracket-fungus material composed of thin, overlapping fan-shaped to semicircular lobes with conspicuous concentric brown and buff zoning. A separate pale fragment appears to represent the fertile underside of the same collection. The…",
+      "Dimensions": "Small bracket fragments; no calibrated scale visible. Direct measurements of individual lobes and thickness are required.",
+      "Macroscopic color": "Upper surface dark brown to chestnut with alternating tan, buff, and cream concentric zones; margins pale cream to buff. Presumed fertile surface white to cream.",
+      "Pileus — form / profile": "Pilei thin, sessile, semicircular to flabelliform, imbricate or clustered, with strongly concentric zoning and a finely velvety to fibrillose appearance. Margins are thin, wavy to lobed, and paler than the…",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No lamellae are present. The pale underside fragment is consistent with a finely poroid hymenophore, but pore size and density cannot be resolved reliably because of focus and image distance. Pore confirmation…",
+      "Stipe": "No differentiated stipe is present; fruiting bodies are sessile.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not applicable to this bracket-form basidiome; no agaricoid veil structures are present.",
+      "Spore print / macroscopic deposit": "Microscopy pending. No controlled spore deposit or calibrated microscopy supplied. Basidiospore dimensions, basidia, cystidia or setal elements, hyphal system, clamp connections, and reagent reactions remain…",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original woody substrate is not included in the photographs. Growth form strongly supports a lignicolous habit, but host wood remains undocumented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn4-f1.JPG, bn4-f1v3.JPG, bn4-f1v4.JPG, bn4-f11v2.JPG"
+    }
   },
   {
     "code": "BN4-F2",
@@ -7229,7 +9184,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Medium, robust agaricoid basidiome with an ochre-brown convex pileus, pale lamellae, a stout white stipe, and an irregularly elongated to branched basal portion retaining substantial soil. The specimen shows no clearly preserved annulus or saccate volva.",
+      "Dimensions": "Medium robust basidiome; no calibrated ruler is present in the supplied photographs. Direct fresh-specimen measurements are required.",
+      "Macroscopic color": "Pileus ochre-brown to tawny-buff, somewhat darker toward the disc; lamellae cream to pale buff; stipe white to cream; basal tissue white with dark brown soil staining.",
+      "Pileus — form / profile": "Pileus convex to hemispherical, fleshy, smooth to finely matte, ochre-brown, with a relatively even to slightly incurved margin.",
+      "Pileus — surface / ornamentation": "Pileus convex to hemispherical, fleshy, smooth to finely matte, ochre-brown, with a relatively even to slightly incurved margin. No definite surface scales or universal-veil patches are visible.",
+      "Pileus — margin": "Pileus convex to hemispherical, fleshy, smooth to finely matte, ochre-brown, with a relatively even to slightly incurved margin.",
+      "Hymenophore": "Lamellae are pale cream to buff and appear close to crowded where visible at the pileus margin. Exact attachment to the stipe is obscured by the photographic angle and should be documented on a fresh specimen.",
+      "Stipe": "Stipe central, stout, white to cream, smooth to finely longitudinally fibrillose, and slightly tapered. The lower stipe transitions into an enlarged irregular basal region.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No intact annulus or cortina is visible. No unequivocal universal-veil remnants are present on the cap.",
+      "Spore print / macroscopic deposit": "Microscopy pending. No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain…",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base enlarged, irregularly elongated and branched or root-like, with substantial dark soil and organic debris attached. No discrete saccate volva can be confirmed from the supplied views. Terrestrial habit is…",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn4-f2.JPG, bn4-f2v.JPG, bn4-f2v3.JPG, bn4-f2v4.JPG"
+    }
   },
   {
     "code": "BN4-F3",
@@ -7294,7 +9266,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small delicate cinnamon- to orange-brown agaricoid basidiome with a convex cap, slender central stipe, and clearly exposed radial lamellae. The material is intact enough for basic macromorphology but lacks calibrated scale and substrate documentation.",
+      "Dimensions": "Small basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus cinnamon-brown to orange-brown; lamellae cinnamon to warm tan; stipe ochre-tan to orange-brown, becoming darker toward the base.",
+      "Pileus — form / profile": "Pileus convex to shallowly campanulate, smooth to finely matte, with a slightly deeper-colored disc and thin regular margin.",
+      "Pileus — surface / ornamentation": "Pileus convex to shallowly campanulate, smooth to finely matte, with a slightly deeper-colored disc and thin regular margin. Surface appears dry.",
+      "Pileus — margin": "Pileus convex to shallowly campanulate, smooth to finely matte, with a slightly deeper-colored disc and thin regular margin.",
+      "Hymenophore": "Lamellae cinnamon to tan, moderately spaced, radial, and interspersed with shorter lamellulae. They are attached to the stipe; exact attachment appears adnate to narrowly adnexed but should be confirmed on a…",
+      "Stipe": "Stipe slender, cylindrical, slightly curved, ochre to orange-brown, smooth to finely fibrillose, and darker at the basal tip.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "Microscopy pending. No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions and ornamentation, basidia, cystidia, pileipellis, clamp connections, and reagent…",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end is darkened but largely free of attached substrate. Original ecological substrate is not preserved in the photographs.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn4-f3.JPG, bn4-f3V2.JPG, bn4-f3V3.JPG"
+    }
   },
   {
     "code": "BN4-F4",
@@ -7359,7 +9348,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute pale ochre to orange-buff agaricoid basidiome with a small convex cap, slender stipe, and pale orange-buff lamellae. The specimen is delicate and largely intact but lacks a preserved substrate sample.",
+      "Dimensions": "Minute to small basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus pale ochre, peach-buff to light orange-brown; lamellae pale ochre to orange-buff; stipe pale tan to ochre with a slightly darker distal base.",
+      "Pileus — form / profile": "Pileus small, convex to shallowly campanulate, smooth to finely matte, with a thin regular margin.",
+      "Pileus — surface / ornamentation": "Pileus small, convex to shallowly campanulate, smooth to finely matte, with a thin regular margin.",
+      "Pileus — margin": "Pileus small, convex to shallowly campanulate, smooth to finely matte, with a thin regular margin.",
+      "Hymenophore": "Lamellae pale ochre to orange-buff, moderately spaced, with shorter lamellulae visible. Lamellae are attached to the stipe, but precise attachment cannot be resolved confidently from the available angle.",
+      "Stipe": "Stipe very slender, pale tan to ochre, smooth to finely fibrillose, slightly curved, and without visible ornamentation.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "Microscopy pending. No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain…",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end is intact only as a small darkened tip with little adhering substrate. Original substrate relationship remains undocumented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn4-f4.JPG, bn4-f4v2.JPG, bn4-f4v5.JPG"
+    }
   },
   {
     "code": "BN4-F5",
@@ -7424,7 +9430,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small brownish agaric documented in somewhat soft focus, with an ochre-brown pileus, darkening brown lamellae and a slender yellow-orange stipe.",
+      "Dimensions": "Small specimen; no calibrated scale present. Direct measurements are required.",
+      "Macroscopic color": "Pileus ochre to medium brown; gills medium to dark brown in the visible underside view; stipe yellow-orange to tawny; base dark with adhering soil or moss.",
+      "Pileus — form / profile": "Convex, smooth to finely matte; exact surface texture and marginal characters are limited by photographic focus.",
+      "Pileus — surface / ornamentation": "Convex, smooth to finely matte; exact surface texture and marginal characters are limited by photographic focus.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellate; brown lamellae visible and apparently moderately spaced. Precise attachment and gill-edge characters cannot be resolved reliably from the available photographs.",
+      "Stipe": "Slender, cylindrical, yellow-orange to tawny; no ring visible.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina or volva observed.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore morphology, dimensions and diagnostic microcharacters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Dark adhering soil and possible moss or plant material are present at the stipe base, supporting a terrestrial collection.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: BN4-F5.JPG, BN4-F5V2.JPG"
+    }
   },
   {
     "code": "BN4-F6",
@@ -7489,7 +9512,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Robust brown agaricoid basidiome with a broad fleshy pileus, pale lamellae, and a thick central stipe. Abraded portions of the cap expose pale internal flesh. The specimen is terrestrial and retains soil and fine root-like debris at the base.",
+      "Dimensions": "Medium robust basidiome; no calibrated scale is present. Direct measurements are required.",
+      "Macroscopic color": "Pileus dark chestnut-brown to umber with paler cream-tan exposed flesh along damaged areas; lamellae cream to pale yellow-cream; stipe tan to light brown; basal debris…",
+      "Pileus — form / profile": "Pileus broadly convex to nearly plane, fleshy, dark brown, smooth to finely matte, with localized abrasions or peeled areas exposing white to cream context.",
+      "Pileus — surface / ornamentation": "Pileus broadly convex to nearly plane, fleshy, dark brown, smooth to finely matte, with localized abrasions or peeled areas exposing white to cream context.",
+      "Pileus — margin": "Margin appears even and somewhat thick.",
+      "Hymenophore": "Lamellae cream to pale yellow-cream, close to crowded, and broadly attached to the stipe in the available oblique view. Exact attachment should be confirmed on a fresh intact specimen. No poroid hymenophore is…",
+      "Stipe": "Stipe thick, central, tan-brown, smooth to finely fibrillose, slightly curved, and approximately cylindrical to weakly tapering. No reticulation is evident in the photographs.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Microscopy pending. No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions and ornamentation, basidia, cystidia, pileipellis, clamp connections, and reagent…",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal tissue carries dark soil and fine fibrous organic material. No discrete volva is visible. Terrestrial habit is supported.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn4-f6.JPG, bn4-f6V2.JPG, bn4-f6V3.JPG"
+    }
   },
   {
     "code": "BN4-F8",
@@ -7554,7 +9594,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Identification status: Unresolved agaric; morphology consistent with a robust, pinkish-brown gilled basidiomycete.",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "structures: No definitive annulus or volva observed photographically.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn4-f8.JPG; bn4-f8V2.JPG; bn4-f8V3.JPG; bn4-f8V4.JPG"
+    }
   },
   {
     "code": "BN4-F9",
@@ -7619,7 +9676,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Identification status: Unresolved large agaric.",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "structures: None confidently visible.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn4-f9.JPG; bn4-f9V2.JPG"
+    }
   },
   {
     "code": "BN4-F10",
@@ -7684,7 +9758,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Robust white agaricoid basidiome with a hemispherical to convex cap densely ornamented by small granular to conical warts, pale lamellae, a stout pale stipe, and a conspicuously enlarged soil-bearing base. The morphology is amanitoid in general habit, but no…",
+      "Dimensions": "Small to medium basidiome; no calibrated scale is present in the supplied photographs. Direct fresh-specimen measurements are required.",
+      "Macroscopic color": "Pileus, lamellae, and stipe white to cream; scattered cap ornamentation cream to faint yellowish; localized yellow-tan discoloration on damaged tissue; basal soil dark…",
+      "Pileus — form / profile": "Pileus convex to hemispherical, white to cream, densely covered with numerous small granular, pyramidal, or wart-like surface elements.",
+      "Pileus — surface / ornamentation": "Pileus convex to hemispherical, white to cream, densely covered with numerous small granular, pyramidal, or wart-like surface elements. Surface is dry…",
+      "Pileus — margin": "Margin appears even to slightly appendiculate in places.",
+      "Hymenophore": "Lamellae white to cream, numerous and crowded. Attachment appears free to narrowly adnexed in the clearest underside view, but a fresh intact view is needed for confirmation.",
+      "Stipe": "Stipe stout, white to cream, longitudinally fibrillose to finely textured, slightly curved, and enlarged toward the base. Some torn pale tissue is present near the upper to mid stipe.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Cap warts are consistent with persistent universal-veil material in an amanitoid growth form. Possible partial-veil remnants are present on the stipe, but a complete annulus is not preserved clearly enough to…",
+      "Spore print / macroscopic deposit": "Microscopy pending. No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions and reaction, basidia, cystidia, pileipellis, clamp connections, and other diagnostic…",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base strongly bulbous and heavily soil-bearing. No intact saccate volva is demonstrable in the supplied photographs. Terrestrial collection is strongly supported.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn4-f10.JPG; bn4-f10v2.JPG; bn4-f10v3.JPG, bn4-f10v2.JPG, bn4-f10v3.JPG"
+    }
   },
   {
     "code": "BN4-F11",
@@ -7749,7 +9840,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Identification status: Unresolved dark-scaly agaric; Lepiotoid morphology possible but unconfirmed.",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "structures: Indeterminate.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn4-f11.JPG; bn4-f11v2.JPG; bn4-f11V3.JPG"
+    }
   },
   {
     "code": "BN4-F12",
@@ -7814,7 +9922,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Identification status: Unresolved clustered/resupinate polyporoid or hydnoid-like basidiome.",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn4-f12.JPG; bn4-f12V2.JPG"
+    }
   },
   {
     "code": "BN4-F13",
@@ -7879,7 +10004,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Identification status: Unresolved white agaric, Amanita-like habit possible but unconfirmed.",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "structures: Annulus not clearly observed; volva status indeterminate.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: BN4-F13.JPG; BN4-F13V2.JPG"
+    }
   },
   {
     "code": "BN4-F14",
@@ -7944,7 +10086,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute, highly fragmented bright yellow fungal material represented by two small broken pieces with sulfur-yellow to yellow-green exposed surfaces and a contrasting dark brown to nearly black band or attached tissue. No intact basidiome can be reconstructed…",
+      "Dimensions": "Minute fragments; no calibrated scale visible. Direct measurement of each fragment is required.",
+      "Macroscopic color": "Exposed tissue sulfur-yellow to yellow-green; contrasting dark brown to nearly black material along one side or central band; sparse adhering debris dark brown.",
+      "Pileus — form / profile": "No complete pileus is preserved. The fragments are irregular and compact with bright yellow exposed surfaces; cap outline, margin, surface texture, and orientation cannot be established reliably.",
+      "Pileus — surface / ornamentation": "The fragments are irregular and compact with bright yellow exposed surfaces; cap outline, margin, surface texture, and orientation cannot be established reliably.",
+      "Pileus — margin": "The fragments are irregular and compact with bright yellow exposed surfaces; cap outline, margin, surface texture, and orientation cannot be established reliably.",
+      "Hymenophore": "No intact lamellae, pores, teeth, or smooth fertile surface are exposed clearly enough for hymenophore assignment.",
+      "Stipe": "No differentiated stipe is preserved in the fragments.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, universal-veil remnants, or volva can be demonstrated on the preserved material.",
+      "Spore print / macroscopic deposit": "Microscopy pending. No controlled spore deposit or calibrated microscopy supplied. Spore-bearing structures, spore morphology, hyphal characters, pigment reactions, and other diagnostic microcharacters remain…",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original attachment point and substrate are not preserved. Small dark particles adhere to the fragments, but ecological association cannot be determined from the photographs.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn4-f14.JPG; bn4-f14v2.JPG; bn4-f14v3.JPG, bn4-f14v2.JPG, bn4-f14v3.JPG"
+    }
   },
   {
     "code": "BN4-F15",
@@ -8009,7 +10168,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Dense coralloid basidiome fragment composed of repeatedly branched, upright to spreading branches arising from a compact basal mass; no differentiated pileus, pores, or lamellae.",
+      "Dimensions": "Small-to-medium coralloid cluster; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Branches pale tan to ochre with orange-brown to rusty tips; basal tissue tan-brown with darker adhering debris.",
+      "Pileus — form / profile": "No conventional pileus is differentiated.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No true lamellae or pores are visible. Fertile surface is distributed over the exposed branch surfaces; branch apices are darker and somewhat acute to crested.",
+      "Stipe": "No differentiated central stipe. Multiple branches arise from compact common basal tissue, with several lower branches fused or closely aggregated.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus or other veil structures are present; conventional agaricoid veil terminology is not applicable to this coralloid morphology.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Basidiospore dimensions, ornamentation, basidia, hyphal construction, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base is compact and irregular with attached dark soil/organic debris. Exact substrate or host association is not documented in the supplied photographs.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn4-f15.JPG; bn4-f15V2.JPG"
+    }
   },
   {
     "code": "BN4-F16",
@@ -8074,7 +10250,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Robust bolete-like basidiome represented by a dark brown rounded pileus, stout brown fibrous stipe fragment, and sectioned cap showing thick pale context; hymenophore is not clearly exposed.",
+      "Dimensions": "Medium robust basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus dark chestnut-brown; exposed context cream to pale tan; stipe tan-brown to reddish brown with pale internal tissue.",
+      "Pileus — form / profile": "Pileus dark chestnut-brown, rounded to broadly convex, smooth to finely matte.",
+      "Pileus — surface / ornamentation": "Pileus dark chestnut-brown, rounded to broadly convex, smooth to finely matte.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Fertile surface is not exposed clearly enough in the supplied views to characterize pore size, color, or attachment confidently. Gross habit is bolete-like, but hymenophore documentation is incomplete.",
+      "Stipe": "Stipe stout, cylindrical to slightly clavate, tan-brown to reddish brown, longitudinally fibrous, with pale exposed context at the broken end.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible on the photographed material.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Basidiospore dimensions, pore/hymenial characters, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end carries sparse dark soil and fine organic debris. No distinct volva or rooting extension is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn4-f16.JPG; BN4-F16V2.JPG; BN4-F16V3.JPG; BN4-F16V5.JPG; BN4-F16V6.JPG"
+    }
   },
   {
     "code": "BN4-F17",
@@ -8139,7 +10332,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute delicate agaricoid basidiome with a tiny pale tan cap, radially striate to shallowly pleated margin, and an exceptionally slender pale yellow-tan stipe with soil-bearing base.",
+      "Dimensions": "Minute delicate basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus pale tan to buff with slightly darker marginal zone; stipe pale yellow-tan; basal debris dark brown.",
+      "Pileus — form / profile": "Pileus minute, rounded to shallowly convex/plane, pale tan, with conspicuous radial striation or shallow pleating and a thin slightly irregular margin.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Pileus minute, rounded to shallowly convex/plane, pale tan, with conspicuous radial striation or shallow pleating and a thin slightly irregular margin.",
+      "Hymenophore": "Lamellae or fold-like structures are visible beneath the cap but are too small and oblique to characterize spacing and attachment confidently.",
+      "Stipe": "Stipe exceptionally slender, pale yellow-tan, smooth to finely fibrillose, gently curved, and markedly longer than cap diameter.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains compact dark soil and organic debris; no distinct bulb, volva, or rooting extension is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn4-f17.JPG, bn4-f17v2.JPG Source photographs: bn4-f17.JPG; bn4-f17v2.JPG"
+    }
   },
   {
     "code": "BN4-F18",
@@ -8204,7 +10414,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Medium violet to mauve agaricoid basidiome with dark lilac-brown pileus, crowded dark violet-brown lamellae, and a long pale lilac fibrous stipe with enlarged soil-bearing base.",
+      "Dimensions": "Medium basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus dusky violet to mauve-brown; lamellae dark violet-brown; stipe pale lilac to cream-lilac; basal soil dark brown.",
+      "Pileus — form / profile": "Pileus dusky violet to mauve-brown, convex to shallowly plane, smooth to finely matte, with a slightly darker central zone and collection damage.",
+      "Pileus — surface / ornamentation": "Pileus dusky violet to mauve-brown, convex to shallowly plane, smooth to finely matte, with a slightly darker central zone and collection damage.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae crowded, moderately broad, dark violet-brown to purplish brown, with shorter lamellulae; attachment appears adnate to narrowly adnexed in the photographed underside.",
+      "Stipe": "Stipe long, slender to moderately robust, pale lilac to cream-lilac, slightly curved and longitudinally fibrous; lower portion broadens into an irregular soil-bearing base.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No persistent annulus is visible. No definite cortina or universal-veil remnants can be confirmed from the photographs.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base is enlarged and irregular with attached dark soil, fine roots, and forest debris; no discrete volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn4-f18.JPG, bn4-f18V2.JPG, bn4-f18V3.JPG, bn4-f18V4.JPG Source photographs: bn4-f18.JPG; bn4-f18V2.JPG; bn4-f18V3.JPG; bn4-f18V4.JPG"
+    }
   },
   {
     "code": "BN4-F19",
@@ -8269,7 +10496,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Fragmented red-pileate basidiome with stout pale stipe and thick pale context; the hymenophore is not adequately exposed, preventing confident higher-level placement from macromorphology alone.",
+      "Dimensions": "Medium fragmentary basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus vivid red to crimson; exposed context cream to pale yellow; stipe white to cream; basal debris dark brown.",
+      "Pileus — form / profile": "Pileus fragment vivid red to crimson, smooth to finely matte, with pale yellow-cream exposed context at torn margins.",
+      "Pileus — surface / ornamentation": "Pileus fragment vivid red to crimson, smooth to finely matte, with pale yellow-cream exposed context at torn margins.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Fertile surface is not shown clearly enough to determine confidently whether true lamellae or a poroid surface is present; photographed material is too incomplete for reliable hymenophore characterization.",
+      "Stipe": "Stipe stout, white to cream, fibrous, gently curved and broken; basal end retains compact soil and organic debris.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamps, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains compact dark soil and organic debris; no distinct volva or pronounced bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn4-f19.JPG; bn4-f19V2.JPG"
+    }
   },
   {
     "code": "BN4-F20",
@@ -8334,7 +10578,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small orange-tan agaricoid basidiome with a smooth convex pileus, pale cream to yellowish lamellae, and a short stout orange-tan stipe with soil-bearing base.",
+      "Dimensions": "Small basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus orange-tan to apricot-brown; lamellae cream to pale yellow; stipe orange-tan to ochre; basal soil dark brown.",
+      "Pileus — form / profile": "Small, rounded, convex to shallowly plane, smooth to finely matte, orange-tan with a slightly darker central zone and thin regular margin.",
+      "Pileus — surface / ornamentation": "Small, rounded, convex to shallowly plane, smooth to finely matte, orange-tan with a slightly darker central zone and thin regular margin.",
+      "Pileus — margin": "Small, rounded, convex to shallowly plane, smooth to finely matte, orange-tan with a slightly darker central zone and thin regular margin.",
+      "Hymenophore": "Lamellae pale cream to yellowish, moderately crowded, narrow to moderately broad. Exact attachment is not resolved confidently from the supplied views.",
+      "Stipe": "Short to moderately stout, orange-tan to ochre, slightly tapering, smooth to finely fibrillose, with a darker soil-bearing base.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "Spore print not documented. Microscopic spore morphology, dimensions, basidia, cystidia, and pileipellis remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains compact dark soil and organic debris; terrestrial collection is supported.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: BN4-F20.JPG, BN2-420v2.JPG"
+    }
   },
   {
     "code": "BN4-F21",
@@ -8399,7 +10660,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Fragmented agaricoid basidiome with reddish-brown pileus, conspicuously yellow crowded lamellae, and a detached yellow-orange stipe fragment.",
+      "Dimensions": "Small-to-medium fragmented basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus reddish brown to chestnut; lamellae vivid yellow to golden yellow; stipe yellow-orange with darker brown basal end.",
+      "Pileus — form / profile": "Pileus reddish brown to chestnut, broadly convex to shallowly plane, dry to finely matte, with irregular damage and adhering debris.",
+      "Pileus — surface / ornamentation": "Pileus reddish brown to chestnut, broadly convex to shallowly plane, dry to finely matte, with irregular damage and adhering debris.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae vivid yellow to golden yellow, crowded to moderately crowded, narrow to moderately broad and somewhat irregular; attachment cannot be established confidently because cap and stipe are separated.",
+      "Stipe": "Only a short detached stipe fragment is preserved; tissue is yellow-orange, fibrous, and darker toward the broken basal end.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamps, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original base and substrate attachment are not preserved; small dark debris remains on the stipe fragment and cap.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn4-f21.JPG; bn4-f21V3.JPG"
+    }
   },
   {
     "code": "BN4-F22",
@@ -8464,7 +10742,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large robust bolete-type basidiome with broad dark brown pileus, very dark fine-pored hymenophore, curved brown fibrous stipe, and moss/soil-bearing base.",
+      "Dimensions": "Large robust basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus dark chocolate- to chestnut-brown; pore surface dark olive-brown to nearly black; stipe reddish brown to dark tan; basal moss green with dark soil.",
+      "Pileus — form / profile": "Pileus broad, fleshy, dark chocolate- to chestnut-brown, convex to nearly plane, dry to finely matte/velvety, with minor surface abrasion.",
+      "Pileus — surface / ornamentation": "Pileus broad, fleshy, dark chocolate- to chestnut-brown, convex to nearly plane, dry to finely matte/velvety, with minor surface abrasion.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Hymenophore poroid; underside very dark olive-brown to nearly black with densely packed fine angular pores. True lamellae are absent.",
+      "Stipe": "Stipe moderately stout, curved, reddish brown to dark tan, longitudinally fibrous, narrowing toward the pileus and retaining darker basal tissue.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Basidiospore dimensions, pore trama, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains compact dark soil and a conspicuous tuft of green moss/forest debris; no volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn4-f22.JPG; bn4-f22V2.JPG"
+    }
   },
   {
     "code": "BN4-F25",
@@ -8530,7 +10825,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large robust bolete-type basidiomata with broad olive-brown to chestnut-brown pilei, pale fine-pored hymenophores, and thick lilac to purplish-brown stipes. Several fruit-body pieces are present in the collection, all consistent with a poroid bolete…",
+      "Dimensions": "Large robust basidiomata; no calibrated scale visible. Direct cap diameter, stipe length and width, and pore-density measurements are required.",
+      "Macroscopic color": "Pilei olive-brown to chestnut-brown with pale abrasion scars; pore surfaces cream to pale buff or faint pinkish-tan; stipes lilac, mauve to purplish-brown with paler…",
+      "Pileus — form / profile": "Pilei broad, fleshy, convex to nearly plane, olive-brown to chestnut-brown, dry to finely matte, with minor cracking or abrasion and pale exposed context along damaged areas.",
+      "Pileus — surface / ornamentation": "Pilei broad, fleshy, convex to nearly plane, olive-brown to chestnut-brown, dry to finely matte, with minor cracking or abrasion and pale exposed context along damaged areas.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Hymenophore poroid; pore surface pale cream to buff or faintly pinkish-tan, densely packed and fine. True lamellae are absent.",
+      "Stipe": "Stipes very stout, cylindrical to clavate, lilac to mauve-purple or purplish-brown, longitudinally fibrous, and broadening toward the soil-bearing bases. Cut or broken surfaces expose pale cream context.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "Microscopy pending. No controlled spore print or calibrated microscopy supplied. Basidiospore dimensions, pore trama, basidia, cystidia, pileipellis, clamp connections, pigment and reagent reactions, and other…",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Bases retain compact dark soil and fine organic debris; pale cream basal context is visible on broken tissue. No volva or distinct rooting extension is present.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn4-f25.JPG, bn4-f25V2.JPG"
+    }
   },
   {
     "code": "BN5-F1",
@@ -8595,7 +10907,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Irregular clustered wood- or debris-associated fungal material composed of overlapping tan to brown lobes with pale mycelial tissue visible between fragments.",
+      "Dimensions": "Clustered specimen; no scale visible. Direct measurement required.",
+      "Macroscopic color": "Tan, cinnamon-brown, gray-brown, and off-white, with patches of pale mycelial tissue.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "The fertile surface is not clearly exposed in these photographs.",
+      "Stipe": "No discrete intact stipe is identifiable.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not assessable from the fragmented condition.",
+      "Spore print / macroscopic deposit": "No spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Substrate appears to include woody and organic debris with visible white mycelial growth.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f1.jpg, bn5-f1v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F2",
@@ -8660,7 +10989,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Tawny-orange agaricoid specimen with convex cap, orange-brown lamellae, pale fibrous stipe, and soil-bearing base.",
+      "Dimensions": "Small to medium basidiome; no calibrated scale visible. Direct measurement is required.",
+      "Macroscopic color": "Pileus tawny-orange; lamellae ochre-brown; stipe pale yellow-orange; basal soil dark brown.",
+      "Pileus — form / profile": "Pileus tawny-orange to ochre, convex to shallowly plane, smooth to finely matte, with scattered adhering soil and a somewhat irregular margin.",
+      "Pileus — surface / ornamentation": "Pileus tawny-orange to ochre, convex to shallowly plane, smooth to finely matte, with scattered adhering soil and a somewhat irregular margin.",
+      "Pileus — margin": "Pileus tawny-orange to ochre, convex to shallowly plane, smooth to finely matte, with scattered adhering soil and a somewhat irregular margin.",
+      "Hymenophore": "Lamellae orange-brown to ochre, relatively thick and moderately close, appearing adnate to slightly decurrent in the visible specimen.",
+      "Stipe": "Stipe pale yellow-orange to buff, cylindrical, slightly curved, fibrous, with dark soil attached at the basal end.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore deposit is visible. Spore-print color, basidiospore dimensions, basidia, cystidia, pileipellis, clamps, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal tissue retains dark soil and fine rootlike material. No distinct volva or pronounced bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f2.jpg, bn5-f2v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photograph: bn5-f2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F3",
@@ -8725,7 +11071,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large orange-brown agaricoid specimen represented by a broad damaged pileus with thick crowded orange lamellae and a separate stout pale cream stipe bearing soil and rootlike debris.",
+      "Dimensions": "Large robust basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus orange-brown to tawny; lamellae warm orange to cinnamon-orange; stipe cream to pale buff; basal soil dark brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae warm orange to cinnamon-orange, broad, crowded, wavy and locally forked or anastomosing; attachment cannot be confirmed because the stipe is detached.",
+      "Stipe": "top 2.0 cm all the way height 4.0 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Microscopy pending. No controlled spore deposit is shown in the supplied photographs.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains dark soil, fine roots, and organic debris. No distinct volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f3.jpg, bn5-f3v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F4",
@@ -8790,7 +11153,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small pale fragmented specimen consisting of irregular cream to tan tissue pieces; diagnostic architecture is largely lost.",
+      "Dimensions": "Small fragment; no scale visible.",
+      "Macroscopic color": "Cream, off-white, and pale tan with darker brown debris at some edges.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No clearly interpretable fertile surface is visible.",
+      "Stipe": "top 0.1 mid 0.1 base 0.2 height 5.6 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not assessable.",
+      "Spore print / macroscopic deposit": "No spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Small soil or organic particles adhere to the tissue.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f4.jpg, bn5-f4v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F5",
@@ -8855,7 +11235,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small cream to buff specimen represented by a cap or basidiome fragment showing a dense, strongly folded hymenial surface.",
+      "Dimensions": "Small specimen; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Overall pale cream to buff with slightly darker tan margins and a small darker bruised or soil-stained area near the attachment point.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Underside composed of dense, strongly anastomosing folds or vein-like lamellae rather than clearly separated regular gills. The fertile surface is pale cream and radiates from the attachment region.",
+      "Stipe": "No intact stipe is preserved in the photograph; only a small basal attachment region is visible.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, volva, or other veil remnant visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented in the supplied image. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Small amount of dark debris or staining is present at the attachment area; substrate association is uncertain.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f5.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photographs: bn5-f5.jpg, bn5-f5v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photograph: bn5-f5.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photograph: bn5-f5.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F7",
@@ -8921,7 +11318,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small delicate cream agaricoid basidiome with darker central disc, pale lamellae, slender cream stipe, and attached dark soil/organic debris.",
+      "Dimensions": "Small basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus cream to pale tan with warm brown center; lamellae cream; stipe pale cream; basal debris dark brown.",
+      "Pileus — form / profile": "Pileus small, circular, convex to shallowly plane, cream to pale tan with a distinctly darker warm-brown central disc.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Margin thin, even, and faintly translucent-striate.1.5 cm",
+      "Hymenophore": "Lamellae pale cream, moderately spaced, and relatively thick; attachment appears adnate to narrowly adnexed in the detached cap view. Lamellulae are present.",
+      "Stipe": "Stipe slender, pale cream, slightly curved, smooth to finely fibrillose, and attached to a compact dark soil/organic fragment. Interior appears delicate and likely hollow to stuffed, but sectioning is not…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible on the photographed specimen.",
+      "Spore print / macroscopic deposit": "Microscopy supplied for BN5-F7. Five annotated micrographs show numerous elongate ellipsoid to fusiform spore-like structures and related microscopic elements. Image-derived measured axes span approximately 1.75–11.22 µm across the labeled measurements. Apparent long-axis measurements are commonly about 5.66–11.22 µm, while apparent short-axis measurements are about 1.75–4.73 µm. Because several annotations appear to represent different axes and not every object can be paired unambiguously from the screenshots, formal basidiospore L × W, mean dimensions, and Q ratio should be calculated only from individually paired, clearly resolved spores. Surface ornamentation is not clearly resolved in these images; definitive basidia, cystidia, pileipellis, clamp-connection, and reagent characters remain pending..",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains compact dark soil and forest debris. No distinct bulb, volva, or rooting extension is visible in the supplied photographs.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f7.jpg, bn5-f7v2.jpg | Microscopy images: BN5-F7 1 .png; BN5-F7 2.png; BN5-F7 3.png; BN5-F7 4 .png; BN5-F7 5.png | Microscope record: objective/magnification not supplied; mount/stain not supplied; annotated measured axes approximately 1.75–11.22 µm."
+    }
   },
   {
     "code": "BN5-F8(A)",
@@ -8986,7 +11400,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Brown-capped mushroom represented by a detached cap and a pale cream stipe. Two views show the smooth cap surface, curved stipe, and a faint pale deposit on the foil consistent with a light-colored spore print.",
+      "Dimensions": "Small to moderate specimen; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cap medium tan-brown to warm brown; stipe cream to pale buff; visible deposit very pale cream to off-white.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "The underside is not shown clearly enough for a reliable description of attachment or spacing.",
+      "Stipe": "top 0.4 mid 0.5 base 0.4 height 4.7",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No obvious annulus or volva visible.",
+      "Spore print / macroscopic deposit": "A faint pale cream to off-white radial deposit is visible on the foil in one view and may represent the spore print. Microscopy is required for confirmation and measurement.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Dark soil or organic material remains attached to the basal end.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f8(a).jpg, bn5-f8(a)v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F8(B)",
@@ -9110,7 +11541,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small tan-brown agaricoid specimen with a detached cap and long pale stipe, documented in dorsal and hymenial views.",
+      "Dimensions": "Small basidiome; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cap tan to light brown with a darker central disc; lamellae pale tan to cinnamon-buff; stipe off-white to pale cream with soil-stained base.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae moderately crowded, tan to buff, radiating evenly from the stipe attachment region; exact attachment should be confirmed on an intact specimen.",
+      "Stipe": "top 0.4 cm mid 0.4 cm base 0.4 cm height 4.4 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No persistent annulus or volval remnant visible.",
+      "Spore print / macroscopic deposit": "A light, circular spore-deposit pattern is visible on the foil nearby, though exact print color should be confirmed under controlled conditions.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains soil or humus-like debris.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f8(b)v2.jpg, bn5-f8(b).jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F8(C)",
@@ -9175,7 +11623,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Medium brown agaricoid specimen with broad moist-looking pileus, brown lamellae, detached pale fibrous stipe, and soil-bearing base.",
+      "Dimensions": "Medium basidiome; no calibrated ruler visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus tawny to medium brown; lamellae tan-brown; stipe pale cream to buff; basal debris dark brown.",
+      "Pileus — form / profile": "Pileus medium brown to tawny, broadly convex to plane, moist or glossy in appearance, with a darker central depression and strongly wrinkled/radially ridged surface after handling.",
+      "Pileus — surface / ornamentation": "Pileus medium brown to tawny, broadly convex to plane, moist or glossy in appearance, with a darker central depression and strongly wrinkled/radially ridged surface after handling.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae warm tan to brown, moderately close and thick, with attachment appearing adnate to narrowly adnexed in the detached fragments.",
+      "Stipe": "Stipe pale cream to tan, moderately stout, curved, fibrous to fibrillose, and detached from the pileus; the basal end is soil-stained.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print is visible. Spore-print color and calibrated microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains dark soil and organic debris. No distinct volva or bulb is evident.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f8(c).jpg, bn5-f8v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photograph: bn5-f8(c).jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F9",
@@ -9240,7 +11705,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small pale cream fungal cap fragment with a darker tan-brown central zone; the specimen is detached and incomplete, limiting interpretation of the intact growth form.",
+      "Dimensions": "Small fragment; no calibrated scale visible.",
+      "Macroscopic color": "Surface white to cream with tan-brown central discoloration and scattered dark debris.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "The fertile surface is not sufficiently resolved to determine whether organized lamellae or pores are present with confidence.",
+      "Stipe": "A differentiated stipe is not preserved in the supplied material.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures can be confirmed from this fragment.",
+      "Spore print / macroscopic deposit": "Microscopy pending. No controlled spore deposit is evident.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original base and substrate junction are absent; no host or substrate association can be determined from the photographs alone.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f9.jpg, bn5-f9v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F11",
@@ -9305,7 +11787,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Clustered brown, disc- to bracket-like fruit bodies attached directly to decaying woody material.",
+      "Dimensions": "Small to moderate sessile structures; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Fertile surfaces medium cinnamon-brown to reddish-brown; outer margins thin and paler. Substrate dark brown to black with exposed pale wood fibers.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Visible surface appears smooth at this photographic scale. No distinct gills, teeth, or macroscopic pores can be confirmed from the images provided.",
+      "Stipe": "No stipe present; fruit bodies are sessile on wood.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not applicable; no veil structures visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Directly attached to dark, decaying woody substrate with exposed fibers and bark fragments.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f11.jpg, bn5-f11v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F12",
@@ -9370,7 +11869,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small bolete-like specimen represented by a rounded brown cap, pale stout detached stipe, and a pale yellow-buff poroid underside visible in the cap fragment.",
+      "Dimensions": "Small to medium basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus medium brown to chestnut; pore surface pale yellow-buff to tan; stipe cream to pale tan; basal soil dark brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Underside is poroid rather than lamellate. Pore surface appears pale yellow-buff to tan and relatively fine-textured in the photographed cap fragment.",
+      "Stipe": "top 1.0 cm mid 1.4 cm base 0.7 cm height 3.6 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore print pending. Basidiospore dimensions, pore trama, cystidia, pileipellis, clamp connections, and reagent reactions remain undocumented.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base bears compact soil and fine organic material. No volva is visible; original host association is not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f12.jpg, bn5-f12v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F13",
@@ -9428,7 +11944,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Two extremely delicate, long-stiped mushrooms with minute caps, one darker and one pale, shown with tiny basal remnants.",
+      "Dimensions": "Minute fruit bodies; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Stipes dark brown to nearly black; one cap dark brown, the other pale cream to off-white.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not resolved clearly enough for reliable description.",
+      "Stipe": "0.1 all the way height 2.5",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, volva, or veil remnants visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Tiny pale basal fragments remain attached; original substrate not shown.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f13.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F14",
@@ -9493,7 +12026,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Very small orange-brown cap fragment shown in both upper-surface and hymenial views.",
+      "Dimensions": "Minute cap fragment; no scale visible.",
+      "Macroscopic color": "Upper surface pale tan to orange-brown; underside distinctly deeper orange to rust-orange.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Underside appears composed of closely packed orange-rust lamellae or ridge-like folds radiating from the attachment area.",
+      "Stipe": "Not present in the supplied material.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not assessable.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not preserved.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f14.jpg, bn5-f14v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F15",
@@ -9558,7 +12108,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small brown agaricoid specimen with a long reddish-brown stipe and a cap shown in both dorsal and hymenial views.",
+      "Dimensions": "Small basidiome; no scale visible.",
+      "Macroscopic color": "Cap medium brown to cinnamon-brown; lamellae similarly tan-brown; stipe reddish brown, darker at the basal end.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae tan to brown, moderately spaced, with an uneven or somewhat wavy appearance in the underside view.",
+      "Stipe": "0.1 all the way through height 2.0 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus or universal-veil remnants visible.",
+      "Spore print / macroscopic deposit": "No controlled print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end appears attached to a narrow woody or fibrous fragment.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f15.jpg, bn5-f15v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F16",
@@ -9623,7 +12190,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute agaricoid specimens with tiny tan-brown caps and exceptionally slender elongated brown stipes, represented by several detached fruit bodies.",
+      "Dimensions": "Minute basidiomata; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus tan to reddish brown; lamellae cream-tan; stipes medium to dark brown.",
+      "Pileus — form / profile": "Pilei minute, tan to reddish brown, convex to shallowly campanulate, thin and delicate, with slightly darker centers.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae pale cream to tan, sparse to moderately spaced on the tiny caps; attachment is difficult to determine from the available view.",
+      "Stipe": "Stipes very slender, pale tan to brown, elongated, fragile, and attached to minute caps; exact dimensions require direct measurement.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore deposit is evident. Spore-print color, basidiospore dimensions, basidia, cystidia, pileipellis, clamps, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal material is not fully preserved in the photograph; no distinct volva, bulb, or rooting extension can be confirmed.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f16.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F17",
@@ -9681,7 +12265,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Fragmented cluster of pale, branching coral- or club-like fungal structures mixed with woody debris.",
+      "Dimensions": "Individual branches slender and several times longer than wide; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Pale cream to light peach-buff, with darker tan to brown discoloration at damaged tips and substrate-contact points.",
+      "Pileus — form / profile": "No differentiated pileus is present.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No discrete gills or pores visible. Fertile tissue, if present, would be distributed over the branch surfaces; confirmation requires microscopy.",
+      "Stipe": "Branches arise from narrow basal sections; individual structures are elongated, curved, and variably forked.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures present.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Mixed directly with decayed woody fragments and dark organic debris.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f17.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F18",
@@ -9746,7 +12347,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Very small delicate agaricoid specimen with a dark brown central cap disc, pale translucent margin, and extremely slender stipe; a circular spore-deposit pattern is visible on the foil.",
+      "Dimensions": "Minute basidiome; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cap center dark brown to nearly black-brown; margin translucent whitish to pale cream; stipe pale tan to light brown.",
+      "Pileus — form / profile": "Pileus tiny, thin, rounded, with a distinctly dark central disc and strongly translucent-striate to pleated pale margin.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Pileus tiny, thin, rounded, with a distinctly dark central disc and strongly translucent-striate to pleated pale margin.",
+      "Hymenophore": "Lamellae appear pale, widely spaced relative to the cap size, and strongly radial beneath the translucent margin.",
+      "Stipe": "Stipe extremely slender, hairlike, elongated, pale brown to tan, with minimal visible basal tissue.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures visible.",
+      "Spore print / macroscopic deposit": "A pale circular print is visible on the foil; exact spore color and microscopic characters require confirmation.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Substrate is not clearly preserved in the photographs.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f18.jpg, bn5-f18v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photograph: bn5-f18.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photograph: bn5-f18.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F19",
@@ -9811,7 +12429,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large irregular, densely folded fungal fruit body attached to a woody twig or small branch. The structure is highly ruffled and rosette-like, with multiple overlapping lobes and a pale cream to gray-brown coloration. The specimen appears tough to leathery…",
+      "Dimensions": "Moderate to relatively large specimen; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Overall cream, buff, gray-brown, and medium brown, with darker brown recessed areas and paler margins.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "The fertile surface is not cleanly separable from the folded tissue in these photographs. Several surfaces appear wrinkled, ridged, or shallowly folded rather than truly lamellate. Higher-resolution macro…",
+      "Stipe": "3.4 cm depth",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required for spore shape, size, pigmentation, ornamentation, and reproductive structure determination.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Directly attached to a small woody branch or twig. This substrate association is one of the most diagnostic field characters documented in the photographs.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f19.jpg, bn5-f19v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F20",
@@ -9876,7 +12511,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Delicate mushroom documented in two views with a very long, thin, flexuous stipe and a small brown cap. The underside shows pale tan to cream gills surrounding a markedly darker central disc.",
+      "Dimensions": "Small cap on an unusually long slender stipe; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cap medium to dark brown centrally with paler tan-brown margin; gills cream to pale tan; stipe tan to light brown with darker longitudinal staining.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae clearly visible in the underside view. Gills are pale cream to tan, radiating from the central attachment area and contrasting strongly with the darker center.",
+      "Stipe": "0.1 all the way height 3.6",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No obvious annulus, volva, or veil remnants visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required for spore color, size, shape, and ornamentation.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Only a small basal remnant is preserved; exact substrate cannot be determined from the photographs.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f20.jpg, bn5-f20v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F21",
@@ -9934,7 +12586,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN5-F22",
@@ -10091,7 +12760,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Robust scaly-capped agaricoid specimen with pale cream gills and substantial cap and stipe tissues, shown partly sectioned and broken.",
+      "Dimensions": "Medium to large basidiome; no scale visible.",
+      "Macroscopic color": "Cap cream to pale tan with dense reddish-brown to cinnamon-brown scales; lamellae cream to pale beige; stipe similarly pale with brownish surface staining.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae pale cream, crowded, and apparently attached near the stipe; exact attachment should be checked on a complete specimen.",
+      "Stipe": "top 1.0 cm mid 1.4 base 2.3 cm height 4.3",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Possible veil remnants are suggested by the disrupted tissue near the cap-stipe junction, but a persistent annulus is not clearly demonstrated.",
+      "Spore print / macroscopic deposit": "No spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base not fully shown; substrate association uncertain.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f22.jpg, bn5-f22v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F23",
@@ -10149,7 +12835,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute delicate agaricoid basidiomata with orange-brown striate caps and extremely long, dark, hairlike stipes attached to small organic fragments.",
+      "Dimensions": "Minute basidiomata with caps only a few millimeters across and stipes several centimeters long; no calibrated ruler is visible.",
+      "Macroscopic color": "Pileus orange to apricot-brown; lamellae pale tan-orange; stipes dark reddish brown.",
+      "Pileus — form / profile": "Pilei minute, orange-brown to apricot, campanulate to convex, with strongly translucent-striate or grooved margins and darker central zones.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae appear pale orange to tan and relatively widely spaced beneath the tiny caps; exact attachment cannot be confirmed from the photographs.",
+      "Stipe": "Stipes extremely slender, wiry and hairlike, dark reddish brown to nearly black, smooth, and proportionally very long relative to the minute caps. Top 0.1 all the way height 3.5",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible on the threadlike stipes.",
+      "Spore print / macroscopic deposit": "No controlled spore print is visible. Spore-print color and calibrated microscopy remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal ends remain attached to small fragments of decomposed leaf or organic litter; no distinct bulb or volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f23.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F24",
@@ -10207,7 +12910,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN5-F25",
@@ -10282,7 +13002,7 @@ window.ATLAS_DATA = [
         "enhanced": true
       },
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "BN5-F25SPV1.JPG",
         "caption": "Source macro / specimen - enhanced workshop image",
         "original": "assets/originals/BN5-F25SPV1.JPG",
@@ -10290,7 +13010,7 @@ window.ATLAS_DATA = [
         "enhanced": true
       },
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "BN5-F25SPV3.JPG",
         "caption": "Source macro / specimen - enhanced workshop image",
         "original": "assets/originals/BN5-F25SPV3.JPG",
@@ -10334,7 +13054,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -10348,7 +13068,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small orange-brown mushroom represented by a detached cap and a curved orange stipe. Two photographs show both the cap surface and underside, along with a pale spore-print impression on the foil.",
+      "Dimensions": "Small fruit body; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cap orange-brown to reddish-brown; stipe orange to salmon; gills pale to orange-buff.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "True gills present, radiating from the central attachment zone; gills appear moderately spaced and pale orange-buff.",
+      "Stipe": "top 0.3 mid 0.3 cm base 0.4 cm height 2.4",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, volva, or veil remnants visible.",
+      "Spore print / macroscopic deposit": "A visible pale spore-print impression is present on the foil, appearing white to very pale cream in the photograph. Microscopy required for confirmation and measurement.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Small dark basal fragment attached; original substrate not identifiable.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f25.jpg, bn5-f25v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F26",
@@ -10448,7 +13185,7 @@ window.ATLAS_DATA = [
         "enhanced": true
       },
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "BN5-F26SPV2.JPG",
         "caption": "Source macro / specimen - enhanced workshop image",
         "original": "assets/originals/BN5-F26SPV2.JPG",
@@ -10456,7 +13193,7 @@ window.ATLAS_DATA = [
         "enhanced": true
       },
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "BN5-F26SPV3.JPG",
         "caption": "Source macro / specimen - enhanced workshop image",
         "original": "assets/originals/BN5-F26SPV3.JPG",
@@ -10508,7 +13245,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -10522,7 +13259,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small brown agaricoid specimen disassembled into a cap and stout pale stipe, with the hymenial surface exposed.",
+      "Dimensions": "Small basidiome; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cap medium to dark brown with a deeper brown central depression; lamellae pale cream to buff; stipe pale cream with faint brownish staining.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae pale, moderately crowded, and clearly radiating from the point of attachment. Exact attachment to the stipe is difficult to assess after disassembly.",
+      "Stipe": "top 0.3 cm mid 0.3 cm base 0.3 height 2.2",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No persistent annulus or volval structure visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print visible in the photograph. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Only a small amount of dark basal debris remains; substrate association uncertain.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f26.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F27",
@@ -10580,7 +13334,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN5-F28",
@@ -10645,7 +13416,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small pale cream shelf-like fungal growth attached directly to a short dark woody fragment; fruiting bodies are thin, curled, and sessile.",
+      "Dimensions": "Small clustered shelves on a short woody substrate fragment; no calibrated scale visible.",
+      "Macroscopic color": "Basidiomata cream to pale buff with slightly darker tan folds; wood dark reddish brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Fertile surface is only partly visible and appears pale, smooth to weakly folded; true lamellae cannot be confirmed from the photographs.",
+      "Stipe": "No differentiated central stipe is present; fruiting bodies are sessile and laterally attached to wood.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures are present; veil terminology is not applicable to this sessile wood-decay form.",
+      "Spore print / macroscopic deposit": "Microscopy pending. No controlled spore deposit is visible.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Directly attached to a short decorticated woody fragment. Host species and decay stage are not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-28.jpg, bn5-f28v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F29",
@@ -10710,7 +13498,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Very small tan-brown agaricoid specimen with a short dark stipe and a diminutive rounded cap, documented from both upper and lower surfaces.",
+      "Dimensions": "Minute basidiome; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cap tan to cinnamon-brown; underside paler buff to light brown; stipe distinctly darker brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Underside appears finely poroid to reticulate or densely folded at this photographic scale; exact hymenophore type should be confirmed under magnification.",
+      "Stipe": "Stipe very short, dark brown, narrow, and slightly curved, with a small basal knob or debris attachment.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil remnants visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print clearly documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Substrate not preserved beyond a small dark basal fragment.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f29.jpg, bn5-f29v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F30",
@@ -10775,7 +13580,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f30.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F31",
@@ -10833,7 +13655,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute delicate brown mushroom with a very long threadlike stipe and a tiny dark cap.",
+      "Dimensions": "Minute basidiome; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cap reddish-brown to dark brown; stipe tan-brown to reddish-brown, becoming paler in places.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Hymenial surface is not sufficiently resolved in the supplied photograph for confident characterization.",
+      "Stipe": "top 0.1 all the way height 4.0 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "A tiny amount of dark basal material is visible on one fragment; substrate association uncertain.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f31.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F32",
@@ -10898,7 +13737,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large white to cream shelf-like fungal fruiting body attached directly to a woody branch segment.",
+      "Dimensions": "Large bracket-like basidiome relative to branch diameter; no calibrated scale visible.",
+      "Macroscopic color": "Upper visible surface white to cream with subtle beige shading; branch bark dark gray-brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "The fertile underside is not clearly visible in the supplied views, so pore versus smooth hymenium cannot be confirmed.",
+      "Stipe": "No discrete stipe; attachment is lateral and directly to wood.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures relevant or visible.",
+      "Spore print / macroscopic deposit": "No spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Directly wood-associated on a branch or small log segment.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f32.jpg, bn5-f32v3.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F33",
@@ -10963,7 +13819,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small semicircular polyporoid fragment with pale tan upper surface and a densely poroid cream-to-tan underside.",
+      "Dimensions": "Small fragment; no calibrated scale visible. Direct measurement is required.",
+      "Macroscopic color": "Upper surface pale tan to beige-brown; pore surface cream to warm tan.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Underside distinctly poroid, with numerous fine closely packed circular to angular pores over most of the visible fertile surface.",
+      "Stipe": "No differentiated stipe is visible; specimen appears sessile or laterally attached.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Veil structures are absent and not applicable to this polyporoid growth form.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore deposit pending. Basidiospore dimensions, hyphal system, cystidia, clamp connections, and reagent reactions remain undocumented.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original woody attachment is not preserved in the detached fragment; host identity cannot be determined from the photographs alone.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f33.jpg, bn5-f33v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F34",
@@ -11021,7 +13894,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Pale cream irregular shelf-like fungal fragments with toothed to finely poroid fertile surfaces and attached dark green-brown organic debris.",
+      "Dimensions": "Several small fragments; no calibrated scale visible.",
+      "Macroscopic color": "Basidiomata white to cream with pale buff fertile surfaces; attached debris green-brown to dark brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Fertile surface appears densely toothed, hydnoid, or very finely poroid rather than lamellate; exact architecture requires closer inspection or microscopy.",
+      "Stipe": "No differentiated stipe is visible; material appears sessile.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Veil structures are absent and not applicable to this growth form.",
+      "Spore print / macroscopic deposit": "Microscopy pending. No controlled spore deposit is shown.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Fragments retain dark organic material, including possible moss/plant debris. Original attachment substrate is incompletely preserved.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f34.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F35",
@@ -11079,7 +13969,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Narrow woody twig bearing multiple minute cream to off-white sessile fungal structures distributed along the bark surface. Several appear as tiny semicircular shelves or crust-to-shelf transitions.",
+      "Dimensions": "Individual fruiting structures minute; twig length not calibrated. Direct measurement required.",
+      "Macroscopic color": "Fungal structures cream to pale beige; bark dark gray-brown to brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Undersides are too small and poorly resolved in this photograph to distinguish pores, gills, or a smooth hymenium.",
+      "Stipe": "No central stipes visible; fruit bodies appear sessile or laterally attached.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy of individual fruiting bodies required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Directly attached to bark of a narrow woody twig.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f35.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F36",
@@ -11137,7 +14044,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Several tiny, long-stiped dark mushrooms associated with a visible pale brown spore-print pattern on the foil.",
+      "Dimensions": "Minute fruit bodies; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Caps medium to dark brown; stipes dark brown; spore deposit pale tan to light brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "One detached cap shows fine radial gills on the underside; the gills appear pale brown to tan.",
+      "Stipe": "top 0.1 mid 0.1 base 0.3 height 6.5 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures visible.",
+      "Spore print / macroscopic deposit": "A distinct circular-radial spore-print deposit is visible on the foil, appearing pale tan to light brown. Microscopy required for spore morphology and measurements.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Small fragments of dark substrate remain attached to some basal ends.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f36.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F37",
@@ -11202,7 +14126,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute delicate brown agaricoid basidiomata arising among dried leaf litter, with thin tan caps, sparse brownish lamellae, and hairlike stipes.",
+      "Dimensions": "Minute basidiomata; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus tan to orange-brown; lamellae brownish tan; stipes pale brown to gray-brown; leaf litter tan-brown.",
+      "Pileus — form / profile": "Pilei minute, tan to orange-brown, campanulate to shallowly convex, thin and delicate, with translucent-striate to radially grooved margins.1.3 cm",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae brownish tan, relatively widely spaced, with distinct shorter lamellulae. Attachment appears adnate to narrowly adnexed in the visible tiny specimen.",
+      "Stipe": "Stipes extremely slender, filiform, pale brown to gray-brown, fragile and threadlike; attached among dried leaf fragments.0.1 cm all the way height 38 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, volval remnants, or other veil structures are visible on the delicate stipes.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Specimen is associated with dead leaf litter and fine plant debris. Basal attachment is delicate; no bulb or volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f37.jpg, bn5-f37v2.jpg, bn5-f37v3.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F39",
@@ -11260,7 +14201,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Irregular elongated tan fungal or decayed-tissue fragment with strongly fibrous, ridged, and locally tooth-like surface architecture. The specimen is incomplete, so its original orientation and full fruit-body form cannot be reconstructed from this photograph…",
+      "Dimensions": "Small fragment; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Pale tan to buff with slightly darker brownish recessed areas.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "The visible surface is strongly ridged and fibrous with short projecting structures. These may represent torn lamellae, teeth, or fibrous tissue, but the photograph does not permit confident classification.",
+      "Stipe": "No distinct intact stipe preserved.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures visible.",
+      "Spore print / macroscopic deposit": "No spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Substrate association is not preserved in the photograph.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f39.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F40",
@@ -11325,7 +14283,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Mixed collection of several minute mushrooms showing small orange to orange-brown caps, very slender pale to brown stipes, and at least two visible circular to partial spore deposits on the foil.",
+      "Dimensions": "Minute specimens; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Caps orange to cinnamon-orange; stipes pale tan to dark brown; visible spore deposits appear pale orange-brown to rusty-orange in the photograph.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Hymenophore details are not consistently visible. One or more specimens appear to be gilled, but direct microscopic or macro confirmation is recommended.",
+      "Stipe": "0.1 all the way height 3.2",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No obvious veil structures visible.",
+      "Spore print / macroscopic deposit": "Visible spore deposits are present on the foil near the orange caps, appearing orange-brown to rusty in the photograph. Controlled print conditions and microscopy are required for definitive spore-color…",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Small amounts of soil and organic debris remain attached to some bases.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f40.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photograph: bn5-f40.jpg — supplementary view added to existing BN5-F40 record."
+    }
   },
   {
     "code": "BN5-F41",
@@ -11390,7 +14365,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Medium-small gilled mushroom documented in cap and underside views with the stipe detached. The cap is muted brown to taupe, while the gills are pale tan to beige and moderately crowded.",
+      "Dimensions": "Small to moderate specimen; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cap taupe-brown to gray-brown; gills pale beige to tan; stipe cream to pale buff with brown staining near the base.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae clearly present. Gills are pale tan, moderately crowded, and radiate from a central attachment point; exact attachment to the stipe cannot be confidently determined because the stipe is detached.",
+      "Stipe": "top 0.4 mid 0.6 base 0.8 height 4.5",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No distinct annulus or volva visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required for spore dimensions, shape, ornamentation, and color.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Soil and organic debris remain attached to the basal end of the stipe.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f41.jpg, bn5-f41v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F42",
@@ -11448,7 +14440,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN5-F43",
@@ -11513,7 +14522,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small bright red agaricoid specimen with smooth centrally depressed cap, crowded pale lamellae, and a detached stout cream stipe.",
+      "Dimensions": "Small basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus bright red to orange-red; lamellae cream to pale yellow; stipe white to cream; basal soil dark brown.",
+      "Pileus — form / profile": "Pileus vivid red to orange-red, smooth, convex to shallowly depressed with a distinct darker central depression; margin thin and even.",
+      "Pileus — surface / ornamentation": "Pileus vivid red to orange-red, smooth, convex to shallowly depressed with a distinct darker central depression; margin thin and even.",
+      "Pileus — margin": "Pileus vivid red to orange-red, smooth, convex to shallowly depressed with a distinct darker central depression; margin thin and even.",
+      "Hymenophore": "Lamellae cream to pale yellow, crowded and fine, radiating evenly around the central attachment. Attachment appears adnate to narrowly adnexed.",
+      "Stipe": "Stipe short to moderate, stout for the cap size, white to cream, fibrous, and detached; basal end retains a small amount of dark soil.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore deposit or calibrated microscopy supplied. Basidiospore dimensions, spore-print color, ornamentation, basidia, cystidia, pileipellis, clamps, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end bears dark soil; original substrate association is not otherwise documented. No distinct volva or bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f43.jpg, bn5-f43v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photographs: bn5-f43.jpg, bn5-f43v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F44",
@@ -11578,7 +14604,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small vivid red agaricoid specimens represented by two pilei and multiple detached stipe fragments; lamellae are orange-ochre and the material is soil-stained.",
+      "Dimensions": "Small basidiomata; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus crimson to dark red; lamellae orange-ochre; stipe olive-brown to dark brown; basal soil dark brown.",
+      "Pileus — form / profile": "Pilei small, convex to hemispherical, vivid red to crimson, smooth to matte, with darker central areas and locally soil-stained surfaces.1.1 cm",
+      "Pileus — surface / ornamentation": "Pilei small, convex to hemispherical, vivid red to crimson, smooth to matte, with darker central areas and locally soil-stained surfaces.1.1 cm",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae orange to ochre, moderately close, and apparently adnate to narrowly adnexed in the intact fragment. The central attachment area is darkened.",
+      "Stipe": "Stipes short to moderate, cylindrical, olive-brown to dark brown, and roughened by adhering soil. Detached fragments show pale internal context.Top 0.4 cm all the way through height 2.3 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus or volval remnants are visible. Darkening near the pileus-stipe junction may represent tissue coloration rather than a veil.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions and ornamentation, basidia, cystidia, pileipellis, clamps, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal portions are soil-darkened and fibrous. No distinct bulb or volva is shown; original substrate and host association are not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f44.jpg, bn5-f44v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F45",
@@ -11636,7 +14679,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Very small orange-yellow agaricoid specimen with a narrow curved stipe and a diminutive cap.",
+      "Dimensions": "Minute basidiome; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cap orange-yellow to golden ochre; stipe pale orange-yellow, darker toward the basal end.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "The fertile surface is not clearly exposed enough for confident assessment.",
+      "Stipe": "top 0.1 all the way height 3.8 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Small amount of dark organic material adheres to the base.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f45.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F46",
@@ -11701,7 +14761,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Pale gelatinous, lobed, non-agaricoid fungal specimen forming overlapping translucent cream-yellow folds; conventional cap, gills, and stipe are absent.",
+      "Dimensions": "Irregular clustered lobes; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Basidiome translucent cream to pale yellow, with slightly darker yellow-tan central areas and scattered dark debris.",
+      "Pileus — form / profile": "No discrete cap is differentiated; basidiome forms thin, overlapping, irregular translucent lobes with smooth to slightly wrinkled surfaces and rounded margins.Jelly is 9.0cm x 6.0 cm",
+      "Pileus — surface / ornamentation": "No discrete cap is differentiated; basidiome forms thin, overlapping, irregular translucent lobes with smooth to slightly wrinkled surfaces and rounded margins.Jelly is 9.0cm x 6.0 cm",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No lamellae or obvious pores are visible. Fertile surface appears smooth to subtly wrinkled over the gelatinous lobes; microscopic confirmation is required.",
+      "Stipe": "No differentiated stipe is evident. The fruit body consists of fused and overlapping gelatinous lobes.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus or other discrete veil structures are visible; this category is not clearly applicable to the gelatinous, non-agaricoid growth form.",
+      "Spore print / macroscopic deposit": "No controlled spore deposit or calibrated microscopy supplied. Basidiospore dimensions, basidia, cystidia, hyphal structure, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original attachment point is not visible in the fragments. No basal bulb, volva, rootlike extension, or substrate association can be evaluated.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f46.jpg, bn5-f46v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F47",
@@ -11759,7 +14836,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Two very small, irregular pale-brown to cream fungal fragments. The material is incomplete and lacks an intact fruit-body architecture.",
+      "Dimensions": "Minute fragments; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cream, buff, and light brown with darker brown broken surfaces.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No complete hymenophore is visible; fertile-surface type cannot be determined from this photograph.",
+      "Stipe": "No intact stipe visible.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Small amounts of broken organic material are present, but original substrate is uncertain.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f47.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F48",
@@ -11817,7 +14911,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Robust red to coral mushroom photographed as a detached red cap and thick salmon-colored stipe.",
+      "Dimensions": "Moderate specimen; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cap deep red to reddish-brown; stipe salmon to coral-pink with paler cream coloration toward the upper broken end.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Underside is partly visible and appears lamellate, with thick pale pinkish to reddish gills.",
+      "Stipe": "top 0.4 cm mid 0.6 cm base 0.9 cm height 5.2 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No obvious annulus or volva visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented in the supplied image. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Small amount of dark soil or organic debris remains attached at the base.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f48.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F49",
@@ -11882,7 +14993,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large yellow-buff gilled mushroom represented by a broad detached cap and a pale stem fragment. Two views clearly document both pileus surface and underside.",
+      "Dimensions": "Moderate to relatively large specimen; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cap yellow-buff to ochre with a darker orange-brown center; gills yellow-buff to cream; stem fragment pale cream.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "True lamellae present. Gills are dense, yellow-buff, somewhat wavy, and radiate from the central attachment region.",
+      "Stipe": "top 0.7 mid 1.0 base 0.7 height 3.9 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No obvious annulus, volva, or veil remnants visible.",
+      "Spore print / macroscopic deposit": "No clearly isolated controlled spore print is documented in these two photographs. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Soil and small plant fragments are attached to the cap surface; the complete basal attachment is not preserved.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f49.jpg, bn5-f49v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F50",
@@ -11947,7 +15075,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small vivid orange agaricoid specimen with smooth cap, orange lamellae, slender orange stipe, soil-bearing base, and a clearly visible white spore print.",
+      "Dimensions": "Small basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus vivid orange; lamellae yellow-orange; stipe orange-yellow; spore deposit white.",
+      "Pileus — form / profile": "Pileus vivid orange, smooth to finely matte, circular, convex to shallowly plane, with subtle radial texture and a thin even margin.",
+      "Pileus — surface / ornamentation": "Pileus vivid orange, smooth to finely matte, circular, convex to shallowly plane, with subtle radial texture and a thin even margin.",
+      "Pileus — margin": "Pileus vivid orange, smooth to finely matte, circular, convex to shallowly plane, with subtle radial texture and a thin even margin.",
+      "Hymenophore": "Lamellae yellow-orange to orange, thick and moderately spaced, with shorter lamellulae interspersed. Attachment appears adnate to narrowly adnexed.",
+      "Stipe": "Stipe slender, yellow-orange to orange, slightly curved, smooth to finely fibrillose, with dark adhering soil at the basal end. Top 0.2 all the way height 3.0 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains dark soil and organic matter. No distinct volva or pronounced bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f50.jpg, bn5-f50v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photographs: bn5-f50.jpg, bn5-f50v2.jpg"
+    }
   },
   {
     "code": "BN5-F51",
@@ -12013,7 +15158,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Collection of medium brown agaricoid basidiomata with smooth convex caps, pale crowded lamellae, long slender cream stipes, and soil-bearing basal tissue.",
+      "Dimensions": "Multiple medium basidiomata; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus medium brown to chestnut; lamellae white to cream; stipes cream to pale buff; basal debris dark brown.",
+      "Pileus — form / profile": "Pilei medium brown to warm chestnut, convex to broadly plane, smooth to finely matte, with slightly darker central zones. Margins are thin, even to irregular where damaged.V1 4.0 cmV2 3.2",
+      "Pileus — surface / ornamentation": "Pilei medium brown to warm chestnut, convex to broadly plane, smooth to finely matte, with slightly darker central zones.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae white to cream, close to moderately close, broad, and apparently adnate to narrowly adnexed on intact pieces. Lamellulae are present.",
+      "Stipe": "Stipes long, slender, cream to pale buff, smooth to longitudinally fibrillose, and gently curved. Several are detached; some basal ends retain dark soil and organic debris.V1 top 0.4cm mid 0.6 cm base 0.6 cm…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible on the long pale stipes.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Several bases retain compact dark soil and forest debris. No distinct volva or pronounced bulb is visible; rooting extension is not demonstrated.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f51.jpg, bn5-f51v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F52",
@@ -12078,7 +15240,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Vivid red agaricoid specimen with smooth depressed pileus, crowded pale lamellae, and a detached pale fibrous stipe.",
+      "Dimensions": "Small to medium basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus crimson-red; lamellae cream to pale tan with reddish edge tones; stipe white to cream.",
+      "Pileus — form / profile": "Pileus vivid red to crimson, smooth to finely matte, broadly convex to shallowly depressed, with a darker red central zone and thin margin.",
+      "Pileus — surface / ornamentation": "Pileus vivid red to crimson, smooth to finely matte, broadly convex to shallowly depressed, with a darker red central zone and thin margin.",
+      "Pileus — margin": "Pileus vivid red to crimson, smooth to finely matte, broadly convex to shallowly depressed, with a darker red central zone and thin margin.",
+      "Hymenophore": "Lamellae cream to pale tan, crowded and thin, with a darker reddish margin visible toward the cap edge. Attachment appears adnate to narrowly adnexed.",
+      "Stipe": "Stipe pale cream to white, stout relative to cap size, fibrous, and broken into detached pieces; exact basal architecture is not preserved.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible in the preserved material.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Basidiospore dimensions, spore-print color, ornamentation, basidia, cystidia, pileipellis, clamps, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base and substrate junction are not intact. The detached stipe material does not show a distinct volva or basal bulb.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn5-f52.jpg, bn5-f52v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photographs: bn5-f52.jpg, bn5-f52v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F53",
@@ -12136,7 +15315,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small, compact orange-brown fungal fragment with an irregularly folded to cup-like form.",
+      "Dimensions": "Small fragment; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Orange-brown to cinnamon, with paler cream tissue around the lower outer edge.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No discrete gills or pores are visible at this scale; the exposed inner surface appears wrinkled or folded.",
+      "Stipe": "No distinct stipe visible.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Lower surface bears pale cream tissue with minor dark debris; original substrate is not identifiable from the photograph.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f53.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F54",
@@ -12201,7 +15397,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small dark brown, concentrically banded bracket- or crust-like fungal specimen with a pale fibrous interior exposed along a broken section.",
+      "Dimensions": "Small basidiome or fragment; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Upper surface dark brown with lighter tan concentric zoning; exposed interior pale cream to whitish.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "The hymenial surface is not clearly visible enough in the supplied image to determine whether it is poroid, smooth, or toothed.",
+      "Stipe": "No distinct stipe present; specimen appears sessile or laterally attached.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not applicable; no veil structures visible.",
+      "Spore print / macroscopic deposit": "No spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Attachment tissue is partly preserved, but the original substrate is not shown clearly enough for confirmation.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f54.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photograph: bn5-f54.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F55",
@@ -12259,7 +15472,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Two small bracket-like fungal fragments, one showing a pale zoned upper surface and the other exposing a darker, densely textured fertile surface.",
+      "Dimensions": "Small sessile fragments; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Upper surface cream to pale tan with concentric zoning; fertile surface darker cinnamon-brown to reddish-brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Underside of one fragment shows a very dense, fine, reticulate to poroid texture. Exact pore geometry and density require magnification.",
+      "Stipe": "No stipe; specimen appears sessile.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not applicable.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Small amount of woody attachment tissue remains on the edge of one fragment; original substrate otherwise not shown.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f55.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN5-F56",
@@ -12318,7 +15548,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small pale fungal fragment or compact basidiome section with a smooth cream interior and a thin darker outer margin.",
+      "Dimensions": "Small fragment; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Interior white to cream; outer edge light tan to brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No intact fertile surface is visible clearly enough to characterize gills, pores, teeth, or other hymenophore structure.",
+      "Stipe": "No intact stipe visible.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No identifiable veil structures visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "A small dark attachment or soil-stained area is present on one edge; substrate association remains uncertain.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: bn5-f56.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F1",
@@ -12366,7 +15613,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Multiple small orange agaricoid fruit bodies, several dissected to expose the hymenophore; caps vivid orange to red-orange and stipes yellow-orange to orange.",
+      "Dimensions": "Not measured; no scale present. Multiple fruit bodies and fragments photographed.",
+      "Macroscopic color": "Caps orange to red-orange; gills orange to salmon-orange; stipes yellow-orange to orange; basal tissue white with dark soil.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN6-F2",
@@ -12414,7 +15678,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "ADD IMAGEfield / specimen imageCAP shape • surface • margin • texture • bruising________________________________________________________________tan, cream, brown…",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Not documented in the supplied source record.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN6-F3",
@@ -12462,7 +15743,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Single brown agaricoid basidiome represented by an intact cap with exposed lamellae and a detached stipe fragment. Identification remains unresolved pending field metadata, calibrated measurements, spore print, and microscopy.",
+      "Dimensions": "Not measured; no scale or calibrated reference is present. Cap is medium-sized relative to the foil; stipe fragment is incomplete.",
+      "Macroscopic color": "Cap dark reddish brown to chestnut; lamellae rusty orange-brown to reddish brown; stipe tan to light brown; base with dark soil.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN6-F5",
@@ -12510,7 +15808,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "ADD IMAGEfield / specimen imageCAP shape • surface • margin • texture • bruising________________________________________________________________white , cream 3.6 cm…",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Not documented in the supplied source record.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN6-F6",
@@ -12558,7 +15873,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large, compound, rosette-forming polyporoid fruiting body composed of numerous densely overlapping, partly fused, fan-shaped to irregularly lobed caps arising from a common basal mass. Material is mature to senescent and substantially darkened, dried, and…",
+      "Dimensions": "Not measured; no scale or calibrated reference is present. Cluster is large and composed of numerous fused or tightly imbricate lobes.",
+      "Macroscopic color": "Overall dark gray-brown, umber to nearly black; some cap and context areas medium brown to tan; adhering substrate dark brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN6-F7",
@@ -12623,7 +15955,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Brown agaricoid basidiome documented as a detached cap and long pale stipe. Complementary views show the cap surface, lamellae, and an annular-zone-like band on the stipe. Identification remains unresolved.",
+      "Dimensions": "Not measured; no scale or calibrated reference is present. Cap appears moderate in diameter; stipe is long and slender.",
+      "Macroscopic color": "Cap medium to dark brown; lamellae white to pale cream with localized tan discoloration; stipe white to pale tan with brownish zones; base dark with adhering soil.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f7(3).jpg, bn6-f7v2(3).jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F8",
@@ -12688,7 +16037,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute, delicate orange-brown agaricoid basidiomata represented by tiny detached caps and extremely slender stipe fragments. The material is incomplete and fragile.",
+      "Dimensions": "No calibrated ruler is visible. Exact dimensions cannot be reported reliably from the photographs.",
+      "Macroscopic color": "Pileus brownish orange to cinnamon; lamellae pale tan; stipe reddish brown to orange-brown; attached debris dark brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae are minute, pale tan, and appear sparse to moderately spaced. Attachment and lamellulae cannot be resolved confidently because the cap fragments are very small and damaged.",
+      "Stipe": "top 0.1 cm all the way through height 2.5 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No partial veil, annulus, cortina, universal-veil remnants, or volva are visible in the supplied fragments.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy was supplied. Spore-print color, basidiospore dimensions and shape, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal ends are incomplete and associated with small amounts of dark organic debris. Original substrate, host association, and basal mycelial characters were not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f8(3).jpg, bn6-f8v2(3).jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F9",
@@ -12753,7 +16119,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Very small ochre- to orange-brown agaricoid basidiomata represented by detached pileus fragments and two slender, soil-bearing stipes. Material is incomplete and appears somewhat desiccated.",
+      "Dimensions": "Minute basidiomata. The ruler image suggests pileus diameter approximately 2-4 mm and stipe length approximately 10-20 mm; values are provisional…",
+      "Macroscopic color": "Pileus ochre-orange to tawny; lamellae similarly ochre; stipe yellow-brown to orange-brown; basal soil dark brown.",
+      "Pileus — form / profile": "Pileus very small, convex to plane in the available fragments, smooth to finely fibrillose, and ochre-orange.",
+      "Pileus — surface / ornamentation": "Pileus very small, convex to plane in the available fragments, smooth to finely fibrillose, and ochre-orange. Hygrophany, bruising, and surface…",
+      "Pileus — margin": "Margin appears thin and slightly incurved in the intact fragment.",
+      "Hymenophore": "Lamellae visible on one sectioned cap, moderately spaced, thick relative to pileus size, and approximately concolorous with the pileus. Attachment appears adnate to narrowly adnexed, but the damaged condition…",
+      "Stipe": "Stipe filiform, cylindrical, curved, and apparently hollow or very fragile; surface smooth to faintly pruinose. No annulus is present. Base retains soil and fine rootlike debris; true rooting extension cannot…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No partial veil, annulus, cortina, universal-veil remnants, or volva are visible in the supplied photographs.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base incomplete and soil-covered. Fine rootlike material is attached, but it is not possible to determine whether this represents rhizomorphs, plant roots, or incidental debris.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f9(2).jpg, bn6-f9v2(2).jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F10",
@@ -12818,7 +16201,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Medium-sized, robust boletoid basidiome represented by a detached pileus and thick curved stipe. The hymenophore is poroid rather than lamellate.",
+      "Dimensions": "No calibrated scale is visible. Relative to the collection sheet, pileus appears approximately 5-8 cm broad and stipe approximately 6-9 cm long…",
+      "Macroscopic color": "Pileus reddish brown to chestnut with paler abraded patches; pore surface pale cream to tan; stipe lilac-brown to reddish purple with a paler apex and soil-darkened base.",
+      "Pileus — form / profile": "Pileus broadly convex, nearly circular, dry, and matte to finely velvety.",
+      "Pileus — surface / ornamentation": "Pileus broadly convex, nearly circular, dry, and matte to finely velvety. Surface is reddish brown with scattered pale abrasions or feeding damage.",
+      "Pileus — margin": "Margin appears entire and slightly inrolled.",
+      "Hymenophore": "Hymenophore poroid; true gills absent. Pore surface pale cream to buff and apparently fine-pored. Tube depth, pore density, angularity, bruising reaction, and separability were not measured.",
+      "Stipe": "Stipe stout, curved, clavate to subfusiform, with a pale apex and reddish-purple to brown lower surface. Reticulation is not clearly demonstrated. Base is soil-covered and may be slightly rooting, but the…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, volva, or other veil structure is visible; veil structures are generally absent in many boletoid taxa.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal portion retains soil and fine roots. No distinct bulb or volva is present. Host association and surrounding substrate were not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f10(2).jpg, bn6-f10v2(2).jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F11",
@@ -12876,7 +16276,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small to medium orange-brown agaricoid basidiomata with slender stipes and decurrent to subdecurrent lamellae. At least two fruit bodies are represented.",
+      "Dimensions": "No calibrated ruler is visible. Pilei appear approximately 2-4 cm broad and stipes approximately 4-7 cm long; direct measurements are required.",
+      "Macroscopic color": "Pileus pale ochre to orange-brown; lamellae ochre-orange; stipe yellow-orange with darker soil at the base.",
+      "Pileus — form / profile": "Pileus convex to plane, smooth to finely fibrillose, dry, and pale ochre-orange.",
+      "Pileus — surface / ornamentation": "Pileus convex to plane, smooth to finely fibrillose, dry, and pale ochre-orange.",
+      "Pileus — margin": "Margin is thin, entire to slightly wavy.",
+      "Hymenophore": "Lamellae moderately close, orange-ochre, and apparently adnate to decurrent. Lamellulae are present. Edge appears even and concolorous. Forking, anastomosis, and bruising response were not assessed.",
+      "Stipe": "Stipe slender, cylindrical, slightly curved, and yellow-orange. Surface appears smooth to finely fibrillose. No annulus is visible. Base is soil-bearing and may have sparse mycelial strands.Top 0.2 cm mid 0.2…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No partial veil, annulus, cortina, universal-veil remnants, or volva were observed.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base is incomplete and covered with soil. Substrate, host association, and presence of true basal mycelium or rhizomorphs are not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f11(2).jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F12",
@@ -12941,7 +16358,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN6-F13",
@@ -12999,7 +16433,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN6-F14",
@@ -13064,7 +16515,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute brown agaricoid fragments represented by tiny pileus and stipe material. The collection is incomplete, fragile, and somewhat desiccated.",
+      "Dimensions": "No calibrated scale is visible; direct specimen measurements are required.",
+      "Macroscopic color": "Pileus and fragments cinnamon-brown to dark brown; exposed context pale tan to cream.",
+      "Pileus — form / profile": "Pileus minute, convex to hemispherical in the preserved fragment, cinnamon- to dark brown, dry-looking, and smooth to faintly fibrillose.",
+      "Pileus — surface / ornamentation": "Pileus minute, convex to hemispherical in the preserved fragment, cinnamon- to dark brown, dry-looking, and smooth to faintly fibrillose.",
+      "Pileus — margin": "Margin is incomplete and damaged.",
+      "Hymenophore": "The fertile surface is not exposed clearly enough to classify attachment, spacing, or other hymenophore characters with confidence.",
+      "Stipe": "Very slender to filiform brown stipe fragments are present. Complete length, attachment, interior, and basal architecture cannot be established.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, volva, or other veil structure is visible; fragmentation prevents confirmation of true absence.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal attachment and original substrate are not preserved in the supplied photographs.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN6-F15",
@@ -13129,7 +16597,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Dark, cupulate to irregularly discoid ascomata with black-brown exterior and warm brown to orange-brown hymenial surface, collected with woody debris.",
+      "Dimensions": "No scale is present. Individual cups appear approximately 1-3 cm broad, but direct measurements are needed.",
+      "Macroscopic color": "Hymenial surface cinnamon-brown to orange-brown; outer surface dark brown to black; margin pale brown to cream in places; associated wood gray-brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Apothecia cupulate to irregularly expanded, with a smooth inner hymenial surface and darker, roughened exterior.",
+      "Pileus — margin": "Margin is wavy, pale-edged, and somewhat torn in older…",
+      "Hymenophore": "No gills or pores. Fertile surface is the exposed inner hymenium of the cup. Texture, excipular anatomy, and reaction to bruising or reagents were not tested.",
+      "Stipe": "Distinct stipe absent or very short; apothecia appear sessile to broadly attached to woody substrate. n/a",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Veil structures are not applicable to the visible ascomycetous cup form.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Attachment is to fragmented woody material. Host identity, degree of decay, and whether growth was directly lignicolous or associated with bark were not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f15(2).jpg, bn6-f15v2(2).jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F16",
@@ -13194,7 +16679,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "DESCRIPTIONFragmentary red-capped agaricoid basidiome represented by a detached pileus fragment and a separate curved stipe. The specimen is incomplete; the pileus–stipe junction, hymenophore, veil structures, and intact basal architecture are not preserved…",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f16.jpg, bn6-f16v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename ____________________"
+    }
   },
   {
     "code": "BN6-F17",
@@ -13252,7 +16754,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Numerous minute orange-brown, cup- to disc-shaped fruit bodies distributed across a bark-covered twig or small branch.",
+      "Dimensions": "Branch segment approximately 10-12 cm in the photographed field. Individual fruit bodies appear approximately 1-5 mm broad, based on the ruler…",
+      "Macroscopic color": "Fruiting bodies pale ochre to orange-brown with darker centers; bark gray-green to dark brown.",
+      "Pileus — form / profile": "Not a true pileus. Fruiting bodies are minute, discoid to shallowly cupulate, sessile, and variably lobed or crenulate.",
+      "Pileus — surface / ornamentation": "Surface appears dry; several specimens show a darker central depression.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No lamellae or pores are visible. The exposed disc or cup surface is presumed fertile, but hymenial anatomy cannot be evaluated from field photographs.",
+      "Stipe": "Stipe absent; fruit bodies are directly attached to bark.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures are present or applicable to the observed morphology.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal attachment is directly to bark on a woody twig. Host tree identity, bark condition, decay stage, and whether the substrate was standing or fallen were not recorded.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f17(2).jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F18",
@@ -13317,7 +16836,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small, thin, shelf-like polyporoid fragments showing a pale cream poroid undersurface and a concentrically zoned tan-brown upper surface.",
+      "Dimensions": "No calibrated scale is visible. Individual lobes appear approximately 1-3 cm broad; direct measurements are required.",
+      "Macroscopic color": "Upper surface tan to medium brown with darker concentric zones; pore surface cream to pale buff; context white to cream.",
+      "Pileus — form / profile": "Pilei small, semicircular to irregularly fan-shaped, thin, tough, and concentrically zoned.",
+      "Pileus — surface / ornamentation": "Pilei small, semicircular to irregularly fan-shaped, thin, tough, and concentrically zoned. Upper surface appears dry and finely velvety to tomentose.",
+      "Pileus — margin": "Margin is pale, thin, and uneven.",
+      "Hymenophore": "Hymenophore poroid; true gills absent. Pore surface cream to pale buff with very fine pores not countable from the images. Tube depth, pore density, bruising response, and dissepiment morphology were not…",
+      "Stipe": "Distinct central stipe absent; fragments appear sessile or laterally attached.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Veil structures are absent and not applicable to the observed polyporoid growth form.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Attachment points are broken. Specimen is consistent with growth on woody substrate, but host identity and exact attachment are not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f18(2).jpg, bn6-f18v2(2).jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F19",
@@ -13382,7 +16918,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small orange-brown agaricoid specimen represented by detached pileus, gill, and slender stipe fragments. The collection is incomplete and somewhat desiccated.",
+      "Dimensions": "No calibrated scale is visible. Direct specimen measurements are required.",
+      "Macroscopic color": "Pileus orange-brown to cinnamon; lamellae pale tan to ochre; stipe reddish brown; basal debris dark brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae pale tan to ochre, moderately close, and relatively thick. Attachment cannot be determined confidently from the detached fragment. Lamellulae and edge characters are only partly visible.",
+      "Stipe": "top 0.4cm mid 0.4 cm base 0.5cm height 4.5 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No partial veil, annulus, cortina, universal-veil remnants, or volva are visible in the supplied fragments.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy was supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamps, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base incomplete and associated with small amounts of dark soil or organic debris. Original substrate, host association, and basal mycelial characters were not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f19(2).jpg, bn6-f19v2(3).jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F20",
@@ -13440,7 +16993,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small dark reddish-brown, leathery shelf- to cup-like fungal fragments. Preserved material appears sessile or very shortly attached and lacks a conventional central stipe.",
+      "Dimensions": "No calibrated scale is visible; direct specimen measurements are required.",
+      "Macroscopic color": "Upper surfaces reddish brown to dark chestnut; exposed margins and context pale cream to buff.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Surface appears finely velvety to tomentose; complete attachment geometry is not preserved.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "The fertile surface is not shown clearly enough to determine whether it is smooth, poroid, toothed, or otherwise structured. True lamellae are not demonstrated.",
+      "Stipe": "A conventional central stipe is absent; fragments appear sessile or laterally attached.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures are visible or applicable to the preserved sessile growth form.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Attachment is broken. Growth on woody substrate is plausible from the leathery shelf-like form, but the original host and exact substrate are not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN6-F21",
@@ -13505,7 +17075,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Irregular, resupinate to effused-reflexed white basidiome attached to a compact mass of soil, fine roots, and woody or herbaceous debris. The fertile surface is folded, lobed, and locally poroid to hydnoid in appearance.",
+      "Dimensions": "No calibrated scale is present. The entire preserved fragment appears approximately 4-7 cm across; dimensions are photographic estimates only.",
+      "Macroscopic color": "Basidiome white to cream with pale buff recesses; adherent substrate dark brown to black-brown.",
+      "Pileus — form / profile": "A discrete pileus is not clearly developed. Sterile lobes are thin, irregular, undulate, and locally reflexed, with a matte to finely tomentose surface. Margin is lobed and uneven.",
+      "Pileus — surface / ornamentation": "Sterile lobes are thin, irregular, undulate, and locally reflexed, with a matte to finely tomentose surface.",
+      "Pileus — margin": "Margin is lobed and uneven.",
+      "Hymenophore": "True lamellae are absent. The visible fertile surface is strongly folded to labyrinthine and may include shallow pores or toothlike projections; exact hymenophore architecture cannot be resolved from the…",
+      "Stipe": "A distinct stipe is absent. The basidiome appears broadly attached to the substrate mass.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No partial veil, annulus, cortina, universal-veil remnants, or volva are present or applicable to the observed growth form.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal tissue is intermixed with soil, fine roots, and decomposed organic matter. The original host or substrate identity and exact attachment interface are not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f21.jpg, bn6-f21v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F22",
@@ -13570,7 +17157,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Fragmentary dark brown agaricoid specimen represented by a small scaly pileus or button, a long heavily textured stipe, and a pale underside with a conspicuous dark central area. Major structures are separated.",
+      "Dimensions": "No calibrated scale is visible; direct preserved-specimen measurements are required.",
+      "Macroscopic color": "Pileus dark brown to chocolate with paler cracking; underside cream to gray-buff; stipe dark brown; adherent soil brown.",
+      "Pileus — form / profile": "Pileus small, convex to subglobose, dark brown, and conspicuously cracked or scaly in a polygonal pattern. The mature margin and intact pileus-stipe junction are not preserved.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "The mature margin and intact pileus-stipe junction are not preserved.",
+      "Hymenophore": "A pale cream to gray-buff underside is visible, but the image does not resolve whether the fertile surface is lamellate, poroid, or another type. A conspicuous dark central cavity or attachment area is present.",
+      "Stipe": "Stipe long, robust, dark brown, and strongly roughened to fibrillose or scaly. Lower tissue is soil-bearing; interior, complete attachment, and bruising characters are not established.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, volval remnant, or other veil structure is visible. The separated, damaged condition limits certainty.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal portion is enlarged and mixed with soil and fibrous organic material. A discrete bulb or volva cannot be confirmed; substrate and ecological association are not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN6-F23",
@@ -13628,7 +17232,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large, robust boletoid basidiome represented by a detached broad pileus and an elongated curved stipe. The hymenophore is densely poroid and the specimen shows extensive feeding or abrasion damage.",
+      "Dimensions": "No calibrated scale is visible. Pileus appears approximately 9-14 cm broad and stipe approximately 9-14 cm long; these values are provisional…",
+      "Macroscopic color": "Pileus pale tan to gray-brown with cream abrasions; pore surface gray-buff to taupe; stipe cream to pale tan with brown longitudinal staining and soil-darkened base.",
+      "Pileus — form / profile": "Pileus broadly convex to nearly plane, circular, thick, dry, and finely velvety to subtomentose. Surface is pale gray-brown with numerous irregular pale excavations and punctures.",
+      "Pileus — surface / ornamentation": "Pileus broadly convex to nearly plane, circular, thick, dry, and finely velvety to subtomentose. Surface is pale gray-brown with numerous irregular pale excavations and punctures.",
+      "Pileus — margin": "Margin appears thick and…",
+      "Hymenophore": "Hymenophore tubular and poroid; true gills absent. Pores very small, dense, and irregularly angular, gray-buff to taupe. Tube depth, bruising response, separability, and pore density were not measured.",
+      "Stipe": "Stipe long, curved, subequal to slightly clavate, cream to pale tan, with conspicuous brown longitudinal fibrils or staining. Interior appears solid. Reticulation and scabers are not clearly demonstrated.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base is incomplete and soil-bearing, without a distinct bulb or volva. Host-tree association, surrounding vegetation, and soil type were not recorded.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f23.jpg, bn6-f23v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F24",
@@ -13693,7 +17314,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Robust pale cream to buff agaricoid specimen represented by a very broad damaged pileus, crowded pale lamellae, and a stout detached white stipe.",
+      "Dimensions": "No calibrated scale is visible; exact dimensions should be entered from the physical specimen.",
+      "Macroscopic color": "Pileus cream to pale buff with tan soil staining; lamellae cream to pale ochre; stipe white to cream; adherent debris brown.",
+      "Pileus — form / profile": "Pileus very broad, thick-fleshed, depressed to irregularly plane, dry to matte, and pale cream-buff. Surface shows extensive soil staining, abrasion, and broken areas; margin is irregular and torn.",
+      "Pileus — surface / ornamentation": "Pileus very broad, thick-fleshed, depressed to irregularly plane, dry to matte, and pale cream-buff. Surface shows extensive soil staining, abrasion, and broken areas; margin is irregular and torn.",
+      "Pileus — margin": "Surface shows extensive soil staining, abrasion, and broken areas; margin is irregular and torn.",
+      "Hymenophore": "Lamellae close to crowded, broad, cream to pale buff, and apparently adnate to decurrent in the preserved portion. Numerous lamellulae are visible; damage obscures complete attachment and edge characters.",
+      "Stipe": "Stipe stout, cylindrical to slightly clavate, white to cream, apparently solid, and smooth to longitudinally fibrillose. The detached condition prevents assessment of the intact pileus junction and full basal…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, universal-veil remnants, or volva are visible. Damage and separation of structures prevent certainty.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base is incomplete and locally soil-bearing. No distinct bulb, volva, or rooting extension can be confirmed; substrate and host association were not recorded.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN6-F25",
@@ -13758,7 +17396,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large pale cream to buff agaricoid specimen represented by a broad damaged pileus, crowded pale lamellae, and a stout detached stipe fragment. The collection is incomplete.",
+      "Dimensions": "No calibrated scale is visible; direct measurements should be taken from the physical specimen.",
+      "Macroscopic color": "Pileus cream to pale buff with tan soil staining; lamellae cream to pale buff; stipe white to cream.",
+      "Pileus — form / profile": "Pileus broad, thick-fleshed, dry to matte, and pale cream-buff. The upper surface is strongly soiled and abraded with broken areas; the margin is irregular from damage.",
+      "Pileus — surface / ornamentation": "Pileus broad, thick-fleshed, dry to matte, and pale cream-buff. The upper surface is strongly soiled and abraded with broken areas; the margin is irregular from damage.",
+      "Pileus — margin": "The upper surface is strongly soiled and abraded with broken areas; the margin is irregular from damage.",
+      "Hymenophore": "Lamellae close to crowded, broad, pale cream, and apparently adnate to decurrent in the preserved portion. Lamellulae are present; the damaged junction limits confidence in exact attachment.",
+      "Stipe": "Stipe stout, cylindrical to slightly clavate, white to cream, apparently solid, and smooth to faintly fibrillose. Both ends are damaged or detached, so exact attachment and basal form remain uncertain.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No intact annulus, cortina, universal-veil remnants, or volva are visible; fragmentation prevents confirmation of complete absence.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal architecture is incomplete and soil-stained. No clearly defined bulb, volva, rooting extension, or diagnostic basal mycelium is demonstrated.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN6-F26",
@@ -13823,7 +17478,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large pale agaricoid basidiome represented by a detached pileus and long stipe with a strongly bulbous, soil-encrusted base. Lamellae are pale, crowded, and free to narrowly attached.",
+      "Dimensions": "No calibrated scale is present. Pileus appears approximately 8-12 cm broad and stipe approximately 10-15 cm long; measurements are photographic…",
+      "Macroscopic color": "Pileus cream to pale buff with brown marginal staining; lamellae white to cream; stipe pale cream with tan fibrils; basal soil dark brown.",
+      "Pileus — form / profile": "Pileus broadly convex to plane, irregularly circular, dry, and pale cream-buff.",
+      "Pileus — surface / ornamentation": "Pileus broadly convex to plane, irregularly circular, dry, and pale cream-buff. Surface appears finely fibrillose to weakly scaly, with darker brown staining toward the margin.",
+      "Pileus — margin": "Surface appears finely fibrillose to weakly scaly, with darker brown staining toward the margin. Margin is appendiculate or…",
+      "Hymenophore": "Lamellae close to crowded, white to cream, broad, and apparently free to narrowly adnexed. Numerous lamellulae are present. Edges appear even to slightly eroded. Spacing and bruising reactions were not…",
+      "Stipe": "Stipe long, cylindrical to slightly tapering, pale cream, and finely fibrillose. The detached condition prevents confirmation of annular structures. Interior appears solid to stuffed in the visible…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No intact annulus or cortina is visible. The ragged pileus margin may represent damaged tissue or possible veil remnants, but this cannot be confirmed from the photographs.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base is markedly bulbous to subglobose and heavily soil-encrusted. A distinct saccate volva is not demonstrated; careful cleaning and sectioning are required to evaluate universal-veil tissue.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f26.jpg, bn6-f26v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F28",
@@ -13888,7 +17560,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute, delicate agaricoid basidiome growing from a short fragment of decaying woody or herbaceous substrate. The fruit body has an extremely slender stipe and a tiny pale cap.",
+      "Dimensions": "No calibrated scale is present. Cap appears approximately 1-3 mm broad and stipe approximately 15-30 mm long; estimates are provisional.",
+      "Macroscopic color": "Pileus pale cream to buff; lamellae pale cream; stipe translucent cream to pale brown; substrate reddish brown with white fungal growth.",
+      "Pileus — form / profile": "Pileus minute, convex to campanulate or shallowly plane, pale, thin, and smooth to faintly striate.",
+      "Pileus — surface / ornamentation": "Pileus minute, convex to campanulate or shallowly plane, pale, thin, and smooth to faintly striate. Surface texture, hygrophany, and bruising were not tested.",
+      "Pileus — margin": "Margin appears entire.",
+      "Hymenophore": "Lamellae are only partly visible and appear sparse to moderately spaced, pale, and broadly attached. Attachment, lamellulae, edge characters, and intervenose connections cannot be resolved confidently.",
+      "Stipe": "Stipe extremely slender, filiform, elongated, and pale brown to translucent cream. Surface appears smooth. No annulus is visible. The basal end arises directly from the substrate fragment.0.1 all the way…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No partial veil, annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base is directly attached to a small decaying twig or fibrous plant fragment bearing white mycelial tissue. Substrate identity and decay stage were not recorded.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f28.jpg, bn6-f28v2.jpg, bn6-f28v3.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F29",
@@ -13953,7 +17642,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Fragmentary pale tan to ochre fungal specimen represented by a broken thick cap/context fragment and a separate elongated fibrous tissue or stipe-like fragment. The hymenophore is not clearly preserved in the supplied view.",
+      "Dimensions": "No calibrated scale is visible; direct measurements should be taken from the preserved specimen.",
+      "Macroscopic color": "Exposed context cream to pale buff; outer tissue tan to ochre-brown with darker aged or damaged areas; elongated fragment tan-brown.",
+      "Pileus — form / profile": "Only a broken thick pileus or context fragment is preserved.",
+      "Pileus — surface / ornamentation": "Complete shape, surface, and margin configuration…",
+      "Pileus — margin": "Exposed interior is cream to pale buff with a tan-brown outer margin and darker damaged areas. Complete shape, surface, and margin configuration…",
+      "Hymenophore": "The fertile surface is not clearly exposed in the supplied photograph. Lamellae, pores, teeth, or other hymenophore architecture therefore cannot be documented reliably.",
+      "Stipe": "A separate elongated tan, fibrous fragment may represent stipe tissue, but it is incomplete and detached. Exact centrality, surface characters, pileus attachment, and basal architecture cannot be established.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No diagnostic annulus, cortina, volval tissue, or other veil structure is visible on the preserved fragments; absence cannot be confirmed from incomplete material.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal attachment and original substrate are not preserved in the supplied photograph.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN6-F30",
@@ -14018,7 +17724,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small bright yellow-orange agaricoid basidiomata represented by two pilei and one detached slender stipe. Lamellae are thick, decurrent, and forked.",
+      "Dimensions": "No calibrated scale is visible. Pilei appear approximately 1.5-3.5 cm broad and stipe approximately 4-7 cm long; values are provisional photographic…",
+      "Macroscopic color": "Pileus vivid yellow to golden orange; lamellae golden yellow; stipe yellow-orange with a soil-darkened base.",
+      "Pileus — form / profile": "Pileus convex to shallowly depressed or irregularly funnel-shaped, thin-fleshed, smooth to finely fibrillose, and bright golden yellow. Margin is wavy, lobed, and locally incurved.1.5 cm",
+      "Pileus — surface / ornamentation": "Pileus convex to shallowly depressed or irregularly funnel-shaped, thin-fleshed, smooth to finely fibrillose, and bright golden yellow.",
+      "Pileus — margin": "Margin is wavy, lobed, and locally incurved.1.5 cm",
+      "Hymenophore": "Lamellae thick, blunt-edged, widely to moderately spaced, strongly decurrent, and repeatedly forked with cross-veins or anastomoses. Hymenophore is concolorous yellow-orange. Bruising response was not tested.",
+      "Stipe": "Stipe slender, cylindrical, curved, smooth to faintly fibrillose, and concolorous yellow-orange. Interior and consistency were not documented. No annulus is visible.Top 0.2 cm all the way through height 3.0cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva were observed.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base is incomplete and retains a small amount of dark soil. Substrate, host association, and basal mycelial characters were not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f30.jpg, bn6-f30v2.jpg, bn6-f30v3.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F31",
@@ -14076,7 +17799,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "BN6-F32",
@@ -14141,7 +17881,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Irregular white to cream, lobed and folded basidiome attached to a compact dark substrate mass. The specimen is resupinate to effused-reflexed and lacks a conventional cap-and-stipe organization.",
+      "Dimensions": "No calibrated scale is present. The preserved cluster appears approximately 4-8 cm across; estimate is provisional.",
+      "Macroscopic color": "Basidiome white to cream with pale buff or grayish recesses; substrate dark brown to black-brown.",
+      "Pileus — form / profile": "No discrete pileus is evident. Sterile surfaces are irregularly lobed, wrinkled, and reflexed, with a matte to finely tomentose appearance.",
+      "Pileus — surface / ornamentation": "Sterile surfaces are irregularly lobed, wrinkled, and reflexed, with a matte to finely tomentose appearance.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "True gills are absent. The putative fertile surface appears folded, wrinkled, and locally poroid or toothlike. Precise hymenophore type cannot be determined from the photographs without closer examination.",
+      "Stipe": "A distinct stipe is absent. The basidiome is broadly attached to the substrate mass.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Veil structures are absent and not applicable to the observed resupinate or effused-reflexed morphology.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal attachment is obscured by dark soil, roots, and organic debris. The original woody or terrestrial substrate and host association are not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f32.jpg, bn6-f32v2.jpg, bn6-f32v3.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F33",
@@ -14206,7 +17963,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large robust boletoid basidiome with orange-brown pileus, broad poroid hymenophore, and elongated pale stipe. Specimen was sectioned to expose context and tubes.",
+      "Dimensions": "No calibrated scale is visible. Pileus appears approximately 8-12 cm broad and stipe approximately 8-12 cm long; these are photographic estimates…",
+      "Macroscopic color": "Pileus orange-brown to cinnamon; pore surface tan to ochre-brown with pale damaged areas; stipe cream to pale tan with brown soil staining; context white to cream.",
+      "Pileus — form / profile": "Pileus broadly convex to plane, circular, dry, and matte to finely velvety.",
+      "Pileus — surface / ornamentation": "Pileus broadly convex to plane, circular, dry, and matte to finely velvety. Surface shows small pits, abrasions, and pale damaged patches.",
+      "Pileus — margin": "Margin appears entire and thick.",
+      "Hymenophore": "Hymenophore poroid. Pores small to medium, angular to irregular, tan to ochre-brown. Tubes appear moderately deep and separable from the context. Several white patches may represent damage, immaturity, or…",
+      "Stipe": "Stipe long, curved, clavate to subequal, cream to pale tan, with faint longitudinal fibrils and soil at the base. Reticulation and scabers are not clearly visible. Interior appears solid and pale. Top 1.5 cm…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base is incomplete and soil-covered, without a distinct bulb or volva. Host association, soil type, and nearby tree species were not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f33(2).jpg, bn6-f33v2(2).jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F34",
@@ -14271,7 +18045,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Several small orange-buff agaricoid specimens and fragments with darker central discoloration and soil-adherent, enlarged basal portions. The material is damaged and incomplete.",
+      "Dimensions": "No calibrated scale is visible. Dimensions should be recorded from the physical specimens.",
+      "Macroscopic color": "Pilei orange-buff to ochre with darker brown centers or spots; lamellae pale buff to ochre; basal soil dark brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "STEM top 0.5 mid 0.5 cm base 0.5 cm height 2.0 cm",
+      "Stipe": "Stipe fragments short to moderately elongated, pale ochre to buff, and apparently solid. Surfaces are soil-stained and damaged, preventing confident assessment of annular zones or internal structure.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, volva, or other veil structure is visible. The fragmented condition limits certainty.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy was supplied. Spore-print color, basidiospore morphology, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal portions are enlarged to bulbous or subglobose and heavily soil-encrusted. A distinct saccate volva is not demonstrated. Substrate, nearby vegetation, and host association were not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f34(2).jpg, bn6-f34v2(3).jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F35",
@@ -14336,7 +18127,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large, mature pale brown agaricoid basidiome represented by a broad damaged pileus and a stout detached stipe with soil at the base. Lamellae are pale and strongly decurrent to sinuate-decurrent.",
+      "Dimensions": "No calibrated scale is visible. Pileus appears approximately 10-16 cm broad and stipe approximately 7-12 cm long; these are photographic estimates…",
+      "Macroscopic color": "Pileus tan to ochre-brown with broad cream abrasions; lamellae cream to pale buff; stipe white to cream with tan staining and dark basal soil.",
+      "Pileus — form / profile": "Pileus broad, depressed to irregularly plane, thick-fleshed, dry, and tan to ochre-brown. Margin is strongly irregular, lobed, and torn.",
+      "Pileus — surface / ornamentation": "Pileus broad, depressed to irregularly plane, thick-fleshed, dry, and tan to ochre-brown. Surface is extensively abraded or peeled, exposing cream context.",
+      "Pileus — margin": "Margin is strongly irregular, lobed, and torn.",
+      "Hymenophore": "Lamellae close to crowded, broad, cream to pale buff, and decurrent to sinuate-decurrent. Numerous lamellulae are present. Edges appear uneven from damage. Forking and bruising reactions were not assessed.",
+      "Stipe": "Stipe stout, cylindrical to slightly clavate, white to cream, and longitudinally fibrillose. Interior appears solid. No intact annulus is visible in the detached material.Top 1.0 mid 1.7 base 1.,5 cm height…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, universal-veil remnants, or volva are visible. Surface damage prevents confirmation of complete absence.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base is blunt to slightly swollen and soil-covered, with no clearly defined volva or rooting extension. Substrate and nearby host plants were not recorded.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f35.jpg, bn6-f35v2.jpg, bn6-f35v3.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F40",
@@ -14394,7 +18202,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Irregular white to cream, folded and lobed fungal growth attached to a dark soil-and-root mass. The growth form is resupinate to effused-reflexed, without a distinct stipe.",
+      "Dimensions": "No calibrated scale is visible. The preserved mass appears approximately 4-7 cm across; photographic estimate only.",
+      "Macroscopic color": "Fertile and sterile surfaces white to cream with pale buff shadows; associated substrate dark brown to black-brown.",
+      "Pileus — form / profile": "No conventional pileus is evident. Exposed lobes are thin, wrinkled, folded, and variably reflexed, with irregular crenulate margins.",
+      "Pileus — surface / ornamentation": "Surface appears matte to finely tomentose.0.5 cm",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "True lamellae are absent. The fertile surface appears corrugated, labyrinthine, and locally poroid or toothlike; high-resolution close-up or microscopy is required to define the hymenophore.",
+      "Stipe": "A discrete stipe is absent. The basidiome is broadly attached to the substrate mass.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures are present or applicable to the observed growth form.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base is obscured by compact soil, fine roots, and decomposing organic matter. Original substrate identity and exact attachment are not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f40(1).jpg, bn6-fv3.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "BN6-F41",
@@ -14460,7 +18285,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large brown boletoid basidiome with a dark chestnut pileus, pale salmon-buff poroid hymenophore, and a stout reddish-brown stipe. The specimen is fragmented but major structures are preserved.",
+      "Dimensions": "No calibrated scale is present. Pileus appears approximately 8-12 cm broad and stipe approximately 6-10 cm long; estimates are provisional.",
+      "Macroscopic color": "Pileus dark chestnut to chocolate brown; pore surface pale salmon to cinnamon-buff; stipe reddish brown to mauve-brown; basal soil dark brown.",
+      "Pileus — form / profile": "Pileus broad, convex to nearly plane, dark chestnut to chocolate brown, and dry-looking. Surface appears smooth to finely velvety with scattered irregular pale abrasions and a darker central area.",
+      "Pileus — surface / ornamentation": "Pileus broad, convex to nearly plane, dark chestnut to chocolate brown, and dry-looking. Surface appears smooth to finely velvety with scattered irregular pale abrasions and a darker central area.",
+      "Pileus — margin": "Margin is…",
+      "Hymenophore": "Hymenophore tubular and poroid; true gills absent. Pore surface pale salmon to pinkish buff or cinnamon-buff, with very fine, closely packed pores. Pore density, tube depth, bruising reaction, and separability…",
+      "Stipe": "Stipe stout, central, reddish brown to mauve-brown, approximately equal to slightly clavate, with a matte to finely textured surface. No clear reticulation or scabers can be confirmed. Interior, bruising, and…",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, volva, or other veil structure is visible.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base is incomplete and heavily soil-covered. No volva, rooting extension, or conspicuous basal mycelium can be confirmed. Host-tree association and substrate were not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: bn6-f41(2).jpg, bn6-f41v2(2).jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "CN1-F1",
@@ -14508,7 +18350,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Single agaricoid basidiome photographed in two views with adhering soil and leaf litter. Cap is intact in the primary image; hymenophore, complete stipe, and base are insufficiently exposed for diagnostic assessment.",
+      "Dimensions": "Not measured; no scale or calibrated reference is present. One intact cap is visible.",
+      "Macroscopic color": "Cap reddish brown to orange-brown with dark brown center; adhering soil and leaf litter dark brown; other structures not reliably resolved.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F2",
@@ -14556,7 +18415,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small agaricoid specimen documented as a separated cap and curved stipe",
+      "Dimensions": "Not measured; no scale present",
+      "Macroscopic color": "Cap orange-brown to cinnamon-brown with darker disc; lamellae salmon-buff; stipe pinkish buff",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F3",
@@ -14604,7 +18480,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Fragmented cluster of robust agaricoid fruit bodies with broad olive-gray pilei, exposed crowded lamellae and stout pale stipes",
+      "Dimensions": "Not measured; no scale",
+      "Macroscopic color": "Caps olive-gray to greenish gray with brown disc; lamellae and stipes white to cream",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F4",
@@ -14652,7 +18545,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Two detached, incomplete pale fungal fragments; diagnostic cap and hymenophore structures are not preserved",
+      "Dimensions": "Not measured; no scale present",
+      "Macroscopic color": "White to cream with tan-brown soil staining and localized pink-red to reddish-brown tissue",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F5",
@@ -14700,7 +18610,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Fragmented agaricoid basidiomes with exposed lamellae and broken stipe/cap tissues. Two views document the same specimen. Identification is intentionally unresolved pending field metadata, microscopy, and calibrated measurements.",
+      "Dimensions": "Not measured; no scale or calibrated reference is present. Multiple broken fragments are shown.",
+      "Macroscopic color": "Cream to pale buff overall; lamellae cream to pale yellow-cream; stipe white to cream; localized tan-brown discoloration; dark brown adhering soil.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F6",
@@ -14748,7 +18675,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Macromorphology documented from two photographs",
+      "Dimensions": "Not measured; no scale",
+      "Macroscopic color": "Cap brown; gills brown; stipe pale tan",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F7",
@@ -14796,7 +18740,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Fragmentary agaricoid specimen represented by a detached dark-brown cap and a separate slender stipe with adhering soil; overall habit and attachment cannot be reconstructed from the single view.",
+      "Dimensions": "Not measured; no scale present.",
+      "Macroscopic color": "Cap dark brown; stipe tan to pale brown; base dark soil-brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F8",
@@ -14844,7 +18805,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Detached agaricoid specimen with a striate pale cap, exposed lamellae, very long slender stipe and visible pale spore deposit",
+      "Dimensions": "Not measured; no scale present",
+      "Macroscopic color": "Cap pale tan-buff; lamellae cream-buff; stipe pale cream; spore deposit white to very pale cream",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F9",
@@ -14892,7 +18870,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Gasteroid/puffball-type fruit body; identification pending",
+      "Dimensions": "Not measured; no scale",
+      "Macroscopic color": "Cream-white base; tan-brown ornamented upper surface",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F12",
@@ -14940,7 +18935,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Agaricoid mushroom documented in separated parts",
+      "Dimensions": "Not measured; no scale",
+      "Macroscopic color": "Cap ochre-tan; gills cream; stipe pale tan",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F13",
@@ -14988,7 +19000,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute agaricoid mushroom; photographic record limited",
+      "Dimensions": "Not measured; no scale",
+      "Macroscopic color": "Cap cream-buff; gills pale buff; stipe brown to dark brown",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F14",
@@ -15036,7 +19065,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small red- to pink-capped agaricoid specimen, photographed as a detached cap with a central stipe remnant plus additional pale stipe fragments.",
+      "Dimensions": "Not measured; no scale present. Specimen fragmented.",
+      "Macroscopic color": "Cap red-pink at margin grading to pale cream centrally; gills cream; stipe white to cream; basal debris dark brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F15",
@@ -15084,7 +19130,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Heavily damaged, soil-encrusted cluster of pale agaricoid fruit bodies",
+      "Dimensions": "Not measured; no scale",
+      "Macroscopic color": "Caps cream to tan-brown; gills pale cream; stipes white to tan",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F16",
@@ -15132,7 +19195,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Branched coral-like fruiting bodies on woody substrate",
+      "Dimensions": "Not measured; no scale",
+      "Macroscopic color": "Cream to pale buff; older cluster tan-brown",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F17",
@@ -15180,7 +19260,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large, mature, damaged agaricoid basidiome documented as a detached cap with robust stipe fragments. Complementary views show the pileus, lamellae, exposed context, and a pale radial spore deposit. Identification remains unresolved pending field metadata…",
+      "Dimensions": "Not measured; no scale or calibrated reference is present. Cap appears large relative to the foil sheet; stipe fragments are robust but incomplete.",
+      "Macroscopic color": "Cap taupe to gray-brown with a darker reddish-brown center and pale abraded areas; lamellae cream to pale buff; stipe white to cream; spore deposit pale cream to…",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F19",
@@ -15228,7 +19325,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Agaricoid specimen documented in separated fragments",
+      "Dimensions": "Not measured; no scale",
+      "Macroscopic color": "Cap deep red; gills cream-white; stipe white to cream",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F21",
@@ -15276,7 +19390,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute agaricoid fruit bodies with striate caps and very long wiry stipes",
+      "Dimensions": "Not measured; no scale",
+      "Macroscopic color": "Caps ochre to orange-brown with darker discs; gills cream; stipes brown",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F22",
@@ -15324,7 +19455,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not measured; no scale or calibrated reference is present. The surviving stipe is moderately long and slender relative to the foil sheet, but it is…",
+      "Macroscopic color": "Stipe white to cream; probable spore deposit off-white to pale cream; basal soil and organic debris dark brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F23",
@@ -15372,7 +19520,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Multiple agaricoid fruit bodies documented in separated parts",
+      "Dimensions": "Not measured; no scale",
+      "Macroscopic color": "Caps brown; gills cream-buff to brown; stipes pale cream",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F24",
@@ -15420,7 +19585,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Severely fragmented pale agaricoid material represented by a small cap/hymenophore fragment and short stipe or basal pieces. The material is insufficient for a complete macroscopic diagnosis; identification remains unresolved pending intact material, field…",
+      "Dimensions": "Not measured; no scale or calibrated reference is present. All surviving fragments are small and incomplete.",
+      "Macroscopic color": "Fragments cream to pale buff and tan; basal soil and loose organic debris dark brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F26",
@@ -15468,7 +19650,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small agaricoid specimen documented in separated cap and stipe",
+      "Dimensions": "Not measured; no scale",
+      "Macroscopic color": "Cap reddish brown; gills tan-brown; stipe brown",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F27",
@@ -15516,7 +19715,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute pale agaricoid fruit body with a very long hairlike stipe",
+      "Dimensions": "Not measured; no scale",
+      "Macroscopic color": "Cap pale cream to buff; hymenophore cream; stipe pale tan to brown",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F28",
@@ -15564,7 +19780,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Two detached red- to pink-capped agaricoid basidiomes with two pale stipe fragments. One cap underside is clearly visible; the second cap is faded and damaged. Identification remains unresolved pending field metadata, calibrated measurements, spore print, and…",
+      "Dimensions": "Not measured; no scale or calibrated reference is present. Caps appear small to medium relative to the foil sheet; stipes are incomplete.",
+      "Macroscopic color": "Pileus bright scarlet to crimson and salmon-pink with cream faded areas; lamellae cream to pale buff; stipes white to cream; basal soil dark brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F29",
@@ -15612,7 +19845,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Red agaricoid specimen documented in separated cap and stipe",
+      "Dimensions": "Not measured; no scale",
+      "Macroscopic color": "Cap red; gills pink-red to pale salmon; stipe white",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F31",
@@ -15660,7 +19910,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small orange-brown agaricoid specimen with exposed tan lamellae",
+      "Dimensions": "Not measured; no scale",
+      "Macroscopic color": "Cap orange-brown with dark red-brown disc; gills and stipe salmon-tan",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F32",
@@ -15708,7 +19975,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Isolated orange fungal fragment; diagnostic structures absent",
+      "Dimensions": "Not measured; no scale",
+      "Macroscopic color": "Pale orange to ochre with darker brown spots",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F33",
@@ -15756,7 +20040,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large agaricoid basidiome represented by a detached cap and two stipe fragments. Cap and fertile surface are both visible; identification remains unresolved pending field metadata, calibrated measurements, spore print, and microscopy.",
+      "Dimensions": "Not measured; no scale or calibrated reference is present. Cap appears large relative to the foil sheet; stipe is long and robust but fragmented.",
+      "Macroscopic color": "Cap warm tan to orange-brown with darker brown margin and scattered pale tan surface patches; lamellae pale buff to pinkish tan; stipe tan-brown; base darkened by…",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F34",
@@ -15804,7 +20105,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Compact coral-like fruiting body with soil-bearing base",
+      "Dimensions": "Not measured; no scale",
+      "Macroscopic color": "Cream to pale buff; substrate dark brown",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F35",
@@ -15852,7 +20170,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Red-capped agaricoid specimen with visible pale spore deposit",
+      "Dimensions": "Not measured; no scale",
+      "Macroscopic color": "Cap red to pink-red; gills cream; stipe white; print pale",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F37",
@@ -15900,7 +20235,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large, mature agaricoid basidiome documented as a detached cap and long central stipe. Both pileus and lamellae are clearly visible in complementary views; identification remains unresolved pending calibrated measurements, field notes, spore print, and…",
+      "Dimensions": "Not measured; no scale or calibrated reference is present. Cap appears broad; stipe is very long and slender to moderately robust.",
+      "Macroscopic color": "Cap tawny brown to ochraceous brown, darker centrally; lamellae white to pale cream; stipe white to pale cream with brownish discoloration and dark adhering soil at the…",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F38",
@@ -15948,7 +20300,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Very small red-orange agaricoid fruit bodies on wiry dark stipes",
+      "Dimensions": "Not measured; no scale",
+      "Macroscopic color": "Caps and gills red-orange; stipes dark brown to blackish",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F39",
@@ -15996,7 +20365,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Two small, irregular, shelf- or fan-like fungal fragments documented with complementary views beside a woody branch. One view exposes a pale upper/context surface and the other an ochraceous, finely tooth-like fertile surface. Identification remains…",
+      "Dimensions": "Not measured; no scale or calibrated reference is present. Both fragments are small relative to the supporting branch and foil surface.",
+      "Macroscopic color": "Upper/context surface white to cream with pale tan zoning; fertile surface cream-yellow to ochraceous orange; scattered dark soil particles.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN1-F40",
@@ -16045,7 +20431,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Closed, nearly spherical gasteroid/puffball-like fruit body",
+      "Dimensions": "Not measured; no scale",
+      "Macroscopic color": "Outer surface cream to buff with tan-brown granules and a rust-brown damaged patch",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN2-F5",
@@ -16093,7 +20496,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "ADD IMAGEfield / specimen imageCAP shape • surface • margin • texture • bruising________________________________________________________________tan/ yellowish, depressed 3.9 cm…",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Not documented in the supplied source record.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN2-F7",
@@ -16141,7 +20561,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Dryads saddle (cerioporus squamosus)",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Not documented in the supplied source record.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN2-F9",
@@ -16189,7 +20626,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small rounded to subglobose gasteroid or truffle-like fruit body documented externally and in section; identification remains unresolved.",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Exterior medium brown to reddish brown; exposed interior dark brown; basal tissue white to cream with adhering soil.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN2-F10",
@@ -16237,7 +20691,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "ADD IMAGEfield / specimen imageCAP shape • surface • margin • texture • bruising__Grey, velvety, ______________________________________________________________6.3 cm slight depressed, plano…",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Not documented in the supplied source record.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN2-F14",
@@ -16285,7 +20756,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "ADD IMAGEfield / specimen imageCAP shape • surface • margin • texture • bruising________________________________________________________________white , depressed, brown/grey bruising on…",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Not documented in the supplied source record.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN2-F16",
@@ -16333,7 +20821,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small cream to buff rosette- or fan-clustered fungus associated with a short woody branch; upper and underside views are documented.",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Upper surface pale cream to buff with tan centers; fertile surface cream to ochraceous; branch bark dark gray-brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN2-F17",
@@ -16381,7 +20886,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "ADD IMAGEfield / specimen imageCAP shape • surface • margin • texture • bruising________________________________________________________________brown w/ black bruising. 8.4cm ________________________________________________________________smooth velvety…",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Not documented in the supplied source record.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN2-F19",
@@ -16429,7 +20951,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "ADD IMAGEfield / specimen imageCAP shape • surface • margin • texture • bruising________________________________________________________________________red, white, pink, lined, smooth 6.2 cm…",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Not documented in the supplied source record.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN2-F20",
@@ -16477,7 +21016,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Boletus",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Not documented in the supplied source record.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN2-F21",
@@ -16542,7 +21098,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute orange-brown agaricoid fruit body associated with decaying leaf and woody litter; one intact cap and a detached underside are visible.",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Cap orange to cinnamon-brown; lamellae concolorous orange-brown; stipe dark brown to nearly black; substrate tan-brown.CAP shape • surface • margin • texture • bruising",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "type • attachment • spacing • edge • color • bruising",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "partial/universal veil • ring • cortina • remnants",
+      "Spore print / macroscopic deposit": "print color • shape • size (µm) • ornamentation • objective/stain",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN2-F22",
@@ -16590,7 +21163,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small clustered shelf- to fan-shaped polyporoid fragments documented from several views, including upper surfaces and pale undersides.",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Upper surfaces tan to brown with darker concentric zones; undersides cream to pale buff; context white to cream.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN2-F23",
@@ -16638,7 +21228,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "ADD IMAGEfield / specimen imageCAP shape • surface • margin • texture • bruising________________________________________________________________white/ light pink…",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Not documented in the supplied source record.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN2-F26",
@@ -16686,7 +21293,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "ADD IMAGEfield / specimen imageCAP shape • surface • margin • texture • bruising________________________________________________________________green , grey velvety , lined , ________________________________________________________________4.4…",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Not documented in the supplied source record.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN2-F28",
@@ -16734,7 +21358,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "ADD IMAGEfield / specimen imageCAP shape • surface • margin • texture • bruising________________________________________________________________9.7cm brown velvety, slight auburn…",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Not documented in the supplied source record.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN2-F29",
@@ -16782,7 +21423,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "ADD IMAGEfield / specimen imageCAP shape • surface • margin • texture • bruising________________________________________________________________6.4 cm, brown, velvety…",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Not documented in the supplied source record.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN2-F30",
@@ -16830,7 +21488,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "ADD IMAGEfield / specimen imageCAP shape • surface • margin • texture • bruising________________________________________________________________brown, velvety…",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Not documented in the supplied source record.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN2-F32",
@@ -16879,7 +21554,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "ADD IMAGEfield / specimen imageCAP shape • surface • margin • texture • bruising____________green, velvety, ….8.6 cm…",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Not documented in the supplied source record.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN4-F8",
@@ -16945,7 +21637,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Two pale agaricoid basidiomes documented with ruler, including a detached cap/lamellar view and stipes with markedly enlarged soil-covered bases.",
+      "Dimensions": "Cap approximately 2.5-3.0 cm diameter; stipes approximately 4-5 cm long and roughly 0.4-0.7 cm wide, broadening at the base.",
+      "Macroscopic color": "Cap cream to pale yellow-buff; lamellae cream to pale yellow; stipes white to yellowish cream; bases white with dark brown soil.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "type • attachment • spacing • edge • color • bruising",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "partial/universal veil • ring • cortina • remnants",
+      "Spore print / macroscopic deposit": "print color • shape • size (µm) • ornamentation • objective/stain",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN6-F6",
@@ -16994,7 +21703,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "ADD IMAGEfield / specimen imageCAP shape • surface • margin • texture • bruising____________________________________________________________________________________________________________________________________________________________________________________…",
+      "Dimensions": "Not documented in the supplied source record.",
+      "Macroscopic color": "Not documented in the supplied source record.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "CN000-F1",
@@ -17059,7 +21785,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Medium reddish-brown agaricoid specimen with a circular centrally depressed cap, pale gray-buff lamellae, and a long fibrous stipe grading from orange-red toward the apex to darker brown along its length.",
+      "Dimensions": "Medium basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus reddish brown to chestnut-red with darker central depression; lamellae grayish cream to pale buff; stipe orange-red to brown with darker longitudinal staining.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae pale gray-buff to cream, moderately close to close, broad and radiating, with shorter lamellulae. Attachment appears adnate to slightly adnexed in the visible specimen.",
+      "Stipe": "top 0.5 mid 0.3 base 0.2 height 9.0 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "A very faint pale radial deposit may be present beneath the cap, but it is not sufficiently distinct or controlled for a definitive spore-print color. Microscopy remains pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The basal end and original substrate junction are incompletely preserved in the photographed arrangement; no distinct volva is evident.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: cn000-f1.jpg, cn000-f1v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "CN000-F2",
@@ -17125,7 +21868,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small orange-brown agaricoid specimen with smooth convex cap, pale underside, and compact dark soil-bearing base; stipe is largely obscured in the supplied views.",
+      "Dimensions": "Small basidiome; no calibrated scale visible.",
+      "Macroscopic color": "Pileus orange-brown to tawny with darker center; underside pale cream; basal soil dark brown.",
+      "Pileus — form / profile": "Pileus small, circular, orange-brown to tawny, convex with a conspicuously darker central disc; margin thin and even to slightly irregular.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Pileus small, circular, orange-brown to tawny, convex with a conspicuously darker central disc; margin thin and even to slightly irregular.",
+      "Hymenophore": "Underside is only partly visible and appears pale cream. Exact hymenophore configuration and attachment cannot be confirmed from these views.",
+      "Stipe": "Stipe is mostly obscured or broken in the supplied views; only a short attachment region can be evaluated.Top 0.3 mid 0.2 base 0.5 height 4.7",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore deposit or calibrated microscopy is shown. Spore characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base remains attached to compact dark soil/organic debris. No distinct volva or bulb can be confirmed.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: cn000-f2.jpg, cn000-f2v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photographs: cn000-2.jpg, cn000-2v2.jpg, cn000-2v3.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "EN1-F3",
@@ -17190,7 +21950,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus small, pale cream to buff, rounded to fan-like and laterally attached, with smooth to finely matte surface and thin even margin.",
+      "Pileus — surface / ornamentation": "Pileus small, pale cream to buff, rounded to fan-like and laterally attached, with smooth to finely matte surface and thin even margin.",
+      "Pileus — margin": "Pileus small, pale cream to buff, rounded to fan-like and laterally attached, with smooth to finely matte surface and thin even margin.",
+      "Hymenophore": "Fertile surface is incompletely exposed in both views; gills, pores, teeth, or a smooth hymenium cannot be characterized confidently.",
+      "Stipe": "No distinct central stipe is present; attachment appears reduced, lateral, and close to sessile on the twig.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible; veil terminology may not apply to this reduced lateral form.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Basidiospore dimensions, basidia, cystidia, hyphal construction, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Specimen remains attached to a short bark-covered woody fragment, strongly supporting a lignicolous growth habit.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: en1-f3.JPG, en1-f3v2.JPG"
+    }
   },
   {
     "code": "EN1-F4",
@@ -17248,7 +22025,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "No discrete pileus is differentiated; fruiting bodies are vivid yellow, elongated, club-shaped to sparsely branched, with rounded to slightly pointed tips.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No true lamellae, pores, or teeth are visible. Fertile surface appears smooth over the yellow club-like fruiting bodies.",
+      "Stipe": "No differentiated central stipe; multiple simple to sparsely branched clubs arise from common basal tissue.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus or other veil structures are present; veil terminology is not applicable to this clavarioid morphology.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Basidiospore dimensions, basidia, hyphal construction, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Cluster arises from compact dark soil/organic material; exact host or substrate association is not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: en1-f4.JPG"
+    }
   },
   {
     "code": "EN1-F6",
@@ -17313,7 +22107,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus small, cinnamon to medium brown, convex to shallowly plane, smooth to finely matte, with a darker central zone and thin margin.",
+      "Pileus — surface / ornamentation": "Pileus small, cinnamon to medium brown, convex to shallowly plane, smooth to finely matte, with a darker central zone and thin margin.",
+      "Pileus — margin": "Pileus small, cinnamon to medium brown, convex to shallowly plane, smooth to finely matte, with a darker central zone and thin margin.",
+      "Hymenophore": "Lamellae crowded, cinnamon-brown to dark tan, relatively narrow with shorter lamellulae; exact attachment cannot be confirmed because cap and stipe are separated.",
+      "Stipe": "Stipe long, slender, orange-brown to reddish cinnamon, longitudinally fibrous to fibrillose, and slightly curved; basal end retains soil.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "A cinnamon-brown radial spore deposit is visible on the foil adjacent to the cap. Calibrated microscopy, basidiospore measurements, cystidia, pileipellis, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Clavate image has an enlarged pale pink-tan base with soil and plant debris; agaricoid images show a stout white stipe with compact dark soil at the base. Label reconciliation is required before assigning…",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: en1-f6.JPG"
+    }
   },
   {
     "code": "EN1-F7",
@@ -17378,7 +22189,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "No discrete pileus is preserved.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No gills, pores, teeth, or other definitive hymenophore are visible in the supplied photograph.",
+      "Stipe": "The elongated ridged structure cannot be assigned confidently to a stipe; it is a flattened, tapering fragment with longitudinal fibers/ridges.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures are identifiable on the fragment.",
+      "Spore print / macroscopic deposit": "No spore-bearing surface or controlled spore deposit is visible; microscopy is required before fungal identity can be established.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original attachment point is not preserved. Small particles of dark debris remain associated with one end.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: en1-f7.JPG"
+    }
   },
   {
     "code": "EN1-F8",
@@ -17443,7 +22271,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus small, vivid yellow-orange, irregularly wavy and shallowly depressed, with a thin uneven margin.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Pileus small, vivid yellow-orange, irregularly wavy and shallowly depressed, with a thin uneven margin.",
+      "Hymenophore": "Hymenophore consists of thick, blunt, widely spaced yellow-orange lamellae or ridge-like folds; several appear to run partly down the stipe, but exact attachment should be confirmed on an intact specimen.",
+      "Stipe": "Stipe very slender, yellow to yellow-orange, smooth to finely fibrillose, slightly curved, and darkened by adhering soil at the base.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains compact dark soil and organic debris; no distinct bulb or volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: en1-f8.JPG, en1-f8v2.JPG"
+    }
   },
   {
     "code": "EN1-F11",
@@ -17508,7 +22353,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Fertile undersurface is not shown clearly enough to determine pore size or other hymenophore characters; the upper green-zonate surfaces are sterile.",
+      "Stipe": "No central stipe is present; fruit bodies are sessile to laterally attached brackets.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus or other veil structures are present; veil terminology is not applicable to this bracket-form morphology.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Basidiospore dimensions, basidia, cystidia/setal elements, hyphal construction, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Attachment margins are incomplete; bracket morphology indicates lateral attachment to wood, although the original woody substrate is not preserved with these fragments.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: en1-f11.JPG"
+    }
   },
   {
     "code": "EN1-F12",
@@ -17566,7 +22428,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "No complete pileus is preserved.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No exposed lamellae, pores, teeth, or smooth fertile surface can be identified confidently because the material is heavily fragmented and contorted.",
+      "Stipe": "No intact differentiated stipe is preserved in the photographed fragments.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, universal-veil remnants, or volva are demonstrable on the fragments.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-producing structures and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original attachment and substrate relationship are not preserved; only small adhering dark debris remains.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: en1-f12.JPG"
+    }
   },
   {
     "code": "EN1-F14",
@@ -17631,7 +22510,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus broad, pale olive-green to cream, shallowly depressed, with irregular chipped margin and patchy pale surface loss consistent with fragile tissue.",
+      "Pileus — surface / ornamentation": "Pileus broad, pale olive-green to cream, shallowly depressed, with irregular chipped margin and patchy pale surface loss consistent with fragile tissue.",
+      "Pileus — margin": "Pileus broad, pale olive-green to cream, shallowly depressed, with irregular chipped margin and patchy pale surface loss consistent with fragile tissue.",
+      "Hymenophore": "Lamellae cream-white, crowded, thin and radiating evenly from the central attachment zone; exact attachment is limited by the detached cap/stipe condition.",
+      "Stipe": "Stipe stout, white to cream, cylindrical and smooth to finely fibrous; detached from the cap, with a cut or broken base bearing soil.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Detached basal end carries dark soil; no distinct volva or pronounced bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: en1-f14.JPG, en1-f14v2.JPG"
+    }
   },
   {
     "code": "EN1-F16",
@@ -17696,7 +22592,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus minute, pale beige to cream, thin and irregularly wavy, with a shallow central depression and delicate margin.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Pileus minute, pale beige to cream, thin and irregularly wavy, with a shallow central depression and delicate margin.",
+      "Hymenophore": "Pale lamellae are visible but only partly resolved at this scale; spacing appears moderate and attachment cannot be established confidently.",
+      "Stipe": "Stipe very slender, cream to pale tan, smooth to finely fibrillose, with a compact dark soil-bearing basal mass.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains compact dark soil/organic debris. No distinct bulb, volva, or rooting extension is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: en1-f16.JPG, en1-f16v2.JPG"
+    }
   },
   {
     "code": "EN1-F17",
@@ -17754,7 +22667,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus small, orange-brown to cinnamon, convex to shallowly plane, smooth to finely matte, with a thin even margin.",
+      "Pileus — surface / ornamentation": "Pileus small, orange-brown to cinnamon, convex to shallowly plane, smooth to finely matte, with a thin even margin.",
+      "Pileus — margin": "Pileus small, orange-brown to cinnamon, convex to shallowly plane, smooth to finely matte, with a thin even margin.",
+      "Hymenophore": "Lamellae brown-orange to cinnamon, moderately crowded and relatively narrow; exact attachment is not fully resolved from the detached specimen.",
+      "Stipe": "Stipe exceptionally slender, warm ochre-orange to reddish tan, smooth to finely fibrillose, gently curved, and soil-bearing at the base.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "A reddish-cinnamon radial spore deposit is visible adjacent to the specimen. Calibrated microscopy and basidiospore measurements remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Clavate image has an enlarged pale pink-tan base with soil and plant debris; agaricoid images show a stout white stipe with compact dark soil at the base. Label reconciliation is required before assigning…",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: en1-f17.JPG"
+    }
   },
   {
     "code": "EN1-F18",
@@ -17819,7 +22749,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus small, pale beige to cream, irregularly wavy and shallowly funnel-shaped to depressed; margin thin and uneven.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Pileus small, pale beige to cream, irregularly wavy and shallowly funnel-shaped to depressed; margin thin and uneven.",
+      "Hymenophore": "Pale lamellae or fold-like structures are visible beneath the cap and appear to run toward the stipe; exact attachment cannot be resolved confidently because the photographs are soft-focused.",
+      "Stipe": "Stipe slender, pale tan to cream-brown, curved and fragile, with darker soil-bearing basal material.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains compact dark soil/forest debris; no distinct bulb or volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: en1-f18.JPG, en1-f18v2.JPG"
+    }
   },
   {
     "code": "EN1-F19",
@@ -17877,7 +22824,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Context photograph only: bark-covered woody substrate bearing multiple black crustose/cushion-like fungal structures and an ochre-brown shelf-like fruit body. Relationship to EN1F19 versus EN1F20 cannot be assigned confidently from this combined image alone.",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN1-F20",
@@ -17935,7 +22899,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus broad and fleshy, tan to medium brown, convex to nearly plane, dry to finely matte, with an irregular collected margin.",
+      "Pileus — surface / ornamentation": "Pileus broad and fleshy, tan to medium brown, convex to nearly plane, dry to finely matte, with an irregular collected margin.",
+      "Pileus — margin": "Pileus broad and fleshy, tan to medium brown, convex to nearly plane, dry to finely matte, with an irregular collected margin.",
+      "Hymenophore": "Hymenophore appears poroid, pale cream to tan, with densely packed fine pores; true lamellae are absent.",
+      "Stipe": "Stipe thick and robust, brown to dark tan, largely obscured by adhering soil and organic debris; exposed surface appears fibrous.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Basidiospore dimensions, pore trama, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base is partly obscured by compact dark soil and organic debris; no discrete volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: en1-f20.JPG"
+    }
   },
   {
     "code": "EN1-F22",
@@ -18000,7 +22981,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Small rounded brown fragment; pileus architecture incomplete.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No exposed gills, pores, or teeth resolved confidently.",
+      "Stipe": "No intact differentiated stipe can be confirmed.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite veil structures visible.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore deposit pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base/attachment incomplete; dark organic debris adheres.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: en1-f22.JPG"
+    }
   },
   {
     "code": "EN1-F23",
@@ -18065,7 +23063,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute, highly fragmented agaricoid specimen represented by a small tan-brown cap fragment and an exceptionally slender broken stipe.",
+      "Dimensions": "Minute delicate basidiome; no calibrated scale visible. Direct measurement is required.",
+      "Macroscopic color": "Cap fragment tan to brown; exposed tissue pale buff; stipe pale tan to brown; basal debris dark brown.",
+      "Pileus — form / profile": "Pileus fragment minute, tan-brown and thin, with a darker central zone; complete cap outline and margin are not preserved.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Pileus fragment minute, tan-brown and thin, with a darker central zone; complete cap outline and margin are not preserved.",
+      "Hymenophore": "Fine radial lamellae are visible on the small detached cap fragment; spacing appears close, but attachment cannot be assessed because cap and stipe are separated.",
+      "Stipe": "Stipe fragment exceptionally slender, pale tan-brown, slightly curved and broken; basal portion retains dark organic debris.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible on the preserved fragments.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base is incomplete and soil-bearing; no distinct bulb, volva, or rooting extension is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: en1-f23.JPG, en1-f23v2.JPG"
+    }
   },
   {
     "code": "EN1-F24",
@@ -18130,7 +23145,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Medium-to-large robust agaricoid basidiome with broad brown pileus, crowded pale lamellae, stout fibrous stipe, and a persistent annular/partial-veil remnant near the upper stipe.",
+      "Dimensions": "Medium-to-large robust agaricoid basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus olive-brown to tan-brown; lamellae cream to pale buff; stipe pale tan to brown; basal soil dark brown.",
+      "Pileus — form / profile": "Pileus broad, fleshy, olive-brown to tan-brown, convex to nearly plane, dry to finely matte, with scattered pale abrasions or scales and irregular damage.",
+      "Pileus — surface / ornamentation": "Pileus broad, fleshy, olive-brown to tan-brown, convex to nearly plane, dry to finely matte, with scattered pale abrasions or scales and irregular damage.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae pale cream to buff, very crowded, thin to moderately broad, with numerous lamellulae; attachment appears adnate to narrowly adnexed around the upper stipe.",
+      "Stipe": "Stipe thick, stout, pale tan to brown, longitudinally fibrous, with an enlarged soil-bearing basal region and a cut or broken distal end.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "A persistent partial-veil remnant or annular zone is visible around the upper stipe; no distinct volva is evident.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal tissue is bulky and soil-bearing; no discrete volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: en1-f24.JPG, en1-f24v2.JPG"
+    }
   },
   {
     "code": "EN1-F25",
@@ -18195,7 +23227,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small vivid red-orange to orange-yellow agaricoid fragments with slender colored stipes; several caps are detached and fertile surfaces are poorly resolved.",
+      "Dimensions": "Small fragmentary basidiome; no calibrated scale visible.",
+      "Macroscopic color": "Caps red-orange with yellow-orange centers; stipes orange-red to yellow-orange; basal debris dark brown.",
+      "Pileus — form / profile": "Pilei small, red-orange to orange, convex to shallowly plane and smooth to finely matte; image softness limits reliable margin detail.",
+      "Pileus — surface / ornamentation": "Pilei small, red-orange to orange, convex to shallowly plane and smooth to finely matte; image softness limits reliable margin detail.",
+      "Pileus — margin": "Pilei small, red-orange to orange, convex to shallowly plane and smooth to finely matte; image softness limits reliable margin detail.",
+      "Hymenophore": "Fertile surfaces are not resolved clearly enough to characterize lamellar spacing, attachment, or other hymenophore features reliably.",
+      "Stipe": "Stipes very slender, orange-red to yellow-orange, flexible or curved, with several broken or detached segments.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants are visible in the soft-focused images.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "One cluster retains compact dark soil and organic debris; no distinct volva is discernible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: en1-f25.JPG, en1-f25v2.JPG"
+    }
   },
   {
     "code": "EN1-F26",
@@ -18260,7 +23309,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Fragmented ochre- to orange-brown fungal material composed of thin irregular lobes or shelves; overall architecture and attachment are incompletely preserved.",
+      "Dimensions": "Small fragmented material; no calibrated scale visible.",
+      "Macroscopic color": "Ochre-yellow to orange-brown with darker brown damaged areas and dark organic debris.",
+      "Pileus — form / profile": "Several thin irregular ochre-orange fragments with curved to wavy margins; no intact conventional pileus is preserved.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Some fragments show shallow ridge- or fold-like surfaces, but the fertile surface cannot be characterized confidently from the broken material.",
+      "Stipe": "No intact differentiated central stipe can be confirmed.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite veil structures are discernible on the fragmented material.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-producing structures and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original point of attachment is not preserved; dark soil and organic debris adhere to several fragments.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: en1-f26.JPG, en1-f26v2.JPG"
+    }
   },
   {
     "code": "EN1-F27",
@@ -18325,7 +23391,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large thick sessile poroid basidiome with pale cream-white irregular upper surface and broad pinkish-tan fine-pored fertile surface; woody material remains attached.",
+      "Dimensions": "Large robust bracket-like basidiome; no calibrated scale visible.",
+      "Macroscopic color": "Upper surface cream-white to pale buff; pore surface pale pinkish-tan; exposed context off-white; attached wood brown.",
+      "Pileus — form / profile": "Fruit body thick, irregular, cushion- to shelf-like, cream-white to pale buff, dry and uneven, with localized cracking, abrasion, and adhering debris.",
+      "Pileus — surface / ornamentation": "Fruit body thick, irregular, cushion- to shelf-like, cream-white to pale buff, dry and uneven, with localized cracking, abrasion, and adhering debris.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Hymenophore poroid; underside pale pinkish-tan with extremely fine, densely packed pores. True lamellae are absent.",
+      "Stipe": "No central stipe is present; fruit body is sessile to broadly laterally attached.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures are present; conventional veil terminology is not applicable to this sessile bracket morphology.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Basidiospore dimensions, pore trama, basidia, cystidia or setal elements, hyphal system, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Attached to coarse woody substrate fragments, consistent with a lignicolous growth habit.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: en1-f27.JPG, en1-f27v2.JPG, en1-f27v3.JPG"
+    }
   },
   {
     "code": "EN1-F28",
@@ -18390,7 +23473,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small-to-medium brown basidiome with detached rounded pileus and long brown stipe; fertile surface is poorly resolved in the supplied views.",
+      "Dimensions": "Small-to-medium basidiome; no calibrated scale visible.",
+      "Macroscopic color": "Pileus dark brown; underside pale gray-tan to cream; stipe brown to tan; basal debris dark brown.",
+      "Pileus — form / profile": "Pileus rounded, dark brown, convex, smooth to finely matte, with a darker central area.",
+      "Pileus — surface / ornamentation": "Pileus rounded, dark brown, convex, smooth to finely matte, with a darker central area.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Underside appears smooth to extremely finely poroid in the soft-focused image; discrete lamellae are not visible. Hymenophore type remains provisional pending a sharper underside view.",
+      "Stipe": "Stipe long, moderately stout, brown to tan, curved and fibrous, with a soil-bearing base and a cut or broken upper end.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or other veil remnants are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains compact dark soil and organic debris; no distinct volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: en1-f28.JPG, en1-f28v2.JPG"
+    }
   },
   {
     "code": "EN1-F29",
@@ -18455,7 +23555,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Several brown agaricoid basidiomata with rounded pilei, crowded pale cream lamellae, and stout pale tan-brown stipes with soil-bearing bases.",
+      "Dimensions": "Small-to-medium basidiomata; no calibrated scale visible.",
+      "Macroscopic color": "Pilei medium brown; lamellae cream-white; stipes pale tan to brown; basal soil dark brown.",
+      "Pileus — form / profile": "Pilei small to medium, medium brown, hemispherical to convex, dry to matte, with slightly darker central discs.",
+      "Pileus — surface / ornamentation": "Pilei small to medium, medium brown, hemispherical to convex, dry to matte, with slightly darker central discs.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae cream to pale buff, crowded, narrow to moderately broad, with lamellulae; attachment appears adnate to narrowly adnexed in the detached-cap view.",
+      "Stipe": "Stipes stout to moderately robust, pale tan-brown, fibrous, partly broken or sectioned; basal tissue is soil-bearing.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Bases retain compact soil, roots, and fine organic debris; no discrete volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: en1-f29.JPG, en1-f29v2.JPG"
+    }
   },
   {
     "code": "EN1-F30",
@@ -18514,7 +23631,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Single highly incomplete curved brown stipe/basal fragment with attached soil; cap and fertile surface are entirely absent.",
+      "Dimensions": "Small incomplete fragment; no calibrated scale visible.",
+      "Macroscopic color": "Stipe reddish brown to tan; basal debris dark brown.",
+      "Pileus — form / profile": "No pileus is preserved in the supplied fragment.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No fertile surface is preserved; gills, pores, teeth, or a smooth hymenium cannot be assessed.",
+      "Stipe": "Short-to-moderate curved brown fibrous stipe fragment, tapering slightly, with a damaged or cut upper end.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus or other veil remnants are visible on the preserved fragment.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore morphology and other microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains compact dark soil and organic debris; bulb or volva cannot be confirmed because preservation is incomplete.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: en1-f30.JPG"
+    }
   },
   {
     "code": "EN3-F2",
@@ -18572,7 +23706,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLORSmall wood-associated hydnoid or toothed basidiome fragment on bark with moss. Brown upper surface; cream teeth; size not measured.CAP / FRUITING SURFACESmall irregular brown to olive-brown fruiting body fragment, moss-covered in part, with…",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F3",
@@ -18620,7 +23771,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLORCluster of orange-brown agaricoid basidiomes associated with small woody twigs, including one larger mature cap and two smaller caps. Not measured; no calibrated scale present.Caps orange-brown to chestnut; stipes medium brown; substrate…",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F4",
@@ -18685,7 +23853,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLORFragmented reddish-brown agaricoid specimen with torn cap tissue, exposed cream lamellae, and separate pale stipe fragments. Size not measured; no calibrated scale present.CAPFragmented reddish-brown to salmon cap, convex to plane, smooth to…",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F5",
@@ -18750,7 +23935,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus broad, fleshy, medium to dark brown, convex to nearly plane, smooth to finely matte, with irregular abrasions and collection damage.",
+      "Pileus — surface / ornamentation": "Pileus broad, fleshy, medium to dark brown, convex to nearly plane, smooth to finely matte, with irregular abrasions and collection damage.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Hymenophore poroid; pore surface pale tan to pinkish-brown, very dense and fine, with localized darker bruising/handling marks. True lamellae absent.",
+      "Stipe": "Stipe stout, club-shaped to cylindrical, reddish brown to burgundy with longitudinal fibrous texture; basal end bears soil and pale exposed context.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible on the photographed material.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Basidiospore dimensions, pore trama, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains compact dark soil and organic debris. No volva or distinct rooting extension is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: en3-f5.jpg, en3-f5v2.jpg"
+    }
   },
   {
     "code": "EN3-F6",
@@ -18815,7 +24017,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLORSmall fragmented wood-associated agaricoid specimen with tan-orange cap material, cream lamellae, and dark attachment tissue. Size not measured; no calibrated scale present.CAPSmall tan to orange-brown cap fragments, convex to plane, dry to…",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F7",
@@ -18880,7 +24099,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLORMinute hydnoid or toothed basidiome fragment associated with moss and dark substrate. Upper surface brown; teeth cream; size not measured.CAP / FRUITING SURFACEVery small irregular brown fruiting-body fragment, rough and moss-covered, margin…",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F8",
@@ -18945,7 +24181,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLORSmall dark wood-associated agaricoid fragment with rust-brown cap, cream gills, and dark attachment tissue. Size not measured.CAPSmall dark rust-brown cap, convex to fan-shaped, dry to matte, with a pale finely fringed margin. 3.9 cmGILLS /…",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F9",
@@ -19010,7 +24263,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLORSingle heavily damaged ochraceous-brown agaricoid fragment with a short pale stipe and irregular cap tissue. Not measured; no calibrated scale present.Cap ochraceous to cinnamon-brown; stipe pale tan; adhering debris dark brown.ADD…",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F10",
@@ -19075,7 +24345,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLOR",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F11",
@@ -19140,7 +24427,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Visible fruit body small, orange to apricot-orange, fan- to shelf-like and thin, with irregular torn edges and a smooth to finely matte upper surface.",
+      "Pileus — surface / ornamentation": "Visible fruit body small, orange to apricot-orange, fan- to shelf-like and thin, with irregular torn edges and a smooth to finely matte upper surface.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Fertile surface is not shown clearly enough to determine confidently whether it is poroid, smooth, or otherwise structured.",
+      "Stipe": "No distinct central stipe is visible. Attachment appears lateral or sessile to the woody substrate.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus or other veil structure is evident; veil terminology may not be applicable to this reduced shelf-like fragment.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-producing structures and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "A dark bark-covered woody fragment accompanies the specimen and is the most likely substrate; exact attachment point is not fully preserved.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: en3-f11.jpg"
+    }
   },
   {
     "code": "EN3-F13",
@@ -19205,7 +24509,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLOR",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F14",
@@ -19263,7 +24584,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLOR",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F15",
@@ -19328,7 +24666,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLOR",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F16",
@@ -19376,7 +24731,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLORVery small delicate agaricoid specimen attached to leaf litter, with orange-brown cap and threadlike stipe. Not measured; no calibrated scale present.Pileus orange-brown; stipe pale brown; adhering leaf litter dark brown.ADD…",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F17",
@@ -19441,7 +24813,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLOR",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F18",
@@ -19489,7 +24878,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large brown-capped, centrally stipitate poroid basidiome with a pale salmon-buff hymenophore and a stout reddish-brown stipe.",
+      "Dimensions": "Not measured; no calibrated scale present.",
+      "Macroscopic color": "Pileus dark chestnut to chocolate brown; pore surface pale salmon to cinnamon-buff; stipe muted reddish brown to mauve-brown; basal soil dark brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F19",
@@ -19537,7 +24943,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLORTwo small dark rust-brown agaricoid specimens, both damaged and partly detached, with short dark stipes. Not measured; no calibrated scale present.Caps rust-brown to dark brown; stipes dark brown to blackish; debris medium brown.ADD…",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F20",
@@ -19585,7 +25008,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large fragile cream- to tan-colored agaricoid specimen represented by a torn cap with exposed white lamellae and a detached elongate pale stipe.",
+      "Dimensions": "Not measured; no calibrated scale present.",
+      "Macroscopic color": "Pileus pale tan to ochraceous cream; lamellae white to cream; stipe white to pale buff; basal soil dark brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F21",
@@ -19633,7 +25073,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Single brown-capped agaricoid specimen documented as a detached cap and a separate pale stipe with a soil-covered base.",
+      "Dimensions": "Not measured; no calibrated scale present.",
+      "Macroscopic color": "Pileus medium brown to chestnut with a slightly darker disc; lamellae cream to pale buff; stipe white to pale cream; basal soil dark brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F22",
@@ -19681,7 +25138,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLORSmall detached poroid or hydnoid basidiome fragment with a shallowly depressed cap and separate dark basal fragment. Not measured; no calibrated scale present.Cap ochraceous tan; hymenophore tan to brown; basal fragment dark brown to black…",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F23",
@@ -19746,7 +25220,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus small, orange to apricot-orange, convex to shallowly plane, thin-fleshed, with an irregular torn margin and a smooth to finely matte surface.",
+      "Pileus — surface / ornamentation": "Pileus small, orange to apricot-orange, convex to shallowly plane, thin-fleshed, with an irregular torn margin and a smooth to finely matte surface.",
+      "Pileus — margin": "Pileus small, orange to apricot-orange, convex to shallowly plane, thin-fleshed, with an irregular torn margin and a smooth to finely matte surface.",
+      "Hymenophore": "Fertile surface is incompletely exposed. A few pale lamellar structures may be present near the torn margin, but spacing and attachment cannot be characterized reliably from the photographs.",
+      "Stipe": "A short pale to orange-tan stipe/attachment zone is present but incompletely preserved; full stipe architecture cannot be reconstructed confidently.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Small woody substrate fragment is present with the basidiome. Exact point of attachment is partly obscured, but the specimen appears lignicolous.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: en3-f23.jpg, en3-f23v2.jpg"
+    }
   },
   {
     "code": "EN3-F24",
@@ -19794,7 +25285,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLORSmall pale yellow agaricoid basidiome represented by a detached cap and a separate long slender white stipe with soil-covered base. Not measured; no calibrated scale present.Pileus pale yellow to cream with a golden-yellow center; lamellae white…",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F25",
@@ -19842,7 +25350,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLORVery small delicate reddish-brown agaricoid specimen with a thin wiry stipe and detached cap. Not measured; no calibrated scale present.Pileus reddish brown; lamellae pale cream to buff; stipe reddish brown to dark brown; substrate tan-brown.ADD…",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F26",
@@ -19907,7 +25432,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus orange-brown to tan-orange, smooth to finely matte, shallowly convex to nearly plane, with localized damage and pale exposed context where torn.",
+      "Pileus — surface / ornamentation": "Pileus orange-brown to tan-orange, smooth to finely matte, shallowly convex to nearly plane, with localized damage and pale exposed context where torn.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae pale cream to white, crowded, narrow to moderately broad, with shorter lamellulae visible; exact attachment is uncertain because the pileus and stipe are fragmented.",
+      "Stipe": "Stipe pale cream to faint pinkish-tan, slender to moderately robust, longitudinally fibrous, and broken/sectioned; basal portion carries dark soil.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or obvious universal-veil remnants are visible on the photographed material.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base and original substrate attachment are incomplete. Soil and organic debris are present on the remaining lower tissue; no discrete volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: en3-f26.jpg, en3-f26v2.jpg, en3-f26v3.jpg"
+    }
   },
   {
     "code": "EN3-F27",
@@ -19955,7 +25497,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Fragmented red- to salmon-pink agaricoid basidiome represented by a detached cap, exposed lamellae, and a separate pale stipe fragment.",
+      "Dimensions": "Not measured; no calibrated scale present.",
+      "Macroscopic color": "Pileus salmon-pink to coral-red with cream-white faded or abraded areas; lamellae white to cream; stipe cream to pale buff; adhering soil dark brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F28",
@@ -20003,7 +25562,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLORSmall golden-yellow agaricoid basidiome represented by a detached cap and separate slender yellow stipe. Not measured; no calibrated scale present.Pileus golden-yellow to ochraceous; lamellae yellow; stipe yellow; basal soil dark brown.ADD…",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F31",
@@ -20051,7 +25627,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLORSmall, fragmented polyporoid or poroid basidiome with a fan-shaped cap and separate dark basal fragment. Not measured; no calibrated scale present.Cap tan to ochraceous brown; hymenophore medium brown; stipe fragment dark brown to black…",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F32",
@@ -20116,7 +25709,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus orange to ochre-orange, broadly convex to shallowly plane, smooth to finely matte, with localized bruising, dirt, and an irregular damaged margin.",
+      "Pileus — surface / ornamentation": "Pileus orange to ochre-orange, broadly convex to shallowly plane, smooth to finely matte, with localized bruising, dirt, and an irregular damaged margin.",
+      "Pileus — margin": "Pileus orange to ochre-orange, broadly convex to shallowly plane, smooth to finely matte, with localized bruising, dirt, and an irregular damaged margin.",
+      "Hymenophore": "Lamellae cream to whitish, crowded and relatively narrow, with numerous lamellulae; attachment cannot be established confidently because the cap and stipe are detached.",
+      "Stipe": "Elongated shaft narrow to moderately thick, deep red to crimson, tapering toward a blackened distal end; tissue is fleshy/fibrous rather than a conventional agaricoid stipe.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible in the supplied views.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains dark soil and minor organic debris. No distinct volva or strongly bulbous base is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: en3-f32.jpg, en3-f32v2.jpg"
+    }
   },
   {
     "code": "EN3-F33",
@@ -20181,7 +25791,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus small, cinnamon to dark brown, convex to shallowly plane, smooth to finely matte, with a thin even margin and darker central disc.",
+      "Pileus — surface / ornamentation": "Pileus small, cinnamon to dark brown, convex to shallowly plane, smooth to finely matte, with a thin even margin and darker central disc.",
+      "Pileus — margin": "Pileus small, cinnamon to dark brown, convex to shallowly plane, smooth to finely matte, with a thin even margin and darker central disc.",
+      "Hymenophore": "Lamellae dark cinnamon-brown, crowded and relatively narrow, with shorter lamellulae visible; attachment cannot be established confidently because the cap and stipe are detached.",
+      "Stipe": "Stipe exceptionally slender, reddish brown to cinnamon, smooth to finely fibrillose, slightly curved, and detached from the pileus.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains compact dark soil and fine organic debris. No distinct bulb, volva, or rooting extension is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: en3-f33.jpg Source photograph: en1-f1.JPG"
+    }
   },
   {
     "code": "EN3-F34",
@@ -20229,7 +25856,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLORLarge, heavily damaged dark agaricoid specimen with a broad collapsed cap and detached robust stipe. Not measured; no calibrated scale present.Dark brown to black-brown cap and hymenophore; stipe medium to dark brown; basal tissue white to cream…",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F35",
@@ -20277,7 +25921,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "/ SIZE / COLORMedium bolete-like basidiome represented by a detached reddish-brown cap, bright yellow poroid hymenophore, and two pale yellow stipe fragments. Not measured; no calibrated scale present.Pileus reddish brown to chestnut; pore surface bright…",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "EN3-F36",
@@ -20326,7 +25987,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Irregular compact brown gasteroid or sequestrate-like fruiting body fragment with a coarse granular to warted exterior and no exposed lamellae.",
+      "Dimensions": "Not measured; no calibrated scale present.",
+      "Macroscopic color": "Exterior dark brown to umber with tan to cream granular projections and dark adhering soil.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "FN-F4",
@@ -20391,7 +26069,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus broad, tan to cinnamon-buff, convex to nearly plane, smooth to finely matte, with a darker central zone and irregular collection damage.",
+      "Pileus — surface / ornamentation": "Pileus broad, tan to cinnamon-buff, convex to nearly plane, smooth to finely matte, with a darker central zone and irregular collection damage.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae pale cream to buff, very crowded and relatively narrow, with numerous lamellulae. Exact attachment cannot be established confidently because cap and stipe are detached.",
+      "Stipe": "Stipe stout, cylindrical to slightly tapering, pale pinkish-beige to tan, longitudinally fibrous and detached; basal end carries dark soil.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible in the supplied views.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end is cut/incomplete with sparse adhering soil and organic debris. No distinct bulb, volva, or rooting extension is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: fn-f4.jpg, fn-f4v2.jpg"
+    }
   },
   {
     "code": "FN-F6",
@@ -20439,7 +26134,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Elongated cylindrical to slightly tapering brown fungal fragment with a densely rough, fibrillose-to-scaly outer surface; cap, fertile surface, and original base are not preserved in the supplied photograph.",
+      "Dimensions": "Elongated fragment; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Exterior medium to dark brown with slightly lighter worn areas; cut ends pale brown to tan.",
+      "Pileus — form / profile": "No discrete pileus is visible.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No gills, pores, teeth, or other hymenophore are visible in the supplied photograph; fertile-surface type cannot be determined.",
+      "Stipe": "The specimen is dominated by an elongated cylindrical to slightly tapering brown structural fragment; whether this represents a stipe or another basidiome component cannot be established from the single view.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible on the fragment.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-producing structures, spore-print color, and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Original attachment/base is not preserved in the supplied photograph. Substrate association cannot be determined.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: fn-f6.jpg"
+    }
   },
   {
     "code": "FN-F22",
@@ -20504,7 +26216,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "No conventional pileus is clearly differentiated. Rounded fragments have smooth to finely mottled orange-brown outer surfaces; several are cut open, exposing dark internal tissue.",
+      "Pileus — surface / ornamentation": "Rounded fragments have smooth to finely mottled orange-brown outer surfaces; several are cut open, exposing dark internal tissue.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No exposed lamellae, pores, or teeth are visible. Several rounded cut fragments contain dark brown to nearly black internal tissue consistent with an enclosed fertile region, but its exact nature cannot be…",
+      "Stipe": "No conventional stipe can be confirmed. One elongated ochre-brown fragment may represent supporting or basal tissue, but its original orientation is not preserved.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No discrete annulus, cortina, universal-veil remnants, or volva are demonstrated; conventional veil terminology may not apply to this fragmented enclosed-fertile-tissue morphology.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Internal fertile-tissue identity, spore morphology, and other microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Minute soil and organic debris adhere to several fragments. Original point of attachment and substrate relationship cannot be established from the supplied views.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: fn-f22.jpg, fn-f22v2.jpg"
+    }
   },
   {
     "code": "FN-F24",
@@ -20562,7 +26291,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small fan- to semicircular tan-orange fruit-body fragment photographed with dark woody substrate; attachment and fertile surface are incompletely documented.",
+      "Dimensions": "Small fragment; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Fruit-body fragment warm ochre to tan-orange; adjacent woody material dark brown.",
+      "Pileus — form / profile": "Visible upper surface thin, fan- to semicircular, warm ochre to tan-orange, finely matte to faintly fibrillose, with an even rounded margin.",
+      "Pileus — surface / ornamentation": "Visible upper surface thin, fan- to semicircular, warm ochre to tan-orange, finely matte to faintly fibrillose, with an even rounded margin.",
+      "Pileus — margin": "Visible upper surface thin, fan- to semicircular, warm ochre to tan-orange, finely matte to faintly fibrillose, with an even rounded margin.",
+      "Hymenophore": "Fertile surface is not visible in the supplied view; gills, pores, teeth, or a smooth hymenium cannot be determined reliably.",
+      "Stipe": "No distinct central stipe is visible in the supplied image; attachment geometry is incomplete.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures are visible; veil terminology may not be applicable to the photographed fragment.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Basidiospore dimensions, basidia, cystidia, hyphal construction, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Dark woody substrate is present adjacent to the fragment, but the exact attachment point is not preserved clearly enough to confirm substrate relationship.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: fn-f24.jpg"
+    }
   },
   {
     "code": "FN-F27",
@@ -20620,7 +26366,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pilei minute, dark brown, hemispherical to strongly convex, smooth to finely matte, and proportionally small relative to the filiform stipes.",
+      "Pileus — surface / ornamentation": "Pilei minute, dark brown, hemispherical to strongly convex, smooth to finely matte, and proportionally small relative to the filiform stipes.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Fertile surfaces are not resolved clearly enough at this scale to characterize gill spacing, attachment, or other hymenophore features reliably.",
+      "Stipe": "Stipes exceptionally slender, hairlike to wiry, brown, and long relative to cap diameter; several are curved and appear fragile.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are discernible at the photographed scale.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Several specimens remain associated with minute tan-brown litter or woody fragments. Exact attachment and host/substrate relationship are not resolved from the photograph.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: fn-f27.jpg"
+    }
   },
   {
     "code": "FN-F30",
@@ -20685,7 +26448,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Medium stout bolete-type material with tan to yellow-brown poroid hymenophore, orange-brown stipe, and pale exposed context; pileus is heavily sectioned and fragmented.",
+      "Dimensions": "Medium stout basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus fragments brown to orange-brown; pore surface buff to yellow-tan; stipe orange-brown to reddish; context cream.",
+      "Pileus — form / profile": "Pileus heavily sectioned and fragmented; outer surface brown to orange-brown, with pale cream exposed context.",
+      "Pileus — surface / ornamentation": "Pileus heavily sectioned and fragmented; outer surface brown to orange-brown, with pale cream exposed context.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Hymenophore poroid; visible pore surface buff to yellow-brown with fine to medium pores. True lamellae are absent.",
+      "Stipe": "Stipe stout, orange-brown to reddish brown, club-shaped to cylindrical, longitudinally fibrous, with pale exposed context at breaks.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus or other veil structures are visible on the photographed material.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Basidiospore dimensions, pore trama, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains dark soil and fine organic debris. No distinct volva or rooting extension is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: fn-f30.jpg, fn-f30v2.jpg"
+    }
   },
   {
     "code": "FN-F32",
@@ -20750,7 +26530,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Medium-to-large agaricoid basidiome with broad brown pileus, crowded tan-cinnamon lamellae, and a thick cylindrical brown stipe with soil-bearing base.",
+      "Dimensions": "Medium-to-large robust agaricoid basidiome; no calibrated scale visible. Direct measurements are required. Direct measurements are required.",
+      "Macroscopic color": "Pileus medium to chestnut brown; lamellae tan to cinnamon; stipe tan-brown; basal soil dark brown.",
+      "Pileus — form / profile": "Pileus broad, medium to chestnut brown, broadly convex to nearly plane, smooth to finely matte, with minor abrasions and a somewhat irregular margin.",
+      "Pileus — surface / ornamentation": "Pileus broad, medium to chestnut brown, broadly convex to nearly plane, smooth to finely matte, with minor abrasions and a somewhat irregular margin.",
+      "Pileus — margin": "Pileus broad, medium to chestnut brown, broadly convex to nearly plane, smooth to finely matte, with minor abrasions and a somewhat irregular margin.",
+      "Hymenophore": "Lamellae crowded, moderately broad, tan to cinnamon-brown, with numerous shorter lamellulae. Exact attachment is uncertain because cap and stipe are detached.",
+      "Stipe": "Stipe thick, cylindrical to slightly tapering, tan-brown, fibrous, and detached from the pileus; basal portion bears dark soil.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No obvious annulus, cortina, or universal-veil remnants are visible in the supplied views.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains compact dark soil and fine organic debris. No distinct volva or pronounced basal bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: fn-f32.jpg, fn-f32v2.jpg"
+    }
   },
   {
     "code": "FN-F34",
@@ -20815,7 +26612,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small red-orange agaricoid basidiome with smooth convex pileus, crowded pale cream lamellae, and a short stout white stipe; cap and stipe are detached.",
+      "Dimensions": "Small basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus red-orange to salmon; lamellae cream-white; stipe white to cream; basal debris dark brown.",
+      "Pileus — form / profile": "Pileus small, smooth to finely matte, red-orange to salmon, convex to shallowly plane, with a slightly darker central zone and minor collection damage.",
+      "Pileus — surface / ornamentation": "Pileus small, smooth to finely matte, red-orange to salmon, convex to shallowly plane, with a slightly darker central zone and minor collection damage.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae cream to whitish, crowded and thin. Exact attachment cannot be established confidently because the cap and stipe are detached.",
+      "Stipe": "Stipe short and stout, white to cream, fibrous, detached from the pileus, with the basal end incompletely preserved.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end is cut/incomplete with sparse adhering soil. No distinct bulb, volva, or rooting extension is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: fn-f34.jpg, fn-f34v2.jpg"
+    }
   },
   {
     "code": "FN-F35",
@@ -20880,7 +26694,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus smooth to finely matte, dusky mauve-brown to reddish brown, broadly convex to shallowly plane; margin incomplete from collection damage.",
+      "Pileus — surface / ornamentation": "Pileus smooth to finely matte, dusky mauve-brown to reddish brown, broadly convex to shallowly plane; margin incomplete from collection damage.",
+      "Pileus — margin": "Pileus smooth to finely matte, dusky mauve-brown to reddish brown, broadly convex to shallowly plane; margin incomplete from collection damage.",
+      "Hymenophore": "Lamellae pale cream to white, crowded and relatively narrow. Exact attachment cannot be established confidently because cap and stipe are separated.",
+      "Stipe": "Stipe stout, white to cream, cylindrical to slightly tapering, fibrous and detached from the pileus; both ends are cut or incomplete.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible in the supplied material.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end is incompletely preserved and carries sparse dark soil. No distinct bulb, volva, or rooting extension is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: fn-f35.jpg, fn-f35v2.jpg"
+    }
   },
   {
     "code": "FN-F38",
@@ -20945,7 +26776,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus broad, brown to chestnut, convex to nearly plane, with a dry finely velvety to matte surface and slightly irregular collected margin.",
+      "Pileus — surface / ornamentation": "Pileus broad, brown to chestnut, convex to nearly plane, with a dry finely velvety to matte surface and slightly irregular collected margin.",
+      "Pileus — margin": "Pileus broad, brown to chestnut, convex to nearly plane, with a dry finely velvety to matte surface and slightly irregular collected margin.",
+      "Hymenophore": "Hymenophore poroid; pore surface white to pale cream, extremely fine and densely packed, with localized gray-brown bruising or handling marks. True lamellae absent.",
+      "Stipe": "Stipe thick, curved, ochre-brown to cinnamon-brown, longitudinally fibrous, tapering slightly upward and broadening toward the soil-bearing base.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, universal-veil remnants, or volva are visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Basidiospore dimensions, pore trama, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains dark soil and fine organic debris at the lower stipe. No volva or distinct basal bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: fn-f38.jpg, fn-f38v2.jpg"
+    }
   },
   {
     "code": "FN-F39",
@@ -21011,7 +26859,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Pileus smooth to finely matte, medium brown with subtle mauve-brown tones, broadly convex to nearly plane, with minor collection damage.",
+      "Pileus — surface / ornamentation": "Pileus smooth to finely matte, medium brown with subtle mauve-brown tones, broadly convex to nearly plane, with minor collection damage.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae crowded, moderately broad, dark brown to purplish-brown, with shorter lamellulae present. Exact attachment is uncertain because cap and stipe are detached.",
+      "Stipe": "Stipe long, slender to moderately robust, pale lilac-gray to cream-tan, slightly curved and longitudinally fibrous; basal end carries dark soil.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No conventional annulus or cortina is visible. Expanded basal tissue may represent developmental or peridial tissue, but this cannot be determined confidently from a single photograph.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color, basidiospore dimensions, ornamentation, basidia, cystidia, pileipellis, clamp connections, and reagent reactions remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains compact dark soil and fine organic debris. No distinct volva or pronounced basal bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: fn-f39.jpg, fn-f39v2.jpg"
+    }
   },
   {
     "code": "IS-F18",
@@ -21059,7 +26924,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F23",
@@ -21107,7 +26989,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F24",
@@ -21155,7 +27054,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F25",
@@ -21203,7 +27119,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F26",
@@ -21251,7 +27184,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F27",
@@ -21299,7 +27249,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F28",
@@ -21347,7 +27314,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F29",
@@ -21395,7 +27379,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F30",
@@ -21443,7 +27444,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F31",
@@ -21491,7 +27509,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F32",
@@ -21539,7 +27574,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F33",
@@ -21587,7 +27639,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F34",
@@ -21635,7 +27704,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F35",
@@ -21683,7 +27769,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F36",
@@ -21731,7 +27834,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F37",
@@ -21779,7 +27899,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F38",
@@ -21827,7 +27964,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F39",
@@ -21875,7 +28029,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F40",
@@ -21923,7 +28094,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F41",
@@ -21971,7 +28159,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F42",
@@ -22019,7 +28224,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F43",
@@ -22067,7 +28289,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F44",
@@ -22115,7 +28354,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F45",
@@ -22163,7 +28419,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F46",
@@ -22211,7 +28484,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F47",
@@ -22259,7 +28549,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F48",
@@ -22307,7 +28614,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "LEFT COLUMN = PHOTO / IMAGE AREA | RIGHT COLUMN = EDITABLE OBSERVATION AREA",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Embedded source image(s) retained from AA Master Total; original filename line not found."
+    }
   },
   {
     "code": "IS-F49",
@@ -22373,7 +28697,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Fragmented collection documented with a red to coral-red cap piece, pale gill material, white to cream stipe fragments, and additional small brown to tan cap/stipe material in the image set. Because the photographed material is disassembled and some foil…",
+      "Dimensions": "The red cap fragment is approximately 2.5-3 cm across in the ruler view. White stipe fragments are approximately 2-3 cm long. The smaller tan-brown…",
+      "Macroscopic color": "Red fragment: coral-red to orange-red pileus surface with white exposed flesh and pale cream gills. White stipe fragments: cream to white with minor tan discoloration.…",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "A discrete gilled underside is not evident in the photograph. The fertile surface appears associated with the folded/frondose lobes, but pore, tooth, or smooth-hymenium structure cannot be confirmed at this…",
+      "Stipe": "top 0.5 cm mid 0.7 cm base 1.0 cm height 2.7 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite ring, volva, cortina, or other veil structure is visible on the photographed fragments.",
+      "Spore print / macroscopic deposit": "No controlled spore print is clearly documented. A separate spore print should be obtained from each morphologically distinct fruit body before combining records.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Some basal fragments retain dark soil or litter. Exact substrate and host-tree association are not recoverable from the photographs alone.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: cn4-fa12.jpg, cn4-fa12v2.jpg, cn4-fa12v3.jpg, cn4-fa12v4.jpg, cn4-fa12v5.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photograph: cn4-fa5.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN1-F1",
@@ -22397,7 +28738,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "JN1-F1SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/JN1-F1SP.JPG",
@@ -22417,7 +28758,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -22431,7 +28772,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "No reliable deposit color can be distinguished from the light paper and scattered debris.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "No definite spore deposit is visible. The supplied photograph documents an inconclusive print attempt.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: JN1-F1SP.JPG"
+    }
   },
   {
     "code": "JN1-F4",
@@ -22455,7 +28813,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "JN1-F4SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/JN1-F4SP.JPG",
@@ -22475,7 +28833,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -22489,7 +28847,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "The deposit appears pale whitish to light gray in the supplied photograph.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "A faint pale circular and radial deposit is visible macroscopically. Microscopy and calibrated measurements remain pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: JN1-F4SP.JPG"
+    }
   },
   {
     "code": "JN1-F6",
@@ -22513,7 +28888,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "JN1-F6SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/JN1-F6SP.JPG",
@@ -22533,7 +28908,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -22547,7 +28922,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "The dense deposit appears salmon-pink to pinkish brown in the supplied photograph.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "A clear, dense circular ring of deposited material with a central gap is visible macroscopically. Microscopic confirmation remains pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: JN1-F6SP.JPG"
+    }
   },
   {
     "code": "JN1-F8",
@@ -22571,7 +28963,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "JN1-F8SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/JN1-F8SP.JPG",
@@ -22591,7 +28983,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -22605,7 +28997,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "The broad deposit appears salmon-pink to pinkish brown in the supplied photograph.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "A strong, broad deposit with a dense fine radial pattern is visible macroscopically. Microscopy and calibrated measurements remain pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: JN1-F8SP.JPG"
+    }
   },
   {
     "code": "JN1-F9",
@@ -22629,7 +29038,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "JN1-F9SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/JN1-F9SP.JPG",
@@ -22649,7 +29058,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -22663,7 +29072,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "The deposit appears pale whitish with a faint cream-toned center.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "A faint pale circular-to-radial deposit is visible macroscopically. Microscopic confirmation remains pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: JN1-F9SP.JPG"
+    }
   },
   {
     "code": "JN1-F10",
@@ -22721,7 +29147,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "No reliable deposit color can be evaluated because the supplied photograph is substantially out of focus.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "The foil label is out of focus and appears to read JN1-F10; assignment is provisional pending confirmation from the original specimen log. No reliable deposit is visible.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper and foil are visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: IMG_0904.JPG"
+    }
   },
   {
     "code": "JN1-F11",
@@ -22745,7 +29188,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "JN1-F11SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/JN1-F11SP.JPG",
@@ -22765,7 +29208,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -22779,7 +29222,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "The deposit appears pale gray to whitish in the supplied photograph.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "A faint pale circular-to-radial deposit is visible with scattered debris. Microscopy and calibrated measurements remain pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: JN1-F11SP.JPG"
+    }
   },
   {
     "code": "JN1-F14",
@@ -22803,7 +29263,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "JN1-F14SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/JN1-F14SP.JPG",
@@ -22823,7 +29283,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -22837,7 +29297,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "The small deposit appears pale whitish in the supplied photograph.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "A small, faint circular-to-radial deposit is visible macroscopically. Microscopic confirmation remains pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: JN1-F14SP.JPG"
+    }
   },
   {
     "code": "JN1-F16",
@@ -22861,7 +29338,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "JN1-F16SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/JN1-F16SP.JPG",
@@ -22881,7 +29358,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -22895,7 +29372,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "No reliable deposit color can be distinguished from the light paper and debris.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "No definite spore deposit is visible. The supplied photograph documents an inconclusive print attempt.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: JN1-F16SP.JPG"
+    }
   },
   {
     "code": "JN1-F22",
@@ -22919,7 +29413,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "JN1-F22SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/JN1-F22SP.JPG",
@@ -22939,7 +29433,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -22953,7 +29447,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "No reliable deposit color can be distinguished from the light paper and debris.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "No definite spore deposit is visible. The supplied photograph documents an inconclusive print attempt.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: JN1-F22SP.JPG"
+    }
   },
   {
     "code": "JN1-F23",
@@ -22976,7 +29487,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "JN1-F23SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/JN1-F23SP.JPG",
@@ -22984,7 +29495,7 @@ window.ATLAS_DATA = [
         "masterEmbedded": true
       },
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "JN1-F23SPV2.JPG",
         "caption": "Source macro / specimen - source image 2",
         "original": "assets/originals/JN1-F23SPV2.JPG",
@@ -23004,7 +29515,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -23018,7 +29529,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Two laboratory spore-print-attempt photographs are supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photographs.",
+      "Macroscopic color": "No reliable deposit color can be distinguished from the light paper, specimen fragment, and debris.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photographs.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "Two views document the same print attempt; neither establishes a definite spore deposit. Microscopy remains pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photographs: JN1-F23SP.JPG, JN1-F23SPV2.JPG"
+    }
   },
   {
     "code": "JN1-F24",
@@ -23042,7 +29570,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "JN1-F24SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/JN1-F24SP.JPG",
@@ -23062,7 +29590,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -23076,7 +29604,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "The deposit appears dark gray to blackish in the supplied photograph.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "A visible dark circular deposit pattern with a central gap is documented macroscopically. Microscopic confirmation remains pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: JN1-F24SP.JPG"
+    }
   },
   {
     "code": "JN1-F25",
@@ -23100,7 +29645,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "JN1-F25SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/JN1-F25SP.JPG",
@@ -23120,7 +29665,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -23134,7 +29679,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "No reliable deposit color can be distinguished from the light paper, specimen fragment, and debris.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "No definite spore deposit is visible. A specimen fragment and debris are present; print result is inconclusive.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: JN1-F25SP.JPG"
+    }
   },
   {
     "code": "JN1-F27",
@@ -23158,7 +29720,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "JN1-F27SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/JN1-F27SP.JPG",
@@ -23178,7 +29740,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -23192,7 +29754,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "The faint partial deposit appears salmon to pinkish in the supplied photograph.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "A faint, smudged partial salmon-pink deposit is visible macroscopically. Microscopic confirmation remains pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: JN1-F27SP.JPG"
+    }
   },
   {
     "code": "JN1-F32",
@@ -23217,7 +29796,7 @@ window.ATLAS_DATA = [
     },
     "images": [
       {
-        "category": "Source macro / specimen",
+        "category": "Spore print / preparation",
         "filename": "JN1-F32SP.JPG",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/JN1-F32SP.JPG",
@@ -23237,7 +29816,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Spore-print imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Microscopy imagery",
@@ -23251,7 +29830,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Dimensions": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
+      "Macroscopic color": "The very faint partial deposit appears pale yellow to cream in the supplied photograph.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "The source photograph documents the print surface rather than the intact fruit body.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
+      "Stipe": "Not supplied or reliably visible in the source print record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not supplied or reliably visible in the source print record.",
+      "Spore print / macroscopic deposit": "A very faint pale yellow-cream circular or partial deposit is visible with a small specimen fragment. Microscopy remains pending.",
+      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: JN1-F32SP.JPG"
+    }
   },
   {
     "code": "JN2-F1",
@@ -23316,7 +29912,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Large robust basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus brown to chestnut; pores pinkish-brown/tan; stipe reddish brown to burgundy; exposed context pale cream.",
+      "Pileus — form / profile": "Pileus medium-sized, tan to ochre-brown, broadly convex to nearly plane, dry to finely matte, with a darker central disc and an irregular collected margin.",
+      "Pileus — surface / ornamentation": "Pileus medium-sized, tan to ochre-brown, broadly convex to nearly plane, dry to finely matte, with a darker central disc and an irregular collected margin.",
+      "Pileus — margin": "Pileus medium-sized, tan to ochre-brown, broadly convex to nearly plane, dry to finely matte, with a darker central disc and an irregular collected margin.",
+      "Hymenophore": "The hymenophore is not shown clearly enough in the supplied views to determine gill spacing, attachment, pore structure, or other fertile-surface characters reliably.",
+      "Stipe": "Stipe long, slender, reddish brown to cinnamon-brown, longitudinally fibrillose, slightly curved, and expanded only modestly at the soil-bearing base. Top1.9 m 1.0 b 2.4 h 11.2",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible in the supplied views.",
+      "Spore print / macroscopic deposit": "No controlled spore print or calibrated microscopy supplied. Spore-print color and microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains compact dark soil and fine organic debris. No volva or distinctly marginate bulb is visible in the photographed material.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f1.jpg, jn2-f1v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photographs: cn4-fa11.jpg, cn4-fa11v2.jpg, cn4-fa11v3.jpg, cn4-fa11v4.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________ Source photographs: cn4-fa21.jpg, cn4-fa21v2.jpg Source photographs: cn4-fa22.jpg, cn4-fa22v2.jpg Source photograph: cn4-fa23.jpg Source photographs: cn4-fa24.jpg, cn4-fa24v2.jpg Source photographs: cn4-fa25.jpg, cn4-fa25v2.jpg, cn4-fa25v3.jpg Source photographs: cn4-fa26.jpg, cn4-fa26v2.jpg Source photographs: cn4-fa27.jpg, cn4-fa27v2.jpg Source photographs: cn4-fa28.jpg, cn4-fa28v2.jpg Source photographs: cn4-e29.jpg, cn4-e29v2.jpg Source photographs: cn4-fa30.jpg, cn4-fa30v2.jpg Source photographs: cn4-fa31.jpg, cn4-fa31v2.jpg Source photographs: cn4-fa32.jpg, cn4-fa32v2.jpg Source photographs: cn4-fa33.jpg, cn4-fa33v2.jpg, cn4-fa33v3.jpg Source photographs: cn4-fa34.jpg, cn4-fa34v3.jpg Source photographs: cn4-fa1.jpg, cn4-fa1v2.jpg Source photographs: cn4-fa4.jpg, cn4-fa4v2.jpg Source photographs: cn4-fa6.jpg, cn4-fa6v2.jpg Source photographs: cn4-fa15.jpg, cn4-fa15v2.jpg Source photographs: cn4-fa16.jpg, cn4-fa16v2.jpg Source photographs: cn4-fa17.jpg, cn4-fa17v2.jpg"
+    }
   },
   {
     "code": "JN2-F3",
@@ -23481,7 +30094,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small to medium pale tan agaricoid specimen with beige pileus, long slender pale stipe, tan to cinnamon lamellae, green moss adhering at the base, and a visible pale tan-pink to rusty-buff spore-print impression on the collection surface.",
+      "Dimensions": "Small to medium basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus pale beige to tan; lamellae cinnamon-tan to light brown; stipe pale buff to cream; visible deposit pale pinkish tan to light rusty-buff in the photograph.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae pale buff to pinkish-buff, moderately close, with lamellulae. Attachment appears adnate to narrowly adnexed in available views; no clear decurrence is evident.",
+      "Stipe": "cao 0.2 all the way height 5.4 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "A visible deposit is present on the collection surface and appears pale pinkish tan to light rusty-buff in the photograph. Microscopic spore dimensions, shape, ornamentation, and chemical reactions remain…",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base carries moss and compact organic debris, consistent with collection from a moss-bearing terrestrial substrate. Exact habitat was not independently documented in these photographs.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f3.jpg, jn2-f3v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F4",
@@ -23546,7 +30176,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large robust pale tan agaricoid basidiome with a broad centrally depressed pileus, densely crowded cream lamellae, and a thick white stipe.",
+      "Dimensions": "Large robust basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus pale tan to buff with darker shading toward the depressed center; lamellae cream to pale beige; stipe white to cream.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae cream, close to crowded, broad and numerous, with many lamellulae. Attachment appears adnate to slightly decurrent around the central stipe insertion.",
+      "Stipe": "Stipe thick, stout, white to cream, curved, smooth to finely fibrous, with damaged tissue near the cap attachment.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore print pending. Spore deposit color and microscopic characters remain undocumented.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The basal end is not fully preserved in the photographed arrangement; no distinct volva is evident.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f4.jpg, jn2-f4v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F5",
@@ -23604,7 +30251,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large elongated piece of decayed wood with striking dark green to blue-green staining over much of the exposed surface. No discrete mushroom fruit body is visible in this photograph.",
+      "Dimensions": "Relatively large woody fragment; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Wood dark green to blue-green over extensive areas, with exposed broken interior tan to pale brown and localized dark brown zones.",
+      "Pileus — form / profile": "No cap present.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No visible fruiting hymenophore. The specimen records substrate coloration rather than an intact fruit body.",
+      "Stipe": "No stipe present.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not applicable; no intact mushroom fruit body visible.",
+      "Spore print / macroscopic deposit": "No spore print documented. Microscopy and culture from stained wood would be needed to investigate the organism responsible for the coloration.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The entire specimen is decayed woody substrate exhibiting extensive green-blue staining.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: jn2-f5.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F6",
@@ -23669,7 +30333,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Extremely small delicate agaricoid specimen represented by a minute pileus, threadlike stipe, and several broken fragments.",
+      "Dimensions": "Minute specimen; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus fragments pale tan to ochre-brown; stipe pale tan-brown; exposed hymenophore fragments orange-brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "A small fragment appears lamellate or ridge-like and relatively coarse for the cap size, but complete architecture and attachment cannot be assessed reliably.",
+      "Stipe": "on1 all the way height 1.8 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures are visible in the preserved material.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore deposit pending. Spore dimensions, shape, and deposit color are not established.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Only a minute amount of soil or organic debris remains attached; original substrate cannot be determined confidently.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f6.jpg, jn2-f6v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F8",
@@ -23734,7 +30415,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small orange-brown fan- to shell-shaped fungal fragment attached laterally to a narrow piece of woody substrate. Two views show a thin, asymmetrical fruit body with a wavy margin.",
+      "Dimensions": "Small specimen; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Fruit body orange-brown to cinnamon-buff; attached wood dark reddish-brown to brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "The hymenophore is not shown clearly enough for confident classification. Fine radial structure is visible, but discrete gills or pores cannot be confirmed from the photographs alone.",
+      "Stipe": "No distinct central stipe visible; attachment appears lateral or directly sessile to the woody fragment.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Directly associated with a narrow dark-brown woody fragment.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f8.jpg, jn2-f8v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F9",
@@ -23792,7 +30490,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small fragmented orange-brown agaricoid collection composed of several thin stipe fragments and detached pileus or hymenophore pieces.",
+      "Dimensions": "Very small fragments; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pale buff to ochre and orange-brown, with darker brown soil or damaged tissue.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "One fragment shows relatively thick irregular orange-brown lamellae or ridges. Attachment and full hymenophore architecture cannot be assessed because the specimen is fragmented.",
+      "Stipe": "top 0.1 cm mid 0.1 base 0.6 cm height 2.0 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures are evident in the available fragments.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore deposit pending. Spore dimensions, shape, and deposit color are not established.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "A small cluster retains dark soil and organic debris, but original substrate and attachment are not fully documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: jn2-f9.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F10",
@@ -23857,7 +30572,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small red-orange agaricoid specimen with a partially damaged pileus showing broad pale cream areas and a stout whitish stipe.",
+      "Dimensions": "Small to medium specimen; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus salmon-red to red-orange with cream to pale buff damaged areas; exposed context pale cream; stipe white to cream.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "The fertile surface is not adequately visible in the supplied photographs, so gill spacing, attachment, or other hymenophore characters cannot be documented confidently.",
+      "Stipe": "top 0.9 cm mid 0.9cm base 0.7 cm height 5.0 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore print pending. Spore deposit color and microscopic characters remain undocumented.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains dark soil and organic debris; no distinct volva is evident.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f10.jpg, jn2-f10v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F11",
@@ -23922,7 +30654,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "SIZE",
+      "Dimensions": "Not documented.",
+      "Macroscopic color": "Not documented.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "Not documented / pending in source record.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not documented / pending in source record.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Not documented / pending in source record.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f11.jpg, jn2-f11v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F12",
@@ -23987,7 +30736,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small red-centered agaricoid basidiome with a pale cream margin, crowded cream lamellae, and a stout white stipe.",
+      "Dimensions": "Small basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus vivid red to orange-red centrally, fading through pinkish salmon to cream at the margin; lamellae cream; stipe white to cream.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae cream, close to crowded, thin and evenly radiating, with numerous lamellulae. Attachment appears adnate to slightly adnexed in the detached view.",
+      "Stipe": "0.4 cm all the way",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore print pending. Spore deposit color and microscopic characters remain undocumented.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains compact dark soil or organic debris; no distinct volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f12.jpg, jn2-f12v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F13",
@@ -24052,7 +30818,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Minute reddish-brown agaricoid basidiome with funnel- to trumpet-shaped cap, slender reddish stipe, and compact soil-bearing base.",
+      "Dimensions": "Minute basidiome; no calibrated scale visible. Direct measurement is required.",
+      "Macroscopic color": "Pileus/stipe reddish orange to chestnut; basal soil dark brown.",
+      "Pileus — form / profile": "Pileus very small, deeply depressed to infundibuliform, reddish orange to chestnut, with a thin flared and slightly irregular margin.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Pileus very small, deeply depressed to infundibuliform, reddish orange to chestnut, with a thin flared and slightly irregular margin.",
+      "Hymenophore": "Underside is only partly visible. Fertile surface appears smooth to weakly folded; true lamellae cannot be confirmed from the supplied views.",
+      "Stipe": "Stipe slender, reddish brown, smooth to finely fibrillose, tapering into the compact soil-bearing base. 1.3 cm all the away",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "No controlled deposit or calibrated microscopy is shown. Microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base attached to a compact dark soil/organic fragment. No volva or pronounced bulb is evident.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f13.jpg, jn2-f13v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F15",
@@ -24117,7 +30900,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small to medium pale cream agaricoid basidiome with smooth cream cap, densely crowded pale lamellae, and a stout curved whitish stipe with leaf litter and soil attached at the base.",
+      "Dimensions": "Small to medium basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus cream to pale buff; lamellae cream to very pale tan; stipe off-white to cream; basal debris brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae pale cream, close to crowded, thin and evenly radiating, with numerous lamellulae; attachment appears adnate to slightly adnexed in the detached view.",
+      "Stipe": "top 0.5 cm mid 1.0 cm base 1.6 cm height 3.7 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore print pending. Spore deposit color and microscopic characters remain undocumented.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base retains leaf litter and compact organic debris; no distinct bulb or volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f15.jpg, jn2-f15v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F16",
@@ -24182,7 +30982,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large robust pale tan agaricoid basidiome with broad fleshy pileus, crowded pale cream lamellae, and a thick detached white stipe with soil-bearing base.",
+      "Dimensions": "Large basidiome; no calibrated ruler visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus cream to pale tan with warmer buff center; lamellae cream to pale beige; stipe white to cream; basal soil brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae cream to pale beige, very crowded, thin and broad, radiating densely from a central attachment zone; numerous lamellulae are present.",
+      "Stipe": "top 2.0 cm mid 1.8 cm base 1.4 cm height 3.8 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants are visible in the preserved material.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore print pending. No definitive spore deposit is documented in these views.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains compact soil and forest debris. No distinct volva is evident in the detached stipe.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f16.jpg, jn2-f16v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F17",
@@ -24247,7 +31064,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Decayed wood substrate bearing localized white to translucent fungal-appearing growth along cracks, exposed fibers, and cavities; no discrete mushroom basidiome is visible.",
+      "Dimensions": "Medium wood fragment relative to the photographic field; fungal growth occurs in small localized patches. No calibrated scale is visible.",
+      "Macroscopic color": "Substrate dark brown; associated growth white to translucent-gray, appearing moist, gelatinous, or finely granular in places.",
+      "Pileus — form / profile": "No differentiated pileus is present in the supplied photographs.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No diagnostic gills, pores, teeth, or organized hymenophore are visible.",
+      "Stipe": "No stipe is present.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Not applicable to the photographed substrate-associated growth.",
+      "Spore print / macroscopic deposit": "Microscopy or culture is required to determine whether the visible growth is sporulating and to characterize any propagules present.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The visible material is directly associated with decayed fibrous wood and is concentrated along fissures, cavities, and exposed wood fibers.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f17.jpg, jn2-f17v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F19",
@@ -24312,7 +31146,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Highly fragmented small orange-brown agaricoid specimen represented by multiple cap and hymenophore fragments; no intact basidiome remains.",
+      "Dimensions": "Very small fragments; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Fragments orange-brown to ochre-brown, with darker brown damaged or interior areas.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Several fragments show lamellate or ridge-like structures, but attachment, spacing, and complete hymenophore architecture cannot be determined reliably from the damaged material.",
+      "Stipe": "No intact stipe is visible in the supplied photographs.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Veil structures cannot be evaluated because of specimen fragmentation.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore deposit pending. Spore dimensions, shape, and deposit color are not established from these photographs.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal attachment and original substrate are not preserved in the photographed material.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f19.jpg, jn2-f19v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F20",
@@ -24377,7 +31228,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Cluster of small dark red to brown agaricoid basidiomata, several caps closely grouped and partly soil-stained; intact stipes are not clearly preserved.",
+      "Dimensions": "Small clustered basidiomata; no calibrated scale visible.",
+      "Macroscopic color": "Pilei dark red-brown to chestnut; exposed tissue pale cream; attached soil dark brown.",
+      "Pileus — form / profile": "Pilei small, rounded to irregularly convex, red-brown to chestnut, smooth to finely matte, with some darkening and soil adherence.",
+      "Pileus — surface / ornamentation": "Pilei small, rounded to irregularly convex, red-brown to chestnut, smooth to finely matte, with some darkening and soil adherence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Hymenophore is not adequately shown in these photographs; gill spacing and attachment cannot be determined confidently.",
+      "Stipe": "Stipes are not intact in the supplied material; only short pale attachment fragments are visible on some caps.Top",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants can be confirmed.",
+      "Spore print / macroscopic deposit": "No controlled deposit is shown. Microscopic characters remain pending.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Several fragments retain compact soil or organic debris. Original substrate association is not documented.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f20.jpg, jn2-f20v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F21",
@@ -24442,7 +31310,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Two irregular reddish-brown fragments bearing extensive pale green crustose material across the outer surfaces. The photographed material is fragmentary and may include fungal, lichenized, or bark-associated tissue; the intact original structure is not…",
+      "Dimensions": "Small fragments; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Underlying tissue dark reddish-brown to chestnut; surface patches pale olive-green to yellow-green; broken inner areas tan to cream.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No discrete gills or pores are visible. The green material forms irregular crust-like patches over the reddish substrate.",
+      "Stipe": "No stipe visible.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy of both the reddish tissue and green surface material would be required to determine whether one or multiple organisms are represented.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The fragments appear to include bark-like or woody tissue with adherent green crustose growth.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f21.jpg, jn2-f21v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F23",
@@ -24507,7 +31392,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Very small dark-brown gilled mushroom cap with a detached thin, dark stem-like fragment nearby. Two views show the pileus surface and the underside.",
+      "Dimensions": "Minute specimen; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cap medium to dark brown; gills dark brown to chocolate-brown; detached stem-like fragment dark brown to nearly black.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "True lamellae present. The underside shows dark brown, crowded gills radiating from the central attachment region.",
+      "Stipe": "0.1 cm all the way through height 3.1 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, volva, or obvious veil remnants visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required for spore shape, size, pigmentation, and ornamentation.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal attachment is not preserved; substrate cannot be established from the photographs.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f23.jpg, jn2-f23v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F24",
@@ -24572,7 +31474,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large pale cream to buff agaricoid specimen with very broad damaged pileus, extremely crowded pale lamellae, and a thick detached white stipe.",
+      "Dimensions": "Large robust basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus pale cream to buff with tan staining; lamellae cream to pale beige; stipe white to cream; soil and forest debris brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae cream to pale beige, very close to crowded, narrow and densely radiating; numerous lamellulae are visible. Attachment appears adnate to slightly decurrent around the central attachment zone.",
+      "Stipe": "top 3.0 cm all the way height 6.7 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore print pending. Spore-print color and microscopic characters remain undocumented.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains soil and rootlike debris. No distinct volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f24.jpg, jn2-f24v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F25",
@@ -24637,7 +31556,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Large robust red agaricoid basidiome with broad red pileus showing extensive peeled or abraded pale patches, crowded cream lamellae, and a thick white curved stipe.",
+      "Dimensions": "Large robust basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus deep red to crimson with broad cream-white abraded or peeled areas; lamellae cream to pale beige; stipe white to cream with tan soil staining.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae cream to pale beige, close to crowded, broad and radiating, with numerous lamellulae.",
+      "Stipe": "top 1.5 cm all the way height t4.7",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore print pending. Spore deposit color and microscopic characters remain undocumented.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains compact dark soil and organic debris. No distinct volva is apparent.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f25.jpg, jn2-f25v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F27",
@@ -24702,7 +31638,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small to medium orange agaricoid basidiome with depressed orange-red pileus, yellow-orange thick gill-like ridges, and a long slender pale stipe.",
+      "Dimensions": "Small to medium basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus orange to reddish orange with yellow-orange margin; hymenophore yellow-orange; stipe pale cream to yellowish white.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Hymenophore yellow-orange, composed of relatively thick, irregular, forked and cross-veined gill-like ridges with visible anastomosis; the structures appear more ridge-like than thin true lamellae.",
+      "Stipe": "top o.1 cm mid .02 cm base 0.3 cm height 5.5 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore print pending. Spore dimensions and deposit color remain undocumented.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end carries soil and dark organic debris. No distinct volva or bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f27.jpg, jn2-f27v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F28",
@@ -24767,7 +31720,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Bright red agaricoid specimen with broad damaged red pileus, crowded white to cream lamellae, and a stout detached white stipe.",
+      "Dimensions": "Medium robust basidiome; no calibrated scale visible. Direct measurement is required.",
+      "Macroscopic color": "Pileus vivid red to scarlet with broad cream abrasions and tan staining; lamellae white to cream; stipe white; basal debris dark brown.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae white to cream, close to crowded, evenly radiating from the central attachment region; edges appear fine and mostly entire.",
+      "Stipe": "top 0.6 cm all the way",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore print pending. No definitive spore deposit is shown in the supplied photographs.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end bears soil and organic debris. No distinct volva is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f28.jpg, jn2-f28v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F29",
@@ -24832,7 +31802,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Medium-sized brown gilled mushroom documented in separated cap-and-stipe condition. The cap is broadly convex to nearly plane and warm brown, while the underside shows numerous crowded, pale tan to light brown gills. The stipe is curved, fairly robust, and…",
+      "Dimensions": "Moderate fruit body; no calibrated scale present. Exact cap diameter, stipe length, and stipe thickness should be measured from the preserved…",
+      "Macroscopic color": "Cap surface medium cinnamon-brown to warm tan-brown, slightly darker toward the center. Gills pale tan to beige-brown. Stipe tan to light brown with darker brown…",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Not documented / pending in source record.",
+      "Stipe": "top 1.1 cm mid 0.6 cm base 0.7 cm height 5.6 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No persistent ring, annulus, volva, or obvious veil remnants are visible in these views.",
+      "Spore print / macroscopic deposit": "A faint deposit or moisture-marked area is visible on the foil beneath the specimen, but the photographs do not provide a reliable spore-print color determination. Controlled spore print and microscopy are…",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal tissue retains dark soil and organic debris, consistent with collection from ground or litter rather than direct growth from exposed wood.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f29.jpg, jn2-f29v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F30",
@@ -24897,7 +31884,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small to medium buff-tan agaricoid basidiome with smooth convex pileus, crowded cream lamellae, and a stout pale stipe with soil-bearing base.",
+      "Dimensions": "Small to medium basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus buff to light tan, subtly darker centrally; lamellae cream to pale beige; stipe white to cream.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae cream to pale tan, close to crowded, thin and radiating, with numerous lamellulae. Attachment appears adnate to slightly adnexed in the detached-cap view.",
+      "Stipe": "top 0.7 cm mid 0.7 cm base 0.5 cm height 2.0 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore print pending. Spore deposit color and microscopic characters remain undocumented.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Dark soil and organic debris remain attached at the base; no distinct volva is evident.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f30.jpg, jn2-f30v3.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F31",
@@ -24962,7 +31966,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small orange-capped mushroom documented in two views with the cap and stipe separated. The cap is warm orange to orange-brown, while the stipe is distinctly pale yellow and slightly enlarged toward the soil-bearing base.",
+      "Dimensions": "Small specimen; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Cap orange to orange-brown; gills or underside structures yellow-orange to ochre in the visible view; stipe pale lemon-yellow to cream-yellow; basal debris dark brown to…",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "The underside is partially visible in one photograph and appears lamellate, with closely spaced yellow-orange to ochre gills radiating from the central attachment region.",
+      "Stipe": "top 0.2 mid 0.2 cm base 0.5 cm height 2.5 c,m",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No obvious annulus, volva, or veil remnants visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print is clearly documented in these photographs. Microscopy required for spore color confirmation, shape, ornamentation, and measurements.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Dark soil and organic material remain attached to the enlarged basal region.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f31.jpg, jn2-f31v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F32",
@@ -25027,7 +32048,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small pale tan agaricoid specimen with smooth shallowly depressed cap, pale cream lamellae, and a long slender curved pale stipe bearing forest debris.",
+      "Dimensions": "Small to medium basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus pale tan to buff with warmer central disc; lamellae cream to off-white; stipe pale cream to yellowish buff.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Lamellae cream to off-white, close to moderately close, thin, with numerous shorter lamellulae. Attachment appears adnate to narrowly adnexed in the detached cap view.",
+      "Stipe": "top 0.2 all the way height 7.2 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore print pending. No definitive spore deposit is visible.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal/attachment material is incomplete but retains brown leaf and forest debris. No distinct volva or bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f32.jpg, jn2-f32v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F33",
@@ -25092,7 +32130,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small brown agaricoid basidiome with smooth tan-brown cap, darker central disc, very long slender brownish stipe, and pale cream relatively widely spaced lamellae.",
+      "Dimensions": "Small basidiome with proportionally long stipe; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus tan to medium brown with darker central disc; lamellae cream to off-white; stipe tan-brown; basal debris dark brown.",
+      "Pileus — form / profile": "Pileus circular, convex to nearly plane with a shallow central depression, smooth to very finely matte, tan-brown with a distinct darker brown central zone; margin thin and locally notched by damage.",
+      "Pileus — surface / ornamentation": "Pileus circular, convex to nearly plane with a shallow central depression, smooth to very finely matte, tan-brown with a distinct darker brown central zone; margin thin and locally notched by damage.",
+      "Pileus — margin": "Pileus circular, convex to nearly plane with a shallow central depression, smooth to very finely matte, tan-brown with a distinct darker brown central zone; margin thin and locally notched by damage.",
+      "Hymenophore": "Lamellae pale cream, moderately distant to fairly widely spaced, broad and radiating, with some shorter lamellulae. Attachment appears adnexed to narrowly adnate in the detached view.",
+      "Stipe": "Stipe very long and slender, brownish to tan, nearly cylindrical and slightly tapering, smooth to finely fibrillose, with soil adhering at the basal end.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore print pending. No definitive deposit is documented in the supplied views.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains soil and fine organic debris; no bulb or volva is evident.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f33.jpg, jn2-f33v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F34",
@@ -25157,7 +32212,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Small bright yellow agaricoid specimen with pale lemon cap, warm yellow-orange lamellae, pale yellow stipe, and a visible pale pinkish-cream radial deposit.",
+      "Dimensions": "Small basidiome; no calibrated ruler visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus pale lemon-yellow; lamellae yellow-orange; stipe pale yellow; deposit pale pinkish cream.",
+      "Pileus — form / profile": "Pileus small, pale lemon-yellow, convex to shallowly plane, smooth and thin-fleshed, with a subtly striate margin and slight central deepening.",
+      "Pileus — surface / ornamentation": "Pileus small, pale lemon-yellow, convex to shallowly plane, smooth and thin-fleshed, with a subtly striate margin and slight central deepening.",
+      "Pileus — margin": "Pileus small, pale lemon-yellow, convex to shallowly plane, smooth and thin-fleshed, with a subtly striate margin and slight central deepening.",
+      "Hymenophore": "Lamellae warm yellow to orange-yellow, moderately spaced and relatively thick; attachment appears adnate to narrowly adnexed.",
+      "Stipe": "Stipe slender, pale yellow to cream, gently curved, fibrous to finely fibrillose; basal end retains dark soil.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base is soil-stained with attached organic matter. No distinct volva or pronounced bulb is visible.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f34.jpg, jn2-f34v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F35",
@@ -25222,7 +32294,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Medium cream-tan agaricoid specimen with broad cap, crowded white lamellae, stout pale stipe, dark soil-bearing base, and a faint pale spore deposit.",
+      "Dimensions": "Medium basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus cream to light tan with darker buff-brown margin; lamellae white to cream; stipe white to pale buff.",
+      "Pileus — form / profile": "Pileus broad, cream to light tan, convex to nearly plane, with a slightly darker central zone and darker brownish margin; surface smooth to finely matte.",
+      "Pileus — surface / ornamentation": "Pileus broad, cream to light tan, convex to nearly plane, with a slightly darker central zone and darker brownish margin; surface smooth to finely matte.",
+      "Pileus — margin": "Pileus broad, cream to light tan, convex to nearly plane, with a slightly darker central zone and darker brownish margin; surface smooth to finely matte.",
+      "Hymenophore": "Lamellae white to cream, close to crowded, thin and evenly radiating; attachment appears adnate to narrowly adnexed.",
+      "Stipe": "Stipe stout, white to cream, cylindrical, fibrous and slightly curved, with a dark soil-coated basal end.Top 0.9 mid 0.8 cm base 0.6 cm height 4.2 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No definite annulus, cortina, or universal-veil remnants are visible.",
+      "Spore print / macroscopic deposit": "Not documented / pending in source record.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Base bears compact dark soil. No distinct volva or pronounced bulb is apparent.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f35.jpg, jn2-f35v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F36",
@@ -25287,7 +32376,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Medium fleshy boletoid basidiome with brown to chestnut pileus, vivid yellow poroid hymenophore, and a stout yellow-brown stipe with darker soil-bearing base.",
+      "Dimensions": "Medium robust basidiome; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pileus warm brown to chestnut; pore surface bright yellow; stipe yellow-brown to ochre with darker brown toward the base.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "Underside distinctly poroid, bright yellow, with small closely packed round to angular pores. No lamellae are present.",
+      "Stipe": "Stipe stout, cylindrical to slightly tapering, yellow-brown to ochre, fibrous, darker toward the soil-bearing base; cut upper end shows pale context. Top 0.7cm mid 1.0 cm base 0.6 cm height 4.0 cm",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus or other veil structures are visible.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore deposit pending. Spore dimensions, shape, and deposit color are not established from these photographs alone.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal end retains dark soil and organic debris. No volval structure is evident.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f36.jpg, jn2-f36v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F37",
@@ -25352,7 +32458,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Dark brown sessile bracket-like fungal fragment with a thick semicircular profile and a tough-looking uneven pileus surface.",
+      "Dimensions": "Small to medium bracket fragment; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Upper surface dark brown to chestnut-brown, with a somewhat lighter brown margin.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "The fertile surface is not adequately exposed in the supplied photographs; pore, tooth, or lamellate architecture cannot be confirmed.",
+      "Stipe": "No stipe is visible; the specimen appears sessile.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures are visible; such structures are not evident in this bracket-like morphology.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore deposit pending. Spore dimensions, shape, and deposit color are not established.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The original attachment point is not preserved clearly and the substrate is not adequately documented in the supplied views.",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f37.jpg, jn2-f37v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F38",
@@ -25417,7 +32540,24 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Woody and moss-bearing substrate supporting a dense cream to pale-tan tooth-, coral-, or spine-like fungal growth. Two views show numerous short, crowded, projecting structures covering substantial portions of the substrate surface.",
+      "Dimensions": "Small to moderate substrate fragment; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Fungal growth cream to pale tan; substrate brown; associated moss bright to dark green.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No lamellae are visible. The apparent fertile surface is hydnoid to coral-like in gross morphology, composed of many short downward or outward projecting structures. Microscopy is required to determine exact…",
+      "Stipe": "No distinct central stipe; the fungal tissue appears broadly attached to the woody substrate.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No veil structures visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required for spore shape, size, ornamentation, and basidial features.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Directly attached to decayed woody material with substantial associated moss and forest-floor debris.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f38.jpg, jn2-f38v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN2-F39",
@@ -25483,7 +32623,24 @@ window.ATLAS_DATA = [
         "Identified",
         "No"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Highly degraded or fragmentary substrate-associated fungal collection consisting of pale beige-gray irregular material with green patches and adhering soil or organic debris; no intact pileus-stipe architecture is visible.",
+      "Dimensions": "Small irregular fragment; no calibrated scale visible. Direct measurements are required.",
+      "Macroscopic color": "Pale beige to grayish cream, with green areas and dark brown soil or organic debris.",
+      "Pileus — form / profile": "Not separately assessable from the supplied evidence.",
+      "Pileus — surface / ornamentation": "Not separately assessable from the supplied evidence.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "No diagnostic gills, pores, teeth, or other organized hymenophore are visible.",
+      "Stipe": "No recognizable stipe is preserved.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "Veil characters cannot be evaluated.",
+      "Spore print / macroscopic deposit": "Microscopy and controlled spore collection pending. No spore characters can be established from these photographs.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "The collection consists largely of substrate-associated material with soil and green plant- or lichen-like patches. Exact biological attachment and original substrate relationships cannot be determined from…",
+      "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photographs: jn2-f39.jpg, jn2-f39v2.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   },
   {
     "code": "JN5-F6",
@@ -25542,6 +32699,23 @@ window.ATLAS_DATA = [
         "Identified",
         "Not stated"
       ]
-    ]
+    ],
+    "formalMorphology": {
+      "Habit / basidiome form": "Two very small brown-capped mushrooms with extremely slender pale stems. Both appear delicate, with compact conical to convex caps and thread-like stipes.",
+      "Dimensions": "Minute specimens; no calibrated scale visible. Direct measurement required.",
+      "Macroscopic color": "Caps reddish-brown to dark cinnamon-brown; stipes pale tan to cream with darker basal staining.",
+      "Pileus — form / profile": "Small conical to narrowly convex caps, darker toward the center and smooth to finely striate in appearance.",
+      "Pileus — surface / ornamentation": "Small conical to narrowly convex caps, darker toward the center and smooth to finely striate in appearance.",
+      "Pileus — margin": "Not separately assessable from the supplied evidence.",
+      "Hymenophore": "The undersides are not sufficiently exposed for confident hymenophore characterization.",
+      "Stipe": "Very thin, elongated, flexible-looking pale stems; one specimen retains a small amount of basal debris.",
+      "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
+      "Veil structures": "No annulus, volva, or veil remnants visible.",
+      "Spore print / macroscopic deposit": "No controlled spore print documented. Microscopy required for spore pigmentation, shape, size, and ornamentation.",
+      "Microscopy": "Use the source microscope record fields; no microscopic identification has been inferred in this atlas.",
+      "Ecology / substrate": "Basal debris is minimal; exact substrate cannot be determined from the photograph.",
+      "Identification status": "Identification not stated or not resolved in the source record.",
+      "Evidence / provenance": "SOURCE IMAGES: Source photograph: jn5-f6.jpg | Microscope record: objective/magnification ______ mount/stain ______ spores measured (n) ______ image filename __________________"
+    }
   }
 ];
