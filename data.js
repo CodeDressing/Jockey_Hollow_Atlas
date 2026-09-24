@@ -779,20 +779,20 @@ window.ATLAS_DATA = [
     "family": "AN",
     "site": "AN2",
     "collection": "AN2",
-    "status": "VISIBLE SPORE DEPOSIT MICROSCOPY PENDING",
-    "sourceLine": "SOURCE IMAGES: Source spore-print photograph: AN2-F34SP.JPG",
+    "status": "VISIBLE SPORE DEPOSIT — MICROSCOPY DOCUMENTED",
+    "sourceLine": "SOURCE IMAGES: Source spore-print photograph: AN2-F34SP.JPG; verified user-supplied AN2-F34 spore-print preparation views and microscopy fields SPMV1-SPMV5 added 2026-09-24.",
     "summary": {
       "Growth / description": "One laboratory spore-print photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
       "Size": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
       "Color": "Deposit pale tan to light brown, with patchy radial concentration.",
       "Cap / Pileus": "Not supplied. The source photograph documents the print surface rather than the intact fruit body.",
       "Hymenophore": "Not supplied. A radial deposition pattern is visible, but hymenophore structure cannot be evaluated from the print photograph alone.",
-      "Spores": "A broad, patchy radial deposit is visible, pale tan to light brown and uneven in density. Microscopy, mount medium, magnification, and calibrated spore measurements remain pending.",
+      "Spores": "A broad, patchy radial deposit is visible, pale tan to light brown and uneven in density. Five annotated microscopy fields supplied 2026-09-24 document repeated elongate to ellipsoid brownish spores. Visible annotations across the fields include long-axis measurements approximately 9.07-12.12 µm and short-axis measurements approximately 2.18-5.21 µm. Mount medium and objective/magnification were not supplied, so no taxonomic identification is inferred from these images alone.",
       "Stem / Stipe": "Not supplied or reliably visible in the source print record.",
       "Veil": "Not supplied or reliably visible in the source print record.",
       "Base / Substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
-      "Microscopy record": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
-      "Source completeness note": "Field and laboratory specimen photographs and a calibrated microscopy image were not supplied in this source record."
+      "Microscopy record": "Five annotated microscopy images (AN2-F34 SPMV1.png through AN2-F34 SPMV5.png) were supplied 2026-09-24 and accession-linked by filename. They contain multiple on-image spore measurements. Objective/magnification and mount/stain were not supplied; therefore the atlas records the morphology and visible measurements without inferring species identity.",
+      "Source completeness note": "The original source record contained a spore-print photograph. Two additional verified spore-print preparation photographs and five annotated microscopy fields were supplied 2026-09-24. Field and intact fruit-body photographs remain not documented in this record."
     },
     "images": [
       {
