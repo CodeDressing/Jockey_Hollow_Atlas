@@ -147,7 +147,7 @@ function mergeMovies(){
 mergeMovies();
 
 const $=id=>document.getElementById(id);
-let current=data[0]?.code||null,filter='',family='ALL',collection='ALL',imageType='ALL';
+let current=data[0]?.code||null,filter='',family='ALL',collection='ALL',imageType='ALL',workflow='ALL';
 const esc=s=>String(s??'').replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 const cls=v=>{v=String(v||'').toLowerCase();return v==='yes'?'yes':v==='no'?'no':'partial'};
 const families=[...new Set(data.map(x=>x.family).filter(Boolean))];
@@ -157,6 +157,7 @@ function filtered(){
   return data.filter(s=>
     (family==='ALL'||s.family===family)&&
     (collection==='ALL'||s.collection===collection)&&
+    (workflow==='ALL'||String(s.workflowStatus||'INCOMPLETE')===workflow)&&
     (!filter||
       String(s.code||'').toLowerCase().includes(filter)||
       String(s.site||'').toLowerCase().includes(filter)||
@@ -171,6 +172,10 @@ function fillFilters(){
   for(const id of ['collectionFilter','mCollection']){
     $(id).innerHTML='<option value="ALL">All collections</option>'+collections.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('');
     $(id).value=collection;
+  }
+  for(const id of ['workflowFilter','mWorkflow']){
+    $(id).innerHTML='<option value="ALL">All record states</option><option value="COMPLETE">Complete sets</option><option value="INCOMPLETE">Incomplete / in progress</option>';
+    $(id).value=workflow;
   }
 }
 function renderList(){
@@ -225,6 +230,11 @@ function syncSearch(v){
 });
 ['collectionFilter','mCollection'].forEach(id=>$(id).onchange=e=>{
   collection=e.target.value;$('collectionFilter').value=collection;$('mCollection').value=collection;
+  const rows=filtered();if(rows[0]&&!rows.some(x=>x.code===current))current=rows[0].code;
+  renderList();renderSpec();
+});
+['workflowFilter','mWorkflow'].forEach(id=>$(id).onchange=e=>{
+  workflow=e.target.value;$('workflowFilter').value=workflow;$('mWorkflow').value=workflow;
   const rows=filtered();if(rows[0]&&!rows.some(x=>x.code===current))current=rows[0].code;
   renderList();renderSpec();
 });
