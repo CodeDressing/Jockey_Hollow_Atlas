@@ -588,6 +588,7 @@ window.ATLAS_DATA = [
   },
   {
     "code": "AN2-F25",
+    "workflowStatus": "COMPLETE",
     "family": "AN",
     "site": "AN2",
     "collection": "AN2",
@@ -777,6 +778,7 @@ window.ATLAS_DATA = [
   },
   {
     "code": "AN2-F34",
+    "workflowStatus": "COMPLETE",
     "family": "AN",
     "site": "AN2",
     "collection": "AN2",
