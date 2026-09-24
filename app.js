@@ -147,17 +147,20 @@ function mergeMovies(){
 mergeMovies();
 
 const $=id=>document.getElementById(id);
+const FULL_DATA_SET_CODES=new Set(['AN2-F25','AN2-F34']);
 let current=data[0]?.code||null,filter='',family='ALL',collection='ALL',imageType='ALL',workflow='ALL';
 const esc=s=>String(s??'').replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 const cls=v=>{v=String(v||'').toLowerCase();return v==='yes'?'yes':v==='no'?'no':'partial'};
 const families=[...new Set(data.map(x=>x.family).filter(Boolean))];
 const collections=[...new Set(data.map(x=>x.collection).filter(Boolean))];
 
+function fullDataSetState(s){return FULL_DATA_SET_CODES.has(String(s.code||'').toUpperCase())?'FULL':'OTHER'}
+function fullDataSets(){return data.filter(s=>FULL_DATA_SET_CODES.has(String(s.code||'').toUpperCase()))}
 function filtered(){
   return data.filter(s=>
     (family==='ALL'||s.family===family)&&
     (collection==='ALL'||s.collection===collection)&&
-    (workflow==='ALL'||String(s.workflowStatus||'INCOMPLETE')===workflow)&&
+    (workflow==='ALL'||fullDataSetState(s)===workflow)&&
     (!filter||
       String(s.code||'').toLowerCase().includes(filter)||
       String(s.site||'').toLowerCase().includes(filter)||
@@ -174,9 +177,16 @@ function fillFilters(){
     $(id).value=collection;
   }
   for(const id of ['workflowFilter','mWorkflow']){
-    $(id).innerHTML='<option value="ALL">All record states</option><option value="COMPLETE">Complete sets</option><option value="INCOMPLETE">Incomplete / in progress</option>';
+    $(id).innerHTML='<option value="ALL">All record states</option><option value="FULL">Full data sets</option><option value="OTHER">Other / in progress</option>';
     $(id).value=workflow;
   }
+}
+function renderFullSetList(){
+  const rows=fullDataSets();
+  const host=$('fullSetList');
+  if(!host)return;
+  host.innerHTML=rows.map(s=>`<button class="fullset-btn ${s.code===current?'active':''}" data-code="${esc(s.code)}"><span><strong>${esc(s.code)}</strong><small>${esc(s.collection)} · curated full-data view</small></span><b>OPEN</b></button>`).join('');
+  host.querySelectorAll('.fullset-btn').forEach(b=>b.onclick=()=>setCurrent(b.dataset.code));
 }
 function renderList(){
   const rows=filtered();
@@ -185,6 +195,7 @@ function renderList(){
   $('mSpec').innerHTML=rows.map(s=>`<option value="${esc(s.code)}" ${s.code===current?'selected':''}>${esc(s.code)} — ${(s.images||[]).length} images${(s.movies||[]).length?` · ${(s.movies||[]).length} movies`:''}</option>`).join('');
   const archiveCount=Math.max(0,data.length-masterCount);
   $('resultCount').textContent=`${rows.length} of ${data.length} records · ${masterCount} master + ${archiveCount} Drive archive`;
+  renderFullSetList();
 }
 function setCurrent(code){
   if(!data.some(x=>x.code===code))return;
@@ -212,8 +223,9 @@ function renderSpec(){
   const galleries=Object.entries(groups).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map(im=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-caption="${esc(im.caption)}" data-name="${esc(im.filename)}"><img loading="lazy" src="${esc(im.thumb)}" alt="${esc(im.caption)}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${esc(im.caption)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}</div></article>`).join('')}</div></section>`).join('');
   const movieRows=(s.movies||[]).filter(m=>imageType==='ALL'||imageType==='Movie / video');
   const movieGallery=movieRows.length?`<section class="section"><h2>Movie / video <span>${movieRows.length}</span></h2><div class="gallery">${movieRows.map(m=>`<article class="image-card movie-card"><div class="movie-wrap">${m.preview?`<iframe src="${esc(m.preview)}" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>`:`<img src="${esc(m.poster)}" alt="${esc(m.caption)}">`}</div><div class="caption"><strong>${esc(m.caption)}</strong><code>${esc(m.sourceFilename||m.filename)}</code>${m.durationSeconds?`<small class="drive-source">Duration: ${Math.round(m.durationSeconds)} seconds</small>`:''}${m.note?`<small class="drive-source">${esc(m.note)}</small>`:''}${m.driveView?`<a class="movie-link" href="${esc(m.driveView)}" target="_blank" rel="noopener">Open movie in Drive</a>`:''}</div></article>`).join('')}</div></section>`:'';
+  const fullBadge=FULL_DATA_SET_CODES.has(String(s.code||'').toUpperCase())?'<span class="fullset-badge">FULL DATA SET</span>':'';
   const eyebrow=s.archiveIndex?`MASTER RECORD ${s.archiveIndex} / ${masterCount}`:'DRIVE ARCHIVE';
-  $('main').innerHTML=`<div class="spec-head"><div><div class="eyebrow">${eyebrow}</div><h1>${esc(s.code)}</h1><p class="status">${esc(s.status)}</p></div><div class="navBtns"><button onclick="nav(-1)">← Previous</button><button onclick="nav(1)">Next →</button></div></div><div class="hero"><div class="summary-grid">${sum}</div><aside class="card"><h3>Data completeness</h3><div class="matrix"><div>Wild + lab pairing</div><div class="${pairClass}">${pairStatus}</div>${mat}</div>${s.sourceLine?`<div class="sourceLine"><strong>Source / provenance</strong><p>${esc(s.sourceLine)}</p></div>`:''}</aside></div>${galleries||''}${movieGallery||''}${(!galleries&&!movieGallery)?'<div class="empty">No media match the selected filter.</div>':''}`;
+  $('main').innerHTML=`<div class="spec-head"><div><div class="eyebrow">${eyebrow} ${fullBadge}</div><h1>${esc(s.code)}</h1><p class="status">${esc(s.status)}</p></div><div class="navBtns"><button onclick="nav(-1)">← Previous</button><button onclick="nav(1)">Next →</button></div></div><div class="hero"><div class="summary-grid">${sum}</div><aside class="card"><h3>Data completeness</h3><div class="matrix"><div>Wild + lab pairing</div><div class="${pairClass}">${pairStatus}</div>${mat}</div>${s.sourceLine?`<div class="sourceLine"><strong>Source / provenance</strong><p>${esc(s.sourceLine)}</p></div>`:''}</aside></div>${galleries||''}${movieGallery||''}${(!galleries&&!movieGallery)?'<div class="empty">No media match the selected filter.</div>':''}`;
   $('recordCount').textContent=`${(s.images||[]).length} source images${(s.movies||[]).length?` · ${(s.movies||[]).length} movies`:''} · ${esc(s.collection)} · ${esc(s.family)}`;
   document.querySelectorAll('.image-wrap').forEach(el=>el.onclick=()=>openViewer(el.dataset.file,el.dataset.caption,el.dataset.name));
 }
