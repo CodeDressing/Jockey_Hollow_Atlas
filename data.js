@@ -1078,20 +1078,20 @@ window.ATLAS_DATA = [
     "family": "AN",
     "site": "AN2",
     "collection": "AN2",
-    "status": "FAINT / INCONCLUSIVE SPORE DEPOSIT MICROSCOPY PENDING",
-    "sourceLine": "SOURCE IMAGES: Source spore-print-attempt photograph: AN2-F36SP.JPG",
+    "status": "FAINT / INCONCLUSIVE SPORE DEPOSIT — MICROSCOPY ATTEMPT NON-DIAGNOSTIC",
+    "sourceLine": "SOURCE IMAGES: Source spore-print-attempt photograph: AN2-F36SP.JPG; two verified AN2-F36 foil/slide preparation macro photographs and nine microscopy-attempt images labeled AN2-F36 failure v1-v9 were added 2026-09-26.",
     "summary": {
-      "Growth / description": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Growth / description": "The source record includes a laboratory spore-print attempt. Two additional verified foil/slide preparation macro photographs were supplied 2026-09-26; they show sparse fine brown particulate material and small orange-brown fragments on reflective foil. Fruit-body morphology and an in-nature field view are not included in this source record.",
       "Size": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
-      "Color": "Extremely faint pale gray-brown trace; deposit color remains uncertain.",
+      "Color": "The original print record shows an extremely faint pale gray-brown trace. The 2026-09-26 preparation photographs show sparse brown particulate material with orange-brown fragments; a uniform diagnostic spore-deposit color remains uncertain.",
       "Cap / Pileus": "Not supplied. The source photograph documents the print surface rather than the intact fruit body.",
       "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
-      "Spores": "An extremely faint pale gray-brown radial trace may be present, but the deposit is insufficient for a confident print-color determination. Microscopy and calibrated measurements remain pending.",
+      "Spores": "An extremely faint pale gray-brown radial trace may be present in the original print record. Two later preparation photographs show sparse fine brown particulate material, but the microscopy attempt was non-diagnostic. No object in the failed microscopy series is accepted here as a measured fungal spore.",
       "Stem / Stipe": "Not supplied or reliably visible in the source print record.",
       "Veil": "Not supplied or reliably visible in the source print record.",
       "Base / Substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
-      "Microscopy record": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
-      "Source completeness note": "Field and laboratory specimen photographs and a calibrated microscopy image were not supplied in this source record."
+      "Microscopy record": "Nine microscopy-attempt images labeled AN2-F36 failure v1.png through AN2-F36 failure v9.png were supplied 2026-09-26. The fields are dominated by large granular or tissue-like aggregates and debris rather than a repeatable population of confidently recognizable spores. On-image annotations include objects measured at 15.27 µm, 28.62 µm, and 33.47 µm; these are retained as image annotations only and are not treated as spore dimensions. This series is recorded as a failed/non-diagnostic capture and should be repeated.",
+      "Source completeness note": "Spore-print/preparation imagery and a nine-frame microscopy attempt are now documented. The microscopy attempt is non-diagnostic and does not establish spore morphology or dimensions; repeat microscopy remains required. Field imagery remains not documented."
     },
     "images": [
       {
@@ -1123,7 +1123,7 @@ window.ATLAS_DATA = [
       ],
       [
         "Measurements",
-        "Not documented"
+        "Partial"
       ],
       [
         "Identified",
@@ -1141,8 +1141,8 @@ window.ATLAS_DATA = [
       "Stipe": "Not supplied or reliably visible in the source print record.",
       "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
       "Veil structures": "Not supplied or reliably visible in the source print record.",
-      "Spore print / macroscopic deposit": "An extremely faint pale gray-brown radial trace may be present, but the deposit is insufficient for a confident print-color determination. Microscopy and calibrated measurements remain pending.",
-      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Spore print / macroscopic deposit": "The original record shows an extremely faint pale gray-brown trace. Two later foil/slide preparation views show sparse fine brown particulate material and orange-brown fragments; a uniform diagnostic deposit color remains uncertain.",
+      "Microscopy": "Nine 2026-09-26 microscopy-attempt images are preserved as a failed/non-diagnostic series. Large granular or tissue-like aggregates and debris predominate; annotated 15.27, 28.62, and 33.47 µm objects are not accepted as spores. Repeat preparation and microscopy are required.",
       "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
       "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
       "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: AN2-F36SP.JPG"
@@ -1153,20 +1153,20 @@ window.ATLAS_DATA = [
     "family": "AN",
     "site": "AN2",
     "collection": "AN2",
-    "status": "PRINT ATTEMPT INCONCLUSIVE MICROSCOPY PENDING",
-    "sourceLine": "SOURCE IMAGES: Source spore-print-attempt photograph: AN2-F38SP.JPG",
+    "status": "PRINT ATTEMPT INCONCLUSIVE — MICROSCOPY DOCUMENTED / SPORE IDENTITY UNRESOLVED",
+    "sourceLine": "SOURCE IMAGES: Source spore-print-attempt photograph: AN2-F38SP.JPG; two verified AN2-F38 foil/slide preparation macro photographs and six AN2-F38 microscopy views V1-V6 added 2026-09-26.",
     "summary": {
-      "Growth / description": "One laboratory spore-print-attempt photograph is supplied; fruit-body morphology and an in-nature field view are not included in this source record.",
+      "Growth / description": "The source record includes a laboratory spore-print attempt. Two additional verified foil/slide preparation macro photographs were supplied 2026-09-26; no broad or dense macroscopic deposit is evident in those views. Fruit-body morphology and an in-nature field view are not included in this source record.",
       "Size": "Not documented; no calibrated measurement scale is visible in the supplied photograph.",
       "Color": "No reliable spore-deposit color is visible against the light paper.",
       "Cap / Pileus": "Not supplied. The source photograph documents the print surface rather than the intact fruit body.",
       "Hymenophore": "Not supplied and cannot be evaluated from the print-attempt photograph.",
-      "Spores": "No definite spore deposit is visible in the supplied photograph. Print result is inconclusive; microscopy and calibrated measurements remain pending.",
+      "Spores": "No definite broad spore deposit is visible at macro scale. Six microscopy views supplied 2026-09-26 show numerous minute refractile particles or bodies, but the images alone do not establish that these are fungal spores. On-image annotations in several fields are mostly approximately 1.06-3.10 µm, with one larger annotated object at 6.13 µm. These values are preserved as displayed measurements rather than adopted as a formal spore-size range.",
       "Stem / Stipe": "Not supplied or reliably visible in the source print record.",
       "Veil": "Not supplied or reliably visible in the source print record.",
       "Base / Substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
-      "Microscopy record": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
-      "Source completeness note": "Field and laboratory specimen photographs and a calibrated microscopy image were not supplied in this source record."
+      "Microscopy record": "Six microscopy images labeled AN2-F38 V1.png through AN2-F38 V6.png were supplied 2026-09-26 and accession-linked by filename. Multiple fields contain abundant minute refractile particles or bodies; several images include on-screen measurements ranging approximately 1.06-3.10 µm, and one image marks a larger object at 6.13 µm. Because objective/magnification, mount/stain, measurement-axis conventions, and independent confirmation of calibration status were not supplied with this series, the atlas does not identify the measured objects as spores or infer species identity from them.",
+      "Source completeness note": "Spore-print/preparation imagery and six microscopy views are now documented. Microscopy is present, but the identity of the measured minute objects as fungal spores remains unresolved; field imagery remains not documented."
     },
     "images": [
       {
@@ -1194,11 +1194,11 @@ window.ATLAS_DATA = [
       ],
       [
         "Microscopy imagery",
-        "Partial"
+        "Yes"
       ],
       [
         "Measurements",
-        "Not documented"
+        "Partial"
       ],
       [
         "Identified",
@@ -1216,8 +1216,8 @@ window.ATLAS_DATA = [
       "Stipe": "Not supplied or reliably visible in the source print record.",
       "Context / flesh": "Not independently documented unless explicitly described elsewhere in the source record; no character is inferred beyond the supplied observations.",
       "Veil structures": "Not supplied or reliably visible in the source print record.",
-      "Spore print / macroscopic deposit": "No definite spore deposit is visible in the supplied photograph. Print result is inconclusive; microscopy and calibrated measurements remain pending.",
-      "Microscopy": "No microscope image, objective/magnification, mount/stain, or measured-spore record was supplied; no microscopic identification has been inferred in this atlas.",
+      "Spore print / macroscopic deposit": "No definite broad spore deposit is visible in the original or later macro preparation views; the macroscopic print remains inconclusive.",
+      "Microscopy": "Six 2026-09-26 microscopy views show numerous minute refractile particles or bodies. Displayed measurements are mostly about 1.06-3.10 µm, with one larger 6.13 µm object. Object identity as fungal spores is not established, and no taxonomic identification is inferred.",
       "Ecology / substrate": "The print paper is visible; original field substrate and associated vegetation are not supplied.",
       "Identification status": "Unresolved; no taxonomic identification is asserted beyond the documented evidence.",
       "Evidence / provenance": "SOURCE IMAGES: Source spore-print-attempt photograph: AN2-F38SP.JPG"
