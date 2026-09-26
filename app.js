@@ -214,10 +214,19 @@ function renderSpec(){
   const groups={};
   (s.images||[]).filter(im=>imageType==='ALL'||im.category===imageType).forEach(im=>(groups[im.category]??=[]).push(im));
   const sum=Object.entries(s.summary||{}).map(([k,v])=>`<div class="summary-item"><h4>${esc(k)}</h4><p>${esc(v)}</p></div>`).join('');
-  const mat=(s.completeness||[]).map(([k,v])=>`<div>${esc(k)}</div><div class="${cls(v)}">${esc(v)}</div>`).join('');
   const cats=new Set((s.images||[]).map(im=>im.category));
   const hasWild=cats.has('Wild / field context');
   const hasLab=cats.has('Source macro / specimen');
+  const hasSpore=cats.has('Spore print / preparation');
+  const hasMicro=cats.has('Microscopy');
+  const effectiveCompleteness=(s.completeness||[]).map(([k,v])=>{
+    if(k==='Wild / field imagery') return [k,hasWild?'Yes':v];
+    if(k==='Embedded/source imagery') return [k,hasLab?'Yes':v];
+    if(k==='Spore-print imagery') return [k,hasSpore?'Yes':v];
+    if(k==='Microscopy imagery') return [k,hasMicro?'Yes':v];
+    return [k,v];
+  });
+  const mat=effectiveCompleteness.map(([k,v])=>`<div>${esc(k)}</div><div class="${cls(v)}">${esc(v)}</div>`).join('');
   const pairStatus=hasWild&&hasLab?'COMPLETE':(!hasWild&&!hasLab?'MISSING WILD + LAB':(!hasWild?'MISSING WILD':'MISSING LAB'));
   const pairClass=hasWild&&hasLab?'yes':'no';
   const galleries=Object.entries(groups).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map(im=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-caption="${esc(im.caption)}" data-name="${esc(im.filename)}"><img loading="lazy" src="${esc(im.thumb)}" alt="${esc(im.caption)}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${esc(im.caption)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}</div></article>`).join('')}</div></section>`).join('');
