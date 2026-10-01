@@ -64,7 +64,13 @@ export class MycoSimEngine{
     this.objects.clear(); this.pickables.length=0; this.hidden.clear(); this.isolated=null; this.lastHover=null;
     for(const child of [...this.root.children]){
       this.root.remove(child);
-      child.traverse?.(n=>{if(n.geometry)n.geometry.dispose();});
+      child.traverse?.(n=>{
+        if(n.geometry) n.geometry.dispose();
+        if(n.material){
+          const mats=Array.isArray(n.material)?n.material:[n.material];
+          for(const m of mats) m?.dispose?.();
+        }
+      });
     }
     for(const m of Object.values(MATERIALS)){m.transparent=false;m.opacity=1;m.depthWrite=true;}
   }
