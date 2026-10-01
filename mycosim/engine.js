@@ -147,14 +147,19 @@ export class MycoSimEngine{
   getVariantState(){return {...this.variants};}
 
   setDevelopmentalStage(stageId){
-    if(!this.currentProfile) {
+    if(!this.currentProfile){
       this.developmentalStageId=stageId;
       return;
     }
-    const next=composeMorphologyState(this.currentProfile.id,{stageId,variants:this.variants});
+    const profileId=this.currentProfile.id;
+    const previousMode=this.mode;
+    const next=composeMorphologyState(profileId,{stageId,variants:this.variants});
     this.developmentalStageId=stageId;
     this.morphologyState=next;
-    this.loadProfile(this.currentProfile.id);
+    this.loadProfile(profileId);
+    this.mode=previousMode;
+    this.applyMode();
+    this.onStatus?.("3D engine online · "+this.currentProfile.label+" · "+this.morphologyState.stage.label+" · "+previousMode);
   }
 
   getDevelopmentalStage(){
