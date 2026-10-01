@@ -33,6 +33,44 @@ function speak(text){
   speechSynthesis.speak(u);
 }
 
+function updateMorphologySummary(engine){
+  const host=$("#morphologySummary");
+  const detail=$("#morphologySummaryDetail");
+  if(!host||!detail)return;
+
+  const stage=engine.getDevelopmentalStage()?.label||"Mature";
+  const state=engine.getVariantState();
+  const supported=new Set(currentProfile.variantGroups||[]);
+  const parts=[stage+" "+currentProfile.label];
+
+  const add=(group,suffix="")=>{
+    if(!supported.has(group))return;
+    const label=variantLabel(group,state[group]);
+    if(label)parts.push(label+suffix);
+  };
+
+  add("pileus"," pileus");
+  add("stipe"," stipe");
+
+  if(supported.has("hymenophore")){
+    const h=variantLabel("hymenophore",state.hymenophore);
+    if(h)parts.push(h);
+  }
+
+  if(supported.has("veil")){
+    const veil=variantLabel("veil",state.veil);
+    if(veil)parts.push(veil==="None"?"No veil":veil);
+  }
+
+  host.textContent=parts.join(" · ");
+
+  if(!supported.size){
+    detail.textContent="Developmental state is applied to this family-specific body plan; no agaricoid character palette is imposed.";
+  }else{
+    detail.textContent="This sentence updates live as you change developmental stage or morphology characters.";
+  }
+}
+
 function updateVisibleState(engine){
   const stage=engine.getDevelopmentalStage()?.label||"Mature";
   const modeLabel={
@@ -46,6 +84,7 @@ function updateVisibleState(engine){
   if(profileName) profileName.textContent=`${currentProfile.label.toUpperCase()} · ${stage.toUpperCase()}`;
   const stateText=$("#stageStateText");
   if(stateText) stateText.textContent=`${currentProfile.label} · ${stage}`;
+  updateMorphologySummary(engine);
 }
 
 function renderAnatomy(profile){
@@ -75,6 +114,7 @@ function renderVariantControls(profile,engine){
       </div>`;
     variantControls.appendChild(wrap);
   }
+  updateMorphologySummary(engine);
 }
 
 function renderStageControls(profile,engine){
