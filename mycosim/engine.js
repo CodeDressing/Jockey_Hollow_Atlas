@@ -75,7 +75,7 @@ export class MycoSimEngine{
   }
 
   cleanupModel(){
-    this.objects.clear(); this.pickables.length=0; this.hidden.clear(); this.isolated=null; this.lastHover=null; this.exploded=false; this.sectioned=false; this.originalTransforms.clear();
+    this.clearKnowledgeProxy?.(); this.objects.clear(); this.pickables.length=0; this.hidden.clear(); this.isolated=null; this.lastHover=null; this.exploded=false; this.sectioned=false; this.originalTransforms.clear();
     for(const child of [...this.root.children]){
       this.root.remove(child);
       child.traverse?.(n=>{
@@ -222,6 +222,53 @@ export class MycoSimEngine{
     this.canvas.style.cursor=meta?"pointer":"grab";
     if(!select && meta?.id!==this.lastHover){this.lastHover=meta?.id||null;this.onHover?.(meta);}
     if(select && meta){this.onSelect?.(meta);this.focus(meta.id);}
+  }
+
+  showKnowledgeProxy(id){
+    const microIds=new Set(["trama","subhymenium","hymenium","basidium","sterigmata","basidiospore","ascus","ascospore","tube","pore_surface"]);
+    if(!microIds.has(id)) return false;
+    let micro=this.scene.getObjectByName("knowledge_proxy");
+    if(micro){this.scene.remove(micro);micro.traverse(n=>{if(n.geometry)n.geometry.dispose();if(n.material){for(const m of (Array.isArray(n.material)?n.material:[n.material]))m.dispose?.();}});}
+    micro=new THREE.Group();micro.name="knowledge_proxy";
+    const membrane=new THREE.MeshStandardMaterial({color:0xe5d7c2,roughness:.7,transparent:true,opacity:.9});
+    const fertile=new THREE.MeshStandardMaterial({color:0xc88a62,roughness:.72});
+    const sporeMat=new THREE.MeshStandardMaterial({color:0x8e5b35,roughness:.82});
+    if(id==="trama"||id==="subhymenium"||id==="hymenium"){
+      const layers=[
+        ["trama",0,.34,0xd8c9ae],
+        ["subhymenium",.42,.18,0xd7ad89],
+        ["hymenium",.66,.16,0xb96d53]
+      ];
+      for(const [name,y,h,c] of layers){
+        const m=new THREE.Mesh(new THREE.BoxGeometry(2.8,h,1.35),new THREE.MeshStandardMaterial({color:c,roughness:.85}));
+        m.position.y=y;m.userData={id:name,label:name,category:"micro"};micro.add(m);
+      }
+    }else if(id==="basidium"||id==="sterigmata"||id==="basidiospore"){
+      const stem=new THREE.Mesh(new THREE.CylinderGeometry(.32,.48,1.65,24),fertile);stem.position.y=.2;micro.add(stem);
+      for(let i=0;i<4;i++){
+        const a=(i/4)*Math.PI*2;
+        const sg=new THREE.Mesh(new THREE.CylinderGeometry(.04,.06,.55,12),membrane);sg.position.set(Math.cos(a)*.24,1.12,Math.sin(a)*.24);sg.rotation.z=Math.cos(a)*.18;sg.rotation.x=Math.sin(a)*.18;micro.add(sg);
+        const sp=new THREE.Mesh(new THREE.SphereGeometry(.18,22,14),sporeMat);sp.scale.set(1.35,.82,.8);sp.position.set(Math.cos(a)*.38,1.55,Math.sin(a)*.38);micro.add(sp);
+      }
+    }else if(id==="ascus"||id==="ascospore"){
+      const ascus=new THREE.Mesh(new THREE.CapsuleGeometry(.36,1.5,8,20),membrane);ascus.position.y=.3;micro.add(ascus);
+      for(let i=0;i<8;i++){const sp=new THREE.Mesh(new THREE.SphereGeometry(.11,18,12),sporeMat);sp.scale.set(1.5,.65,.65);sp.position.set(0,-.3+i*.18,0);micro.add(sp);}
+    }else if(id==="basidiospore"||id==="ascospore"){
+      const sp=new THREE.Mesh(new THREE.SphereGeometry(.72,40,24),sporeMat);sp.scale.set(1.5,.75,.72);micro.add(sp);
+    }else if(id==="tube"||id==="pore_surface"){
+      const tube=new THREE.Mesh(new THREE.CylinderGeometry(.72,.72,2.2,32,1,true),membrane);tube.rotation.x=Math.PI/2;micro.add(tube);
+      const pore=new THREE.Mesh(new THREE.TorusGeometry(.72,.08,14,40),fertile);pore.rotation.x=Math.PI/2;pore.position.z=1.1;micro.add(pore);
+    }
+    micro.position.set(0,1.15,0);micro.scale.setScalar(1.2);this.scene.add(micro);
+    this.fly={start:performance.now(),duration:650,fromPos:this.camera.position.clone(),toPos:new THREE.Vector3(3.8,2.6,5.4),fromTarget:this.controls.target.clone(),toTarget:new THREE.Vector3(0,1.3,0)};
+    return true;
+  }
+
+  clearKnowledgeProxy(){
+    const micro=this.scene.getObjectByName("knowledge_proxy");
+    if(!micro)return;
+    this.scene.remove(micro);
+    micro.traverse(n=>{if(n.geometry)n.geometry.dispose();if(n.material){for(const m of (Array.isArray(n.material)?n.material:[n.material]))m.dispose?.();}});
   }
 
   resize(){
