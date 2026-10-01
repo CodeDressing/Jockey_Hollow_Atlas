@@ -62,9 +62,17 @@ function renderVariantControls(profile,engine){
   const state=engine.getVariantState();
   for(const [group,def] of Object.entries(MORPHOLOGY_VARIANTS)){
     if(!supported.has(group)) continue;
-    const wrap=document.createElement("label");
+    const wrap=document.createElement("section");
     wrap.className="variant-field";
-    wrap.innerHTML=`<span>${def.label}</span><select data-variant="${group}">${def.options.map(([id,label])=>`<option value="${id}" ${state[group]===id?"selected":""}>${label}</option>`).join("")}</select>`;
+    wrap.dataset.variantGroup=group;
+    wrap.innerHTML=`
+      <div class="variant-field-head">
+        <span>${def.label}</span>
+        <strong data-variant-current="${group}">${variantLabel(group,state[group])}</strong>
+      </div>
+      <div class="variant-choice-grid">
+        ${def.options.map(([id,label])=>`<button type="button" class="variant-choice ${state[group]===id?"active":""}" data-variant="${group}" data-value="${id}" aria-pressed="${state[group]===id?"true":"false"}"><span>${label}</span>${state[group]===id?'<b aria-hidden="true">✓</b>':""}</button>`).join("")}
+      </div>`;
     variantControls.appendChild(wrap);
   }
 }
@@ -314,13 +322,17 @@ try{
     updateVisibleState(engine);
   });
 
-  variantControls.addEventListener("change",e=>{
-    const select=e.target.closest("[data-variant]"); if(!select)return;
+  variantControls.addEventListener("click",e=>{
+    const button=e.target.closest(".variant-choice[data-variant][data-value]"); if(!button)return;
+    const group=button.dataset.variant;
+    const value=button.dataset.value;
     selected=null; actions.hidden=true;
-    engine.setVariant(select.dataset.variant,select.value);
-    info.textContent=`${MORPHOLOGY_VARIANTS[select.dataset.variant].label}: ${variantLabel(select.dataset.variant,select.value)}`;
+    engine.setVariant(group,value);
+    info.textContent=`${MORPHOLOGY_VARIANTS[group].label}: ${variantLabel(group,value)}`;
+    renderVariantControls(currentProfile,engine);
     renderAnatomy(currentProfile);
     renderKnowledge("basidiome",engine,{moveCamera:false});
+    updateVisibleState(engine);
   });
 
   anatomyList.addEventListener("click",e=>{
