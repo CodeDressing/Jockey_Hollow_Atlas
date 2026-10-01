@@ -76,3 +76,17 @@
 .glossary-actions{display:flex;gap:6px;flex-wrap:wrap}
 .glossary-actions button{border:1px solid #45545a;background:#10191c;color:#e4ecee;border-radius:7px;padding:6px 8px;font-size:10px;cursor:pointer}
 @media(max-width:700px){.section-read-head,.record-status{align-items:flex-start}.readback-btn{font-size:9px;padding:5px 6px}}
+
+
+/* Mobile Full Data Sets launcher */
+.mobile-fullset-panel{display:none}
+@media(max-width:900px){
+  .mobile-fullset-panel{display:block;margin:8px 0 10px;padding:9px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+  .mobile-fullset-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:7px}
+  .mobile-fullset-head strong{font-size:13px}
+  .mobile-fullset-head span{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .mobile-fullset-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+  .mobile-fullset-list .fullset-btn{min-height:52px;padding:8px}
+  .mobile-fullset-list .fullset-btn small{font-size:9px}
+  .mobile-fullset-list .fullset-btn b{display:none}
+}
