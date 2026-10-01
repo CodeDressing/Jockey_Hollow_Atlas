@@ -100,6 +100,7 @@ export class MycoSimEngine{
     const fn=this["build_"+p.factory];
     if(typeof fn!=="function") throw new Error("Missing model factory: "+p.factory);
     fn.call(this);
+    if(["agaricoid","boletoid","polyporoid"].includes(id)) this.applyPilotDevelopmentalGeometry(id);
     this.currentProfile=p;
     this.mode="macro";
     this.setSection(false);
@@ -167,6 +168,112 @@ export class MycoSimEngine{
   stageParam(name,fallback=1){
     const v=this.morphologyState?.stage?.parameters?.[name];
     return Number.isFinite(v)?v:fallback;
+  }
+
+  applyPilotDevelopmentalGeometry(profileId){
+    const stage=this.morphologyState?.stage;
+    if(!stage) return;
+    const p=stage.parameters||{};
+    const sid=stage.id;
+
+    const setScale=(id,x=1,y=1,z=1)=>{
+      const o=this.objects.get(id);
+      if(o)o.scale.multiply(new THREE.Vector3(x,y,z));
+    };
+    const move=(id,x=0,y=0,z=0)=>{
+      const o=this.objects.get(id);
+      if(o)o.position.add(new THREE.Vector3(x,y,z));
+    };
+    const weather=(id,amount=0)=>{
+      const o=this.objects.get(id); if(!o)return;
+      o.traverse?.(n=>{
+        if(!n.material)return;
+        for(const m of (Array.isArray(n.material)?n.material:[n.material])){
+          if("roughness" in m)m.roughness=Math.min(1,(m.roughness??.8)+amount*.16);
+          if(m.color){
+            const hsl={h:0,s:0,l:0};m.color.getHSL(hsl);
+            m.color.setHSL(hsl.h,Math.max(0,hsl.s*(1-amount*.18)),Math.max(.08,hsl.l*(1-amount*.28)));
+          }
+        }
+      });
+    };
+
+    if(profileId==="agaricoid"){
+      const expansion=p.pileus_expansion??1;
+      const elong=p.stipe_elongation??1;
+      const flatten=p.cap_flattening??0;
+      const wear=p.surface_wear??0;
+      setScale("pileus",expansion,1+(sid==="young"?.38:0)-flatten*.42,expansion);
+      setScale("pileus_context",expansion,1,expansion);
+      setScale("hymenophore",expansion,p.lamella_exposure??1,expansion);
+      setScale("stipe",1,elong,1);
+      setScale("stipe_base",sid==="young"?.88:sid==="old"?1.04:1,1, sid==="young"?.88:sid==="old"?1.04:1);
+      if(this.objects.get("veil_structure")){
+        const veil=Math.max(.22,p.veil_persistence??1);
+        setScale("veil_structure",veil,veil,veil);
+      }
+      if(sid==="young"){
+        move("pileus",0,-.12,0);
+        move("hymenophore",0,.02,0);
+      }else if(sid==="old"){
+        const pileus=this.objects.get("pileus");
+        if(pileus){pileus.rotation.z+=.035;pileus.rotation.x+=.018;}
+      }
+      weather("pileus",wear);
+      weather("hymenophore",wear*.8);
+      weather("stipe",wear*.55);
+    }
+
+    if(profileId==="boletoid"){
+      const expansion=p.pileus_expansion??1;
+      const convex=p.cap_convexity??.62;
+      const tubeDepth=p.tube_depth??1;
+      const poreOpen=p.pore_openness??1;
+      const robust=p.stipe_robustness??1;
+      const wear=p.surface_wear??0;
+      setScale("pileus",expansion,.72+convex*.55,expansion);
+      setScale("tube_layer",expansion,tubeDepth,expansion);
+      setScale("hymenophore",expansion*poreOpen,1,expansion*poreOpen);
+      setScale("stipe",robust,1,robust);
+      setScale("stipe_base",robust,1,robust);
+      if(sid==="young"){
+        move("pileus",0,-.10,0);
+        move("tube_layer",0,.08,0);
+        move("hymenophore",0,.10,0);
+      }else if(sid==="old"){
+        const pileus=this.objects.get("pileus");
+        if(pileus){pileus.rotation.z+=.025;}
+      }
+      weather("pileus",wear+(p.surface_cracking??0)*.22);
+      weather("tube_layer",wear*.75);
+      weather("hymenophore",wear*.9);
+    }
+
+    if(profileId==="polyporoid"){
+      const shelf=p.shelf_expansion??1;
+      const context=p.context_thickness??1;
+      const tube=p.tube_depth??1;
+      const margin=p.margin_activity??.6;
+      const wear=p.surface_weathering??p.surface_wear??0;
+      setScale("pileus",shelf, .72+context*.28, shelf);
+      setScale("context",shelf,context,shelf);
+      setScale("tube_layer",shelf,tube,shelf);
+      setScale("hymenophore",shelf,1,shelf);
+      if(sid==="young"){
+        move("pileus",-.12,-.08,0);
+        move("context",-.10,-.04,0);
+        move("tube_layer",-.10,.02,0);
+        move("hymenophore",-.10,.03,0);
+      }else if(sid==="old"){
+        const shelfObj=this.objects.get("pileus");
+        if(shelfObj){shelfObj.rotation.z-=.035;}
+      }
+      weather("pileus",wear);
+      weather("context",wear*.55);
+      weather("hymenophore",wear*.85);
+      const pore=this.objects.get("hymenophore");
+      if(pore&&pore.material&&"roughness" in pore.material)pore.material.roughness=Math.min(1,.75+(1-margin)*.2);
+    }
   }
 
   _applyVisibility(){
