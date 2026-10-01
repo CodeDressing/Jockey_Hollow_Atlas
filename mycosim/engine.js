@@ -858,7 +858,7 @@ export class MycoSimEngine{
     this.raycaster.setFromCamera(this.pointer,this.camera);
 
     const hits=this.raycaster.intersectObject(this.root,true);
-    const hit=hits.find(h=>{
+    const validHits=hits.filter(h=>{
       if(!h.object?.visible) return false;
       let cur=h.object;
       while(cur){
@@ -867,7 +867,32 @@ export class MycoSimEngine{
       }
       const meta=this._metaForObject(h.object);
       return !!(meta?.id || meta?.label || meta?.selectable);
-    })||null;
+    });
+
+    let hit=validHits[0]||null;
+
+    // From an underside view, the pileus shell can geometrically sit just in
+    // front of the lamellae. Prefer the anatomically more specific fertile
+    // structure when it lies immediately behind the lower pileus surface.
+    if(hit){
+      const firstMeta=this._metaForObject(hit.object);
+      if(firstMeta?.id==="pileus"){
+        let lowerSurface=false;
+        if(hit.face?.normal){
+          const n=hit.face.normal.clone().transformDirection(hit.object.matrixWorld);
+          lowerSurface=n.y<0.22;
+        }
+        if(lowerSurface){
+          const maxDistance=hit.distance+0.32;
+          const fertileHit=validHits.find(h=>{
+            if(h.distance>maxDistance)return false;
+            const meta=this._metaForObject(h.object);
+            return meta?.knowledgeId==="lamella" || meta?.id==="hymenophore" || meta?.id==="tube_layer";
+          });
+          if(fertileHit)hit=fertileHit;
+        }
+      }
+    }
 
     const detail=hit?this._describeHit(hit,e):null;
     this.canvas.style.cursor=detail?"crosshair":"grab";
