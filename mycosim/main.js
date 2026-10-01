@@ -16,6 +16,7 @@ const eduRelations=$("#eduRelations"), eduChildren=$("#eduChildren"), eduPronoun
 const eduRead=$("#eduRead"), orientation=$("#orientationLabel"), hoverProbe=$("#hoverProbe"), hoverProbeTitle=$("#hoverProbeTitle"), hoverProbeMeta=$("#hoverProbeMeta"), stageControls=$("#stageControls"), stageCompare=$("#stageCompare");
 const qaRun=$("#runRegression"), qaStatus=$("#regressionStatus"), qaResults=$("#regressionResults");
 let selected=null,currentProfile=MORPHOLOGY_PROFILES[0],knowledgeMode="beginner",currentKnowledge=getKnowledge("basidiome");
+let learnerMode="guided",highestLearningStep=1;
 let observationRecord=emptyObservationRecord();
 let sporeMeasurements=[];
 
@@ -33,8 +34,44 @@ function speak(text){
   speechSynthesis.speak(u);
 }
 
+function setLearnerMode(mode){
+  learnerMode=mode==="explore"?"explore":"guided";
+  document.body.dataset.learnerMode=learnerMode;
+  document.querySelectorAll("[data-learner-mode]").forEach(btn=>{
+    const active=btn.dataset.learnerMode===learnerMode;
+    btn.classList.toggle("active",active);
+    btn.setAttribute("aria-pressed",active?"true":"false");
+  });
+  const note=$("#learnerModeNote");
+  if(note){
+    note.textContent=learnerMode==="guided"
+      ?"Guided mode reveals the learning path progressively as you make choices."
+      :"Explore mode keeps every learning layer open so you can move anywhere immediately.";
+  }
+  updateLearningAccess();
+}
+
+function updateLearningAccess(){
+  document.querySelectorAll("[data-learning-step]").forEach(el=>{
+    const n=Number(el.dataset.learningStep);
+    const locked=learnerMode==="guided" && n>highestLearningStep;
+    el.classList.toggle("learning-locked",locked);
+    el.setAttribute("aria-hidden",locked?"true":"false");
+  });
+  document.querySelectorAll("[data-jump-step]").forEach(el=>{
+    const n=Number(el.dataset.jumpStep);
+    const locked=learnerMode==="guided" && n>highestLearningStep;
+    el.classList.toggle("locked",locked);
+    el.disabled=locked;
+    el.setAttribute("aria-disabled",locked?"true":"false");
+  });
+}
+
 function setLearningStep(step,{scroll=false}={}){
-  const n=String(step);
+  const numeric=Math.max(1,Math.min(5,Number(step)||1));
+  if(learnerMode==="guided") highestLearningStep=Math.max(highestLearningStep,numeric);
+  const n=String(numeric);
+  updateLearningAccess();
   document.querySelectorAll("[data-learning-step]").forEach(el=>el.classList.toggle("active",el.dataset.learningStep===n));
   document.querySelectorAll("[data-jump-step]").forEach(el=>el.classList.toggle("active",el.dataset.jumpStep===n));
   if(scroll){
@@ -367,8 +404,13 @@ try{
   });
 
   document.addEventListener("click",e=>{
+    const modeToggle=e.target.closest("[data-learner-mode]");
+    if(modeToggle){
+      setLearnerMode(modeToggle.dataset.learnerMode);
+      return;
+    }
     const jump=e.target.closest("[data-jump-step]");
-    if(jump){
+    if(jump && !jump.disabled){
       setLearningStep(jump.dataset.jumpStep,{scroll:true});
       return;
     }
@@ -515,6 +557,7 @@ try{
   renderSporeRows();
 
   renderSupportMatrix(emptyQaMatrix());
+  setLearnerMode("guided");
   activateProfile(MORPHOLOGY_PROFILES[0].id);
   setLearningStep(1);
   if(new URLSearchParams(location.search).get("qa")==="1"&&qaRun){
