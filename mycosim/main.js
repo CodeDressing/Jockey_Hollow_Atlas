@@ -33,6 +33,15 @@ function speak(text){
   speechSynthesis.speak(u);
 }
 
+function setLearningStep(step,{scroll=false}={}){
+  const n=String(step);
+  document.querySelectorAll("[data-learning-step]").forEach(el=>el.classList.toggle("active",el.dataset.learningStep===n));
+  document.querySelectorAll("[data-jump-step]").forEach(el=>el.classList.toggle("active",el.dataset.jumpStep===n));
+  if(scroll){
+    document.querySelector('[data-learning-step="'+n+'"]')?.scrollIntoView({behavior:"smooth",block:"start"});
+  }
+}
+
 function updateMorphologySummary(engine){
   const host=$("#morphologySummary");
   const detail=$("#morphologySummaryDetail");
@@ -331,6 +340,14 @@ try{
     onStats:s=>{if(stats)stats.textContent=`${s.fps} FPS · ${s.objects} objects · ${s.drawCalls} draw calls`;}
   });
 
+  document.addEventListener("click",e=>{
+    const jump=e.target.closest("[data-jump-step]");
+    if(jump){
+      setLearningStep(jump.dataset.jumpStep,{scroll:true});
+      return;
+    }
+  });
+
   const grid=$("#modelGrid");
   grid.innerHTML=MORPHOLOGY_PROFILES.map((p,i)=>`<button class="model-pick ${i===0?"active":""}" data-model="${p.id}"><strong>${p.label}</strong><span>${p.description}</span></button>`).join("");
 
@@ -351,6 +368,7 @@ try{
     const b=e.target.closest("[data-model]"); if(!b)return;
     grid.querySelectorAll(".model-pick").forEach(x=>x.classList.remove("active")); b.classList.add("active");
     activateProfile(b.dataset.model);
+    setLearningStep(2);
   });
 
   stageControls.addEventListener("click",e=>{
@@ -360,6 +378,7 @@ try{
     const st=engine.getDevelopmentalStage();
     info.textContent=`${currentProfile.label} · ${st.label} developmental stage`;
     updateVisibleState(engine);
+    setLearningStep(3);
   });
 
   variantControls.addEventListener("click",e=>{
@@ -373,6 +392,7 @@ try{
     renderAnatomy(currentProfile);
     renderKnowledge("basidiome",engine,{moveCamera:false});
     updateVisibleState(engine);
+    setLearningStep(4);
   });
 
   anatomyList.addEventListener("click",e=>{
@@ -381,6 +401,7 @@ try{
     if(!a)return;
     selected=a; actions.hidden=false; info.textContent="Selected from anatomy index: "+a.label+" · "+a.id;
     renderKnowledge(knowledgeForAnatomy(a.id),engine);
+    setLearningStep(5);
   });
 
   document.querySelectorAll(".mode").forEach(btn=>btn.onclick=()=>{
@@ -468,6 +489,7 @@ try{
 
   renderSupportMatrix(emptyQaMatrix());
   activateProfile(MORPHOLOGY_PROFILES[0].id);
+  setLearningStep(1);
   if(new URLSearchParams(location.search).get("qa")==="1"&&qaRun){
     setTimeout(()=>qaRun.click(),250);
   }
