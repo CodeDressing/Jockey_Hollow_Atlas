@@ -1150,7 +1150,55 @@ export class MycoSimEngine{
     const dummy=new THREE.Object3D();
     points.forEach(([px,pz],i)=>{dummy.position.set(px,y-.071,pz);dummy.updateMatrix();inst.setMatrixAt(i,dummy.matrix);});
     inst.castShadow=false;inst.receiveShadow=true;this.root.add(inst);this.pickables.push(inst);
+    const variationGroup=new THREE.Group();
+    variationGroup.userData={id:"hymenophore",label,category:"fertile",selectable:true};
+    this._addPoreSurfaceVariation(variationGroup,radius,y);
+    this.root.add(variationGroup);
     return layer;
+  }
+
+  _addGillSecondaryDetail(group,type,pileusY,stipeX,inner,outer){
+    const secondaryMat=MATERIALS.gill.clone();
+    secondaryMat.color.offsetHSL(0,0,-.045);
+    secondaryMat.opacity=.86;secondaryMat.transparent=true;
+    const total=64;
+    for(let i=0;i<total;i++){
+      if(i%2===0)continue;
+      const a=i/total*Math.PI*2;
+      const start=THREE.MathUtils.lerp(inner,outer,.56);
+      const end=outer*.99;
+      const len=end-start;
+      const h=.10+.08*(1-start/outer);
+      const shape=new THREE.Shape();
+      shape.moveTo(-len/2,0);
+      shape.lineTo(len/2,0);
+      shape.lineTo(len/2,-h*.35);
+      shape.quadraticCurveTo(0,-h*.92,-len/2,-h*.62);
+      shape.closePath();
+      const geo=new THREE.ShapeGeometry(shape,4);
+      const g=new THREE.Mesh(geo,secondaryMat.clone());
+      const mid=(start+end)/2;
+      g.position.set(stipeX+Math.cos(a)*mid,pileusY-.15-(type==="decurrent"?.06:0),Math.sin(a)*mid);
+      g.rotation.y=-a;
+      g.userData=group.userData;
+      group.add(g);this.pickables.push(g);
+    }
+  }
+
+  _addPoreSurfaceVariation(group,radius,y,spacing=.115){
+    const mat=MATERIALS.pore.clone();
+    mat.color.offsetHSL(0,-.05,.05);
+    const ringGeo=new THREE.TorusGeometry(.035,.007,6,10);
+    for(let x=-radius*.82;x<=radius*.82;x+=spacing*2.1){
+      for(let z=-radius*.82;z<=radius*.82;z+=spacing*2.0){
+        if(Math.hypot(x,z)>radius*.8)continue;
+        const ring=new THREE.Mesh(ringGeo,mat.clone());
+        ring.rotation.x=Math.PI/2;
+        ring.position.set(x,y-.084,z);
+        ring.userData=group.userData;
+        group.add(ring);this.pickables.push(ring);
+      }
+    }
   }
 
   _addGillHymenophore(type="adnate",pileusY=2.45,stipeX=0){
@@ -1222,13 +1270,19 @@ export class MycoSimEngine{
       if(type==="decurrent"&&!short){g.rotation.z=.10;}
       g.userData=group.userData;group.add(g);this.pickables.push(g);
     }
+    this._addGillSecondaryDetail(group,type,pileusY,stipeX,inner,outer);
     this.root.add(group);this.objects.set("hymenophore",group);
   }
 
   _addVeil(type="annulus",stipeX=0,capY=2.45){
     if(type==="none") return;
     if(type==="annulus"){
-      const ring=this.register(new THREE.Mesh(new THREE.TorusGeometry(.43,.075,12,48),MATERIALS.flesh.clone()),"veil_structure","Annulus","veil","stipe");ring.rotation.x=Math.PI/2;ring.position.set(stipeX,1.62,0);
+      const group=new THREE.Group();group.userData={id:"veil_structure",label:"Annulus",category:"veil",selectable:true,parentId:"stipe"};
+      const skirt=new THREE.Mesh(new THREE.CylinderGeometry(.48,.34,.16,64,1,true),MATERIALS.flesh.clone());
+      skirt.position.set(stipeX,1.58,0);skirt.userData=group.userData;group.add(skirt);
+      const rim=new THREE.Mesh(new THREE.TorusGeometry(.47,.035,10,64),MATERIALS.flesh.clone());
+      rim.rotation.x=Math.PI/2;rim.position.set(stipeX,1.50,0);rim.userData=group.userData;group.add(rim);
+      this.root.add(group);this.objects.set("veil_structure",group);this.pickables.push(skirt,rim);
     }else if(type==="cortina"){
       const g=new THREE.Group();g.userData={id:"veil_structure",label:"Cortina","category":"veil",selectable:true};
       for(let i=0;i<18;i++){const a=i/18*Math.PI*2;const geo=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(stipeX+Math.cos(a)*.3,1.55,Math.sin(a)*.3),new THREE.Vector3(Math.cos(a)*1.05,capY-.18,Math.sin(a)*1.05)]);const l=new THREE.Line(geo,new THREE.LineBasicMaterial({color:0xb8ab93,transparent:true,opacity:.45}));l.userData=g.userData;g.add(l);this.pickables.push(l);}
@@ -1237,7 +1291,7 @@ export class MycoSimEngine{
       const cup=this.register(new THREE.Mesh(new THREE.SphereGeometry(.62,32,18,0,Math.PI*2,Math.PI/2,Math.PI/2),MATERIALS.flesh.clone()),"veil_structure","Volva","veil","stipe");cup.scale.y=.55;cup.position.set(stipeX,-.46,0);
     }else if(type==="universal_remnants"){
       const g=new THREE.Group();g.userData={id:"veil_structure",label:"Universal veil remnants",category:"veil",selectable:true};
-      for(let i=0;i<13;i++){const a=i/13*Math.PI*2,r=.35+.65*((i%5)/5),w=new THREE.Mesh(new THREE.SphereGeometry(.09+(i%3)*.015,12,8),MATERIALS.flesh.clone());w.position.set(Math.cos(a)*r,capY+.12+.18*(1-r),Math.sin(a)*r);w.scale.y=.5;w.userData=g.userData;g.add(w);this.pickables.push(w);}
+      for(let i=0;i<21;i++){const a=i/21*Math.PI*2,r=.28+.82*((i%7)/7),w=new THREE.Mesh(new THREE.IcosahedronGeometry(.07+(i%4)*.014,1),MATERIALS.flesh.clone());w.position.set(Math.cos(a)*r,capY+.10+.22*(1-r)+.025*Math.sin(i*1.7),Math.sin(a)*r);w.scale.set(1,.42+.18*((i%3)/2),.9);w.rotation.set(i*.13,i*.31,i*.19);w.userData=g.userData;g.add(w);this.pickables.push(w);}
       this.root.add(g);this.objects.set("veil_structure",g);
     }
   }
