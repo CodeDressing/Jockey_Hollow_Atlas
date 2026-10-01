@@ -41,6 +41,8 @@ function updateVisibleState(engine){
   orientation.textContent=`${currentProfile.label} · ${stage} · ${modeLabel}`;
   const profileName=$("#profileName");
   if(profileName) profileName.textContent=`${currentProfile.label.toUpperCase()} · ${stage.toUpperCase()}`;
+  const stateText=$("#stageStateText");
+  if(stateText) stateText.textContent=`${currentProfile.label} · ${stage}`;
 }
 
 function renderAnatomy(profile){
