@@ -115,6 +115,9 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
 .stage-compare-card .stage-badge{font-size:9px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em}
 .stage-compare-card strong{display:block;font-size:10px;margin-top:3px}.stage-compare-card span{display:block;font-size:9px;color:var(--muted);margin-top:2px}
 @media(max-width:900px){.stage-grid,.stage-compare{grid-template-columns:1fr}}
+
+.stage-state-line{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:7px 0 10px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:#0b1315}
+.stage-state-line strong{font-size:11px;color:#f0dda9}.stage-state-line span{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
 </style>
 </head>
 <body>
@@ -134,7 +137,7 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
     <p class="copy">This is an optional mycology simulation and teaching model, not a specimen record and not a species identification. It establishes the interaction architecture for future specimen-derived fungal models.</p>
     <div class="notice">Observation, interpretation, identification, and hypothesis remain separate. MycoSim is isolated from specimen data and does not modify, merge, or infer any atlas specimen records.</div>
     <h2>Model library</h2>
-    <div id="modelGrid" class="model-grid"></div><div id="structureInfo">Click a model family to compare major fungal body plans.</div>
+    <div id="modelGrid" class="model-grid"></div><div id="stageStateLine" class="stage-state-line"><strong id="stageStateText">Agaricoid · Mature</strong><span>Developmental stage</span></div><div id="structureInfo">Click a model family to compare major fungal body plans.</div>
     <div id="structureActions" hidden>
       <div class="action-grid">
         <button id="focusStructure" type="button">Focus</button>
