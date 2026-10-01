@@ -223,6 +223,78 @@ function mergeMovies(){
 }
 mergeMovies();
 
+const GLOSSARY=Object.freeze({
+  confluent:{definition:"Growing or merging together so adjacent structures become continuous or fused.",pronounce:"confluent"},
+  basidioma:{definition:"A fruiting body produced by a basidiomycete fungus; plural: basidiomata.",pronounce:"basidioma"},
+  basidiomata:{definition:"Plural of basidioma: fungal fruiting bodies produced by basidiomycetes.",pronounce:"basidiomata"},
+  hymenophore:{definition:"The structure that bears or supports the spore-producing hymenium, such as gills, pores, teeth, folds, or a smooth fertile surface.",pronounce:"hymenophore"},
+  hydnoid:{definition:"Having a tooth- or spine-bearing fertile surface.",pronounce:"hydnoid"},
+  pileus:{definition:"The cap or upper expanded portion of many fungal fruiting bodies.",pronounce:"pileus"},
+  stipe:{definition:"The stem-like supporting structure of a fungal fruiting body.",pronounce:"stipe"},
+  sessile:{definition:"Attached directly to the substrate without a differentiated stalk or stipe.",pronounce:"sessile"},
+  lamellae:{definition:"Plate-like gills on the underside of a mushroom cap; singular: lamella.",pronounce:"lamellae"},
+  lamella:{definition:"A single plate-like gill of a mushroom.",pronounce:"lamella"},
+  context:{definition:"The internal flesh or sterile tissue of a fungal fruiting body.",pronounce:"context"},
+  volva:{definition:"A cup-, sac-, or sheath-like universal-veil remnant at the base of a stipe.",pronounce:"volva"},
+  annulus:{definition:"A ring-like remnant of the partial veil on the stipe.",pronounce:"annulus"},
+  cortina:{definition:"A cobweb-like partial veil made of fine fibrils between the pileus margin and stipe.",pronounce:"cortina"},
+  hymenium:{definition:"The fertile microscopic tissue layer where spore-producing cells such as basidia or asci occur.",pronounce:"hymenium"},
+  basidium:{definition:"A microscopic spore-producing cell of Basidiomycota that typically bears basidiospores externally.",pronounce:"basidium"},
+  basidiospore:{definition:"A sexual spore produced externally on a basidium.",pronounce:"basidiospore"},
+  resupinate:{definition:"Growing flat against the substrate, with the fertile surface exposed outward.",pronounce:"resupinate"},
+  reflexed:{definition:"Bent or turned back away from the substrate, often describing an edge or margin.",pronounce:"reflexed"},
+  subglobose:{definition:"Nearly spherical, but not perfectly globose.",pronounce:"subglobose"},
+  guttule:{definition:"A droplet-like inclusion visible inside a spore or cell.",pronounce:"guttule"},
+  guttules:{definition:"Droplet-like inclusions visible inside spores or cells.",pronounce:"guttules"},
+  provenance:{definition:"Documented origin, custody, and source history of a specimen, image, measurement, or record.",pronounce:"provenance"},
+  accession:{definition:"A uniquely tracked specimen or collection record entered into an archive, herbarium, laboratory, or database.",pronounce:"accession"}
+});
+
+const glossaryPattern=new RegExp("\\b("+Object.keys(GLOSSARY).sort((x,y)=>y.length-x.length).join("|")+")\\b","gi");
+
+function glossaryText(value){
+  const raw=String(value??"");
+  let out="",last=0;
+  raw.replace(glossaryPattern,(match,...args)=>{
+    const offset=args[args.length-2];
+    out+=esc(raw.slice(last,offset));
+    const key=match.toLowerCase();
+    out+='<button type="button" class="glossary-term" data-glossary="'+esc(key)+'" title="Define and pronounce '+esc(match)+'">'+esc(match)+'</button>';
+    last=offset+match.length;
+    return match;
+  });
+  out+=esc(raw.slice(last));
+  return out;
+}
+
+function speakText(text,rate=.92){
+  if(!("speechSynthesis" in window))return false;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(String(text||""));
+  u.lang="en-US";u.rate=rate;u.pitch=1;
+  speechSynthesis.speak(u);
+  return true;
+}
+
+function sectionReadButton(label="Read back"){
+  return '<button type="button" class="readback-btn" aria-label="'+esc(label)+'">🔊 '+esc(label)+'</button>';
+}
+
+function openGlossaryTerm(key,anchor){
+  const item=GLOSSARY[String(key||"").toLowerCase()];
+  if(!item)return;
+  let pop=document.getElementById("glossaryPopover");
+  if(!pop){pop=document.createElement("div");pop.id="glossaryPopover";pop.className="glossary-popover";document.body.appendChild(pop);}
+  const term=String(key);
+  pop.innerHTML='<div class="glossary-kicker">MYCOLOGY GLOSSARY</div><strong>'+esc(term)+'</strong><p>'+esc(item.definition)+'</p><div class="glossary-actions"><button type="button" data-glossary-pronounce>Pronounce</button><button type="button" data-glossary-read>Read definition</button><button type="button" data-glossary-close>Close</button></div>';
+  const rect=anchor.getBoundingClientRect();
+  pop.style.left=Math.min(window.innerWidth-330,Math.max(10,rect.left))+"px";
+  pop.style.top=Math.min(window.innerHeight-190,Math.max(10,rect.bottom+8))+"px";
+  pop.classList.add("open");
+  pop.querySelector("[data-glossary-pronounce]").onclick=()=>speakText(item.pronounce||term,.82);
+  pop.querySelector("[data-glossary-read]").onclick=()=>speakText(term+". "+item.definition,.92);
+  pop.querySelector("[data-glossary-close]").onclick=()=>pop.classList.remove("open");
+}
 const $=id=>document.getElementById(id);
 const FULL_DATA_SET_CODES=new Set(['AN2-F9','AN2-F25','AN2-F34']);
 let current=data[0]?.code||null,filter='',family='ALL',collection='ALL',imageType='ALL',workflow='ALL';
