@@ -1162,7 +1162,16 @@ export class MycoSimEngine{
   build_agaricoid(){
     const v=this.variants, capY=2.48;
     this._addPileus(v.pileus,1.62,capY,MATERIALS.cap);
-    const ctx=this.register(new THREE.Mesh(new THREE.CylinderGeometry(1.32,1.08,.15,56),MATERIALS.flesh.clone()),"pileus_context","Pileus context","internal","pileus");ctx.position.y=capY-.18;
+    const ctxGeo=new THREE.LatheGeometry([
+      new THREE.Vector2(0,-.12),
+      new THREE.Vector2(1.15,-.12),
+      new THREE.Vector2(1.36,-.07),
+      new THREE.Vector2(1.30,.08),
+      new THREE.Vector2(.42,.14),
+      new THREE.Vector2(0,.11)
+    ],72);
+    const ctx=this.register(new THREE.Mesh(ctxGeo,MATERIALS.flesh.clone()),"pileus_context","Pileus context","internal","pileus");
+    ctx.position.y=capY-.16;
     const stipe=this._addStipe(v.stipe,{height:2.45,y:.78,top:.27,bottom:.34});
     const stipeX=stipe?.position.x||0;
     this._addGillHymenophore(v.hymenophore,capY,stipeX);
@@ -1171,19 +1180,53 @@ export class MycoSimEngine{
 
   build_boletoid(){
     const v=this.variants,capY=2.55;
-    this._addPileus(v.pileus,1.68,capY,MATERIALS.cap2);
-    const tubes=this.register(new THREE.Mesh(new THREE.CylinderGeometry(1.32,1.15,.40,56),MATERIALS.pore.clone()),"tube_layer","Tube layer","fertile");tubes.position.y=capY-.46;
-    const pores=this.register(new THREE.Mesh(new THREE.CylinderGeometry(1.17,1.17,.025,56),MATERIALS.pore.clone()),"hymenophore","Pore surface","fertile");pores.position.y=capY-.68;
-    const st=this._addStipe(v.stipe,{height:2.5,y:.72,top:.34,bottom:.48});
+    this._addPileus(v.pileus,1.72,capY,MATERIALS.cap2);
+    const tubes=this.register(new THREE.Mesh(new THREE.CylinderGeometry(1.34,1.18,.42,72),MATERIALS.pore.clone()),"tube_layer","Tube layer","fertile");
+    tubes.position.y=capY-.45;
+    this._addPoreField(1.20,capY-.68,{tubeDepth:.42,label:"Pore surface"});
+    const st=this._addStipe(v.stipe,{height:2.55,y:.70,top:.38,bottom:.52});
     this._addVeil(v.veil,st?.position.x||0,capY);
   }
 
   build_polyporoid(){
-    const shelf=this.register(new THREE.Mesh(new THREE.SphereGeometry(1.9,56,28,0,Math.PI*2,0,Math.PI/2.3),MATERIALS.cap.clone()),"pileus","Upper surface / bracket","macro");shelf.scale.set(1.15,.38,.72);shelf.rotation.set(Math.PI,.15,0);shelf.position.set(.35,1.55,0);
-    const ctx=this.register(new THREE.Mesh(new THREE.BoxGeometry(2.6,.28,1.65),MATERIALS.flesh.clone()),"context","Context","internal");ctx.position.set(.25,1.25,0);
-    const tubes=this.register(new THREE.Mesh(new THREE.BoxGeometry(2.55,.28,1.58),MATERIALS.pore.clone()),"tube_layer","Tube layer","fertile");tubes.position.set(.25,1.02,0);
-    const pore=this.register(new THREE.Mesh(new THREE.BoxGeometry(2.55,.035,1.58),MATERIALS.pore.clone()),"hymenophore","Pore surface","fertile");pore.position.set(.25,.86,0);
-    const trunk=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.9,1.1,3.4,28),MATERIALS.wood.clone()),"substrate","Woody substrate","ecology");trunk.position.set(-1.55,.5,0);trunk.rotation.z=.08;
+    const trunk=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.94,1.10,3.5,40),MATERIALS.wood.clone()),"substrate","Woody substrate","ecology");
+    trunk.position.set(-1.58,.48,0);trunk.rotation.z=.06;
+
+    const shape=new THREE.Shape();
+    shape.moveTo(-.95,-.66);
+    shape.bezierCurveTo(-.35,-.98,.72,-1.02,1.72,-.56);
+    shape.bezierCurveTo(2.08,-.36,2.12,.12,1.78,.40);
+    shape.bezierCurveTo(.86,.92,-.12,.90,-.98,.56);
+    shape.bezierCurveTo(-1.18,.38,-1.17,-.38,-.95,-.66);
+    const ext=new THREE.ExtrudeGeometry(shape,{depth:1.55,bevelEnabled:true,bevelSegments:5,steps:1,bevelSize:.10,bevelThickness:.10});
+    ext.translate(0,0,-.775);
+    const shelf=this.register(new THREE.Mesh(ext,MATERIALS.cap.clone()),"pileus","Upper surface / bracket","macro");
+    shelf.rotation.x=-Math.PI/2;
+    shelf.rotation.z=.02;
+    shelf.position.set(.10,1.56,0);
+
+    const ctxShape=shape.clone();
+    const ctxGeo=new THREE.ExtrudeGeometry(ctxShape,{depth:1.40,bevelEnabled:true,bevelSegments:3,bevelSize:.04,bevelThickness:.04});
+    ctxGeo.translate(0,0,-.70);
+    const ctx=this.register(new THREE.Mesh(ctxGeo,MATERIALS.flesh.clone()),"context","Context","internal");
+    ctx.rotation.x=-Math.PI/2;ctx.scale.set(.93,.72,.93);ctx.position.set(.12,1.24,0);
+
+    const tubes=this.register(new THREE.Mesh(new THREE.BoxGeometry(2.45,.34,1.38),MATERIALS.pore.clone()),"tube_layer","Tube layer","fertile");
+    tubes.position.set(.42,.93,0);
+
+    const poreGroup=new THREE.Group();
+    poreGroup.userData={id:"hymenophore",label:"Pore surface",category:"fertile",selectable:true};
+    const pGeo=new THREE.CylinderGeometry(.032,.040,.024,9);
+    const pMat=MATERIALS.poreDark.clone();
+    for(let x=-.62;x<=1.58;x+=.11){
+      for(let z=-.58;z<=.58;z+=.105){
+        if(x<-.35&&Math.abs(z)>.38)continue;
+        const p=new THREE.Mesh(pGeo,pMat);
+        p.position.set(x,.75,z);p.userData=poreGroup.userData;
+        poreGroup.add(p);this.pickables.push(p);
+      }
+    }
+    this.root.add(poreGroup);this.objects.set("hymenophore",poreGroup);
   }
 
   build_hydnoid(){
