@@ -193,7 +193,7 @@ window.SPECIMEN_ENRICHMENTS["AN2-F38"] = {
     "Taste": "Not tested / not recorded.",
     "Chemical reactions": "Not performed or not recorded.",
     "Microscopy record": "Six accession-linked AN2-F38 microscopy fields are preserved in the atlas. Four fields contain measurement annotations. V1 contributes six legible spore measurements (2.86, 2.41, 2.01, 2.39, 2.62, 2.14 µm; mean 2.41 µm). V3 contributes one measured spore at 6.13 µm. V4 contributes ten legible measurements (2.06, 2.01, 2.47, 1.90, 2.84, 3.10, 2.70, 2.17, 1.06, 1.80 µm; mean 2.21 µm). V5 contributes seven fully legible measurements (2.74, 1.91, 1.54, 1.56, 2.06, 2.44, 2.51 µm; mean 2.11 µm); two additional V5 labels are cropped at the image edge and are excluded. Combined validated statistics: n=24, range 1.06–6.13 µm, mean 2.39 µm, median 2.28 µm, sample SD 0.93 µm. The microscopy objective is recorded as successfully obtained and specimen-linked.",
-    "Spore print / preparation": "No dedicated spore-print or preparation photograph is currently documented for AN2-F38.",
+    "Spore print / preparation": "Two AN2-F38 foil/slide preparation photographs are preserved. Both document the preparation workflow and accession continuity; at macro scale the visible deposit is faint to inconclusive, so the preparation images are retained as provenance rather than used alone to infer spore-print color.",
     "Record type": "Curated complete paired specimen record",
     "Identification status": "Taxonomic identification unresolved in the atlas; morphology is documented without forcing a species-level identification.",
     "Assignment rule": "Two field images were explicitly supplied by the user as AN2-F38 on 2026-10-01. Five post-collection images belong to the same submitted series; four visibly show the handwritten AN2 F38 accession label. No visual-similarity reassignment is used."
@@ -203,7 +203,7 @@ window.SPECIMEN_ENRICHMENTS["AN2-F38"] = {
     ["Explicit specimen accession","Yes"],
     ["Wild / field imagery","Yes"],
     ["Embedded/source imagery","Yes"],
-    ["Spore-print / preparation imagery","No"],
+    ["Spore-print / preparation imagery","Yes — 2 preparation views"],
     ["Microscopy imagery","Yes"],
     ["Measurements","Yes"],
     ["Spore measurements","Yes"],
