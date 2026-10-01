@@ -379,10 +379,11 @@ try{
         hoverProbe?.classList.remove("visible");
         return;
       }
-      const k=getKnowledge(knowledgeForAnatomy(meta.id));
+      const knowledgeId=meta.knowledgeId||knowledgeForAnatomy(meta.id);
+      const k=getKnowledge(knowledgeId);
       if(!selected) info.textContent="Hover: "+k.label+" — "+k.beginner;
       if(hoverProbe&&hoverProbeTitle&&hoverProbeMeta){
-        hoverProbeTitle.textContent=k.label;
+        hoverProbeTitle.textContent=meta.hoverLabel||k.label;
         const profile=meta.profileLabel||currentProfile.label;
         const category=String(meta.category||k.level||"structure").replaceAll("_"," ");
         const surface=meta.surface||"surface";
@@ -397,7 +398,7 @@ try{
     onSelect:meta=>{
       selected=meta; actions.hidden=false;
       info.textContent="Selected: "+meta.label+" · "+meta.id;
-      renderKnowledge(knowledgeForAnatomy(meta.id),engine);
+      renderKnowledge(meta.knowledgeId||knowledgeForAnatomy(meta.id),engine);
     },
     onStatus:t=>status.textContent=t,
     onStats:s=>{if(stats)stats.textContent=`${s.fps} FPS · ${s.objects} objects · ${s.drawCalls} draw calls`;}
