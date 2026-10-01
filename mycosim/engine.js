@@ -27,7 +27,7 @@ export class MycoSimEngine{
     this.root=new THREE.Group(); this.scene.add(this.root);
     this.objects=new Map(); this.pickables=[]; this.hidden=new Set(); this.isolated=null; this.mode="macro"; this.variants={...DEFAULT_VARIANTS};
     this.raycaster=new THREE.Raycaster(); this.pointer=new THREE.Vector2();
-    this.lastHover=null; this.frames=0; this.fpsStart=performance.now(); this.fly=null; this.exploded=false; this.sectioned=false; this.originalTransforms=new Map();
+    this.lastHover=null; this.hoveredObject=null; this.hoveredMaterials=[]; this.frames=0; this.fpsStart=performance.now(); this.fly=null; this.exploded=false; this.sectioned=false; this.originalTransforms=new Map();
     this._setupScene(); this._bind(); this.resize();
     this.resizeObserver=new ResizeObserver(()=>this.resize()); this.resizeObserver.observe(this.canvas);
     this.running=true; this._animate();
@@ -45,7 +45,7 @@ export class MycoSimEngine{
   _bind(){
     this._pointerMove=e=>this._pick(e,false);
     this._pointerClick=e=>this._pick(e,true);
-    this._pointerLeave=()=>{this.lastHover=null;this.onHover?.(null);this.canvas.style.cursor="grab";};
+    this._pointerLeave=()=>{this.lastHover=null;this._clearHoverHighlight();this.onHover?.(null);this.canvas.style.cursor="grab";};
     this.canvas.addEventListener("pointermove",this._pointerMove,{passive:true});
     this.canvas.addEventListener("pointerleave",this._pointerLeave,{passive:true});
     this.canvas.addEventListener("click",this._pointerClick);
@@ -77,7 +77,7 @@ export class MycoSimEngine{
   }
 
   cleanupModel(){
-    this.clearKnowledgeProxy?.(); this.objects.clear(); this.pickables.length=0; this.hidden.clear(); this.isolated=null; this.lastHover=null; this.exploded=false; this.sectioned=false; this.originalTransforms.clear();
+    this._clearHoverHighlight(); this.clearKnowledgeProxy?.(); this.objects.clear(); this.pickables.length=0; this.hidden.clear(); this.isolated=null; this.lastHover=null; this.exploded=false; this.sectioned=false; this.originalTransforms.clear();
     for(const child of [...this.root.children]){
       this.root.remove(child);
       child.traverse?.(n=>{
@@ -246,10 +246,55 @@ export class MycoSimEngine{
 
   focus(id){return this.flyTo(id);}
 
+  _metaForObject(obj){
+    let cur=obj;
+    while(cur){
+      if(cur.userData?.id || cur.userData?.label || cur.userData?.selectable) return cur.userData;
+      cur=cur.parent;
+    }
+    return {};
+  }
+
+  _clearHoverHighlight(){
+    for(const rec of this.hoveredMaterials){
+      if(!rec.material) continue;
+      if("emissive" in rec.material && rec.emissive!==null) rec.material.emissive.setHex(rec.emissive);
+      if("emissiveIntensity" in rec.material && rec.emissiveIntensity!==null) rec.material.emissiveIntensity=rec.emissiveIntensity;
+    }
+    this.hoveredMaterials=[];
+    this.hoveredObject=null;
+  }
+
+  _applyHoverHighlight(obj){
+    if(this.hoveredObject===obj) return;
+    this._clearHoverHighlight();
+    if(!obj) return;
+    this.hoveredObject=obj;
+    const targets=[];
+    obj.traverse?.(n=>{if(n.material)targets.push(n);});
+    if(obj.material&&!targets.includes(obj))targets.push(obj);
+    for(const n of targets){
+      const mats=Array.isArray(n.material)?n.material:[n.material];
+      for(const m of mats){
+        if(!m)continue;
+        const rec={
+          material:m,
+          emissive:("emissive" in m && m.emissive)?m.emissive.getHex():null,
+          emissiveIntensity:("emissiveIntensity" in m)?m.emissiveIntensity:null
+        };
+        this.hoveredMaterials.push(rec);
+        if("emissive" in m && m.emissive){
+          m.emissive.setHex(0x66521f);
+          if("emissiveIntensity" in m)m.emissiveIntensity=0.55;
+        }
+      }
+    }
+  }
+
   _describeHit(hit,e){
     if(!hit?.object) return null;
     const obj=hit.object;
-    const meta={...(obj.userData||{})};
+    const meta={...this._metaForObject(obj)};
     const local=obj.worldToLocal(hit.point.clone());
     const box=obj.geometry ? new THREE.Box3().setFromBufferAttribute(obj.geometry.attributes.position) : null;
     const size=box ? box.getSize(new THREE.Vector3()) : new THREE.Vector3(1,1,1);
@@ -350,11 +395,26 @@ export class MycoSimEngine{
 
   _pick(e,select){
     const r=this.canvas.getBoundingClientRect();
-    this.pointer.x=((e.clientX-r.left)/r.width)*2-1; this.pointer.y=-((e.clientY-r.top)/r.height)*2+1;
+    this.pointer.x=((e.clientX-r.left)/r.width)*2-1;
+    this.pointer.y=-((e.clientY-r.top)/r.height)*2+1;
     this.raycaster.setFromCamera(this.pointer,this.camera);
-    const hit=this.raycaster.intersectObjects(this.pickables.filter(x=>x.visible),false)[0];
+
+    const hits=this.raycaster.intersectObject(this.root,true);
+    const hit=hits.find(h=>{
+      if(!h.object?.visible) return false;
+      let cur=h.object;
+      while(cur){
+        if(cur.visible===false)return false;
+        cur=cur.parent;
+      }
+      const meta=this._metaForObject(h.object);
+      return !!(meta?.id || meta?.label || meta?.selectable);
+    })||null;
+
     const detail=hit?this._describeHit(hit,e):null;
     this.canvas.style.cursor=detail?"crosshair":"grab";
+    this._applyHoverHighlight(hit?.object||null);
+
     if(!select){
       this.lastHover=detail?.id||null;
       this.onHover?.(detail);
