@@ -224,7 +224,7 @@ function mergeMovies(){
 mergeMovies();
 
 const $=id=>document.getElementById(id);
-const FULL_DATA_SET_CODES=new Set(['AN2-F3','AN2-F6','AN2-F8','AN2-F9','AN2-F13','AN2-F21','AN2-F25','AN2-F31','AN2-F32','AN2-F34','AN2-F36','AN2-F38','AN2-F40','AN2-F41','JN1-F1','JN1-F19','JN1-F32']);
+const FULL_DATA_SET_CODES=new Set(['AN2-F9','AN2-F25','AN2-F34','AN2-F38']);
 let current=data[0]?.code||null,filter='',family='ALL',collection='ALL',imageType='ALL',workflow='ALL';
 const esc=s=>String(s??'').replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 const cls=v=>{v=String(v||'').toLowerCase();return v==='yes'?'yes':v==='no'?'no':'partial'};
