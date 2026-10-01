@@ -4,13 +4,28 @@ import {PROFILE_BY_ID} from "./profiles.js";
 import {DEFAULT_VARIANTS,validateVariantSelection} from "./variants.js";
 import {DEFAULT_DEVELOPMENTAL_STAGE,composeMorphologyState} from "./development.js";
 
-const mat=(color,roughness=.85)=>new THREE.MeshStandardMaterial({color,roughness,metalness:0});
+const tissue=(color,roughness=.82,opts={})=>new THREE.MeshPhysicalMaterial({
+  color,roughness,metalness:0,
+  clearcoat:opts.clearcoat??0.05,
+  clearcoatRoughness:opts.clearcoatRoughness??0.72,
+  sheen:opts.sheen??0.08,
+  sheenRoughness:opts.sheenRoughness??0.8,
+  sheenColor:new THREE.Color(opts.sheenColor??color),
+  side:opts.side??THREE.FrontSide
+});
+const mat=(color,roughness=.85)=>tissue(color,roughness);
 const MATERIALS={
-  cap:mat(0x9a4a2d,.78),cap2:mat(0x754227,.84),flesh:mat(0xe6dcc3,.92),
-  gill:new THREE.MeshStandardMaterial({color:0xd0c1a1,roughness:.95,side:THREE.DoubleSide}),
-  stipe:mat(0xdfd2b6,.9),pore:mat(0xc6a34a,.92),coral:mat(0xd8893a,.86),
-  morel:mat(0x85572f,.98),puff:mat(0xb6a37c,.98),jelly:new THREE.MeshPhysicalMaterial({color:0x9d5b40,roughness:.35,transmission:.18,transparent:true,opacity:.9}),
-  crust:mat(0xb78650,.95),wood:mat(0x493326,1)
+  cap:tissue(0x9a4a2d,.72,{clearcoat:.12,clearcoatRoughness:.68,sheen:.16,sheenColor:0xc88662}),
+  cap2:tissue(0x754227,.79,{clearcoat:.07,sheen:.11,sheenColor:0xa16b4c}),
+  flesh:tissue(0xe6dcc3,.91,{sheen:.06,sheenColor:0xfff3d8}),
+  gill:tissue(0xd8c8a6,.94,{side:THREE.DoubleSide,sheen:.04,sheenColor:0xf4e4c7}),
+  stipe:tissue(0xdfd2b6,.88,{sheen:.09,sheenColor:0xf5e5c6}),
+  pore:tissue(0xc6a34a,.91,{sheen:.03}),
+  poreDark:tissue(0x5d4a28,.98),
+  coral:tissue(0xd8893a,.86,{sheen:.08}),
+  morel:tissue(0x85572f,.98),puff:tissue(0xb6a37c,.98),
+  jelly:new THREE.MeshPhysicalMaterial({color:0x9d5b40,roughness:.32,transmission:.2,thickness:.25,transparent:true,opacity:.9}),
+  crust:tissue(0xb78650,.95),wood:tissue(0x493326,1)
 };
 
 export class MycoSimEngine{
@@ -35,9 +50,11 @@ export class MycoSimEngine{
   }
 
   _setupScene(){
-    this.scene.add(new THREE.HemisphereLight(0xf5ecd2,0x102018,2.7));
-    const key=new THREE.DirectionalLight(0xffe6b0,3.2); key.position.set(5,8,5); key.castShadow=true; this.scene.add(key);
-    const fill=new THREE.DirectionalLight(0x9cb9ff,1.15); fill.position.set(-4,3,-5); this.scene.add(fill);
+    this.scene.add(new THREE.HemisphereLight(0xf1ead9,0x0c1714,1.8));
+    const key=new THREE.DirectionalLight(0xffead0,3.0); key.position.set(4.5,7.5,4.2); key.castShadow=true;
+    key.shadow.mapSize.set(2048,2048);key.shadow.camera.near=.5;key.shadow.camera.far=24;this.scene.add(key);
+    const fill=new THREE.DirectionalLight(0xb7d0d6,1.05); fill.position.set(-5,3,-4); this.scene.add(fill);
+    const rim=new THREE.DirectionalLight(0xf6c98f,1.0);rim.position.set(1.5,4.5,-6);this.scene.add(rim);
     const ground=new THREE.Mesh(new THREE.CylinderGeometry(2.7,3,.28,72),MATERIALS.wood.clone());
     ground.position.y=-.72; ground.receiveShadow=true; this.scene.add(ground);
     const grid=new THREE.GridHelper(14,28,0x31403a,0x1b2824); grid.position.y=-.55; this.scene.add(grid);
