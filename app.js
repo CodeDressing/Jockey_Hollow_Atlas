@@ -246,6 +246,7 @@ const GLOSSARY=Object.freeze({
   subglobose:{definition:"Nearly spherical, but not perfectly globose.",pronounce:"subglobose"},
   guttule:{definition:"A droplet-like inclusion visible inside a spore or cell.",pronounce:"guttule"},
   guttules:{definition:"Droplet-like inclusions visible inside spores or cells.",pronounce:"guttules"},
+  hyaline:{definition:"Transparent, colorless, or nearly so; in mycology, describing spores, hyphae, or other structures that lack conspicuous pigmentation and transmit light readily.",pronounce:"hyaline"},
   provenance:{definition:"Documented origin, custody, and source history of a specimen, image, measurement, or record.",pronounce:"provenance"},
   accession:{definition:"A uniquely tracked specimen or collection record entered into an archive, herbarium, laboratory, or database.",pronounce:"accession"}
 });
