@@ -766,6 +766,17 @@ export class MycoSimEngine{
     }else if(id==="stipe_base"){
       region=ny>.58?"upper basal transition":ny<.25?"lowest basal region":"basal expansion";
       surface="stipe-base surface";
+    }else if(meta.knowledgeId==="lamella"){
+      const world=hit.point.clone();
+      const r=Math.sqrt(world.x*world.x+world.z*world.z);
+      const type=this.variants?.hymenophore||"";
+      region=r<.48?"proximal lamella near stipe":r>1.03?"distal lamellar edge / cap margin":"mid-lamella";
+      surface=meta.structureType==="lamellula"?"short-gill hymenial face":"lamellar hymenial face";
+      if(type==="decurrent"&&r<.58)region="decurrent lamella running onto stipe";
+      else if(type==="sinuate"&&r<.52)region="sinuate / notched gill attachment";
+      else if(type==="free_gills"&&r<.55)region="free inner gill edge";
+      else if(type==="adnexed"&&r<.52)region="adnexed narrow gill attachment";
+      else if(type==="adnate"&&r<.52)region="adnate broad gill attachment";
     }else if(id==="hymenophore"){
       const profile=this.currentProfile?.id||"";
       const h=this.variants?.hymenophore||"";
@@ -1180,7 +1191,7 @@ export class MycoSimEngine{
       const mid=(start+end)/2;
       g.position.set(stipeX+Math.cos(a)*mid,pileusY-.15-(type==="decurrent"?.06:0),Math.sin(a)*mid);
       g.rotation.y=-a;
-      g.userData=group.userData;
+      g.userData={...group.userData,knowledgeId:"lamella",hoverLabel:"Lamellula / short gill",structureType:"lamellula"};
       group.add(g);this.pickables.push(g);
     }
   }
@@ -1268,7 +1279,8 @@ export class MycoSimEngine{
       g.rotation.y=-a;
       if(type==="sinuate")g.rotation.z=.06*Math.sin(a*2);
       if(type==="decurrent"&&!short){g.rotation.z=.10;}
-      g.userData=group.userData;group.add(g);this.pickables.push(g);
+      g.userData={...group.userData,knowledgeId:"lamella",hoverLabel:"Lamella / gill",structureType:"lamella"};
+      group.add(g);this.pickables.push(g);
     }
     this._addGillSecondaryDetail(group,type,pileusY,stipeX,inner,outer);
     this.root.add(group);this.objects.set("hymenophore",group);
