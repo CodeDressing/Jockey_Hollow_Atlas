@@ -1,6 +1,7 @@
 const masterData=window.ATLAS_DATA||[];
 const drivePhotos=window.DRIVE_PHOTOS||[];
 const movieMedia=window.MOVIE_MEDIA||[];
+const measurementData=window.MEASUREMENT_DATA||[];
 const masterCount=masterData.length;
 const data=masterData;
 
@@ -120,6 +121,61 @@ function applySpecimenEnrichments(){
 }
 applySpecimenEnrichments();
 
+function measurementCollection(code){
+  const m=String(code||'').toUpperCase().match(/^([A-Z]+\d*)-F/);
+  return m?m[1]:'MEASUREMENTS';
+}
+function measurementFamily(collection){
+  const m=String(collection||'').match(/^([A-Z]{2})/);
+  return m?m[1]:'MS';
+}
+function mergeMeasurements(){
+  const byCode=new Map(data.map(s=>[String(s.code||'').toUpperCase(),s]));
+  for(const m of measurementData){
+    const code=String(m.code||'').toUpperCase();
+    if(!code) continue;
+    let target=byCode.get(code);
+    if(!target){
+      const collection=measurementCollection(code);
+      target={
+        code,
+        site:collection,
+        family:measurementFamily(collection),
+        collection,
+        status:'Measurement-only accession — hand-recorded measurements preserved; master specimen dossier or imagery may not yet be present',
+        archiveIndex:null,
+        sourceLine:'Measurement accession preserved exactly from the submitted Rutgers measurement sources. No specimen reassignment is inferred for unmatched accessions.',
+        summary:{
+          'Record type':'Measurement-only explicit accession',
+          'Measurement provenance':'Hand-recorded Rutgers measurement data',
+          'Assignment rule':'Accession text is preserved; unmatched codes are not silently corrected or reassigned.'
+        },
+        completeness:[
+          ['Measurement data','Yes'],
+          ['Master dossier present','No']
+        ],
+        images:[],
+        measurements:[]
+      };
+      data.push(target);
+      byCode.set(code,target);
+    }
+    target.measurements=target.measurements||[];
+    const duplicate=target.measurements.some(x=>
+      String(x.source||'')===String(m.source||'') &&
+      String(x.source_id||'')===String(m.source_id||'') &&
+      JSON.stringify(x.fields||{})===JSON.stringify(m.fields||{})
+    );
+    if(!duplicate) target.measurements.push(m);
+    target.summary=target.summary||{};
+    target.summary['Measurement records']=String(target.measurements.length);
+    const cm=new Map((target.completeness||[]).map(([k,v])=>[k,v]));
+    cm.set('Measurements documented','Yes');
+    target.completeness=[...cm.entries()];
+  }
+}
+mergeMeasurements();
+
 function mergeMovies(){
   const byCode=new Map(data.map(s=>[String(s.code||'').toUpperCase(),s]));
   for(const m of movieMedia){
@@ -237,6 +293,25 @@ function nav(delta){
   i=Math.max(0,Math.min(rows.length-1,i+delta));
   if(rows[i])setCurrent(rows[i].code);
 }
+function renderMeasurements(s){
+  const rows=s.measurements||[];
+  if(!rows.length)return '';
+  const labels={
+    cap_diameter_cm:'Cap diameter',
+    stem_top_diameter_cm:'Stem top diameter',
+    stem_middle_diameter_cm:'Stem middle diameter',
+    stem_base_diameter_cm:'Stem base diameter',
+    stem_height_cm:'Stem height',
+    notes:'Notes',
+    size_source_text:'Size — exact source text',
+    cap_pileus_source_text:'Cap / pileus — exact source text',
+    stem_stipe_source_text:'Stem / stipe — exact source text'
+  };
+  return `<section class="section measurement-section"><h2>Measurements <span>${rows.length}</span></h2><div class="summary-grid">${rows.map((m,i)=>{
+    const fields=Object.entries(m.fields||{}).map(([k,v])=>`<div class="summary-item"><h4>${esc(labels[k]||k)}</h4><p>${esc(v)}${k.endsWith('_cm')?' cm':''}</p></div>`).join('');
+    return `<article class="card measurement-card"><div class="eyebrow">MEASUREMENT RECORD ${i+1}</div><h3>${esc(m.source_id||s.code)}</h3><p class="status">${esc(m.source||'Measurement source')}</p><div class="summary-grid">${fields}</div></article>`;
+  }).join('')}</div></section>`;
+}
 function renderSpec(){
   const s=data.find(x=>x.code===current);
   if(!s)return;
@@ -263,7 +338,7 @@ function renderSpec(){
   const movieGallery=movieRows.length?`<section class="section"><h2>Movie / video <span>${movieRows.length}</span></h2><div class="gallery">${movieRows.map(m=>`<article class="image-card movie-card"><div class="movie-wrap">${m.preview?`<iframe src="${esc(m.preview)}" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>`:`<img src="${esc(m.poster)}" alt="${esc(m.caption)}">`}</div><div class="caption"><strong>${esc(m.caption)}</strong><code>${esc(m.sourceFilename||m.filename)}</code>${m.durationSeconds?`<small class="drive-source">Duration: ${Math.round(m.durationSeconds)} seconds</small>`:''}${m.note?`<small class="drive-source">${esc(m.note)}</small>`:''}${m.driveView?`<a class="movie-link" href="${esc(m.driveView)}" target="_blank" rel="noopener">Open movie in Drive</a>`:''}</div></article>`).join('')}</div></section>`:'';
   const fullBadge=FULL_DATA_SET_CODES.has(String(s.code||'').toUpperCase())?'<span class="fullset-badge">FULL DATA SET</span>':'';
   const eyebrow=s.archiveIndex?`MASTER RECORD ${s.archiveIndex} / ${masterCount}`:'DRIVE ARCHIVE';
-  $('main').innerHTML=`<div class="spec-head"><div><div class="eyebrow">${eyebrow} ${fullBadge}</div><h1>${esc(s.code)}</h1><p class="status">${esc(s.status)}</p></div><div class="navBtns"><button onclick="nav(-1)">← Previous</button><button onclick="nav(1)">Next →</button></div></div><div class="hero"><div class="summary-grid">${sum}</div><aside class="card"><h3>Data completeness</h3><div class="matrix"><div>Wild + lab pairing</div><div class="${pairClass}">${pairStatus}</div>${mat}</div>${s.sourceLine?`<div class="sourceLine"><strong>Source / provenance</strong><p>${esc(s.sourceLine)}</p></div>`:''}</aside></div>${galleries||''}${movieGallery||''}${(!galleries&&!movieGallery)?'<div class="empty">No media match the selected filter.</div>':''}`;
+  $('main').innerHTML=`<div class="spec-head"><div><div class="eyebrow">${eyebrow} ${fullBadge}</div><h1>${esc(s.code)}</h1><p class="status">${esc(s.status)}</p></div><div class="navBtns"><button onclick="nav(-1)">← Previous</button><button onclick="nav(1)">Next →</button></div></div><div class="hero"><div class="summary-grid">${sum}</div><aside class="card"><h3>Data completeness</h3><div class="matrix"><div>Wild + lab pairing</div><div class="${pairClass}">${pairStatus}</div>${mat}</div>${s.sourceLine?`<div class="sourceLine"><strong>Source / provenance</strong><p>${esc(s.sourceLine)}</p></div>`:''}</aside></div>${renderMeasurements(s)}${galleries||''}${movieGallery||''}${(!galleries&&!movieGallery)?'<div class="empty">No media match the selected filter.</div>':''}`;
   $('recordCount').textContent=`${(s.images||[]).length} source images${(s.movies||[]).length?` · ${(s.movies||[]).length} movies`:''} · ${esc(s.collection)} · ${esc(s.family)}`;
   document.querySelectorAll('.image-wrap').forEach(el=>el.onclick=()=>openViewer(el.dataset.file,el.dataset.caption,el.dataset.name));
 }
