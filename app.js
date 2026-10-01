@@ -99,6 +99,27 @@ function mergeDrivePhotos(){
 }
 mergeDrivePhotos();
 
+function applySpecimenEnrichments(){
+  const byCode=new Map(data.map(s=>[String(s.code||'').toUpperCase(),s]));
+  const enrichments=window.SPECIMEN_ENRICHMENTS||{};
+  for(const [codeRaw,e] of Object.entries(enrichments)){
+    const code=String(codeRaw).toUpperCase();
+    let target=byCode.get(code);
+    if(!target){
+      target={code,site:e.collection||code.split('-')[0],family:e.family||code.slice(0,2),collection:e.collection||code.split('-')[0],images:[]};
+      data.push(target);byCode.set(code,target);
+    }
+    if(e.status) target.status=e.status;
+    if(e.sourceLine) target.sourceLine=e.sourceLine;
+    if(e.summary) target.summary={...(target.summary||{}),...e.summary};
+    if(e.completeness){
+      const merged=new Map([...(target.completeness||[]),...e.completeness].map(([k,v])=>[k,v]));
+      target.completeness=[...merged.entries()];
+    }
+  }
+}
+applySpecimenEnrichments();
+
 function mergeMovies(){
   const byCode=new Map(data.map(s=>[String(s.code||'').toUpperCase(),s]));
   for(const m of movieMedia){
@@ -147,7 +168,7 @@ function mergeMovies(){
 mergeMovies();
 
 const $=id=>document.getElementById(id);
-const FULL_DATA_SET_CODES=new Set(['AN2-F25','AN2-F34']);
+const FULL_DATA_SET_CODES=new Set(['AN2-F9','AN2-F25','AN2-F34']);
 let current=data[0]?.code||null,filter='',family='ALL',collection='ALL',imageType='ALL',workflow='ALL';
 const esc=s=>String(s??'').replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 const cls=v=>{v=String(v||'').toLowerCase();return v==='yes'?'yes':v==='no'?'no':'partial'};
