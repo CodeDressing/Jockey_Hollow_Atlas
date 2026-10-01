@@ -5,6 +5,7 @@ import {MycoSimEngine} from "./engine.js";
 import {OBSERVATION_FIELDS,emptyObservationRecord,compareObservedToCandidates,fieldLabel} from "./identification.js";
 import {newSporeMeasurement,summarizeSpores,formatStat} from "./sporelab.js";
 import {developmentalStageOptions} from "./development.js";
+import {runMycoSimRegression,formatRegressionSummary} from "./regression.js";
 
 const $=s=>document.querySelector(s);
 const canvas=$("#stage"), status=$("#modelStatus"), info=$("#structureInfo"), stats=$("#engineStats");
@@ -12,6 +13,7 @@ const actions=$("#structureActions"), variantControls=$("#variantControls"), ana
 const breadcrumbs=$("#breadcrumbs"), eduTitle=$("#eduTitle"), eduLevel=$("#eduLevel"), eduBody=$("#eduBody");
 const eduRelations=$("#eduRelations"), eduChildren=$("#eduChildren"), eduPronounce=$("#eduPronounce");
 const eduRead=$("#eduRead"), orientation=$("#orientationLabel"), hoverProbe=$("#hoverProbe"), hoverProbeTitle=$("#hoverProbeTitle"), hoverProbeMeta=$("#hoverProbeMeta"), stageControls=$("#stageControls"), stageCompare=$("#stageCompare");
+const qaRun=$("#runRegression"), qaStatus=$("#regressionStatus"), qaResults=$("#regressionResults");
 let selected=null,currentProfile=MORPHOLOGY_PROFILES[0],knowledgeMode="beginner",currentKnowledge=getKnowledge("basidiome");
 let observationRecord=emptyObservationRecord();
 let sporeMeasurements=[];
@@ -119,6 +121,29 @@ function renderKnowledge(id,engine,{moveCamera=true}={}){
 
 function humanizeOption(v){
   return String(v||"").replaceAll("_"," ").replace(/\b\w/g,m=>m.toUpperCase());
+}
+
+function renderRegressionReport(report){
+  if(!qaStatus||!qaResults)return;
+  qaStatus.textContent=formatRegressionSummary(report);
+  qaStatus.className="regression-status "+(report.pass?"pass":"fail");
+  const rows=report.rows.map(r=>{
+    const checks=[
+      ["Render",r.render],["Frame",r.framing],["Hover",r.hover],["Focus",r.focus],
+      ["Isolate/Hide",r.isolateHide],["Explode",r.exploded],["Section",r.section],
+      ["Transparency",r.transparency],["Anatomy nav",r.anatomyNavigation],
+      ["Mode",r.modePreserved],["FPS",r.fpsAcceptable]
+    ];
+    return `<tr class="${r.pass?"pass":"fail"}"><td>${r.family}</td><td>${r.stageId}</td><td>${checks.map(([k,v])=>`<span class="qa-chip ${v?"pass":"fail"}">${k} ${v?"✓":"✕"}</span>`).join("")}</td><td>${r.fps||"—"}</td><td>${r.objects}</td><td>${r.drawCalls}</td></tr>`;
+  }).join("");
+  qaResults.innerHTML=`
+    <div class="qa-summary-grid">
+      <div><strong>${report.passedCombinations}/${report.totalCombinations}</strong><span>combinations passed</span></div>
+      <div><strong>${report.memory.pass?"PASS":"FAIL"}</strong><span>memory Δ geometry ${report.memory.delta.geometries}</span></div>
+      <div><strong>${report.mobile.pass?"PASS":"FAIL"}</strong><span>${report.mobile.viewport} canvas ${report.mobile.canvas.width}×${report.mobile.canvas.height}</span></div>
+      <div><strong>${report.specimenIsolation.pass?"PASS":"FAIL"}</strong><span>specimen isolation · ${report.specimenIsolation.networkWrites.length} writes</span></div>
+    </div>
+    <div class="qa-table-wrap"><table class="qa-table"><thead><tr><th>Family</th><th>Stage</th><th>Checks</th><th>FPS</th><th>Objects</th><th>Draw calls</th></tr></thead><tbody>${rows}</tbody></table></div>`;
 }
 
 function renderObservationForm(){
@@ -337,6 +362,29 @@ try{
 
   eduPronounce.onclick=()=>speak(currentKnowledge.pronunciation||currentKnowledge.label);
   eduRead.onclick=()=>speak(`${currentKnowledge.label}. ${knowledgeMode==="expert"?currentKnowledge.expert:currentKnowledge.beginner}`);
+
+  if(qaRun){
+    qaRun.onclick=async()=>{
+      qaRun.disabled=true;
+      qaStatus.textContent="Running 36 family × stage regression combinations…";
+      qaStatus.className="regression-status";
+      qaResults.innerHTML="";
+      try{
+        const report=await runMycoSimRegression(engine,{
+          onProgress:p=>{qaStatus.textContent=`Regression ${p.index}/${p.total} · ${p.profile} · ${p.stageId}`;}
+        });
+        window.__MYCOSIM_LAST_REGRESSION__=report;
+        renderRegressionReport(report);
+      }catch(err){
+        console.error(err);
+        qaStatus.textContent="Regression error · "+(err?.message||String(err));
+        qaStatus.className="regression-status fail";
+      }finally{
+        qaRun.disabled=false;
+        updateVisibleState(engine);
+      }
+    };
+  }
 
   renderObservationForm();
   $("#compareCandidates").onclick=renderCandidateResults;
