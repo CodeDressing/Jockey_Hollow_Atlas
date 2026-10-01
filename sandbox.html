@@ -42,6 +42,34 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
 .anatomy-row{width:100%;text-align:left;cursor:pointer;color:var(--text)}
 .anatomy-row code{display:block;color:#d9c48b;font-size:9px;margin-top:5px}
 #anatomyList{display:grid;gap:7px}
+
+.atlas-nav{margin-top:12px;padding:10px;border:1px solid var(--line);border-radius:10px;background:#0a1113}
+.orientation-bar{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-bottom:8px}
+.orientation-bar strong{font-size:11px;color:var(--good);letter-spacing:.04em}
+.nav-tools{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}
+.nav-tools button{border:1px solid var(--line);background:#0d1518;color:var(--text);padding:8px;border-radius:8px;cursor:pointer}
+.nav-tools button.active{border-color:#806f42;background:#1a1b12;color:#f3dfae}
+.breadcrumbs{display:flex;gap:5px;align-items:center;flex-wrap:wrap;margin:8px 0}
+.crumb{border:0;background:transparent;color:#d7c28b;padding:2px 0;cursor:pointer;font-size:11px}
+.knowledge-panel{margin-top:10px;border:1px solid var(--line);border-radius:10px;background:#0b1315;padding:12px}
+.knowledge-head{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.knowledge-head h3{margin:0;font-size:16px}
+.knowledge-level{font-size:9px;color:var(--accent);letter-spacing:.1em}
+.knowledge-tabs{display:flex;gap:6px;margin:10px 0}
+.knowledge-tabs button{border:1px solid var(--line);background:#0d1518;color:var(--text);padding:6px 9px;border-radius:7px;cursor:pointer;font-size:11px}
+.knowledge-tabs button.active{border-color:#806f42;background:#1a1b12;color:#f3dfae}
+#eduBody{font-size:12px;line-height:1.5;color:#c7d2d5}
+.edu-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.edu-actions button{border:1px solid var(--line);background:#11191c;color:var(--text);padding:7px 9px;border-radius:7px;cursor:pointer;font-size:10px}
+.relation-wrap,.child-wrap{margin-top:12px}
+.relation-wrap h4,.child-wrap h4{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:0 0 6px}
+#eduRelations{display:flex;gap:6px;flex-wrap:wrap}
+.relation-chip{border:1px solid #40505a;background:#0e1719;color:#dce5e7;border-radius:999px;padding:5px 8px;font-size:10px;cursor:pointer}
+#eduChildren{display:grid;gap:6px}
+.knowledge-child{display:flex;justify-content:space-between;gap:8px;border:1px solid var(--line);background:#0d1518;color:var(--text);padding:8px;border-radius:8px;text-align:left;cursor:pointer}
+.knowledge-child strong{font-size:11px}.knowledge-child span{font-size:9px;color:var(--muted);text-transform:uppercase}
+.muted-mini{font-size:10px;color:var(--muted)}
+@media(max-width:900px){.nav-tools{grid-template-columns:1fr 1fr}.knowledge-panel{padding:10px}}
 </style>
 </head>
 <body>
@@ -72,6 +100,31 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
       </div>
     </div>
     <div id="engineStats" class="engine-stats">Engine initializing…</div>
+    <div class="atlas-nav">
+      <div class="orientation-bar"><strong id="orientationLabel">Agaricoid · Whole basidiome</strong><button id="wholeView" type="button">Whole view</button></div>
+      <div class="nav-tools">
+        <button id="explodedToggle" type="button">Exploded view</button>
+        <button id="sectionToggle" type="button">Section / dissection</button>
+        <button id="contextToggle" type="button">Context transparency</button>
+      </div>
+      <div id="breadcrumbs" class="breadcrumbs"></div>
+    </div>
+    <div class="knowledge-panel">
+      <div class="knowledge-head">
+        <div><div id="eduLevel" class="knowledge-level">ORGANISM</div><h3 id="eduTitle">Whole basidiome</h3></div>
+      </div>
+      <div class="knowledge-tabs">
+        <button class="active" data-knowledge-mode="beginner" type="button">Beginner</button>
+        <button data-knowledge-mode="expert" type="button">Expert</button>
+      </div>
+      <div id="eduBody"></div>
+      <div class="edu-actions">
+        <button id="eduPronounce" type="button">Pronounce</button>
+        <button id="eduRead" type="button">Read aloud</button>
+      </div>
+      <div class="relation-wrap"><h4>Structure relationships</h4><div id="eduRelations"></div></div>
+      <div class="child-wrap"><h4>Travel deeper</h4><div id="eduChildren"></div></div>
+    </div>
     <h2>Morphology variants</h2>
     <div id="variantControls" class="variant-panel"></div>
     <h2>Visualization modes</h2>
