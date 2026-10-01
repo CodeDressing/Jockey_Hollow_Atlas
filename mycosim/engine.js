@@ -175,7 +175,7 @@ export class MycoSimEngine{
     return Number.isFinite(v)?v:fallback;
   }
 
-  applyPilotDevelopmentalGeometry(profileId){
+  applyArchitectureDevelopmentalGeometry(profileId){
     const stage=this.morphologyState?.stage;
     if(!stage) return;
     const p=stage.parameters||{};
@@ -279,6 +279,221 @@ export class MycoSimEngine{
       const pore=this.objects.get("hymenophore");
       if(pore&&pore.material&&"roughness" in pore.material)pore.material.roughness=Math.min(1,.75+(1-margin)*.2);
     }
+
+    if(profileId==="hoof_conk"){
+      const depth=p.hoof_depth??1;
+      const context=p.context_thickness??1;
+      const layers=p.tube_stratification??1;
+      const crust=p.crust_weathering??0;
+      setScale("pileus",.82+depth*.18,.68+depth*.32,.88+depth*.12);
+      setScale("context",.82+depth*.18,context,.90+depth*.10);
+      setScale("tube_layer",.82+depth*.18,.72+layers*.28,.90+depth*.10);
+      setScale("hymenophore",.84+depth*.16,1,.90+depth*.10);
+      if(sid==="young"){
+        move("pileus",-.18,-.14,0);
+        move("context",-.14,-.10,0);
+        move("tube_layer",-.12,-.04,0);
+      }else if(sid==="old"){
+        const pileus=this.objects.get("pileus");
+        if(pileus){pileus.rotation.z-=.028;pileus.rotation.y+=.022;}
+      }
+      weather("pileus",crust);
+      weather("tube_layer",crust*.55);
+      weather("hymenophore",crust*.65);
+    }
+
+    if(profileId==="hydnoid"){
+      const expansion=p.pileus_expansion??1;
+      const toothLength=p.tooth_length??1;
+      const toothDensity=p.tooth_density??1;
+      const elong=p.stipe_elongation??1;
+      setScale("pileus",expansion,sid==="young"?1.22:sid==="old"?.88:1,expansion);
+      setScale("stipe",1,elong,1);
+      const teeth=this.objects.get("hymenophore");
+      if(teeth){
+        teeth.scale.set(expansion,toothLength,expansion);
+        teeth.children.forEach((t,i)=>{
+          const keep=Math.max(.45,toothDensity);
+          t.visible=(i%100)/100<keep;
+          if(sid==="old") t.rotation.z+=(i%5-2)*.012*(p.tooth_wear??0);
+        });
+      }
+      if(sid==="old"){
+        const pileus=this.objects.get("pileus");
+        if(pileus)pileus.rotation.z+=.03*(p.margin_irregularity??0);
+      }
+    }
+
+    if(profileId==="hydnoid_bracket"){
+      const shelf=p.shelf_expansion??1;
+      const toothLength=p.tooth_length??1;
+      const toothDensity=p.tooth_density??1;
+      const context=p.context_thickness??1;
+      setScale("pileus",shelf,.78+context*.22,shelf);
+      setScale("context",shelf,context,shelf);
+      const teeth=this.objects.get("hymenophore");
+      if(teeth){
+        teeth.scale.set(shelf,toothLength,shelf);
+        teeth.children.forEach((t,i)=>{
+          t.visible=(i%100)/100<Math.max(.42,toothDensity);
+          if(sid==="old") t.rotation.x+=((i%7)-3)*.006*(p.tooth_wear??0);
+        });
+      }
+      if(sid==="old"){
+        const pileus=this.objects.get("pileus");
+        if(pileus)pileus.rotation.z-=.028*(p.edge_erosion??0);
+      }
+    }
+
+    if(profileId==="morel"){
+      const headElong=p.head_elongation??1;
+      const pitDepth=p.pit_depth??1;
+      const ridge=p.ridge_prominence??1;
+      const stipeElong=p.stipe_elongation??1;
+      const drying=p.drying??0;
+      const collapse=p.collapse??0;
+      const head=this.objects.get("fertile_head");
+      const hym=this.objects.get("hymenophore");
+      if(head){
+        head.scale.multiply(new THREE.Vector3(
+          1-drying*.16,
+          headElong*(1-collapse*.28),
+          1-drying*.16
+        ));
+        if(sid==="old"){head.rotation.z+=.025;head.rotation.x-=.018;}
+      }
+      if(hym){
+        hym.scale.multiply(new THREE.Vector3(
+          ridge*(1-drying*.08),
+          headElong*(1-collapse*.22),
+          ridge*(1-drying*.08)
+        ));
+        if(hym.material){
+          hym.material.opacity=Math.max(.28,.55-drying*.18);
+          if("linewidth" in hym.material)hym.material.linewidth=1+pitDepth*.3;
+        }
+      }
+      setScale("stipe",1-drying*.10,stipeElong*(1-collapse*.14),1-drying*.10);
+      setScale("internal_cavity",1-drying*.08,headElong*.92,1-drying*.08);
+      weather("fertile_head",drying*.75);
+      weather("stipe",drying*.4);
+    }
+
+    if(profileId==="coral"){
+      const height=p.branch_height??1;
+      const spread=p.branch_spread??1;
+      const density=p.branch_density??1;
+      const tipWear=p.tip_wear??0;
+      const collapse=p.branch_collapse??0;
+      const group=this.objects.get("branch_system");
+      if(group){
+        group.scale.set(spread,height*(1-collapse*.22),spread);
+        group.children.forEach((branch,i)=>{
+          branch.visible=(i%100)/100<Math.max(.52,density);
+          if(sid==="young"){
+            branch.rotation.z*=.45;
+            branch.scale.x*=.92;branch.scale.z*=.92;
+          }else if(sid==="old"){
+            branch.rotation.z+=((i%7)-3)*.018*collapse;
+            branch.rotation.x+=((i%5)-2)*.012*tipWear;
+            if(i%4===0)branch.scale.y*=Math.max(.68,1-tipWear*.24);
+          }
+        });
+      }
+      weather("branch_system",tipWear*.55);
+    }
+
+    if(profileId==="puffball"){
+      const taut=p.peridium_tautness??1;
+      const glebaMaturity=p.gleba_maturity??0;
+      const poreOpen=p.apical_pore_opening??0;
+      const collapse=p.collapse??0;
+      const release=p.spore_release??0;
+      setScale("peridium",1-collapse*.20,taut*(1-collapse*.18),1-collapse*.20);
+      setScale("gleba",.78+glebaMaturity*.22,.82+glebaMaturity*.18,.78+glebaMaturity*.22);
+      setScale("sterile_base",1-collapse*.08,1-collapse*.20,1-collapse*.08);
+      const pore=this.objects.get("apical_pore");
+      if(pore){
+        const ps=Math.max(.03,poreOpen);
+        pore.scale.set(ps,ps,ps);
+        pore.visible=poreOpen>.04;
+      }
+      const gleba=this.objects.get("gleba");
+      if(gleba?.material?.color){
+        const young=new THREE.Color(0xb9aa87);
+        const mature=new THREE.Color(0x7a684f);
+        const old=new THREE.Color(0x4b3f31);
+        const c=young.clone().lerp(mature,Math.min(1,glebaMaturity)).lerp(old,Math.max(0,glebaMaturity-.65)/.35);
+        gleba.material.color.copy(c);
+        gleba.material.opacity=Math.max(.34,.58-release*.18);
+      }
+      weather("peridium",(1-taut)*.45+collapse*.25);
+    }
+
+    if(profileId==="cup"){
+      const openness=p.cup_openness??1;
+      const depth=p.cup_depth??1;
+      const rim=p.rim_thickness??1;
+      const irregular=p.rim_irregularity??0;
+      const collapse=p.collapse??0;
+      setScale("apothecium",openness,depth*(1-collapse*.18),openness);
+      setScale("hymenophore",openness,1,openness);
+      setScale("excipulum",openness,rim,openness);
+      if(sid==="old"){
+        const cup=this.objects.get("apothecium");
+        if(cup){cup.rotation.z+=.035*irregular;cup.rotation.x-=.018*collapse;}
+      }
+    }
+
+    if(profileId==="jelly"){
+      const fullness=p.lobe_fullness??1;
+      const hydration=p.hydration??1;
+      const wrinkling=p.wrinkling??0;
+      const translucency=p.translucency??.7;
+      const collapse=p.collapse??0;
+      const lobes=this.objects.get("lobes");
+      if(lobes){
+        lobes.scale.set(fullness,hydration*(1-collapse*.28),fullness);
+        lobes.children.forEach((l,i)=>{
+          if(sid==="old"){
+            l.scale.y*=Math.max(.42,1-wrinkling*.45);
+            l.rotation.z+=((i%5)-2)*.05*wrinkling;
+          }
+          if(l.material){
+            l.material.opacity=Math.max(.38,.55+translucency*.35);
+            if("transmission" in l.material)l.material.transmission=Math.min(.48,.12+translucency*.34);
+          }
+        });
+      }
+      setScale("attachment",fullness,.85+hydration*.15,fullness);
+    }
+
+    if(profileId==="crust"){
+      const spread=p.patch_spread??1;
+      const marginDef=p.margin_definition??1;
+      const context=p.context_thickness??1;
+      const rough=p.surface_roughness??0;
+      const cracking=p.cracking??0;
+      const erosion=p.edge_erosion??0;
+      setScale("hymenophore",spread,1,spread);
+      setScale("context",spread,context,spread);
+      const margin=this.objects.get("margin");
+      if(margin){
+        margin.scale.x*=spread;
+        margin.scale.z*=spread;
+        margin.scale.y*=Math.max(.35,marginDef);
+        if(sid==="old")margin.rotation.z+=.025*erosion;
+      }
+      const hym=this.objects.get("hymenophore");
+      if(hym?.material){
+        if("roughness" in hym.material)hym.material.roughness=Math.min(1,.55+rough*.38);
+        if(hym.material.color){
+          const hsl={h:0,s:0,l:0};hym.material.color.getHSL(hsl);
+          hym.material.color.setHSL(hsl.h,Math.max(.12,hsl.s*(1-cracking*.18)),Math.max(.18,hsl.l*(1-cracking*.22)));
+        }
+      }
+    }
+
   }
 
   _applyVisibility(){
