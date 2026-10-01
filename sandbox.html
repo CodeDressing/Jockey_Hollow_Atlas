@@ -172,6 +172,13 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
 .learning-step-head small{display:block;margin-top:2px;font-size:9px;line-height:1.35;color:var(--muted)}
 .step-subhead{margin:12px 0 7px;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
 @media(max-width:900px){.learning-path{grid-template-columns:repeat(5,minmax(46px,1fr));overflow-x:auto}.learning-path-chip span{display:none}.learning-step{padding:9px}}
+
+.variant-teaching-card{margin:8px 0 10px;padding:10px;border:1px solid #4a5f65;border-radius:9px;background:#0c1518}
+.variant-teaching-card[hidden]{display:none}
+.variant-teaching-card .teach-kicker{font-size:9px;color:#8fa4a9;text-transform:uppercase;letter-spacing:.08em}
+.variant-teaching-card h4{margin:4px 0 3px;font-size:12px;color:#f0dda9}
+.variant-teaching-card p{margin:0;font-size:10px;line-height:1.45;color:#c6d1d4}
+.variant-teaching-card .teach-detail{margin-top:5px;color:#93a2a7}
 </style>
 </head>
 <body>
@@ -229,7 +236,13 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
         <strong id="morphologySummary">Mature Agaricoid</strong>
         <p id="morphologySummaryDetail">Updates live as morphology characters change.</p>
       </div>
-      <div id="variantControls" class="variant-panel"></div>
+      <div id="variantTeachingCard" class="variant-teaching-card" hidden>
+      <div class="teach-kicker">What changed</div>
+      <h4 id="variantTeachingTitle">Morphology character</h4>
+      <p id="variantTeachingBody"></p>
+      <p id="variantTeachingDetail" class="teach-detail"></p>
+    </div>
+    <div id="variantControls" class="variant-panel"></div>
     </section>
 
     <section class="learning-step" data-learning-step="4">
