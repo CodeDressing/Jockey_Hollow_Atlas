@@ -105,17 +105,23 @@ export class MycoSimEngine{
 
   applyMode(){
     for(const o of this.objects.values()){
-      const m=o.material;
-      if(!m) continue;
-      const mats=Array.isArray(m)?m:[m];
-      for(const x of mats){x.transparent=false;x.opacity=1;x.depthWrite=true;}
+      o.traverse?.(n=>{
+        if(!n.material)return;
+        for(const x of (Array.isArray(n.material)?n.material:[n.material])){
+          x.transparent=false;x.opacity=1;x.depthWrite=true;
+        }
+      });
     }
     const alpha=this.mode==="internal"?.34:this.mode==="micro"?.16:this.mode==="spore"?.1:1;
     if(alpha<1){
-      for(const o of this.objects.values()){
-        if(["hymenophore","tube_layer","teeth","fertile_head","gleba"].includes(o.userData.id)) continue;
-        const ms=Array.isArray(o.material)?o.material:[o.material];
-        for(const m of ms){if(!m)continue;m.transparent=true;m.opacity=alpha;m.depthWrite=alpha>.3;}
+      for(const [id,o] of this.objects){
+        if(["hymenophore","tube_layer","fertile_head","gleba"].includes(id)) continue;
+        o.traverse?.(n=>{
+          if(!n.material)return;
+          for(const m of (Array.isArray(n.material)?n.material:[n.material])){
+            m.transparent=true;m.opacity=alpha;m.depthWrite=alpha>.3;
+          }
+        });
       }
     }
     this._applyVisibility();
@@ -243,14 +249,14 @@ export class MycoSimEngine{
         const m=new THREE.Mesh(new THREE.BoxGeometry(2.8,h,1.35),new THREE.MeshStandardMaterial({color:c,roughness:.85}));
         m.position.y=y;m.userData={id:name,label:name,category:"micro"};micro.add(m);
       }
-    }else if(id==="basidium"||id==="sterigmata"||id==="basidiospore"){
+    }else if(id==="basidium"||id==="sterigmata"){
       const stem=new THREE.Mesh(new THREE.CylinderGeometry(.32,.48,1.65,24),fertile);stem.position.y=.2;micro.add(stem);
       for(let i=0;i<4;i++){
         const a=(i/4)*Math.PI*2;
         const sg=new THREE.Mesh(new THREE.CylinderGeometry(.04,.06,.55,12),membrane);sg.position.set(Math.cos(a)*.24,1.12,Math.sin(a)*.24);sg.rotation.z=Math.cos(a)*.18;sg.rotation.x=Math.sin(a)*.18;micro.add(sg);
         const sp=new THREE.Mesh(new THREE.SphereGeometry(.18,22,14),sporeMat);sp.scale.set(1.35,.82,.8);sp.position.set(Math.cos(a)*.38,1.55,Math.sin(a)*.38);micro.add(sp);
       }
-    }else if(id==="ascus"||id==="ascospore"){
+    }else if(id==="ascus"){
       const ascus=new THREE.Mesh(new THREE.CapsuleGeometry(.36,1.5,8,20),membrane);ascus.position.y=.3;micro.add(ascus);
       for(let i=0;i<8;i++){const sp=new THREE.Mesh(new THREE.SphereGeometry(.11,18,12),sporeMat);sp.scale.set(1.5,.65,.65);sp.position.set(0,-.3+i*.18,0);micro.add(sp);}
     }else if(id==="basidiospore"||id==="ascospore"){
