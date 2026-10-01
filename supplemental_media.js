@@ -35,11 +35,12 @@ window.DRIVE_PHOTOS.push(
 
 window.SPECIMEN_ENRICHMENTS = window.SPECIMEN_ENRICHMENTS || {};
 window.SPECIMEN_ENRICHMENTS["AN2-F9"] = {
-  status: "AN2-F9 laboratory dataset — microscopy and preparation imagery integrated; field/master dossier remains separate.",
+  status: "AN2-F9 complete dataset — wild field context, source macro, preparation, and microscopy imagery integrated."
   sourceLine: "Rutgers Extension laboratory accession AN2-F9. Assignment is supported by explicit AN2-F9 filenames and visible AN2 F9 labeling in the preparation photographs. Measurement statistics use only fully legible on-image annotations; obscured labels were excluded rather than inferred.",
   summary: {
     "Record type": "Curated AN2 laboratory microscopy accession",
     "Provenance": "Rutgers Extension / AN2-F9 laboratory imaging, 2026-09-30",
+    "Wild / source media": "5 wild field-context photographs + 3 source macro/specimen photographs",
     "Laboratory media": "7 microscopy frames + 2 labeled preparation photographs",
     "Microscopy observation": "Numerous small rounded to subglobose bodies are visible, commonly clustered in the mounted material.",
     "Readable measurement set": "37 fully legible calibrated annotations across 3 measured microscopy frames",
@@ -54,6 +55,11 @@ window.SPECIMEN_ENRICHMENTS["AN2-F9"] = {
     ["Preparation imagery","Yes"],
     ["Microscopy imagery","Yes"],
     ["Calibrated measurement annotations","Yes"],
-    ["Master field dossier present","No"]
+    ["Wild / field imagery","Yes"],
+    ["Embedded/source imagery","Yes"],
+    ["Spore-print imagery","Yes"],
+    ["Microscopy imagery","Yes"],
+    ["Wild + laboratory pairing","Yes"],
+    ["Master field dossier present","Yes"]
   ]
 };
