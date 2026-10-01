@@ -18,7 +18,7 @@ export class MycoSimEngine{
     this.renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:"high-performance"});
     this.renderer.setPixelRatio(Math.min(devicePixelRatio,2));
     this.renderer.outputColorSpace=THREE.SRGBColorSpace;
-    this.renderer.shadowMap.enabled=true;
+    this.renderer.shadowMap.enabled=true; this.renderer.localClippingEnabled=true;
     this.scene=new THREE.Scene();
     this.scene.fog=new THREE.FogExp2(0x091011,.035);
     this.camera=new THREE.PerspectiveCamera(34,1,.1,100);
@@ -27,7 +27,7 @@ export class MycoSimEngine{
     this.root=new THREE.Group(); this.scene.add(this.root);
     this.objects=new Map(); this.pickables=[]; this.hidden=new Set(); this.isolated=null; this.mode="macro"; this.variants={...DEFAULT_VARIANTS};
     this.raycaster=new THREE.Raycaster(); this.pointer=new THREE.Vector2();
-    this.lastHover=null; this.frames=0; this.fpsStart=performance.now();
+    this.lastHover=null; this.frames=0; this.fpsStart=performance.now(); this.fly=null; this.exploded=false; this.sectioned=false; this.originalTransforms=new Map();
     this._setupScene(); this._bind(); this.resize();
     this.resizeObserver=new ResizeObserver(()=>this.resize()); this.resizeObserver.observe(this.canvas);
     this.running=true; this._animate();
@@ -52,8 +52,22 @@ export class MycoSimEngine{
   addObject(mesh,meta){
     mesh.userData={...mesh.userData,...meta};
     mesh.castShadow=true; mesh.receiveShadow=true;
-    this.root.add(mesh); this.pickables.push(mesh); this.objects.set(meta.id,mesh);
+    this.root.add(mesh); this.pickables.push(mesh); this.objects.set(meta.id,mesh); this._rememberTransform(mesh);
     return mesh;
+  }
+
+  _rememberTransform(obj){
+    if(!obj||this.originalTransforms.has(obj)) return;
+    this.originalTransforms.set(obj,{
+      position:obj.position.clone(),rotation:obj.rotation.clone(),scale:obj.scale.clone()
+    });
+  }
+
+  _restoreTransforms(){
+    for(const [obj,t] of this.originalTransforms){
+      if(!obj?.parent) continue;
+      obj.position.copy(t.position); obj.rotation.copy(t.rotation); obj.scale.copy(t.scale);
+    }
   }
 
   register(mesh,id,label,category,parentId=null){
@@ -61,7 +75,7 @@ export class MycoSimEngine{
   }
 
   cleanupModel(){
-    this.objects.clear(); this.pickables.length=0; this.hidden.clear(); this.isolated=null; this.lastHover=null;
+    this.objects.clear(); this.pickables.length=0; this.hidden.clear(); this.isolated=null; this.lastHover=null; this.exploded=false; this.sectioned=false; this.originalTransforms.clear();
     for(const child of [...this.root.children]){
       this.root.remove(child);
       child.traverse?.(n=>{
@@ -132,14 +146,72 @@ export class MycoSimEngine{
     const o=this.objects.get(id); if(!o)return;
     for(const m of (Array.isArray(o.material)?o.material:[o.material])){m.transparent=true;m.opacity=opacity;m.depthWrite=false;}
   }
-  focus(id){
-    const o=this.objects.get(id); if(!o)return;
-    const box=new THREE.Box3().setFromObject(o), center=box.getCenter(new THREE.Vector3()), size=box.getSize(new THREE.Vector3()).length();
-    this.controls.target.copy(center);
-    const dir=this.camera.position.clone().sub(center).normalize();
-    this.camera.position.copy(center.clone().add(dir.multiplyScalar(Math.max(2.5,size*2.2))));
-    this.controls.update();
+  setExploded(enabled=true){
+    this._restoreTransforms();
+    this.exploded=!!enabled;
+    if(!enabled){this.applyMode();return;}
+    const offsets={
+      pileus:[0,1.15,0],pileus_context:[0,.65,0],hymenophore:[0,.22,0],
+      tube_layer:[0,.18,0],context:[0,.48,0],stipe:[0,-.35,0],
+      stipe_base:[0,-.75,0],veil_structure:[.85,0,0],peridium:[0,.55,0],
+      gleba:[0,0,0],apical_pore:[0,1.0,0],sterile_base:[0,-.55,0],
+      fertile_head:[0,.85,0],internal_cavity:[.8,0,0],excipulum:[.65,0,0],
+      substrate:[-1.0,0,0],margin:[0,.35,0],lobes:[0,.45,0],attachment:[0,-.5,0],
+      branch_system:[0,.35,0],base:[0,-.45,0]
+    };
+    for(const [id,o] of this.objects){
+      const d=offsets[id]||[0,.25,0];
+      o.position.add(new THREE.Vector3(...d));
+    }
+    this._applyVisibility();
   }
+
+  setSection(enabled=true){
+    this.sectioned=!!enabled;
+    const plane=new THREE.Plane(new THREE.Vector3(1,0,0),0);
+    for(const o of this.objects.values()){
+      o.traverse?.(n=>{
+        if(!n.material)return;
+        const mats=Array.isArray(n.material)?n.material:[n.material];
+        for(const m of mats){m.clippingPlanes=enabled?[plane]:[];m.clipShadows=enabled;m.needsUpdate=true;}
+      });
+    }
+  }
+
+  contextualTransparency(id,opacity=.12){
+    const focus=this.objects.get(id);
+    if(!focus)return;
+    const keep=new Set([id,focus.userData.parentId].filter(Boolean));
+    for(const [oid,o] of this.objects){
+      o.traverse?.(n=>{
+        if(!n.material)return;
+        const mats=Array.isArray(n.material)?n.material:[n.material];
+        for(const m of mats){
+          if(keep.has(oid)){m.transparent=false;m.opacity=1;m.depthWrite=true;}
+          else{m.transparent=true;m.opacity=opacity;m.depthWrite=false;}
+        }
+      });
+    }
+  }
+
+  resetPresentation(){
+    this.isolated=null;this.hidden.clear();this._restoreTransforms();this.exploded=false;this.setSection(false);this.applyMode();
+  }
+
+  flyTo(id,duration=650){
+    const o=this.objects.get(id); if(!o)return false;
+    const box=new THREE.Box3().setFromObject(o),center=box.getCenter(new THREE.Vector3()),size=Math.max(.4,box.getSize(new THREE.Vector3()).length());
+    const dir=this.camera.position.clone().sub(this.controls.target).normalize();
+    const endPos=center.clone().add(dir.multiplyScalar(Math.max(2.2,size*2.15)));
+    this.fly={
+      start:performance.now(),duration,
+      fromPos:this.camera.position.clone(),toPos:endPos,
+      fromTarget:this.controls.target.clone(),toTarget:center
+    };
+    return true;
+  }
+
+  focus(id){return this.flyTo(id);}
 
   _pick(e,select){
     const r=this.canvas.getBoundingClientRect();
@@ -160,6 +232,13 @@ export class MycoSimEngine{
 
   _animate(){
     if(!this.running)return;
+    if(this.fly){
+      const t=Math.min(1,(performance.now()-this.fly.start)/this.fly.duration);
+      const u=1-Math.pow(1-t,3);
+      this.camera.position.lerpVectors(this.fly.fromPos,this.fly.toPos,u);
+      this.controls.target.lerpVectors(this.fly.fromTarget,this.fly.toTarget,u);
+      if(t>=1)this.fly=null;
+    }
     this.controls.update(); this.renderer.render(this.scene,this.camera);
     this.frames++; const now=performance.now();
     if(now-this.fpsStart>=1000){
