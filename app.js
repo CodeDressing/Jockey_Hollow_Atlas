@@ -340,10 +340,13 @@ function fillFilters(){
 }
 function renderFullSetList(){
   const rows=fullDataSets();
-  const host=$('fullSetList');
-  if(!host)return;
-  host.innerHTML=rows.map(s=>`<button class="fullset-btn ${s.code===current?'active':''}" data-code="${esc(s.code)}"><span><strong>${esc(s.code)}</strong><small>${esc(s.collection)} · curated full-data view</small></span><b>OPEN</b></button>`).join('');
-  host.querySelectorAll('.fullset-btn').forEach(b=>b.onclick=()=>setCurrent(b.dataset.code));
+  const html=rows.map(s=>`<button class="fullset-btn ${s.code===current?'active':''}" data-code="${esc(s.code)}"><span><strong>${esc(s.code)}</strong><small>${esc(s.collection)} · curated full-data view</small></span><b>OPEN</b></button>`).join('');
+  for(const id of ['fullSetList','mobileFullSetList']){
+    const host=$(id);
+    if(!host)continue;
+    host.innerHTML=html;
+    host.querySelectorAll('.fullset-btn').forEach(b=>b.onclick=()=>setCurrent(b.dataset.code));
+  }
 }
 function renderList(){
   const rows=filtered();
