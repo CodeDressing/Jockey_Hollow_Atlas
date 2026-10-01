@@ -28,7 +28,7 @@ export class MycoSimEngine{
     this.root=new THREE.Group(); this.scene.add(this.root);
     this.objects=new Map(); this.pickables=[]; this.hidden=new Set(); this.isolated=null; this.mode="macro"; this.variants={...DEFAULT_VARIANTS}; this.developmentalStageId=DEFAULT_DEVELOPMENTAL_STAGE; this.morphologyState=null;
     this.raycaster=new THREE.Raycaster(); this.pointer=new THREE.Vector2();
-    this.lastHover=null; this.hoveredObject=null; this.hoveredMaterials=[]; this.frames=0; this.fpsStart=performance.now(); this.fly=null; this.exploded=false; this.sectioned=false; this.originalTransforms=new Map();
+    this.lastHover=null; this.hoveredObject=null; this.hoveredMaterials=[]; this.frames=0; this.fpsStart=performance.now(); this.lastFps=0; this.fly=null; this.exploded=false; this.sectioned=false; this.originalTransforms=new Map();
     this._setupScene(); this._bind(); this.resize();
     this.resizeObserver=new ResizeObserver(()=>this.resize()); this.resizeObserver.observe(this.canvas);
     this.running=true; this._animate();
@@ -496,6 +496,67 @@ export class MycoSimEngine{
 
   }
 
+  qaRaycastAnatomy(id){
+    const target=this.objects.get(id);
+    if(!target) return {pass:false,reason:"missing_object",expected:id,actual:null};
+
+    const previousIsolation=this.isolated;
+    this.isolated=id;
+    this._applyVisibility();
+    this.scene.updateMatrixWorld(true);
+    this.camera.updateMatrixWorld(true);
+
+    const box=new THREE.Box3().setFromObject(target);
+    if(box.isEmpty()){
+      this.isolated=previousIsolation;this._applyVisibility();
+      return {pass:false,reason:"empty_bounds",expected:id,actual:null};
+    }
+
+    const center=box.getCenter(new THREE.Vector3());
+    const ndc=center.clone().project(this.camera);
+    this.raycaster.setFromCamera(new THREE.Vector2(ndc.x,ndc.y),this.camera);
+    const hits=this.raycaster.intersectObject(this.root,true);
+    let actual=null;
+    for(const hit of hits){
+      let cur=hit.object,visible=true;
+      while(cur){if(cur.visible===false){visible=false;break;}cur=cur.parent;}
+      if(!visible)continue;
+      const meta=this._metaForObject(hit.object);
+      if(meta?.id){actual=meta.id;break;}
+    }
+
+    this.isolated=previousIsolation;
+    this._applyVisibility();
+    return {pass:actual===id,reason:actual===id?"ok":"metadata_mismatch",expected:id,actual};
+  }
+
+  qaSnapshot(){
+    const box=new THREE.Box3().setFromObject(this.root);
+    const frustum=new THREE.Frustum();
+    const matrix=new THREE.Matrix4().multiplyMatrices(this.camera.projectionMatrix,this.camera.matrixWorldInverse);
+    frustum.setFromProjectionMatrix(matrix);
+    let materialCount=0,geometryCount=0;
+    this.root.traverse(n=>{
+      if(n.geometry)geometryCount++;
+      if(n.material)materialCount+=Array.isArray(n.material)?n.material.length:1;
+    });
+    return {
+      profileId:this.currentProfile?.id||null,
+      stageId:this.morphologyState?.stage?.id||null,
+      mode:this.mode,
+      objects:this.objects.size,
+      rootChildren:this.root.children.length,
+      geometryCount,
+      materialCount,
+      rendererGeometries:this.renderer.info.memory.geometries,
+      rendererTextures:this.renderer.info.memory.textures,
+      drawCalls:this.renderer.info.render.calls,
+      fps:this.lastFps,
+      frameIntersects:!box.isEmpty()&&frustum.intersectsBox(box),
+      boxEmpty:box.isEmpty()
+    };
+  }
+
   _applyVisibility(){
     for(const [id,o] of this.objects){
       o.visible=!this.hidden.has(id) && (!this.isolated || this.isolated===id || o.userData.parentId===this.isolated);
@@ -843,7 +904,7 @@ export class MycoSimEngine{
     this.controls.update(); this.renderer.render(this.scene,this.camera);
     this.frames++; const now=performance.now();
     if(now-this.fpsStart>=1000){
-      const fps=Math.round(this.frames*1000/(now-this.fpsStart)); this.onStats?.({fps,objects:this.objects.size,drawCalls:this.renderer.info.render.calls});
+      const fps=Math.round(this.frames*1000/(now-this.fpsStart)); this.lastFps=fps; this.onStats?.({fps,objects:this.objects.size,drawCalls:this.renderer.info.render.calls});
       this.frames=0; this.fpsStart=now;
     }
     requestAnimationFrame(()=>this._animate());
