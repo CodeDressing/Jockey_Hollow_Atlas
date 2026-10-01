@@ -33,6 +33,15 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
 .action-grid button{border:1px solid var(--line);background:#0d1518;color:var(--text);padding:9px;border-radius:8px;cursor:pointer}
 .action-grid button:hover{border-color:#806f42;background:#171812}
 .engine-stats{margin-top:8px;color:var(--muted);font-size:10px}
+
+.variant-panel{display:grid;gap:8px}
+.variant-field{display:grid;gap:5px}
+.variant-field>span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.variant-field select{width:100%;background:#0d1518;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:9px}
+.copy.compact{margin:0;font-size:12px}
+.anatomy-row{width:100%;text-align:left;cursor:pointer;color:var(--text)}
+.anatomy-row code{display:block;color:#d9c48b;font-size:9px;margin-top:5px}
+#anatomyList{display:grid;gap:7px}
 </style>
 </head>
 <body>
@@ -47,7 +56,7 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
     <div class="hint">Drag to rotate · wheel/pinch to zoom · right-drag to pan</div><div id="modelStatus" style="position:absolute;right:16px;bottom:16px;padding:7px 10px;border-radius:7px;background:rgba(4,8,9,.72);color:#9fd0a7;font-size:11px">3D engine loading…</div>
   </section>
   <aside>
-    <div class="kicker">GENERALIZED AGARICOID</div>
+    <div class="kicker" id="profileName">GENERALIZED AGARICOID</div>
     <h1>MycoSim</h1>
     <p class="copy">This is an optional mycology simulation and teaching model, not a specimen record and not a species identification. It establishes the interaction architecture for future specimen-derived fungal models.</p>
     <div class="notice">Observation, interpretation, identification, and hypothesis remain separate. MycoSim is isolated from specimen data and does not modify, merge, or infer any atlas specimen records.</div>
@@ -63,6 +72,8 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
       </div>
     </div>
     <div id="engineStats" class="engine-stats">Engine initializing…</div>
+    <h2>Morphology variants</h2>
+    <div id="variantControls" class="variant-panel"></div>
     <h2>Visualization modes</h2>
     <div class="mode-grid">
       <button class="mode active" data-mode="macro">Macro morphology</button>
@@ -70,14 +81,10 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
       <button class="mode" data-mode="micro">Microscopy bridge</button>
       <button class="mode" data-mode="spore">Spore lab</button>
     </div>
-    <h2>Visible structures</h2>
-    <div class="structure"><strong>Pileus / cap</strong><span>Upper fruiting-body surface</span></div>
-    <div class="structure"><strong>Lamellae / gills</strong><span>Hymenophore beneath pileus</span></div>
-    <div class="structure"><strong>Stipe</strong><span>Central supporting axis</span></div>
-    <div class="structure"><strong>Annulus</strong><span>Partial-veil remnant</span></div>
-    <div class="structure"><strong>Bulb / base</strong><span>Basal morphology</span></div>
+    <h2>Anatomy index</h2>
+    <div id="anatomyList"></div>
     <h2>Next simulation layers</h2>
-    <p class="copy">Hover picking, structure isolation, transparency, exploded anatomy, hymenium → basidium → spore transition, and morphology profiles for boletoid, polyporoid, hydnoid, coral, gasteroid, morchelloid, cup, jelly, and crust fungi.</p>
+    <p class="copy">Parameterized character states now control pileus form, stipe form, hymenophore architecture, and veil/base structures where biologically appropriate. Non-agaric families use independent body-plan factories rather than inheriting an agaricoid template.</p>
   </aside>
 </main>
 <script type="importmap">
