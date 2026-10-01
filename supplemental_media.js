@@ -309,3 +309,18 @@ window.SPECIMEN_ENRICHMENTS["AN2-F5"] = {
     ["Microscopy result","Not applicable — objective not run"]
   ]
 };
+
+window.SPECIMEN_ENRICHMENTS["AN2-F31"] = {
+  status: "AN2-F31 microscopy objective currently blocked — a verified AN2-F31 spore sample has not been located in the active laboratory material. Archived material may exist elsewhere, but that has not been verified.",
+  sourceLine: "Laboratory status update recorded 2026-10-01 during active workshop/lab work. AN2-F31 retains its existing macro/specimen and spore-preparation documentation. No microscopy result is assigned because the required physical spore sample has not been confirmed as available for examination.",
+  summary: {
+    "Microscopy objective": "Not attempted in the current session because verified AN2-F31 spore material was not located.",
+    "Spore material status": "Not presently located in the active lab set; possible archived material remains unverified.",
+    "Record integrity note": "This is a material-availability limitation, not a microscopy failure. Existing macro and preparation records remain valid and preserved; no microscopic morphology or measurements are inferred."
+  },
+  completeness: [
+    ["Microscopy objective attempted","No — verified AN2-F31 spore material not located"],
+    ["Spore sample available","Unverified — not present in active lab material"],
+    ["Microscopy result","Not applicable — objective not run"]
+  ]
+};
