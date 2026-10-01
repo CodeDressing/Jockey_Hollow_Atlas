@@ -45,7 +45,9 @@ export class MycoSimEngine{
   _bind(){
     this._pointerMove=e=>this._pick(e,false);
     this._pointerClick=e=>this._pick(e,true);
+    this._pointerLeave=()=>{this.lastHover=null;this.onHover?.(null);this.canvas.style.cursor="grab";};
     this.canvas.addEventListener("pointermove",this._pointerMove,{passive:true});
+    this.canvas.addEventListener("pointerleave",this._pointerLeave,{passive:true});
     this.canvas.addEventListener("click",this._pointerClick);
   }
 
@@ -244,15 +246,123 @@ export class MycoSimEngine{
 
   focus(id){return this.flyTo(id);}
 
+  _describeHit(hit,e){
+    if(!hit?.object) return null;
+    const obj=hit.object;
+    const meta={...(obj.userData||{})};
+    const local=obj.worldToLocal(hit.point.clone());
+    const box=obj.geometry ? new THREE.Box3().setFromBufferAttribute(obj.geometry.attributes.position) : null;
+    const size=box ? box.getSize(new THREE.Vector3()) : new THREE.Vector3(1,1,1);
+    const center=box ? box.getCenter(new THREE.Vector3()) : new THREE.Vector3();
+    const nx=size.x?Math.abs((local.x-center.x)/(size.x*.5)):0;
+    const ny=size.y?((local.y-box.min.y)/size.y):.5;
+    const nz=size.z?Math.abs((local.z-center.z)/(size.z*.5)):0;
+    const id=meta.id||"structure";
+    let region="surface";
+    let surface="visible surface";
+
+    if(id==="pileus"){
+      const radial=Math.min(1,Math.sqrt(nx*nx+nz*nz));
+      region=radial>.78?"pileus margin":radial>.38?"mid-pileus":"central pileus / disc";
+      if(hit.face?.normal){
+        const n=hit.face.normal.clone().transformDirection(obj.matrixWorld);
+        surface=n.y>.28?"upper pileus surface":n.y<-.28?"lower pileus surface":"pileus margin / side";
+      }
+    }else if(id==="stipe"){
+      region=ny>.72?"upper stipe":ny<.28?"lower stipe":"mid-stipe";
+      surface="stipe surface";
+    }else if(id==="stipe_base"){
+      region=ny>.58?"upper basal transition":ny<.25?"lowest basal region":"basal expansion";
+      surface="stipe-base surface";
+    }else if(id==="hymenophore"){
+      const profile=this.currentProfile?.id||"";
+      const h=this.variants?.hymenophore||"";
+      const world=hit.point.clone();
+      const r=Math.sqrt(world.x*world.x+world.z*world.z);
+      if(h.includes("gill")||["adnexed","adnate","sinuate","decurrent"].includes(h)||profile==="agaricoid"){
+        region=r<.48?"proximal lamella near stipe":r>1.03?"distal lamellar edge / cap margin":"mid-lamella";
+        surface="hymenial gill face";
+      }else if(h==="teeth"||profile.includes("hydnoid")){
+        region=ny<.25?"tooth / spine tip":ny>.72?"tooth / spine base":"mid-tooth / spine";
+        surface="hydnoid hymenial surface";
+      }else if(["boletoid","polyporoid","hoof_conk"].includes(profile)||h==="pores"){
+        region="pore-bearing fertile surface";
+        surface="poroid hymenophore";
+      }else if(profile==="morel"){
+        region="ridge / pit fertile region";
+        surface="exposed hymenium";
+      }else{
+        region="fertile surface";
+        surface="hymenophore";
+      }
+    }else if(id==="tube_layer"){
+      region=ny<.28?"tube mouths / lower tube layer":ny>.72?"tube-context junction":"mid tube layer";
+      surface="poroid tube tissue";
+    }else if(id==="pileus_context"||id==="context"){
+      region=ny>.65?"upper context":ny<.35?"lower context":"mid-context";
+      surface="internal sterile tissue";
+    }else if(id==="veil_structure"){
+      region=this.variants?.veil?String(this.variants.veil).replaceAll("_"," "):"veil structure";
+      surface="veil remnant";
+    }else if(id==="fertile_head"){
+      region=ny>.72?"upper fertile head":ny<.28?"lower fertile head":"mid fertile head";
+      surface="morchelloid fertile surface";
+    }else if(id==="peridium"){
+      region=ny>.72?"upper peridium":ny<.28?"lower peridium":"lateral peridium";
+      surface="outer peridial wall";
+    }else if(id==="gleba"){
+      region="internal glebal tissue";
+      surface="spore-bearing internal tissue";
+    }else if(id==="apothecium"){
+      region=ny>.60?"cup rim / upper apothecium":"cup wall";
+      surface="apothecial tissue";
+    }else if(id==="branch_system"){
+      region=ny>.72?"distal branch / tip region":ny<.3?"basal branch region":"mid-branch region";
+      surface="clavarioid fertile surface";
+    }else if(id==="lobes"){
+      region="gelatinous lobe";
+      surface="exposed fertile lobe surface";
+    }else if(id==="substrate"){
+      region="supporting substrate";
+      surface="substrate surface";
+    }else if(id==="margin"){
+      region="advancing margin";
+      surface="resupinate growing edge";
+    }
+
+    let normal=null;
+    if(hit.face?.normal){
+      normal=hit.face.normal.clone().transformDirection(obj.matrixWorld);
+    }
+    return {
+      ...meta,
+      region,surface,
+      profileId:this.currentProfile?.id||null,
+      profileLabel:this.currentProfile?.label||null,
+      point:{x:hit.point.x,y:hit.point.y,z:hit.point.z},
+      localPoint:{x:local.x,y:local.y,z:local.z},
+      faceIndex:hit.faceIndex ?? null,
+      distance:hit.distance,
+      normal:normal?{x:normal.x,y:normal.y,z:normal.z}:null,
+      screen:{clientX:e.clientX,clientY:e.clientY}
+    };
+  }
+
   _pick(e,select){
     const r=this.canvas.getBoundingClientRect();
     this.pointer.x=((e.clientX-r.left)/r.width)*2-1; this.pointer.y=-((e.clientY-r.top)/r.height)*2+1;
     this.raycaster.setFromCamera(this.pointer,this.camera);
     const hit=this.raycaster.intersectObjects(this.pickables.filter(x=>x.visible),false)[0];
-    const meta=hit?.object?.userData||null;
-    this.canvas.style.cursor=meta?"pointer":"grab";
-    if(!select && meta?.id!==this.lastHover){this.lastHover=meta?.id||null;this.onHover?.(meta);}
-    if(select && meta){this.onSelect?.(meta);this.focus(meta.id);}
+    const detail=hit?this._describeHit(hit,e):null;
+    this.canvas.style.cursor=detail?"crosshair":"grab";
+    if(!select){
+      this.lastHover=detail?.id||null;
+      this.onHover?.(detail);
+    }
+    if(select && detail){
+      this.onSelect?.(detail);
+      this.focus(detail.id);
+    }
   }
 
   showKnowledgeProxy(id){
@@ -328,7 +438,7 @@ export class MycoSimEngine{
 
   dispose(){
     this.running=false; this.cleanupModel(); this.resizeObserver?.disconnect();
-    this.canvas.removeEventListener("pointermove",this._pointerMove); this.canvas.removeEventListener("click",this._pointerClick);
+    this.canvas.removeEventListener("pointermove",this._pointerMove); this.canvas.removeEventListener("pointerleave",this._pointerLeave); this.canvas.removeEventListener("click",this._pointerClick);
     this.controls.dispose(); this.renderer.dispose();
   }
 
