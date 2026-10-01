@@ -99,17 +99,29 @@ window.SPECIMEN_ENRICHMENTS["AN2-F34"] = {
 };
 
 window.SPECIMEN_ENRICHMENTS["AN2-F25"] = {
-  status: "AN2-F25 curated full dataset — in-situ Jockey Hollow wild imagery, collected specimen macro views, spore-print preparation, and existing master-record data integrated.",
-  sourceLine: "Rutgers Jockey Hollow specimen AN2-F25. Wild provenance is supported by two in-situ field photographs showing the fruiting bodies in leaf litter and two post-collection specimen photographs, including one with the AN2 25 accession label visible. Existing AN2-F25 spore-print documentation remains attached to this record.",
+  status: "AN2-F25 complete dataset — in-situ Jockey Hollow field documentation, collected-specimen morphology, spore-print preparation, microscopy, and annotated spore measurements integrated.",
+  sourceLine: "Rutgers Jockey Hollow specimen AN2-F25. Provenance is supported by two in-situ field photographs, four verified laboratory specimen views, two post-collection specimen photographs including a visible AN2 25 accession label, two spore-print/preparation photographs, and seven microscopy frames. Descriptions below are restricted to characters visible in the supplied record; unavailable calibrated macroscopic dimensions are explicitly reported rather than inferred.",
   summary: {
+    "Growth / Description": "Terrestrial, centrally stipitate, fleshy basidiomata documented in situ among deciduous leaf litter at Jockey Hollow. At least two fruiting bodies are visible together in the field series. The specimen is robust and lamellate, with a violet-purple pileus and stipe.",
+    "Size": "Macroscopic cap diameter, stipe length, and stipe diameter were not recorded with a calibrated ruler for AN2-F25 in the current measurement master, so no unsupported centimeter values are assigned. Microscopic annotated spore measurements span approximately 3.25–8.31 µm in the supplied measured fields.",
+    "Color": "Pileus deep violet to purple. Lamellae violet to muted lilac-brown. Stipe pale lilac to violet, becoming paler to whitish toward the enlarged base; brown soil and forest debris adhere to the basal tissue.",
+    "Cap / Pileus": "Pileus convex to broadly convex in the documented material, deep violet-purple, fleshy, smooth to finely fibrillose, with an even to slightly incurved margin. One collected cap shows a small tan-brown abraded or discolored patch on the upper surface.",
+    "Hymenophore": "Lamellate. True gills are clearly visible in both field and collected-specimen views; they are violet to lilac-brown, moderately close, and attached to the stipe. The photographs support an attached, non-decurrent hymenophore; a finer attachment subtype is not assigned without a clearer junction view.",
+    "Spores": "Spore-print deposit is light to medium cinnamon-brown and uneven across the preparation surface. Microscopy shows numerous rounded to broadly ellipsoid brownish spores. Annotated linear measurements are present on multiple microscopy frames, with the visible measured set spanning approximately 3.25–8.31 µm.",
+    "Stem / Stipe": "Stipe central, stout, solid-appearing, longitudinally fibrillose, and pale lilac to violet. It broadens toward the base and shows localized brownish soil or handling staining. No annulus is visible in the supplied photographs.",
+    "Veil": "No persistent annulus, cortina, or other partial-veil remnant is clearly visible in the supplied field or collected-specimen images. This records the photographic observation only; an earlier developmental veil stage was not observed.",
+    "Base / Substrate": "Base distinctly enlarged and bulbose to clavate, with pale whitish tissue and adhering soil/leaf debris. In-situ photographs show terrestrial growth in deciduous leaf litter; no direct woody attachment is visible.",
+    "Microscopy record": "Seven microscopy frames are assigned explicitly to AN2-F25 (SPMV1–SPMV7). SPMV2, SPMV3, SPMV5, SPMV6, and SPMV7 contain annotated linear measurements. The observed measured values span approximately 3.25–8.31 µm. Because objective/magnification, mount medium, stain, and measurement-axis convention are not fully documented in the current record, the annotations are preserved as measured image values rather than converted into a formal taxonomic spore-size range.",
+    "Spore print": "Two AN2-F25 spore-print/preparation photographs are retained. The visible deposit is light to medium cinnamon-brown, uneven in density, and associated directly with the AN2-F25 accession.",
     "Record type": "Curated AN2 full-data specimen record",
     "Wild collection provenance": "Rutgers team collection from Jockey Hollow",
-    "In-situ field imagery": "2 photographs showing the specimen in leaf litter at the collection site",
-    "Collected specimen imagery": "2 photographs documenting cap, gills, stipe, and accession-labeled material",
-    "Accession verification": "AN2 25 visible on foil label in collected-specimen photograph",
-    "Macromorphology documented": "Purple to violet cap and stipe; gilled hymenophore; terrestrial leaf-litter context visible",
-    "Spore-print documentation": "Existing AN2-F25 preparation/spore-print imagery retained",
-    "Assignment rule": "Explicit accession label and user-provided Rutgers/Jockey Hollow specimen provenance; no visual-similarity reassignment"
+    "In-situ field imagery": "2 photographs",
+    "Verified laboratory specimen imagery": "4 photographs",
+    "Collected specimen imagery": "2 photographs",
+    "Spore-print / preparation imagery": "2 photographs",
+    "Microscopy imagery": "7 frames",
+    "Accession verification": "AN2 25 visible on collected-specimen foil label; microscopy filenames explicitly encode AN2-F25",
+    "Assignment rule": "Explicit accession labeling and source filenames; no visual-similarity reassignment."
   },
   completeness: [
     ["Photo provenance","Yes"],
@@ -118,6 +130,11 @@ window.SPECIMEN_ENRICHMENTS["AN2-F25"] = {
     ["In-situ habitat photograph","Yes"],
     ["Embedded/source imagery","Yes"],
     ["Spore-print imagery","Yes"],
-    ["Wild + laboratory pairing","Yes"]
+    ["Microscopy imagery","Yes"],
+    ["Measurements","Yes — annotated microscopic measurements"],
+    ["Macroscopic calibrated measurements","Not available"],
+    ["Wild + laboratory pairing","Yes"],
+    ["Morphology fields reviewed","Yes"],
+    ["Identified","No — taxonomic identification not assigned in this record"]
   ]
 };
