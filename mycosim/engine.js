@@ -992,7 +992,89 @@ export class MycoSimEngine{
   _addPileus(form="convex",radius=1.6,y=2.55,material=MATERIALS.cap){
     const mesh=this.register(new THREE.Mesh(this._pileusGeometry(form,radius),material.clone()),"pileus","Pileus / cap","macro");
     mesh.position.y=y;
+    this._addCapSurfaceDetail(mesh,radius,form);
     return mesh;
+  }
+
+  _addCapSurfaceDetail(mesh,radius,form){
+    if(!mesh)return;
+    const group=new THREE.Group();
+    group.userData=mesh.userData;
+    const lineMat=new THREE.LineBasicMaterial({color:0x6f3525,transparent:true,opacity:.24});
+    const n=34;
+    for(let i=0;i<n;i++){
+      const a=i/n*Math.PI*2;
+      const pts=[];
+      for(let j=2;j<=18;j++){
+        const r=radius*(j/18);
+        const rn=r/radius;
+        const wobble=.018*Math.sin(a*5+r*7);
+        const x=Math.cos(a+wobble)*r;
+        const z=Math.sin(a+wobble)*r;
+        const y=this._pileusHeight(form,rn)+.012;
+        pts.push(new THREE.Vector3(x,y,z));
+      }
+      const g=new THREE.BufferGeometry().setFromPoints(pts);
+      const line=new THREE.Line(g,lineMat.clone());
+      line.userData=mesh.userData;
+      group.add(line);
+    }
+    group.position.copy(mesh.position);
+    this.root.add(group);
+    this.pickables.push(...group.children);
+  }
+
+  _addStipeSurfaceDetail(stipe,height,top,bottom){
+    if(!stipe)return;
+    const group=new THREE.Group();
+    group.userData=stipe.userData;
+    const mat=new THREE.LineBasicMaterial({color:0xb9a98f,transparent:true,opacity:.32});
+    const n=24;
+    for(let i=0;i<n;i++){
+      const a=i/n*Math.PI*2;
+      const pts=[];
+      for(let j=0;j<=12;j++){
+        const t=j/12;
+        const y=-height/2+t*height;
+        const r=THREE.MathUtils.lerp(bottom,top,t)*1.015;
+        const wav=.015*Math.sin(t*12+i*.9);
+        pts.push(new THREE.Vector3(Math.cos(a+wawSafe(wav))*r,y,Math.sin(a+wawSafe(wav))*r));
+      }
+      const geo=new THREE.BufferGeometry().setFromPoints(pts);
+      const line=new THREE.Line(geo,mat.clone());
+      line.userData=stipe.userData;
+      group.add(line);
+    }
+    group.position.copy(stipe.position);
+    this.root.add(group);
+    this.pickables.push(...group.children);
+
+    function wawSafe(v){return Number.isFinite(v)?v:0;}
+  }
+
+  _addBoleteReticulation(stipe,height,top,bottom){
+    if(!stipe)return;
+    const group=new THREE.Group();
+    group.userData=stipe.userData;
+    const mat=new THREE.LineBasicMaterial({color:0x8e765d,transparent:true,opacity:.38});
+    for(let band=2;band<=11;band++){
+      const t=band/13;
+      const y=-height/2+t*height;
+      const r=THREE.MathUtils.lerp(bottom,top,t)*1.02;
+      const pts=[];
+      for(let i=0;i<=28;i++){
+        const a=i/28*Math.PI*2;
+        const rr=r*(1+.018*Math.sin(a*5+band));
+        pts.push(new THREE.Vector3(Math.cos(a)*rr,y+.018*Math.sin(a*3+band),Math.sin(a)*rr));
+      }
+      const geo=new THREE.BufferGeometry().setFromPoints(pts);
+      const line=new THREE.Line(geo,mat.clone());
+      line.userData=stipe.userData;
+      group.add(line);
+    }
+    group.position.copy(stipe.position);
+    this.root.add(group);
+    this.pickables.push(...group.children);
   }
 
   _stipeGeometry(form,height,top,bottom){
@@ -1046,6 +1128,7 @@ export class MycoSimEngine{
       const b=this.register(new THREE.Mesh(new THREE.SphereGeometry(.38,36,22),MATERIALS.stipe.clone()),"stipe_base","Stipe base","macro","stipe");
       b.scale.set(1,.38,1);b.position.set(offsetX,y-h/2-.035,z);
     }
+    this._addStipeSurfaceDetail(st,h,top,bottom);
     return st;
   }
 
@@ -1185,6 +1268,7 @@ export class MycoSimEngine{
     tubes.position.y=capY-.45;
     this._addPoreField(1.20,capY-.68,{tubeDepth:.42,label:"Pore surface"});
     const st=this._addStipe(v.stipe,{height:2.55,y:.70,top:.38,bottom:.52});
+    if(st)this._addBoleteReticulation(st,2.55,.38,.52);
     this._addVeil(v.veil,st?.position.x||0,capY);
   }
 
