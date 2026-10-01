@@ -294,3 +294,18 @@ window.SPECIMEN_ENRICHMENTS["AN2-F7"] = {
     ["Identified","No — taxonomic identification unresolved"]
   ]
 };
+
+window.SPECIMEN_ENRICHMENTS["AN2-F5"] = {
+  status: "AN2-F5 microscopy objective currently blocked — no AN2-F5 spore sample is presently available in the active laboratory material. The sample may exist elsewhere in the laboratory archive, but that has not been verified.",
+  sourceLine: "Laboratory status update recorded 2026-10-01 from the user during active workshop/lab work. AN2-F5 macroscopic measurement data remain preserved, but no spore microscopy run should be represented as completed or failed because the required spore sample was not available for examination.",
+  summary: {
+    "Microscopy objective": "Not attempted in the current session because no verified AN2-F5 spore sample was available.",
+    "Spore material status": "Not presently available in the active lab set; possible archived material is unverified.",
+    "Record integrity note": "This is a material-availability limitation, not a negative microscopy result. No spore measurements or microscopic morphology are inferred."
+  },
+  completeness: [
+    ["Microscopy objective attempted","No — verified AN2-F5 spore material unavailable"],
+    ["Spore sample available","No — not present in active lab material; archive status unverified"],
+    ["Microscopy result","Not applicable — objective not run"]
+  ]
+};
