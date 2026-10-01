@@ -158,6 +158,20 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
 .morphology-summary .summary-kicker{font-size:9px;color:#9aa8ac;text-transform:uppercase;letter-spacing:.09em}
 .morphology-summary strong{display:block;margin-top:4px;font-size:12px;line-height:1.4;color:#f0dda9}
 .morphology-summary p{margin:4px 0 0;font-size:9px;line-height:1.35;color:var(--muted)}
+
+.learning-path{position:sticky;top:0;z-index:12;display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin:10px 0 12px;padding:7px;background:rgba(7,14,16,.94);border:1px solid var(--line);border-radius:10px;backdrop-filter:blur(8px)}
+.learning-path-chip{display:flex;align-items:center;justify-content:center;gap:5px;min-width:0;border:1px solid var(--line);background:#0d1518;color:var(--muted);border-radius:7px;padding:6px 4px;cursor:pointer;font-size:9px}
+.learning-path-chip b{display:grid;place-items:center;width:17px;height:17px;border-radius:999px;border:1px solid currentColor;font-size:8px}
+.learning-path-chip.active{border-color:#8c7440;background:#201c11;color:#f0dda9}
+.learning-step{margin:0 0 12px;padding:11px;border:1px solid var(--line);border-radius:10px;background:#091113;scroll-margin-top:72px}
+.learning-step.active{border-color:#6f6545;box-shadow:0 0 0 1px rgba(140,116,64,.08) inset}
+.learning-step-head{display:flex;align-items:flex-start;gap:9px;margin-bottom:10px}
+.learning-step-head>span{display:grid;place-items:center;flex:0 0 25px;height:25px;border-radius:999px;background:#182023;border:1px solid var(--line);color:#d9c48b;font-size:11px;font-weight:700}
+.learning-step.active .learning-step-head>span{background:#8c7440;color:#081012;border-color:#8c7440}
+.learning-step-head strong{display:block;font-size:12px;color:#eef3f4}
+.learning-step-head small{display:block;margin-top:2px;font-size:9px;line-height:1.35;color:var(--muted)}
+.step-subhead{margin:12px 0 7px;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+@media(max-width:900px){.learning-path{grid-template-columns:repeat(5,minmax(46px,1fr));overflow-x:auto}.learning-path-chip span{display:none}.learning-step{padding:9px}}
 </style>
 </head>
 <body>
@@ -176,62 +190,89 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
     <h1>MycoSim</h1>
     <p class="copy">This is an optional mycology simulation and teaching model, not a specimen record and not a species identification. It establishes the interaction architecture for future specimen-derived fungal models.</p>
     <div class="notice">Observation, interpretation, identification, and hypothesis remain separate. MycoSim is isolated from specimen data and does not modify, merge, or infer any atlas specimen records.</div>
-    <h2>Model library</h2>
-    <div id="modelGrid" class="model-grid"></div><div id="stageStateLine" class="stage-state-line"><strong id="stageStateText">Agaricoid · Mature</strong><span>Developmental stage</span></div><div id="structureInfo">Click a model family to compare major fungal body plans.</div>
-    <div id="structureActions" hidden>
-      <div class="action-grid">
-        <button id="focusStructure" type="button">Focus</button>
-        <button id="isolateStructure" type="button">Isolate</button>
-        <button id="hideStructure" type="button">Hide</button>
-        <button id="transparentStructure" type="button">Transparent</button>
-        <button id="resetStructure" type="button">Reset view</button>
-      </div>
+
+    <div class="learning-path" aria-label="MycoSim learning path">
+      <button type="button" class="learning-path-chip active" data-jump-step="1"><b>1</b><span>Family</span></button>
+      <button type="button" class="learning-path-chip" data-jump-step="2"><b>2</b><span>Stage</span></button>
+      <button type="button" class="learning-path-chip" data-jump-step="3"><b>3</b><span>Morphology</span></button>
+      <button type="button" class="learning-path-chip" data-jump-step="4"><b>4</b><span>Anatomy</span></button>
+      <button type="button" class="learning-path-chip" data-jump-step="5"><b>5</b><span>Deeper</span></button>
     </div>
-    <div id="engineStats" class="engine-stats">Engine initializing…</div>
-    <div class="atlas-nav">
-      <div class="orientation-bar"><strong id="orientationLabel">Agaricoid · Whole basidiome</strong><button id="wholeView" type="button">Whole view</button></div>
-      <div class="nav-tools">
-        <button id="explodedToggle" type="button">Exploded view</button>
-        <button id="sectionToggle" type="button">Section / dissection</button>
-        <button id="contextToggle" type="button">Context transparency</button>
+
+    <section class="learning-step active" data-learning-step="1">
+      <div class="learning-step-head"><span>1</span><div><strong>Choose a model family</strong><small>Start with the overall fungal body plan.</small></div></div>
+      <div id="modelGrid" class="model-grid"></div>
+      <div id="stageStateLine" class="stage-state-line"><strong id="stageStateText">Agaricoid · Mature</strong><span>Current state</span></div>
+      <div id="structureInfo">Click a model family to compare major fungal body plans.</div>
+      <div id="structureActions" hidden>
+        <div class="action-grid">
+          <button id="focusStructure" type="button">Focus</button>
+          <button id="isolateStructure" type="button">Isolate</button>
+          <button id="hideStructure" type="button">Hide</button>
+          <button id="transparentStructure" type="button">Transparent</button>
+          <button id="resetStructure" type="button">Reset view</button>
+        </div>
       </div>
-      <div id="breadcrumbs" class="breadcrumbs"></div>
-    </div>
-    <div class="knowledge-panel">
-      <div class="knowledge-head">
-        <div><div id="eduLevel" class="knowledge-level">ORGANISM</div><h3 id="eduTitle">Whole basidiome</h3></div>
+      <div id="engineStats" class="engine-stats">Engine initializing…</div>
+    </section>
+
+    <section class="learning-step" data-learning-step="2">
+      <div class="learning-step-head"><span>2</span><div><strong>Choose developmental stage</strong><small>Compare Young, Mature, and Old while keeping the same anatomy.</small></div></div>
+      <div id="stageControls" class="stage-grid"></div>
+      <div id="stageCompare" class="stage-compare"></div>
+    </section>
+
+    <section class="learning-step" data-learning-step="3">
+      <div class="learning-step-head"><span>3</span><div><strong>Explore morphology characters</strong><small>Change one visible character at a time and watch the model respond.</small></div></div>
+      <div class="morphology-summary">
+        <div class="summary-kicker">Current morphology</div>
+        <strong id="morphologySummary">Mature Agaricoid</strong>
+        <p id="morphologySummaryDetail">Updates live as morphology characters change.</p>
       </div>
-      <div class="knowledge-tabs">
-        <button class="active" data-knowledge-mode="beginner" type="button">Beginner</button>
-        <button data-knowledge-mode="expert" type="button">Expert</button>
+      <div id="variantControls" class="variant-panel"></div>
+    </section>
+
+    <section class="learning-step" data-learning-step="4">
+      <div class="learning-step-head"><span>4</span><div><strong>Identify anatomy</strong><small>Select a named structure and connect vocabulary to the 3D model.</small></div></div>
+      <div id="anatomyList"></div>
+    </section>
+
+    <section class="learning-step" data-learning-step="5">
+      <div class="learning-step-head"><span>5</span><div><strong>Travel deeper</strong><small>Move from whole morphology into dissection, tissues, microscopy, and spores.</small></div></div>
+      <div class="atlas-nav">
+        <div class="orientation-bar"><strong id="orientationLabel">Agaricoid · Whole basidiome</strong><button id="wholeView" type="button">Whole view</button></div>
+        <div class="nav-tools">
+          <button id="explodedToggle" type="button">Exploded view</button>
+          <button id="sectionToggle" type="button">Section / dissection</button>
+          <button id="contextToggle" type="button">Context transparency</button>
+        </div>
+        <div id="breadcrumbs" class="breadcrumbs"></div>
       </div>
-      <div id="eduBody"></div>
-      <div class="edu-actions">
-        <button id="eduPronounce" type="button">Pronounce</button>
-        <button id="eduRead" type="button">Read aloud</button>
+      <div class="knowledge-panel">
+        <div class="knowledge-head">
+          <div><div id="eduLevel" class="knowledge-level">ORGANISM</div><h3 id="eduTitle">Whole basidiome</h3></div>
+        </div>
+        <div class="knowledge-tabs">
+          <button class="active" data-knowledge-mode="beginner" type="button">Beginner</button>
+          <button data-knowledge-mode="expert" type="button">Expert</button>
+        </div>
+        <div id="eduBody"></div>
+        <div class="edu-actions">
+          <button id="eduPronounce" type="button">Pronounce</button>
+          <button id="eduRead" type="button">Read aloud</button>
+        </div>
+        <div class="relation-wrap"><h4>Structure relationships</h4><div id="eduRelations"></div></div>
+        <div class="child-wrap"><h4>Travel deeper</h4><div id="eduChildren"></div></div>
       </div>
-      <div class="relation-wrap"><h4>Structure relationships</h4><div id="eduRelations"></div></div>
-      <div class="child-wrap"><h4>Travel deeper</h4><div id="eduChildren"></div></div>
-    </div>
-    <h2>Developmental stage</h2>
-    <div id="stageControls" class="stage-grid"></div>
-    <div id="stageCompare" class="stage-compare"></div>
-    <h2>Morphology variants</h2>
-    <div class="morphology-summary">
-      <div class="summary-kicker">Current morphology</div>
-      <strong id="morphologySummary">Mature Agaricoid</strong>
-      <p id="morphologySummaryDetail">Updates live as morphology characters change.</p>
-    </div>
-    <div id="variantControls" class="variant-panel"></div>
-    <h2>Visualization modes</h2>
-    <div class="mode-grid">
-      <button class="mode active" data-mode="macro">Macro morphology</button>
-      <button class="mode" data-mode="internal">Internal / dissection</button>
-      <button class="mode" data-mode="micro">Microscopy bridge</button>
-      <button class="mode" data-mode="spore">Spore lab</button>
-    </div>
-    <h2>Anatomy index</h2>
-    <div id="anatomyList"></div>
+      <div class="step-subhead">Visualization modes</div>
+      <div class="mode-grid">
+        <button class="mode active" data-mode="macro">Macro morphology</button>
+        <button class="mode" data-mode="internal">Internal / dissection</button>
+        <button class="mode" data-mode="micro">Microscopy bridge</button>
+        <button class="mode" data-mode="spore">Spore lab</button>
+      </div>
+    </section>
+
     <h2>Next simulation layers</h2>
     <p class="copy">Parameterized character states now control pileus form, stipe form, hymenophore architecture, and veil/base structures where biologically appropriate. Non-agaric families use independent body-plan factories rather than inheriting an agaricoid template.</p>
   
