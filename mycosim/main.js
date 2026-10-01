@@ -30,6 +30,19 @@ function speak(text){
   speechSynthesis.speak(u);
 }
 
+function updateVisibleState(engine){
+  const stage=engine.getDevelopmentalStage()?.label||"Mature";
+  const modeLabel={
+    macro:"Macro morphology",
+    internal:"Internal / dissection",
+    micro:"Microscopy bridge",
+    spore:"Spore lab"
+  }[engine.mode]||engine.mode;
+  orientation.textContent=`${currentProfile.label} · ${stage} · ${modeLabel}`;
+  const profileName=$("#profileName");
+  if(profileName) profileName.textContent=`${currentProfile.label.toUpperCase()} · ${stage.toUpperCase()}`;
+}
+
 function renderAnatomy(profile){
   anatomyList.innerHTML=(profile.anatomy||[]).map(a=>`<button class="structure anatomy-row" data-anatomy="${a.id}"><strong>${a.label}</strong><span>${a.description}</span><code>${a.id}</code></button>`).join("");
 }
@@ -241,7 +254,7 @@ try{
     renderAnatomy(p);
     $("#profileName").textContent=p.label.toUpperCase();
     renderKnowledge("basidiome",engine,{moveCamera:false});
-    orientation.textContent=p.label+" · Whole basidiome";
+    updateVisibleState(engine);
   }
 
   grid.addEventListener("click",e=>{
@@ -256,7 +269,7 @@ try{
     renderStageControls(currentProfile,engine);
     const st=engine.getDevelopmentalStage();
     info.textContent=`${currentProfile.label} · ${st.label} developmental stage`;
-    orientation.textContent=`${currentProfile.label} · ${st.label} · Whole basidiome`;
+    updateVisibleState(engine);
   });
 
   variantControls.addEventListener("change",e=>{
@@ -279,6 +292,7 @@ try{
   document.querySelectorAll(".mode").forEach(btn=>btn.onclick=()=>{
     document.querySelectorAll(".mode").forEach(x=>x.classList.remove("active"));btn.classList.add("active");
     engine.setMode(btn.dataset.mode);
+    updateVisibleState(engine);
   });
 
   $("#explodedToggle").onclick=()=>{
@@ -296,7 +310,8 @@ try{
   $("#wholeView").onclick=()=>{
     selected=null;actions.hidden=true;engine.resetPresentation();engine.clearKnowledgeProxy();
     renderKnowledge("basidiome",engine,{moveCamera:false});
-    engine.camera.position.set(5.2,3.3,7.4);engine.controls.target.set(0,1.45,0);engine.controls.update();
+    engine.frameModel({animate:true});
+    updateVisibleState(engine);
   };
 
   $("#focusStructure").onclick=()=>selected&&engine.focus(selected.id);
