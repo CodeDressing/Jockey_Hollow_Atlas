@@ -949,88 +949,194 @@ export class MycoSimEngine{
     this.controls.dispose(); this.renderer.dispose();
   }
 
-  _pileusGeometry(form,radius=1.6,segments=72){
-    const g=new THREE.CircleGeometry(radius,segments);
-    const p=g.attributes.position;
-    for(let i=0;i<p.count;i++){
-      const x=p.getX(i),y=p.getY(i),r=Math.min(1,Math.hypot(x,y)/radius);
-      let z=.35*(1-r*r);
-      if(form==="plane") z=.08*(1-r*r);
-      else if(form==="umbonate") z=.18*(1-r*r)+.38*Math.exp(-Math.pow(r/.22,2));
-      else if(form==="depressed") z=.24*(1-r*r)-.28*Math.exp(-Math.pow(r/.34,2));
-      else if(form==="funnel") z=.08+.38*r-.48*Math.pow(1-r,2);
-      else if(form==="campanulate") z=.78*Math.pow(1-r,1.7);
-      else if(form==="conical") z=.72*(1-r);
-      else if(form==="hemispherical") z=.76*Math.sqrt(Math.max(0,1-r*r));
-      p.setZ(i,z);
+  _pileusHeight(form,r){
+    const x=Math.min(1,Math.max(0,r));
+    if(form==="plane") return .10*(1-x*x);
+    if(form==="umbonate") return .22*(1-x*x)+.46*Math.exp(-Math.pow(x/.2,2));
+    if(form==="depressed") return .28*(1-x*x)-.34*Math.exp(-Math.pow(x/.34,2));
+    if(form==="funnel") return .04+.44*x-.56*Math.pow(1-x,2);
+    if(form==="campanulate") return .92*Math.pow(1-x,1.72);
+    if(form==="conical") return .92*(1-x);
+    if(form==="hemispherical") return .88*Math.sqrt(Math.max(0,1-x*x));
+    return .46*(1-x*x);
+  }
+
+  _pileusGeometry(form,radius=1.6,segments=96){
+    const profile=[];
+    const rings=34;
+    const thickness=.14;
+    for(let i=0;i<=rings;i++){
+      const r=radius*(i/rings);
+      const n=r/radius;
+      profile.push(new THREE.Vector2(r,this._pileusHeight(form,n)));
     }
-    p.needsUpdate=true; g.computeVertexNormals(); return g;
+    for(let i=rings;i>=0;i--){
+      const r=radius*(i/rings);
+      const n=r/radius;
+      const lower=-thickness*(.72+.28*(1-n*n))-.035*Math.cos(n*Math.PI);
+      profile.push(new THREE.Vector2(r,lower));
+    }
+    const g=new THREE.LatheGeometry(profile,segments);
+    const pos=g.attributes.position;
+    for(let i=0;i<pos.count;i++){
+      const x=pos.getX(i),y=pos.getY(i),z=pos.getZ(i);
+      const a=Math.atan2(z,x);
+      const rr=Math.hypot(x,z)/radius;
+      const asym=(.018*Math.sin(a*3.1)+.012*Math.cos(a*5.2))*(.25+.75*rr);
+      const edge=.018*Math.sin(a*7.0)*Math.pow(rr,3);
+      pos.setY(i,y+asym+edge);
+    }
+    pos.needsUpdate=true;g.computeVertexNormals();return g;
   }
 
   _addPileus(form="convex",radius=1.6,y=2.55,material=MATERIALS.cap){
     const mesh=this.register(new THREE.Mesh(this._pileusGeometry(form,radius),material.clone()),"pileus","Pileus / cap","macro");
-    mesh.rotation.x=-Math.PI/2; mesh.position.y=y; return mesh;
+    mesh.position.y=y;
+    return mesh;
+  }
+
+  _stipeGeometry(form,height,top,bottom){
+    let topR=top,bottomR=bottom;
+    if(form==="taper_up"){topR*=.72;bottomR*=1.18;}
+    if(form==="taper_down"){topR*=1.18;bottomR*=.72;}
+    if(form==="clavate"){topR*=.82;bottomR*=1.42;}
+    if(form==="bulbous"||form==="marginate_bulb"){bottomR*=1.08;}
+    const profile=[new THREE.Vector2(0,-height/2)];
+    const steps=20;
+    for(let i=0;i<=steps;i++){
+      const t=i/steps;
+      let r=THREE.MathUtils.lerp(bottomR,topR,t);
+      r*=1+.025*Math.sin(t*Math.PI*4)+.012*Math.sin(t*Math.PI*9);
+      if(form==="clavate")r*=1+.22*Math.pow(1-t,2.4);
+      profile.push(new THREE.Vector2(r,-height/2+t*height));
+    }
+    profile.push(new THREE.Vector2(0,height/2));
+    const g=new THREE.LatheGeometry(profile,48);
+    const p=g.attributes.position;
+    for(let i=0;i<p.count;i++){
+      const y=p.getY(i),t=(y+height/2)/height;
+      const lean=.035*Math.sin(t*Math.PI);
+      p.setX(i,p.getX(i)+lean);
+    }
+    p.needsUpdate=true;g.computeVertexNormals();return g;
   }
 
   _addStipe(form="equal",{height=2.5,y=.8,top=.28,bottom=.34,x=0,z=0}={}){
     if(form==="absent") return null;
-    let topR=top,bottomR=bottom,h=height,offsetX=x;
-    if(form==="taper_up"){topR=.20;bottomR=.42}
-    if(form==="taper_down"){topR=.40;bottomR=.22}
-    if(form==="clavate"){topR=.25;bottomR=.55}
-    if(form==="bulbous"||form==="marginate_bulb"){topR=.27;bottomR=.33}
-    if(form==="rooting"){topR=.27;bottomR=.30;h=height+1}
+    let h=form==="rooting"?height+.55:height;
+    let offsetX=x;
     if(form==="lateral") offsetX=-.72;
     if(form==="eccentric") offsetX=-.36;
-    const st=this.register(new THREE.Mesh(new THREE.CylinderGeometry(topR,bottomR,h,40),MATERIALS.stipe.clone()),"stipe","Stipe","macro");
+    const st=this.register(new THREE.Mesh(this._stipeGeometry(form,h,top,bottom),MATERIALS.stipe.clone()),"stipe","Stipe","macro");
     st.position.set(offsetX,y,z);
+
     if(form==="bulbous"){
-      const b=this.register(new THREE.Mesh(new THREE.SphereGeometry(.58,32,20),MATERIALS.stipe.clone()),"stipe_base","Bulbous base","macro","stipe");
-      b.scale.y=.6;b.position.set(offsetX,y-h/2-.12,z);
+      const b=this.register(new THREE.Mesh(new THREE.SphereGeometry(.62,44,28),MATERIALS.stipe.clone()),"stipe_base","Bulbous base","macro","stipe");
+      b.scale.set(1,.62,1);b.position.set(offsetX,y-h/2-.14,z);
     }else if(form==="marginate_bulb"){
-      const b=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.62,.48,.34,36),MATERIALS.stipe.clone()),"stipe_base","Marginate bulb","macro","stipe");
-      b.position.set(offsetX,y-h/2-.12,z);
+      const bulb=this.register(new THREE.Mesh(new THREE.SphereGeometry(.58,44,24),MATERIALS.stipe.clone()),"stipe_base","Marginate bulb","macro","stipe");
+      bulb.scale.set(1,.55,1);bulb.position.set(offsetX,y-h/2-.13,z);
+      const rim=new THREE.Mesh(new THREE.TorusGeometry(.54,.055,12,56),MATERIALS.flesh.clone());
+      rim.rotation.x=Math.PI/2;rim.position.set(offsetX,y-h/2+.04,z);rim.userData=bulb.userData;
+      this.root.add(rim);this.pickables.push(rim);
     }else if(form==="rooting"){
-      const root=this.register(new THREE.Mesh(new THREE.ConeGeometry(.22,.9,28),MATERIALS.stipe.clone()),"stipe_base","Rooting base","macro","stipe");
-      root.position.set(offsetX,y-h/2-.55,z);root.rotation.x=Math.PI;
+      const root=this.register(new THREE.Mesh(new THREE.ConeGeometry(.20,.95,36),MATERIALS.stipe.clone()),"stipe_base","Rooting base","macro","stipe");
+      root.position.set(offsetX,y-h/2-.48,z);root.rotation.x=Math.PI;
     }else{
-      const b=this.register(new THREE.Mesh(new THREE.SphereGeometry(.38,28,18),MATERIALS.stipe.clone()),"stipe_base","Stipe base","macro","stipe");
-      b.scale.y=.45;b.position.set(offsetX,y-h/2-.05,z);
+      const b=this.register(new THREE.Mesh(new THREE.SphereGeometry(.38,36,22),MATERIALS.stipe.clone()),"stipe_base","Stipe base","macro","stipe");
+      b.scale.set(1,.38,1);b.position.set(offsetX,y-h/2-.035,z);
     }
     return st;
   }
 
+  _addPoreField(radius,y,{tubeDepth=.22,label="Pore surface"}={}){
+    const layer=this.register(new THREE.Mesh(new THREE.CylinderGeometry(radius*.96,radius,.12,72),MATERIALS.pore.clone()),"hymenophore",label,"fertile");
+    layer.position.y=y;
+    const poreGeo=new THREE.CylinderGeometry(.038,.045,.026,10);
+    const poreMat=MATERIALS.poreDark.clone();
+    const points=[];
+    for(let x=-radius*.88;x<=radius*.88;x+=.115){
+      for(let z=-radius*.88;z<=radius*.88;z+=.105){
+        const jitter=((Math.round((x+z)*1000)%3)-1)*.012;
+        const px=x+jitter,pz=z-jitter*.5;
+        if(Math.hypot(px,pz)<radius*.88)points.push([px,pz]);
+      }
+    }
+    const inst=new THREE.InstancedMesh(poreGeo,poreMat,points.length);
+    inst.userData={id:"hymenophore",label,category:"fertile",selectable:true};
+    const dummy=new THREE.Object3D();
+    points.forEach(([px,pz],i)=>{dummy.position.set(px,y-.071,pz);dummy.updateMatrix();inst.setMatrixAt(i,dummy.matrix);});
+    inst.castShadow=false;inst.receiveShadow=true;this.root.add(inst);this.pickables.push(inst);
+    return layer;
+  }
+
   _addGillHymenophore(type="adnate",pileusY=2.45,stipeX=0){
     if(["pores","tubes"].includes(type)){
-      const tubes=this.register(new THREE.Mesh(new THREE.CylinderGeometry(1.28,1.15,type==="tubes"?.38:.18,56),MATERIALS.pore.clone()),type==="tubes"?"tube_layer":"hymenophore",type==="tubes"?"Tube layer":"Pores","fertile");
-      tubes.position.set(0,pileusY-.35,0);
+      const depth=type==="tubes"?.34:.18;
       if(type==="tubes"){
-        const pores=this.register(new THREE.Mesh(new THREE.CylinderGeometry(1.17,1.17,.025,56),MATERIALS.pore.clone()),"hymenophore","Pore surface","fertile");
-        pores.position.set(0,pileusY-.56,0);
+        const tubes=this.register(new THREE.Mesh(new THREE.CylinderGeometry(1.28,1.17,depth,72),MATERIALS.pore.clone()),"tube_layer","Tube layer","fertile");
+        tubes.position.set(0,pileusY-.37,0);
       }
+      this._addPoreField(1.22,pileusY-(type==="tubes"?.57:.31),{tubeDepth:depth,label:type==="tubes"?"Pore surface":"Pores"});
       return;
     }
     if(type==="teeth"){
-      const group=new THREE.Group(); group.userData={id:"hymenophore",label:"Teeth / spines",category:"fertile",selectable:true};
-      for(let r=.28;r<1.24;r+=.22){const n=Math.max(12,Math.round(r*34));for(let i=0;i<n;i++){const a=i/n*Math.PI*2,t=new THREE.Mesh(new THREE.ConeGeometry(.03,.28,7),MATERIALS.gill.clone());t.position.set(Math.cos(a)*r,pileusY-.27,Math.sin(a)*r);t.rotation.x=Math.PI;t.userData=group.userData;group.add(t);this.pickables.push(t);}}
+      const group=new THREE.Group();group.userData={id:"hymenophore",label:"Teeth / spines",category:"fertile",selectable:true};
+      for(let r=.22;r<1.25;r+=.14){
+        const n=Math.max(14,Math.round(r*46));
+        for(let i=0;i<n;i++){
+          const a=i/n*Math.PI*2;
+          const len=.20+.13*(.5+.5*Math.sin(i*2.17+r*9));
+          const t=new THREE.Mesh(new THREE.ConeGeometry(.025,len,8),MATERIALS.gill.clone());
+          t.position.set(Math.cos(a)*r,pileusY-.22-len/2,Math.sin(a)*r);t.rotation.x=Math.PI;
+          t.userData=group.userData;group.add(t);this.pickables.push(t);
+        }
+      }
       this.root.add(group);this.objects.set("hymenophore",group);return;
     }
     if(type==="folds"){
-      const group=new THREE.Group(); group.userData={id:"hymenophore",label:"Folds / ridges",category:"fertile",selectable:true};
-      for(let i=0;i<24;i++){const a=i/24*Math.PI*2,g=new THREE.Mesh(new THREE.TorusGeometry(.72+.18*Math.sin(i),.035,8,36,Math.PI*.85),MATERIALS.gill.clone());g.scale.set(1,.25,1);g.rotation.set(Math.PI/2,a,0);g.position.y=pileusY-.26;g.userData=group.userData;group.add(g);this.pickables.push(g);}
+      const group=new THREE.Group();group.userData={id:"hymenophore",label:"Folds / ridges",category:"fertile",selectable:true};
+      for(let i=0;i<30;i++){
+        const a=i/30*Math.PI*2;
+        const curve=new THREE.CatmullRomCurve3([
+          new THREE.Vector3(Math.cos(a)*.18,pileusY-.21,Math.sin(a)*.18),
+          new THREE.Vector3(Math.cos(a)*.62,pileusY-.29,Math.sin(a)*.62),
+          new THREE.Vector3(Math.cos(a)*1.22,pileusY-.23,Math.sin(a)*1.22)
+        ]);
+        const fold=new THREE.Mesh(new THREE.TubeGeometry(curve,18,.025,7,false),MATERIALS.gill.clone());
+        fold.userData=group.userData;group.add(fold);this.pickables.push(fold);
+      }
       this.root.add(group);this.objects.set("hymenophore",group);return;
     }
     if(type==="smooth"){
-      const h=this.register(new THREE.Mesh(new THREE.CircleGeometry(1.25,56),MATERIALS.gill.clone()),"hymenophore","Smooth fertile surface","fertile");h.rotation.x=Math.PI/2;h.position.y=pileusY-.24;return;
+      const h=this.register(new THREE.Mesh(new THREE.CylinderGeometry(1.22,1.22,.045,72),MATERIALS.gill.clone()),"hymenophore","Smooth fertile surface","fertile");
+      h.position.y=pileusY-.24;return;
     }
-    const innerMap={free_gills:.42,adnexed:.28,adnate:.16,sinuate:.22,decurrent:.06};
-    const inner=innerMap[type]??.16,outer=1.28,len=outer-inner;
+
+    const innerMap={free_gills:.43,adnexed:.30,adnate:.17,sinuate:.24,decurrent:.08};
+    const inner=innerMap[type]??.17,outer=1.30;
     const group=new THREE.Group();group.userData={id:"hymenophore",label:"Lamellae / gills",category:"fertile",selectable:true};
-    for(let i=0;i<52;i++){
-      const a=i/52*Math.PI*2,g=new THREE.Mesh(new THREE.BoxGeometry(len,.035,.016),MATERIALS.gill.clone());
-      const mid=(inner+outer)/2;
-      g.position.set(stipeX+Math.cos(a)*mid,pileusY-.25-(type==="decurrent"?.08:0),Math.sin(a)*mid);
-      g.rotation.y=-a; if(type==="sinuate")g.rotation.z=.035*Math.sin(a*2); if(type==="decurrent")g.rotation.z=.06;
+    const total=64;
+    for(let i=0;i<total;i++){
+      const a=i/total*Math.PI*2;
+      const short=i%2===1;
+      const start=short?THREE.MathUtils.lerp(inner,outer,.42):inner;
+      const end=outer;
+      const len=end-start;
+      const h=.16+.13*(1-start/outer);
+      const shape=new THREE.Shape();
+      shape.moveTo(-len/2,0);
+      shape.lineTo(len/2,0);
+      shape.lineTo(len/2,-h*.45);
+      shape.quadraticCurveTo(0,-h*1.08,-len/2,-h*.72);
+      shape.closePath();
+      const geo=new THREE.ShapeGeometry(shape,5);
+      const g=new THREE.Mesh(geo,MATERIALS.gill.clone());
+      const mid=(start+end)/2;
+      g.position.set(stipeX+Math.cos(a)*mid,pileusY-.16-(type==="decurrent"?.08:0),Math.sin(a)*mid);
+      g.rotation.y=-a;
+      if(type==="sinuate")g.rotation.z=.06*Math.sin(a*2);
+      if(type==="decurrent"&&!short){g.rotation.z=.10;}
       g.userData=group.userData;group.add(g);this.pickables.push(g);
     }
     this.root.add(group);this.objects.set("hymenophore",group);
