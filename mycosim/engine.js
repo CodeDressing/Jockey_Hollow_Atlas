@@ -97,8 +97,10 @@ export class MycoSimEngine{
     if(typeof fn!=="function") throw new Error("Missing model factory: "+p.factory);
     fn.call(this);
     this.currentProfile=p;
-    this.mode="macro"; this.applyMode();
-    this.camera.position.set(5.2,3.3,7.4); this.controls.target.set(0,1.45,0); this.controls.update();
+    this.mode="macro";
+    this.setSection(false);
+    this.applyMode();
+    this.frameModel({animate:false});
     this.onStatus?.("3D engine online · "+p.label);
     return p;
   }
@@ -201,7 +203,30 @@ export class MycoSimEngine{
   }
 
   resetPresentation(){
-    this.isolated=null;this.hidden.clear();this._restoreTransforms();this.exploded=false;this.setSection(false);this.applyMode();
+    this.isolated=null;this.hidden.clear();this._restoreTransforms();this.exploded=false;this.setSection(false);this.clearKnowledgeProxy?.();this.applyMode();this.frameModel({animate:true});
+  }
+
+  frameModel({animate=false}={}){
+    const box=new THREE.Box3().setFromObject(this.root);
+    if(box.isEmpty()) return false;
+    const center=box.getCenter(new THREE.Vector3());
+    const size=box.getSize(new THREE.Vector3());
+    const radius=Math.max(size.x,size.y,size.z,1);
+    const aspect=Math.max(.6,this.camera.aspect||1);
+    const distance=(radius*2.4)/Math.tan(THREE.MathUtils.degToRad(this.camera.fov*.5));
+    const adjusted=distance/Math.max(1,Math.sqrt(aspect));
+    const endPos=center.clone().add(new THREE.Vector3(adjusted*.62,adjusted*.38,adjusted));
+    if(animate){
+      this.fly={start:performance.now(),duration:600,fromPos:this.camera.position.clone(),toPos:endPos,fromTarget:this.controls.target.clone(),toTarget:center};
+    }else{
+      this.camera.position.copy(endPos);
+      this.controls.target.copy(center);
+      this.camera.near=Math.max(.01,adjusted/100);
+      this.camera.far=Math.max(100,adjusted*20);
+      this.camera.updateProjectionMatrix();
+      this.controls.update();
+    }
+    return true;
   }
 
   flyTo(id,duration=650){
