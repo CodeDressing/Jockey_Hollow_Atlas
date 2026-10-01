@@ -100,7 +100,7 @@ export class MycoSimEngine{
     const fn=this["build_"+p.factory];
     if(typeof fn!=="function") throw new Error("Missing model factory: "+p.factory);
     fn.call(this);
-    if(["agaricoid","boletoid","polyporoid"].includes(id)) this.applyPilotDevelopmentalGeometry(id);
+    this.applyArchitectureDevelopmentalGeometry(id);
     this.currentProfile=p;
     this.mode="macro";
     this.setSection(false);
