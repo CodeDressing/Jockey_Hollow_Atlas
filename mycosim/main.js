@@ -10,7 +10,7 @@ const canvas=$("#stage"), status=$("#modelStatus"), info=$("#structureInfo"), st
 const actions=$("#structureActions"), variantControls=$("#variantControls"), anatomyList=$("#anatomyList");
 const breadcrumbs=$("#breadcrumbs"), eduTitle=$("#eduTitle"), eduLevel=$("#eduLevel"), eduBody=$("#eduBody");
 const eduRelations=$("#eduRelations"), eduChildren=$("#eduChildren"), eduPronounce=$("#eduPronounce");
-const eduRead=$("#eduRead"), orientation=$("#orientationLabel");
+const eduRead=$("#eduRead"), orientation=$("#orientationLabel"), hoverProbe=$("#hoverProbe"), hoverProbeTitle=$("#hoverProbeTitle"), hoverProbeMeta=$("#hoverProbeMeta");
 let selected=null,currentProfile=MORPHOLOGY_PROFILES[0],knowledgeMode="beginner",currentKnowledge=getKnowledge("basidiome");
 let observationRecord=emptyObservationRecord();
 let sporeMeasurements=[];
@@ -192,9 +192,22 @@ try{
   const engine=new MycoSimEngine({
     canvas,
     onHover:meta=>{
-      if(meta&&!selected){
-        const k=getKnowledge(knowledgeForAnatomy(meta.id));
-        info.textContent="Hover: "+k.label+" — "+k.beginner;
+      if(!meta){
+        hoverProbe?.classList.remove("visible");
+        return;
+      }
+      const k=getKnowledge(knowledgeForAnatomy(meta.id));
+      if(!selected) info.textContent="Hover: "+k.label+" — "+k.beginner;
+      if(hoverProbe&&hoverProbeTitle&&hoverProbeMeta){
+        hoverProbeTitle.textContent=meta.region||k.label;
+        const profile=meta.profileLabel||currentProfile.label;
+        const category=String(meta.category||k.level||"structure").replaceAll("_"," ");
+        const surface=meta.surface||"surface";
+        const p=meta.point||{x:0,y:0,z:0};
+        hoverProbeMeta.innerHTML=`<strong>${k.label}</strong><span>${profile} · ${category}</span><span>${surface}</span><code>id: ${meta.id} · point: ${p.x.toFixed(2)}, ${p.y.toFixed(2)}, ${p.z.toFixed(2)}</code>`;
+        hoverProbe.style.left=Math.min(window.innerWidth-290,Math.max(8,meta.screen.clientX+16))+"px";
+        hoverProbe.style.top=Math.min(window.innerHeight-128,Math.max(54,meta.screen.clientY+16))+"px";
+        hoverProbe.classList.add("visible");
       }
     },
     onSelect:meta=>{
