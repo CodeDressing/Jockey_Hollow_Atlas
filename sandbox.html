@@ -33,7 +33,7 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
   <section class="stage-wrap">
     <canvas id="stage" aria-label="Interactive 3D mushroom sandbox"></canvas>
     <div class="badge">MYCOSIM · OPTIONAL SIMULATION</div>
-    <div class="hint">Drag to rotate · wheel/pinch to zoom · right-drag to pan</div>
+    <div class="hint">Drag to rotate · wheel/pinch to zoom · right-drag to pan</div><div id="modelStatus" style="position:absolute;right:16px;bottom:16px;padding:7px 10px;border-radius:7px;background:rgba(4,8,9,.72);color:#9fd0a7;font-size:11px">3D engine loading…</div>
   </section>
   <aside>
     <div class="kicker">GENERALIZED AGARICOID</div>
@@ -57,11 +57,21 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
     <p class="copy">Hover picking, structure isolation, transparency, exploded anatomy, hymenium → basidium → spore transition, and morphology profiles for boletoid, polyporoid, hydnoid, coral, gasteroid, morchelloid, cup, jelly, and crust fungi.</p>
   </aside>
 </main>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+  }
+}
+</script>
 <script type="module">
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js';
-import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/controls/OrbitControls.js';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 const canvas=document.getElementById('stage');
+const statusEl=document.getElementById('modelStatus');
+statusEl.textContent='3D engine online';
 const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
 renderer.setPixelRatio(Math.min(devicePixelRatio,2));
 renderer.outputColorSpace=THREE.SRGBColorSpace;
