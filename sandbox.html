@@ -179,6 +179,15 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
 .variant-teaching-card h4{margin:4px 0 3px;font-size:12px;color:#f0dda9}
 .variant-teaching-card p{margin:0;font-size:10px;line-height:1.45;color:#c6d1d4}
 .variant-teaching-card .teach-detail{margin-top:5px;color:#93a2a7}
+
+.learner-mode-switch{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:8px 0 6px}
+.learner-mode-switch button{border:1px solid var(--line);background:#0d1518;color:var(--text);padding:8px;border-radius:8px;cursor:pointer;font-size:10px}
+.learner-mode-switch button.active{border-color:#8c7440;background:#211d12;color:#f0dda9}
+.learner-mode-note{margin:0 0 10px;font-size:9px;line-height:1.4;color:var(--muted)}
+.learning-step.learning-locked{display:none}
+.learning-path-chip.locked{opacity:.36;cursor:not-allowed}
+body[data-learner-mode="explore"] .learning-step{display:block}
+body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
 </style>
 </head>
 <body>
@@ -198,6 +207,11 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
     <p class="copy">This is an optional mycology simulation and teaching model, not a specimen record and not a species identification. It establishes the interaction architecture for future specimen-derived fungal models.</p>
     <div class="notice">Observation, interpretation, identification, and hypothesis remain separate. MycoSim is isolated from specimen data and does not modify, merge, or infer any atlas specimen records.</div>
 
+    <div class="learner-mode-switch" role="group" aria-label="Learner mode">
+      <button type="button" class="active" data-learner-mode="guided" aria-pressed="true">Guided</button>
+      <button type="button" data-learner-mode="explore" aria-pressed="false">Explore</button>
+    </div>
+    <p id="learnerModeNote" class="learner-mode-note">Guided mode reveals the learning path progressively as you make choices.</p>
     <div class="learning-path" aria-label="MycoSim learning path">
       <button type="button" class="learning-path-chip active" data-jump-step="1"><b>1</b><span>Family</span></button>
       <button type="button" class="learning-path-chip" data-jump-step="2"><b>2</b><span>Stage</span></button>
