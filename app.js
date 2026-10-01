@@ -380,7 +380,7 @@ function renderMeasurements(s){
     stem_stipe_source_text:'Stem / stipe — exact source text'
   };
   return `<section class="section measurement-section"><h2>Measurements <span>${rows.length}</span></h2><div class="summary-grid">${rows.map((m,i)=>{
-    const fields=Object.entries(m.fields||{}).map(([k,v])=>`<div class="summary-item"><h4>${esc(labels[k]||k)}</h4><p>${esc(v)}${k.endsWith('_cm')?' cm':''}</p></div>`).join('');
+    const fields=Object.entries(m.fields||{}).map(([k,v])=>`<div class="summary-item readable-section"><div class="section-read-head"><h4>${esc(labels[k]||k)}</h4>${sectionReadButton("Read section")}</div><p>${glossaryText(v)}${k.endsWith('_cm')?' cm':''}</p></div>`).join('');
     return `<article class="card measurement-card"><div class="eyebrow">MEASUREMENT RECORD ${i+1}</div><h3>${esc(m.source_id||s.code)}</h3><p class="status">${esc(m.source||'Measurement source')}</p><div class="summary-grid">${fields}</div></article>`;
   }).join('')}</div></section>`;
 }
@@ -389,7 +389,7 @@ function renderSpec(){
   if(!s)return;
   const groups={};
   (s.images||[]).filter(im=>imageType==='ALL'||im.category===imageType).forEach(im=>(groups[im.category]??=[]).push(im));
-  const sum=Object.entries(s.summary||{}).map(([k,v])=>`<div class="summary-item"><h4>${esc(k)}</h4><p>${esc(v)}</p></div>`).join('');
+  const sum=Object.entries(s.summary||{}).map(([k,v])=>`<div class="summary-item readable-section"><div class="section-read-head"><h4>${esc(k)}</h4>${sectionReadButton("Read section")}</div><p>${glossaryText(v)}</p></div>`).join('');
   const cats=new Set((s.images||[]).map(im=>im.category));
   const hasWild=cats.has('Wild / field context');
   const hasLab=cats.has('Source macro / specimen');
@@ -410,10 +410,28 @@ function renderSpec(){
   const movieGallery=movieRows.length?`<section class="section"><h2>Movie / video <span>${movieRows.length}</span></h2><div class="gallery">${movieRows.map(m=>`<article class="image-card movie-card"><div class="movie-wrap">${m.preview?`<iframe src="${esc(m.preview)}" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>`:`<img src="${esc(m.poster)}" alt="${esc(m.caption)}">`}</div><div class="caption"><strong>${esc(m.caption)}</strong><code>${esc(m.sourceFilename||m.filename)}</code>${m.durationSeconds?`<small class="drive-source">Duration: ${Math.round(m.durationSeconds)} seconds</small>`:''}${m.note?`<small class="drive-source">${esc(m.note)}</small>`:''}${m.driveView?`<a class="movie-link" href="${esc(m.driveView)}" target="_blank" rel="noopener">Open movie in Drive</a>`:''}</div></article>`).join('')}</div></section>`:'';
   const fullBadge=FULL_DATA_SET_CODES.has(String(s.code||'').toUpperCase())?'<span class="fullset-badge">FULL DATA SET</span>':'';
   const eyebrow=s.archiveIndex?`MASTER RECORD ${s.archiveIndex} / ${masterCount}`:'DRIVE ARCHIVE';
-  $('main').innerHTML=`<div class="spec-head"><div><div class="eyebrow">${eyebrow} ${fullBadge}</div><h1>${esc(s.code)}</h1><p class="status">${esc(s.status)}</p></div><div class="navBtns"><button onclick="nav(-1)">← Previous</button><button onclick="nav(1)">Next →</button></div></div><div class="hero"><div class="summary-grid">${sum}</div><aside class="card"><h3>Data completeness</h3><div class="matrix"><div>Wild + lab pairing</div><div class="${pairClass}">${pairStatus}</div>${mat}</div>${s.sourceLine?`<div class="sourceLine"><strong>Source / provenance</strong><p>${esc(s.sourceLine)}</p></div>`:''}</aside></div>${renderMeasurements(s)}${galleries||''}${movieGallery||''}${(!galleries&&!movieGallery)?'<div class="empty">No media match the selected filter.</div>':''}`;
+  $('main').innerHTML=`<div class="spec-head"><div><div class="eyebrow">${eyebrow} ${fullBadge}</div><h1>${esc(s.code)}</h1><div class="record-status readable-section"><p class="status">${glossaryText(s.status)}</p>${sectionReadButton("Read overview")}</div></div><div class="navBtns"><button onclick="nav(-1)">← Previous</button><button onclick="nav(1)">Next →</button></div></div><div class="hero"><div class="summary-grid">${sum}</div><aside class="card readable-section"><div class="section-read-head"><h3>Data completeness</h3>${sectionReadButton("Read section")}</div><div class="matrix"><div>Wild + lab pairing</div><div class="${pairClass}">${pairStatus}</div>${mat}</div>${s.sourceLine?`<div class="sourceLine readable-section"><div class="section-read-head"><strong>Source / provenance</strong>${sectionReadButton("Read section")}</div><p>${glossaryText(s.sourceLine)}</p></div>`:''}</aside></div>${renderMeasurements(s)}${galleries||''}${movieGallery||''}${(!galleries&&!movieGallery)?'<div class="empty">No media match the selected filter.</div>':''}`;
   $('recordCount').textContent=`${(s.images||[]).length} source images${(s.movies||[]).length?` · ${(s.movies||[]).length} movies`:''} · ${esc(s.collection)} · ${esc(s.family)}`;
   document.querySelectorAll('.image-wrap').forEach(el=>el.onclick=()=>openViewer(el.dataset.file,el.dataset.caption,el.dataset.name));
 }
+
+$('main').onclick=e=>{
+  const glossary=e.target.closest('.glossary-term');
+  if(glossary){
+    e.preventDefault();e.stopPropagation();
+    openGlossaryTerm(glossary.dataset.glossary,glossary);
+    return;
+  }
+  const read=e.target.closest('.readback-btn');
+  if(read){
+    e.preventDefault();e.stopPropagation();
+    const section=read.closest('.readable-section');
+    if(!section)return;
+    const clone=section.cloneNode(true);
+    clone.querySelectorAll('.readback-btn,.glossary-actions').forEach(x=>x.remove());
+    speakText(clone.textContent.replace(/\s+/g,' ').trim());
+  }
+};
 function syncSearch(v){
   filter=String(v||'').toLowerCase();$('search').value=v;$('mSearch').value=v;
   const rows=filtered();
