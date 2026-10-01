@@ -176,7 +176,15 @@ const families=[...new Set(data.map(x=>x.family).filter(Boolean))];
 const collections=[...new Set(data.map(x=>x.collection).filter(Boolean))];
 
 function fullDataSetState(s){return FULL_DATA_SET_CODES.has(String(s.code||'').toUpperCase())?'FULL':'OTHER'}
-function fullDataSets(){return data.filter(s=>FULL_DATA_SET_CODES.has(String(s.code||'').toUpperCase()))}
+function fullDataSets(){
+  return data
+    .filter(s=>FULL_DATA_SET_CODES.has(String(s.code||'').toUpperCase()))
+    .sort((a,b)=>{
+      const na=parseInt(String(a.code||'').match(/-F(\d+)/i)?.[1]||'999999',10);
+      const nb=parseInt(String(b.code||'').match(/-F(\d+)/i)?.[1]||'999999',10);
+      return na-nb;
+    });
+}
 function filtered(){
   return data.filter(s=>
     (family==='ALL'||s.family===family)&&
