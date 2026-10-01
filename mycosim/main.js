@@ -4,13 +4,14 @@ import {KNOWLEDGE_OBJECTS,getKnowledge,getPathFor,childKnowledge} from "./knowle
 import {MycoSimEngine} from "./engine.js";
 import {OBSERVATION_FIELDS,emptyObservationRecord,compareObservedToCandidates,fieldLabel} from "./identification.js";
 import {newSporeMeasurement,summarizeSpores,formatStat} from "./sporelab.js";
+import {developmentalStageOptions} from "./development.js";
 
 const $=s=>document.querySelector(s);
 const canvas=$("#stage"), status=$("#modelStatus"), info=$("#structureInfo"), stats=$("#engineStats");
 const actions=$("#structureActions"), variantControls=$("#variantControls"), anatomyList=$("#anatomyList");
 const breadcrumbs=$("#breadcrumbs"), eduTitle=$("#eduTitle"), eduLevel=$("#eduLevel"), eduBody=$("#eduBody");
 const eduRelations=$("#eduRelations"), eduChildren=$("#eduChildren"), eduPronounce=$("#eduPronounce");
-const eduRead=$("#eduRead"), orientation=$("#orientationLabel"), hoverProbe=$("#hoverProbe"), hoverProbeTitle=$("#hoverProbeTitle"), hoverProbeMeta=$("#hoverProbeMeta");
+const eduRead=$("#eduRead"), orientation=$("#orientationLabel"), hoverProbe=$("#hoverProbe"), hoverProbeTitle=$("#hoverProbeTitle"), hoverProbeMeta=$("#hoverProbeMeta"), stageControls=$("#stageControls"), stageCompare=$("#stageCompare");
 let selected=null,currentProfile=MORPHOLOGY_PROFILES[0],knowledgeMode="beginner",currentKnowledge=getKnowledge("basidiome");
 let observationRecord=emptyObservationRecord();
 let sporeMeasurements=[];
@@ -48,6 +49,13 @@ function renderVariantControls(profile,engine){
     wrap.innerHTML=`<span>${def.label}</span><select data-variant="${group}">${def.options.map(([id,label])=>`<option value="${id}" ${state[group]===id?"selected":""}>${label}</option>`).join("")}</select>`;
     variantControls.appendChild(wrap);
   }
+}
+
+function renderStageControls(profile,engine){
+  const opts=developmentalStageOptions(profile.id);
+  const active=engine.getDevelopmentalStage()?.id||"mature";
+  stageControls.innerHTML=opts.map(o=>`<button class="stage-pick ${o.id===active?"active":""}" data-stage="${o.id}"><strong>${o.label}</strong><span>${o.notes}</span></button>`).join("");
+  stageCompare.innerHTML=opts.map(o=>`<div class="stage-compare-card ${o.id===active?"active":""}"><div class="stage-badge">${o.label}</div><strong>${profile.label}</strong><span>Maturity ${Math.round(o.maturityIndex*100)}%</span></div>`).join("");
 }
 
 function knowledgeForAnatomy(id){
@@ -229,6 +237,7 @@ try{
     info.textContent="Loading morphology model…";
     engine.loadProfile(id);
     renderVariantControls(p,engine);
+    renderStageControls(p,engine);
     renderAnatomy(p);
     $("#profileName").textContent=p.label.toUpperCase();
     renderKnowledge("basidiome",engine,{moveCamera:false});
@@ -239,6 +248,15 @@ try{
     const b=e.target.closest("[data-model]"); if(!b)return;
     grid.querySelectorAll(".model-pick").forEach(x=>x.classList.remove("active")); b.classList.add("active");
     activateProfile(b.dataset.model);
+  });
+
+  stageControls.addEventListener("click",e=>{
+    const b=e.target.closest("[data-stage]"); if(!b)return;
+    engine.setDevelopmentalStage(b.dataset.stage);
+    renderStageControls(currentProfile,engine);
+    const st=engine.getDevelopmentalStage();
+    info.textContent=`${currentProfile.label} · ${st.label} developmental stage`;
+    orientation.textContent=`${currentProfile.label} · ${st.label} · Whole basidiome`;
   });
 
   variantControls.addEventListener("change",e=>{
