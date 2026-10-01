@@ -48,6 +48,24 @@ window.DRIVE_PHOTOS.push(
   {"folder":"AN2 wild additions","collection":"AN2","family":"AN","specimen":"AN2-F25","category":"Source macro / specimen","filename":"IMG_6125.jpg","caption":"AN2-F25 — collected specimen macro view showing cap and stipe morphology","id":"1oUCN_wtWLri1Jah_hDgv-a4ZJOnM2j00","original":"https://drive.google.com/thumbnail?id=1oUCN_wtWLri1Jah_hDgv-a4ZJOnM2j00&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1oUCN_wtWLri1Jah_hDgv-a4ZJOnM2j00&sz=w1200","source_relpath":"AN2 wild additions/IMG_6125.jpg","drive_view":"https://drive.google.com/file/d/1oUCN_wtWLri1Jah_hDgv-a4ZJOnM2j00/view"}
 );
 
+
+// AN2-F7 microscopy series — verified Google Drive upload, 2026-10-01.
+// Explicit accession filenames; no visual-similarity assignment.
+window.DRIVE_PHOTOS = window.DRIVE_PHOTOS || [];
+window.DRIVE_PHOTOS.push(
+  {"folder":"Jockey_Hollow_Atlas/AN2-F7","collection":"AN2","family":"AN","specimen":"AN2-F7","category":"Microscopy","filename":"AN2-F7 SPM (1).png","caption":"AN2-F7 — annotated calibrated spore-mount field; nine fully legible measurements used in the validated dataset","id":"1fTOu4VmnIxtmGmA_LAphcmp3E50fQxMl","original":"https://drive.google.com/thumbnail?id=1fTOu4VmnIxtmGmA_LAphcmp3E50fQxMl&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1fTOu4VmnIxtmGmA_LAphcmp3E50fQxMl&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (1).png","drive_view":"https://drive.google.com/file/d/1fTOu4VmnIxtmGmA_LAphcmp3E50fQxMl/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F7","collection":"AN2","family":"AN","specimen":"AN2-F7","category":"Microscopy","filename":"AN2-F7 SPM (2).png","caption":"AN2-F7 — microscopy field showing abundant repeated rounded to broadly ellipsoid spores","id":"11OMyflPNisDvlfiKBu7IK2KR1uKl1jug","original":"https://drive.google.com/thumbnail?id=11OMyflPNisDvlfiKBu7IK2KR1uKl1jug&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=11OMyflPNisDvlfiKBu7IK2KR1uKl1jug&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (2).png","drive_view":"https://drive.google.com/file/d/11OMyflPNisDvlfiKBu7IK2KR1uKl1jug/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F7","collection":"AN2","family":"AN","specimen":"AN2-F7","category":"Microscopy","filename":"AN2-F7 SPM (3).png","caption":"AN2-F7 — microscopy field showing abundant repeated rounded to broadly ellipsoid spores","id":"1uEJTgt7_7IYxTBjxQK6f5G1fuQOwPrWJ","original":"https://drive.google.com/thumbnail?id=1uEJTgt7_7IYxTBjxQK6f5G1fuQOwPrWJ&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1uEJTgt7_7IYxTBjxQK6f5G1fuQOwPrWJ&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (3).png","drive_view":"https://drive.google.com/file/d/1uEJTgt7_7IYxTBjxQK6f5G1fuQOwPrWJ/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F7","collection":"AN2","family":"AN","specimen":"AN2-F7","category":"Microscopy","filename":"AN2-F7 SPM (4).png","caption":"AN2-F7 — microscopy field showing abundant repeated rounded to broadly ellipsoid spores","id":"1R268pfZVeE7u6fW_yQcIrfOuAIvMVtj3","original":"https://drive.google.com/thumbnail?id=1R268pfZVeE7u6fW_yQcIrfOuAIvMVtj3&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1R268pfZVeE7u6fW_yQcIrfOuAIvMVtj3&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (4).png","drive_view":"https://drive.google.com/file/d/1R268pfZVeE7u6fW_yQcIrfOuAIvMVtj3/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F7","collection":"AN2","family":"AN","specimen":"AN2-F7","category":"Microscopy","filename":"AN2-F7 SPM (5).png","caption":"AN2-F7 — annotated calibrated spore-mount field; sixteen fully legible measurements used in the validated dataset","id":"1ivmbvrNPSv9VoW_FVNWnpwVJZYiqIlh2","original":"https://drive.google.com/thumbnail?id=1ivmbvrNPSv9VoW_FVNWnpwVJZYiqIlh2&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1ivmbvrNPSv9VoW_FVNWnpwVJZYiqIlh2&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (5).png","drive_view":"https://drive.google.com/file/d/1ivmbvrNPSv9VoW_FVNWnpwVJZYiqIlh2/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F7","collection":"AN2","family":"AN","specimen":"AN2-F7","category":"Microscopy","filename":"AN2-F7 SPM (6).png","caption":"AN2-F7 — microscopy field showing abundant repeated rounded to broadly ellipsoid spores","id":"1yf73PCHSh1EXQW2jF_jKLEPaGVeIfRI9","original":"https://drive.google.com/thumbnail?id=1yf73PCHSh1EXQW2jF_jKLEPaGVeIfRI9&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1yf73PCHSh1EXQW2jF_jKLEPaGVeIfRI9&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (6).png","drive_view":"https://drive.google.com/file/d/1yf73PCHSh1EXQW2jF_jKLEPaGVeIfRI9/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F7","collection":"AN2","family":"AN","specimen":"AN2-F7","category":"Microscopy","filename":"AN2-F7 SPM (7).png","caption":"AN2-F7 — microscopy field showing abundant repeated rounded to broadly ellipsoid spores","id":"1CijRzF7SshFSEMbEGjAHzXEC1zq1zvRM","original":"https://drive.google.com/thumbnail?id=1CijRzF7SshFSEMbEGjAHzXEC1zq1zvRM&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1CijRzF7SshFSEMbEGjAHzXEC1zq1zvRM&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (7).png","drive_view":"https://drive.google.com/file/d/1CijRzF7SshFSEMbEGjAHzXEC1zq1zvRM/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F7","collection":"AN2","family":"AN","specimen":"AN2-F7","category":"Microscopy","filename":"AN2-F7 SPM (8).png","caption":"AN2-F7 — microscopy field showing abundant repeated rounded to broadly ellipsoid spores","id":"1BzQxWBbjXwXwMCJe3uYHXM9rL_XAu5UI","original":"https://drive.google.com/thumbnail?id=1BzQxWBbjXwXwMCJe3uYHXM9rL_XAu5UI&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1BzQxWBbjXwXwMCJe3uYHXM9rL_XAu5UI&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (8).png","drive_view":"https://drive.google.com/file/d/1BzQxWBbjXwXwMCJe3uYHXM9rL_XAu5UI/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F7","collection":"AN2","family":"AN","specimen":"AN2-F7","category":"Microscopy","filename":"AN2-F7 SPM (9).png","caption":"AN2-F7 — microscopy field showing abundant repeated rounded to broadly ellipsoid spores","id":"1mrZlNr-W9Fz4T8ynKDtRTMBaSVmxDco7","original":"https://drive.google.com/thumbnail?id=1mrZlNr-W9Fz4T8ynKDtRTMBaSVmxDco7&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1mrZlNr-W9Fz4T8ynKDtRTMBaSVmxDco7&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (9).png","drive_view":"https://drive.google.com/file/d/1mrZlNr-W9Fz4T8ynKDtRTMBaSVmxDco7/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F7","collection":"AN2","family":"AN","specimen":"AN2-F7","category":"Microscopy","filename":"AN2-F7 SPM (10).png","caption":"AN2-F7 — annotated calibrated spore-mount field; eighteen fully legible measurements used in the validated dataset","id":"1uscV3uJAPj1oPEwNamajV9ZvEzJ6p0hw","original":"https://drive.google.com/thumbnail?id=1uscV3uJAPj1oPEwNamajV9ZvEzJ6p0hw&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1uscV3uJAPj1oPEwNamajV9ZvEzJ6p0hw&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (10).png","drive_view":"https://drive.google.com/file/d/1uscV3uJAPj1oPEwNamajV9ZvEzJ6p0hw/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F7","collection":"AN2","family":"AN","specimen":"AN2-F7","category":"Microscopy","filename":"AN2-F7 SPM (11).png","caption":"AN2-F7 — microscopy field showing abundant repeated rounded to broadly ellipsoid spores","id":"1Y21EhbdJumQZiB8sdUJAZPBh2ZR_-aCt","original":"https://drive.google.com/thumbnail?id=1Y21EhbdJumQZiB8sdUJAZPBh2ZR_-aCt&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1Y21EhbdJumQZiB8sdUJAZPBh2ZR_-aCt&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (11).png","drive_view":"https://drive.google.com/file/d/1Y21EhbdJumQZiB8sdUJAZPBh2ZR_-aCt/view"}
+);
+
 window.SPECIMEN_ENRICHMENTS = window.SPECIMEN_ENRICHMENTS || {};
 window.SPECIMEN_ENRICHMENTS["AN2-F9"] = {
   status: "AN2-F9 complete dataset — Jockey Hollow wild context, field specimen morphology, laboratory preparation, microscopy, and measured spore imagery integrated.",
@@ -217,6 +235,46 @@ window.SPECIMEN_ENRICHMENTS["AN2-F38"] = {
     ["Macroscopic measurement","Yes — cap 2.9 cm; stipe 0.1 / 0.1 / 0.1 cm; height 4.8 cm"],
     ["Morphology fields reviewed","Yes"],
     ["Wild + laboratory pairing","Yes"],
+    ["Identified","No — taxonomic identification unresolved"]
+  ]
+};
+
+
+window.SPECIMEN_ENRICHMENTS["AN2-F7"] = {
+  status: "AN2-F7 complete dataset — Jockey Hollow wild context, verified laboratory specimen views, macroscopic measurements, and calibrated spore microscopy integrated.",
+  sourceLine: "Rutgers/Jockey Hollow accession AN2-F7. The atlas preserves two wild-context photographs, three accession-linked specimen/laboratory views, the Rutgers macroscopic measurement record, and eleven AN2-F7 microscopy fields supplied and completed on 2026-10-01. The Motic BA310 / Moticam 2300 imaging system measurement calibration was reviewed with Motic technical support prior to quantitative acquisition. Quantitative spore statistics use the 43 fully legible annotations established from the submitted microscopy series; no unreadable or cropped value is inferred.",
+  summary: {
+    "Growth / Description": "Macroscopic wild and laboratory documentation is preserved under the AN2-F7 accession. The specimen is treated as a single provenance-linked record from field context through laboratory microscopy; morphology is documented descriptively without forcing a taxonomic identification.",
+    "Size": "Rutgers macroscopic measurement master: cap diameter 5.1 cm; stipe top diameter 1.9 cm, middle diameter 1.5 cm, base diameter 1.0 cm; stipe height was not stated and is not inferred. Confirmed microscopy dataset: n=43 fully legible spore measurements, range 2.28–5.22 µm, mean 3.91 µm, median 3.93 µm, sample SD 0.64 µm.",
+    "Spores": "Across the submitted AN2-F7 microscopy series, spores are abundant and repeatedly observed across multiple fields. They are rounded to broadly ellipsoid / subglobose, smooth-appearing, hyaline to weakly refractile in transmitted light, fairly uniform in overall form, and occur in loose clusters as well as dense local concentrations. No obvious coarse ornamentation is visible at this imaging level. Forty-three fully legible calibrated measurements form the validated quantitative dataset: range 2.28–5.22 µm, mean 3.91 µm, median 3.93 µm, sample SD 0.64 µm.",
+    "Microscopy record": "Eleven accession-linked AN2-F7 microscopy images are preserved (AN2-F7 SPM (1) through AN2-F7 SPM (11)). Three measured fields contribute the validated n=43 dataset: measured field 1 n=9, mean 3.82 µm; measured field 2 n=16, mean 3.96 µm; measured field 3 n=18, mean 3.92 µm. Combined statistics: n=43, range 2.28–5.22 µm, mean 3.91 µm, median 3.93 µm, sample SD 0.64 µm. The microscopy objective is recorded as successfully obtained.",
+    "Calibration / instrumentation": "Motic BA310 / Moticam 2300 imaging system; measurement calibration reviewed with Motic technical support prior to quantitative acquisition.",
+    "Spore print / preparation": "No separate AN2-F7 spore-print/preparation image is asserted in this completion step. The specimen-linked microscopy series is preserved independently; absence of a separate preparation photograph is not back-filled or inferred.",
+    "Macroscopic measurements": "Cap diameter 5.1 cm; stipe top 1.9 cm; stipe middle 1.5 cm; stipe base 1.0 cm. Stipe height not stated in the source measurement record.",
+    "Record type": "Curated full-data specimen record",
+    "Identification status": "Taxonomic identification unresolved in the atlas; observed macro- and micromorphology are preserved without forcing genus or species.",
+    "Assignment rule": "Explicit AN2-F7 accession filenames and existing accession-linked field/laboratory records only; no visual-similarity reassignment."
+  },
+  completeness: [
+    ["Photo provenance","Yes"],
+    ["Explicit specimen accession","Yes"],
+    ["Wild / field imagery","Yes — 2 views"],
+    ["Embedded/source imagery","Yes — 3 views"],
+    ["Microscopy imagery","Yes — 11 views"],
+    ["Measurements","Yes"],
+    ["Macroscopic measurement","Yes — cap 5.1 cm; stipe 1.9 / 1.5 / 1.0 cm; height not stated"],
+    ["Spore measurements","Yes"],
+    ["Spore measurement count","43 fully legible annotations"],
+    ["Spore measurement range","2.28–5.22 µm"],
+    ["Spore mean / median","3.91 / 3.93 µm"],
+    ["Spore sample SD","0.64 µm"],
+    ["Measured microscopy fields","3 — n=9 / 16 / 18"],
+    ["Calibration provenance","Yes — Motic BA310 / Moticam 2300; reviewed with Motic technical support"],
+    ["Spore objective obtained","Yes"],
+    ["Successful microscopic spore record","Yes"],
+    ["Morphology fields reviewed","Yes — microscopy; macro record retained without unsupported inference"],
+    ["Wild + laboratory pairing","Yes"],
+    ["Spore-print / preparation imagery","Not asserted — no separate AN2-F7 preparation image added in this step"],
     ["Identified","No — taxonomic identification unresolved"]
   ]
 };
