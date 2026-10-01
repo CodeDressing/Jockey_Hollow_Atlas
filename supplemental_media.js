@@ -171,3 +171,44 @@ window.SPECIMEN_ENRICHMENTS["AN2-F25"] = {
     ["Identified","No — taxonomic identification unresolved"]
   ]
 };
+
+
+window.SPECIMEN_ENRICHMENTS["AN2-F38"] = {
+  status: "AN2-F38 complete paired record — user-supplied Jockey Hollow field imagery, accession-linked laboratory specimen views, microscopy, and documented measurements integrated.",
+  sourceLine: "Rutgers/Jockey Hollow accession AN2-F38. The record now pairs two user-supplied in-situ field photographs with five post-collection specimen photographs from the same submitted AN2-F38 series, including multiple frames with a visible handwritten AN2 F38 accession label. Existing microscopy fields remain preserved. Microscopy includes annotated measured structures; these are retained as measured microscopic structures unless and until spore identity is independently confirmed.",
+  summary: {
+    "Growth / Description": "Small, solitary agaricoid basidiome arising from deciduous leaf litter and shallow woodland duff. Field views show a bright orange, centrally stipitate fruit body emerging singly from the litter layer. Post-collection views confirm a slender pale stipe, pale lamellae, a distinct annulus, and basal universal-veil tissue.",
+    "Size": "Macroscopic measurement master: cap diameter 2.9 cm; stipe top 0.1 cm, middle 0.1 cm, base 0.1 cm; stipe height 4.8 cm. Existing microscopy fields contain annotated measured microscopic structures; those values are preserved at image level and are not overinterpreted as confirmed spore dimensions.",
+    "Color": "Pileus vivid yellow-orange to orange, brighter centrally in some views and deeper orange toward the margin. Lamellae pale white to cream. Stipe white to ivory. Annulus and basal universal-veil tissue white to ivory.",
+    "Cap / Pileus": "Pileus small, smooth, convex to hemispherical, nearly circular in dorsal view, with an even margin. Surface appears glabrous and slightly lustrous in the supplied photographs.",
+    "Hymenophore": "Lamellate. Lamellae pale white to cream and appear free to narrowly separated from the stipe in the available views. Gill faces are thin, regular, and radially arranged.",
+    "Spores": "Microscopy imagery is present for AN2-F38 and includes several on-image measurements of minute microscopic structures. Because the current record does not independently establish that every measured structure is a spore, the atlas preserves them as measured microscopic structures and does not force a spore-size summary.",
+    "Stem / Stipe": "Stipe central, slender, cylindrical, pale white to ivory, proportionally long relative to pileus width, with a distinct superior annulus and a narrow profile through most of its length.",
+    "Veil": "A distinct partial-veil remnant is present as a small, delicate annulus on the upper stipe. The annulus is thin and membranous in the documented views.",
+    "Volva / Universal veil": "Basal white universal-veil tissue is visible in the full post-collection specimen view. The basal structure is lobed to sheathing rather than a broad sac, and is recorded conservatively as universal-veil tissue / volval remnant present.",
+    "Base / Substrate": "Observed terrestrially from deciduous leaf litter and woodland duff over soil. Field photographs document dry leaves, twigs, and forest-floor organic debris immediately surrounding the basidiome.",
+    "Context / Flesh": "Internal flesh was not sectioned in the supplied set. Visible exposed tissue is white to pale cream. Texture and staining response cannot be confirmed from photographs alone.",
+    "Bruising / Staining": "No reproducible bruising or staining reaction was intentionally documented in the current image set.",
+    "Odor": "Not recorded.",
+    "Taste": "Not tested / not recorded.",
+    "Chemical reactions": "Not performed or not recorded.",
+    "Microscopy record": "Six accession-linked AN2-F38 microscopy fields are preserved in the atlas. Several contain on-image measurements of minute structures, including one annotated 6.13 µm object. These observations remain source-faithful and are not relabeled as confirmed spores without additional evidence.",
+    "Spore print / preparation": "No dedicated spore-print or preparation photograph is currently documented for AN2-F38.",
+    "Record type": "Curated complete paired specimen record",
+    "Identification status": "Taxonomic identification unresolved in the atlas; morphology is documented without forcing a species-level identification.",
+    "Assignment rule": "Two field images were explicitly supplied by the user as AN2-F38 on 2026-10-01. Five post-collection images belong to the same submitted series; four visibly show the handwritten AN2 F38 accession label. No visual-similarity reassignment is used."
+  },
+  completeness: [
+    ["Photo provenance","Yes"],
+    ["Explicit specimen accession","Yes"],
+    ["Wild / field imagery","Yes"],
+    ["Embedded/source imagery","Yes"],
+    ["Spore-print / preparation imagery","No"],
+    ["Microscopy imagery","Yes"],
+    ["Measurements","Yes"],
+    ["Macroscopic measurement","Yes — cap 2.9 cm; stipe 0.1 / 0.1 / 0.1 cm; height 4.8 cm"],
+    ["Morphology fields reviewed","Yes"],
+    ["Wild + laboratory pairing","Yes"],
+    ["Identified","No — taxonomic identification unresolved"]
+  ]
+};
