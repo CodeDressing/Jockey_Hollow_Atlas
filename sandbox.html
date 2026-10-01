@@ -70,6 +70,32 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
 .knowledge-child strong{font-size:11px}.knowledge-child span{font-size:9px;color:var(--muted);text-transform:uppercase}
 .muted-mini{font-size:10px;color:var(--muted)}
 @media(max-width:900px){.nav-tools{grid-template-columns:1fr 1fr}.knowledge-panel{padding:10px}}
+
+.science-panel{margin-top:14px;border:1px solid var(--line);border-radius:10px;background:#0a1113;padding:12px}
+.science-panel h3{margin:0 0 8px;font-size:15px}
+.science-note{font-size:11px;line-height:1.45;color:#d6e4d9;border:1px solid #36523f;background:#0f1c14;border-radius:8px;padding:9px;margin-bottom:10px}
+.science-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.obs-field{display:grid;gap:4px}
+.obs-field.full{grid-column:1/-1}
+.obs-field span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.obs-field input,.obs-field select,.obs-field textarea{width:100%;background:#0d1518;color:var(--text);border:1px solid var(--line);border-radius:7px;padding:8px;font:inherit;font-size:11px}
+.obs-field textarea{min-height:58px;resize:vertical}
+.evidence-row{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:4px}
+.evidence-row input,.evidence-row select{font-size:10px;padding:6px}
+.science-actions{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}
+.science-actions button{border:1px solid var(--line);background:#11191c;color:var(--text);padding:8px 10px;border-radius:7px;cursor:pointer;font-size:10px}
+.candidate-card{border:1px solid var(--line);border-radius:9px;padding:9px;margin:7px 0;background:#0d1518}
+.candidate-head{display:flex;justify-content:space-between;gap:8px}
+.candidate-head strong{font-size:11px}.confidence{font-size:9px;text-transform:uppercase;letter-spacing:.08em}
+.confidence.high{color:#9fd0a7}.confidence.moderate{color:#e0c47c}.confidence.low{color:#d99b7a}.confidence.insufficient{color:#94a2a7}
+.char-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.char-chip{font-size:9px;border-radius:999px;padding:4px 7px;border:1px solid var(--line)}
+.char-chip.match{color:#a9d8b0;border-color:#47634e}.char-chip.conflict{color:#e6a18f;border-color:#6d493f}.char-chip.missing{color:#9aa8ac}
+.spore-table{width:100%;border-collapse:collapse;font-size:10px;margin-top:8px}
+.spore-table th,.spore-table td{border-bottom:1px solid var(--line);padding:5px;text-align:left}
+.spore-row input,.spore-row select{width:100%;background:#0d1518;color:var(--text);border:1px solid var(--line);border-radius:6px;padding:5px;font-size:10px}
+.spore-summary{font-size:10px;line-height:1.5;color:#c6d1d4;margin-top:8px}
+@media(max-width:900px){.science-grid{grid-template-columns:1fr}.obs-field.full{grid-column:auto}}
 </style>
 </head>
 <body>
@@ -138,6 +164,30 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
     <div id="anatomyList"></div>
     <h2>Next simulation layers</h2>
     <p class="copy">Parameterized character states now control pileus form, stipe form, hymenophore architecture, and veil/base structures where biologically appropriate. Non-agaric families use independent body-plan factories rather than inheriting an agaricoid template.</p>
+  
+    <div id="sciencePanel" class="science-panel">
+      <h3>Scientific Identification & Spore Lab</h3>
+      <div class="science-note"><strong>Scientific rule:</strong> Observation ≠ interpretation ≠ identification. This tool compares observed characters with generalized morphology profiles only. It never assigns a species and never writes to specimen records.</div>
+      <div id="observationForm" class="science-grid"></div>
+      <div class="science-actions">
+        <button id="compareCandidates" type="button">Compare morphology profiles</button>
+        <button id="clearObservation" type="button">Clear observation</button>
+      </div>
+      <div id="candidateResults"></div>
+      <h3 style="margin-top:16px">Spore Lab</h3>
+      <div class="science-note">Enter each measured spore separately. Keep failed and inconclusive attempts instead of deleting them. Provenance should identify the source image, slide, annotation, or measurement record.</div>
+      <div class="science-actions">
+        <button id="addSporeRow" type="button">Add spore measurement</button>
+        <button id="summarizeSpores" type="button">Calculate statistics</button>
+      </div>
+      <div style="overflow:auto">
+        <table class="spore-table">
+          <thead><tr><th>L µm</th><th>W µm</th><th>State</th><th>Provenance</th><th>Source</th><th>Notes</th><th></th></tr></thead>
+          <tbody id="sporeRows"></tbody>
+        </table>
+      </div>
+      <div id="sporeSummary" class="spore-summary">No measurements entered.</div>
+    </div>
   </aside>
 </main>
 <script type="importmap">
