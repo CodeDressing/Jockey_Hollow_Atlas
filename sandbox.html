@@ -153,6 +153,11 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
 .matrix-stage.fail{border-color:#6d493f}.matrix-stage.fail small{color:#e6a18f}
 .matrix-stage.pending{border-color:#4c5659}.matrix-stage em{font-style:normal;color:#d9c48b}
 @media(max-width:900px){.support-matrix-row{grid-template-columns:1fr}.matrix-stages{grid-template-columns:1fr 1fr 1fr}}
+
+.morphology-summary{margin:10px 0 12px;padding:10px 11px;border:1px solid #6f6545;border-radius:9px;background:#11170f}
+.morphology-summary .summary-kicker{font-size:9px;color:#9aa8ac;text-transform:uppercase;letter-spacing:.09em}
+.morphology-summary strong{display:block;margin-top:4px;font-size:12px;line-height:1.4;color:#f0dda9}
+.morphology-summary p{margin:4px 0 0;font-size:9px;line-height:1.35;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -212,6 +217,11 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
     <div id="stageControls" class="stage-grid"></div>
     <div id="stageCompare" class="stage-compare"></div>
     <h2>Morphology variants</h2>
+    <div class="morphology-summary">
+      <div class="summary-kicker">Current morphology</div>
+      <strong id="morphologySummary">Mature Agaricoid</strong>
+      <p id="morphologySummaryDetail">Updates live as morphology characters change.</p>
+    </div>
     <div id="variantControls" class="variant-panel"></div>
     <h2>Visualization modes</h2>
     <div class="mode-grid">
