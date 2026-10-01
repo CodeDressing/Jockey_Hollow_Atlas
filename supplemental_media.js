@@ -41,7 +41,11 @@ window.DRIVE_PHOTOS.push(
   {"folder":"AN2 wild additions","collection":"AN2","family":"AN","specimen":"AN2-F9","category":"Wild / field context","filename":"IMG_6001.jpg","caption":"AN2-F9 — wild collection context with accession label visible","id":"1cVPzzhOCDLwgBh_SzhLpb_V5worZpKeH","original":"https://drive.google.com/thumbnail?id=1cVPzzhOCDLwgBh_SzhLpb_V5worZpKeH&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1cVPzzhOCDLwgBh_SzhLpb_V5worZpKeH&sz=w1200","source_relpath":"AN2 wild additions/IMG_6001.jpg","drive_view":"https://drive.google.com/file/d/1cVPzzhOCDLwgBh_SzhLpb_V5worZpKeH/view"},
   {"folder":"AN2 wild additions","collection":"AN2","family":"AN","specimen":"AN2-F34","category":"Wild / field context","filename":"IMG_6152.jpg","caption":"AN2-F34 — Rutgers Jockey Hollow field-returned wild specimen, pore surface / hymenophore view","id":"13FQZ4rPGlZedyiQ88zYmm5xUcGgOvFEr","original":"https://drive.google.com/thumbnail?id=13FQZ4rPGlZedyiQ88zYmm5xUcGgOvFEr&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=13FQZ4rPGlZedyiQ88zYmm5xUcGgOvFEr&sz=w1200","source_relpath":"AN2 wild additions/IMG_6152.jpg","drive_view":"https://drive.google.com/file/d/13FQZ4rPGlZedyiQ88zYmm5xUcGgOvFEr/view"},
   {"folder":"AN2 wild additions","collection":"AN2","family":"AN","specimen":"AN2-F34","category":"Wild / field context","filename":"IMG_6153.jpg","caption":"AN2-F34 — Rutgers Jockey Hollow field-returned wild specimen, side profile with stipe and pore surface","id":"1V__CLZ2FVR_6oHJlQMa6VIRWU9c2NqTw","original":"https://drive.google.com/thumbnail?id=1V__CLZ2FVR_6oHJlQMa6VIRWU9c2NqTw&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1V__CLZ2FVR_6oHJlQMa6VIRWU9c2NqTw&sz=w1200","source_relpath":"AN2 wild additions/IMG_6153.jpg","drive_view":"https://drive.google.com/file/d/1V__CLZ2FVR_6oHJlQMa6VIRWU9c2NqTw/view"},
-  {"folder":"AN2 wild additions","collection":"AN2","family":"AN","specimen":"AN2-F34","category":"Wild / field context","filename":"IMG_6154.jpg","caption":"AN2-F34 — Rutgers Jockey Hollow field-returned wild specimen, cap surface view","id":"1O9DkJTauERBEgqwFN6SCulq-jpcuh8Fm","original":"https://drive.google.com/thumbnail?id=1O9DkJTauERBEgqwFN6SCulq-jpcuh8Fm&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1O9DkJTauERBEgqwFN6SCulq-jpcuh8Fm&sz=w1200","source_relpath":"AN2 wild additions/IMG_6154.jpg","drive_view":"https://drive.google.com/file/d/1O9DkJTauERBEgqwFN6SCulq-jpcuh8Fm/view"}
+  {"folder":"AN2 wild additions","collection":"AN2","family":"AN","specimen":"AN2-F34","category":"Wild / field context","filename":"IMG_6154.jpg","caption":"AN2-F34 — Rutgers Jockey Hollow field-returned wild specimen, cap surface view","id":"1O9DkJTauERBEgqwFN6SCulq-jpcuh8Fm","original":"https://drive.google.com/thumbnail?id=1O9DkJTauERBEgqwFN6SCulq-jpcuh8Fm&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1O9DkJTauERBEgqwFN6SCulq-jpcuh8Fm&sz=w1200","source_relpath":"AN2 wild additions/IMG_6154.jpg","drive_view":"https://drive.google.com/file/d/1O9DkJTauERBEgqwFN6SCulq-jpcuh8Fm/view"},
+  {"folder":"AN2 wild additions","collection":"AN2","family":"AN","specimen":"AN2-F25","category":"Wild / field context","filename":"IMG_6121.jpg","caption":"AN2-F25 — in-situ wild field view at Jockey Hollow, purple fruiting body with gills and stipe visible","id":"16beYprEoK2yN8boQNmG4hh7qWLIqsQXU","original":"https://drive.google.com/thumbnail?id=16beYprEoK2yN8boQNmG4hh7qWLIqsQXU&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=16beYprEoK2yN8boQNmG4hh7qWLIqsQXU&sz=w1200","source_relpath":"AN2 wild additions/IMG_6121.jpg","drive_view":"https://drive.google.com/file/d/16beYprEoK2yN8boQNmG4hh7qWLIqsQXU/view"},
+  {"folder":"AN2 wild additions","collection":"AN2","family":"AN","specimen":"AN2-F25","category":"Wild / field context","filename":"IMG_6123.jpg","caption":"AN2-F25 — in-situ wild field view at Jockey Hollow, alternate angle showing gills, stipe, and leaf-litter substrate","id":"1xDLMzJF-lLWamkGilypbADxbuZjTBW_u","original":"https://drive.google.com/thumbnail?id=1xDLMzJF-lLWamkGilypbADxbuZjTBW_u&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1xDLMzJF-lLWamkGilypbADxbuZjTBW_u&sz=w1200","source_relpath":"AN2 wild additions/IMG_6123.jpg","drive_view":"https://drive.google.com/file/d/1xDLMzJF-lLWamkGilypbADxbuZjTBW_u/view"},
+  {"folder":"AN2 wild additions","collection":"AN2","family":"AN","specimen":"AN2-F25","category":"Source macro / specimen","filename":"IMG_6124.jpg","caption":"AN2-F25 — collected specimen documentation with AN2 25 accession label visible","id":"11mv8Gd6WSYIq2xgPHiDd9_kzhitg64fc","original":"https://drive.google.com/thumbnail?id=11mv8Gd6WSYIq2xgPHiDd9_kzhitg64fc&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=11mv8Gd6WSYIq2xgPHiDd9_kzhitg64fc&sz=w1200","source_relpath":"AN2 wild additions/IMG_6124.jpg","drive_view":"https://drive.google.com/file/d/11mv8Gd6WSYIq2xgPHiDd9_kzhitg64fc/view"},
+  {"folder":"AN2 wild additions","collection":"AN2","family":"AN","specimen":"AN2-F25","category":"Source macro / specimen","filename":"IMG_6125.jpg","caption":"AN2-F25 — collected specimen macro view showing cap and stipe morphology","id":"1oUCN_wtWLri1Jah_hDgv-a4ZJOnM2j00","original":"https://drive.google.com/thumbnail?id=1oUCN_wtWLri1Jah_hDgv-a4ZJOnM2j00&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1oUCN_wtWLri1Jah_hDgv-a4ZJOnM2j00&sz=w1200","source_relpath":"AN2 wild additions/IMG_6125.jpg","drive_view":"https://drive.google.com/file/d/1oUCN_wtWLri1Jah_hDgv-a4ZJOnM2j00/view"}
 );
 
 window.SPECIMEN_ENRICHMENTS = window.SPECIMEN_ENRICHMENTS || {};
@@ -91,5 +95,29 @@ window.SPECIMEN_ENRICHMENTS["AN2-F34"] = {
     ["In-situ habitat photograph","No — not available"],
     ["Explicit specimen accession","Yes"],
     ["Photo provenance","Yes"]
+  ]
+};
+
+window.SPECIMEN_ENRICHMENTS["AN2-F25"] = {
+  status: "AN2-F25 curated full dataset — in-situ Jockey Hollow wild imagery, collected specimen macro views, spore-print preparation, and existing master-record data integrated.",
+  sourceLine: "Rutgers Jockey Hollow specimen AN2-F25. Wild provenance is supported by two in-situ field photographs showing the fruiting bodies in leaf litter and two post-collection specimen photographs, including one with the AN2 25 accession label visible. Existing AN2-F25 spore-print documentation remains attached to this record.",
+  summary: {
+    "Record type": "Curated AN2 full-data specimen record",
+    "Wild collection provenance": "Rutgers team collection from Jockey Hollow",
+    "In-situ field imagery": "2 photographs showing the specimen in leaf litter at the collection site",
+    "Collected specimen imagery": "2 photographs documenting cap, gills, stipe, and accession-labeled material",
+    "Accession verification": "AN2 25 visible on foil label in collected-specimen photograph",
+    "Macromorphology documented": "Purple to violet cap and stipe; gilled hymenophore; terrestrial leaf-litter context visible",
+    "Spore-print documentation": "Existing AN2-F25 preparation/spore-print imagery retained",
+    "Assignment rule": "Explicit accession label and user-provided Rutgers/Jockey Hollow specimen provenance; no visual-similarity reassignment"
+  },
+  completeness: [
+    ["Photo provenance","Yes"],
+    ["Explicit specimen accession","Yes"],
+    ["Wild / field imagery","Yes"],
+    ["In-situ habitat photograph","Yes"],
+    ["Embedded/source imagery","Yes"],
+    ["Spore-print imagery","Yes"],
+    ["Wild + laboratory pairing","Yes"]
   ]
 };
