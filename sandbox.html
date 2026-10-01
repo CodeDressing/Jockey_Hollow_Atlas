@@ -96,6 +96,14 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
 .spore-row input,.spore-row select{width:100%;background:#0d1518;color:var(--text);border:1px solid var(--line);border-radius:6px;padding:5px;font-size:10px}
 .spore-summary{font-size:10px;line-height:1.5;color:#c6d1d4;margin-top:8px}
 @media(max-width:900px){.science-grid{grid-template-columns:1fr}.obs-field.full{grid-column:auto}}
+
+.hover-probe{position:fixed;z-index:50;display:none;width:270px;pointer-events:none;border:1px solid #6f6545;border-radius:9px;background:rgba(7,13,15,.96);box-shadow:0 8px 30px rgba(0,0,0,.35);padding:9px 10px;color:var(--text);backdrop-filter:blur(5px)}
+.hover-probe.visible{display:block}
+.hover-probe .probe-kicker{font-size:9px;color:#d9c48b;letter-spacing:.09em;text-transform:uppercase}
+.hover-probe strong{display:block;font-size:12px;margin-top:2px}
+.hover-probe span{display:block;font-size:10px;color:#b6c3c7;margin-top:2px}
+.hover-probe code{display:block;font-size:9px;color:#819297;margin-top:5px;white-space:normal}
+@media(max-width:900px){.hover-probe{width:min(260px,calc(100vw - 20px))}}
 </style>
 </head>
 <body>
@@ -107,7 +115,7 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
   <section class="stage-wrap">
     <canvas id="stage" aria-label="Interactive 3D mushroom sandbox"></canvas>
     <div class="badge">MYCOSIM · OPTIONAL SIMULATION</div>
-    <div class="hint">Drag to rotate · wheel/pinch to zoom · right-drag to pan</div><div id="modelStatus" style="position:absolute;right:16px;bottom:16px;padding:7px 10px;border-radius:7px;background:rgba(4,8,9,.72);color:#9fd0a7;font-size:11px">3D engine loading…</div>
+    <div class="hint">Drag to rotate · wheel/pinch to zoom · right-drag to pan</div><div id="hoverProbe" class="hover-probe"><div class="probe-kicker">Cursor anatomy probe</div><strong id="hoverProbeTitle">Structure</strong><div id="hoverProbeMeta"></div></div><div id="modelStatus" style="position:absolute;right:16px;bottom:16px;padding:7px 10px;border-radius:7px;background:rgba(4,8,9,.72);color:#9fd0a7;font-size:11px">3D engine loading…</div>
   </section>
   <aside>
     <div class="kicker" id="profileName">GENERALIZED AGARICOID</div>
