@@ -660,6 +660,22 @@ export class MycoSimEngine{
 
   focus(id){return this.flyTo(id);}
 
+  flashStructure(id,duration=1200,{focus=true}={}){
+    const obj=this.objects.get(id);
+    if(!obj) return false;
+    if(this._teachingFlashTimer){
+      clearTimeout(this._teachingFlashTimer);
+      this._teachingFlashTimer=null;
+    }
+    this._applyHoverHighlight(obj);
+    if(focus) this.flyTo(id,480);
+    this._teachingFlashTimer=setTimeout(()=>{
+      this._clearHoverHighlight();
+      this._teachingFlashTimer=null;
+    },duration);
+    return true;
+  }
+
   _metaForObject(obj){
     let cur=obj;
     while(cur){
@@ -911,7 +927,7 @@ export class MycoSimEngine{
   }
 
   dispose(){
-    this.running=false; this.cleanupModel(); this.resizeObserver?.disconnect();
+    this.running=false; if(this._teachingFlashTimer)clearTimeout(this._teachingFlashTimer); this.cleanupModel(); this.resizeObserver?.disconnect();
     this.canvas.removeEventListener("pointermove",this._pointerMove); this.canvas.removeEventListener("pointerleave",this._pointerLeave); this.canvas.removeEventListener("click",this._pointerClick);
     this.controls.dispose(); this.renderer.dispose();
   }
