@@ -400,5 +400,8 @@ try{
   renderSporeRows();
 
   activateProfile(MORPHOLOGY_PROFILES[0].id);
+  if(new URLSearchParams(location.search).get("qa")==="1"&&qaRun){
+    setTimeout(()=>qaRun.click(),250);
+  }
   window.addEventListener("pagehide",()=>engine.dispose(),{once:true});
 }catch(err){console.error(err);showError(err);}
