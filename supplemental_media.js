@@ -38,7 +38,10 @@ window.DRIVE_PHOTOS.push(
   {"folder":"AN2 wild additions","collection":"AN2","family":"AN","specimen":"AN2-F9","category":"Source macro / specimen","filename":"IMG_6008.jpg","caption":"AN2-F9 — macro view of tooth-like hymenophore, alternate focus","id":"1uWkv5EN-rOdIoVqYxxKGr22VFRN4fFee","original":"https://drive.google.com/thumbnail?id=1uWkv5EN-rOdIoVqYxxKGr22VFRN4fFee&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1uWkv5EN-rOdIoVqYxxKGr22VFRN4fFee&sz=w1200","source_relpath":"AN2 wild additions/IMG_6008.jpg","drive_view":"https://drive.google.com/file/d/1uWkv5EN-rOdIoVqYxxKGr22VFRN4fFee/view"},
   {"folder":"AN2 wild additions","collection":"AN2","family":"AN","specimen":"AN2-F9","category":"Source macro / specimen","filename":"IMG_6009.jpg","caption":"AN2-F9 — collected specimen overview on foil with accession label","id":"1W3QtN-7f-yQvfRx2WEsEE9THAa0O6XT_","original":"https://drive.google.com/thumbnail?id=1W3QtN-7f-yQvfRx2WEsEE9THAa0O6XT_&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1W3QtN-7f-yQvfRx2WEsEE9THAa0O6XT_&sz=w1200","source_relpath":"AN2 wild additions/IMG_6009.jpg","drive_view":"https://drive.google.com/file/d/1W3QtN-7f-yQvfRx2WEsEE9THAa0O6XT_/view"},
   {"folder":"AN2 wild additions","collection":"AN2","family":"AN","specimen":"AN2-F9","category":"Wild / field context","filename":"IMG_6003.jpg","caption":"AN2-F9 — fruiting bodies at tree base / woody substrate","id":"1pqPNPPkCoEbRAEa2YY8EL5WysmIh6Trw","original":"https://drive.google.com/thumbnail?id=1pqPNPPkCoEbRAEa2YY8EL5WysmIh6Trw&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1pqPNPPkCoEbRAEa2YY8EL5WysmIh6Trw&sz=w1200","source_relpath":"AN2 wild additions/IMG_6003.jpg","drive_view":"https://drive.google.com/file/d/1pqPNPPkCoEbRAEa2YY8EL5WysmIh6Trw/view"},
-  {"folder":"AN2 wild additions","collection":"AN2","family":"AN","specimen":"AN2-F9","category":"Wild / field context","filename":"IMG_6001.jpg","caption":"AN2-F9 — wild collection context with accession label visible","id":"1cVPzzhOCDLwgBh_SzhLpb_V5worZpKeH","original":"https://drive.google.com/thumbnail?id=1cVPzzhOCDLwgBh_SzhLpb_V5worZpKeH&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1cVPzzhOCDLwgBh_SzhLpb_V5worZpKeH&sz=w1200","source_relpath":"AN2 wild additions/IMG_6001.jpg","drive_view":"https://drive.google.com/file/d/1cVPzzhOCDLwgBh_SzhLpb_V5worZpKeH/view"}
+  {"folder":"AN2 wild additions","collection":"AN2","family":"AN","specimen":"AN2-F9","category":"Wild / field context","filename":"IMG_6001.jpg","caption":"AN2-F9 — wild collection context with accession label visible","id":"1cVPzzhOCDLwgBh_SzhLpb_V5worZpKeH","original":"https://drive.google.com/thumbnail?id=1cVPzzhOCDLwgBh_SzhLpb_V5worZpKeH&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1cVPzzhOCDLwgBh_SzhLpb_V5worZpKeH&sz=w1200","source_relpath":"AN2 wild additions/IMG_6001.jpg","drive_view":"https://drive.google.com/file/d/1cVPzzhOCDLwgBh_SzhLpb_V5worZpKeH/view"},
+  {"folder":"AN2 wild additions","collection":"AN2","family":"AN","specimen":"AN2-F34","category":"Wild / field context","filename":"IMG_6152.jpg","caption":"AN2-F34 — Rutgers Jockey Hollow field-returned wild specimen, pore surface / hymenophore view","id":"13FQZ4rPGlZedyiQ88zYmm5xUcGgOvFEr","original":"https://drive.google.com/thumbnail?id=13FQZ4rPGlZedyiQ88zYmm5xUcGgOvFEr&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=13FQZ4rPGlZedyiQ88zYmm5xUcGgOvFEr&sz=w1200","source_relpath":"AN2 wild additions/IMG_6152.jpg","drive_view":"https://drive.google.com/file/d/13FQZ4rPGlZedyiQ88zYmm5xUcGgOvFEr/view"},
+  {"folder":"AN2 wild additions","collection":"AN2","family":"AN","specimen":"AN2-F34","category":"Wild / field context","filename":"IMG_6153.jpg","caption":"AN2-F34 — Rutgers Jockey Hollow field-returned wild specimen, side profile with stipe and pore surface","id":"1V__CLZ2FVR_6oHJlQMa6VIRWU9c2NqTw","original":"https://drive.google.com/thumbnail?id=1V__CLZ2FVR_6oHJlQMa6VIRWU9c2NqTw&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1V__CLZ2FVR_6oHJlQMa6VIRWU9c2NqTw&sz=w1200","source_relpath":"AN2 wild additions/IMG_6153.jpg","drive_view":"https://drive.google.com/file/d/1V__CLZ2FVR_6oHJlQMa6VIRWU9c2NqTw/view"},
+  {"folder":"AN2 wild additions","collection":"AN2","family":"AN","specimen":"AN2-F34","category":"Wild / field context","filename":"IMG_6154.jpg","caption":"AN2-F34 — Rutgers Jockey Hollow field-returned wild specimen, cap surface view","id":"1O9DkJTauERBEgqwFN6SCulq-jpcuh8Fm","original":"https://drive.google.com/thumbnail?id=1O9DkJTauERBEgqwFN6SCulq-jpcuh8Fm&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1O9DkJTauERBEgqwFN6SCulq-jpcuh8Fm&sz=w1200","source_relpath":"AN2 wild additions/IMG_6154.jpg","drive_view":"https://drive.google.com/file/d/1O9DkJTauERBEgqwFN6SCulq-jpcuh8Fm/view"}
 );
 
 window.SPECIMEN_ENRICHMENTS = window.SPECIMEN_ENRICHMENTS || {};
@@ -69,5 +72,24 @@ window.SPECIMEN_ENRICHMENTS["AN2-F9"] = {
     ["Microscopy imagery","Yes"],
     ["Wild + laboratory pairing","Yes"],
     ["Master field dossier present","Yes"]
+  ]
+};
+
+window.SPECIMEN_ENRICHMENTS["AN2-F34"] = {
+  status: "AN2-F34 curated full dataset — Rutgers Jockey Hollow wild collection, field-returned specimen documentation, laboratory preparation, and other master-record data retained.",
+  sourceLine: "Rutgers team wild collection from Jockey Hollow. These photographs document the specimen after field return rather than in situ at the collection point. The visible foil accession label reads AN2 F34. The absence of an in-situ habitat photograph is recorded explicitly and does not erase the verified wild-collection provenance.",
+  summary: {
+    "Wild collection provenance": "Rutgers team collection from Jockey Hollow",
+    "Wild-image type": "Field-returned wild specimen documentation; not an in-situ ground photograph",
+    "Accession verification": "AN2 F34 visible on foil label in the photographs",
+    "Field-returned image set": "3 photographs: pore surface, side profile/stipe, and cap surface",
+    "Documentation principle": "Wild collection retained as valid specimen evidence while explicitly distinguishing field-returned documentation from in-situ habitat imagery."
+  },
+  completeness: [
+    ["Wild / field imagery","Yes"],
+    ["Field-returned wild specimen documentation","Yes"],
+    ["In-situ habitat photograph","No — not available"],
+    ["Explicit specimen accession","Yes"],
+    ["Photo provenance","Yes"]
   ]
 };
