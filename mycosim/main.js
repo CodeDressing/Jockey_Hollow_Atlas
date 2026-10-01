@@ -1,5 +1,5 @@
 import {MORPHOLOGY_PROFILES,PROFILE_BY_ID} from "./profiles.js";
-import {MORPHOLOGY_VARIANTS,variantLabel} from "./variants.js";
+import {MORPHOLOGY_VARIANTS,variantLabel,variantTeaching} from "./variants.js";
 import {KNOWLEDGE_OBJECTS,getKnowledge,getPathFor,childKnowledge} from "./knowledge.js";
 import {MycoSimEngine} from "./engine.js";
 import {OBSERVATION_FIELDS,emptyObservationRecord,compareObservedToCandidates,fieldLabel} from "./identification.js";
@@ -98,6 +98,32 @@ function updateVisibleState(engine){
 
 function renderAnatomy(profile){
   anatomyList.innerHTML=(profile.anatomy||[]).map(a=>`<button class="structure anatomy-row" data-anatomy="${a.id}"><strong>${a.label}</strong><span>${a.description}</span><code>${a.id}</code></button>`).join("");
+}
+
+function renderVariantTeaching(group,value,engine){
+  const card=$("#variantTeachingCard");
+  const title=$("#variantTeachingTitle");
+  const body=$("#variantTeachingBody");
+  const detail=$("#variantTeachingDetail");
+  if(!card||!title||!body||!detail)return;
+
+  const teaching=variantTeaching(group,value);
+  if(!teaching){
+    card.hidden=true;
+    return;
+  }
+
+  title.textContent=variantLabel(group,value);
+  body.textContent=teaching.short;
+  detail.textContent=teaching.detail;
+  card.hidden=false;
+
+  const anatomyId=teaching.anatomyId;
+  const k=getKnowledge(knowledgeForAnatomy(anatomyId));
+  if(k){
+    renderKnowledge(knowledgeForAnatomy(anatomyId),engine,{moveCamera:false});
+  }
+  engine.flashStructure(anatomyId,1350,{focus:true});
 }
 
 function renderVariantControls(profile,engine){
@@ -389,6 +415,7 @@ try{
     engine.setVariant(group,value);
     info.textContent=`${MORPHOLOGY_VARIANTS[group].label}: ${variantLabel(group,value)}`;
     renderVariantControls(currentProfile,engine);
+    renderVariantTeaching(group,value,engine);
     renderAnatomy(currentProfile);
     renderKnowledge("basidiome",engine,{moveCamera:false});
     updateVisibleState(engine);
