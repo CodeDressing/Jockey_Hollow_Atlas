@@ -46,3 +46,14 @@
 .fullset-btn:hover,.fullset-btn.active{background:#1b2428;border-color:#46555c}
 .fullset-btn span{min-width:0}.fullset-btn strong,.fullset-btn small{display:block}.fullset-btn small{color:var(--muted);font-size:10px;margin-top:2px}.fullset-btn b{font-size:9px;letter-spacing:.09em;color:var(--good)}
 .fullset-badge{display:inline-block;margin-left:8px;padding:3px 6px;border:1px solid #486050;border-radius:999px;color:var(--good);font-size:9px;letter-spacing:.08em;vertical-align:middle}
+
+/* In-site 3D fungal sandbox entry */
+.sandbox-link{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:10px 0 12px;padding:10px 11px;border:1px solid #6b5a2f;border-radius:9px;background:linear-gradient(180deg,#1a1910,#121714);color:var(--text);text-decoration:none}
+.sandbox-link strong{font-size:12px;letter-spacing:.02em}
+.sandbox-link span{font-size:10px;color:#d9c48b;text-transform:uppercase;letter-spacing:.07em}
+.sandbox-link:hover{border-color:#9a8246;background:#1d1e15}
+.mobile-sandbox{display:none}
+@media(max-width:900px){
+  .mobile-sandbox{display:flex;margin:10px 0 8px}
+  .topbar>.mobile-sandbox{width:100%}
+}
