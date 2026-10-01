@@ -6,6 +6,7 @@ import {OBSERVATION_FIELDS,emptyObservationRecord,compareObservedToCandidates,fi
 import {newSporeMeasurement,summarizeSpores,formatStat} from "./sporelab.js";
 import {developmentalStageOptions} from "./development.js";
 import {runMycoSimRegression,formatRegressionSummary} from "./regression.js";
+import {emptyQaMatrix,matrixFromRegression} from "./support_matrix.js";
 
 const $=s=>document.querySelector(s);
 const canvas=$("#stage"), status=$("#modelStatus"), info=$("#structureInfo"), stats=$("#engineStats");
@@ -123,6 +124,19 @@ function humanizeOption(v){
   return String(v||"").replaceAll("_"," ").replace(/\b\w/g,m=>m.toUpperCase());
 }
 
+function renderSupportMatrix(matrix){
+  const host=$("#supportMatrix");
+  if(!host)return;
+  const stageOrder=["young","mature","old"];
+  const badge=(stage)=>{
+    const cls=stage.qaStatus==="pass"?"pass":stage.qaStatus==="fail"?"fail":"pending";
+    const text=stage.qaStatus==="pass"?"PASS":stage.qaStatus==="fail"?"FAIL":"NOT RUN";
+    const canonical=stage.role==="canonical_reference"?' <em>canonical</em>':"";
+    return `<span class="matrix-stage ${cls}"><strong>${stage.stageId}</strong><small>${text}${canonical}</small></span>`;
+  };
+  host.innerHTML=`<div class="support-matrix-grid">${matrix.map(row=>`<div class="support-matrix-row"><div class="matrix-family"><strong>${row.family}</strong><span>${row.profileId}</span></div><div class="matrix-stages">${stageOrder.map(id=>badge(row.stages[id])).join("")}</div></div>`).join("")}</div>`;
+}
+
 function renderRegressionReport(report){
   if(!qaStatus||!qaResults)return;
   qaStatus.textContent=formatRegressionSummary(report);
@@ -136,6 +150,7 @@ function renderRegressionReport(report){
     ];
     return `<tr class="${r.pass?"pass":"fail"}"><td>${r.family}</td><td>${r.stageId}</td><td>${checks.map(([k,v])=>`<span class="qa-chip ${v?"pass":"fail"}">${k} ${v?"✓":"✕"}</span>`).join("")}</td><td>${r.fps||"—"}</td><td>${r.objects}</td><td>${r.drawCalls}</td></tr>`;
   }).join("");
+  renderSupportMatrix(matrixFromRegression(report));
   qaResults.innerHTML=`
     <div class="qa-summary-grid">
       <div><strong>${report.passedCombinations}/${report.totalCombinations}</strong><span>combinations passed</span></div>
@@ -399,6 +414,7 @@ try{
   sporeMeasurements.push(newSporeMeasurement());
   renderSporeRows();
 
+  renderSupportMatrix(emptyQaMatrix());
   activateProfile(MORPHOLOGY_PROFILES[0].id);
   if(new URLSearchParams(location.search).get("qa")==="1"&&qaRun){
     setTimeout(()=>qaRun.click(),250);
