@@ -2,6 +2,7 @@ import * as THREE from "three";
 import {OrbitControls} from "three/addons/controls/OrbitControls.js";
 import {PROFILE_BY_ID} from "./profiles.js";
 import {DEFAULT_VARIANTS,validateVariantSelection} from "./variants.js";
+import {DEFAULT_DEVELOPMENTAL_STAGE,composeMorphologyState} from "./development.js";
 
 const mat=(color,roughness=.85)=>new THREE.MeshStandardMaterial({color,roughness,metalness:0});
 const MATERIALS={
@@ -25,7 +26,7 @@ export class MycoSimEngine{
     this.controls=new OrbitControls(this.camera,this.canvas);
     this.controls.enableDamping=true; this.controls.minDistance=3; this.controls.maxDistance=14;
     this.root=new THREE.Group(); this.scene.add(this.root);
-    this.objects=new Map(); this.pickables=[]; this.hidden=new Set(); this.isolated=null; this.mode="macro"; this.variants={...DEFAULT_VARIANTS};
+    this.objects=new Map(); this.pickables=[]; this.hidden=new Set(); this.isolated=null; this.mode="macro"; this.variants={...DEFAULT_VARIANTS}; this.developmentalStageId=DEFAULT_DEVELOPMENTAL_STAGE; this.morphologyState=null;
     this.raycaster=new THREE.Raycaster(); this.pointer=new THREE.Vector2();
     this.lastHover=null; this.hoveredObject=null; this.hoveredMaterials=[]; this.frames=0; this.fpsStart=performance.now(); this.fly=null; this.exploded=false; this.sectioned=false; this.originalTransforms=new Map();
     this._setupScene(); this._bind(); this.resize();
@@ -95,6 +96,7 @@ export class MycoSimEngine{
     const p=PROFILE_BY_ID[id]; if(!p) throw new Error("Unknown morphology profile: "+id);
     this.onStatus?.("Loading "+p.label+"…");
     this.cleanupModel();
+    this.morphologyState=composeMorphologyState(id,{stageId:this.developmentalStageId,variants:this.variants});
     const fn=this["build_"+p.factory];
     if(typeof fn!=="function") throw new Error("Missing model factory: "+p.factory);
     fn.call(this);
@@ -103,7 +105,7 @@ export class MycoSimEngine{
     this.setSection(false);
     this.applyMode();
     this.frameModel({animate:false});
-    this.onStatus?.("3D engine online · "+p.label);
+    this.onStatus?.("3D engine online · "+p.label+" · "+this.morphologyState.stage.label);
     return p;
   }
 
@@ -142,6 +144,30 @@ export class MycoSimEngine{
   }
 
   getVariantState(){return {...this.variants};}
+
+  setDevelopmentalStage(stageId){
+    if(!this.currentProfile) {
+      this.developmentalStageId=stageId;
+      return;
+    }
+    const next=composeMorphologyState(this.currentProfile.id,{stageId,variants:this.variants});
+    this.developmentalStageId=stageId;
+    this.morphologyState=next;
+    this.loadProfile(this.currentProfile.id);
+  }
+
+  getDevelopmentalStage(){
+    return this.morphologyState?.stage||null;
+  }
+
+  getMorphologyState(){
+    return this.morphologyState;
+  }
+
+  stageParam(name,fallback=1){
+    const v=this.morphologyState?.stage?.parameters?.[name];
+    return Number.isFinite(v)?v:fallback;
+  }
 
   _applyVisibility(){
     for(const [id,o] of this.objects){
