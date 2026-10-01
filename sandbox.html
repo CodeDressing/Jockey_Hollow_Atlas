@@ -104,6 +104,17 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
 .hover-probe span{display:block;font-size:10px;color:#b6c3c7;margin-top:2px}
 .hover-probe code{display:block;font-size:9px;color:#819297;margin-top:5px;white-space:normal}
 @media(max-width:900px){.hover-probe{width:min(260px,calc(100vw - 20px))}}
+
+.stage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stage-pick{border:1px solid var(--line);background:#0d1518;color:var(--text);padding:9px;border-radius:8px;text-align:left;cursor:pointer}
+.stage-pick.active{border-color:#8c7440;background:#1e1b12;color:#f4dfa9}
+.stage-pick strong{display:block;font-size:11px}.stage-pick span{display:block;font-size:9px;color:var(--muted);margin-top:3px;line-height:1.3}
+.stage-compare{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+.stage-compare-card{border:1px solid var(--line);border-radius:8px;padding:8px;background:#0b1315}
+.stage-compare-card.active{border-color:#806f42}
+.stage-compare-card .stage-badge{font-size:9px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em}
+.stage-compare-card strong{display:block;font-size:10px;margin-top:3px}.stage-compare-card span{display:block;font-size:9px;color:var(--muted);margin-top:2px}
+@media(max-width:900px){.stage-grid,.stage-compare{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -159,6 +170,9 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
       <div class="relation-wrap"><h4>Structure relationships</h4><div id="eduRelations"></div></div>
       <div class="child-wrap"><h4>Travel deeper</h4><div id="eduChildren"></div></div>
     </div>
+    <h2>Developmental stage</h2>
+    <div id="stageControls" class="stage-grid"></div>
+    <div id="stageCompare" class="stage-compare"></div>
     <h2>Morphology variants</h2>
     <div id="variantControls" class="variant-panel"></div>
     <h2>Visualization modes</h2>
