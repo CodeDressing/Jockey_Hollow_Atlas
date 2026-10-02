@@ -29,6 +29,29 @@ export function morphologyIdentity(profileId,variants={}){
   return Object.freeze({key,seed:hashIdentityString(key),profileId,phenotype});
 }
 
+const lerp=(a,b,t)=>a+(b-a)*t;
+
+export function interpolateDevelopmentalParameters(profileId,maturityIndex){
+  const stages=getDevelopmentalStages(profileId);
+  if(!stages) throw new Error("No developmental-stage library for profile: "+profileId);
+  const ordered=DEVELOPMENTAL_STAGE_ORDER.map(id=>stages[id]);
+  const m=Math.max(ordered[0].maturity_index,Math.min(ordered[ordered.length-1].maturity_index,Number(maturityIndex)));
+  let a=ordered[0],b=ordered[1];
+  if(m>ordered[1].maturity_index){a=ordered[1];b=ordered[2];}
+  const span=Math.max(.0001,b.maturity_index-a.maturity_index);
+  const t=Math.max(0,Math.min(1,(m-a.maturity_index)/span));
+  const keys=new Set([...Object.keys(a.parameters||{}),...Object.keys(b.parameters||{})]);
+  const parameters={};
+  for(const key of keys){
+    const av=a.parameters?.[key],bv=b.parameters?.[key];
+    parameters[key]=(Number.isFinite(av)&&Number.isFinite(bv))?lerp(av,bv,t):(t<.5?av:bv);
+  }
+  return Object.freeze({
+    profileId,maturityIndex:m,fromStage:a.id,toStage:b.id,t,
+    parameters:Object.freeze(parameters)
+  });
+}
+
 export function resolveDevelopmentalStage(profileId,stageId=DEFAULT_DEVELOPMENTAL_STAGE){
   const profile=PROFILE_BY_ID[profileId];
   if(!profile) throw new Error("Unknown morphology profile: "+profileId);
@@ -59,6 +82,7 @@ export function composeMorphologyState(profileId,{
 }={}){
   const stage=resolveDevelopmentalStage(profileId,stageId);
   const identity=morphologyIdentity(profileId,variants);
+  const trajectory=interpolateDevelopmentalParameters(profileId,stage.maturityIndex);
   return Object.freeze({
     profileId,
     identity,
@@ -79,7 +103,8 @@ export function composeMorphologyState(profileId,{
       identityKey:identity.key,
       identitySeed:identity.seed,
       phenotype:identity.phenotype||null,
-      parameters:stage.parameters
+      parameters:stage.parameters,
+      trajectory
     })
   });
 }
