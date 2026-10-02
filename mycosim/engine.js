@@ -1214,7 +1214,7 @@ export class MycoSimEngine{
       const geo=new THREE.ShapeGeometry(shape,4);
       const g=new THREE.Mesh(geo,secondaryMat.clone());
       const mid=(start+end)/2;
-      g.position.set(stipeX+Math.cos(a)*mid,pileusY-.15-(type==="decurrent"?.06:0),Math.sin(a)*mid);
+      g.position.set(stipeX+Math.cos(a)*mid,pileusY-.15-((type==="decurrent")?.06:(type==="subdecurrent"?.03:0)),Math.sin(a)*mid);
       g.rotation.y=-a;
       g.userData={...group.userData,knowledgeId:"lamella",hoverLabel:"Lamellula / short gill",structureType:"lamellula"};
       group.add(g);this.pickables.push(g);
@@ -1280,9 +1280,11 @@ export class MycoSimEngine{
       h.position.y=pileusY-.24;return;
     }
 
-    const innerMap={free_gills:.43,adnexed:.30,adnate:.17,sinuate:.24,decurrent:.08};
+    const innerMap={free_gills:.43,seceding:.38,adnexed:.30,sinuate:.24,emarginate:.25,adnate:.17,subdecurrent:.11,decurrent:.08};
     const inner=innerMap[type]??.17,outer=1.30;
-    const group=new THREE.Group();group.userData={id:"hymenophore",label:"Lamellae / gills",category:"fertile",selectable:true};
+    const attachmentLabels={free_gills:"Free gills",seceding:"Seceding gills",adnexed:"Adnexed gills",adnate:"Adnate gills",sinuate:"Sinuate gills",emarginate:"Emarginate gills",subdecurrent:"Subdecurrent gills",decurrent:"Decurrent gills"};
+    const attachmentKnowledge={free_gills:"free_gills",seceding:"seceding",adnexed:"adnexed",adnate:"adnate",sinuate:"sinuate",emarginate:"emarginate",subdecurrent:"subdecurrent",decurrent:"decurrent"};
+    const group=new THREE.Group();group.userData={id:"hymenophore",label:attachmentLabels[type]||"Lamellae / gills",category:"fertile",selectable:true,knowledgeId:attachmentKnowledge[type]||"gill_attachment",attachmentType:type};
     const total=64;
     for(let i=0;i<total;i++){
       const a=i/total*Math.PI*2;
@@ -1300,11 +1302,14 @@ export class MycoSimEngine{
       const geo=new THREE.ShapeGeometry(shape,5);
       const g=new THREE.Mesh(geo,MATERIALS.gill.clone());
       const mid=(start+end)/2;
-      g.position.set(stipeX+Math.cos(a)*mid,pileusY-.16-(type==="decurrent"?.08:0),Math.sin(a)*mid);
+      g.position.set(stipeX+Math.cos(a)*mid,pileusY-.16-((type==="decurrent")?.10:(type==="subdecurrent"?.045:0)),Math.sin(a)*mid);
       g.rotation.y=-a;
-      if(type==="sinuate")g.rotation.z=.06*Math.sin(a*2);
-      if(type==="decurrent"&&!short){g.rotation.z=.10;}
-      g.userData={...group.userData,knowledgeId:"lamella",hoverLabel:"Lamella / gill",structureType:"lamella"};
+      if(type==="sinuate")g.rotation.z=.055*Math.sin(a*2);
+      if(type==="emarginate")g.rotation.z=.085*Math.sin(a*2);
+      if(type==="subdecurrent"&&!short){g.rotation.z=.055;}
+      if(type==="decurrent"&&!short){g.rotation.z=.115;}
+      if(type==="seceding"&&!short){g.rotation.z=-.018;}
+      g.userData={...group.userData,knowledgeId:attachmentKnowledge[type]||"lamella",hoverLabel:attachmentLabels[type]||"Lamella / gill",structureType:"lamella"};
       group.add(g);this.pickables.push(g);
     }
     this._addGillSecondaryDetail(group,type,pileusY,stipeX,inner,outer);
