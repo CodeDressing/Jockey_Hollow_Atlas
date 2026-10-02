@@ -1095,6 +1095,11 @@ export class MycoSimEngine{
       developmentalIdentity:this.morphologyState?.developmental?.identityKey||null,
       gasteroidSubtype:this.currentProfile?.id==="puffball"?(this.variants.puff_subtype||"true_puffball"):null,
       gasteroidSubtypeDefinition:this.currentProfile?.id==="puffball"?puffballSubtype(this.variants.puff_subtype||"true_puffball"):null,
+      gasteroidArchitecture:this.currentProfile?.id==="puffball"?{
+        earthstarRays:this.objects.get("earthstar_rays")?.children?.length||0,
+        stalkVisible:!!this.objects.get("gasteroid_stalk")?.visible,
+        sterileBaseVisible:!!this.objects.get("sterile_base")?.visible
+      }:null,
       developmentalParameters:this.currentProfile?.id==="puffball"?this.morphologyState?.stage?.parameters||null:null,
       fps:this.lastFps,
       frameIntersects:!box.isEmpty()&&frustum.intersectsBox(box),
@@ -1996,6 +2001,10 @@ export class MycoSimEngine{
     const irregularityScale=surface==="glabrous"?(stageId==="young"?.008:stageId==="mature"?.012:.018):(stageId==="young"?.032:stageId==="mature"?.022:.014);
 
     const innerMat=(stageId==="young"?PUFF_PBR.youngPeridium:PUFF_PBR.wornExoperidium).clone();
+    if(subtypeId==="earthball_type")innerMat.color.setHex(stageId==="young"?0xa9835b:0x6f543a);
+    else if(subtypeId==="giant_puffball_type")innerMat.color.setHex(stageId==="young"?0xe0d9bd:0xb9aa87);
+    else if(subtypeId==="earthstar_type")innerMat.color.setHex(stageId==="young"?0xb8a47f:0x8b7559);
+    else if(subtypeId==="stalked_puffball_type")innerMat.color.setHex(stageId==="young"?0xc6b48e:0x9a8465);
     const surfaceBump={glabrous:.010,granular:.034,verrucose:.030,echinate:.022,furfuraceous:.027}[surface]??.018;
     innerMat.bumpScale=stageId==="old"?surfaceBump*.55:stageId==="mature"?surfaceBump*.78:surfaceBump;
     const bodyRadius=subtypeId==="giant_puffball_type"?1.34:subtypeId==="earthball_type"?1.18:subtypeId==="earthstar_type"?.88:subtypeId==="stalked_puffball_type"?.72:1.15;
@@ -2040,6 +2049,12 @@ export class MycoSimEngine{
       (stageId==="young"?PUFF_PBR.immatureGleba:stageId==="mature"?PUFF_PBR.maturingGleba:PUFF_PBR.matureGleba).clone()
     ),"gleba","Gleba","internal");
     gleba.position.y=bodyY;
+    if(gleba.material?.color){
+      if(subtypeId==="earthball_type")gleba.material.color.setHex(stageId==="young"?0xe7dfc8:stageId==="mature"?0x6a5a3d:0x34291f);
+      else if(subtypeId==="giant_puffball_type")gleba.material.color.setHex(stageId==="young"?0xf2edde:stageId==="mature"?0xb1a475:0x68583d);
+      else if(subtypeId==="earthstar_type")gleba.material.color.setHex(stageId==="young"?0xe8e1cb:stageId==="mature"?0x887555:0x4c3c2d);
+      else if(subtypeId==="stalked_puffball_type")gleba.material.color.setHex(stageId==="young"?0xe9e2cf:stageId==="mature"?0x8b7756:0x49392b);
+    }
 
     const subglebaFactor=subtypeArch.subglebaFactor??.7;
     const neckHeight=.75*subglebaFactor;
