@@ -5,6 +5,7 @@ import {MycoSimEngine} from "./engine.js";
 import {OBSERVATION_FIELDS,emptyObservationRecord,compareObservedToCandidates,fieldLabel} from "./identification.js";
 import {newSporeMeasurement,summarizeSpores,formatStat} from "./sporelab.js";
 import {developmentalStageOptions} from "./development.js";
+import {referenceSheet,VALIDATION_SOURCES} from "./validation_protocol.js";
 import {runMycoSimRegression,formatRegressionSummary} from "./regression.js";
 import {emptyQaMatrix,matrixFromRegression} from "./support_matrix.js";
 
@@ -141,7 +142,15 @@ function updateMorphologySummary(engine){
       `discoloration ${Math.round((p.discoloration??0)*100)}%`,
       `spore depletion ${Math.round((p.spore_depletion??0)*100)}%`
     ];
-    detail.textContent="Developmental continuity · "+continuity.join(" · ");
+    const sheet=referenceSheet(state.puff_subtype||"true_puffball",engine.getDevelopmentalStage()?.id||"mature");
+    const sourceNames=(sheet?.authoritativeEvidence||[]).map(id=>VALIDATION_SOURCES[id]?.authority||id);
+    detail.textContent="Developmental continuity · "+continuity.join(" · ")
+      +(sheet?"\nReference target: "+sheet.morphologyTarget
+        +"\nGeneralized: "+sheet.generalized.join("; ")
+        +"\nVaries by taxon: "+sheet.variesByTaxon.join("; ")
+        +"\nDeliberately excluded: "+sheet.deliberatelyExcluded.slice(-3).join("; ")
+        +"\nEvidence: "+[...new Set(sourceNames)].join(" + ")
+        +"\nImagery: "+sheet.imageryEvidence:"");
     return;
   }
 
