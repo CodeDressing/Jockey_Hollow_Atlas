@@ -120,7 +120,15 @@ export class MycoSimEngine{
     this.applyArchitectureDevelopmentalGeometry(id);
     this.currentProfile=p;
     this.mode="macro";
-    this.setSection(false);
+    if(id==="puffball"){
+      const sectionMode=this.variants.section_view||"external";
+      if(sectionMode==="half_section") this.setSection(true,"x");
+      else if(sectionMode==="longitudinal") this.setSection(true,"z");
+      else this.setSection(false);
+      if(sectionMode==="hover_anatomy") this.mode="internal";
+    }else{
+      this.setSection(false);
+    }
     this.applyMode();
     this.frameModel({animate:false});
     this.onStatus?.("3D engine online · "+p.label+" · "+this.morphologyState.stage.label);
@@ -423,28 +431,88 @@ export class MycoSimEngine{
     if(profileId==="puffball"){
       const taut=p.peridium_tautness??1;
       const glebaMaturity=p.gleba_maturity??0;
-      const poreOpen=p.apical_pore_opening??0;
+      const stagePore=p.apical_pore_opening??0;
       const collapse=p.collapse??0;
       const release=p.spore_release??0;
-      setScale("peridium",1-collapse*.20,taut*(1-collapse*.18),1-collapse*.20);
-      setScale("gleba",.78+glebaMaturity*.22,.82+glebaMaturity*.18,.78+glebaMaturity*.22);
-      setScale("sterile_base",1-collapse*.08,1-collapse*.20,1-collapse*.08);
+      const retention=p.ornament_retention??1;
+      const shape=this.variants.puff_shape||"globose";
+      const base=this.variants.puff_base||"short";
+      const peridial=this.variants.peridial_condition||"intact";
+      const ostiole=this.variants.ostiole_state||"absent";
+      const glebaState=this.variants.gleba_state||"immature";
+
+      const shapeScale={
+        globose:[1,1,1],
+        subglobose:[1.06,.91,1.00],
+        pyriform:[1.00,1.14,.98],
+        turbiniform:[1.08,1.03,1.02],
+        irregular:[1.10,.84,.93]
+      }[shape]||[1,1,1];
+
+      setScale("peridium",shapeScale[0]*(1-collapse*.20),shapeScale[1]*taut*(1-collapse*.18),shapeScale[2]*(1-collapse*.20));
+      setScale("endoperidium",shapeScale[0]*(1-collapse*.18),shapeScale[1]*taut*(1-collapse*.16),shapeScale[2]*(1-collapse*.18));
+      setScale("gleba",shapeScale[0]*(.78+glebaMaturity*.22),shapeScale[1]*(.82+glebaMaturity*.18),shapeScale[2]*(.78+glebaMaturity*.22));
+
+      const baseScale={none:[.08,.08,.08],short:[1,.65,1],distinct:[1.08,1.18,1.08],rooting:[.72,1.55,.72]}[base]||[1,.65,1];
+      setScale("sterile_base",baseScale[0]*(1-collapse*.08),baseScale[1]*(1-collapse*.20),baseScale[2]*(1-collapse*.08));
+      const baseObj=this.objects.get("sterile_base");
+      if(baseObj)baseObj.visible=base!=="none";
+
+      const ostioleMap={absent:0,developing:.34,open:.82,ragged:1.18};
+      const poreOpen=Math.max(stagePore,ostioleMap[ostiole]??0);
       const pore=this.objects.get("apical_pore");
       if(pore){
         const ps=Math.max(.03,poreOpen);
         pore.scale.set(ps,ps,ps);
         pore.visible=poreOpen>.04;
+        if(ostiole==="ragged")pore.scale.z*=.72;
       }
+
+      const glebaColors={
+        immature:0xf0ead8,
+        maturing:0xa79a66,
+        mature:0x756143,
+        old:0x403428
+      };
       const gleba=this.objects.get("gleba");
       if(gleba?.material?.color){
-        const young=new THREE.Color(0xb9aa87);
-        const mature=new THREE.Color(0x7a684f);
-        const old=new THREE.Color(0x4b3f31);
-        const c=young.clone().lerp(mature,Math.min(1,glebaMaturity)).lerp(old,Math.max(0,glebaMaturity-.65)/.35);
-        gleba.material.color.copy(c);
-        gleba.material.opacity=Math.max(.34,.58-release*.18);
+        gleba.material.color.setHex(glebaColors[glebaState]??0xf0ead8);
+        gleba.material.opacity=Math.max(.38,.68-release*.20);
       }
-      weather("peridium",(1-taut)*.45+collapse*.25);
+
+      const ornament=this.objects.get("exoperidium");
+      if(ornament){
+        ornament.children.forEach((o,i)=>{
+          const ageKeep=Math.max(.08,retention);
+          o.visible=((i*37)%100)/100<ageKeep;
+          if(sid==="old"){
+            o.scale.multiplyScalar(.72);
+            o.rotation.z+=((i%7)-3)*.025;
+          }else if(sid==="mature"){
+            o.scale.multiplyScalar(.88);
+          }
+        });
+      }
+
+      const wall=this.objects.get("peridium");
+      if(wall){
+        if(peridial==="cracking") wall.rotation.z+=.012;
+        if(peridial==="areal_splitting"){wall.scale.x*=.99;wall.scale.z*=1.01;}
+        if(peridial==="flaking") weather("peridium",.28);
+        if(peridial==="collapsed"){
+          wall.scale.y*=.66;
+          wall.rotation.z+=.07;
+          setScale("gleba",1,.72,1);
+        }
+      }
+      const cracks=this.objects.get("peridial_marks");
+      if(cracks){
+        cracks.visible=peridial!=="intact";
+        const severity={intact:0,cracking:.45,areal_splitting:.70,flaking:.82,collapsed:1}[peridial]??0;
+        cracks.children.forEach((c,i)=>c.visible=((i*29)%100)/100<severity);
+      }
+
+      weather("peridium",(1-taut)*.45+collapse*.25+(peridial==="flaking"?.18:0));
     }
 
     if(profileId==="cup"){
@@ -607,9 +675,10 @@ export class MycoSimEngine{
     this._applyVisibility();
   }
 
-  setSection(enabled=true){
+  setSection(enabled=true,axis="x"){
     this.sectioned=!!enabled;
-    const plane=new THREE.Plane(new THREE.Vector3(1,0,0),0);
+    const normal=axis==="z"?new THREE.Vector3(0,0,1):axis==="y"?new THREE.Vector3(0,1,0):new THREE.Vector3(1,0,0);
+    const plane=new THREE.Plane(normal,0);
     for(const o of this.objects.values()){
       o.traverse?.(n=>{
         if(!n.material)return;
@@ -1449,10 +1518,78 @@ export class MycoSimEngine{
   }
 
   build_puffball(){
-    const per=this.register(new THREE.Mesh(new THREE.SphereGeometry(1.15,44,28),MATERIALS.puff.clone()),"peridium","Peridium","macro");per.scale.y=.95;per.position.y=1.05;
-    const gleba=this.register(new THREE.Mesh(new THREE.SphereGeometry(.82,32,20),new THREE.MeshStandardMaterial({color:0x635442,roughness:1,transparent:true,opacity:.5})),"gleba","Gleba","internal");gleba.position.y=1.05;
-    const neck=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.42,.58,.75,30),MATERIALS.puff.clone()),"sterile_base","Sterile base","macro");neck.position.y=-.05;
-    const pore=this.register(new THREE.Mesh(new THREE.TorusGeometry(.11,.035,10,28),MATERIALS.wood.clone()),"apical_pore","Apical pore","macro");pore.rotation.x=Math.PI/2;pore.position.y=2.12;
+    const realism=this.variants.texture_realism||"atlas";
+    const surface=this.variants.puff_surface||"echinate";
+    const detail={simplified:32,atlas:56,high:92}[realism]||56;
+    const bodyY=1.05;
+
+    const innerMat=MATERIALS.puff.clone();
+    innerMat.color.setHex(0xbda982);
+    const per=this.register(new THREE.Mesh(new THREE.SphereGeometry(1.15,56,36),innerMat),"peridium","Peridium","macro");
+    per.scale.y=.95;per.position.y=bodyY;
+
+    const endoMat=MATERIALS.flesh.clone();
+    endoMat.color.setHex(0xc9b88e);
+    endoMat.transparent=true;endoMat.opacity=.46;
+    const endo=this.register(new THREE.Mesh(new THREE.SphereGeometry(1.08,48,30),endoMat),"endoperidium","Endoperidium","internal","peridium");
+    endo.scale.y=.95;endo.position.y=bodyY;
+
+    const gleba=this.register(new THREE.Mesh(
+      new THREE.SphereGeometry(.86,42,28),
+      new THREE.MeshStandardMaterial({color:0xf0ead8,roughness:1,transparent:true,opacity:.66})
+    ),"gleba","Gleba","internal");
+    gleba.position.y=bodyY;
+
+    const neck=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.42,.58,.75,34),MATERIALS.puff.clone()),"sterile_base","Sterile base / subgleba","macro");
+    neck.position.y=-.05;
+
+    const pore=this.register(new THREE.Mesh(new THREE.TorusGeometry(.11,.035,10,32),MATERIALS.wood.clone()),"apical_pore","Ostiole / apical pore","macro","peridium");
+    pore.rotation.x=Math.PI/2;pore.position.y=2.12;
+
+    const exo=new THREE.Group();
+    exo.userData={id:"exoperidium",label:"Exoperidium / surface ornamentation",category:"macro",selectable:true,knowledgeId:surface==="echinate"?"echinate":surface==="verrucose"?"verrucose":surface==="furfuraceous"?"furfuraceous":surface==="glabrous"?"glabrous":"exoperidium"};
+    const ornamentMat=MATERIALS.puff.clone();
+    ornamentMat.color.setHex(0xd3c39c);
+
+    if(surface!=="glabrous"){
+      for(let i=0;i<detail;i++){
+        const y=1-(i/(detail-1))*2;
+        const radius=Math.sqrt(Math.max(0,1-y*y));
+        const phi=i*2.399963229728653;
+        const nx=Math.cos(phi)*radius, ny=y, nz=Math.sin(phi)*radius;
+        const px=nx*1.16, py=bodyY+ny*1.10, pz=nz*1.16;
+        let geo;
+        if(surface==="echinate"){
+          const len=realism==="high"?.22:realism==="atlas"?.18:.13;
+          geo=new THREE.ConeGeometry(.045,len,7);
+        }else if(surface==="verrucose"){
+          geo=new THREE.SphereGeometry(realism==="high"?.075:.065,10,7);
+        }else if(surface==="granular"){
+          geo=new THREE.SphereGeometry(realism==="high"?.035:.03,7,5);
+        }else{
+          geo=new THREE.TetrahedronGeometry(realism==="high"?.055:.045,0);
+        }
+        const o=new THREE.Mesh(geo,ornamentMat.clone());
+        o.position.set(px,py,pz);
+        o.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),new THREE.Vector3(nx,ny,nz).normalize());
+        o.userData=exo.userData;
+        exo.add(o);this.pickables.push(o);
+      }
+    }
+    this.root.add(exo);this.objects.set("exoperidium",exo);
+
+    const marks=new THREE.Group();
+    marks.userData={id:"peridial_marks",label:"Peridial cracks / abrasion",category:"macro",selectable:true,knowledgeId:"peridium"};
+    const markMat=new THREE.MeshStandardMaterial({color:0x685641,roughness:1});
+    for(let i=0;i<18;i++){
+      const a=i/18*Math.PI*2;
+      const ring=new THREE.Mesh(new THREE.TorusGeometry(.20+.03*(i%4),.009,5,18,Math.PI*.58),markMat.clone());
+      ring.position.set(Math.cos(a)*.72,bodyY+.10+((i%5)-2)*.25,Math.sin(a)*.72);
+      ring.rotation.set(Math.PI/2,(i%4)*.42,a);
+      ring.visible=false;ring.userData=marks.userData;
+      marks.add(ring);this.pickables.push(ring);
+    }
+    this.root.add(marks);this.objects.set("peridial_marks",marks);
   }
 
   build_cup(){
