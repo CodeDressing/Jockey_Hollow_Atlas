@@ -745,6 +745,13 @@ export class MycoSimEngine{
       const stagePore=p.apical_pore_opening??0;
       const collapse=p.collapse??0;
       const release=p.spore_release??0;
+      const peridialThickness=p.peridial_thickness??p.wall_thickness??1;
+      const exoperidialRetention=p.exoperidial_retention??p.ornament_retention??1;
+      const ostioleFormation=p.ostiole_formation??stagePore;
+      const waterLoss=p.water_loss??0;
+      const wallRupture=p.wall_rupture??p.rupture_extent??0;
+      const discoloration=p.discoloration??0;
+      const sporeDepletion=p.spore_depletion??release;
       const retention=p.ornament_retention??1;
       const shape=this.variants.puff_shape||"globose";
       const base=this.variants.puff_base||"short";
@@ -765,8 +772,9 @@ export class MycoSimEngine{
         irregular:[1.10,.84,.93]
       }[shape]||[1,1,1];
 
-      setScale("peridium",shapeScale[0]*(1-collapse*.20),shapeScale[1]*taut*(1-collapse*.18),shapeScale[2]*(1-collapse*.20));
-      setScale("endoperidium",shapeScale[0]*(1-collapse*.18),shapeScale[1]*taut*(1-collapse*.16),shapeScale[2]*(1-collapse*.18));
+      const wallRadial=THREE.MathUtils.lerp(.96,1.01,peridialThickness);
+      setScale("peridium",shapeScale[0]*wallRadial*(1-collapse*.20),shapeScale[1]*taut*(1-collapse*.18),shapeScale[2]*wallRadial*(1-collapse*.20));
+      setScale("endoperidium",shapeScale[0]*(.97+peridialThickness*.03)*(1-collapse*.18),shapeScale[1]*taut*(1-collapse*.16),shapeScale[2]*(.97+peridialThickness*.03)*(1-collapse*.18));
       setScale("gleba",shapeScale[0]*(.78+glebaMaturity*.22),shapeScale[1]*(.82+glebaMaturity*.18),shapeScale[2]*(.78+glebaMaturity*.22));
 
       const baseScale={none:[.08,.08,.08],short:[1,.65,1],distinct:[1.08,1.18,1.08],rooting:[.72,1.55,.72]}[base]||[1,.65,1];
@@ -775,7 +783,7 @@ export class MycoSimEngine{
       if(baseObj)baseObj.visible=base!=="none";
 
       const ostioleMap={absent:0,developing:.34,open:.82,ragged:1.18};
-      const poreOpen=Math.max(stagePore,ostioleMap[ostiole]??0);
+      const poreOpen=Math.max(stagePore*ostioleFormation,ostioleMap[ostiole]??0);
       const pore=this.objects.get("apical_pore");
       if(pore){
         const ps=Math.max(.03,poreOpen);
@@ -790,7 +798,7 @@ export class MycoSimEngine{
         mature:0x756143,
         old:0x403428
       };
-      const ageTint=sid==="young"?0:sid==="mature"?.12:.28;
+      const ageTint=THREE.MathUtils.clamp(discoloration*.55+waterLoss*.18,0,.68);
       const peridiumObj=this.objects.get("peridium");
       if(peridiumObj?.material?.color){
         const c=new THREE.Color(0xcbbd99).lerp(new THREE.Color(0x79624a),ageTint);
@@ -799,15 +807,15 @@ export class MycoSimEngine{
       const gleba=this.objects.get("gleba");
       if(gleba?.material?.color){
         gleba.material.color.setHex(glebaColors[glebaState]??0xf0ead8);
-        gleba.material.opacity=Math.max(.38,.68-release*.20);
+        gleba.material.opacity=Math.max(.28,.72-waterLoss*.18-sporeDepletion*.26);
       }
       const sporeMass=this.objects.get("spore_mass");
       if(sporeMass){
         const matureEnough=glebaState==="mature"||glebaState==="old";
         sporeMass.visible=matureEnough;
-        sporeMass.scale.setScalar(glebaState==="old"?.92:.78);
+        sporeMass.scale.setScalar(Math.max(.38,(glebaState==="old"?.92:.78)*(1-sporeDepletion*.42)));
         if(sporeMass.material){
-          sporeMass.material.opacity=glebaState==="old"?.58:.40;
+          sporeMass.material.opacity=Math.max(.18,(glebaState==="old"?.58:.40)*(1-sporeDepletion*.48));
           sporeMass.material.color.setHex(glebaState==="old"?0x3e3025:0x625037);
         }
       }
@@ -830,7 +838,7 @@ export class MycoSimEngine{
       if(wornExo){
         wornExo.visible=integratedAbrasion.severity>.08;
         wornExo.children.forEach((patch,i)=>{
-          const threshold=integratedAbrasion.severity;
+          const threshold=THREE.MathUtils.clamp(integratedAbrasion.severity+(1-exoperidialRetention)*.35,0,1);
           patch.visible=((i*31)%100)/100<threshold;
           if(patch.material){
             patch.material.opacity=.42+threshold*.45;
@@ -843,9 +851,16 @@ export class MycoSimEngine{
       const collapseScale={none:1,slight:.94,moderate:.82,severe:.66,weathered:.72}[collapseState]??1;
       const collapseTilt={none:0,slight:.018,moderate:.045,severe:.075,weathered:.095}[collapseState]??0;
       if(layeredShell){
-        layeredShell.scale.y*=collapseScale;
-        layeredShell.rotation.z+=collapseTilt;
-        if(collapseState==="weathered")layeredShell.rotation.x-=.035;
+        layeredShell.scale.set(shapeScale[0]*(1-collapse*.10),shapeScale[1]*collapseScale,shapeScale[2]*(1-collapse*.10));
+        layeredShell.rotation.z+=collapseTilt*(.45+wallRupture*.75);
+        if(collapseState==="weathered")layeredShell.rotation.x-=.035+waterLoss*.025;
+        layeredShell.traverse?.(node=>{
+          if(!node.material)return;
+          const mats=Array.isArray(node.material)?node.material:[node.material];
+          for(const mat of mats){
+            if("roughness" in mat)mat.roughness=Math.min(1,(mat.roughness??.9)+waterLoss*.06);
+          }
+        });
       }
       if(ruptureMarginObj){
         ruptureMarginObj.scale.y*=collapseScale;
@@ -876,12 +891,15 @@ export class MycoSimEngine{
 
       const ornament=this.objects.get("exoperidium");
       if(ornament){
-        ornament.visible=true;
+        ornament.visible=exoperidialRetention>.015 || surfaceState==="glabrous";
+        ornament.scale.setScalar(.94+.06*exoperidialRetention);
         ornament.userData.integratedAbrasion={
           severity:integratedAbrasion.severity,
           peridialCondition:peridial,
           stage:sid,
-          surface:surfaceState
+          surface:surfaceState,
+          peridialThickness,exoperidialRetention,ostioleFormation,glebaMaturity,
+          waterLoss,collapse,wallRupture,discoloration,sporeDepletion
         };
         ornament.traverse?.(node=>{
           if(!node.material)return;
@@ -1042,6 +1060,8 @@ export class MycoSimEngine{
       startupTargetMs:3000,
       startupMaximumMs:5000,
       puffOrnament:this.objects.get("exoperidium")?.userData?.ornamentStats||null,
+      developmentalIdentity:this.morphologyState?.developmental?.identityKey||null,
+      developmentalParameters:this.currentProfile?.id==="puffball"?this.morphologyState?.stage?.parameters||null:null,
       fps:this.lastFps,
       frameIntersects:!box.isEmpty()&&frustum.intersectsBox(box),
       boxEmpty:box.isEmpty()
@@ -2119,10 +2139,11 @@ export class MycoSimEngine{
     const retention=(profile.retention[stageId]??1)*abrasion.retentionMultiplier;
     const scaleByAge=(profile.scale[stageId]??1)*(1-abrasion.severity*.16);
     const target=Math.max(0,Math.round(requested*retention));
+    const identitySeed=this.morphologyState?.developmental?.identitySeed||137;
     const {
       points:ornamentPoints,clusterWeights:ornamentClusterWeights,bareWeights:ornamentBareWeights,
       rng:ornamentRng,diagnostics:ornamentSampling
-    }=sampledPuffSurface(target,137+requested+(stageId==="young"?11:stageId==="mature"?29:47),{
+    }=sampledPuffSurface(target,identitySeed+requested,{
       cluster:profile.cluster,barePatch:profile.barePatch,
       clusterCount:surface==="echinate"?4:surface==="verrucose"?4:surface==="granular"?3:surface==="furfuraceous"?5:2,
       bareCount:surface==="echinate"?3:surface==="verrucose"?2:surface==="granular"?2:surface==="furfuraceous"?4:1
@@ -2168,7 +2189,7 @@ export class MycoSimEngine{
 
     if(surface==="echinate"&&target){
       const brokenFraction=profile.broken?.[stageId]??0;
-      const breakRng=seededRng(911+requested+(stageId==="young"?3:stageId==="mature"?17:31));
+      const breakRng=seededRng(identitySeed+911);
       const brokenMask=ornamentPoints.map((n,i)=>{
         const bare=ornamentBareWeights[i]||0;
         const clusterWeight=ornamentClusterWeights[i]||0;
