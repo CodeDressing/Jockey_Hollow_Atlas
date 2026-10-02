@@ -6,9 +6,9 @@ const A=(id,label,category,description,parentId=null)=>({
 
 export const MORPHOLOGY_PROFILES = [
   {
-    id:"agaricoid",label:"Agaricoid",group:"gilled",factory:"agaricoid",version:"2.0.0",
-    description:"Parameterized cap, hymenophore, stipe and veil body plan.",
-    variantGroups:["pileus","stipe","hymenophore","veil"],developmentalStages:["young","mature","old"],
+    id:"agaricoid",label:"Agaricoid",group:"gilled",factory:"agaricoid",version:"3.0.0",
+    description:"Organic cap-and-stipe teaching model with independent pileus profile, disc, margin, stipe taper, hymenophore and veil morphology.",
+    variantGroups:["agaric_pileus_profile","agaric_pileus_center","agaric_margin","agaric_stipe_taper","hymenophore","veil","texture_realism"],developmentalStages:["young","mature","old"],
     anatomy:[
       A("pileus","Pileus / cap","macro","Upper fruiting-body structure."),
       A("pileus_context","Pileus context","internal","Fleshy tissue beneath the pileipellis.","pileus"),
