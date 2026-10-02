@@ -249,3 +249,31 @@ export function validateVisualCharacterRationales(){
 }
 
 export const VISUAL_CHARACTER_AUDIT=validateVisualCharacterRationales();
+
+
+export function finalScientificAudit(){
+  const failures=[],warnings=[];
+  for(const sheet of Object.values(GASTEROID_REFERENCE_SHEETS)){
+    if(!sheet.authoritativeEvidence.length)failures.push(sheet.id+" has no authoritative evidence.");
+    if(!sheet.imageryEvidence)failures.push(sheet.id+" has no imagery evidence statement.");
+    if(sheet.imageryEvidence.startsWith("No matching"))warnings.push(sheet.id+" lacks a matched verified imagery reference.");
+    for(const sourceId of sheet.authoritativeEvidence){
+      const src=VALIDATION_SOURCES[sourceId];
+      if(!src)failures.push(sheet.id+" references missing source "+sourceId);
+      else if(!src.evidenceType)failures.push(sourceId+" lacks evidence type.");
+    }
+    if(!sheet.deliberatelyExcluded.length)failures.push(sheet.id+" has no explicit exclusions.");
+    if(!sheet.generalized.length)failures.push(sheet.id+" has no generalized-character declaration.");
+    if(!sheet.variesByTaxon.length)failures.push(sheet.id+" has no taxon-variation declaration.");
+  }
+  return Object.freeze({
+    pass:failures.length===0,
+    failures:Object.freeze(failures),
+    warnings:Object.freeze(warnings),
+    stateCount:Object.keys(GASTEROID_REFERENCE_SHEETS).length,
+    sourceCount:Object.keys(VALIDATION_SOURCES).length,
+    principle:"No rendered character is admissible without an explicit morphological rationale."
+  });
+}
+
+export const FINAL_SCIENTIFIC_AUDIT=finalScientificAudit();
