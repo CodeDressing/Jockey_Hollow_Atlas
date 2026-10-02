@@ -8,7 +8,7 @@ export const MORPHOLOGY_PROFILES = [
   {
     id:"agaricoid",label:"Agaricoid",group:"gilled",factory:"agaricoid",version:"4.0.0",
     description:"Organic cap-and-stipe teaching model with independent pileus, stipe, gill spacing, attachment, lamellulae and gill-edge morphology.",
-    variantGroups:["agaric_pileus_profile","agaric_pileus_center","agaric_margin","agaric_stipe_taper","agaric_gill_spacing","agaric_gill_thickness","agaric_gill_depth","agaric_lamellulae","agaric_gill_edge","hymenophore","veil","texture_realism"],developmentalStages:["young","mature","old"],
+    variantGroups:["agaric_pileus_profile","agaric_pileus_center","agaric_margin","agaric_stipe_taper","agaric_gill_attachment","agaric_gill_spacing","agaric_gill_thickness","agaric_gill_depth","agaric_lamellulae","agaric_gill_edge","veil","texture_realism"],developmentalStages:["young","mature","old"],
     anatomy:[
       A("pileus","Pileus / cap","macro","Upper fruiting-body structure."),
       A("pileus_context","Pileus context","internal","Fleshy tissue beneath the pileipellis.","pileus"),
