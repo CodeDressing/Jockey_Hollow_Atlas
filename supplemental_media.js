@@ -116,6 +116,17 @@ window.DRIVE_PHOTOS.push(
   {"folder":"AN2-F36","collection":"AN2","family":"AN","specimen":"AN2-F36","category":"Wild / field context","filename":"AN2-F36 field (6).jpg","caption":"AN2-F36 — accession-labeled field handling view showing gills, stipe, basal tissue, and AN2-F36 label","id":"1BpV40uZfTh-2pqPUuZRDhNcOMqIJxUW4","original":"https://drive.google.com/thumbnail?id=1BpV40uZfTh-2pqPUuZRDhNcOMqIJxUW4&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1BpV40uZfTh-2pqPUuZRDhNcOMqIJxUW4&sz=w1200","source_relpath":"AN2-F36/AN2-F36 field (6).jpg","drive_view":"https://drive.google.com/file/d/1BpV40uZfTh-2pqPUuZRDhNcOMqIJxUW4/view"}
 );
 
+window.DRIVE_PHOTOS = window.DRIVE_PHOTOS || [];
+window.DRIVE_PHOTOS.push(
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F32","category":"Microscopy","filename":"AN3-F32 SPM (1).png","caption":"AN2-F32 — confirmed spore microscopy, calibrated measurement field 1; source filename carries AN3-F32 label","id":"17b0HlxBC8-NBoqP-LNgitkdpVyzjVIRw","original":"https://drive.google.com/thumbnail?id=17b0HlxBC8-NBoqP-LNgitkdpVyzjVIRw&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=17b0HlxBC8-NBoqP-LNgitkdpVyzjVIRw&sz=w1200","source_relpath":"AN2 lab additions/AN3-F32 SPM (1).png","drive_view":"https://drive.google.com/file/d/17b0HlxBC8-NBoqP-LNgitkdpVyzjVIRw/view","assignment_basis":"user explicitly confirmed these source files belong to AN2-F32; source filenames retain AN3-F32 text and that discrepancy is preserved"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F32","category":"Microscopy","filename":"AN3-F32 SPM (2).png","caption":"AN2-F32 — confirmed spore microscopy, calibrated measurement field 2; source filename carries AN3-F32 label","id":"1nA6tBcdkaoi3s2reOlgJ7P-YEc-Y8hgZ","original":"https://drive.google.com/thumbnail?id=1nA6tBcdkaoi3s2reOlgJ7P-YEc-Y8hgZ&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1nA6tBcdkaoi3s2reOlgJ7P-YEc-Y8hgZ&sz=w1200","source_relpath":"AN2 lab additions/AN3-F32 SPM (2).png","drive_view":"https://drive.google.com/file/d/1nA6tBcdkaoi3s2reOlgJ7P-YEc-Y8hgZ/view","assignment_basis":"user explicitly confirmed these source files belong to AN2-F32; source filenames retain AN3-F32 text and that discrepancy is preserved"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F32","category":"Microscopy","filename":"AN3-F32 SPM (3).png","caption":"AN2-F32 — confirmed spore microscopy, calibrated measurement field 3; source filename carries AN3-F32 label","id":"1FMpZPQmY23gWs4gFsUwHb5DFA2jAxfoO","original":"https://drive.google.com/thumbnail?id=1FMpZPQmY23gWs4gFsUwHb5DFA2jAxfoO&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1FMpZPQmY23gWs4gFsUwHb5DFA2jAxfoO&sz=w1200","source_relpath":"AN2 lab additions/AN3-F32 SPM (3).png","drive_view":"https://drive.google.com/file/d/1FMpZPQmY23gWs4gFsUwHb5DFA2jAxfoO/view","assignment_basis":"user explicitly confirmed these source files belong to AN2-F32; source filenames retain AN3-F32 text and that discrepancy is preserved"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F32","category":"Microscopy","filename":"AN3-F32 SPM (4).png","caption":"AN2-F32 — confirmed spore microscopy, morphology field 4; source filename carries AN3-F32 label","id":"1vOS_1QfkJGZMrzF-59WPzWN-cBC4HKaZ","original":"https://drive.google.com/thumbnail?id=1vOS_1QfkJGZMrzF-59WPzWN-cBC4HKaZ&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1vOS_1QfkJGZMrzF-59WPzWN-cBC4HKaZ&sz=w1200","source_relpath":"AN2 lab additions/AN3-F32 SPM (4).png","drive_view":"https://drive.google.com/file/d/1vOS_1QfkJGZMrzF-59WPzWN-cBC4HKaZ/view","assignment_basis":"user explicitly confirmed these source files belong to AN2-F32; source filenames retain AN3-F32 text and that discrepancy is preserved"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F32","category":"Microscopy","filename":"AN3-F32 SPM (5).png","caption":"AN2-F32 — confirmed spore microscopy, calibrated measurement field 5; source filename carries AN3-F32 label","id":"1OcoKYnNQUgHHgyfaqrk3wz_Ca-HgHFkw","original":"https://drive.google.com/thumbnail?id=1OcoKYnNQUgHHgyfaqrk3wz_Ca-HgHFkw&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1OcoKYnNQUgHHgyfaqrk3wz_Ca-HgHFkw&sz=w1200","source_relpath":"AN2 lab additions/AN3-F32 SPM (5).png","drive_view":"https://drive.google.com/file/d/1OcoKYnNQUgHHgyfaqrk3wz_Ca-HgHFkw/view","assignment_basis":"user explicitly confirmed these source files belong to AN2-F32; source filenames retain AN3-F32 text and that discrepancy is preserved"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F32","category":"Microscopy","filename":"AN3-F32 SPM (6).png","caption":"AN2-F32 — confirmed spore microscopy, broad morphology field 6; source filename carries AN3-F32 label","id":"1itx4jtKuUbLC_3qe90qFUBmolLDik40X","original":"https://drive.google.com/thumbnail?id=1itx4jtKuUbLC_3qe90qFUBmolLDik40X&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1itx4jtKuUbLC_3qe90qFUBmolLDik40X&sz=w1200","source_relpath":"AN2 lab additions/AN3-F32 SPM (6).png","drive_view":"https://drive.google.com/file/d/1itx4jtKuUbLC_3qe90qFUBmolLDik40X/view","assignment_basis":"user explicitly confirmed these source files belong to AN2-F32; source filenames retain AN3-F32 text and that discrepancy is preserved"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F32","category":"Microscopy","filename":"AN3-F32 SPM (7).png","caption":"AN2-F32 — confirmed spore microscopy, broad morphology field 7; source filename carries AN3-F32 label","id":"1_lzUqPDJoZe46qL-bY5f1xBcIq7IlA1P","original":"https://drive.google.com/thumbnail?id=1_lzUqPDJoZe46qL-bY5f1xBcIq7IlA1P&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1_lzUqPDJoZe46qL-bY5f1xBcIq7IlA1P&sz=w1200","source_relpath":"AN2 lab additions/AN3-F32 SPM (7).png","drive_view":"https://drive.google.com/file/d/1_lzUqPDJoZe46qL-bY5f1xBcIq7IlA1P/view","assignment_basis":"user explicitly confirmed these source files belong to AN2-F32; source filenames retain AN3-F32 text and that discrepancy is preserved"}
+);
+
 window.SPECIMEN_ENRICHMENTS = window.SPECIMEN_ENRICHMENTS || {};
 window.SPECIMEN_ENRICHMENTS["AN2-F9"] = {
   status: "AN2-F9 complete dataset — Jockey Hollow wild context, field specimen morphology, laboratory preparation, microscopy, and measured spore imagery integrated.",
@@ -462,6 +473,37 @@ window.SPECIMEN_ENRICHMENTS["AN2-F36"] = {
     ["Calibration provenance","Yes — Motic BA310 / Moticam 2300"],
     ["Future reacquisition possible","Yes"],
     ["Field + laboratory pairing","Yes"],
+    ["Identified","No — taxonomic identification unresolved"]
+  ]
+};
+
+window.SPECIMEN_ENRICHMENTS["AN2-F32"] = {
+  status: "AN2-F32 successful spore microscopy objective — confirmed spores documented across seven Motic microscopy fields, including four calibrated measurement fields.",
+  sourceLine: "Rutgers/Jockey Hollow accession AN2-F32. Seven microscopy images supplied by the user are explicitly assigned to AN2-F32. The source filenames themselves read “AN3-F32 SPM (1)” through “AN3-F32 SPM (7)”; that filename/accession discrepancy is preserved in provenance rather than silently corrected. User confirmation establishes the atlas assignment to AN2-F32. Imaging was performed on the Motic BA310 with Moticam 2300 camera using the established 100× calibrated measurement workflow.",
+  summary: {
+    "SPM result": "Successful. A repeatable fungal spore population is confirmed across the submitted microscopy series.",
+    "Spore morphology": "Spores show substantial orientation-dependent variation. Many are seen in side view and appear elongate to narrowly ellipsoid; other views are angular to irregular, while some approach rounded to subrounded forms. This range is recorded as observed morphology rather than collapsed into a single forced shape class.",
+    "Spore abundance / distribution": "Spores are abundant across multiple fields and occur singly, in loose groupings, and in denser local concentrations.",
+    "Spore optical appearance": "Spores appear hyaline to weakly refractile in transmitted light, with darker outlines in many side views. No coarse surface ornamentation is evident at the imaging level shown.",
+    "Measurement record": "Forty-six fully legible on-image calibrated annotations are preserved across four measured fields. Because the annotations mix side-view lengths, widths, oblique measurements, and differently oriented spores, they are retained as observed calibrated dimensions rather than treated as a single biological long-axis distribution.",
+    "Calibrated annotation statistics": "n=46; observed annotation range 1.20–10.79 µm; mean 3.80 µm; median 2.72 µm; sample SD 2.70 µm. These summary statistics describe all legible annotation lengths together and should not be interpreted as a formal paired spore length×width dataset.",
+    "Microscopy record": "Seven accession-linked microscopy images are preserved. Fields 1, 2, 3, and 5 contain calibrated annotations; fields 4, 6, and 7 document recurring morphology and abundance.",
+    "Calibration / instrumentation": "Motic BA310 microscope with Moticam 2300 camera; 100× calibrated atlas measurement workflow.",
+    "Provenance note": "Source filenames read AN3-F32, but the user explicitly confirmed these images belong to AN2-F32. The original filenames remain unchanged in the archive so the discrepancy is auditable.",
+    "Identification status": "Taxonomic identification unresolved; spore morphology and measurement evidence are preserved without forcing genus or species."
+  },
+  completeness: [
+    ["Microscopy imagery","Yes — 7 views"],
+    ["Successful fungal spore objective","Yes"],
+    ["Confirmed spore population","Yes"],
+    ["Measured microscopy fields","4"],
+    ["Legible calibrated annotations","46"],
+    ["Observed annotation range","1.20–10.79 µm"],
+    ["Annotation mean / median","3.80 / 2.72 µm"],
+    ["Annotation sample SD","2.70 µm"],
+    ["Spore morphology documented","Yes — side-view elongate/narrowly ellipsoid plus angular, irregular, and near-rounded orientations"],
+    ["Calibration provenance","Yes — Motic BA310 / Moticam 2300; 100× calibrated workflow"],
+    ["Filename/accession discrepancy preserved","Yes — source filenames AN3-F32; user-confirmed atlas assignment AN2-F32"],
     ["Identified","No — taxonomic identification unresolved"]
   ]
 };
