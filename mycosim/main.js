@@ -108,6 +108,19 @@ function updateMorphologySummary(engine){
     if(veil)parts.push(veil==="None"?"No veil":veil);
   }
 
+  if(currentProfile.id==="puffball"){
+    const puffGroups=[
+      ["puff_shape","shape"],["puff_surface","surface"],["puff_base","base"],
+      ["peridial_condition","peridium"],["ostiole_state","ostiole"],["gleba_state","gleba"],
+      ["section_view","view"],["texture_realism","detail"]
+    ];
+    for(const [group,suffix] of puffGroups){
+      if(!supported.has(group))continue;
+      const label=variantLabel(group,state[group]);
+      if(label)parts.push(label+" "+suffix);
+    }
+  }
+
   host.textContent=parts.join(" · ");
 
   if(!supported.size){
@@ -443,6 +456,9 @@ try{
   stageControls.addEventListener("click",e=>{
     const b=e.target.closest("[data-stage]"); if(!b)return;
     engine.setDevelopmentalStage(b.dataset.stage);
+    if(currentProfile.id==="puffball"){
+      renderVariantControls(currentProfile,engine);
+    }
     renderStageControls(currentProfile,engine);
     const st=engine.getDevelopmentalStage();
     info.textContent=`${currentProfile.label} · ${st.label} developmental stage`;
