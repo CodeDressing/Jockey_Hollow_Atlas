@@ -268,7 +268,21 @@ const GLOSSARY=Object.freeze({
   guttules:{definition:"Droplet-like inclusions visible inside spores or cells.",pronounce:"guttules"},
   hyaline:{definition:"Transparent, colorless, or nearly so; in mycology, describing spores, hyphae, or other structures that lack conspicuous pigmentation and transmit light readily.",pronounce:"hyaline"},
   provenance:{definition:"Documented origin, custody, and source history of a specimen, image, measurement, or record.",pronounce:"provenance"},
-  accession:{definition:"A uniquely tracked specimen or collection record entered into an archive, herbarium, laboratory, or database.",pronounce:"accession"}
+  accession:{definition:"A uniquely tracked specimen or collection record entered into an archive, herbarium, laboratory, or database.",pronounce:"accession"},
+  peridium:{definition:"The enclosing outer wall of a puffball or other gasteroid fruiting body.",pronounce:"peridium"},
+  exoperidium:{definition:"The outermost layer of the peridium; it may be smooth, granular, warted, spiny, scurfy, or otherwise ornamented.",pronounce:"exoperidium"},
+  endoperidium:{definition:"The inner layer of the peridium beneath the exoperidium, often persisting around the mature gleba.",pronounce:"endoperidium"},
+  gleba:{definition:"The internal spore-bearing tissue or spore mass of a gasteroid fungus.",pronounce:"gleba"},
+  subgleba:{definition:"A sterile basal region beneath the fertile gleba in some puffballs.",pronounce:"subgleba"},
+  ostiole:{definition:"A small opening, commonly apical, through which mature spores are released.",pronounce:"ostiole"},
+  echinate:{definition:"Bearing conspicuous pointed spines or prickles.",pronounce:"echinate"},
+  verrucose:{definition:"Bearing raised wart-like projections.",pronounce:"verrucose"},
+  furfuraceous:{definition:"Covered with a fine scurfy or bran-like coating.",pronounce:"furfuraceous"},
+  glabrous:{definition:"Smooth and lacking conspicuous hairs, spines, warts, or other surface ornamentation.",pronounce:"glabrous"},
+  globose:{definition:"Approximately spherical in overall form.",pronounce:"globose"},
+  pyriform:{definition:"Pear-shaped, broad above and narrowing toward the base.",pronounce:"pyriform"},
+  turbiniform:{definition:"Spinning-top shaped; broad above and strongly tapered below.",pronounce:"turbiniform"},
+  gasteroid:{definition:"Having an enclosed fruiting-body architecture in which spores mature internally rather than on an exposed hymenophore.",pronounce:"gasteroid"}
 });
 
 const glossaryPattern=new RegExp("\\b("+Object.keys(GLOSSARY).sort((x,y)=>y.length-x.length).join("|")+")\\b","gi");
