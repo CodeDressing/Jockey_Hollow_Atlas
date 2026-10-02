@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import {OrbitControls} from "three/addons/controls/OrbitControls.js";
 import {PROFILE_BY_ID} from "./profiles.js";
-import {DEFAULT_VARIANTS,validateVariantSelection,puffballSubtype,applyPuffballSubtypeDefaults,enforcePuffballSubtype} from "./variants.js";
+import {DEFAULT_VARIANTS,validateVariantSelection,puffballSubtype,puffballSubtypeStageDefaults,applyPuffballSubtypeDefaults,enforcePuffballSubtype} from "./variants.js";
 import {DEFAULT_DEVELOPMENTAL_STAGE,composeMorphologyState} from "./development.js";
 
 const tissue=(color,roughness=.82,opts={})=>new THREE.MeshPhysicalMaterial({
@@ -414,7 +414,8 @@ export class MycoSimEngine{
       }[this.developmentalStageId];
       if(stageDefaults){
         const subtypeId=this.variants.puff_subtype||"true_puffball";
-        this.variants={...applyPuffballSubtypeDefaults(this.variants,subtypeId),...stageDefaults};
+        const subtypeStage=puffballSubtypeStageDefaults(subtypeId,this.developmentalStageId);
+        this.variants=enforcePuffballSubtype({...applyPuffballSubtypeDefaults(this.variants,subtypeId),...stageDefaults,...subtypeStage});
       }
     }
     this.cleanupModel();
@@ -494,7 +495,11 @@ export class MycoSimEngine{
         mature:{peridial_condition:"flaking",ostiole_state:"developing",rupture_pattern:"apical_ostiole",rupture_margin:"slightly_torn",collapse_state:"slight",gleba_state:"maturing"},
         old:{peridial_condition:"collapsed",ostiole_state:"open",rupture_pattern:"irregular_rupture",rupture_margin:"ragged",collapse_state:"weathered",gleba_state:"old"}
       }[stageId];
-      if(stageDefaults)this.variants=enforcePuffballSubtype({...this.variants,...stageDefaults});
+      if(stageDefaults){
+        const subtypeId=this.variants.puff_subtype||"true_puffball";
+        const subtypeStage=puffballSubtypeStageDefaults(subtypeId,stageId);
+        this.variants=enforcePuffballSubtype({...this.variants,...stageDefaults,...subtypeStage});
+      }
     }
     const next=composeMorphologyState(profileId,{stageId,variants:this.variants});
     this.developmentalStageId=stageId;
