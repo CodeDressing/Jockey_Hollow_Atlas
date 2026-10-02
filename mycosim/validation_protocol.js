@@ -214,3 +214,38 @@ export function validateRenderedGasteroidState({subtype,stage,variants={},object
   if(subtype==="earthball_type"&&variants.puff_surface==="echinate")failures.push("Earthball archetype does not allow echinate surface in the current teaching library.");
   return {pass:failures.length===0,failures,warnings,sheet};
 }
+
+
+export const VISUAL_CHARACTER_RATIONALE=Object.freeze({
+  peridium:"Enclosing wall required by the gasteroid body plan and supported by field and taxonomic descriptions.",
+  exoperidium:"Outermost peridial layer provides the biologically justified substrate for smooth, granular, verrucose, echinate, or furfuraceous surface states.",
+  endoperidium:"Persistent inner peridial wall is retained beneath outer ornament and becomes more evident with abrasion in many puffball-like forms.",
+  gleba:"Internal spore-bearing tissue is fundamental to gasteroid architecture and changes from immature firm tissue to mature spore mass.",
+  spore_mass:"Powdery mature spore mass is a developmental consequence of glebal maturation and subsequent tissue reorganization.",
+  sterile_base:"Sterile basal or subglebal tissue is permitted only where the selected archetype supports a differentiated basal region.",
+  basal_attachment:"Substrate attachment is included to explain support and ecological orientation rather than as decorative root-like geometry.",
+  apical_region:"Apical specialization is rendered only because many puffball-like forms differentiate a release zone or ostiole during maturation.",
+  apical_pore:"A spore-release opening is shown only for archetypes/stages whose dehiscence model supports it.",
+  rupture_margin:"Rupture edges are generated as consequences of wall dehiscence and weathering, not as arbitrary tears.",
+  rupture_channel:"Internal release pathway is justified only when wall opening connects the glebal cavity to the exterior.",
+  worn_exoperidium:"Abraded patches record developmental loss of superficial outer-wall characters.",
+  collapsed_wall:"Collapse is driven by water loss, structural weakening, spore release, and senescence.",
+  earthstar_rays:"Radiating rays are the split exoperidium of earthstar-type architecture and must not appear in ordinary puffballs.",
+  gasteroid_stalk:"Sterile stalk is restricted to stalked-puffball/Tulostoma-type architecture.",
+  echinate:"Spines are a specific exoperidial morphology with stage-dependent breakage and abrasion.",
+  verrucose:"Warts are broad-based exoperidial elevations distinct from spines and fine grains.",
+  granular:"Granules are dense fine low-relief exoperidial elements distinct from true warts.",
+  furfuraceous:"Scurfy flakes are thin bran-like outer-wall elements with age-related lifting and loss.",
+  glabrous:"Absence of macroscopic ornament is itself a legitimate surface state and is represented without decorative projections.",
+  discoloration:"Color change is tied to developmental maturation, water loss, and tissue senescence rather than arbitrary palette variation.",
+  debris:"Organic debris is permitted only as substrate/weathering context and must not alter the anatomical identity of the fruit body."
+});
+
+export function validateVisualCharacterRationales(){
+  const required=["peridium","exoperidium","endoperidium","gleba","spore_mass","apical_pore","worn_exoperidium","collapsed_wall","earthstar_rays","gasteroid_stalk","echinate","verrucose","granular","furfuraceous","glabrous"];
+  const missing=required.filter(k=>!VISUAL_CHARACTER_RATIONALE[k]);
+  if(missing.length)throw new Error("Missing visual-character rationale: "+missing.join(", "));
+  return Object.freeze({pass:true,count:Object.keys(VISUAL_CHARACTER_RATIONALE).length});
+}
+
+export const VISUAL_CHARACTER_AUDIT=validateVisualCharacterRationales();
