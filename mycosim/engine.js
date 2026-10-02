@@ -3,6 +3,7 @@ import {OrbitControls} from "three/addons/controls/OrbitControls.js";
 import {PROFILE_BY_ID} from "./profiles.js";
 import {DEFAULT_VARIANTS,validateVariantSelection,puffballSubtype,puffballSubtypeStageDefaults,applyPuffballSubtypeDefaults,enforcePuffballSubtype} from "./variants.js";
 import {DEFAULT_DEVELOPMENTAL_STAGE,composeMorphologyState} from "./development.js";
+import {referenceSheet,validateRenderedGasteroidState,VISUAL_CHARACTER_RATIONALE,REFERENCE_SHEET_AUDIT,VISUAL_CHARACTER_AUDIT} from "./validation_protocol.js";
 
 const tissue=(color,roughness=.82,opts={})=>new THREE.MeshPhysicalMaterial({
   color,roughness,metalness:0,
@@ -1067,6 +1068,35 @@ export class MycoSimEngine{
     return {pass:actual===id,reason:actual===id?"ok":"metadata_mismatch",expected:id,actual};
   }
 
+  scientificValidationSnapshot(){
+    if(this.currentProfile?.id!=="puffball")return null;
+    const subtype=this.variants.puff_subtype||"true_puffball";
+    const stage=this.morphologyState?.stage?.id||this.developmentalStageId||"mature";
+    const objects=[...this.objects.keys()];
+    const state=validateRenderedGasteroidState({subtype,stage,variants:this.variants,objects});
+    const activeRationales={};
+    const mappings={
+      peridium:"peridium",exoperidium:"exoperidium",endoperidium:"endoperidium",gleba:"gleba",
+      spore_mass:"spore_mass",sterile_base:"sterile_base",basal_attachment:"basal_attachment",
+      apical_region:"apical_region",apical_pore:"apical_pore",rupture_margin:"rupture_margin",
+      rupture_channel:"rupture_channel",worn_exoperidium:"worn_exoperidium",collapsed_wall:"collapsed_wall",
+      earthstar_rays:"earthstar_rays",gasteroid_stalk:"gasteroid_stalk"
+    };
+    for(const [objectId,rationaleId] of Object.entries(mappings)){
+      if(this.objects.has(objectId))activeRationales[objectId]=VISUAL_CHARACTER_RATIONALE[rationaleId]||null;
+    }
+    const surface=this.variants.puff_surface||"glabrous";
+    activeRationales.surface=VISUAL_CHARACTER_RATIONALE[surface]||null;
+    return {
+      pass:state.pass,
+      failures:state.failures,
+      warnings:state.warnings,
+      sheet:referenceSheet(subtype,stage),
+      activeRationales,
+      audits:{referenceSheets:REFERENCE_SHEET_AUDIT,visualCharacters:VISUAL_CHARACTER_AUDIT}
+    };
+  }
+
   qaSnapshot(){
     const box=new THREE.Box3().setFromObject(this.root);
     const frustum=new THREE.Frustum();
@@ -1102,6 +1132,7 @@ export class MycoSimEngine{
       }:null,
       probeKnowledgeIds:[...new Set(this.pickables.map(o=>this._metaForObject(o)).filter(Boolean).map(meta=>meta.knowledgeId||meta.id).filter(Boolean))],
       developmentalParameters:this.currentProfile?.id==="puffball"?this.morphologyState?.stage?.parameters||null:null,
+      scientificValidation:this.scientificValidationSnapshot(),
       fps:this.lastFps,
       frameIntersects:!box.isEmpty()&&frustum.intersectsBox(box),
       boxEmpty:box.isEmpty()
