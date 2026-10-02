@@ -245,6 +245,13 @@ export const KNOWLEDGE_OBJECTS = Object.freeze({
     expert:"Partial- or universal-veil derivatives including annulus, cortina, volva and pileal remnants; developmental state must be considered.",
     relationships:["stipe","stipe_base","pileus"]
   },
+  gasteroid_archetype:{
+    id:"gasteroid_archetype",label:"Gasteroid teaching archetype",level:"architecture",pronunciation:"gas-TER-oyd teaching archetype",
+    beginner:"A generalized body-plan model used to teach a recognizable gasteroid form without claiming a species identification.",
+    expert:"A constrained morphology model derived from taxon-associated body-plan characters while deliberately stopping short of species identification. Each archetype limits allowable shape, ornamentation, basal structure, developmental trajectory, and internal architecture.",
+    whyItMatters:"Taxon-informed archetypes improve realism while preserving the distinction between morphological teaching and specimen identification.",
+    relationships:["gasteroid","puffball","peridium","gleba"]
+  },
   puffball:{
     id:"puffball",label:"Puffball",level:"organism",pronunciation:"PUHF-bawl",
     beginner:"A gasteroid fungus in which spores mature internally and are released later, usually through an opening or by rupture of the outer wall.",
@@ -307,6 +314,20 @@ export const KNOWLEDGE_OBJECTS = Object.freeze({
     expert:"A dehiscent passage traversing the peridial layers and linking the glebal cavity or spore mass to an external opening.",
     whyItMatters:"The channel demonstrates that spore release requires a real path through layered peridial tissue rather than a decorative surface mark.",
     relationships:["apical_pore","peridium","endoperidium","gleba","spore_mass"]
+  },
+  earthstar_rays:{
+    id:"earthstar_rays",label:"Earthstar rays",level:"macro",pronunciation:"EARTH-star rays",
+    beginner:"Star-like outer wall segments that spread around the central spore sac.",
+    expert:"Radiating segments derived from the outer peridial layers in earthstar-type gasteroid development; they separate and reflex outward around a persistent inner spore sac.",
+    whyItMatters:"Earthstar rays distinguish a specialized gasteroid architecture from ordinary puffballs and help explain how outer-wall development changes the mature body plan.",
+    relationships:["peridium","exoperidium","endoperidium","apical_pore"]
+  },
+  gasteroid_stalk:{
+    id:"gasteroid_stalk",label:"Gasteroid stalk",level:"macro",pronunciation:"gas-TER-oyd stalk",
+    beginner:"A sterile stalk that raises a puffball-like spore sac above the substrate.",
+    expert:"A differentiated sterile stipe-like support bearing a discrete gasteroid spore sac, characteristic of stalked-puffball teaching forms such as Tulostoma-like archetypes.",
+    whyItMatters:"A true stalked gasteroid body plan differs fundamentally from an ordinary sterile subgleba and should remain distinct in morphology-based teaching.",
+    relationships:["puffball","sterile_base","peridium","apical_pore"]
   },
   surface_ornamentation:{
     id:"surface_ornamentation",label:"Surface ornamentation",level:"macro",pronunciation:"surface ornamentation",
