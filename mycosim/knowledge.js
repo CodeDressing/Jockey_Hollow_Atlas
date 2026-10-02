@@ -659,6 +659,31 @@ const DEVELOPMENTAL_SIGNIFICANCE=Object.freeze({
   attachment:"Attachment persists throughout development but surrounding tissue can change substantially in size, hydration, and orientation."
 });
 
+const PROBE_OBSERVATION=Object.freeze({
+  peridium:"Observation: an enclosing outer wall is visible around the gasteroid body.",
+  exoperidium:"Observation: the outermost peridial surface is visible and carries the current surface texture or ornament state.",
+  echinate:"Observation: a pointed exoperidial projection is visible. Describe its height, base width, spacing, clustering, breakage, and preservation before making any taxonomic inference.",
+  verrucose:"Observation: a blunt broad-based wart-like exoperidial elevation is visible. Record its relief, width, spacing, and abrasion state.",
+  granular:"Observation: fine low-relief grain-like exoperidial ornament is visible. Record density, grain size, patchiness, and degree of wear.",
+  furfuraceous:"Observation: a thin scurfy or bran-like exoperidial flake is visible. Record adherence, edge lift, patchiness, and loss.",
+  glabrous:"Observation: the outer surface lacks conspicuous macroscopic spines, warts, grains, or flakes at the selected location.",
+  endoperidium:"Observation: an inner peridial wall is visible beneath or within the outer exoperidial layer.",
+  gleba:"Observation: internal glebal tissue is visible. Record color, firmness/powdering, homogeneity, and moisture state without assigning identity.",
+  immature_gleba:"Observation: pale firm internal glebal tissue is represented at the selected developmental state.",
+  mature_gleba:"Observation: darker, increasingly dry or powdery glebal tissue is represented at the selected developmental state.",
+  spore_mass:"Observation: a dry internal spore-bearing mass is visible. Record color, powdering, distribution, and depletion.",
+  apical_region:"Observation: the uppermost region of the gasteroid body is selected; inspect whether a release opening or rupture is absent, developing, or open.",
+  apical_pore:"Observation: an apical opening through the peridial wall is visible at this location.",
+  rupture_channel:"Observation: a continuous release pathway from the glebal cavity toward the exterior is visible.",
+  rupture_margin:"Observation: the edge of a peridial opening is visible; record whether it is clean, torn, ragged, curled, or frayed.",
+  worn_exoperidium:"Observation: a patch of outer peridial tissue shows abrasion or loss of superficial ornament.",
+  collapsed_wall:"Observation: the peridial wall is visibly deformed or collapsed relative to a taut fruit body.",
+  sterile_base:"Observation: a differentiated sterile basal compartment is visible below the fertile glebal region.",
+  basal_attachment:"Observation: the basal substrate-attachment zone is visible.",
+  earthstar_rays:"Observation: a radiating outer-peridial segment is visible around the central spore sac.",
+  gasteroid_stalk:"Observation: a differentiated sterile stalk is visible beneath the gasteroid spore sac."
+});
+
 const atlasFallback=(k)=>{
   if(k.level==="micro") return "Microscopic expression can vary with maturity and tissue condition; interpret it together with specimen age, preparation quality, and the parent structure.";
   if(k.level==="internal"||k.level==="tissue") return "Internal tissue appearance changes with maturation, hydration, pigmentation, and senescence; developmental state should be recorded with the observation.";
@@ -674,7 +699,7 @@ for(const k of Object.values(KNOWLEDGE_OBJECTS)){
     k.developmentalSignificance=DEVELOPMENTAL_SIGNIFICANCE[k.id]||atlasFallback(k);
   }
   if(!k.observation){
-    k.observation="Observation: a visible or selected structure is present at this location in the model. Record what is directly seen before assigning a taxonomic interpretation.";
+    k.observation=PROBE_OBSERVATION[k.id]||"Observation: a visible or selected structure is present at this location in the model. Record what is directly seen before assigning a taxonomic interpretation.";
   }
   if(!k.identificationBoundary){
     k.identificationBoundary="Identification boundary: this anatomical label or morphology term describes an observed structure; by itself it does not establish a species identification.";
