@@ -258,6 +258,34 @@ const makeFurfuraceousGeometry=(curled=false)=>{
   return g;
 };
 
+const PUFF_ABRASION_PROFILE=Object.freeze({
+  developmental:Object.freeze({young:.03,mature:.31,old:.82}),
+  peridial:Object.freeze({intact:0,cracking:.12,areal_splitting:.24,flaking:.48,collapsed:.72}),
+  sensitivity:Object.freeze({echinate:1.00,verrucose:.72,granular:.88,furfuraceous:1.08,glabrous:.22})
+});
+
+const abrasionState=(surface,stageId,peridial)=>{
+  const developmental=PUFF_ABRASION_PROFILE.developmental[stageId]??.31;
+  const condition=PUFF_ABRASION_PROFILE.peridial[peridial]??0;
+  const sensitivity=PUFF_ABRASION_PROFILE.sensitivity[surface]??.8;
+  const severity=THREE.MathUtils.clamp((developmental+condition*(1-developmental))*sensitivity,0,1);
+  const retentionMultiplier=THREE.MathUtils.clamp(1-severity*.62,.08,1);
+  return {developmental,condition,sensitivity,severity,retentionMultiplier};
+};
+
+const makeAbrasionScarGeometry=()=>{
+  const g=new THREE.CircleGeometry(.090,14);
+  // Slight asymmetry avoids a stamped circular decal appearance.
+  const p=g.attributes.position;
+  for(let i=0;i<p.count;i++){
+    const x=p.getX(i),y=p.getY(i);
+    p.setX(i,x*(.82+.12*Math.sin(i*2.13)));
+    p.setY(i,y*(.72+.18*Math.cos(i*1.47)));
+  }
+  p.needsUpdate=true;g.computeVertexNormals();
+  return g;
+};
+
 const ORNAMENT_GEOMETRY=Object.freeze({
   echinate:makeEchinateGeometry(false),
   echinateBroken:makeEchinateGeometry(true),
@@ -266,7 +294,8 @@ const ORNAMENT_GEOMETRY=Object.freeze({
   granular:makeGranularGeometry(false),
   granularCoarse:makeGranularGeometry(true),
   furfuraceous:makeFurfuraceousGeometry(false),
-  furfuraceousCurled:makeFurfuraceousGeometry(true)
+  furfuraceousCurled:makeFurfuraceousGeometry(true),
+  abrasionScar:makeAbrasionScarGeometry()
 });
 
 const MATERIALS={
@@ -725,6 +754,8 @@ export class MycoSimEngine{
       const rupturePattern=this.variants.rupture_pattern||"intact";
       const ruptureMarginState=this.variants.rupture_margin||"clean";
       const collapseState=this.variants.collapse_state||"none";
+      const surfaceState=this.variants.puff_surface||"echinate";
+      const integratedAbrasion=abrasionState(surfaceState,sid,peridial);
 
       const shapeScale={
         globose:[1,1,1],
@@ -796,12 +827,18 @@ export class MycoSimEngine{
       if(layeredShell)layeredShell.visible=sid==="old";
       if(ruptureMarginObj)ruptureMarginObj.visible=sid!=="young" && rupturePattern!=="intact";
       if(ruptureChannel)ruptureChannel.visible=sid!=="young" && rupturePattern!=="intact";
-      if(wornExo)wornExo.visible=sid!=="young";
-      if(collapsedWall)collapsedWall.visible=collapseState!=="none";
-
-      if(sid==="mature" && wornExo){
-        wornExo.children.forEach((patch,i)=>patch.visible=((i*31)%100)/100<.38);
+      if(wornExo){
+        wornExo.visible=integratedAbrasion.severity>.08;
+        wornExo.children.forEach((patch,i)=>{
+          const threshold=integratedAbrasion.severity;
+          patch.visible=((i*31)%100)/100<threshold;
+          if(patch.material){
+            patch.material.opacity=.42+threshold*.45;
+            patch.material.transparent=patch.material.opacity<1;
+          }
+        });
       }
+      if(collapsedWall)collapsedWall.visible=collapseState!=="none";
 
       const collapseScale={none:1,slight:.94,moderate:.82,severe:.66,weathered:.72}[collapseState]??1;
       const collapseTilt={none:0,slight:.018,moderate:.045,severe:.075,weathered:.095}[collapseState]??0;
@@ -839,9 +876,20 @@ export class MycoSimEngine{
 
       const ornament=this.objects.get("exoperidium");
       if(ornament){
-        // Ornament density/abrasion is baked into one InstancedMesh during build.
-        // This avoids hundreds of individual materials, shadows and draw calls.
         ornament.visible=true;
+        ornament.userData.integratedAbrasion={
+          severity:integratedAbrasion.severity,
+          peridialCondition:peridial,
+          stage:sid,
+          surface:surfaceState
+        };
+        ornament.traverse?.(node=>{
+          if(!node.material)return;
+          const mats=Array.isArray(node.material)?node.material:[node.material];
+          for(const mat of mats){
+            if("roughness" in mat)mat.roughness=Math.min(1,(mat.roughness??.92)+integratedAbrasion.severity*.06);
+          }
+        });
       }
 
       const wall=this.objects.get("peridium");
@@ -2066,8 +2114,10 @@ export class MycoSimEngine{
 
     const profile=PUFF_ORNAMENT_PROFILE[surface]||PUFF_ORNAMENT_PROFILE.glabrous;
     const requested=profile.counts[realism]||0;
-    const retention=profile.retention[stageId]??1;
-    const scaleByAge=profile.scale[stageId]??1;
+    const peridialForAbrasion=this.variants.peridial_condition||"intact";
+    const abrasion=abrasionState(surface,stageId,peridialForAbrasion);
+    const retention=(profile.retention[stageId]??1)*abrasion.retentionMultiplier;
+    const scaleByAge=(profile.scale[stageId]??1)*(1-abrasion.severity*.16);
     const target=Math.max(0,Math.round(requested*retention));
     const {
       points:ornamentPoints,clusterWeights:ornamentClusterWeights,bareWeights:ornamentBareWeights,
@@ -2123,7 +2173,7 @@ export class MycoSimEngine{
         const bare=ornamentBareWeights[i]||0;
         const clusterWeight=ornamentClusterWeights[i]||0;
         // Exposed sparse/bare-zone edges weather first; dense clusters preserve a little longer.
-        const localRisk=THREE.MathUtils.clamp(brokenFraction+bare*.22-clusterWeight*.07,0,1);
+        const localRisk=THREE.MathUtils.clamp(brokenFraction+abrasion.severity*.34+bare*.22-clusterWeight*.07,0,1);
         return breakRng()<localRisk;
       });
       const brokenCount=brokenMask.filter(Boolean).length;
@@ -2162,7 +2212,7 @@ export class MycoSimEngine{
         baseIntegration:"flared basal skirt embedded into exoperidium"
       };
     }else if(surface==="verrucose"&&target){
-      const flattenFraction=stageId==="young"?.12:stageId==="mature"?.42:.72;
+      const flattenFraction=THREE.MathUtils.clamp((stageId==="young"?.12:stageId==="mature"?.42:.72)+abrasion.severity*.28,0,.94);
       const flattenedMask=ornamentPoints.map((n,i)=>{
         const bare=ornamentBareWeights[i]||0;
         const clusterWeight=ornamentClusterWeights[i]||0;
@@ -2201,7 +2251,7 @@ export class MycoSimEngine{
       };
 
     }else if(surface==="granular"&&target){
-      const coarseFraction=stageId==="young"?.13:stageId==="mature"?.08:.04;
+      const coarseFraction=Math.max(.015,(stageId==="young"?.13:stageId==="mature"?.08:.04)*(1-abrasion.severity*.72));
       const coarseMask=ornamentPoints.map((n,i)=>{
         const clusterWeight=ornamentClusterWeights[i]||0;
         return ornamentRng()<THREE.MathUtils.clamp(coarseFraction+clusterWeight*.05,0,.24);
@@ -2236,7 +2286,7 @@ export class MycoSimEngine{
       };
 
     }else if(surface==="furfuraceous"&&target){
-      const curledFraction=stageId==="young"?.22:stageId==="mature"?.46:.70;
+      const curledFraction=THREE.MathUtils.clamp((stageId==="young"?.22:stageId==="mature"?.46:.70)+abrasion.severity*.22,0,.94);
       const curledMask=ornamentPoints.map((n,i)=>{
         const bare=ornamentBareWeights[i]||0;
         const local=THREE.MathUtils.clamp(curledFraction+bare*.18,0,.90);
@@ -2280,8 +2330,49 @@ export class MycoSimEngine{
       exo.userData.label="Glabrous exoperidium";
     }
 
+    // Final integration layer: expose irregular worn exoperidial patches where
+    // ornament has been lost. This is intentionally separate from ornament meshes
+    // so abrasion reads as tissue loss rather than merely fewer instances.
+    const scarBase={simplified:7,atlas:18,high:34}[realism]||18;
+    const scarCount=Math.round(scarBase*abrasion.severity*(surface==="glabrous"?.45:1));
+    let abrasionScars=null;
+    if(scarCount>0){
+      const scarSample=sampledPuffSurface(scarCount,1709+requested+(stageId==="old"?97:stageId==="mature"?53:19),{
+        cluster:.48,barePatch:.06,clusterCount:3,bareCount:1
+      });
+      abrasionScars=new THREE.InstancedMesh(
+        ORNAMENT_GEOMETRY.abrasionScar.clone(),
+        PUFF_PBR.wornExoperidium.clone(),
+        scarSample.points.length
+      );
+      abrasionScars.userData={
+        id:"worn_exoperidium",label:"Abraded exoperidial patches",category:"macro",
+        selectable:true,knowledgeId:"worn_exoperidium"
+      };
+      const dummy=new THREE.Object3D();
+      for(let i=0;i<scarSample.points.length;i++){
+        const n=scarSample.points[i];
+        const p=puffSurfacePoint(shape,n.x,n.y,n.z,bodyY,1.158);
+        dummy.position.copy(p).addScaledVector(n,.003);
+        dummy.quaternion.setFromUnitVectors(new THREE.Vector3(0,0,1),n.clone().normalize());
+        dummy.rotation.z=scarSample.rng()*Math.PI*2;
+        const g=.62+scarSample.rng()*.95;
+        dummy.scale.set(g*(.80+scarSample.rng()*.42),g*(.62+scarSample.rng()*.38),1);
+        dummy.updateMatrix();
+        abrasionScars.setMatrixAt(i,dummy.matrix);
+      }
+      abrasionScars.instanceMatrix.needsUpdate=true;
+      exo.add(abrasionScars);this.pickables.push(abrasionScars);
+    }
+
     exo.userData.ornamentStats={
-      requested,target,rendered:exo.children.reduce((n,c)=>n+(c.count||0),0),
+      requested,target,
+      rendered:exo.children.reduce((n,c)=>n+(c.count||0),0),
+      ornamentRendered:exo.children.filter(c=>c!==abrasionScars).reduce((n,c)=>n+(c.count||0),0),
+      abrasionScars:abrasionScars?.count||0,
+      abrasionSeverity:abrasion.severity,
+      retentionMultiplier:abrasion.retentionMultiplier,
+      peridialCondition:peridialForAbrasion,
       drawMeshes:exo.children.length,stageId,surface,
       sampling:ornamentSampling,
       echinate:exo.userData.echinateStats||null,
