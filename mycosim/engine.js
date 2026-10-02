@@ -32,7 +32,7 @@ export class MycoSimEngine{
   constructor({canvas,onHover,onSelect,onStatus,onStats}){
     this.canvas=canvas; this.onHover=onHover; this.onSelect=onSelect; this.onStatus=onStatus; this.onStats=onStats;
     this.renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:"high-performance"});
-    this.renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+    this.renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
     this.renderer.outputColorSpace=THREE.SRGBColorSpace;
     this.renderer.shadowMap.enabled=true; this.renderer.localClippingEnabled=true;
     this.scene=new THREE.Scene();
@@ -52,7 +52,7 @@ export class MycoSimEngine{
   _setupScene(){
     this.scene.add(new THREE.HemisphereLight(0xf1ead9,0x0c1714,1.8));
     const key=new THREE.DirectionalLight(0xffead0,3.0); key.position.set(4.5,7.5,4.2); key.castShadow=true;
-    key.shadow.mapSize.set(2048,2048);key.shadow.camera.near=.5;key.shadow.camera.far=24;this.scene.add(key);
+    key.shadow.mapSize.set(1024,1024);key.shadow.camera.near=.5;key.shadow.camera.far=24;this.scene.add(key);
     const fill=new THREE.DirectionalLight(0xb7d0d6,1.05); fill.position.set(-5,3,-4); this.scene.add(fill);
     const rim=new THREE.DirectionalLight(0xf6c98f,1.0);rim.position.set(1.5,4.5,-6);this.scene.add(rim);
     const ground=new THREE.Mesh(new THREE.CylinderGeometry(2.7,3,.28,72),MATERIALS.wood.clone());
@@ -570,52 +570,9 @@ export class MycoSimEngine{
 
       const ornament=this.objects.get("exoperidium");
       if(ornament){
-        const surfaceType=this.variants.puff_surface||"glabrous";
-        ornament.children.forEach((o,i)=>{
-          const seed=((i*37)%100)/100;
-          let keep=1;
-          let scale=1;
-
-          if(sid==="young"){
-            keep=surfaceType==="glabrous"?0:1;
-            scale=1;
-          }else if(sid==="mature"){
-            // Generalized atlas default: youthful ornament is abraded substantially by maturity.
-            // Echinate spines become sparse, short, blunt remnants rather than fresh pointed spines.
-            keep=surfaceType==="echinate"?.32:
-                 surfaceType==="verrucose"?.50:
-                 surfaceType==="granular"?.42:
-                 surfaceType==="furfuraceous"?.34:0;
-            scale=surfaceType==="echinate"?.34:
-                  surfaceType==="verrucose"?.64:
-                  surfaceType==="granular"?.55:
-                  surfaceType==="furfuraceous"?.50:0;
-          }else{
-            // Old generalized puffball: no intact echinate spines. Only low residual ornament
-            // may persist for non-echinate surface states.
-            keep=surfaceType==="echinate"?0:
-                 surfaceType==="verrucose"?.14:
-                 surfaceType==="granular"?.10:
-                 surfaceType==="furfuraceous"?.06:0;
-            scale=surfaceType==="echinate"?0:
-                  surfaceType==="verrucose"?.28:
-                  surfaceType==="granular"?.24:
-                  surfaceType==="furfuraceous"?.20:0;
-          }
-
-          o.visible=seed<keep;
-          if(o.visible){
-            o.scale.multiplyScalar(scale);
-            if(sid==="mature"){
-              // Flatten youthful projections to read as worn/blunted remnants.
-              o.scale.y*=surfaceType==="echinate"?.55:.78;
-              o.rotation.z+=((i%5)-2)*.018;
-            }else if(sid==="old"){
-              o.scale.y*=.42;
-              o.rotation.z+=((i%7)-3)*.04;
-            }
-          }
-        });
+        // Ornament density/abrasion is baked into one InstancedMesh during build.
+        // This avoids hundreds of individual materials, shadows and draw calls.
+        ornament.visible=true;
       }
 
       const wall=this.objects.get("peridium");
@@ -1869,39 +1826,65 @@ export class MycoSimEngine{
     ornamentMat.color.setHex(0xd3c39c);
 
     if(surface!=="glabrous"){
-      for(let i=0;i<detail;i++){
-        const y=1-(i/(detail-1))*2;
-        const radius=Math.sqrt(Math.max(0,1-y*y));
-        const phi=i*2.399963229728653;
-        const nx=Math.cos(phi)*radius, ny=y, nz=Math.sin(phi)*radius;
-        let radial=1;
-        let vertical=1;
-        if(shape==="subglobose"){radial=1.035;vertical=.94;}
-        else if(shape==="pyriform"){radial=.78+.27*((ny+1)/2);vertical=1.08;}
-        else if(shape==="turbiniform"){radial=.67+.40*((ny+1)/2);vertical=1.02;}
-        else if(shape==="irregular"){radial=1+.04*Math.sin(ny*7+phi*1.4);vertical=.90;}
-        const px=nx*1.17*radial, py=bodyY+ny*1.10*vertical, pz=nz*1.17*radial;
-        let geo;
-        if(surface==="echinate"){
-          // Young true-puffball reference: numerous short, fine exoperidial prickles,
-          // not a sparse field of oversized cones.
-          const len=realism==="high"?.115:realism==="atlas"?.095:.075;
-          const baseR=realism==="high"?.026:realism==="atlas"?.023:.020;
-          geo=new THREE.ConeGeometry(baseR,len,6);
-        }else if(surface==="verrucose"){
-          geo=new THREE.SphereGeometry(realism==="high"?.075:.065,10,7);
-        }else if(surface==="granular"){
-          geo=new THREE.SphereGeometry(realism==="high"?.035:.03,7,5);
-        }else{
-          geo=new THREE.TetrahedronGeometry(realism==="high"?.055:.045,0);
+      let geo;
+      if(surface==="echinate"){
+        const len=realism==="high"?.115:realism==="atlas"?.095:.075;
+        const baseR=realism==="high"?.026:realism==="atlas"?.023:.020;
+        geo=new THREE.ConeGeometry(baseR,len,6);
+      }else if(surface==="verrucose"){
+        geo=new THREE.SphereGeometry(realism==="high"?.075:.065,10,7);
+      }else if(surface==="granular"){
+        geo=new THREE.SphereGeometry(realism==="high"?.035:.03,7,5);
+      }else{
+        geo=new THREE.TetrahedronGeometry(realism==="high"?.055:.045,0);
+      }
+
+      const stageKeep=stageId==="young"?1:
+        stageId==="mature"?(surface==="echinate"?.32:surface==="verrucose"?.50:surface==="granular"?.42:.34):
+        (surface==="echinate"?0:surface==="verrucose"?.14:surface==="granular"?.10:.06);
+      const stageScale=stageId==="young"?1:
+        stageId==="mature"?(surface==="echinate"?.34:surface==="verrucose"?.64:surface==="granular"?.55:.50):
+        (surface==="echinate"?0:surface==="verrucose"?.28:surface==="granular"?.24:.20);
+
+      const visibleCount=Math.max(0,Math.round(detail*stageKeep));
+      if(visibleCount>0){
+        const inst=new THREE.InstancedMesh(geo,ornamentMat,visibleCount);
+        inst.userData=exo.userData;
+        inst.castShadow=stageId==="young";
+        inst.receiveShadow=true;
+        const dummy=new THREE.Object3D();
+        let write=0;
+        for(let i=0;i<detail && write<visibleCount;i++){
+          const seed=((i*37)%100)/100;
+          if(seed>=stageKeep)continue;
+          const y=1-(i/(detail-1))*2;
+          const radius=Math.sqrt(Math.max(0,1-y*y));
+          const phi=i*2.399963229728653;
+          const nx=Math.cos(phi)*radius, ny=y, nz=Math.sin(phi)*radius;
+          let radial=1, vertical=1;
+          if(shape==="subglobose"){radial=1.035;vertical=.94;}
+          else if(shape==="pyriform"){radial=.78+.27*((ny+1)/2);vertical=1.08;}
+          else if(shape==="turbiniform"){radial=.67+.40*((ny+1)/2);vertical=1.02;}
+          else if(shape==="irregular"){radial=1+.04*Math.sin(ny*7+phi*1.4);vertical=.90;}
+          dummy.position.set(nx*1.17*radial,bodyY+ny*1.10*vertical,nz*1.17*radial);
+          dummy.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),new THREE.Vector3(nx,ny,nz).normalize());
+          const naturalScale=(.82+((i*17)%23)/100)*stageScale;
+          dummy.scale.setScalar(naturalScale);
+          if(stageId==="mature"){
+            dummy.scale.y*=surface==="echinate"?.55:.78;
+            dummy.rotation.z+=((i%5)-2)*.018;
+          }else if(stageId==="old"){
+            dummy.scale.y*=.42;
+            dummy.rotation.z+=((i%7)-3)*.04;
+          }
+          dummy.updateMatrix();
+          inst.setMatrixAt(write++,dummy.matrix);
         }
-        const o=new THREE.Mesh(geo,ornamentMat.clone());
-        const naturalScale=.82+((i*17)%23)/100;
-        o.scale.setScalar(naturalScale);
-        o.position.set(px,py,pz);
-        o.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),new THREE.Vector3(nx,ny,nz).normalize());
-        o.userData=exo.userData;
-        exo.add(o);this.pickables.push(o);
+        inst.instanceMatrix.needsUpdate=true;
+        exo.add(inst);this.pickables.push(inst);
+      }else{
+        geo.dispose();
+        ornamentMat.dispose();
       }
     }
     this.root.add(exo);this.objects.set("exoperidium",exo);
