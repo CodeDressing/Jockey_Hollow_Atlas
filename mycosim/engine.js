@@ -510,6 +510,33 @@ export class MycoSimEngine{
       if(apical)apical.visible=true;
       const basal=this.objects.get("basal_attachment");
       if(basal)basal.visible=base!=="none";
+      const oldShell=this.objects.get("old_shell_fragments");
+      const oldGleba=this.objects.get("old_gleba_clumps");
+      const oldDebris=this.objects.get("old_basal_debris");
+      if(oldShell)oldShell.visible=sid==="old";
+      if(oldGleba)oldGleba.visible=sid==="old";
+      if(oldDebris)oldDebris.visible=sid==="old" && base!=="none";
+
+      if(sid==="old"){
+        // Replace the clean mathematical sphere with fractured shell fragments.
+        const perObj=this.objects.get("peridium");
+        if(perObj)perObj.visible=false;
+        const endoObj=this.objects.get("endoperidium");
+        if(endoObj)endoObj.visible=false;
+        if(gleba)gleba.visible=false;
+        if(sporeMass)sporeMass.visible=false;
+        if(pore)pore.visible=false;
+        if(apical)apical.visible=false;
+
+        // Age the sterile base rather than preserving a pristine cylinder.
+        if(baseObj){
+          baseObj.scale.x*=.90;
+          baseObj.scale.z*=1.05;
+          baseObj.rotation.z+=.055;
+          if(baseObj.material?.color)baseObj.material.color.setHex(0x8d795f);
+          if("roughness" in baseObj.material)baseObj.material.roughness=1;
+        }
+      }
 
       const ornament=this.objects.get("exoperidium");
       if(ornament){
@@ -580,6 +607,10 @@ export class MycoSimEngine{
       }
 
       weather("peridium",(1-taut)*.45+collapse*.25+(peridial==="flaking"?.18:0));
+      if(sid==="old"){
+        weather("old_shell_fragments",.88);
+        weather("sterile_base",.52);
+      }
     }
 
     if(profileId==="cup"){
@@ -1660,6 +1691,78 @@ export class MycoSimEngine{
     const sporeMassMat=new THREE.MeshStandardMaterial({color:0x5a4630,roughness:1,transparent:true,opacity:.46});
     const sporeMass=this.register(new THREE.Mesh(new THREE.SphereGeometry(.72,34,22),sporeMassMat),"spore_mass","Spore mass","internal","gleba");
     sporeMass.position.y=bodyY;
+
+    // Old-stage realism layer: fractured papery peridium, exposed powdery gleba,
+    // and basal debris. These are separate probeable meshes so educational
+    // anatomy remains functional while the rendering reads as a real senescent puffball.
+    const oldShell=new THREE.Group();
+    oldShell.userData={id:"old_shell_fragments",label:"Weathered peridium fragments",category:"macro",selectable:true,knowledgeId:"peridium"};
+    const shellOuterMat=new THREE.MeshStandardMaterial({
+      color:0x8a755b,roughness:.98,metalness:0,side:THREE.DoubleSide
+    });
+    const shellInnerMat=new THREE.MeshStandardMaterial({
+      color:0x5f4a39,roughness:1,metalness:0,side:THREE.DoubleSide
+    });
+    const shellSpecs=[
+      [0.00,1.15,.72,.58,-.06,.04],
+      [1.22,.98,.78,.62,.05,-.03],
+      [2.36,1.04,.70,.66,-.04,.02],
+      [3.53,.92,.80,.60,.03,.05],
+      [4.62,1.18,.73,.61,-.05,-.04],
+      [5.76,.86,.82,.56,.04,.01]
+    ];
+    shellSpecs.forEach((q,i)=>{
+      const [phiStart,phiLen,thetaStart,thetaLen,rx,rz]=q;
+      const outerGeo=new THREE.SphereGeometry(1.16,24,10,phiStart,phiLen,thetaStart,thetaLen);
+      const outer=new THREE.Mesh(outerGeo,shellOuterMat.clone());
+      outer.position.y=bodyY;
+      outer.rotation.x=rx;outer.rotation.z=rz;
+      outer.scale.set(1+.025*Math.sin(i*1.7),.96-.035*(i%3),1+.03*Math.cos(i*1.4));
+      outer.userData=oldShell.userData;
+      oldShell.add(outer);this.pickables.push(outer);
+
+      const innerGeo=new THREE.SphereGeometry(1.105,20,8,phiStart+.025,Math.max(.28,phiLen-.05),thetaStart+.025,Math.max(.24,thetaLen-.05));
+      const inner=new THREE.Mesh(innerGeo,shellInnerMat.clone());
+      inner.position.y=bodyY;
+      inner.rotation.copy(outer.rotation);
+      inner.scale.copy(outer.scale);
+      inner.userData=oldShell.userData;
+      oldShell.add(inner);this.pickables.push(inner);
+    });
+    this.root.add(oldShell);this.objects.set("old_shell_fragments",oldShell);
+
+    const oldGleba=new THREE.Group();
+    oldGleba.userData={id:"old_gleba_clumps",label:"Powdery mature gleba",category:"internal",selectable:true,knowledgeId:"spore_mass"};
+    const glebaClumpMat=new THREE.MeshStandardMaterial({color:0x4b3a28,roughness:1,metalness:0});
+    for(let i=0;i<22;i++){
+      const a=i*2.399963229728653;
+      const r=.18+.48*(((i*19)%17)/16);
+      const y=.72+(((i*13)%11)/10)*.58;
+      const clump=new THREE.Mesh(new THREE.IcosahedronGeometry(.10+.055*((i%5)/4),1),glebaClumpMat.clone());
+      clump.position.set(Math.cos(a)*r,y,Math.sin(a)*r);
+      clump.scale.set(1+.25*Math.sin(i),.7+.4*((i%3)/2),1+.18*Math.cos(i*.8));
+      clump.rotation.set(i*.31,i*.21,i*.17);
+      clump.userData=oldGleba.userData;
+      oldGleba.add(clump);this.pickables.push(clump);
+    }
+    this.root.add(oldGleba);this.objects.set("old_gleba_clumps",oldGleba);
+
+    const debris=new THREE.Group();
+    debris.userData={id:"old_basal_debris",label:"Basal soil and organic debris",category:"ecology",selectable:true,knowledgeId:"basal_attachment"};
+    const debrisMat=new THREE.MeshStandardMaterial({color:0x3f3428,roughness:1});
+    for(let i=0;i<18;i++){
+      const a=i*2.15;
+      const rr=.28+.30*((i%7)/6);
+      const bit=new THREE.Mesh(
+        i%3===0?new THREE.CylinderGeometry(.012,.018,.22+.09*(i%4),6):new THREE.IcosahedronGeometry(.035+.018*(i%4),0),
+        debrisMat.clone()
+      );
+      bit.position.set(Math.cos(a)*rr,-.43+.06*(i%4),Math.sin(a)*rr);
+      bit.rotation.set(i*.34,a,i*.19);
+      bit.userData=debris.userData;
+      debris.add(bit);this.pickables.push(bit);
+    }
+    this.root.add(debris);this.objects.set("old_basal_debris",debris);
 
     const exo=new THREE.Group();
     exo.userData={id:"exoperidium",label:"Exoperidium / surface ornamentation",category:"macro",selectable:true,knowledgeId:surface==="echinate"?"echinate":surface==="verrucose"?"verrucose":surface==="granular"?"granular":surface==="furfuraceous"?"furfuraceous":surface==="glabrous"?"glabrous":"surface_ornamentation"};
