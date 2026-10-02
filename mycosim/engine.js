@@ -496,6 +496,20 @@ export class MycoSimEngine{
         gleba.material.color.setHex(glebaColors[glebaState]??0xf0ead8);
         gleba.material.opacity=Math.max(.38,.68-release*.20);
       }
+      const sporeMass=this.objects.get("spore_mass");
+      if(sporeMass){
+        const matureEnough=glebaState==="mature"||glebaState==="old";
+        sporeMass.visible=matureEnough;
+        sporeMass.scale.setScalar(glebaState==="old"?.92:.78);
+        if(sporeMass.material){
+          sporeMass.material.opacity=glebaState==="old"?.58:.40;
+          sporeMass.material.color.setHex(glebaState==="old"?0x3e3025:0x625037);
+        }
+      }
+      const apical=this.objects.get("apical_region");
+      if(apical)apical.visible=true;
+      const basal=this.objects.get("basal_attachment");
+      if(basal)basal.visible=base!=="none";
 
       const ornament=this.objects.get("exoperidium");
       if(ornament){
@@ -1539,10 +1553,24 @@ export class MycoSimEngine{
     const surface=this.variants.puff_surface||"echinate";
     const detail={simplified:32,atlas:56,high:92}[realism]||56;
     const bodyY=1.05;
+    const stageId=this.morphologyState?.stage?.id||this.developmentalStageId||"mature";
+    const irregularityScale=(surface==="glabrous")?0:(stageId==="young"?.045:stageId==="mature"?.028:.018);
 
     const innerMat=MATERIALS.puff.clone();
     innerMat.color.setHex(0xbda982);
-    const per=this.register(new THREE.Mesh(new THREE.SphereGeometry(1.15,56,36),innerMat),"peridium","Peridium","macro");
+    const bodyGeo=new THREE.SphereGeometry(1.15,56,36);
+    if(irregularityScale>0){
+      const pos=bodyGeo.attributes.position;
+      const v=new THREE.Vector3();
+      for(let i=0;i<pos.count;i++){
+        v.fromBufferAttribute(pos,i);
+        const wave=Math.sin(v.x*5.2+v.y*3.7+v.z*4.4)+Math.sin(v.x*9.1-v.z*6.3)*.45;
+        v.multiplyScalar(1+wave*irregularityScale);
+        pos.setXYZ(i,v.x,v.y,v.z);
+      }
+      pos.needsUpdate=true;bodyGeo.computeVertexNormals();
+    }
+    const per=this.register(new THREE.Mesh(bodyGeo,innerMat),"peridium","Peridium","macro");
     per.scale.y=.95;per.position.y=bodyY;
 
     const endoMat=MATERIALS.flesh.clone();
@@ -1563,8 +1591,20 @@ export class MycoSimEngine{
     const pore=this.register(new THREE.Mesh(new THREE.TorusGeometry(.11,.035,10,32),MATERIALS.wood.clone()),"apical_pore","Ostiole / apical pore","macro","peridium");
     pore.rotation.x=Math.PI/2;pore.position.y=2.12;
 
+    const apicalMat=MATERIALS.puff.clone();apicalMat.transparent=true;apicalMat.opacity=.08;
+    const apical=this.register(new THREE.Mesh(new THREE.SphereGeometry(.34,18,12),apicalMat),"apical_region","Apical region","macro","peridium");
+    apical.position.y=2.00;apical.scale.y=.45;
+
+    const basalMat=MATERIALS.puff.clone();basalMat.transparent=true;basalMat.opacity=.10;
+    const basal=this.register(new THREE.Mesh(new THREE.SphereGeometry(.34,16,10),basalMat),"basal_attachment","Basal attachment","macro","sterile_base");
+    basal.position.y=-.48;basal.scale.set(.9,.38,.9);
+
+    const sporeMassMat=new THREE.MeshStandardMaterial({color:0x5a4630,roughness:1,transparent:true,opacity:.46});
+    const sporeMass=this.register(new THREE.Mesh(new THREE.SphereGeometry(.72,34,22),sporeMassMat),"spore_mass","Spore mass","internal","gleba");
+    sporeMass.position.y=bodyY;
+
     const exo=new THREE.Group();
-    exo.userData={id:"exoperidium",label:"Exoperidium / surface ornamentation",category:"macro",selectable:true,knowledgeId:surface==="echinate"?"echinate":surface==="verrucose"?"verrucose":surface==="furfuraceous"?"furfuraceous":surface==="glabrous"?"glabrous":"exoperidium"};
+    exo.userData={id:"exoperidium",label:"Exoperidium / surface ornamentation",category:"macro",selectable:true,knowledgeId:surface==="echinate"?"echinate":surface==="verrucose"?"verrucose":surface==="granular"?"granular":surface==="furfuraceous"?"furfuraceous":surface==="glabrous"?"glabrous":"surface_ornamentation"};
     const ornamentMat=MATERIALS.puff.clone();
     ornamentMat.color.setHex(0xd3c39c);
 
