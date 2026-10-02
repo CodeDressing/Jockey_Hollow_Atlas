@@ -34,7 +34,7 @@ export class MycoSimEngine{
     this.renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:"high-performance"});
     this.renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
     this.renderer.outputColorSpace=THREE.SRGBColorSpace;
-    this.renderer.shadowMap.enabled=true; this.renderer.localClippingEnabled=true;
+    this.renderer.shadowMap.enabled=false; this.renderer.localClippingEnabled=true;
     this.scene=new THREE.Scene();
     this.scene.fog=new THREE.FogExp2(0x091011,.035);
     this.camera=new THREE.PerspectiveCamera(34,1,.1,100);
@@ -46,7 +46,15 @@ export class MycoSimEngine{
     this.lastHover=null; this.hoveredObject=null; this.hoveredMaterials=[]; this.frames=0; this.fpsStart=performance.now(); this.lastFps=0; this.fly=null; this.exploded=false; this.sectioned=false; this.originalTransforms=new Map();
     this._setupScene(); this._bind(); this.resize();
     this.resizeObserver=new ResizeObserver(()=>this.resize()); this.resizeObserver.observe(this.canvas);
-    this.running=true; this._animate();
+    this.running=true; this._shadowsDeferred=true; this._animate();
+    const enableShadows=()=>{
+      if(!this.running||!this._shadowsDeferred)return;
+      this._shadowsDeferred=false;
+      this.renderer.shadowMap.enabled=true;
+      this.renderer.shadowMap.needsUpdate=true;
+    };
+    if("requestIdleCallback" in window) requestIdleCallback(enableShadows,{timeout:1500});
+    else setTimeout(enableShadows,1200);
   }
 
   _setupScene(){
@@ -593,7 +601,7 @@ export class MycoSimEngine{
 
       weather("peridium",(1-taut)*.45+collapse*.25+(peridial==="flaking"?.18:0));
       if(sid==="old"){
-        weather("old_shell_fragments",.88);
+        weather("senescent_shell",.88);
         weather("sterile_base",.52);
       }
     }
