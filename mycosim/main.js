@@ -111,7 +111,8 @@ function updateMorphologySummary(engine){
   if(currentProfile.id==="puffball"){
     const puffGroups=[
       ["puff_shape","shape"],["puff_surface","surface"],["puff_base","base"],
-      ["peridial_condition","peridium"],["ostiole_state","ostiole"],["gleba_state","gleba"],
+      ["peridial_condition","peridium"],["ostiole_state","ostiole"],["rupture_pattern","rupture"],
+      ["rupture_margin","margin"],["collapse_state","collapse"],["gleba_state","gleba"],
       ["section_view","view"],["texture_realism","detail"]
     ];
     for(const [group,suffix] of puffGroups){
