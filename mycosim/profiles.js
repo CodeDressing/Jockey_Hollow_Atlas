@@ -99,9 +99,9 @@ export const MORPHOLOGY_PROFILES = [
     ]
   },
   {
-    id:"puffball",label:"Puffball / gasteroid",group:"gasteroid",factory:"puffball",version:"3.0.0",
+    id:"puffball",label:"Puffball / gasteroid",group:"gasteroid",factory:"puffball",version:"4.0.0",
     description:"Enclosed spore-bearing glebal body plan with stage-dependent surface ornamentation, peridial state, ostiole development, and cutaway anatomy.",
-    variantGroups:["puff_surface","puff_shape","puff_base","peridial_condition","ostiole_state","gleba_state","section_view","texture_realism"],developmentalStages:["young","mature","old"],
+    variantGroups:["puff_surface","puff_shape","puff_base","peridial_condition","ostiole_state","rupture_pattern","rupture_margin","collapse_state","gleba_state","section_view","texture_realism"],developmentalStages:["young","mature","old"],
     anatomy:[
       A("peridium","Peridium","macro","Outer enclosing wall."),
       A("exoperidium","Exoperidium","macro","Outermost peridial layer; may be smooth, granular, warted, spiny, or scurfy.","peridium"),
@@ -111,7 +111,11 @@ export const MORPHOLOGY_PROFILES = [
       A("apical_region","Apical region","macro","Upper region where an ostiole or other dehiscence may develop.","peridium"),
       A("apical_pore","Ostiole / apical pore","macro","Spore-release opening that develops at maturity.","peridium"),
       A("sterile_base","Sterile base / subgleba","macro","Basal non-spore-bearing tissue."),
-      A("basal_attachment","Basal attachment","macro","Point where the puffball connects to substrate.","sterile_base")
+      A("basal_attachment","Basal attachment","macro","Point where the puffball connects to substrate.","sterile_base"),
+      A("rupture_margin","Rupture margin","macro","Edge of a peridial opening; may be clean, torn, ragged, curled, or frayed.","peridium"),
+      A("worn_exoperidium","Worn exoperidium","macro","Abraded outer peridial surface exposing more persistent inner wall.","exoperidium"),
+      A("collapsed_wall","Collapsed wall","macro","Senescent peridial tissue deformed by drying, spore release, and weathering.","peridium"),
+      A("rupture_channel","Rupture / ostiolar channel","internal","Path through the peridial wall connecting the glebal cavity to the exterior.","apical_pore")
     ]
   },
   {
