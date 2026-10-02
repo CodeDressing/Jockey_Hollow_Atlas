@@ -164,18 +164,18 @@ export const DEVELOPMENTAL_STAGE_LIBRARY = Object.freeze({
   puffball:{
     young:stage("young","Young",0.25,{
       ...common.young,peridium_tautness:1.00,gleba_maturity:0.08,apical_pore_opening:0.00,
-      collapse:0.00,ornament_retention:1.00,peridial_integrity:1.00
-    },"Young puffballs often show their most pronounced external ornamentation at this stage. Spines, warts, or granules may later wear away as the fruitbody matures.",
+      collapse:0.00,ornament_retention:1.00,peridial_integrity:1.00,wall_thickness:1.00,rupture_extent:0.00,margin_weathering:0.00
+    },"Young puffballs often show their most pronounced external ornamentation at this stage. The peridium is continuous and layered, with no functional rupture pathway; spines, warts, or granules may later wear away as the fruitbody matures.",
     ["Body usually globose, subglobose, or pyriform; peridium firm and intact; gleba immature and white; ostiole absent or not functionally open. Surface ornamentation is taxon-dependent and may also be furfuraceous or glabrous."]),
     mature:stage("mature","Mature",0.60,{
       ...common.mature,peridium_tautness:0.82,gleba_maturity:0.72,apical_pore_opening:0.38,
-      collapse:0.08,ornament_retention:0.32,peridial_integrity:0.82
-    },"At maturity, the gleba darkens as spores develop. Fresh youthful ornamentation is substantially reduced: echinate spines are shown only as sparse, shortened, blunted remnants by default, while warts, granules, or scurfy material may persist to varying degrees. An ostiole may begin to form for later spore release.",
+      collapse:0.08,ornament_retention:0.32,peridial_integrity:0.82,wall_thickness:0.88,rupture_extent:0.22,margin_weathering:0.24
+    },"At maturity, the gleba darkens as spores develop. Fresh youthful ornamentation is substantially reduced. The exoperidium may abrade in patches, the endoperidium becomes more evident, and a localized apical rupture pathway or ostiole may begin to form for later spore release.",
     ["Fruitbody fully developed; gleba transitions from white toward olive, buff, brown, or olive-brown; peridium is less pristine; outer and inner peridial layers should remain visually distinguishable in section."]),
     old:stage("old","Old",0.92,{
       ...common.old,peridium_tautness:0.35,gleba_maturity:1.00,apical_pore_opening:1.00,
-      collapse:0.72,spore_release:0.90,ornament_retention:0.06,peridial_integrity:0.38
-    },"In old puffballs, the gleba has matured to a spore mass and the peridium opens or breaks, allowing spores to escape. The generalized old-stage model does not retain intact echinate spines; only low residual non-echinate ornament may remain where appropriate.",
+      collapse:0.72,spore_release:0.90,ornament_retention:0.06,peridial_integrity:0.38,wall_thickness:0.62,rupture_extent:0.78,margin_weathering:0.86
+    },"In old puffballs, the gleba has matured to a spore mass and the layered peridium is thinned, weathered, ruptured, and often partly collapsed. The opening may be irregular, torn, curled, or frayed, and the generalized model does not retain intact youthful echinate spines.",
     ["Gleba fully mature, dry, powdery, and darker; ostiole open or outer wall broken; peridium may be cracked, thinned, torn, or collapsed; body may be misshapen from weathering."])
   },
 
