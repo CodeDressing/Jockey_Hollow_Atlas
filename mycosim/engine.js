@@ -4,6 +4,7 @@ import {PROFILE_BY_ID} from "./profiles.js";
 import {DEFAULT_VARIANTS,validateVariantSelection,puffballSubtype,puffballSubtypeStageDefaults,applyPuffballSubtypeDefaults,enforcePuffballSubtype} from "./variants.js";
 import {DEFAULT_DEVELOPMENTAL_STAGE,composeMorphologyState} from "./development.js";
 import {referenceSheet,validateRenderedGasteroidState,VISUAL_CHARACTER_RATIONALE,REFERENCE_SHEET_AUDIT,VISUAL_CHARACTER_AUDIT} from "./validation_protocol.js";
+import {REALISM_TIERS,PROFILE_REALISM_BUDGETS,selectRealismTier,configureRendererForRealism,configureRealisticLights,scaledSegments,installDistanceLod,disposeLodRecord,updateDistanceLod,rendererComplexity,performanceVerdict,chooseAdaptiveTier} from "./realism_pipeline.js";
 
 const tissue=(color,roughness=.82,opts={})=>new THREE.MeshPhysicalMaterial({
   color,roughness,metalness:0,
@@ -317,9 +318,14 @@ export class MycoSimEngine{
   constructor({canvas,onHover,onSelect,onStatus,onStats}){
     this.canvas=canvas; this.onHover=onHover; this.onSelect=onSelect; this.onStatus=onStatus; this.onStats=onStats;
     this.renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:"high-performance"});
-    this.renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
-    this.renderer.outputColorSpace=THREE.SRGBColorSpace;
-    this.renderer.shadowMap.enabled=false; this.renderer.localClippingEnabled=true;
+    const requestedRealism=DEFAULT_VARIANTS.texture_realism||"atlas";
+    this.realismTier=selectRealismTier({
+      requested:requestedRealism,
+      deviceMemory:navigator.deviceMemory||8,
+      dpr:window.devicePixelRatio||1,
+      viewportWidth:window.innerWidth||1200
+    });
+    configureRendererForRealism(this.renderer,this.realismTier);
     this.scene=new THREE.Scene();
     this.scene.fog=new THREE.FogExp2(0x091011,.035);
     this.camera=new THREE.PerspectiveCamera(34,1,.1,100);
@@ -329,6 +335,7 @@ export class MycoSimEngine{
     this.objects=new Map(); this.pickables=[]; this.hidden=new Set(); this.isolated=null; this.mode="macro"; this.variants={...DEFAULT_VARIANTS}; this.developmentalStageId=DEFAULT_DEVELOPMENTAL_STAGE; this.morphologyState=null;
     this.raycaster=new THREE.Raycaster(); this.pointer=new THREE.Vector2();
     this.lastHover=null; this.hoveredObject=null; this.hoveredMaterials=[]; this.frames=0; this.fpsStart=performance.now(); this.lastFps=0; this.fly=null; this.exploded=false; this.sectioned=false; this.originalTransforms=new Map();
+    this.lodRecord=null;this._adaptiveTierApplied=false;this._lastComplexity={triangles:0,meshes:0,instanced:0,drawCalls:0};
     this._setupScene(); this._bind(); this.resize();
     this.resizeObserver=new ResizeObserver(()=>this.resize()); this.resizeObserver.observe(this.canvas);
     this.running=true; this._shadowsDeferred=true; this._animate();
@@ -336,6 +343,7 @@ export class MycoSimEngine{
       if(!this.running||!this._shadowsDeferred)return;
       this._shadowsDeferred=false;
       this.renderer.shadowMap.enabled=true;
+      this.renderer.shadowMap.type=THREE.PCFSoftShadowMap;
       this.renderer.shadowMap.needsUpdate=true;
     };
     if("requestIdleCallback" in window) requestIdleCallback(enableShadows,{timeout:1500});
@@ -343,13 +351,10 @@ export class MycoSimEngine{
   }
 
   _setupScene(){
-    this.scene.add(new THREE.HemisphereLight(0xf1ead9,0x0c1714,1.8));
-    const key=new THREE.DirectionalLight(0xffead0,3.0); key.position.set(4.5,7.5,4.2); key.castShadow=true;
-    key.shadow.mapSize.set(1024,1024);key.shadow.camera.near=.5;key.shadow.camera.far=24;this.scene.add(key);
-    const fill=new THREE.DirectionalLight(0xb7d0d6,1.05); fill.position.set(-5,3,-4); this.scene.add(fill);
-    const rim=new THREE.DirectionalLight(0xf6c98f,1.0);rim.position.set(1.5,4.5,-6);this.scene.add(rim);
-    const ground=new THREE.Mesh(new THREE.CylinderGeometry(2.7,3,.28,72),MATERIALS.wood.clone());
-    ground.position.y=-.72; ground.receiveShadow=true; this.scene.add(ground);
+    this.scene.fog=this.realismTier.post.fog?new THREE.FogExp2(0x091011,.035):null;
+    this.realismLights=configureRealisticLights(this.scene,this.realismTier);
+    const ground=new THREE.Mesh(new THREE.CylinderGeometry(2.7,3,.28,scaledSegments(72,this.realismTier,{min:36,max:96})),MATERIALS.wood.clone());
+    ground.position.y=-.72; ground.receiveShadow=true; ground.castShadow=false; this.scene.add(ground);
     const grid=new THREE.GridHelper(14,28,0x31403a,0x1b2824); grid.position.y=-.55; this.scene.add(grid);
   }
 
@@ -388,7 +393,10 @@ export class MycoSimEngine{
   }
 
   cleanupModel(){
-    this._clearHoverHighlight(); this.clearKnowledgeProxy?.(); this.objects.clear(); this.pickables.length=0; this.hidden.clear(); this.isolated=null; this.lastHover=null; this.exploded=false; this.sectioned=false; this.originalTransforms.clear();
+    this._clearHoverHighlight(); this.clearKnowledgeProxy?.();
+    if(this.lodRecord){disposeLodRecord(this.lodRecord,this.scene);this.lodRecord=null;}
+    this.root.visible=true;
+    this.objects.clear(); this.pickables.length=0; this.hidden.clear(); this.isolated=null; this.lastHover=null; this.exploded=false; this.sectioned=false; this.originalTransforms.clear();
     for(const child of [...this.root.children]){
       this.root.remove(child);
       child.traverse?.(n=>{
@@ -404,6 +412,7 @@ export class MycoSimEngine{
 
   loadProfile(id){
     const profileBuildStart=performance.now();
+    this._adaptiveTierApplied=false;
     const p=PROFILE_BY_ID[id]; if(!p) throw new Error("Unknown morphology profile: "+id);
     this.onStatus?.("Loading "+p.label+"…");
     const enteringPuffball=id==="puffball" && this.currentProfile?.id!=="puffball";
@@ -420,12 +429,22 @@ export class MycoSimEngine{
       }
     }
     this.cleanupModel();
+    this.realismTier=selectRealismTier({
+      requested:this.variants.texture_realism||"atlas",
+      deviceMemory:navigator.deviceMemory||8,
+      dpr:window.devicePixelRatio||1,
+      viewportWidth:window.innerWidth||1200
+    });
+    configureRendererForRealism(this.renderer,this.realismTier);
     this.morphologyState=composeMorphologyState(id,{stageId:this.developmentalStageId,variants:this.variants});
     const fn=this["build_"+p.factory];
     if(typeof fn!=="function") throw new Error("Missing model factory: "+p.factory);
     fn.call(this);
     this.applyArchitectureDevelopmentalGeometry(id);
     this.currentProfile=p;
+    if(PROFILE_REALISM_BUDGETS[id]?.lod){
+      this.lodRecord=installDistanceLod(this,id,this.realismTier);
+    }
     this.mode="macro";
     if(id==="puffball"){
       const sectionMode=this.variants.section_view||"external";
@@ -1119,8 +1138,16 @@ export class MycoSimEngine{
       rendererTextures:this.renderer.info.memory.textures,
       drawCalls:this.renderer.info.render.calls,
       profileBuildMs:Math.round(this._lastProfileBuildMs||0),
-      startupTargetMs:3000,
-      startupMaximumMs:5000,
+      startupTargetMs:this.realismTier?.targets?.startupMs||3000,
+      startupMaximumMs:this.realismTier?.targets?.hardStartupMs||5000,
+      realismTier:this.realismTier?.id||"atlas",
+      realismBudget:PROFILE_REALISM_BUDGETS[this.currentProfile?.id]||null,
+      complexity:this._lastComplexity,
+      realismPerformance:performanceVerdict({
+        fps:this.lastFps||0,
+        buildMs:this._lastProfileBuildMs||0,
+        complexity:this._lastComplexity
+      },this.realismTier||REALISM_TIERS.atlas),
       puffOrnament:this.objects.get("exoperidium")?.userData?.ornamentStats||null,
       developmentalIdentity:this.morphologyState?.developmental?.identityKey||null,
       gasteroidSubtype:this.currentProfile?.id==="puffball"?(this.variants.puff_subtype||"true_puffball"):null,
@@ -1573,10 +1600,20 @@ export class MycoSimEngine{
       this.controls.target.lerpVectors(this.fly.fromTarget,this.fly.toTarget,u);
       if(t>=1)this.fly=null;
     }
-    this.controls.update(); this.renderer.render(this.scene,this.camera);
+    this.controls.update();
+    updateDistanceLod(this,this.lodRecord);
+    this.renderer.render(this.scene,this.camera);
     this.frames++; const now=performance.now();
     if(now-this.fpsStart>=1000){
-      const fps=Math.round(this.frames*1000/(now-this.fpsStart)); this.lastFps=fps; this.onStats?.({fps,objects:this.objects.size,drawCalls:this.renderer.info.render.calls});
+      const fps=Math.round(this.frames*1000/(now-this.fpsStart)); this.lastFps=fps;
+      this._lastComplexity=rendererComplexity(this.renderer,this.scene);
+      const adaptive=chooseAdaptiveTier(this.realismTier,{fps,drawCalls:this._lastComplexity.drawCalls,triangles:this._lastComplexity.triangles});
+      if(adaptive.id!==this.realismTier.id&&!this._adaptiveTierApplied){
+        this.realismTier=adaptive;this._adaptiveTierApplied=true;
+        configureRendererForRealism(this.renderer,this.realismTier);
+        if(this.lodRecord)this.lodRecord.distance=this.realismTier.farLodDistance;
+      }
+      this.onStats?.({fps,objects:this.objects.size,drawCalls:this.renderer.info.render.calls,triangles:this._lastComplexity.triangles,quality:this.realismTier.id});
       this.frames=0; this.fpsStart=now;
     }
     requestAnimationFrame(()=>this._animate());
