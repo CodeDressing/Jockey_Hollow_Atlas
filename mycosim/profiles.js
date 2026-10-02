@@ -99,9 +99,9 @@ export const MORPHOLOGY_PROFILES = [
     ]
   },
   {
-    id:"puffball",label:"Puffball / gasteroid",group:"gasteroid",factory:"puffball",version:"4.0.0",
+    id:"puffball",label:"Puffball / gasteroid",group:"gasteroid",factory:"puffball",version:"5.0.0",
     description:"Enclosed spore-bearing glebal body plan with stage-dependent surface ornamentation, peridial state, ostiole development, and cutaway anatomy.",
-    variantGroups:["puff_surface","puff_shape","puff_base","peridial_condition","ostiole_state","rupture_pattern","rupture_margin","collapse_state","gleba_state","section_view","texture_realism"],developmentalStages:["young","mature","old"],
+    variantGroups:["puff_subtype","puff_surface","puff_shape","puff_base","peridial_condition","ostiole_state","rupture_pattern","rupture_margin","collapse_state","gleba_state","section_view","texture_realism"],developmentalStages:["young","mature","old"],
     anatomy:[
       A("peridium","Peridium","macro","Outer enclosing wall."),
       A("exoperidium","Exoperidium","macro","Outermost peridial layer; may be smooth, granular, warted, spiny, or scurfy.","peridium"),
@@ -115,7 +115,9 @@ export const MORPHOLOGY_PROFILES = [
       A("rupture_margin","Rupture margin","macro","Edge of a peridial opening; may be clean, torn, ragged, curled, or frayed.","peridium"),
       A("worn_exoperidium","Worn exoperidium","macro","Abraded outer peridial surface exposing more persistent inner wall.","exoperidium"),
       A("collapsed_wall","Collapsed wall","macro","Senescent peridial tissue deformed by drying, spore release, and weathering.","peridium"),
-      A("rupture_channel","Rupture / ostiolar channel","internal","Path through the peridial wall connecting the glebal cavity to the exterior.","apical_pore")
+      A("rupture_channel","Rupture / ostiolar channel","internal","Path through the peridial wall connecting the glebal cavity to the exterior.","apical_pore"),
+      A("earthstar_rays","Earthstar rays","macro","Outer peridial tissue split into radiating rays in earthstar-type development.","peridium"),
+      A("gasteroid_stalk","Gasteroid stalk","macro","Sterile stalk elevating a spore sac in stalked-puffball-type architecture.","sterile_base")
     ]
   },
   {
