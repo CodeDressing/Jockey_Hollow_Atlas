@@ -513,7 +513,6 @@ export class MycoSimEngine{
       if(apical)apical.visible=true;
       const basal=this.objects.get("basal_attachment");
       if(basal)basal.visible=base!=="none";
-      const oldShell=this.objects.get("old_shell_fragments");
       const oldGleba=this.objects.get("old_gleba_clumps");
       const oldDebris=this.objects.get("old_basal_debris");
       const layeredShell=this.objects.get("senescent_shell");
@@ -521,7 +520,6 @@ export class MycoSimEngine{
       const ruptureChannel=this.objects.get("rupture_channel");
       const wornExo=this.objects.get("worn_exoperidium");
       const collapsedWall=this.objects.get("collapsed_wall");
-      if(oldShell)oldShell.visible=false;
       if(oldGleba)oldGleba.visible=sid==="old";
       if(oldDebris)oldDebris.visible=sid==="old" && base!=="none";
       if(layeredShell)layeredShell.visible=sid==="old";
@@ -1748,44 +1746,9 @@ export class MycoSimEngine{
     collapsedProxy.userData={id:"collapsed_wall",label:"Collapsed peridial wall",category:"macro",selectable:true,knowledgeId:"collapsed_wall"};
     this.root.add(collapsedProxy);this.objects.set("collapsed_wall",collapsedProxy);
 
-    // Old-stage realism layer: fractured papery peridium, exposed powdery gleba,
-    // and basal debris. These are separate probeable meshes so educational
-    // anatomy remains functional while the rendering reads as a real senescent puffball.
-    const oldShell=new THREE.Group();
-    oldShell.userData={id:"old_shell_fragments",label:"Weathered peridium fragments",category:"macro",selectable:true,knowledgeId:"peridium"};
-    const shellOuterMat=new THREE.MeshStandardMaterial({
-      color:0x8a755b,roughness:.98,metalness:0,side:THREE.DoubleSide
-    });
-    const shellInnerMat=new THREE.MeshStandardMaterial({
-      color:0x5f4a39,roughness:1,metalness:0,side:THREE.DoubleSide
-    });
-    const shellSpecs=[
-      [0.00,1.15,.72,.58,-.06,.04],
-      [1.22,.98,.78,.62,.05,-.03],
-      [2.36,1.04,.70,.66,-.04,.02],
-      [3.53,.92,.80,.60,.03,.05],
-      [4.62,1.18,.73,.61,-.05,-.04],
-      [5.76,.86,.82,.56,.04,.01]
-    ];
-    shellSpecs.forEach((q,i)=>{
-      const [phiStart,phiLen,thetaStart,thetaLen,rx,rz]=q;
-      const outerGeo=new THREE.SphereGeometry(1.16,24,10,phiStart,phiLen,thetaStart,thetaLen);
-      const outer=new THREE.Mesh(outerGeo,shellOuterMat.clone());
-      outer.position.y=bodyY;
-      outer.rotation.x=rx;outer.rotation.z=rz;
-      outer.scale.set(1+.025*Math.sin(i*1.7),.96-.035*(i%3),1+.03*Math.cos(i*1.4));
-      outer.userData=oldShell.userData;
-      oldShell.add(outer);this.pickables.push(outer);
-
-      const innerGeo=new THREE.SphereGeometry(1.105,20,8,phiStart+.025,Math.max(.28,phiLen-.05),thetaStart+.025,Math.max(.24,thetaLen-.05));
-      const inner=new THREE.Mesh(innerGeo,shellInnerMat.clone());
-      inner.position.y=bodyY;
-      inner.rotation.copy(outer.rotation);
-      inner.scale.copy(outer.scale);
-      inner.userData=oldShell.userData;
-      oldShell.add(inner);this.pickables.push(inner);
-    });
-    this.root.add(oldShell);this.objects.set("old_shell_fragments",oldShell);
+    // Old-stage interior realism continues below. The obsolete disconnected
+    // panel shell has been removed; the continuous layered senescent shell above
+    // is now the sole old-stage peridial architecture.
 
     const oldGleba=new THREE.Group();
     oldGleba.userData={id:"old_gleba_clumps",label:"Powdery mature gleba",category:"internal",selectable:true,knowledgeId:"spore_mass"};
