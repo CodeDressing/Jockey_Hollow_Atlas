@@ -150,6 +150,13 @@ window.DRIVE_PHOTOS.push(
   {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F17","category":"Microscopy / non-spore material","filename":"AN2-F17 SPM V9 non-spore plant matter.png","caption":"AN2-F17 — second non-spore plant-like matter field; excluded from spore measurements","id":"1TYCOFkym4tNczcniFpuLV5ICIfdX4OCV","original":"https://drive.google.com/thumbnail?id=1TYCOFkym4tNczcniFpuLV5ICIfdX4OCV&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1TYCOFkym4tNczcniFpuLV5ICIfdX4OCV&sz=w1200","source_relpath":"AN2 lab additions/AN2-F17 SPM V9 non-spore plant matter.png","drive_view":"https://drive.google.com/file/d/1TYCOFkym4tNczcniFpuLV5ICIfdX4OCV/view"}
 );
 
+window.DRIVE_PHOTOS = window.DRIVE_PHOTOS || [];
+window.DRIVE_PHOTOS.push(
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F17","category":"Spore print / preparation","filename":"AN2-F17 spore print (1).jpg","caption":"AN2-F17 — spore-print/preparation view 1; accession-labeled slide with pale cream to khaki deposit","id":"1v0c6zzWq7rst5akfMs8AYR9RIgWMbM-_","original":"https://drive.google.com/thumbnail?id=1v0c6zzWq7rst5akfMs8AYR9RIgWMbM-_&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1v0c6zzWq7rst5akfMs8AYR9RIgWMbM-_&sz=w1200","source_relpath":"AN2 lab additions/AN2-F17 spore print (1).jpg","drive_view":"https://drive.google.com/file/d/1v0c6zzWq7rst5akfMs8AYR9RIgWMbM-_/view"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F17","category":"Spore print / preparation","filename":"AN2-F17 spore print (2).jpg","caption":"AN2-F17 — spore-print/preparation view 2; cream to khaki to light-brown deposit documented on foil","id":"169Xjf6tuurOx_-hAPEArcvQet-CtSucu","original":"https://drive.google.com/thumbnail?id=169Xjf6tuurOx_-hAPEArcvQet-CtSucu&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=169Xjf6tuurOx_-hAPEArcvQet-CtSucu&sz=w1200","source_relpath":"AN2 lab additions/AN2-F17 spore print (2).jpg","drive_view":"https://drive.google.com/file/d/169Xjf6tuurOx_-hAPEArcvQet-CtSucu/view"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F17","category":"Spore print / preparation","filename":"AN2-F17 spore print (3).jpg","caption":"AN2-F17 — spore-print/preparation view 3; accession continuity with labeled slide and pale tan-brown deposit","id":"1Jue7hnbHYOdNJDxc_RkPp0pKW5X7Ztrf","original":"https://drive.google.com/thumbnail?id=1Jue7hnbHYOdNJDxc_RkPp0pKW5X7Ztrf&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1Jue7hnbHYOdNJDxc_RkPp0pKW5X7Ztrf&sz=w1200","source_relpath":"AN2 lab additions/AN2-F17 spore print (3).jpg","drive_view":"https://drive.google.com/file/d/1Jue7hnbHYOdNJDxc_RkPp0pKW5X7Ztrf/view"}
+);
+
 window.SPECIMEN_ENRICHMENTS = window.SPECIMEN_ENRICHMENTS || {};
 window.SPECIMEN_ENRICHMENTS["AN2-F9"] = {
   status: "AN2-F9 complete dataset — Jockey Hollow wild context, field specimen morphology, laboratory preparation, microscopy, and measured spore imagery integrated.",
@@ -563,10 +570,12 @@ window.SPECIMEN_ENRICHMENTS["AN2-F32"] = {
 
 window.SPECIMEN_ENRICHMENTS["AN2-F17"] = {
   status: "AN2-F17 successful spore microscopy objective — confirmed spores documented across seven spore fields, with two additional non-spore plant-like material fields preserved separately.",
-  sourceLine: "Rutgers/Jockey Hollow accession AN2-F17. Existing atlas records preserve ten wild-context photographs and four verified laboratory specimen views. The Rutgers macroscopic measurement record is retained. Nine microscopy images from the current SPM run are added here: seven fields document confirmed spores, while V8 and V9 document non-spore plant-like material and are explicitly excluded from the spore dataset. Imaging used the Motic BA310 with Moticam 2300 camera under the established 100× calibrated workflow.",
+  sourceLine: "Rutgers/Jockey Hollow accession AN2-F17. Existing atlas records preserve ten wild-context photographs and four verified laboratory specimen views. The Rutgers macroscopic measurement record is retained. Three accession-linked spore-print/preparation photographs document a pale cream to khaki to light-brown deposit and labeled-slide continuity. Nine microscopy images from the current SPM run are retained: seven fields document confirmed spores, while V8 and V9 document non-spore plant-like material and are explicitly excluded from the spore dataset. Imaging used the Motic BA310 with Moticam 2300 camera under the established 100× calibrated workflow.",
   summary: {
     "Growth / Description": "AN2-F17 has extensive accession-linked field and laboratory documentation. This update adds a successful spore microscopy series while preserving non-spore material as a separate observation rather than contaminating the spore record.",
     "Macroscopic measurements": "Rutgers measurement master: cap diameter 5.3 cm; stipe top diameter 0.5 cm; stipe middle diameter 0.9 cm; stipe base diameter 1.2 cm; stipe height 6.1 cm.",
+    "Spore print / preparation": "Three accession-linked preparation photographs document the AN2-F17 print and labeled slide. The visible spore deposit ranges from cream to khaki to light brown. Color is recorded descriptively from the preparation photographs and is preserved as a macroscopic print character without forcing taxonomic interpretation.",
+    "Spore-print color": "Cream to khaki to light brown.",
     "SPM result": "Successful. A repeatable fungal spore population is visible throughout seven microscopy fields.",
     "Spore morphology": "Orientation-dependent morphology is pronounced. In side view, many spores appear very narrow, elongate, and needle-like. In flatter or broader views, spores range from semi-angular to angular and irregular, with some shorter rounded-to-subangular profiles. This variation is recorded as observed rather than forced into a single shape class.",
     "Spore abundance / distribution": "Spores are abundant across the successful fields, occurring singly and in loose to locally dense distributions.",
@@ -583,6 +592,8 @@ window.SPECIMEN_ENRICHMENTS["AN2-F17"] = {
     ["Wild / field imagery","Yes — 10 views"],
     ["Verified laboratory specimen imagery","Yes — 4 views"],
     ["Macroscopic measurements","Yes — cap 5.3 cm; stipe 0.5 / 0.9 / 1.2 cm; height 6.1 cm"],
+    ["Spore-print / preparation imagery","Yes — 3 accession-linked views"],
+    ["Spore-print color","Cream to khaki to light brown"],
     ["Successful fungal spore objective","Yes"],
     ["Confirmed spore microscopy fields","7"],
     ["Measured microscopy fields","4"],
