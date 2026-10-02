@@ -1100,6 +1100,7 @@ export class MycoSimEngine{
         stalkVisible:!!this.objects.get("gasteroid_stalk")?.visible,
         sterileBaseVisible:!!this.objects.get("sterile_base")?.visible
       }:null,
+      probeKnowledgeIds:[...new Set(this.pickables.map(o=>this._metaForObject(o)).filter(Boolean).map(meta=>meta.knowledgeId||meta.id).filter(Boolean))],
       developmentalParameters:this.currentProfile?.id==="puffball"?this.morphologyState?.stage?.parameters||null:null,
       fps:this.lastFps,
       frameIntersects:!box.isEmpty()&&frustum.intersectsBox(box),
@@ -1347,6 +1348,43 @@ export class MycoSimEngine{
     }else if(id==="peridium"){
       region=ny>.72?"upper peridium":ny<.28?"lower peridium":"lateral peridium";
       surface="outer peridial wall";
+    }else if(id==="exoperidium"){
+      if(meta.knowledgeId==="echinate")region="echinate exoperidial projection";
+      else if(meta.knowledgeId==="verrucose")region="verrucose exoperidial wart";
+      else if(meta.knowledgeId==="granular")region="granular exoperidial ornament";
+      else if(meta.knowledgeId==="furfuraceous")region="furfuraceous exoperidial flake";
+      else region="exoperidial surface";
+      surface="outer exoperidial ornamentation";
+    }else if(id==="worn_exoperidium"){
+      region="abraded exoperidial patch";
+      surface="weathered outer peridial surface";
+    }else if(id==="rupture_margin"){
+      region="peridial rupture margin";
+      surface="edge of dehisced peridium";
+    }else if(id==="rupture_channel"){
+      region="ostiolar / rupture channel";
+      surface="internal release pathway";
+    }else if(id==="apical_pore"){
+      region="ostiole / apical pore";
+      surface="spore-release opening";
+    }else if(id==="apical_region"){
+      region="apical region";
+      surface="upper peridial surface";
+    }else if(id==="sterile_base"){
+      region="sterile basal region / subgleba";
+      surface="sterile supporting tissue";
+    }else if(id==="basal_attachment"){
+      region="basal attachment";
+      surface="substrate-attachment zone";
+    }else if(id==="spore_mass"){
+      region="mature internal spore mass";
+      surface="powdery glebal derivative";
+    }else if(id==="earthstar_rays"){
+      region="earthstar ray";
+      surface="reflexed outer peridial tissue";
+    }else if(id==="gasteroid_stalk"){
+      region="gasteroid stalk";
+      surface="sterile supporting stalk";
     }else if(id==="gleba"){
       region="internal glebal tissue";
       surface="spore-bearing internal tissue";
