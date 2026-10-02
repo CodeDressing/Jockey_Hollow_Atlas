@@ -249,108 +249,168 @@ export const KNOWLEDGE_OBJECTS = Object.freeze({
     id:"puffball",label:"Puffball",level:"organism",pronunciation:"PUHF-bawl",
     beginner:"A gasteroid fungus in which spores mature internally and are released later, usually through an opening or by rupture of the outer wall.",
     expert:"A gasteroid fungus in which spores mature internally and are released later, usually through an opening or by rupture of the outer wall.",
+    whyItMatters:"Recognizing an enclosed spore-bearing body plan separates puffball-type development from exposed gills, pores, teeth, or other hymenophores.",
     relationships:["gasteroid","peridium","gleba","apical_pore"]
   },
   gasteroid:{
     id:"gasteroid",label:"Gasteroid",level:"architecture",pronunciation:"gas-TER-oyd",
     beginner:"Describing fungi that produce spores internally rather than on an exposed hymenial surface like gills or pores.",
     expert:"Describing fungi that produce spores internally rather than on an exposed hymenial surface like gills or pores.",
+    whyItMatters:"Gasteroid architecture describes where spores mature and how the fruit body releases them; it is a body-plan concept, not a single taxonomic group.",
     relationships:["puffball","peridium","gleba"]
   },
   peridium:{
     id:"peridium",label:"Peridium",level:"macro",pronunciation:"puh-RID-ee-um",
     beginner:"The outer wall surrounding the spore-bearing interior of a puffball or related gasteroid fungus.",
     expert:"The outer wall surrounding the spore-bearing interior of a puffball or related gasteroid fungus.",
+    whyItMatters:"Peridial thickness, integrity, layering, cracking, and persistence are useful developmental and identification characters.",
     relationships:["exoperidium","endoperidium","gleba","apical_pore"]
   },
   exoperidium:{
     id:"exoperidium",label:"Exoperidium",level:"macro",pronunciation:"ek-soh-puh-RID-ee-um",
     beginner:"The outermost layer of the peridium. It may be smooth, spiny, warted, granular, or scurfy.",
     expert:"The outermost layer of the peridium. It may be smooth, spiny, warted, granular, or scurfy.",
+    whyItMatters:"Surface ornamentation such as spines, warts, granules, or scurfy material commonly occurs here and can help distinguish taxa and developmental stage.",
     relationships:["peridium","endoperidium"]
   },
   endoperidium:{
     id:"endoperidium",label:"Endoperidium",level:"internal",pronunciation:"en-doh-puh-RID-ee-um",
     beginner:"The inner layer of the peridium, often remaining after the outer layer wears away.",
     expert:"The inner layer of the peridium, often remaining after the outer layer wears away.",
+    whyItMatters:"The persistent inner wall often becomes more evident after the exoperidium abrades and helps define the mature spore sac.",
     relationships:["peridium","exoperidium","gleba","apical_pore"]
+  },
+  surface_ornamentation:{
+    id:"surface_ornamentation",label:"Surface ornamentation",level:"macro",pronunciation:"surface ornamentation",
+    beginner:"The visible texture or projections on the outer surface of the fruit body.",
+    expert:"External exoperidial expression including smooth, granular, verrucose, echinate, or furfuraceous states; persistence and abrasion vary with taxon and age.",
+    whyItMatters:"Young puffballs often express their strongest surface characters here, and those characters may later wear away.",
+    relationships:["exoperidium","echinate","verrucose","granular","furfuraceous","glabrous"]
+  },
+  apical_region:{
+    id:"apical_region",label:"Apical region",level:"macro",pronunciation:"AY-pih-kul region",
+    beginner:"The uppermost region of the puffball.",
+    expert:"Distal apical region of the gasteroid fruit body where an ostiole or other dehiscence may develop.",
+    whyItMatters:"Its condition helps document whether a spore-release opening is absent, developing, open, or weathered.",
+    relationships:["apical","apical_pore","dehiscent"]
+  },
+  basal_attachment:{
+    id:"basal_attachment",label:"Basal attachment",level:"macro",pronunciation:"BAY-sul attachment",
+    beginner:"The point where the puffball connects to the substrate.",
+    expert:"Basal zone connecting the fruit body or subgleba to soil, litter, wood, or other substrate.",
+    whyItMatters:"Attachment form and substrate association are useful ecological and macromorphological observations.",
+    relationships:["sterile_base","subgleba","substrate"]
+  },
+  spore_mass:{
+    id:"spore_mass",label:"Spore mass",level:"internal",pronunciation:"spore mass",
+    beginner:"The mature powdery mass of spores inside an old or mature puffball.",
+    expert:"Dry mature glebal spore mass produced after fertile tissues disintegrate or reorganize during gasteroid maturation.",
+    whyItMatters:"A developed powdery spore mass distinguishes mature or senescent internal condition from firm immature gleba.",
+    relationships:["gleba","basidiospore","apical_pore"]
+  },
+  immature_gleba:{
+    id:"immature_gleba",label:"Immature gleba",level:"internal",pronunciation:"immature GLEE-buh",
+    beginner:"Young gleba that is still white and firm.",
+    expert:"Immature internal glebal tissue prior to full spore maturation; typically firm and pale in the generalized puffball model.",
+    whyItMatters:"White firm gleba is a key maturity character and should not be interpreted as a mature powdery spore mass.",
+    relationships:["gleba","spore_mass"]
+  },
+  mature_gleba:{
+    id:"mature_gleba",label:"Mature gleba",level:"internal",pronunciation:"mature GLEE-buh",
+    beginner:"Darkening gleba in which spores are mature or approaching maturity.",
+    expert:"Mature glebal tissue transitioning to olive-brown or brown, increasingly dry and powdery as the spore mass develops.",
+    whyItMatters:"Color and texture document developmental state and readiness for spore release.",
+    relationships:["gleba","spore_mass","apical_pore"]
   },
   echinate:{
     id:"echinate",label:"Echinate",level:"macro",pronunciation:"EK-in-ate",
     beginner:"Bearing sharp spines or prickles.",
     expert:"Bearing sharp spines or prickles.",
+    whyItMatters:"Spine form, density, persistence, and abrasion can be diagnostically informative, especially in young fruit bodies.",
     relationships:["exoperidium"]
   },
   verrucose:{
     id:"verrucose",label:"Verrucose",level:"macro",pronunciation:"veh-ROO-kose",
     beginner:"Covered with wart-like projections.",
     expert:"Covered with wart-like projections.",
+    whyItMatters:"Wart shape and persistence are useful surface characters and should not be confused with true spines.",
     relationships:["exoperidium"]
   },
   granular:{
     id:"granular",label:"Granular",level:"macro",pronunciation:"GRAN-yuh-ler",
     beginner:"Covered with small grain-like particles or a rough granular texture.",
     expert:"Covered with small grain-like particles or a rough granular texture.",
+    whyItMatters:"Fine granular ornamentation represents a distinct surface state from warts, spines, or a smooth exoperidium.",
     relationships:["exoperidium"]
   },
   furfuraceous:{
     id:"furfuraceous",label:"Furfuraceous",level:"macro",pronunciation:"fer-fer-AY-shus",
     beginner:"Scaly or bran-like, with a fine scurfy coating.",
     expert:"Scaly or bran-like, with a fine scurfy coating.",
+    whyItMatters:"A scurfy coating may wear away with age, so developmental stage matters when recording this character.",
     relationships:["exoperidium"]
   },
   glabrous:{
     id:"glabrous",label:"Glabrous",level:"macro",pronunciation:"GLAY-brus",
     beginner:"Smooth; lacking hairs, spines, or ornamentation.",
     expert:"Smooth; lacking hairs, spines, or ornamentation.",
+    whyItMatters:"A genuinely smooth surface is an informative state and should not be assumed simply because ornament has weathered away.",
     relationships:["exoperidium"]
   },
   subglobose:{
     id:"subglobose",label:"Subglobose",level:"macro",pronunciation:"sub-GLOH-bohs",
     beginner:"Almost spherical, but not perfectly round.",
     expert:"Almost spherical, but not perfectly round.",
+    whyItMatters:"Slight departures from a sphere can be taxonomically useful and should be recorded rather than normalized to globose.",
     relationships:["peridium"]
   },
   globose:{
     id:"globose",label:"Globose",level:"macro",pronunciation:"GLOH-bohs",
     beginner:"Nearly spherical in shape.",
     expert:"Nearly spherical in shape.",
+    whyItMatters:"Overall body shape is a macromorphological character that helps distinguish puffball forms.",
     relationships:["peridium"]
   },
   pyriform:{
     id:"pyriform",label:"Pyriform",level:"macro",pronunciation:"PEER-ih-form",
     beginner:"Pear-shaped; broader above and narrower below.",
     expert:"Pear-shaped; broader above and narrower below.",
+    whyItMatters:"A pear-shaped body often reflects a differentiated basal region and is an important field character.",
     relationships:["peridium","sterile_base"]
   },
   turbiniform:{
     id:"turbiniform",label:"Turbiniform",level:"macro",pronunciation:"turbiniform",
     beginner:"Spinning-top shaped.",
     expert:"Broad above and strongly tapered below, producing a top-shaped profile.",
+    whyItMatters:"A top-shaped body is a distinct macromorphological state and should not be collapsed into generic globose form.",
     relationships:["peridium","sterile_base"]
   },
   gleba:{
     id:"gleba",label:"Gleba",level:"tissue",pronunciation:"GLEE-buh",
     beginner:"The internal spore-bearing tissue of gasteroid fungi. It is usually white when immature and darkens as spores mature.",
     expert:"The internal spore-bearing tissue of gasteroid fungi. It is usually white when immature and darkens as spores mature.",
+    whyItMatters:"Gleba color and consistency change strongly with maturity, so white firm tissue versus olive-brown powdery tissue is important developmental evidence.",
     relationships:["peridium","basidiospore"]
   },
   apical:{
     id:"apical",label:"Apical",level:"macro",pronunciation:"AY-pih-kul",
     beginner:"Located at the top or apex.",
     expert:"Located at the top or apex.",
+    whyItMatters:"The apical region is where an ostiole often develops, so its condition should be examined during maturation.",
     relationships:["apical_pore","peridium"]
   },
   dehiscent:{
     id:"dehiscent",label:"Dehiscent",level:"development",pronunciation:"dih-HISS-ent",
     beginner:"Opening at maturity to release contents, such as spores.",
     expert:"Opening at maturity to release contents, such as spores.",
+    whyItMatters:"How the peridium opens at maturity affects spore release and is an important developmental character.",
     relationships:["apical_pore","peridium"]
   },
   apical_pore:{
     id:"apical_pore",label:"Ostiole",level:"macro",pronunciation:"OSS-tee-ohl",
     beginner:"A small opening, often at the top of the mature puffball, through which spores are released.",
     expert:"A small opening, often at the top of the mature puffball, through which spores are released.",
+    whyItMatters:"Ostiole development indicates maturation and the mechanism by which dry spores are released.",
     relationships:["peridium","endoperidium","gleba"]
   },
   fertile_head:{
@@ -423,12 +483,14 @@ export const KNOWLEDGE_OBJECTS = Object.freeze({
     id:"subgleba",label:"Subgleba / sterile base",level:"macro",pronunciation:"sub-GLEE-buh / STAIR-ile base",
     beginner:"A non-spore-bearing basal region present in some puffballs, often supporting the fertile gleba above.",
     expert:"A non-spore-bearing basal region present in some puffballs, often supporting the fertile gleba above.",
+    whyItMatters:"Presence, size, and form of a sterile base can distinguish different puffball body plans.",
     relationships:["gleba","peridium"]
   },
   sterile_base:{
     id:"sterile_base",label:"Subgleba / sterile base",level:"macro",pronunciation:"sub-GLEE-buh / STAIR-ile base",
     beginner:"A non-spore-bearing basal region present in some puffballs, often supporting the fertile gleba above.",
     expert:"A non-spore-bearing basal region present in some puffballs, often supporting the fertile gleba above.",
+    whyItMatters:"Presence, size, and form of a sterile base can distinguish different puffball body plans.",
     relationships:["gleba","peridium"]
   },
   base:{
@@ -474,8 +536,10 @@ export const NAVIGATION_PATHS = Object.freeze({
     ["basidiome","base"]
   ],
   puffball:[
-    ["basidiome","puffball","gasteroid","peridium","exoperidium","endoperidium","gleba","basidiospore"],
-    ["basidiome","puffball","subgleba"],["basidiome","puffball","apical_pore"],
+    ["basidiome","puffball","gasteroid","peridium","exoperidium","surface_ornamentation"],
+    ["basidiome","puffball","gasteroid","peridium","endoperidium","gleba","immature_gleba"],
+    ["basidiome","puffball","gasteroid","peridium","endoperidium","gleba","mature_gleba","spore_mass","basidiospore"],
+    ["basidiome","puffball","subgleba","basal_attachment"],["basidiome","puffball","apical_region","apical_pore"],
     ["basidiome","puffball","exoperidium","echinate"],
     ["basidiome","puffball","exoperidium","verrucose"],
     ["basidiome","puffball","exoperidium","granular"],
