@@ -1372,6 +1372,16 @@ export class MycoSimEngine{
         sporeMass:this.objects.get("spore_mass")?.userData?.renderingModel||null
       }:null,
       developmentalIdentity:this.morphologyState?.developmental?.identityKey||null,
+      agaricoidPhaseOne:this.currentProfile?.id==="agaricoid"?{
+        pileusModel:this.objects.get("pileus")?.geometry?.userData?.model||null,
+        pileusProfile:this.variants.agaric_pileus_profile||null,
+        pileusCenter:this.variants.agaric_pileus_center||null,
+        pileusMargin:this.variants.agaric_margin||null,
+        capThickness:this.objects.get("pileus")?.geometry?.userData?.thickness||null,
+        supportsGillInsertion:!!this.objects.get("pileus")?.geometry?.userData?.supportsGillInsertion,
+        stipeModel:this.objects.get("stipe")?.geometry?.userData?.model||null,
+        stipeTaper:this.variants.agaric_stipe_taper||null
+      }:null,
       gasteroidSubtype:this.currentProfile?.id==="puffball"?(this.variants.puff_subtype||"true_puffball"):null,
       gasteroidSubtypeDefinition:this.currentProfile?.id==="puffball"?puffballSubtype(this.variants.puff_subtype||"true_puffball"):null,
       gasteroidArchitecture:this.currentProfile?.id==="puffball"?{
@@ -1847,6 +1857,206 @@ export class MycoSimEngine{
     this.controls.dispose(); this.renderer.dispose();
   }
 
+  _agaricProfileHeight(profile,r){
+    const x=THREE.MathUtils.clamp(r,0,1);
+    switch(profile){
+      case "conical": return .88*(1-x);
+      case "campanulate": return .92*Math.pow(1-x,1.62)+.06*(1-x*x);
+      case "convex": return .50*(1-x*x);
+      case "plano_convex": return .28*(1-x*x)+.035*(1-x);
+      case "flat": return .075*(1-x*x);
+      case "depressed": return .22*(1-x*x)-.28*Math.exp(-Math.pow(x/.36,2));
+      case "infundibuliform": return .03+.34*x-.48*Math.pow(1-x,2);
+      case "umbilicate": return .20*(1-x*x)-.22*Math.exp(-Math.pow(x/.17,2));
+      case "umbonate": return .24*(1-x*x)+.31*Math.exp(-Math.pow(x/.24,2));
+      case "ovate": return .78*Math.pow(Math.max(0,1-x*x),.66);
+      default:return .50*(1-x*x);
+    }
+  }
+
+  _agaricCenterOffset(center,r){
+    const x=THREE.MathUtils.clamp(r,0,1);
+    if(center==="depressed") return -.18*Math.exp(-Math.pow(x/.24,2));
+    if(center==="papillate") return .30*Math.exp(-Math.pow(x/.095,2));
+    if(center==="umbonate") return .27*Math.exp(-Math.pow(x/.23,2));
+    return 0;
+  }
+
+  _agaricMarginState(margin,r,theta){
+    const x=THREE.MathUtils.clamp(r,0,1);
+    const edge=THREE.MathUtils.smoothstep(x,.72,1);
+    let y=0,radial=1,thicknessBoost=0;
+    if(margin==="incurved") y-=.075*edge*edge;
+    else if(margin==="decurved") y-=.12*edge*edge;
+    else if(margin==="uplifted") y+=.14*edge*edge;
+    else if(margin==="inrolled"){y-=.20*edge*edge;radial-=.025*edge;thicknessBoost=.055*edge;}
+    else if(margin==="undulate") y+=.085*Math.sin(theta*6+.45)*edge*edge;
+    else if(margin==="lobed") radial+=.055*Math.sin(theta*5+.30)*edge;
+    else if(margin==="split_cracked"){
+      const crackWave=Math.pow(Math.max(0,Math.cos(theta*6.0)),18);
+      radial-=.055*crackWave*edge;
+      y-=.045*crackWave*edge;
+    }else if(margin==="striate"){
+      radial+=.008*Math.sin(theta*28)*edge;
+      y+=.008*Math.sin(theta*28)*edge;
+    }else if(margin==="appendiculate"){
+      y-=.025*edge;
+    }
+    return {y,radial,thicknessBoost};
+  }
+
+  _agaricoidPileusGeometry({
+    profile="convex",center="even",margin="decurved",radius=1.62,
+    segments=96,rings=42,seed=421
+  }={}){
+    segments=scaledSegments(segments,this.realismTier,{min:56,max:132});
+    rings=scaledSegments(rings,this.realismTier,{min:30,max:58});
+    const verts=[],uvs=[],indices=[];
+    const phase=((seed%7919)/7919)*Math.PI*2;
+    const row=segments+1;
+
+    const pointAt=(rr,theta,surface)=>{
+      const marginState=this._agaricMarginState(margin,rr,theta);
+      const organicRadial=1+
+        .012*Math.sin(theta*2.17+phase)*(0.25+.75*rr)+
+        .008*Math.cos(theta*5.03-phase*.7)*rr*rr;
+      const effectiveRadius=radius*rr*marginState.radial*organicRadial;
+      const top=
+        this._agaricProfileHeight(profile,rr)+
+        this._agaricCenterOffset(center,rr)+
+        marginState.y+
+        (.010*Math.sin(theta*3.11+phase)+.006*Math.cos(theta*7.4-phase))*Math.pow(rr,1.35);
+      const discThickness=.235;
+      const edgeThickness=.065;
+      const taper=THREE.MathUtils.smoothstep(rr,.08,1);
+      const thickness=THREE.MathUtils.lerp(discThickness,edgeThickness,Math.pow(taper,.82))+marginState.thicknessBoost;
+      const underside=top-thickness-.012*Math.pow(rr,1.7);
+      const y=surface==="top"?top:underside;
+      return new THREE.Vector3(Math.cos(theta)*effectiveRadius,y,Math.sin(theta)*effectiveRadius);
+    };
+
+    for(const surface of ["top","bottom"]){
+      for(let ir=0;ir<=rings;ir++){
+        const rr=ir/rings;
+        for(let it=0;it<=segments;it++){
+          const u=it/segments,theta=u*Math.PI*2;
+          const p=pointAt(rr,theta,surface);
+          verts.push(p.x,p.y,p.z);
+          uvs.push(u,rr);
+        }
+      }
+    }
+    const surfaceStride=(rings+1)*row;
+    for(let ir=0;ir<rings;ir++){
+      for(let it=0;it<segments;it++){
+        const a=ir*row+it,b=a+1,c=(ir+1)*row+it,d=c+1;
+        indices.push(a,c,b,b,c,d);
+        const aa=surfaceStride+a,bb=surfaceStride+b,cc=surfaceStride+c,dd=surfaceStride+d;
+        indices.push(aa,bb,cc,bb,dd,cc);
+      }
+    }
+    const topEdge=rings*row;
+    const bottomEdge=surfaceStride+rings*row;
+    for(let it=0;it<segments;it++){
+      const a=topEdge+it,b=a+1,c=bottomEdge+it,d=c+1;
+      indices.push(a,b,c,b,d,c);
+    }
+    const g=new THREE.BufferGeometry();
+    g.setAttribute("position",new THREE.Float32BufferAttribute(verts,3));
+    g.setAttribute("uv",new THREE.Float32BufferAttribute(uvs,2));
+    g.setIndex(indices);g.computeVertexNormals();g.computeBoundingSphere();
+    g.userData={
+      model:"agaricoid-organic-pileus-v1",profile,center,margin,
+      thickness:{disc:.235,margin:.065},
+      supportsGillInsertion:true
+    };
+    g.userData.undersideHeight=(r,theta=0)=>{
+      const rr=THREE.MathUtils.clamp(r/radius,0,1);
+      const m=this._agaricMarginState(margin,rr,theta);
+      const top=this._agaricProfileHeight(profile,rr)+this._agaricCenterOffset(center,rr)+m.y;
+      const thickness=THREE.MathUtils.lerp(.235,.065,Math.pow(THREE.MathUtils.smoothstep(rr,.08,1),.82))+m.thicknessBoost;
+      return top-thickness-.012*Math.pow(rr,1.7);
+    };
+    return g;
+  }
+
+  _agaricoidStipeGeometry(taper="equal",{height=2.55,top=.285,bottom=.34,seed=727}={}){
+    const segments=scaledSegments(56,this.realismTier,{min:34,max:76});
+    const rings=scaledSegments(30,this.realismTier,{min:20,max:42});
+    const verts=[],uvs=[],indices=[];
+    const phase=((seed%6151)/6151)*Math.PI*2;
+    const row=segments+1;
+    const radiusAt=t=>{
+      let r=THREE.MathUtils.lerp(bottom,top,t);
+      if(taper==="clavate")r*=1+.34*Math.pow(1-t,2.3);
+      else if(taper==="bulbous_base")r*=1+.64*Math.exp(-Math.pow((t-.08)/.13,2));
+      else if(taper==="rooting"){
+        r*=.74+.30*THREE.MathUtils.smoothstep(t,.05,.35);
+        if(t<.16)r*=.52+.48*(t/.16);
+      }else if(taper==="attenuate_upward"){
+        r*=1.18-.36*t;
+      }
+      return r;
+    };
+    for(let iy=0;iy<=rings;iy++){
+      const t=iy/rings;
+      const y=-height/2+t*height;
+      const leanX=.045*Math.sin(t*Math.PI)*Math.sin(phase);
+      const leanZ=.035*Math.sin(t*Math.PI)*Math.cos(phase*.83);
+      const r0=radiusAt(t);
+      for(let ix=0;ix<=segments;ix++){
+        const u=ix/segments,theta=u*Math.PI*2;
+        const asymmetric=1+.018*Math.sin(theta*3+phase+t*4.3)+.009*Math.cos(theta*7-phase*.6);
+        const r=r0*asymmetric;
+        verts.push(
+          Math.cos(theta)*r+leanX,
+          y+.010*Math.sin(theta*2.2+phase)*Math.sin(t*Math.PI),
+          Math.sin(theta)*r+leanZ
+        );
+        uvs.push(u,t);
+      }
+    }
+    for(let iy=0;iy<rings;iy++){
+      for(let ix=0;ix<segments;ix++){
+        const a=iy*row+ix,b=a+1,c=(iy+1)*row+ix,d=c+1;
+        indices.push(a,c,b,b,c,d);
+      }
+    }
+    const g=new THREE.BufferGeometry();
+    g.setAttribute("position",new THREE.Float32BufferAttribute(verts,3));
+    g.setAttribute("uv",new THREE.Float32BufferAttribute(uvs,2));
+    g.setIndex(indices);g.computeVertexNormals();g.computeBoundingSphere();
+    g.userData={model:"agaricoid-organic-stipe-v1",taper,height,top,bottom};
+    return g;
+  }
+
+  _addAgaricoidStipe(taper,{baseY=-.47,topY=2.28,top=.285,bottom=.34}={}){
+    const rootingExtra=taper==="rooting"?.58:0;
+    const height=Math.max(.8,topY-baseY+rootingExtra);
+    const centerY=baseY-rootingExtra+height/2;
+    const geo=this._agaricoidStipeGeometry(taper,{height,top,bottom,seed:727});
+    const st=this.register(new THREE.Mesh(geo,MATERIALS.stipe.clone()),"stipe","Stipe","macro");
+    st.position.set(0,centerY,0);
+    st.userData.apexY=topY;
+    st.userData.baseY=baseY-rootingExtra;
+    st.userData.taper=taper;
+
+    const baseRadius=taper==="bulbous_base"?.54:taper==="clavate"?.43:taper==="rooting"?.18:bottom;
+    const baseGeo=taper==="rooting"
+      ? new THREE.ConeGeometry(baseRadius,.70,scaledSegments(36,this.realismTier,{min:24,max:48}))
+      : new THREE.SphereGeometry(baseRadius,scaledSegments(40,this.realismTier,{min:26,max:56}),scaledSegments(22,this.realismTier,{min:16,max:30}));
+    const base=this.register(new THREE.Mesh(baseGeo,MATERIALS.stipe.clone()),"stipe_base",
+      taper==="rooting"?"Rooting base":taper==="bulbous_base"?"Bulbous base":"Stipe base","macro","stipe");
+    if(taper==="rooting"){
+      base.position.set(0,baseY-rootingExtra-.23,0);base.rotation.x=Math.PI;base.scale.set(.72,1,.72);
+    }else{
+      base.position.set(0,baseY+.02,0);
+      base.scale.set(1,taper==="bulbous_base"?.66:.34,1);
+    }
+    this._addStipeSurfaceDetail(st,height,top,bottom);
+    return st;
+  }
+
   _pileusHeight(form,r){
     const x=Math.min(1,Math.max(0,r));
     if(form==="plane") return .10*(1-x*x);
@@ -2057,7 +2267,7 @@ export class MycoSimEngine{
     return layer;
   }
 
-  _addGillSecondaryDetail(group,type,pileusY,stipeX,inner,outer){
+  _addGillSecondaryDetail(group,type,pileusY,stipeX,inner,outer,capState=null){
     const secondaryMat=MATERIALS.gill.clone();
     secondaryMat.color.offsetHSL(0,0,-.045);
     secondaryMat.opacity=.86;secondaryMat.transparent=true;
@@ -2078,7 +2288,8 @@ export class MycoSimEngine{
     for(let i=1;i<total;i+=2){
       const a=i/total*Math.PI*2;
       const mid=(start+end)/2;
-      dummy.position.set(stipeX+Math.cos(a)*mid,pileusY-.15-((type==="decurrent")?.06:(type==="subdecurrent"?.03:0)),Math.sin(a)*mid);
+      const undersideY=capState?.undersideHeight?capState.undersideHeight(mid,a):pileusY-.15;
+      dummy.position.set(stipeX+Math.cos(a)*mid,undersideY-((type==="decurrent")?.06:(type==="subdecurrent"?.03:0)),Math.sin(a)*mid);
       dummy.rotation.set(0,-a,0);dummy.scale.set(1,1,1);dummy.updateMatrix();inst.setMatrixAt(j++,dummy.matrix);
     }
     inst.instanceMatrix.needsUpdate=true;inst.castShadow=false;inst.receiveShadow=true;
@@ -2104,7 +2315,7 @@ export class MycoSimEngine{
   }
 
 
-  _addGillHymenophore(type="adnate",pileusY=2.45,stipeX=0){
+  _addGillHymenophore(type="adnate",pileusY=2.45,stipeX=0,capState=null){
     if(["pores","tubes"].includes(type)){
       const depth=type==="tubes"?.34:.18;
       if(type==="tubes"){
@@ -2156,7 +2367,7 @@ export class MycoSimEngine{
     }
 
     const innerMap={free_gills:.43,seceding:.38,adnexed:.30,sinuate:.24,emarginate:.25,adnate:.17,subdecurrent:.11,decurrent:.08};
-    const inner=innerMap[type]??.17,outer=1.30;
+    const inner=innerMap[type]??.17,outer=capState?.radius?capState.radius*.81:1.30;
     const attachmentLabels={free_gills:"Free gills",seceding:"Seceding gills",adnexed:"Adnexed gills",adnate:"Adnate gills",sinuate:"Sinuate gills",emarginate:"Emarginate gills",subdecurrent:"Subdecurrent gills",decurrent:"Decurrent gills"};
     const attachmentKnowledge={free_gills:"free_gills",seceding:"seceding",adnexed:"adnexed",adnate:"adnate",sinuate:"sinuate",emarginate:"emarginate",subdecurrent:"subdecurrent",decurrent:"decurrent"};
     const group=new THREE.Group();group.userData={id:"hymenophore",label:attachmentLabels[type]||"Lamellae / gills",category:"fertile",selectable:true,knowledgeId:attachmentKnowledge[type]||"gill_attachment",attachmentType:type};
@@ -2185,7 +2396,8 @@ export class MycoSimEngine{
       indices.forEach((i,j)=>{
         const a=i/total*Math.PI*2;
         const mid=(spec.start+spec.end)/2;
-        dummy.position.set(stipeX+Math.cos(a)*mid,pileusY-.16-((type==="decurrent")?.10:(type==="subdecurrent"?.045:0)),Math.sin(a)*mid);
+        const undersideY=capState?.undersideHeight?capState.undersideHeight(mid,a):pileusY-.16;
+        dummy.position.set(stipeX+Math.cos(a)*mid,undersideY-((type==="decurrent")?.10:(type==="subdecurrent"?.045:0)),Math.sin(a)*mid);
         dummy.rotation.set(0,-a,0);
         if(type==="sinuate")dummy.rotation.z=.055*Math.sin(a*2);
         if(type==="emarginate")dummy.rotation.z=.085*Math.sin(a*2);
@@ -2196,7 +2408,7 @@ export class MycoSimEngine{
       });
       inst.instanceMatrix.needsUpdate=true;group.add(inst);this.pickables.push(inst);
     }
-    this._addGillSecondaryDetail(group,type,pileusY,stipeX,inner,outer);
+    this._addGillSecondaryDetail(group,type,pileusY,stipeX,inner,outer,capState);
     this.root.add(group);this.objects.set("hymenophore",group);
   }
 
@@ -2223,22 +2435,60 @@ export class MycoSimEngine{
   }
 
   build_agaricoid(){
-    const v=this.variants, capY=2.48;
-    this._addPileus(v.pileus,1.62,capY,MATERIALS.cap);
-    const ctxGeo=new THREE.LatheGeometry([
-      new THREE.Vector2(0,-.12),
-      new THREE.Vector2(1.15,-.12),
-      new THREE.Vector2(1.36,-.07),
-      new THREE.Vector2(1.30,.08),
-      new THREE.Vector2(.42,.14),
-      new THREE.Vector2(0,.11)
-    ],72);
-    const ctx=this.register(new THREE.Mesh(ctxGeo,MATERIALS.flesh.clone()),"pileus_context","Pileus context","internal","pileus");
-    ctx.position.y=capY-.16;
-    const stipe=this._addStipe(v.stipe,{height:2.45,y:.78,top:.27,bottom:.34});
+    const v=this.variants,capY=2.48,radius=1.62;
+    const profile=v.agaric_pileus_profile||"convex";
+    const center=v.agaric_pileus_center||"even";
+    const margin=v.agaric_margin||"decurved";
+    const taper=v.agaric_stipe_taper||"equal";
+
+    const capGeo=this._agaricoidPileusGeometry({
+      profile,center,margin,radius,
+      seed:this.morphologyState?.developmental?.identitySeed||421
+    });
+    const cap=this.register(new THREE.Mesh(capGeo,MATERIALS.cap.clone()),"pileus","Pileus / cap","macro");
+    cap.position.y=capY;
+    cap.userData.profile=profile;cap.userData.center=center;cap.userData.margin=margin;
+
+    const ctx=cap.clone();
+    ctx.geometry=capGeo.clone();
+    ctx.material=MATERIALS.flesh.clone();
+    ctx.scale.set(.965,.82,.965);
+    ctx.position.set(0,capY-.035,0);
+    ctx.userData={id:"pileus_context",label:"Pileus context",category:"internal",parentId:"pileus",selectable:true,knowledgeId:"pileus_context"};
+    ctx.visible=false;
+    this.root.add(ctx);this.objects.set("pileus_context",ctx);this._rememberTransform(ctx);
+
+    const underside=capGeo.userData.undersideHeight;
+    const apexLocal=typeof underside==="function"?underside(0,0):-.22;
+    const stipeTopY=capY+apexLocal+.025;
+    const stipe=this._addAgaricoidStipe(taper,{baseY:-.46,topY:stipeTopY,top:.285,bottom:.34});
     const stipeX=stipe?.position.x||0;
-    this._addGillHymenophore(v.hymenophore,capY,stipeX);
+
+    const capState={
+      radius,
+      profile,center,margin,
+      undersideHeight:(r,theta=0)=>capY+(typeof underside==="function"?underside(r,theta):-.18)
+    };
+    this._agaricoidCapState=capState;
+    this._addGillHymenophore(v.hymenophore,capY,stipeX,capState);
     this._addVeil(v.veil,stipeX,capY);
+
+    if(margin==="appendiculate"){
+      const remnants=new THREE.Group();
+      remnants.userData={id:"pileus_margin",label:"Appendiculate margin remnants",category:"macro",selectable:true,knowledgeId:"pileus_margin"};
+      const mat=MATERIALS.flesh.clone();
+      for(let i=0;i<22;i++){
+        if(i%3===0)continue;
+        const a=i/22*Math.PI*2;
+        const frag=new THREE.Mesh(new THREE.ConeGeometry(.026,.13+(i%4)*.018,6),mat.clone());
+        frag.position.set(Math.cos(a)*radius*.98,capState.undersideHeight(radius*.98,a)-.055,Math.sin(a)*radius*.98);
+        frag.rotation.set(Math.PI,0,-a);
+        frag.scale.set(.8,1,.65);
+        frag.userData=remnants.userData;
+        remnants.add(frag);this.pickables.push(frag);
+      }
+      this.root.add(remnants);this.objects.set("pileus_margin",remnants);
+    }
   }
 
   build_boletoid(){
