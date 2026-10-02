@@ -2022,7 +2022,8 @@ export class MycoSimEngine{
         const n=ornamentPoints[i];
         const p=puffSurfacePoint(shape,n.x,n.y,n.z,bodyY,1.16);
         dummy.position.copy(p);
-        dummy.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),n.clone().normalize());
+        const localNormalAxis=surface==="furfuraceous"?new THREE.Vector3(0,0,1):new THREE.Vector3(0,1,0);
+        dummy.quaternion.setFromUnitVectors(localNormalAxis,n.clone().normalize());
         dummy.rotation.z+=(ornamentRng()-.5)*.26;
         dummy.rotation.x+=(ornamentRng()-.5)*.12;
         dummy.scale.set(1,1,1);
