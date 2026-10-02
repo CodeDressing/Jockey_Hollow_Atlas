@@ -23,6 +23,27 @@ export const VALIDATION_SOURCES=Object.freeze({
     supports:["unexpanded subglobose body","exoperidium splitting into rays","endoperidial spore sac","peristome","variable stalk","variable ray number"],
     evidenceType:"peer-reviewed descriptions and verified specimen figures"
   }),
+  lycoperdaceae_taxonomy:Object.freeze({
+    authority:"Peer-reviewed mycological literature",
+    title:"A new genus and three new species of Lycoperdaceae from Southern China revealed by molecular phylogeny and taxonomy",
+    url:"https://pmc.ncbi.nlm.nih.gov/articles/PMC12159668/",
+    supports:["pyriform and subglobose body forms","layered exoperidium/endoperidium","granular/tomentose surfaces","fragile endoperidium","gleba state"],
+    evidenceType:"peer-reviewed descriptions and verified specimen figures"
+  }),
+  lycoperdaceae_hebei:Object.freeze({
+    authority:"Peer-reviewed mycological literature",
+    title:"Morphological characters and molecular data reveal ten new forest macrofungi species from Hebei Province",
+    url:"https://pmc.ncbi.nlm.nih.gov/articles/PMC12096702/",
+    supports:["pyriform/subglobose forms","conical exoperidial thorns","persistent circular warts","papery endoperidium","developed subgleba"],
+    evidenceType:"peer-reviewed descriptions and verified specimen figures"
+  }),
+  scleroderma_amazonia:Object.freeze({
+    authority:"Peer-reviewed mycological literature",
+    title:"Discovery or Extinction of New Scleroderma Species in Amazonia?",
+    url:"https://pmc.ncbi.nlm.nih.gov/articles/PMC5176273/",
+    supports:["subglobose closed basidiomata","thick multilayered peridium","verrucose/scaly surface","mature dark gleba","irregular or stellate dehiscence"],
+    evidenceType:"peer-reviewed descriptions and verified specimen figures"
+  }),
   tulostoma_neotropical:Object.freeze({
     authority:"Peer-reviewed mycological literature",
     title:"Diversity of Neotropical stalked-puffball: Two new species of Tulostoma with reticulated spores",
@@ -55,8 +76,8 @@ export const GASTEROID_REFERENCE_PROTOCOL=Object.freeze({
     generalized:["Body proportions","ornament density","degree of sterile-base differentiation","exact ostiole geometry"],
     variesByTaxon:["Globose/subglobose/pyriform form","surface ornament","wall persistence","ostiole morphology"],
     deliberatelyExcluded:[...COMMON_EXCLUSIONS,"No claim that all true puffballs are echinate or release through an identical pore."],
-    authoritativeEvidence:["usfs_gasteroid_field_form"],
-    imageryEvidence:"No matching internally verified atlas specimen imagery found by repository search; authoritative descriptive evidence only until a verified internal reference is attached."
+    authoritativeEvidence:["usfs_gasteroid_field_form","lycoperdaceae_taxonomy"],
+    imageryEvidence:"Peer-reviewed Lycoperdaceae descriptions and specimen figures support layered peridium, body-form variation, and glebal architecture; no internal project image is assumed."
   }),
   pyriform_puffball:Object.freeze({
     label:"Pyriform puffball archetype",
@@ -64,8 +85,8 @@ export const GASTEROID_REFERENCE_PROTOCOL=Object.freeze({
     generalized:["Head-to-base ratio","degree of basal narrowing","ornament density"],
     variesByTaxon:["Surface ornament","substrate association","sterile-base prominence","ostiole morphology"],
     deliberatelyExcluded:[...COMMON_EXCLUSIONS,"Pyriform shape alone must not imply a genus or species."],
-    authoritativeEvidence:["usfs_gasteroid_field_form"],
-    imageryEvidence:"No matching internally verified atlas specimen imagery found by repository search."
+    authoritativeEvidence:["usfs_gasteroid_field_form","lycoperdaceae_taxonomy"],
+    imageryEvidence:"Peer-reviewed Lycoperdaceae specimen figures support pyriform/subglobose body plans and layered peridial anatomy; no internal project image is assumed."
   }),
   gem_studded_type:Object.freeze({
     label:"Gem-studded / Lycoperdon-type archetype",
@@ -73,8 +94,8 @@ export const GASTEROID_REFERENCE_PROTOCOL=Object.freeze({
     generalized:["Spine number","spine dimensions","cluster distribution","amount of abrasion"],
     variesByTaxon:["Spine grouping","wart versus spine expression","scar pattern","body proportions","basal differentiation"],
     deliberatelyExcluded:[...COMMON_EXCLUSIONS,"No exact Lycoperdon species diagnosis; youthful spines are not assumed to persist unchanged into old age."],
-    authoritativeEvidence:["usfs_gasteroid_field_form"],
-    imageryEvidence:"No matching internally verified atlas specimen imagery found by repository search; ornamental behavior is kept explicitly generalized."
+    authoritativeEvidence:["usfs_gasteroid_field_form","lycoperdaceae_hebei"],
+    imageryEvidence:"Peer-reviewed specimen figures support conical exoperidial thorns, persistent wart patterns, papery endoperidium, and developed subgleba; exact species characters remain excluded."
   }),
   giant_puffball_type:Object.freeze({
     label:"Giant puffball-type archetype",
@@ -91,8 +112,8 @@ export const GASTEROID_REFERENCE_PROTOCOL=Object.freeze({
     generalized:["Wall thickness","wart geometry","rupture path","gleba darkening rate"],
     variesByTaxon:["Peridial ornament","rooting/basal characters","gleba color","dehiscence pattern"],
     deliberatelyExcluded:[...COMMON_EXCLUSIONS,"No thin true-puffball wall treatment and no assumed neat persistent apical ostiole."],
-    authoritativeEvidence:["usfs_gasteroid_field_form"],
-    imageryEvidence:"No matching internally verified atlas specimen imagery found by repository search; model remains conservative."
+    authoritativeEvidence:["usfs_gasteroid_field_form","scleroderma_amazonia"],
+    imageryEvidence:"Peer-reviewed Scleroderma specimen figures support thick multilayered peridium, verrucose/scaly surfaces, dark mature gleba, and irregular/stellate dehiscence."
   }),
   earthstar_type:Object.freeze({
     label:"Earthstar archetype",
