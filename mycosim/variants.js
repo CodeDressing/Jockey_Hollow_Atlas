@@ -174,11 +174,11 @@ export const VARIANT_TEACHING = Object.freeze({
     smooth:{anatomyId:"hymenophore",short:"Fertile surface is macroscopically smooth.",detail:"A smooth hymenophore lacks conspicuous gills, pores, teeth, or folds at macroscopic scale."}
   }),
   puff_surface:Object.freeze({
-    glabrous:{anatomyId:"exoperidium",short:"Outer surface is smooth and lacks obvious ornament.",detail:"Glabrous describes an exoperidium without conspicuous spines, warts, granules, or scurfy coating."},
-    granular:{anatomyId:"exoperidium",short:"Outer surface bears fine grain-like ornament.",detail:"Granular puffball surfaces are covered by many small low projections or particles rather than discrete large warts or spines."},
-    verrucose:{anatomyId:"exoperidium",short:"Outer surface bears blunt wart-like projections.",detail:"Verrucose ornamentation consists of raised rounded or irregular warts on the exoperidium."},
-    echinate:{anatomyId:"exoperidium",short:"Outer surface bears conspicuous pointed spines.",detail:"Echinate ornamentation consists of pointed exoperidial spines or prickles. This can be especially conspicuous in young puffballs and may abrade with age."},
-    furfuraceous:{anatomyId:"exoperidium",short:"Outer surface carries a fine scurfy or bran-like coating.",detail:"Furfuraceous describes a flaky, bran-like surface covering that may wear away as the fruit body ages."}
+    glabrous:{anatomyId:"exoperidium",short:"Outer surface lacks macroscopic spines, warts, grains, or flakes.",detail:"Glabrous means macroscopically smooth, not artificially featureless. Fine biological micro-relief, color variation, and weathering may remain, and an old abraded surface should not automatically be interpreted as originally glabrous."},
+    granular:{anatomyId:"exoperidium",short:"Outer surface bears dense fine grain-like ornament.",detail:"Granular exoperidium is expressed as numerous very small low-relief grains rather than miniature warts. Grain density and prominence generally diminish through abrasion with age."},
+    verrucose:{anatomyId:"exoperidium",short:"Outer surface bears broad-based wart-like elevations.",detail:"Verrucose ornamentation consists of blunt, broad-based, variably sized tissue elevations integrated into the exoperidium. Warts may flatten, round, merge locally, and become reduced with maturation."},
+    echinate:{anatomyId:"exoperidium",short:"Outer surface bears pointed spines or prickles with integrated bases.",detail:"Echinate ornamentation consists of exoperidial spines that vary in height, width, lean, clustering, and preservation. Young spines may be intact; maturation can produce broken tips, shortened remnants, bare abrasion patches, and eventual loss."},
+    furfuraceous:{anatomyId:"exoperidium",short:"Outer surface carries a fine scurfy or bran-like flaky coating.",detail:"Furfuraceous ornamentation is a thin, irregular, partly lifted flaky covering rather than a field of spines or warts. The coating becomes patchier and may be largely lost with age."}
   }),
   puff_shape:Object.freeze({
     globose:{anatomyId:"peridium",short:"Fruit body is nearly spherical.",detail:"Globose describes a nearly spherical gasteroid fruit body."},
