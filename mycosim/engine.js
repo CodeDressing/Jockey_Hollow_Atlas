@@ -122,51 +122,91 @@ const puffSurfacePoint=(shape,nx,ny,nz,bodyY,radius=1.165)=>{
   return new THREE.Vector3(nx*radius*radial,bodyY+ny*(radius-.055)*vertical,nz*radius*radial);
 };
 
-const sampledPuffSurface=(target,seed,{cluster=.25,barePatch=.10}={})=>{
+const sampledPuffSurface=(target,seed,{cluster=.25,barePatch=.10,clusterCount=3,bareCount=2}={})=>{
   const rng=seededRng(seed);
   const out=[];
   const clusterCenters=[];
   const bareCenters=[];
+  const clusterWeights=[];
+  const bareWeights=[];
   const randomDir=()=>{
     const y=rng()*2-1;
     const a=rng()*Math.PI*2;
     const rr=Math.sqrt(Math.max(0,1-y*y));
     return new THREE.Vector3(Math.cos(a)*rr,y,Math.sin(a)*rr);
   };
-  for(let i=0;i<3;i++)clusterCenters.push(randomDir());
-  for(let i=0;i<2;i++)bareCenters.push(randomDir());
+  for(let i=0;i<clusterCount;i++)clusterCenters.push(randomDir());
+  for(let i=0;i<bareCount;i++)bareCenters.push(randomDir());
 
-  let attempts=0;
-  const maxAttempts=Math.max(target*10,120);
+  let attempts=0,rejectedCrowding=0,rejectedMask=0;
+  const maxAttempts=Math.max(target*14,180);
   while(out.length<target&&attempts++<maxAttempts){
     const d=randomDir();
-    let nearestCluster=0;
+    let nearestCluster=-1;
     for(const c of clusterCenters)nearestCluster=Math.max(nearestCluster,d.dot(c));
     let nearestBare=-1;
     for(const b of bareCenters)nearestBare=Math.max(nearestBare,d.dot(b));
-    const clustered=THREE.MathUtils.smoothstep(nearestCluster,.25,.92);
-    const missing=THREE.MathUtils.smoothstep(nearestBare,.72,.98);
-    const accept=THREE.MathUtils.clamp(.78+cluster*clustered-barePatch*missing*2.2,.08,1);
-    if(rng()>accept)continue;
+    const clustered=THREE.MathUtils.smoothstep(nearestCluster,.20,.94);
+    const missing=THREE.MathUtils.smoothstep(nearestBare,.68,.985);
 
-    // Reject only extremely close neighbors. This preserves natural clumping while
-    // preventing the most obvious geometric collisions.
+    // Broad local density fields avoid the artificial "evenly sprinkled" look.
+    // Bare fields remain genuinely sparse; clustered fields can become visibly dense.
+    const accept=THREE.MathUtils.clamp(.70+cluster*clustered-barePatch*missing*2.65,.025,1);
+    if(rng()>accept){rejectedMask++;continue;}
+
+    // Reject only very close neighbors: enough to prevent mesh collisions while
+    // preserving biologically plausible clumping.
     let crowded=false;
-    const checkFrom=Math.max(0,out.length-30);
+    const checkFrom=Math.max(0,out.length-42);
     for(let i=checkFrom;i<out.length;i++){
-      if(d.distanceToSquared(out[i])<.00048){crowded=true;break;}
+      if(d.distanceToSquared(out[i])<.00034){crowded=true;break;}
     }
-    if(!crowded)out.push(d);
+    if(crowded){rejectedCrowding++;continue;}
+
+    out.push(d);
+    clusterWeights.push(clustered);
+    bareWeights.push(missing);
   }
-  return {points:out,rng};
+  return {
+    points:out,clusterWeights,bareWeights,rng,
+    diagnostics:{
+      requested:target,accepted:out.length,attempts,rejectedMask,rejectedCrowding,
+      clusterCenters:clusterCenters.length,bareCenters:bareCenters.length
+    }
+  };
 };
 
 const makeEchinateGeometry=(broken=false)=>{
-  const h=broken?.070:.125;
+  const h=broken?.072:.132;
   const points=broken
-    ? [new THREE.Vector2(.000,0),new THREE.Vector2(.040,.010),new THREE.Vector2(.030,.028),new THREE.Vector2(.018,h)]
-    : [new THREE.Vector2(.000,0),new THREE.Vector2(.044,.010),new THREE.Vector2(.034,.030),new THREE.Vector2(.018,h*.72),new THREE.Vector2(.006,h*.94),new THREE.Vector2(.000,h)];
-  return new THREE.LatheGeometry(points,7);
+    ? [
+        new THREE.Vector2(.000,0),
+        new THREE.Vector2(.050,.006), // basal skirt integrated with exoperidium
+        new THREE.Vector2(.043,.016),
+        new THREE.Vector2(.031,.032),
+        new THREE.Vector2(.022,h*.72),
+        new THREE.Vector2(.020,h)     // irregular blunt/broken apex
+      ]
+    : [
+        new THREE.Vector2(.000,0),
+        new THREE.Vector2(.052,.006), // broad tissue base, not a cone point
+        new THREE.Vector2(.044,.017),
+        new THREE.Vector2(.032,.034),
+        new THREE.Vector2(.021,h*.66),
+        new THREE.Vector2(.010,h*.88),
+        new THREE.Vector2(.004,h*.97),
+        new THREE.Vector2(.000,h)
+      ];
+  const g=new THREE.LatheGeometry(points,8);
+  // Mild asymmetric bend makes the silhouette less mechanically conical.
+  const pos=g.attributes.position;
+  for(let i=0;i<pos.count;i++){
+    const y=pos.getY(i);
+    const t=THREE.MathUtils.clamp(y/h,0,1);
+    pos.setX(i,pos.getX(i)+t*t*(broken?.004:.007));
+  }
+  pos.needsUpdate=true;g.computeVertexNormals();
+  return g;
 };
 
 const makeVerrucoseGeometry=()=>{
@@ -2000,8 +2040,12 @@ export class MycoSimEngine{
     const retention=profile.retention[stageId]??1;
     const scaleByAge=profile.scale[stageId]??1;
     const target=Math.max(0,Math.round(requested*retention));
-    const {points:ornamentPoints,rng:ornamentRng}=sampledPuffSurface(target,137+requested+(stageId==="young"?11:stageId==="mature"?29:47),{
-      cluster:profile.cluster,barePatch:profile.barePatch
+    const {
+      points:ornamentPoints,clusterWeights:ornamentClusterWeights,bareWeights:ornamentBareWeights,
+      rng:ornamentRng,diagnostics:ornamentSampling
+    }=sampledPuffSurface(target,137+requested+(stageId==="young"?11:stageId==="mature"?29:47),{
+      cluster:profile.cluster,barePatch:profile.barePatch,
+      clusterCount:surface==="echinate"?4:3,bareCount:surface==="echinate"?3:2
     });
 
     const baseOrnamentMaterial=PUFF_PBR.youngPeridium.clone();
@@ -2044,29 +2088,49 @@ export class MycoSimEngine{
 
     if(surface==="echinate"&&target){
       const brokenFraction=profile.broken?.[stageId]??0;
-      const brokenCount=Math.round(target*brokenFraction);
+      const breakRng=seededRng(911+requested+(stageId==="young"?3:stageId==="mature"?17:31));
+      const brokenMask=ornamentPoints.map((n,i)=>{
+        const bare=ornamentBareWeights[i]||0;
+        const clusterWeight=ornamentClusterWeights[i]||0;
+        // Exposed sparse/bare-zone edges weather first; dense clusters preserve a little longer.
+        const localRisk=THREE.MathUtils.clamp(brokenFraction+bare*.22-clusterWeight*.07,0,1);
+        return breakRng()<localRisk;
+      });
+      const brokenCount=brokenMask.filter(Boolean).length;
       const intactCount=Math.max(0,target-brokenCount);
+
       addInstancedOrnament("echinate_intact","Echinate exoperidial spines",ORNAMENT_GEOMETRY.echinate,intactCount,
-        i=>i>=brokenCount,
+        i=>!brokenMask[i],
         (o,i,n,rng)=>{
-          const height=(.68+rng()*.62)*scaleByAge;
-          const width=(.72+rng()*.55);
-          o.scale.set(width,height,width);
+          const clusterWeight=ornamentClusterWeights[i]||0;
+          const bare=ornamentBareWeights[i]||0;
+          const height=(.62+rng()*.66)*(1+clusterWeight*.13-bare*.08)*scaleByAge;
+          const width=(.70+rng()*.58)*(1+clusterWeight*.06);
+          o.scale.set(width,height,width*(.92+rng()*.16));
           // Slight biologically plausible lean rather than perfectly radial needles.
-          o.rotation.x+=(rng()-.5)*.18;
-          o.rotation.z+=(rng()-.5)*.22;
-          // Seat the broad base slightly into the wall.
-          o.position.addScaledVector(n,-.010);
+          o.rotation.x+=(rng()-.5)*(.16+bare*.12);
+          o.rotation.z+=(rng()-.5)*(.22+bare*.15);
+          // Seat the flared basal skirt into the exoperidial wall.
+          o.position.addScaledVector(n,-.016);
         });
+
       addInstancedOrnament("echinate_broken","Broken echinate spine remnants",ORNAMENT_GEOMETRY.echinateBroken,brokenCount,
-        i=>i<brokenCount,
+        i=>brokenMask[i],
         (o,i,n,rng)=>{
-          const height=(.48+rng()*.44)*Math.max(.35,scaleByAge);
-          const width=.80+rng()*.48;
-          o.scale.set(width,height,width);
-          o.rotation.x+=(rng()-.5)*.28;o.rotation.z+=(rng()-.5)*.30;
-          o.position.addScaledVector(n,-.012);
+          const bare=ornamentBareWeights[i]||0;
+          const height=(.40+rng()*.46)*Math.max(.30,scaleByAge)*(1-bare*.16);
+          const width=.80+rng()*.52;
+          o.scale.set(width,height,width*(.90+rng()*.20));
+          o.rotation.x+=(rng()-.5)*.32;o.rotation.z+=(rng()-.5)*.36;
+          o.position.addScaledVector(n,-.018);
         });
+
+      exo.userData.echinateStats={
+        intact:intactCount,broken:brokenCount,brokenFraction:target?brokenCount/target:0,
+        densityClass:requested>=1200?"very high":requested>=600?"high":"moderate",
+        distribution:"stochastic clustered field with sparse abrasion zones",
+        baseIntegration:"flared basal skirt embedded into exoperidium"
+      };
     }else if(surface==="verrucose"&&target){
       addInstancedOrnament("verrucose","Verrucose exoperidial warts",ORNAMENT_GEOMETRY.verrucose,target,null,
         (o,i,n,rng)=>{
@@ -2104,6 +2168,8 @@ export class MycoSimEngine{
     exo.userData.ornamentStats={
       requested,target,rendered:exo.children.reduce((n,c)=>n+(c.count||0),0),
       drawMeshes:exo.children.length,stageId,surface,
+      sampling:ornamentSampling,
+      echinate:exo.userData.echinateStats||null,
       generator:surface==="echinate"?"irregular spine field":surface==="verrucose"?"embedded broad-base wart field":surface==="granular"?"dense low-relief grain field":surface==="furfuraceous"?"tangential scurfy flake field":"PBR micro-relief only"
     };
     this.root.add(exo);this.objects.set("exoperidium",exo);
