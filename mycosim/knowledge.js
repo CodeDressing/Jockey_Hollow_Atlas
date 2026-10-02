@@ -682,6 +682,24 @@ for(const k of Object.values(KNOWLEDGE_OBJECTS)){
   if(!Array.isArray(k.relationships))k.relationships=[];
 }
 
+export function validateAtlasKnowledge(){
+  const required=["label","pronunciation","beginner","whyItMatters","developmentalSignificance","identificationBoundary","relationships"];
+  const failures=[];
+  for(const [id,k] of Object.entries(KNOWLEDGE_OBJECTS)){
+    for(const field of required){
+      if(field==="relationships"){
+        if(!Array.isArray(k[field]))failures.push(id+"."+field);
+      }else if(typeof k[field]!=="string"||!k[field].trim()){
+        failures.push(id+"."+field);
+      }
+    }
+  }
+  if(failures.length)throw new Error("Atlas probe knowledge incomplete: "+failures.join(", "));
+  return Object.freeze({pass:true,count:Object.keys(KNOWLEDGE_OBJECTS).length,required:Object.freeze(required)});
+}
+
+export const ATLAS_PROBE_KNOWLEDGE_AUDIT=validateAtlasKnowledge();
+
 export function getKnowledge(id){
   return KNOWLEDGE_OBJECTS[id]||{
     id,label:id.replaceAll("_"," "),level:"unknown",pronunciation:id.replaceAll("_"," "),
