@@ -1888,17 +1888,25 @@ export class MycoSimEngine{
       return;
     }
     if(type==="teeth"){
-      const group=new THREE.Group();group.userData={id:"hymenophore",label:"Teeth / spines",category:"fertile",selectable:true};
+      const group=new THREE.Group();group.userData={id:"hymenophore",label:"Teeth / spines",category:"fertile",selectable:true,knowledgeId:"hymenophore"};
+      const points=[];
       for(let r=.22;r<1.25;r+=.14){
         const n=Math.max(14,Math.round(r*46));
         for(let i=0;i<n;i++){
           const a=i/n*Math.PI*2;
           const len=.20+.13*(.5+.5*Math.sin(i*2.17+r*9));
-          const t=new THREE.Mesh(new THREE.ConeGeometry(.025,len,8),MATERIALS.gill.clone());
-          t.position.set(Math.cos(a)*r,pileusY-.22-len/2,Math.sin(a)*r);t.rotation.x=Math.PI;
-          t.userData=group.userData;group.add(t);this.pickables.push(t);
+          points.push({r,a,len});
         }
       }
+      const geo=new THREE.ConeGeometry(.025,1,scaledSegments(8,this.realismTier,{min:6,max:12}));
+      const inst=new THREE.InstancedMesh(geo,MATERIALS.gill.clone(),points.length);
+      inst.userData=group.userData;inst.castShadow=this.realismTier.id==="high";inst.receiveShadow=true;
+      const dummy=new THREE.Object3D();
+      points.forEach(({r,a,len},i)=>{
+        dummy.position.set(Math.cos(a)*r,pileusY-.22-len/2,Math.sin(a)*r);
+        dummy.rotation.set(Math.PI,0,0);dummy.scale.set(1,len,1);dummy.updateMatrix();inst.setMatrixAt(i,dummy.matrix);
+      });
+      inst.instanceMatrix.needsUpdate=true;group.add(inst);this.pickables.push(inst);
       this.root.add(group);this.objects.set("hymenophore",group);return;
     }
     if(type==="folds"){
@@ -1925,10 +1933,8 @@ export class MycoSimEngine{
     const attachmentLabels={free_gills:"Free gills",seceding:"Seceding gills",adnexed:"Adnexed gills",adnate:"Adnate gills",sinuate:"Sinuate gills",emarginate:"Emarginate gills",subdecurrent:"Subdecurrent gills",decurrent:"Decurrent gills"};
     const attachmentKnowledge={free_gills:"free_gills",seceding:"seceding",adnexed:"adnexed",adnate:"adnate",sinuate:"sinuate",emarginate:"emarginate",subdecurrent:"subdecurrent",decurrent:"decurrent"};
     const group=new THREE.Group();group.userData={id:"hymenophore",label:attachmentLabels[type]||"Lamellae / gills",category:"fertile",selectable:true,knowledgeId:attachmentKnowledge[type]||"gill_attachment",attachmentType:type};
-    const total=64;
-    for(let i=0;i<total;i++){
-      const a=i/total*Math.PI*2;
-      const short=i%2===1;
+    const total=this.realismTier.id==="interactive"?48:this.realismTier.id==="high"?72:64;
+    const makeGillGeometry=(short)=>{
       const start=short?THREE.MathUtils.lerp(inner,outer,.42):inner;
       const end=outer;
       const len=end-start;
@@ -1939,18 +1945,29 @@ export class MycoSimEngine{
       shape.lineTo(len/2,-h*.45);
       shape.quadraticCurveTo(0,-h*1.08,-len/2,-h*.72);
       shape.closePath();
-      const geo=new THREE.ShapeGeometry(shape,5);
-      const g=new THREE.Mesh(geo,MATERIALS.gill.clone());
-      const mid=(start+end)/2;
-      g.position.set(stipeX+Math.cos(a)*mid,pileusY-.16-((type==="decurrent")?.10:(type==="subdecurrent"?.045:0)),Math.sin(a)*mid);
-      g.rotation.y=-a;
-      if(type==="sinuate")g.rotation.z=.055*Math.sin(a*2);
-      if(type==="emarginate")g.rotation.z=.085*Math.sin(a*2);
-      if(type==="subdecurrent"&&!short){g.rotation.z=.055;}
-      if(type==="decurrent"&&!short){g.rotation.z=.115;}
-      if(type==="seceding"&&!short){g.rotation.z=-.018;}
-      g.userData={...group.userData,knowledgeId:attachmentKnowledge[type]||"lamella",hoverLabel:attachmentLabels[type]||"Lamella / gill",structureType:"lamella"};
-      group.add(g);this.pickables.push(g);
+      return {geo:new THREE.ShapeGeometry(shape,5),start,end};
+    };
+    for(const short of [false,true]){
+      const spec=makeGillGeometry(short);
+      const indices=[];
+      for(let i=0;i<total;i++)if((i%2===1)===short)indices.push(i);
+      const inst=new THREE.InstancedMesh(spec.geo,MATERIALS.gill.clone(),indices.length);
+      inst.userData={...group.userData,knowledgeId:attachmentKnowledge[type]||"lamella",hoverLabel:attachmentLabels[type]||"Lamella / gill",structureType:short?"lamellula":"lamella"};
+      inst.castShadow=this.realismTier.id==="high";inst.receiveShadow=true;
+      const dummy=new THREE.Object3D();
+      indices.forEach((i,j)=>{
+        const a=i/total*Math.PI*2;
+        const mid=(spec.start+spec.end)/2;
+        dummy.position.set(stipeX+Math.cos(a)*mid,pileusY-.16-((type==="decurrent")?.10:(type==="subdecurrent"?.045:0)),Math.sin(a)*mid);
+        dummy.rotation.set(0,-a,0);
+        if(type==="sinuate")dummy.rotation.z=.055*Math.sin(a*2);
+        if(type==="emarginate")dummy.rotation.z=.085*Math.sin(a*2);
+        if(type==="subdecurrent"&&!short)dummy.rotation.z=.055;
+        if(type==="decurrent"&&!short)dummy.rotation.z=.115;
+        if(type==="seceding"&&!short)dummy.rotation.z=-.018;
+        dummy.scale.set(1,1,1);dummy.updateMatrix();inst.setMatrixAt(j,dummy.matrix);
+      });
+      inst.instanceMatrix.needsUpdate=true;group.add(inst);this.pickables.push(inst);
     }
     this._addGillSecondaryDetail(group,type,pileusY,stipeX,inner,outer);
     this.root.add(group);this.objects.set("hymenophore",group);
@@ -2035,25 +2052,27 @@ export class MycoSimEngine{
     tubes.position.set(.42,.93,0);
 
     const poreGroup=new THREE.Group();
-    poreGroup.userData={id:"hymenophore",label:"Pore surface",category:"fertile",selectable:true};
-    const pGeo=new THREE.CylinderGeometry(.032,.040,.024,9);
+    poreGroup.userData={id:"hymenophore",label:"Pore surface",category:"fertile",selectable:true,knowledgeId:"pore_surface"};
+    const pGeo=new THREE.CylinderGeometry(.032,.040,.024,scaledSegments(9,this.realismTier,{min:6,max:12}));
     const pMat=MATERIALS.poreDark.clone();
-    for(let x=-.62;x<=1.58;x+=.11){
-      for(let z=-.58;z<=.58;z+=.105){
-        if(x<-.35&&Math.abs(z)>.38)continue;
-        const p=new THREE.Mesh(pGeo,pMat);
-        p.position.set(x,.75,z);p.userData=poreGroup.userData;
-        poreGroup.add(p);this.pickables.push(p);
-      }
-    }
+    const pp=[];for(let x=-.62;x<=1.58;x+=.11){for(let z=-.58;z<=.58;z+=.105){if(x<-.35&&Math.abs(z)>.38)continue;pp.push([x,z]);}}
+    const pInst=new THREE.InstancedMesh(pGeo,pMat,pp.length);pInst.userData=poreGroup.userData;
+    const pDummy=new THREE.Object3D();pp.forEach(([x,z],i)=>{pDummy.position.set(x,.75,z);pDummy.updateMatrix();pInst.setMatrixAt(i,pDummy.matrix);});
+    pInst.instanceMatrix.needsUpdate=true;pInst.castShadow=false;pInst.receiveShadow=true;poreGroup.add(pInst);this.pickables.push(pInst);
     this.root.add(poreGroup);this.objects.set("hymenophore",poreGroup);
   }
 
   build_hydnoid(){
     const cap=this.register(new THREE.Mesh(new THREE.SphereGeometry(1.55,48,24,0,Math.PI*2,0,Math.PI/2.2),MATERIALS.cap.clone()),"pileus","Pileus / cap","macro");cap.scale.set(1,.5,1);cap.rotation.x=Math.PI;cap.position.y=2.65;
     const st=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.26,.36,2.3,36),MATERIALS.stipe.clone()),"stipe","Stipe","macro");st.position.y=.85;
-    const teeth=new THREE.Group();teeth.userData={id:"hymenophore",label:"Teeth / spines",category:"fertile",selectable:true};
-    for(let r=.3;r<1.25;r+=.24){for(let i=0;i<Math.max(10,Math.round(r*28));i++){const a=i/Math.max(10,Math.round(r*28))*Math.PI*2;const t=new THREE.Mesh(new THREE.ConeGeometry(.035,.28,7),MATERIALS.gill.clone());t.position.set(Math.cos(a)*r,2.05,Math.sin(a)*r);t.rotation.x=Math.PI;t.userData=teeth.userData;teeth.add(t);this.pickables.push(t);}}
+    const teeth=new THREE.Group();teeth.userData={id:"hymenophore",label:"Teeth / spines",category:"fertile",selectable:true,knowledgeId:"hymenophore"};
+    const toothPts=[];
+    for(let r=.3;r<1.25;r+=.24){const n=Math.max(10,Math.round(r*28));for(let i=0;i<n;i++){const a=i/n*Math.PI*2;toothPts.push({r,a});}}
+    const toothGeo=new THREE.ConeGeometry(.035,.28,scaledSegments(7,this.realismTier,{min:6,max:10}));
+    const toothInst=new THREE.InstancedMesh(toothGeo,MATERIALS.gill.clone(),toothPts.length);toothInst.userData=teeth.userData;
+    const toothDummy=new THREE.Object3D();
+    toothPts.forEach(({r,a},i)=>{toothDummy.position.set(Math.cos(a)*r,2.05,Math.sin(a)*r);toothDummy.rotation.set(Math.PI,0,0);toothDummy.updateMatrix();toothInst.setMatrixAt(i,toothDummy.matrix);});
+    toothInst.instanceMatrix.needsUpdate=true;toothInst.castShadow=this.realismTier.id==="high";toothInst.receiveShadow=true;teeth.add(toothInst);this.pickables.push(toothInst);
     this.root.add(teeth);this.objects.set("hymenophore",teeth);
   }
 
@@ -2069,8 +2088,12 @@ export class MycoSimEngine{
     const trunk=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.9,1.08,3.4,28),MATERIALS.wood.clone()),"substrate","Woody substrate","ecology");trunk.position.set(-1.55,.45,0);
     const shelf=this.register(new THREE.Mesh(new THREE.SphereGeometry(1.7,48,28,0,Math.PI*2,0,Math.PI/2.25),MATERIALS.cap.clone()),"pileus","Upper bracket surface","macro");shelf.scale.set(1.12,.34,.7);shelf.rotation.x=Math.PI;shelf.position.set(.25,1.55,0);
     const ctx=this.register(new THREE.Mesh(new THREE.BoxGeometry(2.3,.25,1.5),MATERIALS.flesh.clone()),"context","Context","internal");ctx.position.set(.2,1.25,0);
-    const teeth=new THREE.Group();teeth.userData={id:"hymenophore",label:"Teeth / spines",category:"fertile",selectable:true};
-    for(let x=-.85;x<=1.15;x+=.18){for(let z=-.55;z<=.55;z+=.18){const t=new THREE.Mesh(new THREE.ConeGeometry(.03,.3,7),MATERIALS.gill.clone());t.position.set(x,1.02,z);t.rotation.x=Math.PI;t.userData=teeth.userData;teeth.add(t);this.pickables.push(t);}}
+    const teeth=new THREE.Group();teeth.userData={id:"hymenophore",label:"Teeth / spines",category:"fertile",selectable:true,knowledgeId:"hymenophore"};
+    const hbPts=[];for(let x=-.85;x<=1.15;x+=.18){for(let z=-.55;z<=.55;z+=.18)hbPts.push([x,z]);}
+    const hbGeo=new THREE.ConeGeometry(.03,.3,scaledSegments(7,this.realismTier,{min:6,max:10}));
+    const hbInst=new THREE.InstancedMesh(hbGeo,MATERIALS.gill.clone(),hbPts.length);hbInst.userData=teeth.userData;
+    const hbDummy=new THREE.Object3D();hbPts.forEach(([x,z],i)=>{hbDummy.position.set(x,1.02,z);hbDummy.rotation.set(Math.PI,0,0);hbDummy.updateMatrix();hbInst.setMatrixAt(i,hbDummy.matrix);});
+    hbInst.instanceMatrix.needsUpdate=true;hbInst.castShadow=this.realismTier.id==="high";hbInst.receiveShadow=true;teeth.add(hbInst);this.pickables.push(hbInst);
     this.root.add(teeth);this.objects.set("hymenophore",teeth);
   }
 
