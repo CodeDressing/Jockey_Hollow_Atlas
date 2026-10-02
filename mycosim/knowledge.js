@@ -99,7 +99,61 @@ export const KNOWLEDGE_OBJECTS = Object.freeze({
     id:"lamella",label:"Lamella / gill",level:"macro",pronunciation:"lamella",
     beginner:"A plate-like gill under a mushroom cap.",
     expert:"Radial lamellate hymenophore element whose faces bear hymenium; attachment, spacing, thickness, branching and lamellulae are diagnostic.",
-    relationships:["trama","subhymenium","hymenium"]
+    relationships:["gill_attachment","trama","subhymenium","hymenium"]
+  },
+  gill_attachment:{
+    id:"gill_attachment",label:"Gill attachment",level:"macro",pronunciation:"gill attachment",
+    beginner:"The way a gill meets, avoids, or runs down the mushroom stalk.",
+    expert:"Relationship of the proximal lamellar edge to the stipe. Attachment state is a major macromorphological character and should be evaluated at the stipe-lamella junction in a mature, intact basidiome.",
+    relationships:["lamella","free_gills","adnexed","adnate","sinuate","emarginate","decurrent","subdecurrent","seceding"]
+  },
+  free_gills:{
+    id:"free_gills",label:"Free gills",level:"macro",pronunciation:"free gills",
+    beginner:"The gills stop before they touch the stalk.",
+    expert:"Lamellae terminate proximal to the stipe and are completely unattached, leaving a visible annular gap around the stipe.",
+    relationships:["gill_attachment","lamella","stipe"]
+  },
+  adnexed:{
+    id:"adnexed",label:"Adnexed gills",level:"macro",pronunciation:"adnexed",
+    beginner:"The gills touch the stalk only narrowly.",
+    expert:"Lamellae attach to the stipe by a small portion of their proximal depth, producing a narrow point of insertion.",
+    relationships:["gill_attachment","lamella","stipe"]
+  },
+  adnate:{
+    id:"adnate",label:"Adnate gills",level:"macro",pronunciation:"adnate",
+    beginner:"The gills attach broadly to the stalk.",
+    expert:"Lamellae meet the stipe broadly, with most or essentially all of the proximal gill depth attached directly to the stipe.",
+    relationships:["gill_attachment","lamella","stipe"]
+  },
+  sinuate:{
+    id:"sinuate",label:"Sinuate gills",level:"macro",pronunciation:"sinuate",
+    beginner:"The gills curve inward in a smooth notch just before meeting the stalk.",
+    expert:"Lamellae develop a smooth sinus or concave indentation immediately before insertion on the stipe.",
+    relationships:["gill_attachment","lamella","stipe","emarginate"]
+  },
+  emarginate:{
+    id:"emarginate",label:"Emarginate gills",level:"macro",pronunciation:"emarginate",
+    beginner:"The gills have a distinct notch immediately before they meet the stalk.",
+    expert:"Lamellae are distinctly notched at the proximal edge before stipe insertion. Terminology overlaps with sinuate in some descriptive traditions; the atlas preserves both terms while distinguishing a sharper emarginate notch from a smoother sinus.",
+    relationships:["gill_attachment","lamella","stipe","sinuate"]
+  },
+  decurrent:{
+    id:"decurrent",label:"Decurrent gills",level:"macro",pronunciation:"decurrent",
+    beginner:"The gills run clearly down the stalk.",
+    expert:"Lamellae continue below the pileus-stipe junction and descend conspicuously along the stipe.",
+    relationships:["gill_attachment","lamella","stipe","subdecurrent"]
+  },
+  subdecurrent:{
+    id:"subdecurrent",label:"Subdecurrent gills",level:"macro",pronunciation:"subdecurrent",
+    beginner:"The gills run only a short way down the stalk.",
+    expert:"Lamellae descend slightly below the pileus-stipe junction but less extensively than fully decurrent lamellae.",
+    relationships:["gill_attachment","lamella","stipe","decurrent"]
+  },
+  seceding:{
+    id:"seceding",label:"Seceding gills",level:"macro",pronunciation:"seceding",
+    beginner:"The gills were attached but pull away from the stalk as the mushroom matures.",
+    expert:"Developmentally attached lamellae that become detached from the stipe during expansion or maturation, producing a secondary gap. This is a developmental state rather than simply a fixed primary insertion geometry.",
+    relationships:["gill_attachment","lamella","stipe"]
   },
   trama:{
     id:"trama",label:"Trama",level:"tissue",pronunciation:"trama",
@@ -291,7 +345,7 @@ export const KNOWLEDGE_OBJECTS = Object.freeze({
 
 export const NAVIGATION_PATHS = Object.freeze({
   agaricoid:[
-    ["basidiome","pileus","hymenophore","lamella","trama","subhymenium","hymenium","basidium","sterigmata","basidiospore"],
+    ["basidiome","pileus","hymenophore","lamella","gill_attachment","trama","subhymenium","hymenium","basidium","sterigmata","basidiospore"],
     ["basidiome","stipe","stipe_base"],
     ["basidiome","veil_structure"]
   ],
