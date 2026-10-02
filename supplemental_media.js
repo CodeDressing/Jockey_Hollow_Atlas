@@ -106,6 +106,19 @@ window.DRIVE_PHOTOS.push(
   {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F41","category":"Wild / field context","filename":"AN2-F41 field (5).jpg","caption":"AN2-F41 — field specimen and accession label on foil, pileus and attached base visible","id":"16KP97mm-b1QA1I-r6xeT8f-FwKmpwzZ5","original":"https://drive.google.com/thumbnail?id=16KP97mm-b1QA1I-r6xeT8f-FwKmpwzZ5&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=16KP97mm-b1QA1I-r6xeT8f-FwKmpwzZ5&sz=w1200","source_relpath":"AN2 lab additions/AN2-F41 field (5).jpg","drive_view":"https://drive.google.com/file/d/16KP97mm-b1QA1I-r6xeT8f-FwKmpwzZ5/view"}
 );
 
+window.DRIVE_PHOTOS = window.DRIVE_PHOTOS || [];
+window.DRIVE_PHOTOS.push(
+  {"folder":"AN2-F36","collection":"AN2","family":"AN","specimen":"AN2-F36","category":"Microscopy / unsuccessful spore objective","filename":"AN2-F36 failure v1.png","caption":"AN2-F36 — unsuccessful spore objective, field 1; non-spore cellular/debris material documented","id":"1uazLkeGrD6pWlC4Ar9LRp7ocIBCOgffI","original":"https://drive.google.com/thumbnail?id=1uazLkeGrD6pWlC4Ar9LRp7ocIBCOgffI&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1uazLkeGrD6pWlC4Ar9LRp7ocIBCOgffI&sz=w1200","source_relpath":"AN2-F36/AN2-F36 failure v1.png","drive_view":"https://drive.google.com/file/d/1uazLkeGrD6pWlC4Ar9LRp7ocIBCOgffI/view"},
+  {"folder":"AN2-F36","collection":"AN2","family":"AN","specimen":"AN2-F36","category":"Microscopy / unsuccessful spore objective","filename":"AN2-F36 failure v2.png","caption":"AN2-F36 — unsuccessful spore objective, field 2; isolated rounded cellular/debris structure","id":"1sd1cRmZuTCns6i6Wea7DLjW7equZFmrC","original":"https://drive.google.com/thumbnail?id=1sd1cRmZuTCns6i6Wea7DLjW7equZFmrC&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1sd1cRmZuTCns6i6Wea7DLjW7equZFmrC&sz=w1200","source_relpath":"AN2-F36/AN2-F36 failure v2.png","drive_view":"https://drive.google.com/file/d/1sd1cRmZuTCns6i6Wea7DLjW7equZFmrC/view"},
+  {"folder":"AN2-F36","collection":"AN2","family":"AN","specimen":"AN2-F36","category":"Microscopy / unsuccessful spore objective","filename":"AN2-F36 failure v3.png","caption":"AN2-F36 — unsuccessful spore objective, field 3; non-spore tissue/debris structure","id":"1wroI23gqbZSBbkvN9aAd1Zv7YfrdDUUS","original":"https://drive.google.com/thumbnail?id=1wroI23gqbZSBbkvN9aAd1Zv7YfrdDUUS&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1wroI23gqbZSBbkvN9aAd1Zv7YfrdDUUS&sz=w1200","source_relpath":"AN2-F36/AN2-F36 failure v3.png","drive_view":"https://drive.google.com/file/d/1wroI23gqbZSBbkvN9aAd1Zv7YfrdDUUS/view"},
+  {"folder":"AN2-F36","collection":"AN2","family":"AN","specimen":"AN2-F36","category":"Microscopy / unsuccessful spore objective","filename":"AN2-F36 failure v4.png","caption":"AN2-F36 — unsuccessful spore objective, field 4; measured non-spore structure 15.27 µm","id":"160269gbtlUipLZrUqJ09WIaqXJsI1k3T","original":"https://drive.google.com/thumbnail?id=160269gbtlUipLZrUqJ09WIaqXJsI1k3T&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=160269gbtlUipLZrUqJ09WIaqXJsI1k3T&sz=w1200","source_relpath":"AN2-F36/AN2-F36 failure v4.png","drive_view":"https://drive.google.com/file/d/160269gbtlUipLZrUqJ09WIaqXJsI1k3T/view"},
+  {"folder":"AN2-F36","collection":"AN2","family":"AN","specimen":"AN2-F36","category":"Microscopy / unsuccessful spore objective","filename":"AN2-F36 failure v5.png","caption":"AN2-F36 — unsuccessful spore objective, field 5; measured non-spore aggregate 33.47 µm","id":"1Dwfh5QrzekXvyGgXMO_pD1RbCl3C7nGY","original":"https://drive.google.com/thumbnail?id=1Dwfh5QrzekXvyGgXMO_pD1RbCl3C7nGY&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1Dwfh5QrzekXvyGgXMO_pD1RbCl3C7nGY&sz=w1200","source_relpath":"AN2-F36/AN2-F36 failure v5.png","drive_view":"https://drive.google.com/file/d/1Dwfh5QrzekXvyGgXMO_pD1RbCl3C7nGY/view"},
+  {"folder":"AN2-F36","collection":"AN2","family":"AN","specimen":"AN2-F36","category":"Microscopy / unsuccessful spore objective","filename":"AN2-F36 failure v6.png","caption":"AN2-F36 — unsuccessful spore objective, field 6; measured non-spore structure 28.62 µm","id":"1MVxcA4gBo0TI6Dp048s80aS6m0Qzm2Xj","original":"https://drive.google.com/thumbnail?id=1MVxcA4gBo0TI6Dp048s80aS6m0Qzm2Xj&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1MVxcA4gBo0TI6Dp048s80aS6m0Qzm2Xj&sz=w1200","source_relpath":"AN2-F36/AN2-F36 failure v6.png","drive_view":"https://drive.google.com/file/d/1MVxcA4gBo0TI6Dp048s80aS6m0Qzm2Xj/view"},
+  {"folder":"AN2-F36","collection":"AN2","family":"AN","specimen":"AN2-F36","category":"Microscopy / unsuccessful spore objective","filename":"AN2-F36 failure v7.png","caption":"AN2-F36 — unsuccessful spore objective, field 7; clustered plant-like/cellular material and elongated fragments","id":"1eJRKWCjrqvfeURVbpPptqb5Ci2aj94TU","original":"https://drive.google.com/thumbnail?id=1eJRKWCjrqvfeURVbpPptqb5Ci2aj94TU&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1eJRKWCjrqvfeURVbpPptqb5Ci2aj94TU&sz=w1200","source_relpath":"AN2-F36/AN2-F36 failure v7.png","drive_view":"https://drive.google.com/file/d/1eJRKWCjrqvfeURVbpPptqb5Ci2aj94TU/view"},
+  {"folder":"AN2-F36","collection":"AN2","family":"AN","specimen":"AN2-F36","category":"Microscopy / unsuccessful spore objective","filename":"AN2-F36 failure v8.png","caption":"AN2-F36 — unsuccessful spore objective, field 8; granular cellular/debris material","id":"1YuS29FNThv_8zt3ooIbptU3XvdJOclPD","original":"https://drive.google.com/thumbnail?id=1YuS29FNThv_8zt3ooIbptU3XvdJOclPD&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1YuS29FNThv_8zt3ooIbptU3XvdJOclPD&sz=w1200","source_relpath":"AN2-F36/AN2-F36 failure v8.png","drive_view":"https://drive.google.com/file/d/1YuS29FNThv_8zt3ooIbptU3XvdJOclPD/view"},
+  {"folder":"AN2-F36","collection":"AN2","family":"AN","specimen":"AN2-F36","category":"Microscopy / unsuccessful spore objective","filename":"AN2-F36 failure v9.png","caption":"AN2-F36 — unsuccessful spore objective, field 9; granular plant-like/cellular material","id":"1hcNe0cBsJGmZXjKpC9MFV5MaYwKVqYSg","original":"https://drive.google.com/thumbnail?id=1hcNe0cBsJGmZXjKpC9MFV5MaYwKVqYSg&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1hcNe0cBsJGmZXjKpC9MFV5MaYwKVqYSg&sz=w1200","source_relpath":"AN2-F36/AN2-F36 failure v9.png","drive_view":"https://drive.google.com/file/d/1hcNe0cBsJGmZXjKpC9MFV5MaYwKVqYSg/view"}
+);
+
 window.SPECIMEN_ENRICHMENTS = window.SPECIMEN_ENRICHMENTS || {};
 window.SPECIMEN_ENRICHMENTS["AN2-F9"] = {
   status: "AN2-F9 complete dataset — Jockey Hollow wild context, field specimen morphology, laboratory preparation, microscopy, and measured spore imagery integrated.",
@@ -412,5 +425,30 @@ window.SPECIMEN_ENRICHMENTS["AN2-F1"] = {
     ["Field substrate documented","Yes — soil on forest floor among decomposing leaf litter"],
     ["Laboratory camera provenance","Yes — Canon PowerShot SX20 IS"],
     ["Microscopy instrumentation documented","Yes — Motic BA310 + Moticam 2300"]
+  ]
+};
+
+window.SPECIMEN_ENRICHMENTS["AN2-F36"] = {
+  status: "AN2-F36 spore microscopy objective unsuccessful — no confirmed fungal spore population was acquired in the documented microscopy series. The recovered preparation is retained as a failed objective record rather than discarded.",
+  sourceLine: "Rutgers/Jockey Hollow accession AN2-F36. Nine microscopy fields from the unsuccessful spore-objective attempt are preserved. Imaging was performed on the Motic BA310 / Moticam 2300 system under the same established microscope calibration workflow used for atlas quantitative acquisition. The observed material is dominated by irregular granular tissue, cellular aggregates, and elongated fragments that appear more consistent with plant-derived or other non-spore debris than with a repeatable fungal spore population. No fungal spore measurements are assigned from this series.",
+  summary: {
+    "SPM result": "Unsuccessful. No repeatable, morphologically consistent fungal spore population was confirmed in the acquired fields.",
+    "Observed material": "Irregular granular tissue, rounded cellular aggregates, membranous/fragmentary structures, and elongated fragments are present. The material appears plant-like / consistent with plant-derived debris, but is recorded conservatively as non-spore cellular/debris material because no plant-specific stain or anatomical confirmation was performed.",
+    "Measured non-spore structures": "Three on-image measurements are preserved as measurements of observed non-spore structures only: 15.27 µm, 33.47 µm, and 28.62 µm. These values are not entered into the fungal spore dataset.",
+    "Microscopy record": "Nine accession-linked microscopy images document the unsuccessful objective. The failure is retained as part of the specimen history rather than hidden or reclassified.",
+    "Calibration / instrumentation": "Motic BA310 microscope with Moticam 2300 camera; same established atlas calibration workflow used for quantitative microscopy.",
+    "Future objective": "Future spore acquisition may be attempted if a better AN2-F36 preparation or additional specimen material becomes available.",
+    "Record interpretation": "This is a documented acquisition failure, not evidence that AN2-F36 lacks spores biologically. It records only that a successful fungal spore objective was not obtained from this preparation."
+  },
+  completeness: [
+    ["Microscopy attempt documented","Yes — 9 fields"],
+    ["Successful fungal spore objective","No"],
+    ["Confirmed spore population","No"],
+    ["Non-spore material documented","Yes — plant-like / cellular debris"],
+    ["Non-spore measurements retained","15.27, 33.47, 28.62 µm"],
+    ["Spore measurements","No — none assigned"],
+    ["Calibration provenance","Yes — Motic BA310 / Moticam 2300, established atlas calibration workflow"],
+    ["Failure preserved","Yes"],
+    ["Future reacquisition possible","Yes"]
   ]
 };
