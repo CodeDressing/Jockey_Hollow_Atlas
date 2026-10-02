@@ -99,14 +99,16 @@ export const MORPHOLOGY_PROFILES = [
     ]
   },
   {
-    id:"puffball",label:"Puffball / gasteroid",group:"gasteroid",factory:"puffball",version:"2.0.0",
-    description:"Enclosed spore-bearing glebal body plan.",
-    variantGroups:[],developmentalStages:["young","mature","old"],
+    id:"puffball",label:"Puffball / gasteroid",group:"gasteroid",factory:"puffball",version:"3.0.0",
+    description:"Enclosed spore-bearing glebal body plan with stage-dependent surface ornamentation, peridial state, ostiole development, and cutaway anatomy.",
+    variantGroups:["puff_surface","puff_shape","puff_base","peridial_condition","ostiole_state","gleba_state","section_view","texture_realism"],developmentalStages:["young","mature","old"],
     anatomy:[
       A("peridium","Peridium","macro","Outer enclosing wall."),
+      A("exoperidium","Exoperidium","macro","Outermost peridial layer; may be smooth, granular, warted, spiny, or scurfy.","peridium"),
+      A("endoperidium","Endoperidium","internal","Inner peridial wall retained beneath the exoperidium.","peridium"),
       A("gleba","Gleba","internal","Internal spore-bearing tissue."),
-      A("apical_pore","Apical pore","macro","Mature spore-release opening."),
-      A("sterile_base","Sterile base","macro","Basal sterile tissue.")
+      A("apical_pore","Ostiole / apical pore","macro","Spore-release opening that develops at maturity.","peridium"),
+      A("sterile_base","Sterile base / subgleba","macro","Basal non-spore-bearing tissue.")
     ]
   },
   {
