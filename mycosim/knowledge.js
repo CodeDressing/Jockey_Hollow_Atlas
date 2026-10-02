@@ -612,6 +612,76 @@ export const NAVIGATION_PATHS = Object.freeze({
   ]
 });
 
+const DEVELOPMENTAL_SIGNIFICANCE=Object.freeze({
+  basidiome:"The whole fruit body changes in size, tissue condition, exposure of fertile structures, pigmentation, and senescence; developmental stage must be recorded before comparing morphology.",
+  pileus:"Pileus shape and margin position commonly change during expansion and senescence, so cap form should be interpreted in developmental context.",
+  pileus_margin:"The margin may begin enrolled or protected, expand outward, then split, erode, or distort with age.",
+  hymenophore:"Fertile surfaces may be incompletely exposed when young and become fully exposed, worn, discolored, or distorted with maturity and senescence.",
+  lamella:"Gill spacing and attachment are best assessed on mature intact basidiomata; young or collapsing tissues can obscure the mature relationship.",
+  stipe:"Stipe proportions may change through elongation, expansion, water loss, and collapse; mature dimensions should not be inferred from a young state.",
+  stipe_base:"Basal form may become more exposed or distorted as surrounding tissue expands, dries, or is damaged.",
+  veil_structure:"Veil tissues are developmentally transient and can rupture, remain as remnants, or disappear, making age central to interpretation.",
+  gasteroid_archetype:"The archetype preserves body-plan identity while wall thickness, ornament retention, glebal state, dehiscence, and collapse transform through development.",
+  puffball:"A puffball changes continuously from firm enclosed immature gleba to mature spore-bearing tissue and then to a dry, ruptured or collapsed spore-dispersal structure.",
+  peridium:"The enclosing wall is generally firmer and more intact when young, becomes developmentally modified at maturity, and may thin, crack, rupture, abrade, or collapse in old age.",
+  exoperidium:"Outer-wall ornamentation is often strongest when young and may abrade, flatten, fragment, or disappear progressively with maturity.",
+  endoperidium:"The inner peridial wall becomes increasingly important as outer layers abrade and is often the persistent wall surrounding mature gleba.",
+  surface_ornamentation:"Surface ornament is stage-dependent: young fruit bodies usually preserve it best, while mature and old fruit bodies can show breakage, flattening, abrasion, and patch loss.",
+  echinate:"Echinate spines are typically best preserved when young; with maturity they may shorten, break, abrade in patches, and become sparse or absent in old generalized models.",
+  verrucose:"Verrucose warts can begin raised and distinct, then round, flatten, merge visually, and become abraded as the exoperidium ages.",
+  granular:"Fine granular ornament is usually most conspicuous when fresh and young, then thins and smooths as grains abrade away.",
+  furfuraceous:"Scurfy flakes may be adherent when fresh, become lifted or curled during drying, and be lost progressively with age.",
+  glabrous:"A genuinely glabrous surface lacks conspicuous macro-ornament throughout development; weathering may change texture without implying that ornament was originally present.",
+  gleba:"Gleba progresses from pale firm immature tissue to darker spore-bearing tissue and finally to a dry, powdery, partly depleted spore mass.",
+  immature_gleba:"Immature gleba is an early developmental state and should not be interpreted as a mature spore mass.",
+  mature_gleba:"Mature gleba represents advanced spore development and increasing dryness before or during active spore release.",
+  spore_mass:"Spore mass develops as glebal tissue matures, then becomes progressively depleted as spores are released.",
+  apical_region:"The apical region may remain closed when young, differentiate an ostiole or rupture zone at maturity, and become enlarged or ragged with age.",
+  apical_pore:"An ostiole is absent or nonfunctional early, develops with maturity, and may widen, tear, or become irregular during prolonged spore release and weathering.",
+  rupture_channel:"The release pathway develops only after wall differentiation and dehiscence; its size and continuity reflect maturity and rupture state.",
+  rupture_margin:"A fresh opening may have relatively coherent margins that become torn, curled, frayed, or weathered during senescence.",
+  worn_exoperidium:"Abraded exoperidium is a developmental/weathering product and therefore records loss of youthful surface characters rather than a primary smooth state.",
+  collapsed_wall:"Collapse reflects water loss, loss of internal support, spore depletion, and weathering, and is principally a mature-to-old developmental feature.",
+  sterile_base:"The sterile basal region may remain structurally distinct while the fertile gleba matures; drying can shrink or distort it in old specimens.",
+  subgleba:"Subglebal tissue is established as a sterile basal compartment and becomes relatively more conspicuous as the fertile gleba differentiates and dries.",
+  basal_attachment:"The attachment remains the substrate connection throughout development, though surrounding tissue can dry, contract, or become obscured by debris.",
+  earthstar_rays:"Earthstar-type outer peridial tissue remains closed early, then splits and reflexes into rays during maturation while the inner spore sac persists.",
+  gasteroid_stalk:"In stalked-gasteroid forms, the sterile stalk elongates or becomes fully expressed while the spore sac matures, then may dry and weather without losing architectural identity.",
+  fertile_head:"The fertile head expands and exposes or differentiates its reproductive surface as the fruit body matures, then can dry and deform with age.",
+  internal_cavity:"The cavity becomes fully expressed with expansion and may enlarge visually as surrounding tissues dry or collapse.",
+  branch_system:"Branches elongate and spread during growth, then may lose tips, bend, or collapse during senescence.",
+  branch_tips:"Young tips are active growth zones; mature tips are fully expressed and old tips may become worn, discolored, or broken.",
+  apothecium:"Cup-shaped ascomata typically open and expose the hymenium as they mature, then flatten, split, or distort with age.",
+  excipulum:"Supporting cup tissue expands with the apothecium and can thin, dry, or distort as the fruit body ages.",
+  context:"Context thickness and firmness change through expansion, hydration change, and senescence and should be interpreted with stage and substrate condition.",
+  margin:"Growing margins are most active and distinct earlier in development and become less defined, eroded, or cracked with age.",
+  lobes:"Gelatinous lobes enlarge and remain full when hydrated, then wrinkle and collapse as hydration and tissue integrity decline.",
+  attachment:"Attachment persists throughout development but surrounding tissue can change substantially in size, hydration, and orientation."
+});
+
+const atlasFallback=(k)=>{
+  if(k.level==="micro") return "Microscopic expression can vary with maturity and tissue condition; interpret it together with specimen age, preparation quality, and the parent structure.";
+  if(k.level==="internal"||k.level==="tissue") return "Internal tissue appearance changes with maturation, hydration, pigmentation, and senescence; developmental state should be recorded with the observation.";
+  if(k.level==="macro") return "Macromorphology can change with expansion, maturation, drying, and senescence; compare this character only among developmentally comparable specimens.";
+  return "Interpret this structure in the context of the fruit body's developmental stage and the condition of related tissues.";
+};
+
+for(const k of Object.values(KNOWLEDGE_OBJECTS)){
+  if(!k.whyItMatters){
+    k.whyItMatters="This structure contributes to anatomical description and can support later morphological interpretation when documented with provenance.";
+  }
+  if(!k.developmentalSignificance){
+    k.developmentalSignificance=DEVELOPMENTAL_SIGNIFICANCE[k.id]||atlasFallback(k);
+  }
+  if(!k.observation){
+    k.observation="Observation: a visible or selected structure is present at this location in the model. Record what is directly seen before assigning a taxonomic interpretation.";
+  }
+  if(!k.identificationBoundary){
+    k.identificationBoundary="Identification boundary: this anatomical label or morphology term describes an observed structure; by itself it does not establish a species identification.";
+  }
+  if(!Array.isArray(k.relationships))k.relationships=[];
+}
+
 export function getKnowledge(id){
   return KNOWLEDGE_OBJECTS[id]||{
     id,label:id.replaceAll("_"," "),level:"unknown",pronunciation:id.replaceAll("_"," "),
