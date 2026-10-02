@@ -1000,13 +1000,10 @@ export class MycoSimEngine{
       const integratedAbrasion=abrasionState(surfaceState,sid,peridial);
 
       const subtypeCollapse=THREE.MathUtils.clamp(collapse*(subtypeDev.collapseBias||1),0,1);
-      const shapeScale={
-        globose:[1,1,1],
-        subglobose:[1.06,.91,1.00],
-        pyriform:[1.00,1.14,.98],
-        turbiniform:[1.08,1.03,1.02],
-        irregular:[1.10,.84,.93]
-      }[shape]||[1,1,1];
+      // Selected body-plan shape is baked into the continuous biological mesh.
+      // Stage transforms below alter hydration/thickness/collapse only; they do not
+      // re-apply an unrelated geometric shape distortion.
+      const shapeScale=[1,1,1];
 
       const wallRadial=THREE.MathUtils.lerp(.96,1.01,peridialThickness);
       setScale("peridium",shapeScale[0]*wallRadial*(1-subtypeCollapse*.20),shapeScale[1]*taut*(1-subtypeCollapse*.18),shapeScale[2]*wallRadial*(1-subtypeCollapse*.20));
@@ -1050,10 +1047,16 @@ export class MycoSimEngine{
         const matureEnough=glebaState==="mature"||glebaState==="old";
         sporeMass.visible=matureEnough;
         sporeMass.scale.setScalar(Math.max(.38,(glebaState==="old"?.92:.78)*(1-sporeDepletion*.42)));
-        if(sporeMass.material){
-          sporeMass.material.opacity=Math.max(.18,(glebaState==="old"?.58:.40)*(1-sporeDepletion*.48));
-          sporeMass.material.color.setHex(glebaState==="old"?0x3e3025:0x625037);
-        }
+        sporeMass.traverse?.(node=>{
+          if(!node.material)return;
+          const mats=Array.isArray(node.material)?node.material:[node.material];
+          for(const mat of mats){
+            mat.transparent=true;
+            mat.opacity=Math.max(.18,(glebaState==="old"?.58:.40)*(1-sporeDepletion*.48));
+            if(mat.color)mat.color.setHex(glebaState==="old"?0x3e3025:0x625037);
+            if("roughness" in mat)mat.roughness=Math.min(1,.94+waterLoss*.06);
+          }
+        });
       }
       const apical=this.objects.get("apical_region");
       if(apical)apical.visible=true;
@@ -1074,14 +1077,12 @@ export class MycoSimEngine{
         gasteroidStalk.scale.y*=sid==="young"?.62:sid==="mature"?1:.96;
         if(sid==="old")gasteroidStalk.rotation.z+=.025;
       }
-      const oldGleba=this.objects.get("old_gleba_clumps");
       const oldDebris=this.objects.get("old_basal_debris");
       const layeredShell=this.objects.get("senescent_shell");
       const ruptureMarginObj=this.objects.get("rupture_margin");
       const ruptureChannel=this.objects.get("rupture_channel");
       const wornExo=this.objects.get("worn_exoperidium");
       const collapsedWall=this.objects.get("collapsed_wall");
-      if(oldGleba)oldGleba.visible=sid==="old";
       if(oldDebris)oldDebris.visible=sid==="old" && base!=="none";
       if(layeredShell)layeredShell.visible=sid==="old";
       if(ruptureMarginObj)ruptureMarginObj.visible=sid!=="young" && rupturePattern!=="intact";
@@ -1125,8 +1126,11 @@ export class MycoSimEngine{
         if(perObj)perObj.visible=false;
         const endoObj=this.objects.get("endoperidium");
         if(endoObj)endoObj.visible=false;
-        if(gleba)gleba.visible=false;
-        if(sporeMass)sporeMass.visible=false;
+        if(gleba){
+          gleba.visible=true;
+          gleba.scale.y*=Math.max(.52,1-waterLoss*.30);
+        }
+        if(sporeMass)sporeMass.visible=true;
         if(pore)pore.visible=false;
         if(apical)apical.visible=false;
 
@@ -1348,6 +1352,12 @@ export class MycoSimEngine{
         complexity:this._lastComplexity
       },this.realismTier||REALISM_TIERS.atlas),
       puffOrnament:this.objects.get("exoperidium")?.userData?.ornamentStats||null,
+      puffGeometryModel:this.currentProfile?.id==="puffball"?this.objects.get("peridium")?.geometry?.userData||null:null,
+      glebaRenderingModel:this.currentProfile?.id==="puffball"?{
+        volume:this.objects.get("gleba")?.geometry?.userData||null,
+        microstructure:this.objects.get("gleba")?.userData?.renderingModel||null,
+        sporeMass:this.objects.get("spore_mass")?.userData?.renderingModel||null
+      }:null,
       developmentalIdentity:this.morphologyState?.developmental?.identityKey||null,
       gasteroidSubtype:this.currentProfile?.id==="puffball"?(this.variants.puff_subtype||"true_puffball"):null,
       gasteroidSubtypeDefinition:this.currentProfile?.id==="puffball"?puffballSubtype(this.variants.puff_subtype||"true_puffball"):null,
@@ -2588,7 +2598,6 @@ export class MycoSimEngine{
     const retention=(profile.retention[stageId]??1)*abrasion.retentionMultiplier;
     const scaleByAge=(profile.scale[stageId]??1)*(1-abrasion.severity*.16);
     const target=Math.max(0,Math.round(requested*retention));
-    const identitySeed=this.morphologyState?.developmental?.identitySeed||137;
     const {
       points:ornamentPoints,clusterWeights:ornamentClusterWeights,bareWeights:ornamentBareWeights,
       rng:ornamentRng,diagnostics:ornamentSampling
