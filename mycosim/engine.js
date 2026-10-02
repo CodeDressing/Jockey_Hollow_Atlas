@@ -1587,10 +1587,16 @@ export class MycoSimEngine{
   build_puffball(){
     const realism=this.variants.texture_realism||"atlas";
     const surface=this.variants.puff_surface||"echinate";
-    const detail={simplified:32,atlas:56,high:92}[realism]||56;
+    const shape=this.variants.puff_shape||"globose";
+    const baseDetail={simplified:42,atlas:76,high:124}[realism]||76;
+    const detail=surface==="echinate"
+      ? {simplified:96,atlas:180,high:300}[realism]
+      : surface==="granular"
+        ? Math.round(baseDetail*1.45)
+        : baseDetail;
     const bodyY=1.05;
     const stageId=this.morphologyState?.stage?.id||this.developmentalStageId||"mature";
-    const irregularityScale=(surface==="glabrous")?0:(stageId==="young"?.045:stageId==="mature"?.028:.018);
+    const irregularityScale=(surface==="glabrous")?0:(stageId==="young"?.032:stageId==="mature"?.022:.014);
 
     const innerMat=MATERIALS.puff.clone();
     innerMat.color.setHex(0xbda982);
@@ -1601,6 +1607,22 @@ export class MycoSimEngine{
       for(let i=0;i<pos.count;i++){
         v.fromBufferAttribute(pos,i);
         const wave=Math.sin(v.x*5.2+v.y*3.7+v.z*4.4)+Math.sin(v.x*9.1-v.z*6.3)*.45;
+        const yn=THREE.MathUtils.clamp(v.y/1.15,-1,1);
+        let radial=1;
+        let vertical=1;
+        if(shape==="subglobose"){radial=1.035;vertical=.94;}
+        else if(shape==="pyriform"){
+          // Broad fertile upper body, gently narrowed basal transition.
+          radial=.78+.27*((yn+1)/2);
+          vertical=1.08;
+        }else if(shape==="turbiniform"){
+          radial=.67+.40*((yn+1)/2);
+          vertical=1.02;
+        }else if(shape==="irregular"){
+          radial=1+.055*Math.sin(v.y*4.7+v.x*3.1);
+          vertical=.90;
+        }
+        v.x*=radial;v.z*=radial;v.y*=vertical;
         v.multiplyScalar(1+wave*irregularityScale);
         pos.setXYZ(i,v.x,v.y,v.z);
       }
@@ -1650,11 +1672,20 @@ export class MycoSimEngine{
         const radius=Math.sqrt(Math.max(0,1-y*y));
         const phi=i*2.399963229728653;
         const nx=Math.cos(phi)*radius, ny=y, nz=Math.sin(phi)*radius;
-        const px=nx*1.16, py=bodyY+ny*1.10, pz=nz*1.16;
+        let radial=1;
+        let vertical=1;
+        if(shape==="subglobose"){radial=1.035;vertical=.94;}
+        else if(shape==="pyriform"){radial=.78+.27*((ny+1)/2);vertical=1.08;}
+        else if(shape==="turbiniform"){radial=.67+.40*((ny+1)/2);vertical=1.02;}
+        else if(shape==="irregular"){radial=1+.04*Math.sin(ny*7+phi*1.4);vertical=.90;}
+        const px=nx*1.17*radial, py=bodyY+ny*1.10*vertical, pz=nz*1.17*radial;
         let geo;
         if(surface==="echinate"){
-          const len=realism==="high"?.22:realism==="atlas"?.18:.13;
-          geo=new THREE.ConeGeometry(.045,len,7);
+          // Young true-puffball reference: numerous short, fine exoperidial prickles,
+          // not a sparse field of oversized cones.
+          const len=realism==="high"?.115:realism==="atlas"?.095:.075;
+          const baseR=realism==="high"?.026:realism==="atlas"?.023:.020;
+          geo=new THREE.ConeGeometry(baseR,len,6);
         }else if(surface==="verrucose"){
           geo=new THREE.SphereGeometry(realism==="high"?.075:.065,10,7);
         }else if(surface==="granular"){
@@ -1663,6 +1694,8 @@ export class MycoSimEngine{
           geo=new THREE.TetrahedronGeometry(realism==="high"?.055:.045,0);
         }
         const o=new THREE.Mesh(geo,ornamentMat.clone());
+        const naturalScale=.82+((i*17)%23)/100;
+        o.scale.setScalar(naturalScale);
         o.position.set(px,py,pz);
         o.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),new THREE.Vector3(nx,ny,nz).normalize());
         o.userData=exo.userData;
