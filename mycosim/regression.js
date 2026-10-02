@@ -2,6 +2,8 @@ import * as THREE from "three";
 import {MORPHOLOGY_PROFILES} from "./profiles.js";
 import {DEVELOPMENTAL_STAGE_ORDER} from "./stages.js";
 import {KNOWLEDGE_OBJECTS} from "./knowledge.js";
+import {PUFFBALL_SUBTYPE_LIBRARY,applyPuffballSubtypeDefaults,enforcePuffballSubtype,puffballSubtypeStageDefaults} from "./variants.js";
+import {auditCampaignSnapshot,aggregateCampaignStates} from "./campaign_audit.js";
 
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const nextFrame=()=>new Promise(r=>requestAnimationFrame(()=>r()));
@@ -181,7 +183,8 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
   const original={
     profileId:engine.currentProfile?.id||MORPHOLOGY_PROFILES[0].id,
     stageId:engine.getDevelopmentalStage()?.id||"mature",
-    mode:engine.mode
+    mode:engine.mode,
+    variants:{...engine.variants}
   };
 
   const writes=[];
@@ -271,6 +274,40 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
       }
     }
 
+    // Final campaign audit: every gasteroid teaching archetype × developmental stage.
+    const campaignRows=[];
+    const subtypeIds=Object.keys(PUFFBALL_SUBTYPE_LIBRARY);
+    for(const subtypeId of subtypeIds){
+      for(const stageId of DEVELOPMENTAL_STAGE_ORDER){
+        const stageDefaults={
+          young:{peridial_condition:"intact",ostiole_state:"absent",rupture_pattern:"intact",rupture_margin:"clean",collapse_state:"none",gleba_state:"immature"},
+          mature:{peridial_condition:"flaking",ostiole_state:"developing",rupture_pattern:"apical_ostiole",rupture_margin:"slightly_torn",collapse_state:"slight",gleba_state:"maturing"},
+          old:{peridial_condition:"collapsed",ostiole_state:"open",rupture_pattern:"irregular_rupture",rupture_margin:"ragged",collapse_state:"weathered",gleba_state:"old"}
+        }[stageId]||{};
+        const subtypeStage=puffballSubtypeStageDefaults(subtypeId,stageId);
+        engine.variants=enforcePuffballSubtype({
+          ...applyPuffballSubtypeDefaults(engine.variants,subtypeId),
+          ...stageDefaults,
+          ...subtypeStage
+        });
+        engine.developmentalStageId=stageId;
+        engine.loadProfile("puffball");
+        engine.renderer.render(engine.scene,engine.camera);
+        await nextFrame();
+        const snapshot=engine.qaSnapshot();
+        campaignRows.push({
+          subtypeId,stageId,
+          audit:auditCampaignSnapshot(snapshot),
+          buildMs:snapshot.profileBuildMs,
+          realismTier:snapshot.realismTier,
+          performance:snapshot.realismPerformance,
+          triangles:snapshot.complexity?.triangles||0,
+          drawCalls:snapshot.drawCalls||0
+        });
+      }
+    }
+    const campaign=aggregateCampaignStates(campaignRows);
+
     // Repeated-switch memory regression on a representative loop.
     const before=engine.qaSnapshot();
     for(let cycle=0;cycle<5;cycle++){
@@ -307,7 +344,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
 
     const failed=rows.filter(r=>!r.pass);
     return {
-      pass:failed.length===0&&memory.pass&&mobile.pass&&specimenIsolation.pass,
+      pass:failed.length===0&&memory.pass&&mobile.pass&&specimenIsolation.pass&&campaign.pass,
       generatedAt:new Date().toISOString(),
       totalCombinations:rows.length,
       passedCombinations:rows.length-failed.length,
@@ -318,6 +355,8 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
         checks:r.performanceChecks,targets:r.performanceTargets
       })),
       rows,
+      campaign,
+      campaignRows,
       memory,
       mobile,
       specimenIsolation
@@ -326,6 +365,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
     window.fetch=originalFetch;
     XMLHttpRequest.prototype.send=originalXHRSend;
     XMLHttpRequest.prototype.open=originalXHROpen;
+    engine.variants={...original.variants};
     engine.developmentalStageId=original.stageId;
     engine.loadProfile(original.profileId);
     engine.mode=original.mode;
@@ -335,5 +375,5 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
 
 export function formatRegressionSummary(report){
   const status=report.pass?"PASS":"FAIL";
-  return `${status} · ${report.passedCombinations}/${report.totalCombinations} family×stage combinations · perf failures ${report.performanceFailures?.length||0} · memory Δ geom ${report.memory.delta.geometries} · writes ${report.specimenIsolation.networkWrites.length}`;
+  return `${status} · ${report.passedCombinations}/${report.totalCombinations} family×stage combinations · campaign ${report.campaign?.stateCount||0}/${report.campaign?.expectedStateCount||0} states · perf failures ${report.performanceFailures?.length||0} · memory Δ geom ${report.memory.delta.geometries} · writes ${report.specimenIsolation.networkWrites.length}`;
 }
