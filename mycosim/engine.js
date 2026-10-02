@@ -112,6 +112,15 @@ export class MycoSimEngine{
   loadProfile(id){
     const p=PROFILE_BY_ID[id]; if(!p) throw new Error("Unknown morphology profile: "+id);
     this.onStatus?.("Loading "+p.label+"…");
+    const enteringPuffball=id==="puffball" && this.currentProfile?.id!=="puffball";
+    if(enteringPuffball){
+      const stageDefaults={
+        young:{peridial_condition:"intact",ostiole_state:"absent",gleba_state:"immature"},
+        mature:{peridial_condition:"flaking",ostiole_state:"developing",gleba_state:"maturing"},
+        old:{peridial_condition:"collapsed",ostiole_state:"open",gleba_state:"old"}
+      }[this.developmentalStageId];
+      if(stageDefaults)this.variants={...this.variants,...stageDefaults};
+    }
     this.cleanupModel();
     this.morphologyState=composeMorphologyState(id,{stageId:this.developmentalStageId,variants:this.variants});
     const fn=this["build_"+p.factory];
