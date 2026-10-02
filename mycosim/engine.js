@@ -209,24 +209,50 @@ const makeEchinateGeometry=(broken=false)=>{
   return g;
 };
 
-const makeVerrucoseGeometry=()=>{
-  const g=new THREE.SphereGeometry(.075,9,7,0,Math.PI*2,0,Math.PI*.67);
-  g.translate(0,-.014,0);
+const makeVerrucoseGeometry=(flattened=false)=>{
+  // Broad, low exoperidial mound; the base is wider than the summit so the
+  // structure reads as continuous wall tissue rather than a pasted sphere.
+  const h=flattened?.050:.082;
+  const pts=[
+    new THREE.Vector2(.000,0),
+    new THREE.Vector2(.082,.004),
+    new THREE.Vector2(.076,.016),
+    new THREE.Vector2(.060,h*.50),
+    new THREE.Vector2(.036,h*.82),
+    new THREE.Vector2(.012,h),
+    new THREE.Vector2(.000,h*.98)
+  ];
+  const g=new THREE.LatheGeometry(pts,9);
+  const p=g.attributes.position;
+  for(let i=0;i<p.count;i++){
+    const y=p.getY(i);
+    const t=THREE.MathUtils.clamp(y/h,0,1);
+    p.setX(i,p.getX(i)*(1+.08*Math.sin(i*1.73)*(1-t)));
+  }
+  p.needsUpdate=true;g.computeVertexNormals();
   return g;
 };
 
-const makeGranularGeometry=()=>{
-  const g=new THREE.IcosahedronGeometry(.022,0);
-  g.scale(1,.58,1);
+const makeGranularGeometry=(coarse=false)=>{
+  // Fine low-relief exoperidial grain; deliberately far smaller and denser
+  // than verrucose ornament.
+  const radius=coarse?.030:.020;
+  const g=new THREE.IcosahedronGeometry(radius,0);
+  g.scale(1,coarse?.46:.34,.88);
   return g;
 };
 
-const makeFurfuraceousGeometry=()=>{
-  const g=new THREE.PlaneGeometry(.075,.045,1,1);
+const makeFurfuraceousGeometry=(curled=false)=>{
+  // Thin bran-like flake with an uneven outline and one lifted edge.
+  const g=new THREE.PlaneGeometry(curled?.090:.070,curled?.052:.040,2,1);
   const p=g.attributes.position;
   for(let i=0;i<p.count;i++){
     const x=p.getX(i),y=p.getY(i);
-    p.setZ(i,(x>0?1:-1)*.008+(y>0?.004:0));
+    const edge=Math.abs(x)/(curled?.045:.035);
+    const lift=(curled?.018:.010)*edge*edge;
+    const ripple=Math.sin((x+y)*95+i*.7)*(curled?.004:.0025);
+    p.setZ(i,lift+ripple+(y>0?.002:0));
+    p.setX(i,x*(.92+.10*Math.sin(i*2.1)));
   }
   p.needsUpdate=true;g.computeVertexNormals();
   return g;
@@ -235,9 +261,12 @@ const makeFurfuraceousGeometry=()=>{
 const ORNAMENT_GEOMETRY=Object.freeze({
   echinate:makeEchinateGeometry(false),
   echinateBroken:makeEchinateGeometry(true),
-  verrucose:makeVerrucoseGeometry(),
-  granular:makeGranularGeometry(),
-  furfuraceous:makeFurfuraceousGeometry()
+  verrucose:makeVerrucoseGeometry(false),
+  verrucoseFlattened:makeVerrucoseGeometry(true),
+  granular:makeGranularGeometry(false),
+  granularCoarse:makeGranularGeometry(true),
+  furfuraceous:makeFurfuraceousGeometry(false),
+  furfuraceousCurled:makeFurfuraceousGeometry(true)
 });
 
 const MATERIALS={
@@ -2045,7 +2074,8 @@ export class MycoSimEngine{
       rng:ornamentRng,diagnostics:ornamentSampling
     }=sampledPuffSurface(target,137+requested+(stageId==="young"?11:stageId==="mature"?29:47),{
       cluster:profile.cluster,barePatch:profile.barePatch,
-      clusterCount:surface==="echinate"?4:3,bareCount:surface==="echinate"?3:2
+      clusterCount:surface==="echinate"?4:surface==="verrucose"?4:surface==="granular"?3:surface==="furfuraceous"?5:2,
+      bareCount:surface==="echinate"?3:surface==="verrucose"?2:surface==="granular"?2:surface==="furfuraceous"?4:1
     });
 
     const baseOrnamentMaterial=PUFF_PBR.youngPeridium.clone();
@@ -2132,33 +2162,118 @@ export class MycoSimEngine{
         baseIntegration:"flared basal skirt embedded into exoperidium"
       };
     }else if(surface==="verrucose"&&target){
-      addInstancedOrnament("verrucose","Verrucose exoperidial warts",ORNAMENT_GEOMETRY.verrucose,target,null,
+      const flattenFraction=stageId==="young"?.12:stageId==="mature"?.42:.72;
+      const flattenedMask=ornamentPoints.map((n,i)=>{
+        const bare=ornamentBareWeights[i]||0;
+        const clusterWeight=ornamentClusterWeights[i]||0;
+        const local=THREE.MathUtils.clamp(flattenFraction+bare*.24-clusterWeight*.08,0,1);
+        return ornamentRng()<local;
+      });
+      const flattenedCount=flattenedMask.filter(Boolean).length;
+      const raisedCount=target-flattenedCount;
+
+      addInstancedOrnament("verrucose_raised","Raised verrucose exoperidial warts",ORNAMENT_GEOMETRY.verrucose,raisedCount,
+        i=>!flattenedMask[i],
         (o,i,n,rng)=>{
-          const broad=.72+rng()*.72;
-          const relief=(.38+rng()*.52)*scaleByAge;
-          o.scale.set(broad,relief,broad*(.82+rng()*.25));
-          // Broad bases are intentionally embedded into the shell to read as tissue,
-          // not isolated spheres glued onto the surface.
-          o.position.addScaledVector(n,-.038);
+          const clusterWeight=ornamentClusterWeights[i]||0;
+          const broad=(.70+rng()*.74)*(1+clusterWeight*.10);
+          const relief=(.44+rng()*.54)*scaleByAge;
+          o.scale.set(broad,relief,broad*(.78+rng()*.34));
+          o.rotation.y+=rng()*Math.PI*2;
+          o.position.addScaledVector(n,-.050);
         });
+
+      addInstancedOrnament("verrucose_flattened","Flattened / abraded verrucose remnants",ORNAMENT_GEOMETRY.verrucoseFlattened,flattenedCount,
+        i=>flattenedMask[i],
+        (o,i,n,rng)=>{
+          const broad=(.78+rng()*.70);
+          const relief=(.28+rng()*.34)*Math.max(.32,scaleByAge);
+          o.scale.set(broad,relief,broad*(.82+rng()*.26));
+          o.rotation.y+=rng()*Math.PI*2;
+          o.position.addScaledVector(n,-.055);
+        });
+
+      exo.userData.verrucoseStats={
+        raised:raisedCount,flattened:flattenedCount,
+        flattenedFraction:target?flattenedCount/target:0,
+        distribution:"broad-base clustered wart field with local coalescence and abrasion",
+        baseIntegration:"deep broad-base embedding into exoperidium"
+      };
+
     }else if(surface==="granular"&&target){
-      addInstancedOrnament("granular","Granular exoperidial micro-grains",ORNAMENT_GEOMETRY.granular,target,null,
+      const coarseFraction=stageId==="young"?.13:stageId==="mature"?.08:.04;
+      const coarseMask=ornamentPoints.map((n,i)=>{
+        const clusterWeight=ornamentClusterWeights[i]||0;
+        return ornamentRng()<THREE.MathUtils.clamp(coarseFraction+clusterWeight*.05,0,.24);
+      });
+      const coarseCount=coarseMask.filter(Boolean).length;
+      const fineCount=target-coarseCount;
+
+      addInstancedOrnament("granular_fine","Fine granular exoperidial grains",ORNAMENT_GEOMETRY.granular,fineCount,
+        i=>!coarseMask[i],
+        (o,i,n,rng)=>{
+          const clusterWeight=ornamentClusterWeights[i]||0;
+          const g=(.50+rng()*.62)*(1+clusterWeight*.06)*scaleByAge;
+          o.scale.set(g,g*(.32+rng()*.26),g*(.82+rng()*.22));
+          o.rotation.y+=rng()*Math.PI*2;
+          o.position.addScaledVector(n,-.016);
+        });
+
+      addInstancedOrnament("granular_coarse","Occasional coarse granular exoperidial grains",ORNAMENT_GEOMETRY.granularCoarse,coarseCount,
+        i=>coarseMask[i],
+        (o,i,n,rng)=>{
+          const g=(.55+rng()*.58)*scaleByAge;
+          o.scale.set(g,g*(.34+rng()*.24),g*(.82+rng()*.22));
+          o.rotation.y+=rng()*Math.PI*2;
+          o.position.addScaledVector(n,-.019);
+        });
+
+      exo.userData.granularStats={
+        fine:fineCount,coarse:coarseCount,
+        grainScale:"fine low-relief field distinct from verrucose warts",
+        distribution:"dense micro-granular coverage with subtle local density variation",
+        baseIntegration:"shallow embedding into exoperidial micro-relief"
+      };
+
+    }else if(surface==="furfuraceous"&&target){
+      const curledFraction=stageId==="young"?.22:stageId==="mature"?.46:.70;
+      const curledMask=ornamentPoints.map((n,i)=>{
+        const bare=ornamentBareWeights[i]||0;
+        const local=THREE.MathUtils.clamp(curledFraction+bare*.18,0,.90);
+        return ornamentRng()<local;
+      });
+      const curledCount=curledMask.filter(Boolean).length;
+      const flatCount=target-curledCount;
+
+      addInstancedOrnament("furfuraceous_flat","Adherent furfuraceous flakes",ORNAMENT_GEOMETRY.furfuraceous,flatCount,
+        i=>!curledMask[i],
         (o,i,n,rng)=>{
           const g=(.58+rng()*.72)*scaleByAge;
-          o.scale.set(g,g*(.42+rng()*.32),g);
-          o.position.addScaledVector(n,-.012);
-        });
-    }else if(surface==="furfuraceous"&&target){
-      addInstancedOrnament("furfuraceous","Furfuraceous exoperidial flakes",ORNAMENT_GEOMETRY.furfuraceous,target,null,
-        (o,i,n,rng)=>{
-          const g=(.60+rng()*.78)*scaleByAge;
-          o.scale.set(g*(.8+rng()*.35),g,g);
-          // Tangential flakes with locally lifted edges and irregular orientation.
+          o.scale.set(g*(.76+rng()*.42),g,g);
           o.rotation.y+=rng()*Math.PI*2;
-          o.rotation.x+=(rng()-.5)*.35;
-          o.rotation.z+=(rng()-.5)*.55;
-          o.position.addScaledVector(n,.006+rng()*.012);
+          o.rotation.x+=(rng()-.5)*.24;
+          o.rotation.z+=(rng()-.5)*.48;
+          o.position.addScaledVector(n,.004+rng()*.008);
         });
+
+      addInstancedOrnament("furfuraceous_curled","Lifted / weathered furfuraceous flakes",ORNAMENT_GEOMETRY.furfuraceousCurled,curledCount,
+        i=>curledMask[i],
+        (o,i,n,rng)=>{
+          const g=(.52+rng()*.70)*Math.max(.34,scaleByAge);
+          o.scale.set(g*(.78+rng()*.50),g,g);
+          o.rotation.y+=rng()*Math.PI*2;
+          o.rotation.x+=(rng()-.5)*.46;
+          o.rotation.z+=(rng()-.5)*.72;
+          o.position.addScaledVector(n,.010+rng()*.018);
+        });
+
+      exo.userData.furfuraceousStats={
+        adherent:flatCount,curled:curledCount,
+        curledFraction:target?curledCount/target:0,
+        distribution:"patchy bran-like flake field with multiple sparse loss zones",
+        orientation:"tangential flakes with progressively lifted edges"
+      };
+
     }else if(surface==="glabrous"){
       // Glabrous is intentionally geometry-free at the macroscopic level.
       // PBR micro-bump and body irregularity carry the biological surface realism.
@@ -2170,6 +2285,9 @@ export class MycoSimEngine{
       drawMeshes:exo.children.length,stageId,surface,
       sampling:ornamentSampling,
       echinate:exo.userData.echinateStats||null,
+      verrucose:exo.userData.verrucoseStats||null,
+      granular:exo.userData.granularStats||null,
+      furfuraceous:exo.userData.furfuraceousStats||null,
       generator:surface==="echinate"?"irregular spine field":surface==="verrucose"?"embedded broad-base wart field":surface==="granular"?"dense low-relief grain field":surface==="furfuraceous"?"tangential scurfy flake field":"PBR micro-relief only"
     };
     this.root.add(exo);this.objects.set("exoperidium",exo);
