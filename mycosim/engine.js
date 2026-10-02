@@ -1639,7 +1639,8 @@ export class MycoSimEngine{
 
   _pileusGeometry(form,radius=1.6,segments=96){
     const profile=[];
-    const rings=34;
+    segments=scaledSegments(segments,this.realismTier,{min:48,max:128});
+    const rings=scaledSegments(34,this.realismTier,{min:22,max:46});
     const thickness=.14;
     for(let i=0;i<=rings;i++){
       const r=radius*(i/rings);
@@ -1677,12 +1678,13 @@ export class MycoSimEngine{
     const group=new THREE.Group();
     group.userData=mesh.userData;
     const lineMat=new THREE.LineBasicMaterial({color:0x6f3525,transparent:true,opacity:.24});
-    const n=34;
+    const n=this.realismTier.id==="interactive"?22:this.realismTier.id==="high"?42:34;
+    const radialSteps=this.realismTier.id==="interactive"?12:this.realismTier.id==="high"?22:18;
     for(let i=0;i<n;i++){
       const a=i/n*Math.PI*2;
       const pts=[];
-      for(let j=2;j<=18;j++){
-        const r=radius*(j/18);
+      for(let j=2;j<=radialSteps;j++){
+        const r=radius*(j/radialSteps);
         const rn=r/radius;
         const wobble=.018*Math.sin(a*5+r*7);
         const x=Math.cos(a+wobble)*r;
@@ -1760,7 +1762,7 @@ export class MycoSimEngine{
     if(form==="clavate"){topR*=.82;bottomR*=1.42;}
     if(form==="bulbous"||form==="marginate_bulb"){bottomR*=1.08;}
     const profile=[new THREE.Vector2(0,-height/2)];
-    const steps=20;
+    const steps=scaledSegments(20,this.realismTier,{min:14,max:28});
     for(let i=0;i<=steps;i++){
       const t=i/steps;
       let r=THREE.MathUtils.lerp(bottomR,topR,t);
@@ -1769,7 +1771,7 @@ export class MycoSimEngine{
       profile.push(new THREE.Vector2(r,-height/2+t*height));
     }
     profile.push(new THREE.Vector2(0,height/2));
-    const g=new THREE.LatheGeometry(profile,48);
+    const g=new THREE.LatheGeometry(profile,scaledSegments(48,this.realismTier,{min:30,max:64}));
     const p=g.attributes.position;
     for(let i=0;i<p.count;i++){
       const y=p.getY(i),t=(y+height/2)/height;
@@ -1837,45 +1839,48 @@ export class MycoSimEngine{
     const secondaryMat=MATERIALS.gill.clone();
     secondaryMat.color.offsetHSL(0,0,-.045);
     secondaryMat.opacity=.86;secondaryMat.transparent=true;
-    const total=64;
-    for(let i=0;i<total;i++){
-      if(i%2===0)continue;
+    const total=this.realismTier.id==="interactive"?48:this.realismTier.id==="high"?72:64;
+    const start=THREE.MathUtils.lerp(inner,outer,.56);
+    const end=outer*.99;
+    const len=end-start;
+    const h=.10+.08*(1-start/outer);
+    const shape=new THREE.Shape();
+    shape.moveTo(-len/2,0);shape.lineTo(len/2,0);shape.lineTo(len/2,-h*.35);
+    shape.quadraticCurveTo(0,-h*.92,-len/2,-h*.62);shape.closePath();
+    const geo=new THREE.ShapeGeometry(shape,4);
+    const count=Math.floor(total/2);
+    const inst=new THREE.InstancedMesh(geo,secondaryMat,count);
+    inst.userData={...group.userData,knowledgeId:"lamella",hoverLabel:"Lamellula / short gill",structureType:"lamellula"};
+    const dummy=new THREE.Object3D();
+    let j=0;
+    for(let i=1;i<total;i+=2){
       const a=i/total*Math.PI*2;
-      const start=THREE.MathUtils.lerp(inner,outer,.56);
-      const end=outer*.99;
-      const len=end-start;
-      const h=.10+.08*(1-start/outer);
-      const shape=new THREE.Shape();
-      shape.moveTo(-len/2,0);
-      shape.lineTo(len/2,0);
-      shape.lineTo(len/2,-h*.35);
-      shape.quadraticCurveTo(0,-h*.92,-len/2,-h*.62);
-      shape.closePath();
-      const geo=new THREE.ShapeGeometry(shape,4);
-      const g=new THREE.Mesh(geo,secondaryMat.clone());
       const mid=(start+end)/2;
-      g.position.set(stipeX+Math.cos(a)*mid,pileusY-.15-((type==="decurrent")?.06:(type==="subdecurrent"?.03:0)),Math.sin(a)*mid);
-      g.rotation.y=-a;
-      g.userData={...group.userData,knowledgeId:"lamella",hoverLabel:"Lamellula / short gill",structureType:"lamellula"};
-      group.add(g);this.pickables.push(g);
+      dummy.position.set(stipeX+Math.cos(a)*mid,pileusY-.15-((type==="decurrent")?.06:(type==="subdecurrent"?.03:0)),Math.sin(a)*mid);
+      dummy.rotation.set(0,-a,0);dummy.scale.set(1,1,1);dummy.updateMatrix();inst.setMatrixAt(j++,dummy.matrix);
     }
+    inst.instanceMatrix.needsUpdate=true;inst.castShadow=false;inst.receiveShadow=true;
+    group.add(inst);this.pickables.push(inst);
   }
+
 
   _addPoreSurfaceVariation(group,radius,y,spacing=.115){
     const mat=MATERIALS.pore.clone();
     mat.color.offsetHSL(0,-.05,.05);
-    const ringGeo=new THREE.TorusGeometry(.035,.007,6,10);
-    for(let x=-radius*.82;x<=radius*.82;x+=spacing*2.1){
-      for(let z=-radius*.82;z<=radius*.82;z+=spacing*2.0){
-        if(Math.hypot(x,z)>radius*.8)continue;
-        const ring=new THREE.Mesh(ringGeo,mat.clone());
-        ring.rotation.x=Math.PI/2;
-        ring.position.set(x,y-.084,z);
-        ring.userData=group.userData;
-        group.add(ring);this.pickables.push(ring);
+    const ringGeo=new THREE.TorusGeometry(.035,.007,scaledSegments(6,this.realismTier,{min:5,max:8}),scaledSegments(10,this.realismTier,{min:8,max:14}));
+    const pts=[];
+    const tierSpacing=this.realismTier.id==="interactive"?spacing*1.35:this.realismTier.id==="high"?spacing*.88:spacing;
+    for(let x=-radius*.82;x<=radius*.82;x+=tierSpacing*2.1){
+      for(let z=-radius*.82;z<=radius*.82;z+=tierSpacing*2.0){
+        if(Math.hypot(x,z)>radius*.8)continue;pts.push([x,z]);
       }
     }
+    const inst=new THREE.InstancedMesh(ringGeo,mat,pts.length);inst.userData=group.userData;
+    const dummy=new THREE.Object3D();
+    pts.forEach(([x,z],i)=>{dummy.position.set(x,y-.084,z);dummy.rotation.set(Math.PI/2,0,0);dummy.updateMatrix();inst.setMatrixAt(i,dummy.matrix);});
+    inst.instanceMatrix.needsUpdate=true;inst.castShadow=false;inst.receiveShadow=true;group.add(inst);this.pickables.push(inst);
   }
+
 
   _addGillHymenophore(type="adnate",pileusY=2.45,stipeX=0){
     if(["pores","tubes"].includes(type)){
@@ -2017,7 +2022,7 @@ export class MycoSimEngine{
   build_boletoid(){
     const v=this.variants,capY=2.55;
     this._addPileus(v.pileus,1.72,capY,MATERIALS.cap2);
-    const tubes=this.register(new THREE.Mesh(new THREE.CylinderGeometry(1.34,1.18,.42,72),MATERIALS.pore.clone()),"tube_layer","Tube layer","fertile");
+    const tubes=this.register(new THREE.Mesh(new THREE.CylinderGeometry(1.34,1.18,.42,scaledSegments(72,this.realismTier,{min:40,max:96})),MATERIALS.pore.clone()),"tube_layer","Tube layer","fertile");
     tubes.position.y=capY-.45;
     this._addPoreField(1.20,capY-.68,{tubeDepth:.42,label:"Pore surface"});
     const st=this._addStipe(v.stipe,{height:2.55,y:.70,top:.38,bottom:.52});
@@ -2026,7 +2031,7 @@ export class MycoSimEngine{
   }
 
   build_polyporoid(){
-    const trunk=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.94,1.10,3.5,40),MATERIALS.wood.clone()),"substrate","Woody substrate","ecology");
+    const trunk=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.94,1.10,3.5,scaledSegments(40,this.realismTier,{min:24,max:56})),MATERIALS.wood.clone()),"substrate","Woody substrate","ecology");
     trunk.position.set(-1.58,.48,0);trunk.rotation.z=.06;
 
     const shape=new THREE.Shape();
@@ -2063,8 +2068,8 @@ export class MycoSimEngine{
   }
 
   build_hydnoid(){
-    const cap=this.register(new THREE.Mesh(new THREE.SphereGeometry(1.55,48,24,0,Math.PI*2,0,Math.PI/2.2),MATERIALS.cap.clone()),"pileus","Pileus / cap","macro");cap.scale.set(1,.5,1);cap.rotation.x=Math.PI;cap.position.y=2.65;
-    const st=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.26,.36,2.3,36),MATERIALS.stipe.clone()),"stipe","Stipe","macro");st.position.y=.85;
+    const cap=this.register(new THREE.Mesh(new THREE.SphereGeometry(1.55,scaledSegments(48,this.realismTier,{min:28,max:64}),scaledSegments(24,this.realismTier,{min:16,max:34}),0,Math.PI*2,0,Math.PI/2.2),MATERIALS.cap.clone()),"pileus","Pileus / cap","macro");cap.scale.set(1,.5,1);cap.rotation.x=Math.PI;cap.position.y=2.65;
+    const st=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.26,.36,2.3,scaledSegments(36,this.realismTier,{min:24,max:48})),MATERIALS.stipe.clone()),"stipe","Stipe","macro");st.position.y=.85;
     const teeth=new THREE.Group();teeth.userData={id:"hymenophore",label:"Teeth / spines",category:"fertile",selectable:true,knowledgeId:"hymenophore"};
     const toothPts=[];
     for(let r=.3;r<1.25;r+=.24){const n=Math.max(10,Math.round(r*28));for(let i=0;i<n;i++){const a=i/n*Math.PI*2;toothPts.push({r,a});}}
@@ -2078,7 +2083,7 @@ export class MycoSimEngine{
 
   build_hoof_conk(){
     const trunk=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.95,1.12,3.5,28),MATERIALS.wood.clone()),"substrate","Woody substrate","ecology");trunk.position.set(-1.55,.45,0);
-    const hoof=this.register(new THREE.Mesh(new THREE.SphereGeometry(1.45,48,30),MATERIALS.cap2.clone()),"pileus","Hoof-shaped upper surface","macro");hoof.scale.set(1.1,.8,.9);hoof.position.set(.05,1.55,0);
+    const hoof=this.register(new THREE.Mesh(new THREE.SphereGeometry(1.45,scaledSegments(48,this.realismTier,{min:28,max:64}),scaledSegments(30,this.realismTier,{min:18,max:40})),MATERIALS.cap2.clone()),"pileus","Hoof-shaped upper surface","macro");hoof.scale.set(1.1,.8,.9);hoof.position.set(.05,1.55,0);
     const ctx=this.register(new THREE.Mesh(new THREE.BoxGeometry(2.1,.38,1.45),MATERIALS.flesh.clone()),"context","Context","internal");ctx.position.set(.1,.95,0);
     const tubes=this.register(new THREE.Mesh(new THREE.BoxGeometry(2.0,.38,1.38),MATERIALS.pore.clone()),"tube_layer","Layered tube tissue","fertile");tubes.position.set(.1,.62,0);
     const pore=this.register(new THREE.Mesh(new THREE.BoxGeometry(2.0,.035,1.38),MATERIALS.pore.clone()),"hymenophore","Pore surface","fertile");pore.position.set(.1,.41,0);
@@ -2086,7 +2091,7 @@ export class MycoSimEngine{
 
   build_hydnoid_bracket(){
     const trunk=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.9,1.08,3.4,28),MATERIALS.wood.clone()),"substrate","Woody substrate","ecology");trunk.position.set(-1.55,.45,0);
-    const shelf=this.register(new THREE.Mesh(new THREE.SphereGeometry(1.7,48,28,0,Math.PI*2,0,Math.PI/2.25),MATERIALS.cap.clone()),"pileus","Upper bracket surface","macro");shelf.scale.set(1.12,.34,.7);shelf.rotation.x=Math.PI;shelf.position.set(.25,1.55,0);
+    const shelf=this.register(new THREE.Mesh(new THREE.SphereGeometry(1.7,scaledSegments(48,this.realismTier,{min:28,max:64}),scaledSegments(28,this.realismTier,{min:18,max:38}),0,Math.PI*2,0,Math.PI/2.25),MATERIALS.cap.clone()),"pileus","Upper bracket surface","macro");shelf.scale.set(1.12,.34,.7);shelf.rotation.x=Math.PI;shelf.position.set(.25,1.55,0);
     const ctx=this.register(new THREE.Mesh(new THREE.BoxGeometry(2.3,.25,1.5),MATERIALS.flesh.clone()),"context","Context","internal");ctx.position.set(.2,1.25,0);
     const teeth=new THREE.Group();teeth.userData={id:"hymenophore",label:"Teeth / spines",category:"fertile",selectable:true,knowledgeId:"hymenophore"};
     const hbPts=[];for(let x=-.85;x<=1.15;x+=.18){for(let z=-.55;z<=.55;z+=.18)hbPts.push([x,z]);}
@@ -2098,8 +2103,8 @@ export class MycoSimEngine{
   }
 
   build_morel(){
-    const st=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.28,.42,2.4,32),MATERIALS.stipe.clone()),"stipe","Hollow stipe","macro");st.position.y=.55;
-    const head=this.register(new THREE.Mesh(new THREE.SphereGeometry(.88,40,28),MATERIALS.morel.clone()),"fertile_head","Fertile head","macro");head.scale.set(.78,1.5,.78);head.position.y=2.55;
+    const st=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.28,.42,2.4,scaledSegments(32,this.realismTier,{min:20,max:44})),MATERIALS.stipe.clone()),"stipe","Hollow stipe","macro");st.position.y=.55;
+    const head=this.register(new THREE.Mesh(new THREE.SphereGeometry(.88,scaledSegments(40,this.realismTier,{min:24,max:56}),scaledSegments(28,this.realismTier,{min:18,max:38})),MATERIALS.morel.clone()),"fertile_head","Fertile head","macro");head.scale.set(.78,1.5,.78);head.position.y=2.55;
     const wire=new THREE.LineSegments(new THREE.WireframeGeometry(head.geometry),new THREE.LineBasicMaterial({color:0xc69a65,transparent:true,opacity:.55}));wire.scale.copy(head.scale);wire.position.copy(head.position);wire.userData={id:"hymenophore",label:"Ridges and pits",category:"fertile",selectable:true};this.root.add(wire);this.pickables.push(wire);this.objects.set("hymenophore",wire);
     const cavity=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.16,.22,3.4,20),new THREE.MeshStandardMaterial({color:0x2b1d17,roughness:1})),"internal_cavity","Internal cavity","internal");cavity.position.y=1.25;
   }
@@ -2639,15 +2644,15 @@ export class MycoSimEngine{
   }
 
   build_cup(){
-    const cup=this.register(new THREE.Mesh(new THREE.SphereGeometry(1.25,48,24,0,Math.PI*2,Math.PI/2.2,Math.PI/2.2),MATERIALS.cap.clone()),"apothecium","Apothecium","macro");cup.scale.y=.65;cup.position.y=1.15;
-    const hym=this.register(new THREE.Mesh(new THREE.CircleGeometry(.92,48),MATERIALS.gill.clone()),"hymenophore","Inner hymenial surface","fertile");hym.rotation.x=-Math.PI/2;hym.position.y=1.37;
+    const cup=this.register(new THREE.Mesh(new THREE.SphereGeometry(1.25,scaledSegments(48,this.realismTier,{min:28,max:64}),scaledSegments(24,this.realismTier,{min:16,max:34}),0,Math.PI*2,Math.PI/2.2,Math.PI/2.2),MATERIALS.cap.clone()),"apothecium","Apothecium","macro");cup.scale.y=.65;cup.position.y=1.15;
+    const hym=this.register(new THREE.Mesh(new THREE.CircleGeometry(.92,scaledSegments(48,this.realismTier,{min:28,max:64})),MATERIALS.gill.clone()),"hymenophore","Inner hymenial surface","fertile");hym.rotation.x=-Math.PI/2;hym.position.y=1.37;
     const base=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.18,.3,.7,28),MATERIALS.stipe.clone()),"stipe","Short stipe / base","macro");base.position.y=.15;
     const exc=this.register(new THREE.Mesh(new THREE.TorusGeometry(1.02,.12,12,48),MATERIALS.flesh.clone()),"excipulum","Excipulum","internal");exc.rotation.x=Math.PI/2;exc.position.y=1.37;
   }
 
   build_jelly(){
     const group=new THREE.Group();group.userData={id:"lobes",label:"Gelatinous lobes",category:"macro",selectable:true};
-    for(let i=0;i<6;i++){const l=new THREE.Mesh(new THREE.SphereGeometry(.65,28,18),MATERIALS.jelly.clone());l.scale.set(1,.55,.75);l.position.set(Math.cos(i)*.55,.45+Math.sin(i*.8)*.18,Math.sin(i)*.45);l.rotation.set(i*.17,i*.31,0);l.userData=group.userData;group.add(l);this.pickables.push(l);}
+    for(let i=0;i<6;i++){const l=new THREE.Mesh(new THREE.SphereGeometry(.65,scaledSegments(28,this.realismTier,{min:18,max:40}),scaledSegments(18,this.realismTier,{min:12,max:26})),MATERIALS.jelly.clone());l.scale.set(1,.55,.75);l.position.set(Math.cos(i)*.55,.45+Math.sin(i*.8)*.18,Math.sin(i)*.45);l.rotation.set(i*.17,i*.31,0);l.userData=group.userData;group.add(l);this.pickables.push(l);}
     this.root.add(group);this.objects.set("lobes",group);this.objects.set("hymenophore",group);
     const att=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.26,.4,.45,24),MATERIALS.jelly.clone()),"attachment","Attachment base","macro");att.position.y=-.35;
   }
@@ -2656,6 +2661,6 @@ export class MycoSimEngine{
     const wood=this.register(new THREE.Mesh(new THREE.BoxGeometry(4,.7,2.4),MATERIALS.wood.clone()),"substrate","Woody substrate","ecology");wood.position.y=-.25;
     const crust=this.register(new THREE.Mesh(new THREE.BoxGeometry(3.6,.08,2.05),MATERIALS.crust.clone()),"hymenophore","Exposed fertile surface","fertile");crust.position.y=.14;
     const ctx=this.register(new THREE.Mesh(new THREE.BoxGeometry(3.65,.12,2.1),MATERIALS.flesh.clone()),"context","Subicular context","internal");ctx.position.y=.04;
-    const margin=this.register(new THREE.Mesh(new THREE.TorusGeometry(1.45,.06,10,64),MATERIALS.flesh.clone()),"margin","Growing margin","macro");margin.rotation.x=Math.PI/2;margin.scale.z=.65;margin.position.y=.2;
+    const margin=this.register(new THREE.Mesh(new THREE.TorusGeometry(1.45,.06,scaledSegments(10,this.realismTier,{min:8,max:14}),scaledSegments(64,this.realismTier,{min:36,max:84})),MATERIALS.flesh.clone()),"margin","Growing margin","macro");margin.rotation.x=Math.PI/2;margin.scale.z=.65;margin.position.y=.2;
   }
 }
