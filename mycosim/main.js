@@ -124,6 +124,25 @@ function updateMorphologySummary(engine){
 
   host.textContent=parts.join(" · ");
 
+  if(currentProfile.id==="puffball"){
+    const dev=engine.getMorphologyState()?.developmental;
+    const p=engine.getDevelopmentalStage()?.parameters||{};
+    const continuity=[
+      `identity ${dev?.identityKey||"generalized"}`,
+      `wall ${Math.round((p.peridial_thickness??p.wall_thickness??1)*100)}%`,
+      `exo ${Math.round((p.exoperidial_retention??p.ornament_retention??1)*100)}%`,
+      `ostiole ${Math.round((p.ostiole_formation??0)*100)}%`,
+      `gleba ${Math.round((p.gleba_maturity??0)*100)}%`,
+      `water loss ${Math.round((p.water_loss??0)*100)}%`,
+      `collapse ${Math.round((p.collapse??0)*100)}%`,
+      `rupture ${Math.round((p.wall_rupture??p.rupture_extent??0)*100)}%`,
+      `discoloration ${Math.round((p.discoloration??0)*100)}%`,
+      `spore depletion ${Math.round((p.spore_depletion??0)*100)}%`
+    ];
+    detail.textContent="Developmental continuity · "+continuity.join(" · ");
+    return;
+  }
+
   if(!supported.size){
     detail.textContent="Developmental state is applied to this family-specific body plan; no agaricoid character palette is imposed.";
   }else{
