@@ -137,6 +137,19 @@ window.DRIVE_PHOTOS.push(
   {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F32","category":"Wild / field context","filename":"AN2-F32 field (6).jpg","caption":"AN2-F32 — close underside field view documenting crowded true gills, brown bruising, and stipe attachment","id":"105GKaiOArtwaSLlmYa6sve0In1l7tGzY","original":"https://drive.google.com/thumbnail?id=105GKaiOArtwaSLlmYa6sve0In1l7tGzY&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=105GKaiOArtwaSLlmYa6sve0In1l7tGzY&sz=w1200","source_relpath":"AN2-F34/AN2-F34 field (6).jpg","drive_view":"https://drive.google.com/file/d/105GKaiOArtwaSLlmYa6sve0In1l7tGzY/view"}
 );
 
+window.DRIVE_PHOTOS = window.DRIVE_PHOTOS || [];
+window.DRIVE_PHOTOS.push(
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F17","category":"Microscopy","filename":"AN2-F17 SPM V1.png","caption":"AN2-F17 — calibrated spore microscopy field 1","id":"1d-mgOqtZEwQRXogk5Y3HWMUzvoqcWIMK","original":"https://drive.google.com/thumbnail?id=1d-mgOqtZEwQRXogk5Y3HWMUzvoqcWIMK&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1d-mgOqtZEwQRXogk5Y3HWMUzvoqcWIMK&sz=w1200","source_relpath":"AN2 lab additions/AN2-F17 SPM V1.png","drive_view":"https://drive.google.com/file/d/1d-mgOqtZEwQRXogk5Y3HWMUzvoqcWIMK/view"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F17","category":"Microscopy","filename":"AN2-F17 SPM V2.png","caption":"AN2-F17 — calibrated spore microscopy field 2","id":"1XOmU4xyIW0SWeT6dvGt_zZa65wyxHPsy","original":"https://drive.google.com/thumbnail?id=1XOmU4xyIW0SWeT6dvGt_zZa65wyxHPsy&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1XOmU4xyIW0SWeT6dvGt_zZa65wyxHPsy&sz=w1200","source_relpath":"AN2 lab additions/AN2-F17 SPM V2.png","drive_view":"https://drive.google.com/file/d/1XOmU4xyIW0SWeT6dvGt_zZa65wyxHPsy/view"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F17","category":"Microscopy","filename":"AN2-F17 SPM V3.png","caption":"AN2-F17 — calibrated spore microscopy field 3","id":"1wPLA07JYmBBMb7qPQwF6zyoqVJxN1C3m","original":"https://drive.google.com/thumbnail?id=1wPLA07JYmBBMb7qPQwF6zyoqVJxN1C3m&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1wPLA07JYmBBMb7qPQwF6zyoqVJxN1C3m&sz=w1200","source_relpath":"AN2 lab additions/AN2-F17 SPM V3.png","drive_view":"https://drive.google.com/file/d/1wPLA07JYmBBMb7qPQwF6zyoqVJxN1C3m/view"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F17","category":"Microscopy","filename":"AN2-F17 SPM V4.png","caption":"AN2-F17 — morphology field 4 showing repeated spores in multiple orientations","id":"1cLrc2IR-JS1Ay0ArYtc9Ygfvzc2WAuEV","original":"https://drive.google.com/thumbnail?id=1cLrc2IR-JS1Ay0ArYtc9Ygfvzc2WAuEV&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1cLrc2IR-JS1Ay0ArYtc9Ygfvzc2WAuEV&sz=w1200","source_relpath":"AN2 lab additions/AN2-F17 SPM V4.png","drive_view":"https://drive.google.com/file/d/1cLrc2IR-JS1Ay0ArYtc9Ygfvzc2WAuEV/view"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F17","category":"Microscopy","filename":"AN2-F17 SPM V5.png","caption":"AN2-F17 — calibrated spore microscopy field 5","id":"1CDqItQOa8RM95mxtp1ulrwa-cUQPziIy","original":"https://drive.google.com/thumbnail?id=1CDqItQOa8RM95mxtp1ulrwa-cUQPziIy&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1CDqItQOa8RM95mxtp1ulrwa-cUQPziIy&sz=w1200","source_relpath":"AN2 lab additions/AN2-F17 SPM V5.png","drive_view":"https://drive.google.com/file/d/1CDqItQOa8RM95mxtp1ulrwa-cUQPziIy/view"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F17","category":"Microscopy","filename":"AN2-F17 SPM V6.png","caption":"AN2-F17 — morphology field 6 showing abundant spores and needle-like side profiles","id":"1I0-77ErwtmOZmnEjOcVOUoF_ks5JFyLG","original":"https://drive.google.com/thumbnail?id=1I0-77ErwtmOZmnEjOcVOUoF_ks5JFyLG&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1I0-77ErwtmOZmnEjOcVOUoF_ks5JFyLG&sz=w1200","source_relpath":"AN2 lab additions/AN2-F17 SPM V6.png","drive_view":"https://drive.google.com/file/d/1I0-77ErwtmOZmnEjOcVOUoF_ks5JFyLG/view"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F17","category":"Microscopy","filename":"AN2-F17 SPM V7.png","caption":"AN2-F17 — morphology field 7 showing angular, semi-angular, irregular and elongate spore profiles","id":"1-rha9ypctB4-ak2yoxhdxtcsMx-dOyK3","original":"https://drive.google.com/thumbnail?id=1-rha9ypctB4-ak2yoxhdxtcsMx-dOyK3&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1-rha9ypctB4-ak2yoxhdxtcsMx-dOyK3&sz=w1200","source_relpath":"AN2 lab additions/AN2-F17 SPM V7.png","drive_view":"https://drive.google.com/file/d/1-rha9ypctB4-ak2yoxhdxtcsMx-dOyK3/view"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F17","category":"Microscopy / non-spore material","filename":"AN2-F17 SPM V8 non-spore plant matter.png","caption":"AN2-F17 — non-spore plant-like matter documented during microscopy; excluded from spore measurements","id":"1Yah5p_71-HO5jzX-l0F4xZdIt14QyOw-","original":"https://drive.google.com/thumbnail?id=1Yah5p_71-HO5jzX-l0F4xZdIt14QyOw-&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1Yah5p_71-HO5jzX-l0F4xZdIt14QyOw-&sz=w1200","source_relpath":"AN2 lab additions/AN2-F17 SPM V8 non-spore plant matter.png","drive_view":"https://drive.google.com/file/d/1Yah5p_71-HO5jzX-l0F4xZdIt14QyOw-/view"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F17","category":"Microscopy / non-spore material","filename":"AN2-F17 SPM V9 non-spore plant matter.png","caption":"AN2-F17 — second non-spore plant-like matter field; excluded from spore measurements","id":"1TYCOFkym4tNczcniFpuLV5ICIfdX4OCV","original":"https://drive.google.com/thumbnail?id=1TYCOFkym4tNczcniFpuLV5ICIfdX4OCV&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1TYCOFkym4tNczcniFpuLV5ICIfdX4OCV&sz=w1200","source_relpath":"AN2 lab additions/AN2-F17 SPM V9 non-spore plant matter.png","drive_view":"https://drive.google.com/file/d/1TYCOFkym4tNczcniFpuLV5ICIfdX4OCV/view"}
+);
+
 window.SPECIMEN_ENRICHMENTS = window.SPECIMEN_ENRICHMENTS || {};
 window.SPECIMEN_ENRICHMENTS["AN2-F9"] = {
   status: "AN2-F9 complete dataset — Jockey Hollow wild context, field specimen morphology, laboratory preparation, microscopy, and measured spore imagery integrated.",
@@ -544,6 +557,42 @@ window.SPECIMEN_ENRICHMENTS["AN2-F32"] = {
     ["Laboratory camera provenance","Yes — Canon PowerShot SX20 IS"],
     ["Filename/accession discrepancy preserved","Yes — source filenames AN3-F32; user-confirmed atlas assignment AN2-F32"],
     ["Field + laboratory pairing","Yes"],
+    ["Identified","No — taxonomic identification unresolved"]
+  ]
+};
+
+window.SPECIMEN_ENRICHMENTS["AN2-F17"] = {
+  status: "AN2-F17 successful spore microscopy objective — confirmed spores documented across seven spore fields, with two additional non-spore plant-like material fields preserved separately.",
+  sourceLine: "Rutgers/Jockey Hollow accession AN2-F17. Existing atlas records preserve ten wild-context photographs and four verified laboratory specimen views. The Rutgers macroscopic measurement record is retained. Nine microscopy images from the current SPM run are added here: seven fields document confirmed spores, while V8 and V9 document non-spore plant-like material and are explicitly excluded from the spore dataset. Imaging used the Motic BA310 with Moticam 2300 camera under the established 100× calibrated workflow.",
+  summary: {
+    "Growth / Description": "AN2-F17 has extensive accession-linked field and laboratory documentation. This update adds a successful spore microscopy series while preserving non-spore material as a separate observation rather than contaminating the spore record.",
+    "Macroscopic measurements": "Rutgers measurement master: cap diameter 5.3 cm; stipe top diameter 0.5 cm; stipe middle diameter 0.9 cm; stipe base diameter 1.2 cm; stipe height 6.1 cm.",
+    "SPM result": "Successful. A repeatable fungal spore population is visible throughout seven microscopy fields.",
+    "Spore morphology": "Orientation-dependent morphology is pronounced. In side view, many spores appear very narrow, elongate, and needle-like. In flatter or broader views, spores range from semi-angular to angular and irregular, with some shorter rounded-to-subangular profiles. This variation is recorded as observed rather than forced into a single shape class.",
+    "Spore abundance / distribution": "Spores are abundant across the successful fields, occurring singly and in loose to locally dense distributions.",
+    "Spore optical appearance": "Spores are hyaline to weakly refractile in transmitted light, commonly with dark optical outlines. No coarse external ornamentation is evident at the imaging level shown.",
+    "Measurement record": "Thirty-one fully legible on-image calibrated annotation lengths are preserved across four measured fields. One cropped annotation at the edge of V2 is excluded because its numerical value is not fully legible. The annotations include different axes and orientations, so they are retained as observed calibrated dimensions rather than interpreted as one formal biological long-axis distribution.",
+    "Calibrated annotation values": "2.27, 1.61, 2.36, 2.72, 2.60, 2.14, 3.18, 1.79, 1.96, 3.45, 2.86, 5.50, 1.71, 2.77, 4.53, 1.92, 3.55, 2.13, 3.92, 3.88, 1.85, 3.21, 3.39, 3.54, 3.27, 2.27, 2.99, 4.48, 3.56, 2.13, and 2.25 µm.",
+    "Calibrated annotation statistics": "n=31; observed annotation range 1.61–5.50 µm; mean 2.90 µm; median 2.77 µm; sample SD 0.94 µm. These statistics summarize all fully legible annotation lengths together and are not a paired spore length×width dataset.",
+    "Microscopy record": "Nine microscopy images are preserved. V1, V2, V3, and V5 contain calibrated spore annotations; V4, V6, and V7 document recurring spore morphology; V8 and V9 document non-spore plant-like material and are excluded from spore calculations.",
+    "Non-spore material": "V8 and V9 show larger irregular plant-like / tissue debris structures. They are retained as part of the preparation history but are not identified as fungal spores and do not contribute to any spore measurement statistic.",
+    "Calibration / instrumentation": "Motic BA310 microscope with Moticam 2300 camera; established 100× calibrated atlas measurement workflow.",
+    "Identification status": "Taxonomic identification remains unresolved; microscopy is documented descriptively without forcing genus or species."
+  },
+  completeness: [
+    ["Wild / field imagery","Yes — 10 views"],
+    ["Verified laboratory specimen imagery","Yes — 4 views"],
+    ["Macroscopic measurements","Yes — cap 5.3 cm; stipe 0.5 / 0.9 / 1.2 cm; height 6.1 cm"],
+    ["Successful fungal spore objective","Yes"],
+    ["Confirmed spore microscopy fields","7"],
+    ["Measured microscopy fields","4"],
+    ["Legible calibrated annotations","31"],
+    ["Observed annotation range","1.61–5.50 µm"],
+    ["Annotation mean / median","2.90 / 2.77 µm"],
+    ["Annotation sample SD","0.94 µm"],
+    ["Spore morphology documented","Yes — needle-like side views; angular to semi-angular and irregular broader views"],
+    ["Non-spore material documented","Yes — V8 and V9; excluded from spore dataset"],
+    ["Calibration provenance","Yes — Motic BA310 / Moticam 2300; 100× calibrated workflow"],
     ["Identified","No — taxonomic identification unresolved"]
   ]
 };
