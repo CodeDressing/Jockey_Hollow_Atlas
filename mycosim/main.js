@@ -253,11 +253,17 @@ function renderKnowledge(id,engine,{moveCamera=true}={}){
   }).join("");
   eduTitle.textContent=currentKnowledge.label;
   eduLevel.textContent=currentKnowledge.level.toUpperCase();
-  eduBody.textContent=knowledgeMode==="expert"?currentKnowledge.expert:currentKnowledge.beginner;
-  eduPronounce.textContent="Pronounce "+currentKnowledge.label;
+  const definition=knowledgeMode==="expert"?currentKnowledge.expert:currentKnowledge.beginner;
+  eduBody.textContent=[
+    "Definition: "+definition,
+    "Why it matters: "+currentKnowledge.whyItMatters,
+    "Developmental significance: "+currentKnowledge.developmentalSignificance,
+    currentKnowledge.identificationBoundary
+  ].join("\n\n");
+  eduPronounce.textContent="Pronunciation: "+(currentKnowledge.pronunciation||currentKnowledge.label)+" · hear term";
   eduRelations.innerHTML=(currentKnowledge.relationships||[]).length
     ? currentKnowledge.relationships.map(r=>`<button class="relation-chip" data-knowledge="${r}">${getKnowledge(r).label}</button>`).join("")
-    : '<span class="muted-mini">No relationship links authored yet.</span>';
+    : '<span class="muted-mini">No related structures authored.</span>';
   const kids=childKnowledge(currentProfile.id,id);
   eduChildren.innerHTML=kids.length
     ? kids.map(k=>`<button class="knowledge-child" data-knowledge="${k.id}"><strong>${k.label}</strong><span>${k.level}</span></button>`).join("")
@@ -429,8 +435,10 @@ try{
         const surface=meta.surface||"surface";
         const region=meta.region||k.label;
         const p=meta.point||{x:0,y:0,z:0};
-        const why=k.whyItMatters||"This feature contributes to anatomical, developmental, or morphological interpretation.";
-        hoverProbeMeta.innerHTML=`<strong>${region}</strong><span><b>Pronunciation:</b> ${k.pronunciation||k.label}</span><span><b>Definition:</b> ${k.beginner}</span><span><b>Why it matters:</b> ${why}</span><span>${profile} · ${category}</span><span>${surface}</span><code>id: ${meta.id} · point: ${p.x.toFixed(2)}, ${p.y.toFixed(2)}, ${p.z.toFixed(2)}</code>`;
+        const why=k.whyItMatters;
+        const development=k.developmentalSignificance;
+        const related=(k.relationships||[]).map(r=>getKnowledge(r).label).join(" · ")||"None authored";
+        hoverProbeMeta.innerHTML=`<strong>${region}</strong><span><b>Observation:</b> ${k.observation}</span><span><b>Term:</b> ${k.label}</span><span><b>Pronunciation:</b> ${k.pronunciation||k.label}</span><span><b>Definition:</b> ${k.beginner}</span><span><b>Why it matters:</b> ${why}</span><span><b>Developmental significance:</b> ${development}</span><span><b>Related structures:</b> ${related}</span><span><b>Interpretation boundary:</b> ${k.identificationBoundary}</span><span>${profile} · ${category}</span><span>${surface}</span><code>id: ${meta.id} · point: ${p.x.toFixed(2)}, ${p.y.toFixed(2)}, ${p.z.toFixed(2)}</code>`;
         hoverProbe.style.left=Math.min(window.innerWidth-290,Math.max(8,meta.screen.clientX+16))+"px";
         hoverProbe.style.top=Math.min(window.innerHeight-128,Math.max(54,meta.screen.clientY+16))+"px";
         hoverProbe.classList.add("visible");
@@ -438,7 +446,8 @@ try{
     },
     onSelect:meta=>{
       selected=meta; actions.hidden=false;
-      info.textContent="Selected: "+meta.label+" · "+meta.id;
+      const selectedKnowledge=getKnowledge(meta.knowledgeId||knowledgeForAnatomy(meta.id));
+      info.textContent="Observed structure selected: "+meta.label+" · terminology: "+selectedKnowledge.label+" · identification remains separate";
       renderKnowledge(meta.knowledgeId||knowledgeForAnatomy(meta.id),engine);
     },
     onStatus:t=>status.textContent=t,
