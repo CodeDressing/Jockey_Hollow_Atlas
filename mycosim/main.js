@@ -402,7 +402,8 @@ try{
         const surface=meta.surface||"surface";
         const region=meta.region||k.label;
         const p=meta.point||{x:0,y:0,z:0};
-        hoverProbeMeta.innerHTML=`<strong>${region}</strong><span>${profile} · ${category}</span><span>${surface}</span><code>id: ${meta.id} · point: ${p.x.toFixed(2)}, ${p.y.toFixed(2)}, ${p.z.toFixed(2)}</code>`;
+        const why=k.whyItMatters||"This feature contributes to anatomical, developmental, or morphological interpretation.";
+        hoverProbeMeta.innerHTML=`<strong>${region}</strong><span><b>Pronunciation:</b> ${k.pronunciation||k.label}</span><span><b>Definition:</b> ${k.beginner}</span><span><b>Why it matters:</b> ${why}</span><span>${profile} · ${category}</span><span>${surface}</span><code>id: ${meta.id} · point: ${p.x.toFixed(2)}, ${p.y.toFixed(2)}, ${p.z.toFixed(2)}</code>`;
         hoverProbe.style.left=Math.min(window.innerWidth-290,Math.max(8,meta.screen.clientX+16))+"px";
         hoverProbe.style.top=Math.min(window.innerHeight-128,Math.max(54,meta.screen.clientY+16))+"px";
         hoverProbe.classList.add("visible");
@@ -461,7 +462,9 @@ try{
     }
     renderStageControls(currentProfile,engine);
     const st=engine.getDevelopmentalStage();
-    info.textContent=`${currentProfile.label} · ${st.label} developmental stage`;
+    info.textContent=currentProfile.id==="puffball"
+      ? `${currentProfile.label} · ${st.label}: ${st.notes}`
+      : `${currentProfile.label} · ${st.label} developmental stage`;
     updateVisibleState(engine);
     setLearningStep(3);
   });
