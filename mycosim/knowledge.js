@@ -353,35 +353,35 @@ export const KNOWLEDGE_OBJECTS = Object.freeze({
   echinate:{
     id:"echinate",label:"Echinate",level:"macro",pronunciation:"EK-in-ate",
     beginner:"Bearing sharp spines or prickles.",
-    expert:"Bearing sharp spines or prickles.",
+    expert:"Bearing pointed exoperidial spines or prickles whose height, basal width, clustering, breakage, persistence, and abrasion may vary across the fruit body and through development.",
     whyItMatters:"Spine form, density, persistence, and abrasion can be diagnostically informative, especially in young fruit bodies.",
     relationships:["exoperidium"]
   },
   verrucose:{
     id:"verrucose",label:"Verrucose",level:"macro",pronunciation:"veh-ROO-kose",
     beginner:"Covered with wart-like projections.",
-    expert:"Covered with wart-like projections.",
+    expert:"Bearing blunt, broad-based, wart-like exoperidial elevations that may vary in size, merge locally, flatten, round, or become abraded with age.",
     whyItMatters:"Wart shape and persistence are useful surface characters and should not be confused with true spines.",
     relationships:["exoperidium"]
   },
   granular:{
     id:"granular",label:"Granular",level:"macro",pronunciation:"GRAN-yuh-ler",
     beginner:"Covered with small grain-like particles or a rough granular texture.",
-    expert:"Covered with small grain-like particles or a rough granular texture.",
+    expert:"Bearing numerous fine, low-relief grain-like exoperidial elements that are substantially smaller and denser than verrucose warts and may diminish with abrasion.",
     whyItMatters:"Fine granular ornamentation represents a distinct surface state from warts, spines, or a smooth exoperidium.",
     relationships:["exoperidium"]
   },
   furfuraceous:{
     id:"furfuraceous",label:"Furfuraceous",level:"macro",pronunciation:"fer-fer-AY-shus",
     beginner:"Scaly or bran-like, with a fine scurfy coating.",
-    expert:"Scaly or bran-like, with a fine scurfy coating.",
+    expert:"Bearing a fine scurfy or bran-like exoperidial covering composed of delicate irregular flakes or scales that may lift, fragment, and be lost with age.",
     whyItMatters:"A scurfy coating may wear away with age, so developmental stage matters when recording this character.",
     relationships:["exoperidium"]
   },
   glabrous:{
     id:"glabrous",label:"Glabrous",level:"macro",pronunciation:"GLAY-brus",
     beginner:"Smooth; lacking hairs, spines, or ornamentation.",
-    expert:"Smooth; lacking hairs, spines, or ornamentation.",
+    expert:"Macroscopically smooth and lacking conspicuous spines, warts, grains, or flakes; fine micro-relief and natural surface irregularity may still be present.",
     whyItMatters:"A genuinely smooth surface is an informative state and should not be assumed simply because ornament has weathered away.",
     relationships:["exoperidium"]
   },
