@@ -147,7 +147,7 @@ export const PUFFBALL_SUBTYPE_LIBRARY=Object.freeze({
     }),
     defaults:Object.freeze({puff_shape:"subglobose",puff_surface:"granular",puff_base:"short",rupture_pattern:"apical_ostiole"}),
     architecture:Object.freeze({wallFactor:1.00,subglebaFactor:.70,stipeFactor:0,rayCount:0,glebaFactor:1.00,ostioleBias:1.00}),
-    development:Object.freeze({wallPersistence:1.00,ornamentPersistence:1.00,ruptureBias:1.00,collapseBias:1.00})
+    development:Object.freeze({wallPersistence:1.00,ornamentPersistence:1.00,ruptureBias:1.00,collapseBias:1.00}),stageBehavior:Object.freeze({young:{ostiole_state:"absent",rupture_pattern:"intact"},mature:{ostiole_state:"developing",rupture_pattern:"apical_ostiole"},old:{ostiole_state:"open",rupture_pattern:"irregular_rupture"}})
   }),
   pyriform_puffball:Object.freeze({
     label:"Pyriform puffball archetype",
@@ -159,7 +159,7 @@ export const PUFFBALL_SUBTYPE_LIBRARY=Object.freeze({
     }),
     defaults:Object.freeze({puff_shape:"pyriform",puff_surface:"granular",puff_base:"distinct",rupture_pattern:"apical_ostiole"}),
     architecture:Object.freeze({wallFactor:.95,subglebaFactor:1.22,stipeFactor:0,rayCount:0,glebaFactor:.92,ostioleBias:1.05}),
-    development:Object.freeze({wallPersistence:.92,ornamentPersistence:.88,ruptureBias:1.05,collapseBias:1.05})
+    development:Object.freeze({wallPersistence:.92,ornamentPersistence:.88,ruptureBias:1.05,collapseBias:1.05}),stageBehavior:Object.freeze({young:{ostiole_state:"absent",rupture_pattern:"intact"},mature:{ostiole_state:"developing",rupture_pattern:"apical_ostiole"},old:{ostiole_state:"open",rupture_pattern:"irregular_rupture"}})
   }),
   gem_studded_type:Object.freeze({
     label:"Gem-studded / Lycoperdon-type archetype",
@@ -171,7 +171,7 @@ export const PUFFBALL_SUBTYPE_LIBRARY=Object.freeze({
     }),
     defaults:Object.freeze({puff_shape:"pyriform",puff_surface:"echinate",puff_base:"short",rupture_pattern:"apical_ostiole"}),
     architecture:Object.freeze({wallFactor:.92,subglebaFactor:.95,stipeFactor:0,rayCount:0,glebaFactor:.94,ostioleBias:1.10}),
-    development:Object.freeze({wallPersistence:.88,ornamentPersistence:1.12,ruptureBias:1.08,collapseBias:1.02})
+    development:Object.freeze({wallPersistence:.88,ornamentPersistence:1.12,ruptureBias:1.08,collapseBias:1.02}),stageBehavior:Object.freeze({young:{ostiole_state:"absent",rupture_pattern:"intact"},mature:{ostiole_state:"developing",rupture_pattern:"apical_ostiole"},old:{ostiole_state:"open",rupture_pattern:"irregular_rupture"}})
   }),
   giant_puffball_type:Object.freeze({
     label:"Giant puffball-type archetype",
@@ -183,7 +183,7 @@ export const PUFFBALL_SUBTYPE_LIBRARY=Object.freeze({
     }),
     defaults:Object.freeze({puff_shape:"globose",puff_surface:"glabrous",puff_base:"none",rupture_pattern:"irregular_rupture"}),
     architecture:Object.freeze({wallFactor:.82,subglebaFactor:.18,stipeFactor:0,rayCount:0,glebaFactor:1.18,ostioleBias:.28}),
-    development:Object.freeze({wallPersistence:.76,ornamentPersistence:.55,ruptureBias:1.35,collapseBias:1.18})
+    development:Object.freeze({wallPersistence:.76,ornamentPersistence:.55,ruptureBias:1.35,collapseBias:1.18}),stageBehavior:Object.freeze({young:{ostiole_state:"absent",rupture_pattern:"intact"},mature:{ostiole_state:"absent",rupture_pattern:"small_apical_tear"},old:{ostiole_state:"ragged",rupture_pattern:"fragmented_opening"}})
   }),
   earthball_type:Object.freeze({
     label:"Earthball / Scleroderma-type archetype",
@@ -195,7 +195,7 @@ export const PUFFBALL_SUBTYPE_LIBRARY=Object.freeze({
     }),
     defaults:Object.freeze({puff_shape:"subglobose",puff_surface:"verrucose",puff_base:"rooting",rupture_pattern:"irregular_rupture"}),
     architecture:Object.freeze({wallFactor:1.42,subglebaFactor:.32,stipeFactor:0,rayCount:0,glebaFactor:.92,ostioleBias:.18}),
-    development:Object.freeze({wallPersistence:1.28,ornamentPersistence:1.12,ruptureBias:.72,collapseBias:.72})
+    development:Object.freeze({wallPersistence:1.28,ornamentPersistence:1.12,ruptureBias:.72,collapseBias:.72}),stageBehavior:Object.freeze({young:{ostiole_state:"absent",rupture_pattern:"intact"},mature:{ostiole_state:"absent",rupture_pattern:"radial_cracking"},old:{ostiole_state:"ragged",rupture_pattern:"irregular_rupture"}})
   }),
   earthstar_type:Object.freeze({
     label:"Earthstar archetype",
@@ -207,7 +207,7 @@ export const PUFFBALL_SUBTYPE_LIBRARY=Object.freeze({
     }),
     defaults:Object.freeze({puff_shape:"subglobose",puff_surface:"granular",puff_base:"none",rupture_pattern:"apical_ostiole"}),
     architecture:Object.freeze({wallFactor:.82,subglebaFactor:.10,stipeFactor:0,rayCount:7,glebaFactor:.78,ostioleBias:1.15}),
-    development:Object.freeze({wallPersistence:.92,ornamentPersistence:.66,ruptureBias:.92,collapseBias:.54})
+    development:Object.freeze({wallPersistence:.92,ornamentPersistence:.66,ruptureBias:.92,collapseBias:.54}),stageBehavior:Object.freeze({young:{ostiole_state:"absent",rupture_pattern:"intact"},mature:{ostiole_state:"developing",rupture_pattern:"apical_ostiole"},old:{ostiole_state:"open",rupture_pattern:"apical_ostiole"}})
   }),
   stalked_puffball_type:Object.freeze({
     label:"Stalked puffball / Tulostoma-type archetype",
@@ -219,12 +219,17 @@ export const PUFFBALL_SUBTYPE_LIBRARY=Object.freeze({
     }),
     defaults:Object.freeze({puff_shape:"globose",puff_surface:"granular",puff_base:"distinct",rupture_pattern:"apical_ostiole"}),
     architecture:Object.freeze({wallFactor:.76,subglebaFactor:.06,stipeFactor:1.58,rayCount:0,glebaFactor:.72,ostioleBias:1.22}),
-    development:Object.freeze({wallPersistence:1.04,ornamentPersistence:.72,ruptureBias:.88,collapseBias:.48})
+    development:Object.freeze({wallPersistence:1.04,ornamentPersistence:.72,ruptureBias:.88,collapseBias:.48}),stageBehavior:Object.freeze({young:{ostiole_state:"absent",rupture_pattern:"intact"},mature:{ostiole_state:"developing",rupture_pattern:"apical_ostiole"},old:{ostiole_state:"open",rupture_pattern:"apical_ostiole"}})
   })
 });
 
 export function puffballSubtype(id){
   return PUFFBALL_SUBTYPE_LIBRARY[id]||PUFFBALL_SUBTYPE_LIBRARY.true_puffball;
+}
+
+export function puffballSubtypeStageDefaults(id,stageId){
+  const def=puffballSubtype(id);
+  return def.stageBehavior?.[stageId]||{};
 }
 
 export function applyPuffballSubtypeDefaults(selection={},id=selection.puff_subtype||"true_puffball"){
