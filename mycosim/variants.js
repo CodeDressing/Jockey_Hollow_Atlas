@@ -44,8 +44,38 @@ export const MORPHOLOGY_VARIANTS = Object.freeze({
       ["eccentric","Eccentric"],["absent","Absent"]
     ]
   },
+  agaric_gill_spacing: {
+    label:"Gill spacing",
+    options:[
+      ["distant","Distant"],["subdistant","Subdistant"],["close","Close"],["crowded","Crowded"]
+    ]
+  },
+  agaric_gill_thickness: {
+    label:"Gill thickness",
+    options:[
+      ["thin","Thin"],["moderate","Moderately broad"],["broad","Broad"]
+    ]
+  },
+  agaric_gill_depth: {
+    label:"Gill depth",
+    options:[
+      ["shallow","Shallow"],["moderate","Moderate"],["deep","Deep"]
+    ]
+  },
+  agaric_lamellulae: {
+    label:"Lamellulae presence",
+    options:[
+      ["absent","Absent"],["sparse","Sparse"],["moderate","Moderate"],["abundant","Abundant"]
+    ]
+  },
+  agaric_gill_edge: {
+    label:"Gill edge condition",
+    options:[
+      ["even","Even"],["serrulate","Serrulate"],["fimbriate","Fimbriate"],["crisped","Crisped"]
+    ]
+  },
   hymenophore: {
-    label:"Hymenophore",
+    label:"Gill attachment / hymenophore",
     options:[
       ["free_gills","Free"],["adnexed","Adnexed"],["adnate","Adnate"],["sinuate","Sinuate"],
       ["emarginate","Emarginate"],["subdecurrent","Subdecurrent"],["decurrent","Decurrent"],["seceding","Seceding"],
@@ -152,6 +182,11 @@ export const DEFAULT_VARIANTS = Object.freeze({
   agaric_pileus_center:"even",
   agaric_margin:"decurved",
   agaric_stipe_taper:"equal",
+  agaric_gill_spacing:"close",
+  agaric_gill_thickness:"thin",
+  agaric_gill_depth:"moderate",
+  agaric_lamellulae:"moderate",
+  agaric_gill_edge:"even",
   pileus:"convex",
   stipe:"equal",
   hymenophore:"adnate",
@@ -355,6 +390,34 @@ export const VARIANT_TEACHING = Object.freeze({
     lateral:{anatomyId:"stipe",short:"Stipe attaches at the side rather than centrally.",detail:"A lateral stipe is positioned near the pileus edge and produces an asymmetric fruit-body architecture."},
     eccentric:{anatomyId:"stipe",short:"Stipe is offset from the pileus center.",detail:"An eccentric stipe is displaced from the center but is not fully lateral."},
     absent:{anatomyId:"pileus",short:"No differentiated stipe is present.",detail:"A sessile form attaches directly by the pileus, bracket, or basal tissue rather than through a distinct stipe."}
+  }),
+  agaric_gill_spacing:Object.freeze({
+    distant:{anatomyId:"lamella",short:"Gill spacing is visibly broad.",detail:"Distant lamellae are relatively few around the pileus circumference, leaving conspicuous interlamellar gaps."},
+    subdistant:{anatomyId:"lamella",short:"Gill spacing is moderately open.",detail:"Subdistant lamellae are more numerous than distant gills but retain obvious spaces between neighboring plates."},
+    close:{anatomyId:"lamella",short:"Gills are closely spaced.",detail:"Close lamellae occupy most of the circumference with narrow but clearly visible interlamellar gaps."},
+    crowded:{anatomyId:"lamella",short:"Gills are densely crowded.",detail:"Crowded lamellae are very numerous, with minimal space between adjacent gill plates."}
+  }),
+  agaric_gill_thickness:Object.freeze({
+    thin:{anatomyId:"lamella",short:"Gill plates are thin.",detail:"Thin lamellae have narrow plate thickness and a delicate edge profile."},
+    moderate:{anatomyId:"lamella",short:"Gill plates are moderately thick.",detail:"Moderately broad lamellae have visibly more substantial plate thickness while retaining a plate-like form."},
+    broad:{anatomyId:"lamella",short:"Gill plates are broad and substantial.",detail:"Broad lamellae have a conspicuous plate thickness and robust edge in close view."}
+  }),
+  agaric_gill_depth:Object.freeze({
+    shallow:{anatomyId:"lamella",short:"Gill plates descend only slightly below the pileus.",detail:"Shallow lamellae have limited vertical depth between pileus context and the free gill edge."},
+    moderate:{anatomyId:"lamella",short:"Gill plates have moderate vertical depth.",detail:"Moderate lamellae show a clear plate beneath the pileus without an unusually deep edge."},
+    deep:{anatomyId:"lamella",short:"Gill plates descend deeply below the pileus.",detail:"Deep lamellae have a conspicuous vertical profile and remain evident in lateral close-up."}
+  }),
+  agaric_lamellulae:Object.freeze({
+    absent:{anatomyId:"lamellula",short:"No short gills are represented.",detail:"All visible lamellae extend to the inner attachment zone; no lamellulae terminate short of the stipe."},
+    sparse:{anatomyId:"lamellula",short:"A small number of lamellulae occur between full gills.",detail:"Sparse lamellulae add occasional short plates that terminate before reaching the stipe."},
+    moderate:{anatomyId:"lamellula",short:"Lamellulae are regularly interspersed.",detail:"Moderate lamellulae produce multiple length tiers between full lamellae."},
+    abundant:{anatomyId:"lamellula",short:"Numerous lamellulae fill interlamellar spaces.",detail:"Abundant lamellulae occur in several length tiers and make the hymenophore visibly denser near the margin."}
+  }),
+  agaric_gill_edge:Object.freeze({
+    even:{anatomyId:"lamella",short:"Gill edge is smooth and even.",detail:"The free edge forms a continuous, relatively regular line."},
+    serrulate:{anatomyId:"lamella",short:"Gill edge is finely saw-toothed.",detail:"Serrulate edges bear repeated small tooth-like projections along the free margin."},
+    fimbriate:{anatomyId:"lamella",short:"Gill edge is fringed.",detail:"Fimbriate edges carry fine irregular fringe-like projections rather than simple teeth."},
+    crisped:{anatomyId:"lamella",short:"Gill edge is finely crimped or wrinkled.",detail:"Crisped edges show small repeated folds and undulations along the free margin."}
   }),
   hymenophore:Object.freeze({
     free_gills:{anatomyId:"hymenophore",short:"Gills stop short of the stipe.",detail:"Free lamellae do not contact the stipe, leaving a visible gap around the stipe apex."},
