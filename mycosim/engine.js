@@ -178,6 +178,14 @@ export class MycoSimEngine{
     }
     const profileId=this.currentProfile.id;
     const previousMode=this.mode;
+    if(profileId==="puffball"){
+      const stageDefaults={
+        young:{peridial_condition:"intact",ostiole_state:"absent",gleba_state:"immature"},
+        mature:{peridial_condition:"flaking",ostiole_state:"developing",gleba_state:"maturing"},
+        old:{peridial_condition:"collapsed",ostiole_state:"open",gleba_state:"old"}
+      }[stageId];
+      if(stageDefaults)this.variants={...this.variants,...stageDefaults};
+    }
     const next=composeMorphologyState(profileId,{stageId,variants:this.variants});
     this.developmentalStageId=stageId;
     this.morphologyState=next;
