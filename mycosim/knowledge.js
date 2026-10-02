@@ -264,7 +264,7 @@ export const KNOWLEDGE_OBJECTS = Object.freeze({
     beginner:"The outer wall surrounding the spore-bearing interior of a puffball or related gasteroid fungus.",
     expert:"The outer wall surrounding the spore-bearing interior of a puffball or related gasteroid fungus.",
     whyItMatters:"Peridial thickness, integrity, layering, cracking, and persistence are useful developmental and identification characters.",
-    relationships:["exoperidium","endoperidium","gleba","apical_pore"]
+    relationships:["exoperidium","endoperidium","gleba","apical_pore","rupture_margin","collapsed_wall"]
   },
   exoperidium:{
     id:"exoperidium",label:"Exoperidium",level:"macro",pronunciation:"ek-soh-puh-RID-ee-um",
@@ -278,7 +278,35 @@ export const KNOWLEDGE_OBJECTS = Object.freeze({
     beginner:"The inner layer of the peridium, often remaining after the outer layer wears away.",
     expert:"The inner layer of the peridium, often remaining after the outer layer wears away.",
     whyItMatters:"The persistent inner wall often becomes more evident after the exoperidium abrades and helps define the mature spore sac.",
-    relationships:["peridium","exoperidium","gleba","apical_pore"]
+    relationships:["peridium","exoperidium","gleba","apical_pore","rupture_margin","rupture_channel"]
+  },
+  rupture_margin:{
+    id:"rupture_margin",label:"Rupture margin",level:"macro",pronunciation:"RUP-chur MAR-jin",
+    beginner:"The edge of a break or opening in the puffball wall.",
+    expert:"The exposed peridial edge surrounding an ostiole, tear, fissure, or larger dehiscent opening; it may be clean, ragged, curled, frayed, thinned, or weathered.",
+    whyItMatters:"Margin form helps document how the fruit body opened and whether the peridial tissue is intact, drying, weathered, or mechanically damaged.",
+    relationships:["peridium","endoperidium","apical_pore","dehiscent"]
+  },
+  worn_exoperidium:{
+    id:"worn_exoperidium",label:"Worn exoperidium",level:"macro",pronunciation:"worn ek-soh-puh-RID-ee-um",
+    beginner:"Outer puffball wall that has been partly rubbed or weathered away.",
+    expert:"Abraded exoperidial tissue in which superficial ornament or outer wall material has been reduced, exposing more persistent underlying peridial tissue.",
+    whyItMatters:"Loss of the exoperidium can change apparent texture with age and must not be mistaken for a naturally glabrous young surface.",
+    relationships:["exoperidium","endoperidium","surface_ornamentation"]
+  },
+  collapsed_wall:{
+    id:"collapsed_wall",label:"Collapsed peridial wall",level:"macro",pronunciation:"collapsed puh-RID-ee-ul wall",
+    beginner:"A puffball wall that has caved inward or lost its original shape.",
+    expert:"Senescent or weathered peridial tissue deformed by desiccation, loss of internal support, spore release, and/or external mechanical forces.",
+    whyItMatters:"Collapse is a developmental and taphonomic character that can strongly distort original body shape in older fruit bodies.",
+    relationships:["peridium","endoperidium","spore_mass"]
+  },
+  rupture_channel:{
+    id:"rupture_channel",label:"Rupture / ostiolar channel",level:"internal",pronunciation:"RUP-chur / OSS-tee-oh-lar channel",
+    beginner:"The passage through the puffball wall that connects the inside to the outside.",
+    expert:"A dehiscent passage traversing the peridial layers and linking the glebal cavity or spore mass to an external opening.",
+    whyItMatters:"The channel demonstrates that spore release requires a real path through layered peridial tissue rather than a decorative surface mark.",
+    relationships:["apical_pore","peridium","endoperidium","gleba","spore_mass"]
   },
   surface_ornamentation:{
     id:"surface_ornamentation",label:"Surface ornamentation",level:"macro",pronunciation:"surface ornamentation",
@@ -539,7 +567,8 @@ export const NAVIGATION_PATHS = Object.freeze({
     ["basidiome","puffball","gasteroid","peridium","exoperidium","surface_ornamentation"],
     ["basidiome","puffball","gasteroid","peridium","endoperidium","gleba","immature_gleba"],
     ["basidiome","puffball","gasteroid","peridium","endoperidium","gleba","mature_gleba","spore_mass","basidiospore"],
-    ["basidiome","puffball","subgleba","basal_attachment"],["basidiome","puffball","apical_region","apical_pore"],
+    ["basidiome","puffball","subgleba","basal_attachment"],["basidiome","puffball","apical_region","apical_pore","rupture_channel"],
+    ["basidiome","puffball","peridium","rupture_margin"],["basidiome","puffball","peridium","collapsed_wall"],["basidiome","puffball","peridium","exoperidium","worn_exoperidium"],
     ["basidiome","puffball","exoperidium","echinate"],
     ["basidiome","puffball","exoperidium","verrucose"],
     ["basidiome","puffball","exoperidium","granular"],
