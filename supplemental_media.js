@@ -97,6 +97,15 @@ window.DRIVE_PHOTOS.push(
   {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F41","category":"Spore print / preparation","filename":"AN2-F41 prep macro (4).jpg","caption":"AN2-F41 — preparation/spore-print overview, view 4","id":"10qXZx0AJ2HPVRYqNgNIxP6AyDGFFl63Q","original":"https://drive.google.com/thumbnail?id=10qXZx0AJ2HPVRYqNgNIxP6AyDGFFl63Q&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=10qXZx0AJ2HPVRYqNgNIxP6AyDGFFl63Q&sz=w1200","source_relpath":"AN2 lab additions/AN2-F41 prep macro (4).jpg","drive_view":"https://drive.google.com/file/d/10qXZx0AJ2HPVRYqNgNIxP6AyDGFFl63Q/view"}
 );
 
+window.DRIVE_PHOTOS = window.DRIVE_PHOTOS || [];
+window.DRIVE_PHOTOS.push(
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F41","category":"Wild / field context","filename":"AN2-F41 field (1).jpg","caption":"AN2-F41 — in-situ field view showing intact red pileus and pore-bearing underside","id":"1pb3Xk0HjY2Qx3dMgjFwxQhIPWuIZZ7Zw","original":"https://drive.google.com/thumbnail?id=1pb3Xk0HjY2Qx3dMgjFwxQhIPWuIZZ7Zw&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1pb3Xk0HjY2Qx3dMgjFwxQhIPWuIZZ7Zw&sz=w1200","source_relpath":"AN2 lab additions/AN2-F41 field (1).jpg","drive_view":"https://drive.google.com/file/d/1pb3Xk0HjY2Qx3dMgjFwxQhIPWuIZZ7Zw/view"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F41","category":"Wild / field context","filename":"AN2-F41 field (2).jpg","caption":"AN2-F41 — dorsal field view of red pileus in leaf litter","id":"13-Y4UI4np9udZisYn0DvngieqkePeHOX","original":"https://drive.google.com/thumbnail?id=13-Y4UI4np9udZisYn0DvngieqkePeHOX&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=13-Y4UI4np9udZisYn0DvngieqkePeHOX&sz=w1200","source_relpath":"AN2 lab additions/AN2-F41 field (2).jpg","drive_view":"https://drive.google.com/file/d/13-Y4UI4np9udZisYn0DvngieqkePeHOX/view"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F41","category":"Wild / field context","filename":"AN2-F41 field (3).jpg","caption":"AN2-F41 — field specimen on foil with hymenophore, stipe/base, and AN2-F41 accession label visible","id":"1cKl4dFs-DYgyjQfEiqoRuxzfz_9KVbvi","original":"https://drive.google.com/thumbnail?id=1cKl4dFs-DYgyjQfEiqoRuxzfz_9KVbvi&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1cKl4dFs-DYgyjQfEiqoRuxzfz_9KVbvi&sz=w1200","source_relpath":"AN2 lab additions/AN2-F41 field (3).jpg","drive_view":"https://drive.google.com/file/d/1cKl4dFs-DYgyjQfEiqoRuxzfz_9KVbvi/view"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F41","category":"Wild / field context","filename":"AN2-F41 field (4).jpg","caption":"AN2-F41 — close field handling view emphasizing pore surface and stipe/base","id":"1pW7jJUXvA-rOfm0UHY4vYkgi65x3xMnl","original":"https://drive.google.com/thumbnail?id=1pW7jJUXvA-rOfm0UHY4vYkgi65x3xMnl&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1pW7jJUXvA-rOfm0UHY4vYkgi65x3xMnl&sz=w1200","source_relpath":"AN2 lab additions/AN2-F41 field (4).jpg","drive_view":"https://drive.google.com/file/d/1pW7jJUXvA-rOfm0UHY4vYkgi65x3xMnl/view"},
+  {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F41","category":"Wild / field context","filename":"AN2-F41 field (5).jpg","caption":"AN2-F41 — field specimen and accession label on foil, pileus and attached base visible","id":"16KP97mm-b1QA1I-r6xeT8f-FwKmpwzZ5","original":"https://drive.google.com/thumbnail?id=16KP97mm-b1QA1I-r6xeT8f-FwKmpwzZ5&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=16KP97mm-b1QA1I-r6xeT8f-FwKmpwzZ5&sz=w1200","source_relpath":"AN2 lab additions/AN2-F41 field (5).jpg","drive_view":"https://drive.google.com/file/d/16KP97mm-b1QA1I-r6xeT8f-FwKmpwzZ5/view"}
+);
+
 window.SPECIMEN_ENRICHMENTS = window.SPECIMEN_ENRICHMENTS || {};
 window.SPECIMEN_ENRICHMENTS["AN2-F9"] = {
   status: "AN2-F9 complete dataset — Jockey Hollow wild context, field specimen morphology, laboratory preparation, microscopy, and measured spore imagery integrated.",
@@ -347,10 +356,14 @@ window.SPECIMEN_ENRICHMENTS["AN2-F31"] = {
 };
 
 window.SPECIMEN_ENRICHMENTS["AN2-F41"] = {
-  status: "AN2-F41 complete SPM dataset — verified macro specimen views, accession-linked spore-print/preparation documentation, and 13 microscopy fields including 3 calibrated measurement fields integrated.",
-  sourceLine: "Rutgers/Jockey Hollow accession AN2-F41. Existing verified laboratory specimen views AN2-F41.JPG and AN2-F41V2.JPG are retained. The original AN2-F41SP.JPG spore-print record is supplemented by four 2026-10-01 preparation photographs and thirteen accession-linked microscopy images. Quantitative values below are transcribed only from fully legible on-image Motic measurement annotations; cropped or unreadable labels are excluded.",
+  status: "AN2-F41 complete dataset — in-situ field context, verified macro specimen views, accession-linked spore-print/preparation documentation, and 13 microscopy fields including 3 calibrated measurement fields integrated.",
+  sourceLine: "Rutgers/Jockey Hollow accession AN2-F41. Five accession-linked 2026-10-01 field photographs now document the intact specimen in leaf litter, pileus, pore-bearing hymenophore, stipe/base, and accession-labeled field handling. Existing verified laboratory specimen views AN2-F41.JPG and AN2-F41V2.JPG are retained. The original AN2-F41SP.JPG spore-print record is supplemented by four preparation photographs and thirteen accession-linked microscopy images. Quantitative values below are transcribed only from fully legible on-image Motic measurement annotations; cropped or unreadable labels are excluded.",
   summary: {
-    "Growth / Description": "Accession continuity is documented from verified laboratory specimen views through a visible spore deposit, labeled slide preparation, and repeated microscopy fields. No taxonomic identification is forced from these observations.",
+    "Growth / Description": "Accession continuity is now documented from in-situ field context through verified laboratory specimen views, visible spore deposit, labeled slide preparation, and repeated microscopy fields. The intact fruit body is boletoid, with a broad red to red-orange pileus, a poroid hymenophore, and a stout yellow to red-tinged stipe/base. No taxonomic identification is forced from these observations.",
+    "Cap / Pileus": "Broad, convex to plano-convex, vivid red to red-orange with localized darker maroon to brownish spotting and minor surface abrasion. Margin is thick and slightly incurved to even in the field views.",
+    "Hymenophore": "Poroid rather than lamellate. The fertile underside is composed of very small, dense pores; pore surface appears yellow-olive to brownish/olivaceous in the field photographs.",
+    "Stem / Stipe": "Stipe is stout and centrally attached, yellow to yellow-orange with red to reddish-brown mottling and darker soil-stained basal tissue. Basal material retains adhering soil and organic debris.",
+    "Base / Substrate": "Collected from forest-floor leaf litter with woody debris and soil. The basal portion retains dark soil and organic material, documenting direct ground/substrate association.",
     "Macro size": "No calibrated macroscopic dimensional record for AN2-F41 was found in the current measurements data. Macro dimensions are therefore not inferred from photographs.",
     "Spore-print color": "Pale gray-brown to light brown in the original source record; the 2026-10-01 foil preparation photographs show a clearly visible tan to light-brown deposit. Color is recorded descriptively and not used alone for identification.",
     "Spore shape": "Predominantly elongate, narrowly ellipsoid to fusiform, often somewhat inequilateral; ends are generally tapered to rounded. Spores occur singly and in local clusters. Wall outline appears smooth at this imaging level.",
@@ -368,6 +381,7 @@ window.SPECIMEN_ENRICHMENTS["AN2-F41"] = {
   completeness: [
     ["Photo provenance","Yes"],
     ["Explicit specimen accession","Yes"],
+    ["Wild / field imagery","Yes — 5 views"],
     ["Verified macro specimen imagery","Yes — 2 views"],
     ["Spore-print / preparation imagery","Yes — original source record + 4 new preparation views"],
     ["Microscopy imagery","Yes — 13 views"],
@@ -380,7 +394,7 @@ window.SPECIMEN_ENRICHMENTS["AN2-F41"] = {
     ["Internal optical feature documented","Yes — repeated dark nucleus-like inclusion; identity not independently stain-confirmed"],
     ["Macro measurements","Not available — not inferred from images"],
     ["Successful microscopic spore record","Yes"],
-    ["Wild / field imagery","Not established in the current AN2-F41 record"],
+    ["Field + laboratory pairing","Yes"],
     ["Identified","No — taxonomic identification unresolved"]
   ]
 };
