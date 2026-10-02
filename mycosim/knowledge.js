@@ -9,7 +9,79 @@ export const KNOWLEDGE_OBJECTS = Object.freeze({
     id:"pileus",label:"Pileus",level:"macro",pronunciation:"pileus",
     beginner:"The cap or upper part of many mushrooms.",
     expert:"Expanded sterile-to-fertile upper region of a sporocarp; its shape, surface, margin, context and pigmentation are major diagnostic characters.",
-    relationships:["pileus_context","hymenophore"]
+    relationships:["pileus_context","hymenophore","pileus_margin","umbo","infundibuliform","umbonate","umbilicate","campanulate","conical","convex","plane","depressed"]
+  },
+  pileus_margin:{
+    id:"pileus_margin",label:"Pileus margin",level:"macro",pronunciation:"pileus margin",
+    beginner:"The outer edge of the mushroom cap.",
+    expert:"Peripheral edge of the pileus; orientation, striation, appendiculation, thickness, splitting and pigmentation are diagnostically informative.",
+    relationships:["pileus"]
+  },
+  umbo:{
+    id:"umbo",label:"Umbo",level:"macro",pronunciation:"umbo",
+    beginner:"A raised bump or boss at the center of a mushroom cap.",
+    expert:"A central pileal prominence or boss; degree of elevation and breadth distinguish umbonate from more sharply papillate conditions.",
+    relationships:["pileus","umbonate","papillate"]
+  },
+  umbonate:{
+    id:"umbonate",label:"Umbonate pileus",level:"macro",pronunciation:"umbonate",
+    beginner:"A cap with a raised central bump.",
+    expert:"Pileus bearing a distinct central umbo; the prominence may be broad or sharply delimited depending on the taxon and developmental state.",
+    relationships:["pileus","umbo"]
+  },
+  papillate:{
+    id:"papillate",label:"Papillate pileus",level:"macro",pronunciation:"papillate",
+    beginner:"A cap with a small nipple-like central point.",
+    expert:"Pileus bearing a small, sharply localized papilla; distinguished from the broader central elevation termed an umbo.",
+    relationships:["pileus","umbo"]
+  },
+  infundibuliform:{
+    id:"infundibuliform",label:"Infundibuliform pileus",level:"macro",pronunciation:"infundibuliform",
+    beginner:"A funnel-shaped mushroom cap.",
+    expert:"Pileus deeply centrally depressed and funnel-shaped, with the surface descending toward the disc and rising toward the margin.",
+    relationships:["pileus","depressed"]
+  },
+  conical:{
+    id:"conical",label:"Conical pileus",level:"macro",pronunciation:"conical",
+    beginner:"A cone-shaped cap.",
+    expert:"Pileus with sides converging toward a distinct apical region, producing a conical profile.",
+    relationships:["pileus"]
+  },
+  campanulate:{
+    id:"campanulate",label:"Campanulate pileus",level:"macro",pronunciation:"campanulate",
+    beginner:"A bell-shaped cap.",
+    expert:"Pileus bell-shaped in profile, typically with a rounded apex and downward-curving sides.",
+    relationships:["pileus"]
+  },
+  ovate:{
+    id:"ovate",label:"Ovate pileus",level:"macro",pronunciation:"ovate",
+    beginner:"An egg-shaped cap.",
+    expert:"Pileus ovoid or egg-shaped in profile, often encountered in relatively young basidiomata.",
+    relationships:["pileus"]
+  },
+  convex:{
+    id:"convex",label:"Convex pileus",level:"macro",pronunciation:"convex",
+    beginner:"A rounded, outward-curving cap.",
+    expert:"Pileus arched upward from the margin toward the disc without a distinct central boss.",
+    relationships:["pileus"]
+  },
+  plane:{
+    id:"plane",label:"Plane pileus",level:"macro",pronunciation:"plane",
+    beginner:"A flat or nearly flat cap.",
+    expert:"Pileus essentially flat in profile, commonly representing a mature expansion state.",
+    relationships:["pileus"]
+  },
+  depressed:{
+    id:"depressed",label:"Depressed pileus",level:"macro",pronunciation:"depressed",
+    beginner:"A cap whose center sits lower than the surrounding surface.",
+    expert:"Pileus with a central depression; shallower than a strongly infundibuliform configuration.",
+    relationships:["pileus","infundibuliform","umbilicate"]
+  },
+  umbilicate:{
+    id:"umbilicate",label:"Umbilicate pileus",level:"macro",pronunciation:"umbilicate",
+    beginner:"A cap with a small navel-like depression in the center.",
+    expert:"Pileus with a small, abrupt, umbilicus-like central depression rather than a broad funnel-shaped disc.",
+    relationships:["pileus","depressed"]
   },
   pileus_context:{
     id:"pileus_context",label:"Pileus context",level:"tissue",pronunciation:"pileus context",
