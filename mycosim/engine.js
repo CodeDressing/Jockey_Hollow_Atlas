@@ -115,9 +115,9 @@ export class MycoSimEngine{
     const enteringPuffball=id==="puffball" && this.currentProfile?.id!=="puffball";
     if(enteringPuffball){
       const stageDefaults={
-        young:{peridial_condition:"intact",ostiole_state:"absent",gleba_state:"immature"},
-        mature:{peridial_condition:"flaking",ostiole_state:"developing",gleba_state:"maturing"},
-        old:{peridial_condition:"collapsed",ostiole_state:"open",gleba_state:"old"}
+        young:{peridial_condition:"intact",ostiole_state:"absent",rupture_pattern:"intact",rupture_margin:"clean",collapse_state:"none",gleba_state:"immature"},
+        mature:{peridial_condition:"flaking",ostiole_state:"developing",rupture_pattern:"apical_ostiole",rupture_margin:"slightly_torn",collapse_state:"slight",gleba_state:"maturing"},
+        old:{peridial_condition:"collapsed",ostiole_state:"open",rupture_pattern:"irregular_rupture",rupture_margin:"ragged",collapse_state:"weathered",gleba_state:"old"}
       }[this.developmentalStageId];
       if(stageDefaults)this.variants={...this.variants,...stageDefaults};
     }
@@ -189,9 +189,9 @@ export class MycoSimEngine{
     const previousMode=this.mode;
     if(profileId==="puffball"){
       const stageDefaults={
-        young:{peridial_condition:"intact",ostiole_state:"absent",gleba_state:"immature"},
-        mature:{peridial_condition:"flaking",ostiole_state:"developing",gleba_state:"maturing"},
-        old:{peridial_condition:"collapsed",ostiole_state:"open",gleba_state:"old"}
+        young:{peridial_condition:"intact",ostiole_state:"absent",rupture_pattern:"intact",rupture_margin:"clean",collapse_state:"none",gleba_state:"immature"},
+        mature:{peridial_condition:"flaking",ostiole_state:"developing",rupture_pattern:"apical_ostiole",rupture_margin:"slightly_torn",collapse_state:"slight",gleba_state:"maturing"},
+        old:{peridial_condition:"collapsed",ostiole_state:"open",rupture_pattern:"irregular_rupture",rupture_margin:"ragged",collapse_state:"weathered",gleba_state:"old"}
       }[stageId];
       if(stageDefaults)this.variants={...this.variants,...stageDefaults};
     }
@@ -360,6 +360,11 @@ export class MycoSimEngine{
           if(sid==="old") t.rotation.z+=(i%5-2)*.012*(p.tooth_wear??0);
         });
       }
+      if(sid==="mature" && wornExo){
+        wornExo.visible=true;
+        wornExo.children.forEach((p,i)=>p.visible=((i*31)%100)/100<.38);
+      }
+
       if(sid==="old"){
         const pileus=this.objects.get("pileus");
         if(pileus)pileus.rotation.z+=.03*(p.margin_irregularity??0);
@@ -457,6 +462,9 @@ export class MycoSimEngine{
       const peridial=this.variants.peridial_condition||"intact";
       const ostiole=this.variants.ostiole_state||"absent";
       const glebaState=this.variants.gleba_state||"immature";
+      const rupturePattern=this.variants.rupture_pattern||"intact";
+      const ruptureMarginState=this.variants.rupture_margin||"clean";
+      const collapseState=this.variants.collapse_state||"none";
 
       const shapeScale={
         globose:[1,1,1],
@@ -513,12 +521,35 @@ export class MycoSimEngine{
       const oldShell=this.objects.get("old_shell_fragments");
       const oldGleba=this.objects.get("old_gleba_clumps");
       const oldDebris=this.objects.get("old_basal_debris");
-      if(oldShell)oldShell.visible=sid==="old";
+      const layeredShell=this.objects.get("senescent_shell");
+      const ruptureMarginObj=this.objects.get("rupture_margin");
+      const ruptureChannel=this.objects.get("rupture_channel");
+      const wornExo=this.objects.get("worn_exoperidium");
+      const collapsedWall=this.objects.get("collapsed_wall");
+      if(oldShell)oldShell.visible=false;
       if(oldGleba)oldGleba.visible=sid==="old";
       if(oldDebris)oldDebris.visible=sid==="old" && base!=="none";
+      if(layeredShell)layeredShell.visible=sid==="old";
+      if(ruptureMarginObj)ruptureMarginObj.visible=sid!=="young" && rupturePattern!=="intact";
+      if(ruptureChannel)ruptureChannel.visible=sid!=="young" && rupturePattern!=="intact";
+      if(wornExo)wornExo.visible=sid!=="young";
+      if(collapsedWall)collapsedWall.visible=collapseState!=="none";
+
+      const collapseScale={none:1,slight:.94,moderate:.82,severe:.66,weathered:.72}[collapseState]??1;
+      const collapseTilt={none:0,slight:.018,moderate:.045,severe:.075,weathered:.095}[collapseState]??0;
+      if(layeredShell){
+        layeredShell.scale.y*=collapseScale;
+        layeredShell.rotation.z+=collapseTilt;
+        if(collapseState==="weathered")layeredShell.rotation.x-=.035;
+      }
+      if(ruptureMarginObj){
+        ruptureMarginObj.scale.y*=collapseScale;
+        ruptureMarginObj.rotation.z+=collapseTilt;
+      }
+      if(ruptureChannel)ruptureChannel.rotation.z+=collapseTilt*.35;
 
       if(sid==="old"){
-        // Replace the clean mathematical sphere with fractured shell fragments.
+        // Replace the clean mathematical sphere with a continuous layered ruptured shell.
         const perObj=this.objects.get("peridium");
         if(perObj)perObj.visible=false;
         const endoObj=this.objects.get("endoperidium");
@@ -1691,6 +1722,75 @@ export class MycoSimEngine{
     const sporeMassMat=new THREE.MeshStandardMaterial({color:0x5a4630,roughness:1,transparent:true,opacity:.46});
     const sporeMass=this.register(new THREE.Mesh(new THREE.SphereGeometry(.72,34,22),sporeMassMat),"spore_mass","Spore mass","internal","gleba");
     sporeMass.position.y=bodyY;
+
+    // Layered senescent peridium: continuous outer/inner shell with real wall thickness.
+    const rupturePattern=this.variants.rupture_pattern||"intact";
+    const ruptureMarginState=this.variants.rupture_margin||"clean";
+    const collapseState=this.variants.collapse_state||"none";
+    const openingByPattern={
+      intact:.02,apical_ostiole:.18,small_apical_tear:.28,radial_cracking:.38,
+      irregular_rupture:.52,collapsed_crown:.66,lateral_break:.48,fragmented_opening:.72
+    };
+    const opening=openingByPattern[rupturePattern]??.02;
+    const shellGroup=new THREE.Group();
+    shellGroup.userData={id:"senescent_shell",label:"Layered peridial shell",category:"macro",selectable:true,knowledgeId:"peridium"};
+
+    const shellOuterMat=new THREE.MeshStandardMaterial({color:0x8b765b,roughness:.98,metalness:0,side:THREE.DoubleSide});
+    const shellInnerMat=new THREE.MeshStandardMaterial({color:0x5f4b39,roughness:1,metalness:0,side:THREE.DoubleSide});
+    const thetaStart=.10+opening*.58;
+    const thetaLength=Math.max(.55,Math.PI-thetaStart-.04);
+    const outerGeo=new THREE.SphereGeometry(1.17,64,34,0,Math.PI*2,thetaStart,thetaLength);
+    const innerGeo=new THREE.SphereGeometry(1.085,64,34,0,Math.PI*2,thetaStart+.018,Math.max(.5,thetaLength-.035));
+    const outerShell=new THREE.Mesh(outerGeo,shellOuterMat);
+    const innerShell=new THREE.Mesh(innerGeo,shellInnerMat);
+    outerShell.position.y=bodyY;innerShell.position.y=bodyY;
+    outerShell.scale.y=.95;innerShell.scale.y=.95;
+    outerShell.userData=shellGroup.userData;innerShell.userData={...shellGroup.userData,id:"endoperidium",label:"Endoperidium",knowledgeId:"endoperidium"};
+    shellGroup.add(outerShell,innerShell);this.pickables.push(outerShell,innerShell);
+    this.root.add(shellGroup);this.objects.set("senescent_shell",shellGroup);
+
+    const rimGroup=new THREE.Group();
+    rimGroup.userData={id:"rupture_margin",label:"Rupture margin",category:"macro",selectable:true,knowledgeId:"rupture_margin"};
+    const rimMat=new THREE.MeshStandardMaterial({color:0x7a624c,roughness:1,metalness:0,side:THREE.DoubleSide});
+    const rimCount=rupturePattern==="intact"?0:rupturePattern==="apical_ostiole"?8:14;
+    const curlMap={clean:0,slightly_torn:.06,ragged:.13,curled_out:.22,curled_in:-.18,frayed:.16};
+    const curl=curlMap[ruptureMarginState]??0;
+    for(let i=0;i<rimCount;i++){
+      const a=i/rimCount*Math.PI*2;
+      const rr=.22+opening*.72*(.86+.11*Math.sin(i*2.3));
+      const seg=new THREE.Mesh(new THREE.BoxGeometry(.16+.05*((i%4)/3),.035,.075),rimMat.clone());
+      seg.position.set(Math.cos(a)*rr,bodyY+1.03-opening*.38+((i%3)-1)*.025,Math.sin(a)*rr);
+      seg.rotation.set(curl*Math.cos(a),-a,curl*Math.sin(a)+((i%2)?-.08:.06));
+      seg.scale.y=1+.35*((i%5)/4);
+      seg.userData=rimGroup.userData;
+      rimGroup.add(seg);this.pickables.push(seg);
+    }
+    this.root.add(rimGroup);this.objects.set("rupture_margin",rimGroup);
+
+    const channelMat=new THREE.MeshStandardMaterial({color:0x2f241c,roughness:1,side:THREE.DoubleSide});
+    const channel=this.register(new THREE.Mesh(
+      new THREE.CylinderGeometry(.12+opening*.16,.08+opening*.08,.22+opening*.24,20,1,true),
+      channelMat
+    ),"rupture_channel","Rupture / ostiolar channel","internal","apical_pore");
+    channel.position.y=bodyY+1.00-opening*.20;
+
+    const wornGroup=new THREE.Group();
+    wornGroup.userData={id:"worn_exoperidium",label:"Worn exoperidium",category:"macro",selectable:true,knowledgeId:"worn_exoperidium"};
+    const wornMat=new THREE.MeshStandardMaterial({color:0xa08b6b,roughness:1,side:THREE.DoubleSide});
+    for(let i=0;i<12;i++){
+      const a=i*2.399963229728653;
+      const patch=new THREE.Mesh(new THREE.CircleGeometry(.10+.04*(i%4),10),wornMat.clone());
+      patch.position.set(Math.cos(a)*.92,bodyY+.18+((i%5)-2)*.28,Math.sin(a)*.92);
+      patch.lookAt(new THREE.Vector3(0,bodyY,0));
+      patch.rotateY(Math.PI);
+      patch.userData=wornGroup.userData;
+      wornGroup.add(patch);this.pickables.push(patch);
+    }
+    this.root.add(wornGroup);this.objects.set("worn_exoperidium",wornGroup);
+
+    const collapsedProxy=new THREE.Group();
+    collapsedProxy.userData={id:"collapsed_wall",label:"Collapsed peridial wall",category:"macro",selectable:true,knowledgeId:"collapsed_wall"};
+    this.root.add(collapsedProxy);this.objects.set("collapsed_wall",collapsedProxy);
 
     // Old-stage realism layer: fractured papery peridium, exposed powdery gleba,
     // and basal debris. These are separate probeable meshes so educational
