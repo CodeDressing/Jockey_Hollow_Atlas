@@ -101,7 +101,7 @@ export const MORPHOLOGY_PROFILES = [
   {
     id:"puffball",label:"Puffball / gasteroid",group:"gasteroid",factory:"puffball",version:"4.0.0",
     description:"Enclosed spore-bearing glebal body plan with stage-dependent surface ornamentation, peridial state, ostiole development, and cutaway anatomy.",
-    variantGroups:["puff_surface","puff_shape","puff_base","peridial_condition","ostiole_state","rupture_pattern","rupture_margin","collapse_state","gleba_state","section_view","texture_realism"],developmentalStages:["young","mature","old"],
+    variantGroups:["puff_subtype","puff_surface","puff_shape","puff_base","peridial_condition","ostiole_state","rupture_pattern","rupture_margin","collapse_state","gleba_state","section_view","texture_realism"],developmentalStages:["young","mature","old"],
     anatomy:[
       A("peridium","Peridium","macro","Outer enclosing wall."),
       A("exoperidium","Exoperidium","macro","Outermost peridial layer; may be smooth, granular, warted, spiny, or scurfy.","peridium"),
