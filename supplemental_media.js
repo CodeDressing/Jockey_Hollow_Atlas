@@ -127,6 +127,16 @@ window.DRIVE_PHOTOS.push(
   {"folder":"AN2 lab additions","collection":"AN2","family":"AN","specimen":"AN2-F32","category":"Microscopy","filename":"AN3-F32 SPM (7).png","caption":"AN2-F32 — confirmed spore microscopy, broad morphology field 7; source filename carries AN3-F32 label","id":"1_lzUqPDJoZe46qL-bY5f1xBcIq7IlA1P","original":"https://drive.google.com/thumbnail?id=1_lzUqPDJoZe46qL-bY5f1xBcIq7IlA1P&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1_lzUqPDJoZe46qL-bY5f1xBcIq7IlA1P&sz=w1200","source_relpath":"AN2 lab additions/AN3-F32 SPM (7).png","drive_view":"https://drive.google.com/file/d/1_lzUqPDJoZe46qL-bY5f1xBcIq7IlA1P/view","assignment_basis":"user explicitly confirmed these source files belong to AN2-F32; source filenames retain AN3-F32 text and that discrepancy is preserved"}
 );
 
+window.DRIVE_PHOTOS = window.DRIVE_PHOTOS || [];
+window.DRIVE_PHOTOS.push(
+  {"folder":"AN2-F34","collection":"AN2","family":"AN","specimen":"AN2-F34","category":"Wild / field context","filename":"AN2-F34 field (1).jpg","caption":"AN2-F34 — in-situ field view showing brown-orange pileus, lamellate underside, stipe, decomposing wood, soil, and leaf litter","id":"1-bqJUEDUFXBG7A8-rl7b5wAtDCpmdwdX","original":"https://drive.google.com/thumbnail?id=1-bqJUEDUFXBG7A8-rl7b5wAtDCpmdwdX&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1-bqJUEDUFXBG7A8-rl7b5wAtDCpmdwdX&sz=w1200","source_relpath":"AN2-F34/AN2-F34 field (1).jpg","drive_view":"https://drive.google.com/file/d/1-bqJUEDUFXBG7A8-rl7b5wAtDCpmdwdX/view"},
+  {"folder":"AN2-F34","collection":"AN2","family":"AN","specimen":"AN2-F34","category":"Wild / field context","filename":"AN2-F34 field (2).jpg","caption":"AN2-F34 — in-situ dorsal field view of brown-orange pileus beside decomposing wood and leaf litter","id":"1_cN0zrzIsqQTCQ6WSZvWSYQ-3jotjoBN","original":"https://drive.google.com/thumbnail?id=1_cN0zrzIsqQTCQ6WSZvWSYQ-3jotjoBN&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1_cN0zrzIsqQTCQ6WSZvWSYQ-3jotjoBN&sz=w1200","source_relpath":"AN2-F34/AN2-F34 field (2).jpg","drive_view":"https://drive.google.com/file/d/1_cN0zrzIsqQTCQ6WSZvWSYQ-3jotjoBN/view"},
+  {"folder":"AN2-F34","collection":"AN2","family":"AN","specimen":"AN2-F34","category":"Wild / field context","filename":"AN2-F34 field (3).jpg","caption":"AN2-F34 — accession-labeled underside field view documenting gills and stipe","id":"1IY40SDxGxPJuprs9l39yu9DsDS3yor8m","original":"https://drive.google.com/thumbnail?id=1IY40SDxGxPJuprs9l39yu9DsDS3yor8m&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1IY40SDxGxPJuprs9l39yu9DsDS3yor8m&sz=w1200","source_relpath":"AN2-F34/AN2-F34 field (3).jpg","drive_view":"https://drive.google.com/file/d/1IY40SDxGxPJuprs9l39yu9DsDS3yor8m/view"},
+  {"folder":"AN2-F34","collection":"AN2","family":"AN","specimen":"AN2-F34","category":"Wild / field context","filename":"AN2-F34 field (4).jpg","caption":"AN2-F34 — accession-labeled pileus field view","id":"19BlUW31SA6kNaiWqNFe9X_7hQqKYqDcX","original":"https://drive.google.com/thumbnail?id=19BlUW31SA6kNaiWqNFe9X_7hQqKYqDcX&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=19BlUW31SA6kNaiWqNFe9X_7hQqKYqDcX&sz=w1200","source_relpath":"AN2-F34/AN2-F34 field (4).jpg","drive_view":"https://drive.google.com/file/d/19BlUW31SA6kNaiWqNFe9X_7hQqKYqDcX/view"},
+  {"folder":"AN2-F34","collection":"AN2","family":"AN","specimen":"AN2-F34","category":"Wild / field context","filename":"AN2-F34 field (5).jpg","caption":"AN2-F34 — accession-labeled underside field view showing lamellae and stipe","id":"1uEAuBPXDV1FzMBtNW0OVNlKnKWuMDnVJ","original":"https://drive.google.com/thumbnail?id=1uEAuBPXDV1FzMBtNW0OVNlKnKWuMDnVJ&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1uEAuBPXDV1FzMBtNW0OVNlKnKWuMDnVJ&sz=w1200","source_relpath":"AN2-F34/AN2-F34 field (5).jpg","drive_view":"https://drive.google.com/file/d/1uEAuBPXDV1FzMBtNW0OVNlKnKWuMDnVJ/view"},
+  {"folder":"AN2-F34","collection":"AN2","family":"AN","specimen":"AN2-F34","category":"Wild / field context","filename":"AN2-F34 field (6).jpg","caption":"AN2-F34 — close underside field view documenting crowded brownish lamellae and stipe attachment","id":"105GKaiOArtwaSLlmYa6sve0In1l7tGzY","original":"https://drive.google.com/thumbnail?id=105GKaiOArtwaSLlmYa6sve0In1l7tGzY&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=105GKaiOArtwaSLlmYa6sve0In1l7tGzY&sz=w1200","source_relpath":"AN2-F34/AN2-F34 field (6).jpg","drive_view":"https://drive.google.com/file/d/105GKaiOArtwaSLlmYa6sve0In1l7tGzY/view"}
+);
+
 window.SPECIMEN_ENRICHMENTS = window.SPECIMEN_ENRICHMENTS || {};
 window.SPECIMEN_ENRICHMENTS["AN2-F9"] = {
   status: "AN2-F9 complete dataset — Jockey Hollow wild context, field specimen morphology, laboratory preparation, microscopy, and measured spore imagery integrated.",
@@ -169,19 +179,19 @@ window.SPECIMEN_ENRICHMENTS["AN2-F9"] = {
 };
 
 window.SPECIMEN_ENRICHMENTS["AN2-F34"] = {
-  status: "AN2-F34 complete dataset — Rutgers Jockey Hollow field-returned wild specimen, macromorphology, spore-print preparation, microscopy, and annotated spore measurements integrated.",
-  sourceLine: "Rutgers team wild collection from Jockey Hollow. The three wild-source photographs document the specimen after field return rather than in situ at the exact collection point; the visible foil accession label reads AN2 F34. Laboratory records include spore-print preparation imagery and five annotated microscopy fields. This distinction between wild provenance and absence of an in-situ photograph is retained explicitly.",
+  status: "AN2-F34 complete dataset — confirmed in-situ Rutgers Jockey Hollow field context, macromorphology, spore-print preparation, microscopy, and annotated spore measurements integrated.",
+  sourceLine: "Rutgers team wild collection from Jockey Hollow. Six accession-linked photographs now confirm the specimen in situ / in immediate field context on the forest floor, with soil, decomposing leaf litter, and adjacent decomposing wood documented directly. Accession-labeled handling views preserve continuity to the laboratory record. Existing verified laboratory specimen views, spore-print preparation imagery, and five annotated microscopy fields remain unchanged."
   summary: {
-    "Growth / Description": "Robust, centrally to slightly eccentrically stipitate boletoid basidiome with a fleshy pileus and poroid hymenophore. The collected wild specimen is intact enough to document cap, pore surface, stipe, and basal condition, although the exact in-situ orientation and surrounding substrate were not photographed.",
+    "Growth / Description": "Robust agaricoid basidiome documented in situ on the forest floor, with a broad brown-orange pileus, lamellate hymenophore, and central to slightly eccentric brownish stipe. The field series preserves cap, gills, stipe, surrounding substrate, and accession-labeled handling views.",
     "Size": "No calibrated macroscopic ruler measurement is currently preserved for the field-returned AN2-F34 basidiome. Microscopy annotations document elongate to ellipsoid spores with visible long-axis measurements approximately 9.07–12.12 µm and short-axis measurements approximately 2.18–5.21 µm.",
     "Color": "Pileus ochre-brown to orange-brown and tawny, with paler cream to yellowish exposed or abraded areas. Pore surface yellow-brown to olive-brown, becoming darker with age or handling. Stipe pale cream to buff with tan-brown discoloration and adhering soil toward the base.",
     "Cap / Pileus": "Pileus broad, fleshy, convex to broadly convex, dry to matte, ochre-brown to orange-brown. Surface is irregularly cracked, abraded, or weathered in places, exposing paler cream-yellow context beneath; margin thick, rounded and entire to slightly uneven where handled.",
-    "Hymenophore": "Poroid and tubular rather than lamellate. Undersurface densely covered with small to medium, irregularly angular to somewhat labyrinthine pores, yellow-brown to olive-brown. Tubes appear relatively deep and are clearly separable morphologically from the pileus context. No gills or teeth are present.",
+    "Hymenophore": "Lamellate. True gills are clearly visible in multiple field views; they are brown to reddish-brown, close to crowded, with numerous lamellae extending from the pileus margin toward the stipe. Attachment is to the stipe and appears adnate to slightly decurrent in the available views, though the exact attachment state is not forced beyond what the photographs show."
     "Spores": "Five annotated microscopy fields document repeated elongate to narrowly ellipsoid brownish spores. Visible annotations include long-axis values approximately 9.07–12.12 µm and short-axis values approximately 2.18–5.21 µm. Mount medium and objective/magnification are not completely documented, so the atlas preserves these as observed on-image dimensions without species-level inference.",
     "Stem / Stipe": "Stipe stout, central to slightly eccentric, solid-appearing, pale cream to buff, broadly cylindrical to weakly clavate, with faint longitudinal texture and scattered brownish staining. The lower portion is incompletely preserved/obscured by collected debris, limiting detailed basal architecture.",
     "Veil": "No annulus or persistent partial-veil structure is visible in the supplied photographs.",
     "Volva / Universal veil": "No volva, saccate cup, or discrete universal-veil remnant is visible. The basal portion is not preserved sufficiently to exclude every developmental remnant, but no such structure is demonstrated.",
-    "Base / Substrate": "Basal tissue is field-collected with adhering soil and organic debris. Exact in-situ substrate contact was not photographed; therefore terrestrial versus directly woody attachment is not asserted beyond the Rutgers wild-collection provenance.",
+    "Base / Substrate": "Field-confirmed terrestrial occurrence on soil within a decomposing leaf-litter bed, immediately adjacent to decomposing wood and woody debris. The photographs document the fruit body emerging from forest-floor substrate rather than directly from exposed wood."
     "Context / Flesh": "Exposed pileus and stipe context appear pale cream to yellowish-white, thick and fleshy. No latex, hollow chambers, or rapid color change on sectioning were recorded.",
     "Bruising / Staining": "Brownish discoloration is present on the pore surface and stipe, but no standardized pressure-bruising test or time-course color reaction was documented; these color changes are therefore recorded descriptively rather than interpreted diagnostically.",
     "Odor": "Not recorded in the current specimen workflow.",
@@ -190,15 +200,16 @@ window.SPECIMEN_ENRICHMENTS["AN2-F34"] = {
     "Microscopy record": "Five accession-linked microscopy images (AN2-F34 SPMV1–SPMV5) contain multiple on-image spore measurements. The repeated measured morphology is elongate to ellipsoid, with visible long- and short-axis annotations retained exactly as documentary evidence.",
     "Spore print / preparation": "AN2-F34 spore-print and preparation imagery documents a broad, patchy radial deposit, pale tan to light brown and uneven in density, with accession continuity into the measured microscopy series.",
     "Record type": "Curated full-data specimen record",
-    "Wild-image type": "Field-returned wild specimen documentation; no in-situ ground photograph",
+    "Wild-image type": "Confirmed in-situ / immediate field-context documentation with soil, leaf litter, and decomposing wood visible",
     "Identification status": "Unresolved in the atlas; boletoid morphology is documented without assigning genus or species.",
     "Assignment rule": "Visible AN2 F34 accession label and accession-linked microscopy filenames; no visual-similarity reassignment."
   },
   completeness: [
     ["Photo provenance","Yes"],
     ["Explicit specimen accession","Yes"],
-    ["Wild / field imagery","Yes — field-returned specimen"],
-    ["In-situ habitat photograph","No — not available"],
+    ["Wild / field imagery","Yes — 6 confirmed field views"],
+    ["In-situ habitat photograph","Yes"],
+    ["Field substrate documented","Yes — soil with decomposing leaf litter near decomposing wood"],
     ["Embedded/source imagery","Yes"],
     ["Spore-print imagery","Yes"],
     ["Microscopy imagery","Yes"],
