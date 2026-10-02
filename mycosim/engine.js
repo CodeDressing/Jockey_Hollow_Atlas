@@ -73,6 +73,205 @@ const PUFF_PBR=Object.freeze({
 });
 
 
+
+const puffStageDeformation=(stageId,yNorm,theta,phase,params={})=>{
+  const waterLoss=params.water_loss??0;
+  const collapse=params.collapse??0;
+  const rupture=params.wall_rupture??params.rupture_extent??0;
+  if(stageId==="young"){
+    return {
+      radial:1+.010*Math.sin(theta*3.1+phase)*(1-yNorm*yNorm)+.006*Math.cos(theta*5.2-phase*.7),
+      yOffset:.006*Math.sin(theta*2.0+phase)*(1-Math.abs(yNorm)),
+      xSlump:0,zSlump:0
+    };
+  }
+  if(stageId==="mature"){
+    const shoulder=Math.exp(-Math.pow((yNorm-.10)/.55,2));
+    const apex=Math.max(0,(yNorm-.58)/.42);
+    return {
+      radial:1+.022*Math.sin(theta*2.7+phase)*(1-.45*Math.abs(yNorm))+.018*shoulder-.012*apex,
+      yOffset:-.018*apex*apex+.010*Math.sin(theta*1.7+phase)*(1-Math.abs(yNorm)),
+      xSlump:.010*Math.sin(phase),zSlump:.008*Math.cos(phase*.8)
+    };
+  }
+  const upper=THREE.MathUtils.smoothstep(yNorm,.05,.92);
+  const flank=1-Math.abs(yNorm);
+  const furrow=(.018+.030*waterLoss)*Math.sin(theta*5.0+phase)*flank;
+  return {
+    radial:1-.055*waterLoss-.045*collapse*upper+furrow+.025*Math.sin(theta*2.2-phase)*flank,
+    yOffset:-upper*(.10*collapse+.055*waterLoss)-.030*rupture*Math.sin(theta*1.3+phase)*upper,
+    xSlump:(.025+.055*collapse)*Math.sin(phase)*upper,
+    zSlump:(.020+.045*collapse)*Math.cos(phase*.77)*upper
+  };
+};
+
+const puffShapeFactors=(shape,yNorm,theta)=>{
+  let radial=1,vertical=1;
+  if(shape==="subglobose"){radial=1.035;vertical=.94;}
+  else if(shape==="pyriform"){radial=.74+.34*((yNorm+1)/2);vertical=1.08;}
+  else if(shape==="turbiniform"){radial=.63+.45*((yNorm+1)/2);vertical=1.02;}
+  else if(shape==="irregular"){radial=.98+.055*Math.sin(theta*2.4+yNorm*4.8);vertical=.90;}
+  return {radial,vertical};
+};
+
+const createBiologicalPuffballGeometry=({
+  radius=1.15,shape="globose",stageId="mature",subtypeId="true_puffball",seed=1,
+  segments=64,rings=40,opening=0,params={},radialOffset=0
+}={})=>{
+  const verts=[],indices=[],uvs=[];
+  const phase=((seed%10007)/10007)*Math.PI*2;
+  const phiStart=THREE.MathUtils.clamp(opening,0,.92)*.68;
+  const rr=Math.max(.08,radius-radialOffset);
+  for(let iy=0;iy<=rings;iy++){
+    const v=iy/rings;
+    const phi=phiStart+(Math.PI-phiStart)*v;
+    const yNorm=Math.cos(phi);
+    const sinPhi=Math.sin(phi);
+    for(let ix=0;ix<=segments;ix++){
+      const u=ix/segments;
+      const theta=u*Math.PI*2;
+      const shapeFactors=puffShapeFactors(shape,yNorm,theta);
+      const dev=puffStageDeformation(stageId,yNorm,theta,phase,params);
+      const subtypeRadial=subtypeId==="giant_puffball_type"?1.025:subtypeId==="earthball_type"?1.01:1;
+      const radial=rr*shapeFactors.radial*subtypeRadial*dev.radial;
+      let x=Math.cos(theta)*sinPhi*radial+dev.xSlump;
+      let z=Math.sin(theta)*sinPhi*radial+dev.zSlump;
+      let y=yNorm*rr*shapeFactors.vertical+dev.yOffset*rr;
+
+      // Low-amplitude, identity-stable organic asymmetry without changing the body plan.
+      const field=(Math.sin(theta*3.0+phi*2.2+phase)+.55*Math.sin(theta*7.0-phi*4.1+phase*.63));
+      const amp=stageId==="young"?.006:stageId==="mature"?.012:.017;
+      const mod=1+field*amp*(.30+.70*sinPhi);
+      x*=mod;z*=mod;
+      if(stageId==="old"&&yNorm>.58){
+        const crown=(yNorm-.58)/.42;
+        y-=rr*crown*crown*(.020+.080*(params.collapse??0));
+      }
+
+      verts.push(x,y,z);
+      uvs.push(u,1-v);
+    }
+  }
+  const row=segments+1;
+  for(let iy=0;iy<rings;iy++){
+    for(let ix=0;ix<segments;ix++){
+      const a=iy*row+ix,b=a+1,c=(iy+1)*row+ix,d=c+1;
+      indices.push(a,c,b,b,c,d);
+    }
+  }
+  const g=new THREE.BufferGeometry();
+  g.setAttribute("position",new THREE.Float32BufferAttribute(verts,3));
+  g.setAttribute("uv",new THREE.Float32BufferAttribute(uvs,2));
+  g.setIndex(indices);
+  g.computeVertexNormals();
+  g.computeBoundingSphere();
+  g.userData={
+    model:"continuous-biological-puffball-v2",stageId,shape,subtypeId,opening,
+    deformation:stageId==="young"?"taut juvenile growth":stageId==="mature"?"expanded mature asymmetry":"senescent water-loss collapse"
+  };
+  return g;
+};
+
+const createGlebaVolumeGeometry=({
+  radius=.82,stageId="mature",seed=1,segments=48,rings=30,
+  maturity=.7,waterLoss=.2,depletion=0,shape="globose"
+}={})=>{
+  const verts=[],indices=[],uvs=[];
+  const phase=((seed%7919)/7919)*Math.PI*2;
+  const rough=stageId==="young"?.010:stageId==="mature"?.032:.060;
+  for(let iy=0;iy<=rings;iy++){
+    const v=iy/rings,phi=Math.PI*v,yNorm=Math.cos(phi),sinPhi=Math.sin(phi);
+    for(let ix=0;ix<=segments;ix++){
+      const u=ix/segments,theta=u*Math.PI*2;
+      const sf=puffShapeFactors(shape,yNorm,theta);
+      const cellular=Math.sin(theta*5.7+phi*4.1+phase)+.55*Math.sin(theta*11.1-phi*7.4+phase*.4);
+      const porous=1+cellular*rough*(.45+.55*sinPhi)-waterLoss*.055-depletion*.035;
+      const radial=radius*(.93+.07*sf.radial)*porous;
+      const x=Math.cos(theta)*sinPhi*radial;
+      const z=Math.sin(theta)*sinPhi*radial;
+      const y=yNorm*radius*(.94+.06*sf.vertical)*(1-waterLoss*.045);
+      verts.push(x,y,z);uvs.push(u,1-v);
+    }
+  }
+  const row=segments+1;
+  for(let iy=0;iy<rings;iy++){
+    for(let ix=0;ix<segments;ix++){
+      const a=iy*row+ix,b=a+1,c=(iy+1)*row+ix,d=c+1;
+      indices.push(a,c,b,b,c,d);
+    }
+  }
+  const g=new THREE.BufferGeometry();
+  g.setAttribute("position",new THREE.Float32BufferAttribute(verts,3));
+  g.setAttribute("uv",new THREE.Float32BufferAttribute(uvs,2));
+  g.setIndex(indices);g.computeVertexNormals();g.computeBoundingSphere();
+  g.userData={model:"porous-gleba-volume-v2",stageId,maturity,waterLoss,depletion};
+  return g;
+};
+
+const sampleEllipsoidVolume=(count,seed,rx,ry,rz)=>{
+  const rng=seededRng(seed),pts=[];
+  let attempts=0;
+  while(pts.length<count&&attempts++<count*20){
+    const x=(rng()*2-1)*rx,y=(rng()*2-1)*ry,z=(rng()*2-1)*rz;
+    const q=(x*x)/(rx*rx)+(y*y)/(ry*ry)+(z*z)/(rz*rz);
+    if(q<=1)pts.push(new THREE.Vector3(x,y,z));
+  }
+  return {pts,rng};
+};
+
+const makeGlebaMicrostructure=({
+  radius=.8,stageId="mature",realism="atlas",seed=1,maturity=.7,waterLoss=.2,depletion=0
+}={})=>{
+  const group=new THREE.Group();
+  group.name="gleba_microstructure";
+  group.userData={renderingModel:"porous-fibrous-volumetric-v2"};
+
+  const powderBase={simplified:260,atlas:620,high:1200}[realism]||620;
+  const powderFactor=stageId==="young"?.18:stageId==="mature"?.72:1;
+  const powderCount=Math.max(0,Math.round(powderBase*powderFactor*(1-depletion*.42)));
+  const powderSample=sampleEllipsoidVolume(powderCount,seed+307,radius*.84,radius*.77,radius*.84);
+  const powderGeo=new THREE.IcosahedronGeometry(stageId==="young"?.011:stageId==="mature"?.015:.018,0);
+  const powderMat=(stageId==="young"?PUFF_PBR.immatureGleba:stageId==="mature"?PUFF_PBR.matureGleba:PUFF_PBR.driedSporeMass).clone();
+  const powder=new THREE.InstancedMesh(powderGeo,powderMat,powderSample.pts.length);
+  powder.userData={id:"spore_mass",label:"Porous glebal / spore microstructure",category:"internal",selectable:true,knowledgeId:stageId==="young"?"immature_gleba":"spore_mass"};
+  const dummy=new THREE.Object3D();
+  powderSample.pts.forEach((p,i)=>{
+    dummy.position.copy(p);
+    const g=(.55+powderSample.rng()*.95)*(stageId==="old"?.85:1);
+    dummy.scale.set(g,g*(.65+powderSample.rng()*.55),g*(.72+powderSample.rng()*.45));
+    dummy.rotation.set(powderSample.rng()*Math.PI,powderSample.rng()*Math.PI,powderSample.rng()*Math.PI);
+    dummy.updateMatrix();powder.setMatrixAt(i,dummy.matrix);
+  });
+  powder.instanceMatrix.needsUpdate=true;powder.castShadow=false;powder.receiveShadow=true;
+  group.add(powder);
+
+  const fiberBase={simplified:42,atlas:96,high:170}[realism]||96;
+  const fiberFactor=stageId==="young"?1:stageId==="mature"?.62:.18;
+  const fiberCount=Math.round(fiberBase*fiberFactor*(1-waterLoss*.35));
+  if(fiberCount>0){
+    const fiberGeo=new THREE.CylinderGeometry(.006,.009,1,5);
+    const fiberMat=(stageId==="young"?PUFF_PBR.immatureGleba:PUFF_PBR.maturingGleba).clone();
+    fiberMat.transparent=true;fiberMat.opacity=stageId==="young"?.48:.30;
+    const fibers=new THREE.InstancedMesh(fiberGeo,fiberMat,fiberCount);
+    fibers.userData={id:"gleba",label:"Fibrous glebal matrix",category:"internal",selectable:true,knowledgeId:"gleba"};
+    const rng=seededRng(seed+811);
+    const axis=new THREE.Vector3(0,1,0);
+    const d=new THREE.Object3D();
+    for(let i=0;i<fiberCount;i++){
+      const a=sampleEllipsoidVolume(1,Math.floor(rng()*4294967295),radius*.66,radius*.60,radius*.66).pts[0]||new THREE.Vector3();
+      const dir=new THREE.Vector3(rng()-.5,rng()-.5,rng()-.5).normalize();
+      const len=.06+rng()*.16;
+      d.position.copy(a);
+      d.quaternion.setFromUnitVectors(axis,dir);
+      d.scale.set(1,len,1);
+      d.updateMatrix();fibers.setMatrixAt(i,d.matrix);
+    }
+    fibers.instanceMatrix.needsUpdate=true;fibers.castShadow=false;fibers.receiveShadow=true;
+    group.add(fibers);
+  }
+  return group;
+};
+
 const PUFF_ORNAMENT_PROFILE=Object.freeze({
   echinate:Object.freeze({
     counts:Object.freeze({simplified:220,atlas:720,high:1450}),
