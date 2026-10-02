@@ -398,3 +398,19 @@ window.SPECIMEN_ENRICHMENTS["AN2-F41"] = {
     ["Identified","No — taxonomic identification unresolved"]
   ]
 };
+
+window.SPECIMEN_ENRICHMENTS["AN2-F1"] = {
+  sourceLine: "AN2-F1 retains five accession-linked wild/field-context photographs and verified laboratory specimen views. Field images document the specimen on the forest floor. Laboratory macro photographs in this atlas were made with a Canon PowerShot SX20 IS. Microscopy imagery, when present for an accession, is acquired with a Motic BA310 microscope and Moticam 2300 camera using licensed Motic imaging/measurement software.",
+  summary: {
+    "Base / Substrate": "Documented in the accession-linked field photographs: specimen occurring on the forest ground layer in soil substrate among decomposing leaf litter / a decomposing leaf bed, with surrounding woodland organic debris. This field substrate is directly documented photographically and is not inferred from the laboratory view.",
+    "Field context": "Confirmed forest-floor occurrence with soil substrate and decomposing leaf litter visible around the specimen.",
+    "Laboratory imaging": "Laboratory macro photographs: Canon PowerShot SX20 IS.",
+    "Microscopy instrumentation": "Atlas microscopy standard: Motic BA310 microscope with Moticam 2300 microscope camera and licensed Motic imaging/measurement software."
+  },
+  completeness: [
+    ["Wild / field imagery","Yes — 5 accession-linked views"],
+    ["Field substrate documented","Yes — soil on forest floor among decomposing leaf litter"],
+    ["Laboratory camera provenance","Yes — Canon PowerShot SX20 IS"],
+    ["Microscopy instrumentation documented","Yes — Motic BA310 + Moticam 2300"]
+  ]
+};
