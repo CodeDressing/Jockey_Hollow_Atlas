@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import {OrbitControls} from "three/addons/controls/OrbitControls.js";
 import {PROFILE_BY_ID} from "./profiles.js";
-import {DEFAULT_VARIANTS,validateVariantSelection} from "./variants.js";
+import {DEFAULT_VARIANTS,validateVariantSelection,puffballSubtype,applyPuffballSubtypeDefaults,enforcePuffballSubtype} from "./variants.js";
 import {DEFAULT_DEVELOPMENTAL_STAGE,composeMorphologyState} from "./development.js";
 
 const tissue=(color,roughness=.82,opts={})=>new THREE.MeshPhysicalMaterial({
@@ -412,7 +412,10 @@ export class MycoSimEngine{
         mature:{peridial_condition:"flaking",ostiole_state:"developing",rupture_pattern:"apical_ostiole",rupture_margin:"slightly_torn",collapse_state:"slight",gleba_state:"maturing"},
         old:{peridial_condition:"collapsed",ostiole_state:"open",rupture_pattern:"irregular_rupture",rupture_margin:"ragged",collapse_state:"weathered",gleba_state:"old"}
       }[this.developmentalStageId];
-      if(stageDefaults)this.variants={...this.variants,...stageDefaults};
+      if(stageDefaults){
+        const subtypeId=this.variants.puff_subtype||"true_puffball";
+        this.variants={...applyPuffballSubtypeDefaults(this.variants,subtypeId),...stageDefaults};
+      }
     }
     this.cleanupModel();
     this.morphologyState=composeMorphologyState(id,{stageId:this.developmentalStageId,variants:this.variants});
@@ -465,7 +468,11 @@ export class MycoSimEngine{
   setMode(mode){this.mode=mode;this.applyMode();}
 
   setVariant(group,value){
-    const next={...this.variants,[group]:value};
+    let next={...this.variants,[group]:value};
+    if(this.currentProfile?.id==="puffball" || group==="puff_subtype"){
+      if(group==="puff_subtype") next=applyPuffballSubtypeDefaults(next,value);
+      next=enforcePuffballSubtype(next);
+    }
     const v=validateVariantSelection(next);
     if(!v.valid) throw new Error(v.errors.join("; "));
     this.variants=next;
@@ -487,7 +494,7 @@ export class MycoSimEngine{
         mature:{peridial_condition:"flaking",ostiole_state:"developing",rupture_pattern:"apical_ostiole",rupture_margin:"slightly_torn",collapse_state:"slight",gleba_state:"maturing"},
         old:{peridial_condition:"collapsed",ostiole_state:"open",rupture_pattern:"irregular_rupture",rupture_margin:"ragged",collapse_state:"weathered",gleba_state:"old"}
       }[stageId];
-      if(stageDefaults)this.variants={...this.variants,...stageDefaults};
+      if(stageDefaults)this.variants=enforcePuffballSubtype({...this.variants,...stageDefaults});
     }
     const next=composeMorphologyState(profileId,{stageId,variants:this.variants});
     this.developmentalStageId=stageId;
@@ -745,11 +752,11 @@ export class MycoSimEngine{
       const stagePore=p.apical_pore_opening??0;
       const collapse=p.collapse??0;
       const release=p.spore_release??0;
-      const peridialThickness=p.peridial_thickness??p.wall_thickness??1;
-      const exoperidialRetention=p.exoperidial_retention??p.ornament_retention??1;
-      const ostioleFormation=p.ostiole_formation??stagePore;
+      const peridialThickness=(p.peridial_thickness??p.wall_thickness??1)*(subtypeArch.wallFactor||1)*(subtypeDev.wallPersistence||1);
+      const exoperidialRetention=THREE.MathUtils.clamp((p.exoperidial_retention??p.ornament_retention??1)*(subtypeDev.ornamentPersistence||1),0,1);
+      const ostioleFormation=THREE.MathUtils.clamp((p.ostiole_formation??stagePore)*(subtypeArch.ostioleBias||1),0,1);
       const waterLoss=p.water_loss??0;
-      const wallRupture=p.wall_rupture??p.rupture_extent??0;
+      const wallRupture=THREE.MathUtils.clamp((p.wall_rupture??p.rupture_extent??0)*(subtypeDev.ruptureBias||1),0,1);
       const discoloration=p.discoloration??0;
       const sporeDepletion=p.spore_depletion??release;
       const retention=p.ornament_retention??1;
@@ -762,8 +769,13 @@ export class MycoSimEngine{
       const ruptureMarginState=this.variants.rupture_margin||"clean";
       const collapseState=this.variants.collapse_state||"none";
       const surfaceState=this.variants.puff_surface||"echinate";
+      const subtypeId=this.variants.puff_subtype||"true_puffball";
+      const subtype=puffballSubtype(subtypeId);
+      const subtypeArch=subtype.architecture||{};
+      const subtypeDev=subtype.development||{};
       const integratedAbrasion=abrasionState(surfaceState,sid,peridial);
 
+      const subtypeCollapse=THREE.MathUtils.clamp(collapse*(subtypeDev.collapseBias||1),0,1);
       const shapeScale={
         globose:[1,1,1],
         subglobose:[1.06,.91,1.00],
@@ -773,12 +785,12 @@ export class MycoSimEngine{
       }[shape]||[1,1,1];
 
       const wallRadial=THREE.MathUtils.lerp(.96,1.01,peridialThickness);
-      setScale("peridium",shapeScale[0]*wallRadial*(1-collapse*.20),shapeScale[1]*taut*(1-collapse*.18),shapeScale[2]*wallRadial*(1-collapse*.20));
-      setScale("endoperidium",shapeScale[0]*(.97+peridialThickness*.03)*(1-collapse*.18),shapeScale[1]*taut*(1-collapse*.16),shapeScale[2]*(.97+peridialThickness*.03)*(1-collapse*.18));
+      setScale("peridium",shapeScale[0]*wallRadial*(1-subtypeCollapse*.20),shapeScale[1]*taut*(1-subtypeCollapse*.18),shapeScale[2]*wallRadial*(1-subtypeCollapse*.20));
+      setScale("endoperidium",shapeScale[0]*(.97+peridialThickness*.03)*(1-subtypeCollapse*.18),shapeScale[1]*taut*(1-subtypeCollapse*.16),shapeScale[2]*(.97+peridialThickness*.03)*(1-subtypeCollapse*.18));
       setScale("gleba",shapeScale[0]*(.78+glebaMaturity*.22),shapeScale[1]*(.82+glebaMaturity*.18),shapeScale[2]*(.78+glebaMaturity*.22));
 
       const baseScale={none:[.08,.08,.08],short:[1,.65,1],distinct:[1.08,1.18,1.08],rooting:[.72,1.55,.72]}[base]||[1,.65,1];
-      setScale("sterile_base",baseScale[0]*(1-collapse*.08),baseScale[1]*(1-collapse*.20),baseScale[2]*(1-collapse*.08));
+      setScale("sterile_base",baseScale[0]*(1-subtypeCollapse*.08),baseScale[1]*(1-subtypeCollapse*.20),baseScale[2]*(1-subtypeCollapse*.08));
       const baseObj=this.objects.get("sterile_base");
       if(baseObj)baseObj.visible=base!=="none";
 
@@ -823,6 +835,21 @@ export class MycoSimEngine{
       if(apical)apical.visible=true;
       const basal=this.objects.get("basal_attachment");
       if(basal)basal.visible=base!=="none";
+      const earthstar=this.objects.get("earthstar_rays");
+      if(earthstar){
+        earthstar.visible=subtypeId==="earthstar_type";
+        const raySpread=sid==="young"?.18:sid==="mature"?.72:1.00;
+        earthstar.children.forEach((ray,i)=>{
+          ray.scale.y*=raySpread;
+          ray.rotation.x=(Math.PI/2)*(1-raySpread*.72)+((i%3)-1)*.035;
+        });
+      }
+      const gasteroidStalk=this.objects.get("gasteroid_stalk");
+      if(gasteroidStalk){
+        gasteroidStalk.visible=subtypeId==="stalked_puffball_type";
+        gasteroidStalk.scale.y*=sid==="young"?.62:sid==="mature"?1:.96;
+        if(sid==="old")gasteroidStalk.rotation.z+=.025;
+      }
       const oldGleba=this.objects.get("old_gleba_clumps");
       const oldDebris=this.objects.get("old_basal_debris");
       const layeredShell=this.objects.get("senescent_shell");
@@ -941,7 +968,7 @@ export class MycoSimEngine{
       const rim=p.rim_thickness??1;
       const irregular=p.rim_irregularity??0;
       const collapse=p.collapse??0;
-      setScale("apothecium",openness,depth*(1-collapse*.18),openness);
+      setScale("apothecium",openness,depth*(1-subtypeCollapse*.18),openness);
       setScale("hymenophore",openness,1,openness);
       setScale("excipulum",openness,rim,openness);
       if(sid==="old"){
@@ -1061,6 +1088,8 @@ export class MycoSimEngine{
       startupMaximumMs:5000,
       puffOrnament:this.objects.get("exoperidium")?.userData?.ornamentStats||null,
       developmentalIdentity:this.morphologyState?.developmental?.identityKey||null,
+      gasteroidSubtype:this.currentProfile?.id==="puffball"?(this.variants.puff_subtype||"true_puffball"):null,
+      gasteroidSubtypeDefinition:this.currentProfile?.id==="puffball"?puffballSubtype(this.variants.puff_subtype||"true_puffball"):null,
       developmentalParameters:this.currentProfile?.id==="puffball"?this.morphologyState?.stage?.parameters||null:null,
       fps:this.lastFps,
       frameIntersects:!box.isEmpty()&&frustum.intersectsBox(box),
@@ -1945,6 +1974,10 @@ export class MycoSimEngine{
 
   build_puffball(){
     const realism=this.variants.texture_realism||"atlas";
+    const subtypeId=this.variants.puff_subtype||"true_puffball";
+    const subtype=puffballSubtype(subtypeId);
+    const subtypeArch=subtype.architecture||{};
+    const subtypeDev=subtype.development||{};
     const surface=this.variants.puff_surface||"echinate";
     const shape=this.variants.puff_shape||"globose";
     const baseDetail={simplified:42,atlas:76,high:124}[realism]||76;
@@ -1953,21 +1986,22 @@ export class MycoSimEngine{
       : surface==="granular"
         ? Math.round(baseDetail*1.45)
         : baseDetail;
-    const bodyY=1.05;
+    const bodyY=subtypeId==="stalked_puffball_type"?1.55:subtypeId==="earthstar_type"?1.12:1.05;
     const stageId=this.morphologyState?.stage?.id||this.developmentalStageId||"mature";
     const irregularityScale=surface==="glabrous"?(stageId==="young"?.008:stageId==="mature"?.012:.018):(stageId==="young"?.032:stageId==="mature"?.022:.014);
 
     const innerMat=(stageId==="young"?PUFF_PBR.youngPeridium:PUFF_PBR.wornExoperidium).clone();
     const surfaceBump={glabrous:.010,granular:.034,verrucose:.030,echinate:.022,furfuraceous:.027}[surface]??.018;
     innerMat.bumpScale=stageId==="old"?surfaceBump*.55:stageId==="mature"?surfaceBump*.78:surfaceBump;
-    const bodyGeo=new THREE.SphereGeometry(1.15,56,36);
+    const bodyRadius=subtypeId==="giant_puffball_type"?1.34:subtypeId==="earthball_type"?1.18:subtypeId==="earthstar_type"?.88:subtypeId==="stalked_puffball_type"?.72:1.15;
+    const bodyGeo=new THREE.SphereGeometry(bodyRadius,56,36);
     if(irregularityScale>0){
       const pos=bodyGeo.attributes.position;
       const v=new THREE.Vector3();
       for(let i=0;i<pos.count;i++){
         v.fromBufferAttribute(pos,i);
         const wave=Math.sin(v.x*5.2+v.y*3.7+v.z*4.4)+Math.sin(v.x*9.1-v.z*6.3)*.45;
-        const yn=THREE.MathUtils.clamp(v.y/1.15,-1,1);
+        const yn=THREE.MathUtils.clamp(v.y/bodyRadius,-1,1);
         let radial=1;
         let vertical=1;
         if(shape==="subglobose"){radial=1.035;vertical=.94;}
@@ -1989,34 +2023,64 @@ export class MycoSimEngine{
       pos.needsUpdate=true;bodyGeo.computeVertexNormals();
     }
     const per=this.register(new THREE.Mesh(bodyGeo,innerMat),"peridium","Peridium","macro");
-    per.scale.y=.95;per.position.y=bodyY;
+    per.scale.set(1,subtypeId==="earthball_type"?.92:subtypeId==="giant_puffball_type"?.90:.95,1);per.position.y=bodyY;
 
     const endoMat=PUFF_PBR.endoperidium.clone();
-    const endo=this.register(new THREE.Mesh(new THREE.SphereGeometry(1.08,48,30),endoMat),"endoperidium","Endoperidium","internal","peridium");
+    const endoRadius=bodyRadius*(subtypeId==="earthball_type"?.86:.94);
+    const endo=this.register(new THREE.Mesh(new THREE.SphereGeometry(endoRadius,48,30),endoMat),"endoperidium","Endoperidium","internal","peridium");
     endo.scale.y=.95;endo.position.y=bodyY;
 
     const gleba=this.register(new THREE.Mesh(
-      new THREE.SphereGeometry(.86,42,28),
+      new THREE.SphereGeometry(bodyRadius*.75*(subtypeArch.glebaFactor||1),42,28),
       (stageId==="young"?PUFF_PBR.immatureGleba:stageId==="mature"?PUFF_PBR.maturingGleba:PUFF_PBR.matureGleba).clone()
     ),"gleba","Gleba","internal");
     gleba.position.y=bodyY;
 
-    const neck=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.42,.58,.75,34),(stageId==="young"?PUFF_PBR.youngPeridium:PUFF_PBR.wornExoperidium).clone()),"sterile_base","Sterile base / subgleba","macro");
-    neck.position.y=-.05;
+    const subglebaFactor=subtypeArch.subglebaFactor??.7;
+    const neckHeight=.75*subglebaFactor;
+    const neck=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.42*Math.max(.35,subglebaFactor),.58*Math.max(.35,subglebaFactor),Math.max(.08,neckHeight),34),(stageId==="young"?PUFF_PBR.youngPeridium:PUFF_PBR.wornExoperidium).clone()),"sterile_base","Sterile base / subgleba","macro");
+    neck.position.y=bodyY-bodyRadius*.98-neckHeight*.45;
 
     const pore=this.register(new THREE.Mesh(new THREE.TorusGeometry(.11,.035,10,32),MATERIALS.wood.clone()),"apical_pore","Ostiole / apical pore","macro","peridium");
-    pore.rotation.x=Math.PI/2;pore.position.y=2.12;
+    pore.rotation.x=Math.PI/2;pore.position.y=bodyY+bodyRadius*.93;
 
     const apicalMat=PUFF_PBR.youngPeridium.clone();apicalMat.transparent=true;apicalMat.opacity=.08;
     const apical=this.register(new THREE.Mesh(new THREE.SphereGeometry(.34,18,12),apicalMat),"apical_region","Apical region","macro","peridium");
-    apical.position.y=2.00;apical.scale.y=.45;
+    apical.position.y=bodyY+bodyRadius*.82;apical.scale.set(bodyRadius/1.15,.45,bodyRadius/1.15);
 
     const basalMat=PUFF_PBR.soil.clone();basalMat.transparent=true;basalMat.opacity=.14;
     const basal=this.register(new THREE.Mesh(new THREE.SphereGeometry(.34,16,10),basalMat),"basal_attachment","Basal attachment","macro","sterile_base");
-    basal.position.y=-.48;basal.scale.set(.9,.38,.9);
+    basal.position.y=neck.position.y-neckHeight*.55;basal.scale.set(.9,.38,.9);
+
+    const earthstarRays=new THREE.Group();
+    earthstarRays.userData={id:"earthstar_rays",label:"Earthstar rays",category:"macro",selectable:true,knowledgeId:"earthstar_rays"};
+    if(subtypeArch.rayCount>0){
+      const rayMat=PUFF_PBR.wornExoperidium.clone();
+      const rayCount=subtypeArch.rayCount;
+      for(let i=0;i<rayCount;i++){
+        const a=i/rayCount*Math.PI*2;
+        const ray=new THREE.Mesh(new THREE.ConeGeometry(.28,.95,5,1,false),rayMat.clone());
+        ray.rotation.z=Math.PI/2;
+        ray.rotation.y=-a;
+        ray.position.set(Math.cos(a)*.72,bodyY-bodyRadius*.88,Math.sin(a)*.72);
+        ray.scale.set(1,.84+((i*7)%5)*.06,1);
+        ray.userData=earthstarRays.userData;
+        earthstarRays.add(ray);this.pickables.push(ray);
+      }
+    }
+    this.root.add(earthstarRays);this.objects.set("earthstar_rays",earthstarRays);
+
+    const stalkHeight=subtypeArch.stipeFactor||0;
+    const stalk=this.register(new THREE.Mesh(
+      new THREE.CylinderGeometry(.16,.20,Math.max(.08,stalkHeight),18),
+      PUFF_PBR.wornExoperidium.clone()
+    ),"gasteroid_stalk","Gasteroid stalk","macro","sterile_base");
+    stalk.position.y=bodyY-bodyRadius-.04-stalkHeight*.5;
+    stalk.visible=stalkHeight>0;
+
 
     const sporeMassMat=PUFF_PBR.driedSporeMass.clone();sporeMassMat.transparent=true;sporeMassMat.opacity=.50;
-    const sporeMass=this.register(new THREE.Mesh(new THREE.SphereGeometry(.72,34,22),sporeMassMat),"spore_mass","Spore mass","internal","gleba");
+    const sporeMass=this.register(new THREE.Mesh(new THREE.SphereGeometry(bodyRadius*.62*(subtypeArch.glebaFactor||1),34,22),sporeMassMat),"spore_mass","Spore mass","internal","gleba");
     sporeMass.position.y=bodyY;
 
     // Layered senescent peridium: continuous outer/inner shell with real wall thickness.
@@ -2035,8 +2099,11 @@ export class MycoSimEngine{
     const shellInnerMat=PUFF_PBR.endoperidium.clone();
     const thetaStart=.10+opening*.58;
     const thetaLength=Math.max(.55,Math.PI-thetaStart-.04);
-    const outerGeo=new THREE.SphereGeometry(1.17,64,34,0,Math.PI*2,thetaStart,thetaLength);
-    const innerGeo=new THREE.SphereGeometry(1.085,64,34,0,Math.PI*2,thetaStart+.018,Math.max(.5,thetaLength-.035));
+    const shellOuterRadius=bodyRadius*1.015;
+    const wallFactor=subtypeArch.wallFactor||1;
+    const shellInnerRadius=Math.max(bodyRadius*.72,shellOuterRadius-(.085*wallFactor));
+    const outerGeo=new THREE.SphereGeometry(shellOuterRadius,64,34,0,Math.PI*2,thetaStart,thetaLength);
+    const innerGeo=new THREE.SphereGeometry(shellInnerRadius,64,34,0,Math.PI*2,thetaStart+.018,Math.max(.5,thetaLength-.035));
     const outerShell=new THREE.Mesh(outerGeo,shellOuterMat);
     const innerShell=new THREE.Mesh(innerGeo,shellInnerMat);
     outerShell.position.y=bodyY;innerShell.position.y=bodyY;
@@ -2165,7 +2232,7 @@ export class MycoSimEngine{
       for(let i=0;i<ornamentPoints.length&&write<count;i++){
         if(filterFn&&!filterFn(i))continue;
         const n=ornamentPoints[i];
-        const p=puffSurfacePoint(shape,n.x,n.y,n.z,bodyY,1.16);
+        const p=puffSurfacePoint(shape,n.x,n.y,n.z,bodyY,bodyRadius*1.01);
         dummy.position.copy(p);
         const localNormalAxis=surface==="furfuraceous"?new THREE.Vector3(0,0,1):new THREE.Vector3(0,1,0);
         dummy.quaternion.setFromUnitVectors(localNormalAxis,n.clone().normalize());
@@ -2373,7 +2440,7 @@ export class MycoSimEngine{
       const dummy=new THREE.Object3D();
       for(let i=0;i<scarSample.points.length;i++){
         const n=scarSample.points[i];
-        const p=puffSurfacePoint(shape,n.x,n.y,n.z,bodyY,1.158);
+        const p=puffSurfacePoint(shape,n.x,n.y,n.z,bodyY,bodyRadius*1.008);
         dummy.position.copy(p).addScaledVector(n,.003);
         dummy.quaternion.setFromUnitVectors(new THREE.Vector3(0,0,1),n.clone().normalize());
         dummy.rotation.z=scarSample.rng()*Math.PI*2;
@@ -2394,7 +2461,7 @@ export class MycoSimEngine{
       abrasionSeverity:abrasion.severity,
       retentionMultiplier:abrasion.retentionMultiplier,
       peridialCondition:peridialForAbrasion,
-      drawMeshes:exo.children.length,stageId,surface,
+      drawMeshes:exo.children.length,stageId,surface,subtypeId,subtypeLabel:subtype.label,
       sampling:ornamentSampling,
       echinate:exo.userData.echinateStats||null,
       verrucose:exo.userData.verrucoseStats||null,
