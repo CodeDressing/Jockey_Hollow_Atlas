@@ -163,17 +163,18 @@ export const DEVELOPMENTAL_STAGE_LIBRARY = Object.freeze({
 
   puffball:{
     young:stage("young","Young",0.25,{
-      ...common.young,peridium_tautness:1.00,gleba_maturity:0.22,apical_pore_opening:0.00,
-      collapse:0.00
-    },"Firm enclosed puffball with immature gleba and no functional apical opening."),
+      ...common.young,peridium_tautness:1.00,gleba_maturity:0.08,apical_pore_opening:0.00,
+      collapse:0.00,ornament_retention:1.00,peridial_integrity:1.00
+    },"Firm enclosed puffball with white immature gleba, intact peridium, no functional ostiole, and taxon-dependent exoperidial ornamentation that may be smooth, granular, warted, spiny/echinate, or scurfy/furfuraceous.",
+    ["Young puffballs are not universally spiny; ornament type is taxon-dependent and should be recorded separately."]),
     mature:stage("mature","Mature",0.60,{
       ...common.mature,peridium_tautness:0.82,gleba_maturity:0.72,apical_pore_opening:0.38,
-      collapse:0.08
-    },"Reference stage with maturing gleba and developing spore-release architecture."),
+      collapse:0.08,ornament_retention:0.68,peridial_integrity:0.82
+    },"Reference stage with yellowing to olive-buff maturing gleba, developing ostiole, and partial abrasion or loss of exoperidial ornamentation."),
     old:stage("old","Old",0.92,{
       ...common.old,peridium_tautness:0.35,gleba_maturity:1.00,apical_pore_opening:1.00,
-      collapse:0.72,spore_release:0.90
-    },"Mature-to-senescent puffball with open ostiole, dry gleba, and progressive collapse.")
+      collapse:0.72,spore_release:0.90,ornament_retention:0.24,peridial_integrity:0.38
+    },"Senescent puffball with open or enlarged ostiole, dark dry gleba, substantial spore release, worn exoperidium, and progressive collapse.")
   },
 
   cup:{
