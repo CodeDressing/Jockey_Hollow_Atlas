@@ -2341,53 +2341,60 @@ export class MycoSimEngine{
     const surfaceBump={glabrous:.010,granular:.034,verrucose:.030,echinate:.022,furfuraceous:.027}[surface]??.018;
     innerMat.bumpScale=stageId==="old"?surfaceBump*.55:stageId==="mature"?surfaceBump*.78:surfaceBump;
     const bodyRadius=subtypeId==="giant_puffball_type"?1.34:subtypeId==="earthball_type"?1.18:subtypeId==="earthstar_type"?.88:subtypeId==="stalked_puffball_type"?.72:1.15;
-    const bodyGeo=new THREE.SphereGeometry(bodyRadius,56,36);
-    if(irregularityScale>0){
-      const pos=bodyGeo.attributes.position;
-      const v=new THREE.Vector3();
-      for(let i=0;i<pos.count;i++){
-        v.fromBufferAttribute(pos,i);
-        const wave=Math.sin(v.x*5.2+v.y*3.7+v.z*4.4)+Math.sin(v.x*9.1-v.z*6.3)*.45;
-        const yn=THREE.MathUtils.clamp(v.y/bodyRadius,-1,1);
-        let radial=1;
-        let vertical=1;
-        if(shape==="subglobose"){radial=1.035;vertical=.94;}
-        else if(shape==="pyriform"){
-          // Broad fertile upper body, gently narrowed basal transition.
-          radial=.78+.27*((yn+1)/2);
-          vertical=1.08;
-        }else if(shape==="turbiniform"){
-          radial=.67+.40*((yn+1)/2);
-          vertical=1.02;
-        }else if(shape==="irregular"){
-          radial=1+.055*Math.sin(v.y*4.7+v.x*3.1);
-          vertical=.90;
-        }
-        v.x*=radial;v.z*=radial;v.y*=vertical;
-        v.multiplyScalar(1+wave*irregularityScale);
-        pos.setXYZ(i,v.x,v.y,v.z);
-      }
-      pos.needsUpdate=true;bodyGeo.computeVertexNormals();
-    }
+    const identitySeed=this.morphologyState?.developmental?.identitySeed||137;
+    const devParams=this.morphologyState?.stage?.parameters||{};
+    const bodySegments=scaledSegments(64,this.realismTier,{min:42,max:88});
+    const bodyRings=scaledSegments(40,this.realismTier,{min:28,max:54});
+    const bodyGeo=createBiologicalPuffballGeometry({
+      radius:bodyRadius,shape,stageId,subtypeId,seed:identitySeed,
+      segments:bodySegments,rings:bodyRings,params:devParams
+    });
     const per=this.register(new THREE.Mesh(bodyGeo,innerMat),"peridium","Peridium","macro");
     per.scale.set(1,subtypeId==="earthball_type"?.92:subtypeId==="giant_puffball_type"?.90:.95,1);per.position.y=bodyY;
 
     const endoMat=PUFF_PBR.endoperidium.clone();
     const endoRadius=bodyRadius*(subtypeId==="earthball_type"?.86:.94);
-    const endo=this.register(new THREE.Mesh(new THREE.SphereGeometry(endoRadius,48,30),endoMat),"endoperidium","Endoperidium","internal","peridium");
-    endo.scale.y=.95;endo.position.y=bodyY;
+    const endoGeo=createBiologicalPuffballGeometry({
+      radius:endoRadius,shape,stageId,subtypeId,seed:identitySeed,
+      segments:scaledSegments(56,this.realismTier,{min:36,max:76}),
+      rings:scaledSegments(34,this.realismTier,{min:24,max:46}),
+      params:devParams
+    });
+    const endo=this.register(new THREE.Mesh(endoGeo,endoMat),"endoperidium","Endoperidium","internal","peridium");
+    endo.position.y=bodyY;
 
-    const gleba=this.register(new THREE.Mesh(
-      new THREE.SphereGeometry(bodyRadius*.75*(subtypeArch.glebaFactor||1),42,28),
-      (stageId==="young"?PUFF_PBR.immatureGleba:stageId==="mature"?PUFF_PBR.maturingGleba:PUFF_PBR.matureGleba).clone()
-    ),"gleba","Gleba","internal");
+    const glebaRadius=bodyRadius*.75*(subtypeArch.glebaFactor||1);
+    const glebaMat=(stageId==="young"?PUFF_PBR.immatureGleba:stageId==="mature"?PUFF_PBR.maturingGleba:PUFF_PBR.matureGleba).clone();
+    const glebaGeo=createGlebaVolumeGeometry({
+      radius:glebaRadius,stageId,seed:identitySeed+211,
+      segments:scaledSegments(48,this.realismTier,{min:30,max:68}),
+      rings:scaledSegments(30,this.realismTier,{min:20,max:42}),
+      maturity:devParams.gleba_maturity??.5,
+      waterLoss:devParams.water_loss??0,
+      depletion:devParams.spore_depletion??0,
+      shape
+    });
+    const gleba=this.register(new THREE.Mesh(glebaGeo,glebaMat),"gleba","Gleba","internal");
     gleba.position.y=bodyY;
+    gleba.userData.renderingModel="porous-fibrous-volumetric-v2";
     if(gleba.material?.color){
       if(subtypeId==="earthball_type")gleba.material.color.setHex(stageId==="young"?0xe7dfc8:stageId==="mature"?0x6a5a3d:0x34291f);
       else if(subtypeId==="giant_puffball_type")gleba.material.color.setHex(stageId==="young"?0xf2edde:stageId==="mature"?0xb1a475:0x68583d);
       else if(subtypeId==="earthstar_type")gleba.material.color.setHex(stageId==="young"?0xe8e1cb:stageId==="mature"?0x887555:0x4c3c2d);
       else if(subtypeId==="stalked_puffball_type")gleba.material.color.setHex(stageId==="young"?0xe9e2cf:stageId==="mature"?0x8b7756:0x49392b);
     }
+    const glebaMicro=makeGlebaMicrostructure({
+      radius:glebaRadius,stageId,realism,seed:identitySeed+433,
+      maturity:devParams.gleba_maturity??.5,
+      waterLoss:devParams.water_loss??0,
+      depletion:devParams.spore_depletion??0
+    });
+    glebaMicro.children.forEach(child=>{
+      child.userData.parentId="gleba";
+      this.pickables.push(child);
+    });
+    gleba.add(glebaMicro);
+
 
     const subglebaFactor=subtypeArch.subglebaFactor??.7;
     const neckHeight=.75*subglebaFactor;
@@ -2436,9 +2443,35 @@ export class MycoSimEngine{
     stalk.visible=stalkHeight>0;
 
 
-    const sporeMassMat=PUFF_PBR.driedSporeMass.clone();sporeMassMat.transparent=true;sporeMassMat.opacity=.50;
-    const sporeMass=this.register(new THREE.Mesh(new THREE.SphereGeometry(bodyRadius*.62*(subtypeArch.glebaFactor||1),34,22),sporeMassMat),"spore_mass","Spore mass","internal","gleba");
+    const sporeMass=new THREE.Group();
+    sporeMass.userData={id:"spore_mass",label:"Spore mass",category:"internal",parentId:"gleba",selectable:true,knowledgeId:"spore_mass",renderingModel:"instanced-powder-volume-v2"};
+    const sporeCount={simplified:180,atlas:460,high:900}[realism]||460;
+    const maturePowderFactor=stageId==="young"?.03:stageId==="mature"?.62:1;
+    const depletion=devParams.spore_depletion??0;
+    const powderSample=sampleEllipsoidVolume(
+      Math.round(sporeCount*maturePowderFactor*(1-depletion*.48)),
+      identitySeed+997,
+      glebaRadius*.68,glebaRadius*.62,glebaRadius*.68
+    );
+    if(powderSample.pts.length){
+      const pg=new THREE.IcosahedronGeometry(stageId==="old"?.017:.013,0);
+      const pm=PUFF_PBR.driedSporeMass.clone();
+      const inst=new THREE.InstancedMesh(pg,pm,powderSample.pts.length);
+      inst.userData=sporeMass.userData;
+      const d=new THREE.Object3D();
+      powderSample.pts.forEach((p,i)=>{
+        d.position.copy(p);
+        const g=.48+powderSample.rng()*.92;
+        d.scale.set(g,g*(.72+powderSample.rng()*.42),g*(.78+powderSample.rng()*.36));
+        d.rotation.set(powderSample.rng()*Math.PI,powderSample.rng()*Math.PI,powderSample.rng()*Math.PI);
+        d.updateMatrix();inst.setMatrixAt(i,d.matrix);
+      });
+      inst.instanceMatrix.needsUpdate=true;inst.castShadow=false;inst.receiveShadow=true;
+      sporeMass.add(inst);this.pickables.push(inst);
+    }
     sporeMass.position.y=bodyY;
+    this.root.add(sporeMass);this.objects.set("spore_mass",sporeMass);this._rememberTransform(sporeMass);
+
 
     // Layered senescent peridium: continuous outer/inner shell with real wall thickness.
     const rupturePattern=this.variants.rupture_pattern||"intact";
@@ -2454,13 +2487,21 @@ export class MycoSimEngine{
 
     const shellOuterMat=PUFF_PBR.wornExoperidium.clone();
     const shellInnerMat=PUFF_PBR.endoperidium.clone();
-    const thetaStart=.10+opening*.58;
-    const thetaLength=Math.max(.55,Math.PI-thetaStart-.04);
     const shellOuterRadius=bodyRadius*1.015;
     const wallFactor=subtypeArch.wallFactor||1;
     const shellInnerRadius=Math.max(bodyRadius*.72,shellOuterRadius-(.085*wallFactor));
-    const outerGeo=new THREE.SphereGeometry(shellOuterRadius,64,34,0,Math.PI*2,thetaStart,thetaLength);
-    const innerGeo=new THREE.SphereGeometry(shellInnerRadius,64,34,0,Math.PI*2,thetaStart+.018,Math.max(.5,thetaLength-.035));
+    const outerGeo=createBiologicalPuffballGeometry({
+      radius:shellOuterRadius,shape,stageId:"old",subtypeId,seed:identitySeed,
+      segments:scaledSegments(68,this.realismTier,{min:44,max:92}),
+      rings:scaledSegments(42,this.realismTier,{min:30,max:58}),
+      opening,params:devParams
+    });
+    const innerGeo=createBiologicalPuffballGeometry({
+      radius:shellInnerRadius,shape,stageId:"old",subtypeId,seed:identitySeed,
+      segments:scaledSegments(64,this.realismTier,{min:40,max:86}),
+      rings:scaledSegments(38,this.realismTier,{min:28,max:52}),
+      opening:Math.min(.94,opening+.035),params:devParams
+    });
     const outerShell=new THREE.Mesh(outerGeo,shellOuterMat);
     const innerShell=new THREE.Mesh(innerGeo,shellInnerMat);
     outerShell.position.y=bodyY;innerShell.position.y=bodyY;
@@ -2515,22 +2556,6 @@ export class MycoSimEngine{
     // Old-stage interior realism continues below. The obsolete disconnected
     // panel shell has been removed; the continuous layered senescent shell above
     // is now the sole old-stage peridial architecture.
-
-    const oldGleba=new THREE.Group();
-    oldGleba.userData={id:"old_gleba_clumps",label:"Powdery mature gleba",category:"internal",selectable:true,knowledgeId:"spore_mass"};
-    const glebaClumpMat=PUFF_PBR.driedSporeMass.clone();
-    for(let i=0;i<22;i++){
-      const a=i*2.399963229728653;
-      const r=.18+.48*(((i*19)%17)/16);
-      const y=.72+(((i*13)%11)/10)*.58;
-      const clump=new THREE.Mesh(new THREE.IcosahedronGeometry(.10+.055*((i%5)/4),1),glebaClumpMat.clone());
-      clump.position.set(Math.cos(a)*r,y,Math.sin(a)*r);
-      clump.scale.set(1+.25*Math.sin(i),.7+.4*((i%3)/2),1+.18*Math.cos(i*.8));
-      clump.rotation.set(i*.31,i*.21,i*.17);
-      clump.userData=oldGleba.userData;
-      oldGleba.add(clump);this.pickables.push(clump);
-    }
-    this.root.add(oldGleba);this.objects.set("old_gleba_clumps",oldGleba);
 
     const debris=new THREE.Group();
     debris.userData={id:"old_basal_debris",label:"Basal soil and organic debris",category:"ecology",selectable:true,knowledgeId:"basal_attachment"};
