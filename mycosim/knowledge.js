@@ -245,58 +245,82 @@ export const KNOWLEDGE_OBJECTS = Object.freeze({
     expert:"Partial- or universal-veil derivatives including annulus, cortina, volva and pileal remnants; developmental state must be considered.",
     relationships:["stipe","stipe_base","pileus"]
   },
+  puffball:{
+    id:"puffball",label:"Puffball",level:"organism",pronunciation:"PUHF-bawl",
+    beginner:"A gasteroid fungus in which spores mature internally and are released later, usually through an opening or by rupture of the outer wall.",
+    expert:"A gasteroid fungus in which spores mature internally and are released later, usually through an opening or by rupture of the outer wall.",
+    relationships:["gasteroid","peridium","gleba","apical_pore"]
+  },
+  gasteroid:{
+    id:"gasteroid",label:"Gasteroid",level:"architecture",pronunciation:"gas-TER-oyd",
+    beginner:"Describing fungi that produce spores internally rather than on an exposed hymenial surface like gills or pores.",
+    expert:"Describing fungi that produce spores internally rather than on an exposed hymenial surface like gills or pores.",
+    relationships:["puffball","peridium","gleba"]
+  },
   peridium:{
-    id:"peridium",label:"Peridium",level:"macro",pronunciation:"peridium",
-    beginner:"The outer wall of a puffball or other enclosed fruiting body.",
-    expert:"Outer protective tissue enclosing a gasteroid sporocarp; commonly differentiated into exoperidium and endoperidium.",
+    id:"peridium",label:"Peridium",level:"macro",pronunciation:"puh-RID-ee-um",
+    beginner:"The outer wall surrounding the spore-bearing interior of a puffball or related gasteroid fungus.",
+    expert:"The outer wall surrounding the spore-bearing interior of a puffball or related gasteroid fungus.",
     relationships:["exoperidium","endoperidium","gleba","apical_pore"]
   },
   exoperidium:{
-    id:"exoperidium",label:"Exoperidium",level:"macro",pronunciation:"exoperidium",
-    beginner:"The outermost layer of the puffball wall.",
-    expert:"Outermost peridial layer. It may be glabrous, granular, verrucose, echinate, furfuraceous, or otherwise ornamented, and may abrade or slough with age.",
+    id:"exoperidium",label:"Exoperidium",level:"macro",pronunciation:"ek-soh-puh-RID-ee-um",
+    beginner:"The outermost layer of the peridium. It may be smooth, spiny, warted, granular, or scurfy.",
+    expert:"The outermost layer of the peridium. It may be smooth, spiny, warted, granular, or scurfy.",
     relationships:["peridium","endoperidium"]
   },
   endoperidium:{
-    id:"endoperidium",label:"Endoperidium",level:"internal",pronunciation:"endoperidium",
-    beginner:"The inner wall beneath the puffball's outer surface.",
-    expert:"Inner peridial layer retained beneath the exoperidium; often becomes the principal persistent wall surrounding the mature gleba.",
+    id:"endoperidium",label:"Endoperidium",level:"internal",pronunciation:"en-doh-puh-RID-ee-um",
+    beginner:"The inner layer of the peridium, often remaining after the outer layer wears away.",
+    expert:"The inner layer of the peridium, often remaining after the outer layer wears away.",
     relationships:["peridium","exoperidium","gleba","apical_pore"]
   },
   echinate:{
-    id:"echinate",label:"Echinate",level:"macro",pronunciation:"echinate",
-    beginner:"Covered with obvious pointed spines or prickles.",
-    expert:"Bearing conspicuous pointed surface ornamentation, commonly expressed by exoperidial spines in some young puffballs.",
+    id:"echinate",label:"Echinate",level:"macro",pronunciation:"EK-in-ate",
+    beginner:"Bearing sharp spines or prickles.",
+    expert:"Bearing sharp spines or prickles.",
     relationships:["exoperidium"]
   },
   verrucose:{
-    id:"verrucose",label:"Verrucose",level:"macro",pronunciation:"verrucose",
-    beginner:"Covered with wart-like bumps.",
-    expert:"Bearing blunt raised wart-like ornamentation on the surface.",
+    id:"verrucose",label:"Verrucose",level:"macro",pronunciation:"veh-ROO-kose",
+    beginner:"Covered with wart-like projections.",
+    expert:"Covered with wart-like projections.",
+    relationships:["exoperidium"]
+  },
+  granular:{
+    id:"granular",label:"Granular",level:"macro",pronunciation:"GRAN-yuh-ler",
+    beginner:"Covered with small grain-like particles or a rough granular texture.",
+    expert:"Covered with small grain-like particles or a rough granular texture.",
     relationships:["exoperidium"]
   },
   furfuraceous:{
-    id:"furfuraceous",label:"Furfuraceous",level:"macro",pronunciation:"furfuraceous",
-    beginner:"Covered with a fine bran-like or scurfy coating.",
-    expert:"Bearing a fine scurfy, bran-like superficial covering that may abrade with age.",
+    id:"furfuraceous",label:"Furfuraceous",level:"macro",pronunciation:"fer-fer-AY-shus",
+    beginner:"Scaly or bran-like, with a fine scurfy coating.",
+    expert:"Scaly or bran-like, with a fine scurfy coating.",
     relationships:["exoperidium"]
   },
   glabrous:{
-    id:"glabrous",label:"Glabrous",level:"macro",pronunciation:"glabrous",
-    beginner:"Smooth and lacking obvious surface ornament.",
-    expert:"Lacking hairs, spines, warts, scales, or other conspicuous superficial ornamentation.",
+    id:"glabrous",label:"Glabrous",level:"macro",pronunciation:"GLAY-brus",
+    beginner:"Smooth; lacking hairs, spines, or ornamentation.",
+    expert:"Smooth; lacking hairs, spines, or ornamentation.",
     relationships:["exoperidium"]
   },
+  subglobose:{
+    id:"subglobose",label:"Subglobose",level:"macro",pronunciation:"sub-GLOH-bohs",
+    beginner:"Almost spherical, but not perfectly round.",
+    expert:"Almost spherical, but not perfectly round.",
+    relationships:["peridium"]
+  },
   globose:{
-    id:"globose",label:"Globose",level:"macro",pronunciation:"globose",
-    beginner:"Nearly spherical.",
-    expert:"Approximately spherical in overall three-dimensional form.",
+    id:"globose",label:"Globose",level:"macro",pronunciation:"GLOH-bohs",
+    beginner:"Nearly spherical in shape.",
+    expert:"Nearly spherical in shape.",
     relationships:["peridium"]
   },
   pyriform:{
-    id:"pyriform",label:"Pyriform",level:"macro",pronunciation:"pyriform",
-    beginner:"Pear-shaped.",
-    expert:"Broad above and narrowing toward the base, producing a pear-shaped fruit body.",
+    id:"pyriform",label:"Pyriform",level:"macro",pronunciation:"PEER-ih-form",
+    beginner:"Pear-shaped; broader above and narrower below.",
+    expert:"Pear-shaped; broader above and narrower below.",
     relationships:["peridium","sterile_base"]
   },
   turbiniform:{
@@ -306,15 +330,27 @@ export const KNOWLEDGE_OBJECTS = Object.freeze({
     relationships:["peridium","sterile_base"]
   },
   gleba:{
-    id:"gleba",label:"Gleba",level:"tissue",pronunciation:"gleba",
-    beginner:"The internal spore-producing tissue of a puffball.",
-    expert:"Internal fertile tissue of gasteroid fungi, maturing from cellular tissue into a spore mass with or without capillitium.",
+    id:"gleba",label:"Gleba",level:"tissue",pronunciation:"GLEE-buh",
+    beginner:"The internal spore-bearing tissue of gasteroid fungi. It is usually white when immature and darkens as spores mature.",
+    expert:"The internal spore-bearing tissue of gasteroid fungi. It is usually white when immature and darkens as spores mature.",
     relationships:["peridium","basidiospore"]
   },
+  apical:{
+    id:"apical",label:"Apical",level:"macro",pronunciation:"AY-pih-kul",
+    beginner:"Located at the top or apex.",
+    expert:"Located at the top or apex.",
+    relationships:["apical_pore","peridium"]
+  },
+  dehiscent:{
+    id:"dehiscent",label:"Dehiscent",level:"development",pronunciation:"dih-HISS-ent",
+    beginner:"Opening at maturity to release contents, such as spores.",
+    expert:"Opening at maturity to release contents, such as spores.",
+    relationships:["apical_pore","peridium"]
+  },
   apical_pore:{
-    id:"apical_pore",label:"Apical pore",level:"macro",pronunciation:"apical pore",
-    beginner:"An opening that releases mature spores.",
-    expert:"Ostiole-like opening through mature peridial tissue permitting passive or pressure-driven spore discharge.",
+    id:"apical_pore",label:"Ostiole",level:"macro",pronunciation:"OSS-tee-ohl",
+    beginner:"A small opening, often at the top of the mature puffball, through which spores are released.",
+    expert:"A small opening, often at the top of the mature puffball, through which spores are released.",
     relationships:["peridium","endoperidium","gleba"]
   },
   fertile_head:{
@@ -383,10 +419,16 @@ export const KNOWLEDGE_OBJECTS = Object.freeze({
     expert:"Basal or lateral zone attaching the fruiting body to substrate.",
     relationships:["substrate"]
   },
+  subgleba:{
+    id:"subgleba",label:"Subgleba / sterile base",level:"macro",pronunciation:"sub-GLEE-buh / STAIR-ile base",
+    beginner:"A non-spore-bearing basal region present in some puffballs, often supporting the fertile gleba above.",
+    expert:"A non-spore-bearing basal region present in some puffballs, often supporting the fertile gleba above.",
+    relationships:["gleba","peridium"]
+  },
   sterile_base:{
-    id:"sterile_base",label:"Sterile base",level:"macro",pronunciation:"sterile base",
-    beginner:"Non-spore-producing tissue at the bottom of a puffball.",
-    expert:"Basal sterile tissue below the gleba, variably chambered or compact.",
+    id:"sterile_base",label:"Subgleba / sterile base",level:"macro",pronunciation:"sub-GLEE-buh / STAIR-ile base",
+    beginner:"A non-spore-bearing basal region present in some puffballs, often supporting the fertile gleba above.",
+    expert:"A non-spore-bearing basal region present in some puffballs, often supporting the fertile gleba above.",
     relationships:["gleba","peridium"]
   },
   base:{
@@ -432,8 +474,15 @@ export const NAVIGATION_PATHS = Object.freeze({
     ["basidiome","base"]
   ],
   puffball:[
-    ["basidiome","peridium","gleba","basidiospore"],
-    ["basidiome","sterile_base"],["basidiome","apical_pore"]
+    ["basidiome","puffball","gasteroid","peridium","exoperidium","endoperidium","gleba","basidiospore"],
+    ["basidiome","puffball","subgleba"],["basidiome","puffball","apical_pore"],
+    ["basidiome","puffball","exoperidium","echinate"],
+    ["basidiome","puffball","exoperidium","verrucose"],
+    ["basidiome","puffball","exoperidium","granular"],
+    ["basidiome","puffball","exoperidium","furfuraceous"],
+    ["basidiome","puffball","exoperidium","glabrous"],
+    ["basidiome","puffball","globose"],["basidiome","puffball","subglobose"],["basidiome","puffball","pyriform"],
+    ["basidiome","puffball","apical"],["basidiome","puffball","dehiscent"]
   ],
   cup:[
     ["basidiome","apothecium","hymenophore","hymenium","ascus","ascospore"],
