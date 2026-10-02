@@ -1374,7 +1374,7 @@ export class MycoSimEngine{
       developmentalIdentity:this.morphologyState?.developmental?.identityKey||null,
       agaricoidPhaseTwo:this.currentProfile?.id==="agaricoid"?{
         plateModel:this.objects.get("hymenophore")?.userData?.plateModel||null,
-        attachment:this.variants.hymenophore||null,
+        attachment:this.variants.agaric_gill_attachment||null,
         spacing:this.variants.agaric_gill_spacing||null,
         fullGillCount:this.objects.get("hymenophore")?.userData?.fullGillCount||0,
         spacingDegrees:this.objects.get("hymenophore")?.userData?.spacingDegrees||null,
@@ -2559,10 +2559,17 @@ export class MycoSimEngine{
       });
       inst.instanceMatrix.needsUpdate=true;
       group.add(inst);this.pickables.push(inst);lamellulaCount+=entries.length;
+      if(!this.objects.has("lamellula"))this.objects.set("lamellula",inst);
     }
 
     group.userData.lamellulaCount=lamellulaCount;
     group.userData.plateModel="agaricoid-gill-plate-v1";
+    const edgeProbe=new THREE.Group();
+    edgeProbe.userData={
+      id:"gill_edge",label:"Gill edge",category:"fertile",selectable:true,knowledgeId:"gill_edge",
+      edgeCondition:edgeState
+    };
+    this.root.add(edgeProbe);this.objects.set("gill_edge",edgeProbe);
     group.userData.spacingDegrees=360/fullCount;
     group.userData.attachmentGeometry={
       innerRadius:inner,
@@ -2632,7 +2639,7 @@ export class MycoSimEngine{
       undersideHeight:(r,theta=0)=>capY+(typeof underside==="function"?underside(r,theta):-.18)
     };
     this._agaricoidCapState=capState;
-    this._addGillHymenophore(v.hymenophore,capY,stipeX,capState);
+    this._addGillHymenophore(v.agaric_gill_attachment||"adnate",capY,stipeX,capState);
     this._addVeil(v.veil,stipeX,capY);
 
     if(margin==="appendiculate"){
