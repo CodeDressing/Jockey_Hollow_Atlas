@@ -44,6 +44,13 @@ export const MORPHOLOGY_VARIANTS = Object.freeze({
       ["eccentric","Eccentric"],["absent","Absent"]
     ]
   },
+  agaric_gill_attachment: {
+    label:"Gill attachment",
+    options:[
+      ["free_gills","Free"],["adnexed","Adnexed"],["adnate","Adnate"],["sinuate","Sinuate"],
+      ["emarginate","Emarginate"],["subdecurrent","Subdecurrent"],["decurrent","Decurrent"],["seceding","Seceding"]
+    ]
+  },
   agaric_gill_spacing: {
     label:"Gill spacing",
     options:[
@@ -182,6 +189,7 @@ export const DEFAULT_VARIANTS = Object.freeze({
   agaric_pileus_center:"even",
   agaric_margin:"decurved",
   agaric_stipe_taper:"equal",
+  agaric_gill_attachment:"adnate",
   agaric_gill_spacing:"close",
   agaric_gill_thickness:"thin",
   agaric_gill_depth:"moderate",
@@ -390,6 +398,16 @@ export const VARIANT_TEACHING = Object.freeze({
     lateral:{anatomyId:"stipe",short:"Stipe attaches at the side rather than centrally.",detail:"A lateral stipe is positioned near the pileus edge and produces an asymmetric fruit-body architecture."},
     eccentric:{anatomyId:"stipe",short:"Stipe is offset from the pileus center.",detail:"An eccentric stipe is displaced from the center but is not fully lateral."},
     absent:{anatomyId:"pileus",short:"No differentiated stipe is present.",detail:"A sessile form attaches directly by the pileus, bracket, or basal tissue rather than through a distinct stipe."}
+  }),
+  agaric_gill_attachment:Object.freeze({
+    free_gills:{anatomyId:"hymenophore",short:"Gills stop short of the stipe.",detail:"Free lamellae leave a visible annular gap around the stipe apex."},
+    adnexed:{anatomyId:"hymenophore",short:"Gills attach narrowly to the stipe.",detail:"Adnexed lamellae contact the stipe through only a small portion of their proximal edge."},
+    adnate:{anatomyId:"hymenophore",short:"Gills attach broadly and directly.",detail:"Adnate lamellae meet the stipe broadly without descending along it."},
+    sinuate:{anatomyId:"hymenophore",short:"Gills form a smooth notch near the stipe.",detail:"Sinuate lamellae curve upward in a sinus immediately before stipe insertion."},
+    emarginate:{anatomyId:"hymenophore",short:"Gills form a sharper notch near the stipe.",detail:"Emarginate lamellae show a distinct proximal notch before attaching to the stipe."},
+    subdecurrent:{anatomyId:"hymenophore",short:"Gills descend slightly onto the stipe.",detail:"Subdecurrent lamellae extend a short distance below the pileus-stipe junction."},
+    decurrent:{anatomyId:"hymenophore",short:"Gills run conspicuously down the stipe.",detail:"Decurrent lamellae continue below the pileus-stipe junction for a clearly visible distance."},
+    seceding:{anatomyId:"hymenophore",short:"Originally attached gills separate with development.",detail:"Seceding lamellae are developmentally attached and later pull away, leaving a secondary gap."}
   }),
   agaric_gill_spacing:Object.freeze({
     distant:{anatomyId:"lamella",short:"Gill spacing is visibly broad.",detail:"Distant lamellae are relatively few around the pileus circumference, leaving conspicuous interlamellar gaps."},
