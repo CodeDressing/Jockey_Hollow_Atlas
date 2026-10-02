@@ -360,11 +360,6 @@ export class MycoSimEngine{
           if(sid==="old") t.rotation.z+=(i%5-2)*.012*(p.tooth_wear??0);
         });
       }
-      if(sid==="mature" && wornExo){
-        wornExo.visible=true;
-        wornExo.children.forEach((p,i)=>p.visible=((i*31)%100)/100<.38);
-      }
-
       if(sid==="old"){
         const pileus=this.objects.get("pileus");
         if(pileus)pileus.rotation.z+=.03*(p.margin_irregularity??0);
@@ -534,6 +529,10 @@ export class MycoSimEngine{
       if(ruptureChannel)ruptureChannel.visible=sid!=="young" && rupturePattern!=="intact";
       if(wornExo)wornExo.visible=sid!=="young";
       if(collapsedWall)collapsedWall.visible=collapseState!=="none";
+
+      if(sid==="mature" && wornExo){
+        wornExo.children.forEach((patch,i)=>patch.visible=((i*31)%100)/100<.38);
+      }
 
       const collapseScale={none:1,slight:.94,moderate:.82,severe:.66,weathered:.72}[collapseState]??1;
       const collapseTilt={none:0,slight:.018,moderate:.045,severe:.075,weathered:.095}[collapseState]??0;
