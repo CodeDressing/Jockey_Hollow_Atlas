@@ -23,16 +23,6 @@ export const MORPHOLOGY_VARIANTS = Object.freeze({
       ["folds","Folds"],["smooth","Smooth fertile surface"]
     ]
   },
-  puff_subtype: {
-    label:"Puffball / gasteroid teaching archetype",
-    options:[
-      ["true_puffball","Generalized true puffball"],
-      ["pyriform_puffball","Pyriform puffball archetype"],
-      ["gem_studded_type","Gem-studded / Lycoperdon-type archetype"],
-      ["giant_puffball_type","Giant puffball archetype"],
-      ["earthball_type","Earthball-like / Scleroderma-type archetype"]
-    ]
-  },
   puff_surface: {
     label:"Puffball surface ornamentation",
     options:[
@@ -120,7 +110,6 @@ export const DEFAULT_VARIANTS = Object.freeze({
   stipe:"equal",
   hymenophore:"adnate",
   veil:"annulus",
-  puff_subtype:"true_puffball",
   puff_surface:"echinate",
   puff_shape:"globose",
   puff_base:"short",
@@ -133,33 +122,6 @@ export const DEFAULT_VARIANTS = Object.freeze({
   section_view:"external",
   texture_realism:"atlas"
 });
-
-export const PUFFBALL_SUBTYPE_PRESETS=Object.freeze({
-  true_puffball:Object.freeze({
-    puff_shape:"globose",puff_surface:"granular",puff_base:"short",
-    peridial_condition:"intact",rupture_pattern:"apical_ostiole"
-  }),
-  pyriform_puffball:Object.freeze({
-    puff_shape:"pyriform",puff_surface:"granular",puff_base:"distinct",
-    peridial_condition:"intact",rupture_pattern:"apical_ostiole"
-  }),
-  gem_studded_type:Object.freeze({
-    puff_shape:"pyriform",puff_surface:"echinate",puff_base:"short",
-    peridial_condition:"intact",rupture_pattern:"apical_ostiole"
-  }),
-  giant_puffball_type:Object.freeze({
-    puff_shape:"globose",puff_surface:"glabrous",puff_base:"none",
-    peridial_condition:"intact",rupture_pattern:"irregular_rupture"
-  }),
-  earthball_type:Object.freeze({
-    puff_shape:"subglobose",puff_surface:"verrucose",puff_base:"rooting",
-    peridial_condition:"cracking",rupture_pattern:"irregular_rupture"
-  })
-});
-
-export function puffballSubtypePreset(id){
-  return PUFFBALL_SUBTYPE_PRESETS[id]||PUFFBALL_SUBTYPE_PRESETS.true_puffball;
-}
 
 export function validateVariantSelection(selection={}){
   const errors=[];
@@ -210,13 +172,6 @@ export const VARIANT_TEACHING = Object.freeze({
     teeth:{anatomyId:"hymenophore",short:"Fertile surface hangs as teeth or spines.",detail:"Hydnoid hymenophores bear the hymenium on pendent tooth-like or spine-like projections."},
     folds:{anatomyId:"hymenophore",short:"Fertile surface forms blunt folds or ridges.",detail:"Folded hymenophores have wrinkled or ridge-like fertile structures rather than true lamellae."},
     smooth:{anatomyId:"hymenophore",short:"Fertile surface is macroscopically smooth.",detail:"A smooth hymenophore lacks conspicuous gills, pores, teeth, or folds at macroscopic scale."}
-  }),
-  puff_subtype:Object.freeze({
-    true_puffball:{anatomyId:"puffball",short:"Generalized teaching model for a true puffball body plan.",detail:"A deliberately non-species-specific archetype showing enclosed glebal development, layered peridium, and stage-dependent spore release."},
-    pyriform_puffball:{anatomyId:"sterile_base",short:"Pear-shaped puffball teaching archetype.",detail:"Emphasizes a broadened fertile upper body with a more distinct narrowed or sterile basal region."},
-    gem_studded_type:{anatomyId:"exoperidium",short:"Lycoperdon-like gem-studded teaching archetype.",detail:"Emphasizes conspicuous youthful echinate exoperidial ornamentation that abrades with maturity; this is a morphology archetype, not a species identification."},
-    giant_puffball_type:{anatomyId:"peridium",short:"Large smooth puffball teaching archetype.",detail:"Emphasizes a broad globose body, relatively smooth outer surface, reduced obvious sterile base, and rupture rather than a permanently sculpted ostiole."},
-    earthball_type:{anatomyId:"peridium",short:"Earthball-like gasteroid teaching archetype.",detail:"Emphasizes a tougher, thicker, often verrucose or cracked outer wall and darkening internal gleba; it is kept distinct from true puffballs conceptually."}
   }),
   puff_surface:Object.freeze({
     glabrous:{anatomyId:"exoperidium",short:"Outer surface is smooth and lacks obvious ornament.",detail:"Glabrous describes an exoperidium without conspicuous spines, warts, granules, or scurfy coating."},
