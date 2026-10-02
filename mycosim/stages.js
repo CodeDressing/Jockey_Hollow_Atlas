@@ -169,13 +169,13 @@ export const DEVELOPMENTAL_STAGE_LIBRARY = Object.freeze({
     ["Body usually globose, subglobose, or pyriform; peridium firm and intact; gleba immature and white; ostiole absent or not functionally open. Surface ornamentation is taxon-dependent and may also be furfuraceous or glabrous."]),
     mature:stage("mature","Mature",0.60,{
       ...common.mature,peridium_tautness:0.82,gleba_maturity:0.72,apical_pore_opening:0.38,
-      collapse:0.08,ornament_retention:0.68,peridial_integrity:0.82
-    },"At maturity, the gleba darkens as spores develop. External ornamentation may persist or become abraded, and an ostiole may begin to form for later spore release.",
+      collapse:0.08,ornament_retention:0.32,peridial_integrity:0.82
+    },"At maturity, the gleba darkens as spores develop. Fresh youthful ornamentation is substantially reduced: echinate spines are shown only as sparse, shortened, blunted remnants by default, while warts, granules, or scurfy material may persist to varying degrees. An ostiole may begin to form for later spore release.",
     ["Fruitbody fully developed; gleba transitions from white toward olive, buff, brown, or olive-brown; peridium is less pristine; outer and inner peridial layers should remain visually distinguishable in section."]),
     old:stage("old","Old",0.92,{
       ...common.old,peridium_tautness:0.35,gleba_maturity:1.00,apical_pore_opening:1.00,
-      collapse:0.72,spore_release:0.90,ornament_retention:0.24,peridial_integrity:0.38
-    },"In old puffballs, the gleba has matured to a spore mass and the peridium opens or breaks, allowing spores to escape. Surface features of the exoperidium may be lost with age and abrasion.",
+      collapse:0.72,spore_release:0.90,ornament_retention:0.06,peridial_integrity:0.38
+    },"In old puffballs, the gleba has matured to a spore mass and the peridium opens or breaks, allowing spores to escape. The generalized old-stage model does not retain intact echinate spines; only low residual non-echinate ornament may remain where appropriate.",
     ["Gleba fully mature, dry, powdery, and darker; ostiole open or outer wall broken; peridium may be cracked, thinned, torn, or collapsed; body may be misshapen from weathering."])
   },
 
