@@ -70,6 +70,136 @@ const PUFF_PBR=Object.freeze({
   organicDebris:pbrFungalMaterial(0x4b3b2b,{seed:83,variance:.18,roughness:1,bumpScale:.065,repeat:8})
 });
 
+
+const PUFF_ORNAMENT_PROFILE=Object.freeze({
+  echinate:Object.freeze({
+    counts:Object.freeze({simplified:220,atlas:720,high:1450}),
+    retention:Object.freeze({young:1,mature:.34,old:0}),
+    scale:Object.freeze({young:1,mature:.42,old:0}),
+    broken:Object.freeze({young:.07,mature:.58,old:1}),
+    cluster:.34,barePatch:.12
+  }),
+  verrucose:Object.freeze({
+    counts:Object.freeze({simplified:110,atlas:300,high:620}),
+    retention:Object.freeze({young:1,mature:.62,old:.18}),
+    scale:Object.freeze({young:1,mature:.72,old:.34}),
+    cluster:.28,barePatch:.10
+  }),
+  granular:Object.freeze({
+    counts:Object.freeze({simplified:300,atlas:920,high:1800}),
+    retention:Object.freeze({young:1,mature:.48,old:.10}),
+    scale:Object.freeze({young:1,mature:.60,old:.28}),
+    cluster:.20,barePatch:.08
+  }),
+  furfuraceous:Object.freeze({
+    counts:Object.freeze({simplified:150,atlas:420,high:820}),
+    retention:Object.freeze({young:1,mature:.38,old:.06}),
+    scale:Object.freeze({young:1,mature:.62,old:.32}),
+    cluster:.42,barePatch:.18
+  }),
+  glabrous:Object.freeze({
+    counts:Object.freeze({simplified:0,atlas:0,high:0}),
+    retention:Object.freeze({young:0,mature:0,old:0}),
+    scale:Object.freeze({young:0,mature:0,old:0}),
+    cluster:0,barePatch:1
+  })
+});
+
+const seededRng=seed=>{
+  let x=(seed>>>0)||1;
+  return ()=>{
+    x=(1664525*x+1013904223)>>>0;
+    return x/4294967296;
+  };
+};
+
+const puffSurfacePoint=(shape,nx,ny,nz,bodyY,radius=1.165)=>{
+  let radial=1,vertical=1;
+  if(shape==="subglobose"){radial=1.035;vertical=.94;}
+  else if(shape==="pyriform"){radial=.78+.27*((ny+1)/2);vertical=1.08;}
+  else if(shape==="turbiniform"){radial=.67+.40*((ny+1)/2);vertical=1.02;}
+  else if(shape==="irregular"){radial=1+.045*Math.sin(ny*7+Math.atan2(nz,nx)*1.4);vertical=.90;}
+  return new THREE.Vector3(nx*radius*radial,bodyY+ny*(radius-.055)*vertical,nz*radius*radial);
+};
+
+const sampledPuffSurface=(target,seed,{cluster=.25,barePatch=.10}={})=>{
+  const rng=seededRng(seed);
+  const out=[];
+  const clusterCenters=[];
+  const bareCenters=[];
+  const randomDir=()=>{
+    const y=rng()*2-1;
+    const a=rng()*Math.PI*2;
+    const rr=Math.sqrt(Math.max(0,1-y*y));
+    return new THREE.Vector3(Math.cos(a)*rr,y,Math.sin(a)*rr);
+  };
+  for(let i=0;i<3;i++)clusterCenters.push(randomDir());
+  for(let i=0;i<2;i++)bareCenters.push(randomDir());
+
+  let attempts=0;
+  const maxAttempts=Math.max(target*10,120);
+  while(out.length<target&&attempts++<maxAttempts){
+    const d=randomDir();
+    let nearestCluster=0;
+    for(const c of clusterCenters)nearestCluster=Math.max(nearestCluster,d.dot(c));
+    let nearestBare=-1;
+    for(const b of bareCenters)nearestBare=Math.max(nearestBare,d.dot(b));
+    const clustered=THREE.MathUtils.smoothstep(nearestCluster,.25,.92);
+    const missing=THREE.MathUtils.smoothstep(nearestBare,.72,.98);
+    const accept=THREE.MathUtils.clamp(.78+cluster*clustered-barePatch*missing*2.2,.08,1);
+    if(rng()>accept)continue;
+
+    // Reject only extremely close neighbors. This preserves natural clumping while
+    // preventing the most obvious geometric collisions.
+    let crowded=false;
+    const checkFrom=Math.max(0,out.length-30);
+    for(let i=checkFrom;i<out.length;i++){
+      if(d.distanceToSquared(out[i])<.00048){crowded=true;break;}
+    }
+    if(!crowded)out.push(d);
+  }
+  return {points:out,rng};
+};
+
+const makeEchinateGeometry=(broken=false)=>{
+  const h=broken?.070:.125;
+  const points=broken
+    ? [new THREE.Vector2(.000,0),new THREE.Vector2(.040,.010),new THREE.Vector2(.030,.028),new THREE.Vector2(.018,h)]
+    : [new THREE.Vector2(.000,0),new THREE.Vector2(.044,.010),new THREE.Vector2(.034,.030),new THREE.Vector2(.018,h*.72),new THREE.Vector2(.006,h*.94),new THREE.Vector2(.000,h)];
+  return new THREE.LatheGeometry(points,7);
+};
+
+const makeVerrucoseGeometry=()=>{
+  const g=new THREE.SphereGeometry(.075,9,7,0,Math.PI*2,0,Math.PI*.67);
+  g.translate(0,-.014,0);
+  return g;
+};
+
+const makeGranularGeometry=()=>{
+  const g=new THREE.IcosahedronGeometry(.022,0);
+  g.scale(1,.58,1);
+  return g;
+};
+
+const makeFurfuraceousGeometry=()=>{
+  const g=new THREE.PlaneGeometry(.075,.045,1,1);
+  const p=g.attributes.position;
+  for(let i=0;i<p.count;i++){
+    const x=p.getX(i),y=p.getY(i);
+    p.setZ(i,(x>0?1:-1)*.008+(y>0?.004:0));
+  }
+  p.needsUpdate=true;g.computeVertexNormals();
+  return g;
+};
+
+const ORNAMENT_GEOMETRY=Object.freeze({
+  echinate:makeEchinateGeometry(false),
+  echinateBroken:makeEchinateGeometry(true),
+  verrucose:makeVerrucoseGeometry(),
+  granular:makeGranularGeometry(),
+  furfuraceous:makeFurfuraceousGeometry()
+});
+
 const MATERIALS={
   cap:tissue(0x9a4a2d,.72,{clearcoat:.12,clearcoatRoughness:.68,sheen:.16,sheenColor:0xc88662}),
   cap2:tissue(0x754227,.79,{clearcoat:.07,sheen:.11,sheenColor:0xa16b4c}),
@@ -1851,71 +1981,122 @@ export class MycoSimEngine{
     this.root.add(debris);this.objects.set("old_basal_debris",debris);
 
     const exo=new THREE.Group();
-    exo.userData={id:"exoperidium",label:"Exoperidium / surface ornamentation",category:"macro",selectable:true,knowledgeId:surface==="echinate"?"echinate":surface==="verrucose"?"verrucose":surface==="granular"?"granular":surface==="furfuraceous"?"furfuraceous":surface==="glabrous"?"glabrous":"surface_ornamentation"};
-    const ornamentMat=PUFF_PBR.youngPeridium.clone();
+    exo.userData={
+      id:"exoperidium",label:"Exoperidium / surface ornamentation",category:"macro",selectable:true,
+      knowledgeId:surface==="echinate"?"echinate":surface==="verrucose"?"verrucose":surface==="granular"?"granular":surface==="furfuraceous"?"furfuraceous":"glabrous",
+      surfaceType:surface
+    };
 
-    if(surface!=="glabrous"){
-      let geo;
-      if(surface==="echinate"){
-        const len=realism==="high"?.115:realism==="atlas"?.095:.075;
-        const baseR=realism==="high"?.026:realism==="atlas"?.023:.020;
-        geo=new THREE.ConeGeometry(baseR,len,6);
-      }else if(surface==="verrucose"){
-        geo=new THREE.SphereGeometry(realism==="high"?.075:.065,10,7);
-      }else if(surface==="granular"){
-        geo=new THREE.SphereGeometry(realism==="high"?.035:.03,7,5);
-      }else{
-        geo=new THREE.TetrahedronGeometry(realism==="high"?.055:.045,0);
+    const profile=PUFF_ORNAMENT_PROFILE[surface]||PUFF_ORNAMENT_PROFILE.glabrous;
+    const requested=profile.counts[realism]||0;
+    const retention=profile.retention[stageId]??1;
+    const scaleByAge=profile.scale[stageId]??1;
+    const target=Math.max(0,Math.round(requested*retention));
+    const {points:ornamentPoints,rng:ornamentRng}=sampledPuffSurface(target,137+requested+(stageId==="young"?11:stageId==="mature"?29:47),{
+      cluster:profile.cluster,barePatch:profile.barePatch
+    });
+
+    const baseOrnamentMaterial=PUFF_PBR.youngPeridium.clone();
+    baseOrnamentMaterial.roughness=surface==="glabrous"?.90:.96;
+    if(surface==="furfuraceous")baseOrnamentMaterial.side=THREE.DoubleSide;
+
+    const addInstancedOrnament=(id,label,geometry,count,filterFn,transformFn,material=baseOrnamentMaterial)=>{
+      if(!count)return null;
+      const inst=new THREE.InstancedMesh(geometry,material.clone(),count);
+      inst.userData={...exo.userData,id:"exoperidium",label,knowledgeId:surface};
+      inst.castShadow=realism==="high"&&stageId==="young";
+      inst.receiveShadow=true;
+      const dummy=new THREE.Object3D();
+      const tint=new THREE.Color();
+      let write=0;
+      for(let i=0;i<ornamentPoints.length&&write<count;i++){
+        if(filterFn&&!filterFn(i))continue;
+        const n=ornamentPoints[i];
+        const p=puffSurfacePoint(shape,n.x,n.y,n.z,bodyY,1.16);
+        dummy.position.copy(p);
+        dummy.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),n.clone().normalize());
+        dummy.rotation.z+=(ornamentRng()-.5)*.26;
+        dummy.rotation.x+=(ornamentRng()-.5)*.12;
+        dummy.scale.set(1,1,1);
+        transformFn(dummy,i,n,ornamentRng);
+        dummy.updateMatrix();
+        inst.setMatrixAt(write,dummy.matrix);
+        const value=.88+ornamentRng()*.18;
+        tint.setRGB(value,value*.96,value*.84);
+        inst.setColorAt(write,tint);
+        write++;
       }
+      inst.count=write;
+      inst.instanceMatrix.needsUpdate=true;
+      if(inst.instanceColor)inst.instanceColor.needsUpdate=true;
+      exo.add(inst);this.pickables.push(inst);
+      return inst;
+    };
 
-      const stageKeep=stageId==="young"?1:
-        stageId==="mature"?(surface==="echinate"?.32:surface==="verrucose"?.50:surface==="granular"?.42:.34):
-        (surface==="echinate"?0:surface==="verrucose"?.14:surface==="granular"?.10:.06);
-      const stageScale=stageId==="young"?1:
-        stageId==="mature"?(surface==="echinate"?.34:surface==="verrucose"?.64:surface==="granular"?.55:.50):
-        (surface==="echinate"?0:surface==="verrucose"?.28:surface==="granular"?.24:.20);
-
-      const visibleCount=Math.max(0,Math.round(detail*stageKeep));
-      if(visibleCount>0){
-        const inst=new THREE.InstancedMesh(geo,ornamentMat,visibleCount);
-        inst.userData=exo.userData;
-        inst.castShadow=stageId==="young";
-        inst.receiveShadow=true;
-        const dummy=new THREE.Object3D();
-        let write=0;
-        for(let i=0;i<detail && write<visibleCount;i++){
-          const seed=((i*37)%100)/100;
-          if(seed>=stageKeep)continue;
-          const y=1-(i/(detail-1))*2;
-          const radius=Math.sqrt(Math.max(0,1-y*y));
-          const phi=i*2.399963229728653;
-          const nx=Math.cos(phi)*radius, ny=y, nz=Math.sin(phi)*radius;
-          let radial=1, vertical=1;
-          if(shape==="subglobose"){radial=1.035;vertical=.94;}
-          else if(shape==="pyriform"){radial=.78+.27*((ny+1)/2);vertical=1.08;}
-          else if(shape==="turbiniform"){radial=.67+.40*((ny+1)/2);vertical=1.02;}
-          else if(shape==="irregular"){radial=1+.04*Math.sin(ny*7+phi*1.4);vertical=.90;}
-          dummy.position.set(nx*1.17*radial,bodyY+ny*1.10*vertical,nz*1.17*radial);
-          dummy.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),new THREE.Vector3(nx,ny,nz).normalize());
-          const naturalScale=(.82+((i*17)%23)/100)*stageScale;
-          dummy.scale.setScalar(naturalScale);
-          if(stageId==="mature"){
-            dummy.scale.y*=surface==="echinate"?.55:.78;
-            dummy.rotation.z+=((i%5)-2)*.018;
-          }else if(stageId==="old"){
-            dummy.scale.y*=.42;
-            dummy.rotation.z+=((i%7)-3)*.04;
-          }
-          dummy.updateMatrix();
-          inst.setMatrixAt(write++,dummy.matrix);
-        }
-        inst.instanceMatrix.needsUpdate=true;
-        exo.add(inst);this.pickables.push(inst);
-      }else{
-        geo.dispose();
-        ornamentMat.dispose();
-      }
+    if(surface==="echinate"&&target){
+      const brokenFraction=profile.broken?.[stageId]??0;
+      const brokenCount=Math.round(target*brokenFraction);
+      const intactCount=Math.max(0,target-brokenCount);
+      addInstancedOrnament("echinate_intact","Echinate exoperidial spines",ORNAMENT_GEOMETRY.echinate,intactCount,
+        i=>i>=brokenCount,
+        (o,i,n,rng)=>{
+          const height=(.68+rng()*.62)*scaleByAge;
+          const width=(.72+rng()*.55);
+          o.scale.set(width,height,width);
+          // Slight biologically plausible lean rather than perfectly radial needles.
+          o.rotation.x+=(rng()-.5)*.18;
+          o.rotation.z+=(rng()-.5)*.22;
+          // Seat the broad base slightly into the wall.
+          o.position.addScaledVector(n,-.010);
+        });
+      addInstancedOrnament("echinate_broken","Broken echinate spine remnants",ORNAMENT_GEOMETRY.echinateBroken,brokenCount,
+        i=>i<brokenCount,
+        (o,i,n,rng)=>{
+          const height=(.48+rng()*.44)*Math.max(.35,scaleByAge);
+          const width=.80+rng()*.48;
+          o.scale.set(width,height,width);
+          o.rotation.x+=(rng()-.5)*.28;o.rotation.z+=(rng()-.5)*.30;
+          o.position.addScaledVector(n,-.012);
+        });
+    }else if(surface==="verrucose"&&target){
+      addInstancedOrnament("verrucose","Verrucose exoperidial warts",ORNAMENT_GEOMETRY.verrucose,target,null,
+        (o,i,n,rng)=>{
+          const broad=.72+rng()*.72;
+          const relief=(.38+rng()*.52)*scaleByAge;
+          o.scale.set(broad,relief,broad*(.82+rng()*.25));
+          // Broad bases are intentionally embedded into the shell to read as tissue,
+          // not isolated spheres glued onto the surface.
+          o.position.addScaledVector(n,-.038);
+        });
+    }else if(surface==="granular"&&target){
+      addInstancedOrnament("granular","Granular exoperidial micro-grains",ORNAMENT_GEOMETRY.granular,target,null,
+        (o,i,n,rng)=>{
+          const g=(.58+rng()*.72)*scaleByAge;
+          o.scale.set(g,g*(.42+rng()*.32),g);
+          o.position.addScaledVector(n,-.012);
+        });
+    }else if(surface==="furfuraceous"&&target){
+      addInstancedOrnament("furfuraceous","Furfuraceous exoperidial flakes",ORNAMENT_GEOMETRY.furfuraceous,target,null,
+        (o,i,n,rng)=>{
+          const g=(.60+rng()*.78)*scaleByAge;
+          o.scale.set(g*(.8+rng()*.35),g,g);
+          // Tangential flakes with locally lifted edges and irregular orientation.
+          o.rotation.y+=rng()*Math.PI*2;
+          o.rotation.x+=(rng()-.5)*.35;
+          o.rotation.z+=(rng()-.5)*.55;
+          o.position.addScaledVector(n,.006+rng()*.012);
+        });
+    }else if(surface==="glabrous"){
+      // Glabrous is intentionally geometry-free at the macroscopic level.
+      // PBR micro-bump and body irregularity carry the biological surface realism.
+      exo.userData.label="Glabrous exoperidium";
     }
+
+    exo.userData.ornamentStats={
+      requested,target,rendered:exo.children.reduce((n,c)=>n+(c.count||0),0),
+      drawMeshes:exo.children.length,stageId,surface,
+      generator:surface==="echinate"?"irregular spine field":surface==="verrucose"?"embedded broad-base wart field":surface==="granular"?"dense low-relief grain field":surface==="furfuraceous"?"tangential scurfy flake field":"PBR micro-relief only"
+    };
     this.root.add(exo);this.objects.set("exoperidium",exo);
 
     const marks=new THREE.Group();
