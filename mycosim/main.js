@@ -101,6 +101,12 @@ function updateMorphologySummary(engine){
     add("agaric_pileus_center"," disc");
     add("agaric_margin"," margin");
     add("agaric_stipe_taper"," stipe");
+    add("agaric_gill_attachment"," gills");
+    add("agaric_gill_spacing"," spacing");
+    add("agaric_gill_thickness"," thickness");
+    add("agaric_gill_depth"," depth");
+    add("agaric_lamellulae"," lamellulae");
+    add("agaric_gill_edge"," edge");
   }else{
     add("pileus"," pileus");
     add("stipe"," stipe");
@@ -117,20 +123,22 @@ function updateMorphologySummary(engine){
   }
 
   if(currentProfile.id==="agaricoid"){
-    const phase=engine.qaSnapshot?.().agaricoidPhaseOne;
-    detail.textContent=phase
-      ? "Phase One body plan · "+[
-          phase.pileusModel,
-          phase.pileusProfile+" profile",
-          phase.pileusCenter+" disc",
-          phase.pileusMargin+" margin",
-          phase.stipeModel,
-          phase.stipeTaper+" stipe",
-          "disc thickness "+phase.capThickness?.disc,
-          "margin thickness "+phase.capThickness?.margin,
-          phase.supportsGillInsertion?"gill insertion surface ready":"gill insertion surface unavailable"
-        ].filter(Boolean).join(" · ")
-      : "Agaricoid Phase One morphology engine active.";
+    const snap=engine.qaSnapshot?.()||{};
+    const one=snap.agaricoidPhaseOne;
+    const two=snap.agaricoidPhaseTwo;
+    const lines=[];
+    if(one)lines.push("Phase One body plan · "+[
+      one.pileusModel,one.pileusProfile+" profile",one.pileusCenter+" disc",one.pileusMargin+" margin",
+      one.stipeModel,one.stipeTaper+" stipe",
+      one.supportsGillInsertion?"gill insertion surface ready":"gill insertion surface unavailable"
+    ].filter(Boolean).join(" · "));
+    if(two)lines.push("Phase Two gill engine · "+[
+      two.plateModel,two.attachment+" attachment",two.spacing+" spacing",
+      two.fullGillCount+" full gills",two.thickness+" thickness",two.depth+" depth",
+      two.lamellulae+" lamellulae ("+two.lamellulaCount+")",two.edge+" edge",
+      two.attachmentGeometry?.descendsStipe?"descending attachment":two.attachmentGeometry?.notched?"notched attachment":two.attachmentGeometry?.detached?"detached attachment":"direct attachment"
+    ].filter(Boolean).join(" · "));
+    detail.textContent=lines.join("\n")||"Agaricoid morphology engine active.";
     return;
   }
 
