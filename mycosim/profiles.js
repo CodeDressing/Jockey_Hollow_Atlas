@@ -6,13 +6,16 @@ const A=(id,label,category,description,parentId=null)=>({
 
 export const MORPHOLOGY_PROFILES = [
   {
-    id:"agaricoid",label:"Agaricoid",group:"gilled",factory:"agaricoid",version:"3.0.0",
-    description:"Organic cap-and-stipe teaching model with independent pileus profile, disc, margin, stipe taper, hymenophore and veil morphology.",
-    variantGroups:["agaric_pileus_profile","agaric_pileus_center","agaric_margin","agaric_stipe_taper","hymenophore","veil","texture_realism"],developmentalStages:["young","mature","old"],
+    id:"agaricoid",label:"Agaricoid",group:"gilled",factory:"agaricoid",version:"4.0.0",
+    description:"Organic cap-and-stipe teaching model with independent pileus, stipe, gill spacing, attachment, lamellulae and gill-edge morphology.",
+    variantGroups:["agaric_pileus_profile","agaric_pileus_center","agaric_margin","agaric_stipe_taper","agaric_gill_spacing","agaric_gill_thickness","agaric_gill_depth","agaric_lamellulae","agaric_gill_edge","hymenophore","veil","texture_realism"],developmentalStages:["young","mature","old"],
     anatomy:[
       A("pileus","Pileus / cap","macro","Upper fruiting-body structure."),
       A("pileus_context","Pileus context","internal","Fleshy tissue beneath the pileipellis.","pileus"),
       A("hymenophore","Hymenophore","fertile","Fertile surface beneath the pileus.","pileus"),
+      A("lamella","Lamella / gill","fertile","A full plate-like gill extending from the pileus margin toward the stipe.","hymenophore"),
+      A("lamellula","Lamellula / short gill","fertile","A shorter gill terminating before the stipe and interspersed among full lamellae.","hymenophore"),
+      A("gill_edge","Gill edge","fertile","Free lower edge of a lamella; may be even, serrulate, fimbriate, or crisped.","lamella"),
       A("stipe","Stipe","macro","Supporting axis where present."),
       A("veil_structure","Veil / basal structure","veil","Configured veil or universal-veil structure."),
       A("stipe_base","Stipe base","macro","Basal stipe morphology.","stipe")
