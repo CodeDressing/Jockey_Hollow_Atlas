@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#091011">
 <title>MycoScope — MycoSim</title>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" crossorigin>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/controls/OrbitControls.js" crossorigin>
+<link rel="modulepreload" href="mycosim/main.js">
 <style>
 :root{--bg:#091011;--panel:#10191c;--line:#2a393f;--text:#eef4f5;--muted:#91a0a5;--accent:#d9b56d;--good:#9fd0a7}
 *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}body{min-height:100vh}
@@ -335,6 +338,16 @@ body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
     "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
   }
 }
+</script>
+<script>
+window.MYCOSIM_BOOT_STARTED=performance.now();
+window.MYCOSIM_BOOT_WATCHDOG=setTimeout(()=>{
+  const el=document.getElementById("modelStatus");
+  if(el && /loading|initializ/i.test(el.textContent||"")){
+    el.textContent="3D engine startup exceeded 5 s · reload or check connection";
+    el.style.color="#ffcf7a";
+  }
+},5000);
 </script>
 <script type="module" src="mycosim/main.js"></script>
 </body>
