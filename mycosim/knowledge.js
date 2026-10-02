@@ -248,8 +248,62 @@ export const KNOWLEDGE_OBJECTS = Object.freeze({
   peridium:{
     id:"peridium",label:"Peridium",level:"macro",pronunciation:"peridium",
     beginner:"The outer wall of a puffball or other enclosed fruiting body.",
-    expert:"Outer protective tissue enclosing a gasteroid sporocarp; may differentiate into exoperidium and endoperidium.",
-    relationships:["gleba","apical_pore"]
+    expert:"Outer protective tissue enclosing a gasteroid sporocarp; commonly differentiated into exoperidium and endoperidium.",
+    relationships:["exoperidium","endoperidium","gleba","apical_pore"]
+  },
+  exoperidium:{
+    id:"exoperidium",label:"Exoperidium",level:"macro",pronunciation:"exoperidium",
+    beginner:"The outermost layer of the puffball wall.",
+    expert:"Outermost peridial layer. It may be glabrous, granular, verrucose, echinate, furfuraceous, or otherwise ornamented, and may abrade or slough with age.",
+    relationships:["peridium","endoperidium"]
+  },
+  endoperidium:{
+    id:"endoperidium",label:"Endoperidium",level:"internal",pronunciation:"endoperidium",
+    beginner:"The inner wall beneath the puffball's outer surface.",
+    expert:"Inner peridial layer retained beneath the exoperidium; often becomes the principal persistent wall surrounding the mature gleba.",
+    relationships:["peridium","exoperidium","gleba","apical_pore"]
+  },
+  echinate:{
+    id:"echinate",label:"Echinate",level:"macro",pronunciation:"echinate",
+    beginner:"Covered with obvious pointed spines or prickles.",
+    expert:"Bearing conspicuous pointed surface ornamentation, commonly expressed by exoperidial spines in some young puffballs.",
+    relationships:["exoperidium"]
+  },
+  verrucose:{
+    id:"verrucose",label:"Verrucose",level:"macro",pronunciation:"verrucose",
+    beginner:"Covered with wart-like bumps.",
+    expert:"Bearing blunt raised wart-like ornamentation on the surface.",
+    relationships:["exoperidium"]
+  },
+  furfuraceous:{
+    id:"furfuraceous",label:"Furfuraceous",level:"macro",pronunciation:"furfuraceous",
+    beginner:"Covered with a fine bran-like or scurfy coating.",
+    expert:"Bearing a fine scurfy, bran-like superficial covering that may abrade with age.",
+    relationships:["exoperidium"]
+  },
+  glabrous:{
+    id:"glabrous",label:"Glabrous",level:"macro",pronunciation:"glabrous",
+    beginner:"Smooth and lacking obvious surface ornament.",
+    expert:"Lacking hairs, spines, warts, scales, or other conspicuous superficial ornamentation.",
+    relationships:["exoperidium"]
+  },
+  globose:{
+    id:"globose",label:"Globose",level:"macro",pronunciation:"globose",
+    beginner:"Nearly spherical.",
+    expert:"Approximately spherical in overall three-dimensional form.",
+    relationships:["peridium"]
+  },
+  pyriform:{
+    id:"pyriform",label:"Pyriform",level:"macro",pronunciation:"pyriform",
+    beginner:"Pear-shaped.",
+    expert:"Broad above and narrowing toward the base, producing a pear-shaped fruit body.",
+    relationships:["peridium","sterile_base"]
+  },
+  turbiniform:{
+    id:"turbiniform",label:"Turbiniform",level:"macro",pronunciation:"turbiniform",
+    beginner:"Spinning-top shaped.",
+    expert:"Broad above and strongly tapered below, producing a top-shaped profile.",
+    relationships:["peridium","sterile_base"]
   },
   gleba:{
     id:"gleba",label:"Gleba",level:"tissue",pronunciation:"gleba",
@@ -261,7 +315,7 @@ export const KNOWLEDGE_OBJECTS = Object.freeze({
     id:"apical_pore",label:"Apical pore",level:"macro",pronunciation:"apical pore",
     beginner:"An opening that releases mature spores.",
     expert:"Ostiole-like opening through mature peridial tissue permitting passive or pressure-driven spore discharge.",
-    relationships:["peridium","gleba"]
+    relationships:["peridium","endoperidium","gleba"]
   },
   fertile_head:{
     id:"fertile_head",label:"Fertile head",level:"macro",pronunciation:"fertile head",
