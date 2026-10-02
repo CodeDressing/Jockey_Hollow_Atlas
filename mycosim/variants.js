@@ -1,4 +1,34 @@
 export const MORPHOLOGY_VARIANTS = Object.freeze({
+  agaric_pileus_profile: {
+    label:"Pileus profile",
+    options:[
+      ["conical","Conical"],["campanulate","Campanulate"],["convex","Convex"],
+      ["plano_convex","Plano-convex"],["flat","Flat"],["depressed","Depressed"],
+      ["infundibuliform","Infundibuliform"],["umbilicate","Umbilicate"],
+      ["umbonate","Umbonate"],["ovate","Ovate"]
+    ]
+  },
+  agaric_pileus_center: {
+    label:"Pileus center / disc condition",
+    options:[
+      ["even","Even"],["depressed","Depressed"],["papillate","Papillate"],["umbonate","Umbonate"]
+    ]
+  },
+  agaric_margin: {
+    label:"Pileus margin",
+    options:[
+      ["incurved","Incurved"],["decurved","Decurved"],["straight","Straight"],["uplifted","Uplifted"],
+      ["inrolled","Inrolled"],["undulate","Wavy / undulate"],["lobed","Lobed"],["split_cracked","Split / cracked"],
+      ["striate","Striate"],["appendiculate","Appendiculate"]
+    ]
+  },
+  agaric_stipe_taper: {
+    label:"Stipe taper",
+    options:[
+      ["equal","Equal"],["clavate","Clavate"],["bulbous_base","Bulbous base"],
+      ["rooting","Rooting"],["attenuate_upward","Attenuate upward"]
+    ]
+  },
   pileus: {
     label:"Pileus form",
     options:[
@@ -118,6 +148,10 @@ export const MORPHOLOGY_VARIANTS = Object.freeze({
 });
 
 export const DEFAULT_VARIANTS = Object.freeze({
+  agaric_pileus_profile:"convex",
+  agaric_pileus_center:"even",
+  agaric_margin:"decurved",
+  agaric_stipe_taper:"equal",
   pileus:"convex",
   stipe:"equal",
   hymenophore:"adnate",
@@ -263,6 +297,43 @@ export function variantLabel(group,id){
 
 
 export const VARIANT_TEACHING = Object.freeze({
+  agaric_pileus_profile:Object.freeze({
+    conical:{anatomyId:"pileus",short:"Pileus rises toward a pointed apex.",detail:"Conical pilei have relatively straight radial slopes converging toward the center."},
+    campanulate:{anatomyId:"pileus",short:"Pileus is bell-shaped.",detail:"Campanulate pilei retain a relatively tall center and steeply descending sides."},
+    convex:{anatomyId:"pileus",short:"Pileus forms a broad rounded dome.",detail:"Convex caps have a smoothly arched profile without a localized central boss."},
+    plano_convex:{anatomyId:"pileus",short:"Pileus is low-domed and approaching flat.",detail:"Plano-convex describes a shallow convex profile intermediate between convex and plane."},
+    flat:{anatomyId:"pileus",short:"Pileus is broadly plane.",detail:"A flat pileus has little global vertical curvature, although the center and margin may still carry independent morphology."},
+    depressed:{anatomyId:"pileus",short:"Pileus center lies below the surrounding disc.",detail:"A depressed profile has a broad central concavity without necessarily becoming a deep funnel."},
+    infundibuliform:{anatomyId:"pileus",short:"Pileus is distinctly funnel-shaped.",detail:"Infundibuliform pilei descend strongly from the margin toward a deep central depression."},
+    umbilicate:{anatomyId:"pileus",short:"Pileus has a small navel-like central depression.",detail:"Umbilicate describes a localized, relatively narrow central depression resembling a navel."},
+    umbonate:{anatomyId:"pileus",short:"Pileus bears a broad central boss.",detail:"Umbonate pilei have a localized raised center above the surrounding disc."},
+    ovate:{anatomyId:"pileus",short:"Pileus is egg-shaped in profile.",detail:"Ovate pilei are strongly arched and vertically deep, typical of compact unexpanded forms."}
+  }),
+  agaric_pileus_center:Object.freeze({
+    even:{anatomyId:"pileus",short:"Disc lacks a distinct boss or depression.",detail:"An even disc preserves the underlying profile without a superimposed central structure."},
+    depressed:{anatomyId:"pileus",short:"Disc carries a visible central depression.",detail:"The depression is localized to the pileus center and remains distinct from the overall cap profile."},
+    papillate:{anatomyId:"pileus",short:"Disc bears a small nipple-like papilla.",detail:"Papillate describes a narrow, pointed central projection rather than a broad umbo."},
+    umbonate:{anatomyId:"pileus",short:"Disc bears a broad raised umbo.",detail:"The umbo is a rounded central boss superimposed on the overall pileus profile."}
+  }),
+  agaric_margin:Object.freeze({
+    incurved:{anatomyId:"pileus_margin",short:"Margin curves inward toward the hymenophore.",detail:"An incurved margin turns inward below the general cap plane."},
+    decurved:{anatomyId:"pileus_margin",short:"Margin curves downward.",detail:"A decurved margin descends below the general pileus plane without strongly rolling inward."},
+    straight:{anatomyId:"pileus_margin",short:"Margin continues the cap profile without marked curvature.",detail:"A straight margin lacks a strong upward or inward terminal turn."},
+    uplifted:{anatomyId:"pileus_margin",short:"Margin turns upward.",detail:"An uplifted margin rises above the adjacent pileus surface and alters the silhouette clearly."},
+    inrolled:{anatomyId:"pileus_margin",short:"Margin rolls strongly inward.",detail:"An inrolled margin curls under toward the hymenophore, especially conspicuous in profile."},
+    undulate:{anatomyId:"pileus_margin",short:"Margin forms broad waves.",detail:"An undulate margin alternates gently upward and downward around the pileus circumference."},
+    lobed:{anatomyId:"pileus_margin",short:"Margin forms broad projecting lobes.",detail:"A lobed margin has repeated broad radial expansions and recessions rather than fine waviness."},
+    split_cracked:{anatomyId:"pileus_margin",short:"Margin contains discrete radial splits or notches.",detail:"A split margin shows interruptions produced by tissue separation or cracking."},
+    striate:{anatomyId:"pileus_margin",short:"Margin shows radial striation.",detail:"A striate margin exhibits radial lines, commonly reflecting underlying lamellae or thin marginal tissue."},
+    appendiculate:{anatomyId:"pileus_margin",short:"Margin bears hanging veil remnants.",detail:"Appendiculate margins retain fragments of partial or universal veil tissue along the cap edge."}
+  }),
+  agaric_stipe_taper:Object.freeze({
+    equal:{anatomyId:"stipe",short:"Stipe diameter remains approximately uniform.",detail:"An equal stipe changes little in diameter between apex and base."},
+    clavate:{anatomyId:"stipe",short:"Stipe broadens gradually toward a club-like base.",detail:"Clavate stipes enlarge progressively downward without forming a sharply discrete bulb."},
+    bulbous_base:{anatomyId:"stipe_base",short:"Stipe terminates in a rounded basal swelling.",detail:"A bulbous base is a conspicuous localized enlargement at the stipe base."},
+    rooting:{anatomyId:"stipe_base",short:"Stipe continues downward into a rooting process.",detail:"A rooting stipe narrows below the apparent substrate level into an elongated pseudorhiza-like extension."},
+    attenuate_upward:{anatomyId:"stipe",short:"Stipe narrows progressively toward the apex.",detail:"Attenuate upward describes a stipe that is broader below and gradually narrows toward the pileus."}
+  }),
   pileus:Object.freeze({
     convex:{anatomyId:"pileus",short:"Cap surface curves outward in a broad dome.",detail:"A convex pileus is rounded above and commonly becomes flatter as expansion proceeds."},
     plane:{anatomyId:"pileus",short:"Cap is broadly flat across the disc.",detail:"A plane pileus has little central elevation or depression and emphasizes margin shape and surface characters."},
