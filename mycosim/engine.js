@@ -2143,9 +2143,13 @@ export class MycoSimEngine{
 
     const earthstarRays=new THREE.Group();
     earthstarRays.userData={id:"earthstar_rays",label:"Earthstar rays",category:"macro",selectable:true,knowledgeId:"earthstar_rays"};
-    if(subtypeArch.rayCount>0){
+    if(subtypeArch.rayCountRange||subtypeArch.rayCount){
       const rayMat=PUFF_PBR.wornExoperidium.clone();
-      const rayCount=subtypeArch.rayCount;
+      const range=subtypeArch.rayCountRange||[subtypeArch.rayCount,subtypeArch.rayCount];
+      const low=range[0];
+      const high=range[1]??low;
+      const identitySeed=this.morphologyState?.developmental?.identitySeed||7;
+      const rayCount=low+(identitySeed%(high-low+1));
       for(let i=0;i<rayCount;i++){
         const a=i/rayCount*Math.PI*2;
         const ray=new THREE.Mesh(new THREE.ConeGeometry(.28,.95,5,1,false),rayMat.clone());
