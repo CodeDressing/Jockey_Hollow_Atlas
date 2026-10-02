@@ -245,13 +245,19 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
         engine.renderer.render(engine.scene,engine.camera);
         const snap=engine.qaSnapshot();
         result.fps=snap.fps;
-        result.fpsAcceptable=snap.fps===0||snap.fps>=30;
+        result.fpsAcceptable=snap.realismPerformance?.checks?.fps ?? (snap.fps===0||snap.fps>=30);
         result.objects=snap.objects;
         result.drawCalls=snap.drawCalls;
+        result.triangles=snap.complexity?.triangles||0;
+        result.realismTier=snap.realismTier||"atlas";
+        result.profileBuildMs=snap.profileBuildMs||0;
+        result.performanceTargets=snap.realismPerformance?.targets||null;
+        result.performanceChecks=snap.realismPerformance?.checks||null;
+        result.performancePass=snap.realismPerformance?.pass??true;
         result.pass=[
           result.render,result.framing,result.hover,result.focus,result.isolateHide,
           result.exploded,result.section,result.transparency,result.anatomyNavigation,
-          result.modePreserved,result.fpsAcceptable
+          result.modePreserved,result.fpsAcceptable,result.performancePass
         ].every(Boolean);
         rows.push(result);
         memorySamples.push({
@@ -306,6 +312,11 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
       totalCombinations:rows.length,
       passedCombinations:rows.length-failed.length,
       failedCombinations:failed.length,
+      performanceFailures:rows.filter(r=>!r.performancePass).map(r=>({
+        profileId:r.profileId,stageId:r.stageId,tier:r.realismTier,
+        fps:r.fps,drawCalls:r.drawCalls,triangles:r.triangles,buildMs:r.profileBuildMs,
+        checks:r.performanceChecks,targets:r.performanceTargets
+      })),
       rows,
       memory,
       mobile,
@@ -324,5 +335,5 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
 
 export function formatRegressionSummary(report){
   const status=report.pass?"PASS":"FAIL";
-  return `${status} · ${report.passedCombinations}/${report.totalCombinations} family×stage combinations · memory Δ geom ${report.memory.delta.geometries} · writes ${report.specimenIsolation.networkWrites.length}`;
+  return `${status} · ${report.passedCombinations}/${report.totalCombinations} family×stage combinations · perf failures ${report.performanceFailures?.length||0} · memory Δ geom ${report.memory.delta.geometries} · writes ${report.specimenIsolation.networkWrites.length}`;
 }
