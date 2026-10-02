@@ -304,6 +304,7 @@ export class MycoSimEngine{
   }
 
   loadProfile(id){
+    const profileBuildStart=performance.now();
     const p=PROFILE_BY_ID[id]; if(!p) throw new Error("Unknown morphology profile: "+id);
     this.onStatus?.("Loading "+p.label+"…");
     const enteringPuffball=id==="puffball" && this.currentProfile?.id!=="puffball";
@@ -334,7 +335,8 @@ export class MycoSimEngine{
     }
     this.applyMode();
     this.frameModel({animate:false});
-    this.onStatus?.("3D engine online · "+p.label+" · "+this.morphologyState.stage.label);
+    this._lastProfileBuildMs=performance.now()-profileBuildStart;
+    this.onStatus?.("3D engine online · "+p.label+" · "+this.morphologyState.stage.label+" · "+Math.round(this._lastProfileBuildMs)+" ms");
     return p;
   }
 
@@ -919,6 +921,10 @@ export class MycoSimEngine{
       rendererGeometries:this.renderer.info.memory.geometries,
       rendererTextures:this.renderer.info.memory.textures,
       drawCalls:this.renderer.info.render.calls,
+      profileBuildMs:Math.round(this._lastProfileBuildMs||0),
+      startupTargetMs:3000,
+      startupMaximumMs:5000,
+      puffOrnament:this.objects.get("exoperidium")?.userData?.ornamentStats||null,
       fps:this.lastFps,
       frameIntersects:!box.isEmpty()&&frustum.intersectsBox(box),
       boxEmpty:box.isEmpty()
@@ -1812,9 +1818,11 @@ export class MycoSimEngine{
         : baseDetail;
     const bodyY=1.05;
     const stageId=this.morphologyState?.stage?.id||this.developmentalStageId||"mature";
-    const irregularityScale=(surface==="glabrous")?0:(stageId==="young"?.032:stageId==="mature"?.022:.014);
+    const irregularityScale=surface==="glabrous"?(stageId==="young"?.008:stageId==="mature"?.012:.018):(stageId==="young"?.032:stageId==="mature"?.022:.014);
 
     const innerMat=(stageId==="young"?PUFF_PBR.youngPeridium:PUFF_PBR.wornExoperidium).clone();
+    const surfaceBump={glabrous:.010,granular:.034,verrucose:.030,echinate:.022,furfuraceous:.027}[surface]??.018;
+    innerMat.bumpScale=stageId==="old"?surfaceBump*.55:stageId==="mature"?surfaceBump*.78:surfaceBump;
     const bodyGeo=new THREE.SphereGeometry(1.15,56,36);
     if(irregularityScale>0){
       const pos=bodyGeo.attributes.position;
@@ -2002,7 +2010,7 @@ export class MycoSimEngine{
 
     const addInstancedOrnament=(id,label,geometry,count,filterFn,transformFn,material=baseOrnamentMaterial)=>{
       if(!count)return null;
-      const inst=new THREE.InstancedMesh(geometry,material.clone(),count);
+      const inst=new THREE.InstancedMesh(geometry.clone(),material.clone(),count);
       inst.userData={...exo.userData,id:"exoperidium",label,knowledgeId:surface};
       inst.castShadow=realism==="high"&&stageId==="young";
       inst.receiveShadow=true;
