@@ -23,6 +23,18 @@ export const MORPHOLOGY_VARIANTS = Object.freeze({
       ["folds","Folds"],["smooth","Smooth fertile surface"]
     ]
   },
+  puff_subtype: {
+    label:"Gasteroid teaching archetype",
+    options:[
+      ["true_puffball","Generalized true puffball"],
+      ["pyriform_puffball","Pyriform puffball archetype"],
+      ["gem_studded_type","Gem-studded / Lycoperdon-type archetype"],
+      ["giant_puffball_type","Giant puffball-type archetype"],
+      ["earthball_type","Earthball / Scleroderma-type archetype"],
+      ["earthstar_type","Earthstar archetype"],
+      ["stalked_puffball_type","Stalked puffball / Tulostoma-type archetype"]
+    ]
+  },
   puff_surface: {
     label:"Puffball surface ornamentation",
     options:[
@@ -110,6 +122,7 @@ export const DEFAULT_VARIANTS = Object.freeze({
   stipe:"equal",
   hymenophore:"adnate",
   veil:"annulus",
+  puff_subtype:"true_puffball",
   puff_surface:"echinate",
   puff_shape:"globose",
   puff_base:"short",
@@ -122,6 +135,112 @@ export const DEFAULT_VARIANTS = Object.freeze({
   section_view:"external",
   texture_realism:"atlas"
 });
+
+export const PUFFBALL_SUBTYPE_LIBRARY=Object.freeze({
+  true_puffball:Object.freeze({
+    label:"Generalized true puffball",
+    taxonomicScope:"Lycoperdaceae-like teaching archetype; not a species identification.",
+    allowed:Object.freeze({
+      puff_shape:Object.freeze(["globose","subglobose","pyriform"]),
+      puff_surface:Object.freeze(["glabrous","granular","verrucose","echinate","furfuraceous"]),
+      puff_base:Object.freeze(["none","short","distinct"])
+    }),
+    defaults:Object.freeze({puff_shape:"subglobose",puff_surface:"granular",puff_base:"short",rupture_pattern:"apical_ostiole"}),
+    architecture:Object.freeze({wallFactor:1.00,subglebaFactor:.70,stipeFactor:0,rayCount:0,glebaFactor:1.00,ostioleBias:1.00}),
+    development:Object.freeze({wallPersistence:1.00,ornamentPersistence:1.00,ruptureBias:1.00,collapseBias:1.00})
+  }),
+  pyriform_puffball:Object.freeze({
+    label:"Pyriform puffball archetype",
+    taxonomicScope:"Pear-shaped puffball teaching archetype; not a species identification.",
+    allowed:Object.freeze({
+      puff_shape:Object.freeze(["pyriform","turbiniform"]),
+      puff_surface:Object.freeze(["granular","verrucose","furfuraceous"]),
+      puff_base:Object.freeze(["distinct","rooting"])
+    }),
+    defaults:Object.freeze({puff_shape:"pyriform",puff_surface:"granular",puff_base:"distinct",rupture_pattern:"apical_ostiole"}),
+    architecture:Object.freeze({wallFactor:.95,subglebaFactor:1.22,stipeFactor:0,rayCount:0,glebaFactor:.92,ostioleBias:1.05}),
+    development:Object.freeze({wallPersistence:.92,ornamentPersistence:.88,ruptureBias:1.05,collapseBias:1.05})
+  }),
+  gem_studded_type:Object.freeze({
+    label:"Gem-studded / Lycoperdon-type archetype",
+    taxonomicScope:"Lycoperdon-like ornamented teaching archetype; not a species identification.",
+    allowed:Object.freeze({
+      puff_shape:Object.freeze(["subglobose","pyriform"]),
+      puff_surface:Object.freeze(["echinate","verrucose"]),
+      puff_base:Object.freeze(["short","distinct"])
+    }),
+    defaults:Object.freeze({puff_shape:"pyriform",puff_surface:"echinate",puff_base:"short",rupture_pattern:"apical_ostiole"}),
+    architecture:Object.freeze({wallFactor:.92,subglebaFactor:.95,stipeFactor:0,rayCount:0,glebaFactor:.94,ostioleBias:1.10}),
+    development:Object.freeze({wallPersistence:.88,ornamentPersistence:1.12,ruptureBias:1.08,collapseBias:1.02})
+  }),
+  giant_puffball_type:Object.freeze({
+    label:"Giant puffball-type archetype",
+    taxonomicScope:"Large smooth calvatioid teaching archetype; not a species identification.",
+    allowed:Object.freeze({
+      puff_shape:Object.freeze(["globose","subglobose","irregular"]),
+      puff_surface:Object.freeze(["glabrous","granular"]),
+      puff_base:Object.freeze(["none","short"])
+    }),
+    defaults:Object.freeze({puff_shape:"globose",puff_surface:"glabrous",puff_base:"none",rupture_pattern:"irregular_rupture"}),
+    architecture:Object.freeze({wallFactor:.82,subglebaFactor:.18,stipeFactor:0,rayCount:0,glebaFactor:1.18,ostioleBias:.28}),
+    development:Object.freeze({wallPersistence:.76,ornamentPersistence:.55,ruptureBias:1.35,collapseBias:1.18})
+  }),
+  earthball_type:Object.freeze({
+    label:"Earthball / Scleroderma-type archetype",
+    taxonomicScope:"Scleroderma-like thick-walled gasteroid teaching archetype; not a species identification.",
+    allowed:Object.freeze({
+      puff_shape:Object.freeze(["globose","subglobose","irregular"]),
+      puff_surface:Object.freeze(["verrucose","granular"]),
+      puff_base:Object.freeze(["short","rooting"])
+    }),
+    defaults:Object.freeze({puff_shape:"subglobose",puff_surface:"verrucose",puff_base:"rooting",rupture_pattern:"irregular_rupture"}),
+    architecture:Object.freeze({wallFactor:1.42,subglebaFactor:.32,stipeFactor:0,rayCount:0,glebaFactor:.92,ostioleBias:.18}),
+    development:Object.freeze({wallPersistence:1.28,ornamentPersistence:1.12,ruptureBias:.72,collapseBias:.72})
+  }),
+  earthstar_type:Object.freeze({
+    label:"Earthstar archetype",
+    taxonomicScope:"Geastrum-like earthstar teaching archetype; not a species identification.",
+    allowed:Object.freeze({
+      puff_shape:Object.freeze(["globose","subglobose"]),
+      puff_surface:Object.freeze(["granular","furfuraceous","glabrous"]),
+      puff_base:Object.freeze(["none","short"])
+    }),
+    defaults:Object.freeze({puff_shape:"subglobose",puff_surface:"granular",puff_base:"none",rupture_pattern:"apical_ostiole"}),
+    architecture:Object.freeze({wallFactor:.82,subglebaFactor:.10,stipeFactor:0,rayCount:7,glebaFactor:.78,ostioleBias:1.15}),
+    development:Object.freeze({wallPersistence:.92,ornamentPersistence:.66,ruptureBias:.92,collapseBias:.54})
+  }),
+  stalked_puffball_type:Object.freeze({
+    label:"Stalked puffball / Tulostoma-type archetype",
+    taxonomicScope:"Tulostoma-like stalked gasteroid teaching archetype; not a species identification.",
+    allowed:Object.freeze({
+      puff_shape:Object.freeze(["globose","subglobose"]),
+      puff_surface:Object.freeze(["glabrous","granular","furfuraceous"]),
+      puff_base:Object.freeze(["distinct","rooting"])
+    }),
+    defaults:Object.freeze({puff_shape:"globose",puff_surface:"granular",puff_base:"distinct",rupture_pattern:"apical_ostiole"}),
+    architecture:Object.freeze({wallFactor:.76,subglebaFactor:.06,stipeFactor:1.58,rayCount:0,glebaFactor:.72,ostioleBias:1.22}),
+    development:Object.freeze({wallPersistence:1.04,ornamentPersistence:.72,ruptureBias:.88,collapseBias:.48})
+  })
+});
+
+export function puffballSubtype(id){
+  return PUFFBALL_SUBTYPE_LIBRARY[id]||PUFFBALL_SUBTYPE_LIBRARY.true_puffball;
+}
+
+export function applyPuffballSubtypeDefaults(selection={},id=selection.puff_subtype||"true_puffball"){
+  const def=puffballSubtype(id);
+  return {...selection,...def.defaults,puff_subtype:id};
+}
+
+export function enforcePuffballSubtype(selection={}){
+  const id=selection.puff_subtype||"true_puffball";
+  const def=puffballSubtype(id);
+  const next={...selection,puff_subtype:id};
+  for(const [group,allowed] of Object.entries(def.allowed)){
+    if(!allowed.includes(next[group])) next[group]=def.defaults[group]||allowed[0];
+  }
+  return next;
+}
 
 export function validateVariantSelection(selection={}){
   const errors=[];
@@ -172,6 +291,15 @@ export const VARIANT_TEACHING = Object.freeze({
     teeth:{anatomyId:"hymenophore",short:"Fertile surface hangs as teeth or spines.",detail:"Hydnoid hymenophores bear the hymenium on pendent tooth-like or spine-like projections."},
     folds:{anatomyId:"hymenophore",short:"Fertile surface forms blunt folds or ridges.",detail:"Folded hymenophores have wrinkled or ridge-like fertile structures rather than true lamellae."},
     smooth:{anatomyId:"hymenophore",short:"Fertile surface is macroscopically smooth.",detail:"A smooth hymenophore lacks conspicuous gills, pores, teeth, or folds at macroscopic scale."}
+  }),
+  puff_subtype:Object.freeze({
+    true_puffball:{anatomyId:"puffball",short:"Generalized true puffball teaching archetype.",detail:"Represents an enclosed glebal body with layered peridium and variable surface ornamentation. It is a morphological teaching model, not a species determination."},
+    pyriform_puffball:{anatomyId:"sterile_base",short:"Pear-shaped puffball teaching archetype.",detail:"Emphasizes a broadened fertile head and differentiated sterile basal region while preserving enclosed glebal development."},
+    gem_studded_type:{anatomyId:"exoperidium",short:"Gem-studded Lycoperdon-like teaching archetype.",detail:"Emphasizes youthful echinate or warted exoperidial ornament and strong age-dependent abrasion without asserting a species identification."},
+    giant_puffball_type:{anatomyId:"peridium",short:"Large smooth calvatioid teaching archetype.",detail:"Emphasizes a broad smooth body, extensive gleba, reduced subgleba, and irregular wall rupture rather than a small persistent pore."},
+    earthball_type:{anatomyId:"peridium",short:"Thick-walled Scleroderma-like teaching archetype.",detail:"Emphasizes a firm thick peridium, verrucose surface, darkening gleba, and irregular rupture. It remains conceptually separate from true puffballs."},
+    earthstar_type:{anatomyId:"peridium",short:"Earthstar teaching archetype.",detail:"Emphasizes an inner spore sac associated with an outer peridial layer that splits into star-like rays during maturation; not a species identification."},
+    stalked_puffball_type:{anatomyId:"sterile_base",short:"Tulostoma-like stalked gasteroid teaching archetype.",detail:"Emphasizes a discrete spore sac elevated on a sterile stalk with an apical release opening; not a species identification."}
   }),
   puff_surface:Object.freeze({
     glabrous:{anatomyId:"exoperidium",short:"Outer surface lacks macroscopic spines, warts, grains, or flakes.",detail:"Glabrous means macroscopically smooth, not artificially featureless. Fine biological micro-relief, color variation, and weathering may remain, and an old abraded surface should not automatically be interpreted as originally glabrous."},
