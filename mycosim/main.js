@@ -440,10 +440,15 @@ try{
     currentProfile=p; selected=null; actions.hidden=true;
     info.textContent="Loading morphology model…";
     engine.loadProfile(id);
+    if(!window.MYCOSIM_BOOT_MS){
+      window.MYCOSIM_BOOT_MS=Math.round(performance.now()-(window.MYCOSIM_BOOT_STARTED||performance.now()));
+      clearTimeout(window.MYCOSIM_BOOT_WATCHDOG);
+    }
     renderVariantControls(p,engine);
     renderStageControls(p,engine);
     renderAnatomy(p);
     $("#profileName").textContent=p.label.toUpperCase();
+    if(window.MYCOSIM_BOOT_MS && status) status.textContent=`3D engine online · ${p.label} · ${engine.getDevelopmentalStage()?.label||"Mature"} · boot ${window.MYCOSIM_BOOT_MS} ms`;
     renderKnowledge("basidiome",engine,{moveCamera:false});
     updateVisibleState(engine);
   }
