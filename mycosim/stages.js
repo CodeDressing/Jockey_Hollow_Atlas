@@ -165,16 +165,18 @@ export const DEVELOPMENTAL_STAGE_LIBRARY = Object.freeze({
     young:stage("young","Young",0.25,{
       ...common.young,peridium_tautness:1.00,gleba_maturity:0.08,apical_pore_opening:0.00,
       collapse:0.00,ornament_retention:1.00,peridial_integrity:1.00
-    },"Firm enclosed puffball with white immature gleba, intact peridium, no functional ostiole, and taxon-dependent exoperidial ornamentation that may be smooth, granular, warted, spiny/echinate, or scurfy/furfuraceous.",
-    ["Young puffballs are not universally spiny; ornament type is taxon-dependent and should be recorded separately."]),
+    },"Young puffballs often show their most pronounced external ornamentation at this stage. Spines, warts, or granules may later wear away as the fruitbody matures.",
+    ["Body usually globose, subglobose, or pyriform; peridium firm and intact; gleba immature and white; ostiole absent or not functionally open. Surface ornamentation is taxon-dependent and may also be furfuraceous or glabrous."]),
     mature:stage("mature","Mature",0.60,{
       ...common.mature,peridium_tautness:0.82,gleba_maturity:0.72,apical_pore_opening:0.38,
       collapse:0.08,ornament_retention:0.68,peridial_integrity:0.82
-    },"Reference stage with yellowing to olive-buff maturing gleba, developing ostiole, and partial abrasion or loss of exoperidial ornamentation."),
+    },"At maturity, the gleba darkens as spores develop. External ornamentation may persist or become abraded, and an ostiole may begin to form for later spore release.",
+    ["Fruitbody fully developed; gleba transitions from white toward olive, buff, brown, or olive-brown; peridium is less pristine; outer and inner peridial layers should remain visually distinguishable in section."]),
     old:stage("old","Old",0.92,{
       ...common.old,peridium_tautness:0.35,gleba_maturity:1.00,apical_pore_opening:1.00,
       collapse:0.72,spore_release:0.90,ornament_retention:0.24,peridial_integrity:0.38
-    },"Senescent puffball with open or enlarged ostiole, dark dry gleba, substantial spore release, worn exoperidium, and progressive collapse.")
+    },"In old puffballs, the gleba has matured to a spore mass and the peridium opens or breaks, allowing spores to escape. Surface features of the exoperidium may be lost with age and abrasion.",
+    ["Gleba fully mature, dry, powdery, and darker; ostiole open or outer wall broken; peridium may be cracked, thinned, torn, or collapsed; body may be misshapen from weathering."])
   },
 
   cup:{
