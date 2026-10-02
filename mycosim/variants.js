@@ -56,6 +56,28 @@ export const MORPHOLOGY_VARIANTS = Object.freeze({
       ["absent","Absent / not yet developed"],["developing","Developing"],["open","Open apical ostiole"],["ragged","Widened / ragged ostiole"]
     ]
   },
+  rupture_pattern: {
+    label:"Peridial rupture pattern",
+    options:[
+      ["intact","None / intact"],["apical_ostiole","Apical ostiole"],["small_apical_tear","Small apical tear"],
+      ["radial_cracking","Radial cracking"],["irregular_rupture","Irregular rupture"],
+      ["collapsed_crown","Collapsed broken crown"],["lateral_break","Lateral break"],["fragmented_opening","Fragmented opening"]
+    ]
+  },
+  rupture_margin: {
+    label:"Rupture margin",
+    options:[
+      ["clean","Clean"],["slightly_torn","Slightly torn"],["ragged","Ragged"],
+      ["curled_out","Curled outward"],["curled_in","Curled inward"],["frayed","Frayed / weathered"]
+    ]
+  },
+  collapse_state: {
+    label:"Wall collapse / deformation",
+    options:[
+      ["none","None"],["slight","Slight settling"],["moderate","Moderate collapse"],
+      ["severe","Severe collapse"],["weathered","Weathered distortion"]
+    ]
+  },
   gleba_state: {
     label:"Gleba state",
     options:[
@@ -94,6 +116,9 @@ export const DEFAULT_VARIANTS = Object.freeze({
   peridial_condition:"intact",
   ostiole_state:"absent",
   gleba_state:"immature",
+  rupture_pattern:"intact",
+  rupture_margin:"clean",
+  collapse_state:"none",
   section_view:"external",
   texture_realism:"atlas"
 });
@@ -180,6 +205,31 @@ export const VARIANT_TEACHING = Object.freeze({
     developing:{anatomyId:"apical_pore",short:"A small apical opening is beginning to form.",detail:"The ostiole begins as a restricted apical aperture during maturation."},
     open:{anatomyId:"apical_pore",short:"A functional apical ostiole is open.",detail:"The mature ostiole permits dry spores to escape from the gleba."},
     ragged:{anatomyId:"apical_pore",short:"The spore-release opening is widened and irregular.",detail:"An aged ostiole may become enlarged, torn, or ragged through repeated spore discharge and weathering."}
+  }),
+  rupture_pattern:Object.freeze({
+    intact:{anatomyId:"peridium",short:"Peridium remains closed without a rupture.",detail:"No dehiscence is represented; appropriate for immature or intact fruit bodies."},
+    apical_ostiole:{anatomyId:"apical_pore",short:"A discrete apical spore-release opening is present.",detail:"An apical ostiole forms a localized opening through mature peridial tissue."},
+    small_apical_tear:{anatomyId:"rupture_margin",short:"A small irregular tear opens near the apex.",detail:"A limited apical tear represents early or irregular dehiscence beyond a simple round ostiole."},
+    radial_cracking:{anatomyId:"rupture_margin",short:"Cracks radiate from the apical region.",detail:"Radial fissures divide the upper peridium into connected sectors while preserving most wall continuity."},
+    irregular_rupture:{anatomyId:"rupture_margin",short:"An asymmetric opening exposes the gleba.",detail:"Irregular rupture creates a non-circular, biologically weathered opening rather than a geometric hole."},
+    collapsed_crown:{anatomyId:"collapsed_wall",short:"The upper wall is broken and partly collapsed.",detail:"Senescent drying and wall failure produce a depressed, broken crown with exposed gleba."},
+    lateral_break:{anatomyId:"rupture_margin",short:"The wall opens primarily along one side.",detail:"A lateral break exposes the interior asymmetrically and may result from weathering or mechanical damage."},
+    fragmented_opening:{anatomyId:"rupture_margin",short:"The opening is bordered by multiple retained wall fragments.",detail:"Advanced dehiscence leaves an irregular opening with connected and partly detached peridial remnants."}
+  }),
+  rupture_margin:Object.freeze({
+    clean:{anatomyId:"rupture_margin",short:"Opening edge is relatively even.",detail:"A comparatively clean margin has little tearing or curling."},
+    slightly_torn:{anatomyId:"rupture_margin",short:"Opening edge has limited tearing.",detail:"Small discontinuities and slight irregularity mark the rupture edge."},
+    ragged:{anatomyId:"rupture_margin",short:"Opening edge is strongly irregular.",detail:"Ragged margins show multiple uneven lobes and tears caused by drying or rupture."},
+    curled_out:{anatomyId:"rupture_margin",short:"Dry wall tissue curls outward.",detail:"Outward curling exposes the inner peridial surface along the rupture margin."},
+    curled_in:{anatomyId:"rupture_margin",short:"Dry wall tissue curls inward.",detail:"Inward curling turns the rupture edge toward the glebal cavity."},
+    frayed:{anatomyId:"rupture_margin",short:"Margin is weathered and frayed.",detail:"A frayed edge represents advanced abrasion and thinning of senescent peridial tissue."}
+  }),
+  collapse_state:Object.freeze({
+    none:{anatomyId:"peridium",short:"Fruit-body wall remains fully supported.",detail:"No additional deformation beyond the selected developmental stage is applied."},
+    slight:{anatomyId:"collapsed_wall",short:"Wall shows subtle settling and asymmetry.",detail:"Slight collapse introduces modest flattening and denting without major wall failure."},
+    moderate:{anatomyId:"collapsed_wall",short:"Wall is visibly dented and partly caved.",detail:"Moderate collapse produces asymmetric settling as dry tissue loses structural support."},
+    severe:{anatomyId:"collapsed_wall",short:"Fruit body is strongly collapsed.",detail:"Severe collapse greatly reduces height and creates major wall deformation."},
+    weathered:{anatomyId:"collapsed_wall",short:"Wall is irregularly distorted by senescence and weathering.",detail:"Weathered distortion combines asymmetric flattening, dents, rotation, and uneven shell failure."}
   }),
   gleba_state:Object.freeze({
     immature:{anatomyId:"gleba",short:"Gleba is white and firm.",detail:"Immature glebal tissue has not yet converted into a dry spore mass."},
