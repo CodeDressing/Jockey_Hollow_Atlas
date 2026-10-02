@@ -1372,6 +1372,19 @@ export class MycoSimEngine{
         sporeMass:this.objects.get("spore_mass")?.userData?.renderingModel||null
       }:null,
       developmentalIdentity:this.morphologyState?.developmental?.identityKey||null,
+      agaricoidPhaseTwo:this.currentProfile?.id==="agaricoid"?{
+        plateModel:this.objects.get("hymenophore")?.userData?.plateModel||null,
+        attachment:this.variants.hymenophore||null,
+        spacing:this.variants.agaric_gill_spacing||null,
+        fullGillCount:this.objects.get("hymenophore")?.userData?.fullGillCount||0,
+        spacingDegrees:this.objects.get("hymenophore")?.userData?.spacingDegrees||null,
+        thickness:this.variants.agaric_gill_thickness||null,
+        depth:this.variants.agaric_gill_depth||null,
+        lamellulae:this.variants.agaric_lamellulae||null,
+        lamellulaCount:this.objects.get("hymenophore")?.userData?.lamellulaCount||0,
+        edge:this.variants.agaric_gill_edge||null,
+        attachmentGeometry:this.objects.get("hymenophore")?.userData?.attachmentGeometry||null
+      }:null,
       agaricoidPhaseOne:this.currentProfile?.id==="agaricoid"?{
         pileusModel:this.objects.get("pileus")?.geometry?.userData?.model||null,
         pileusProfile:this.variants.agaric_pileus_profile||null,
@@ -2267,6 +2280,80 @@ export class MycoSimEngine{
     return layer;
   }
 
+  _agaricoidGillPlateGeometry({
+    start=.22,end=1.30,theta=0,capState=null,depth=.24,thickness=.018,
+    attachment="adnate",edge="even",shortTier=0
+  }={}){
+    const len=Math.max(.08,end-start);
+    const mid=(start+end)/2;
+    const underside=(r)=>capState?.undersideHeight?capState.undersideHeight(r,theta):2.30;
+    const midY=underside(mid);
+    const samples=20;
+    const top=[];
+    for(let i=0;i<=samples;i++){
+      const t=i/samples,r=THREE.MathUtils.lerp(start,end,t);
+      let y=underside(r)-midY;
+      if(attachment==="sinuate"&&t<.20)y+=.065*Math.sin((t/.20)*Math.PI);
+      if(attachment==="emarginate"&&t<.17)y+=.095*Math.sin((t/.17)*Math.PI);
+      if(attachment==="seceding"&&t<.14)y-=.018*(1-t/.14);
+      top.push(new THREE.Vector2((t-.5)*len,y));
+    }
+
+    const lower=[];
+    for(let i=samples;i>=0;i--){
+      const t=i/samples,r=THREE.MathUtils.lerp(start,end,t);
+      const upper=underside(r)-midY;
+      const centerWeight=Math.sin(Math.PI*t);
+      let localDepth=depth*(.50+.50*centerWeight);
+      if(shortTier>0)localDepth*=.82+.06*shortTier;
+      if((attachment==="decurrent"||attachment==="subdecurrent")&&t<.16){
+        const run=(1-t/.16);
+        localDepth+=run*(attachment==="decurrent"?.22:.10);
+      }
+      let edgeOffset=0;
+      if(edge==="serrulate")edgeOffset=.018*Math.abs(Math.sin(t*Math.PI*16));
+      else if(edge==="fimbriate")edgeOffset=.026*Math.abs(Math.sin(t*Math.PI*23+.4))*(.55+.45*Math.sin(t*Math.PI));
+      else if(edge==="crisped")edgeOffset=.022*Math.sin(t*Math.PI*11+.7);
+      lower.push(new THREE.Vector2((t-.5)*len,upper-localDepth-edgeOffset));
+    }
+
+    const shape=new THREE.Shape();
+    shape.moveTo(top[0].x,top[0].y);
+    for(let i=1;i<top.length;i++)shape.lineTo(top[i].x,top[i].y);
+    for(const p of lower)shape.lineTo(p.x,p.y);
+    shape.closePath();
+
+    const geo=new THREE.ExtrudeGeometry(shape,{
+      depth:thickness,
+      bevelEnabled:false,
+      steps:1,
+      curveSegments:1
+    });
+    geo.translate(0,0,-thickness/2);
+    geo.computeVertexNormals();
+    geo.userData={
+      model:"agaricoid-gill-plate-v1",attachment,edge,depth,thickness,start,end,shortTier
+    };
+    return {geo,mid,midY};
+  }
+
+  _agaricoidLamellulaPlan(presence,fullCount){
+    if(presence==="absent")return [];
+    const tiers=presence==="sparse"?[.48]:presence==="moderate"?[.36,.60]:[.25,.43,.62];
+    const frequency=presence==="sparse"?4:presence==="moderate"?2:1;
+    const plan=[];
+    for(let i=0;i<fullCount;i++){
+      if(i%frequency!==0)continue;
+      const tier=tiers[i%tiers.length];
+      plan.push({slot:i+.5,tier,index:i%tiers.length+1});
+      if(presence==="abundant"&&i%2===0){
+        const tier2=tiers[(i+1)%tiers.length];
+        plan.push({slot:i+.25,tier:tier2,index:(i+1)%tiers.length+1});
+      }
+    }
+    return plan;
+  }
+
   _addGillSecondaryDetail(group,type,pileusY,stipeX,inner,outer,capState=null){
     const secondaryMat=MATERIALS.gill.clone();
     secondaryMat.color.offsetHSL(0,0,-.045);
@@ -2366,49 +2453,124 @@ export class MycoSimEngine{
       h.position.y=pileusY-.24;return;
     }
 
-    const innerMap={free_gills:.43,seceding:.38,adnexed:.30,sinuate:.24,emarginate:.25,adnate:.17,subdecurrent:.11,decurrent:.08};
-    const inner=innerMap[type]??.17,outer=capState?.radius?capState.radius*.81:1.30;
-    const attachmentLabels={free_gills:"Free gills",seceding:"Seceding gills",adnexed:"Adnexed gills",adnate:"Adnate gills",sinuate:"Sinuate gills",emarginate:"Emarginate gills",subdecurrent:"Subdecurrent gills",decurrent:"Decurrent gills"};
-    const attachmentKnowledge={free_gills:"free_gills",seceding:"seceding",adnexed:"adnexed",adnate:"adnate",sinuate:"sinuate",emarginate:"emarginate",subdecurrent:"subdecurrent",decurrent:"decurrent"};
-    const group=new THREE.Group();group.userData={id:"hymenophore",label:attachmentLabels[type]||"Lamellae / gills",category:"fertile",selectable:true,knowledgeId:attachmentKnowledge[type]||"gill_attachment",attachmentType:type};
-    const total=this.realismTier.id==="interactive"?48:this.realismTier.id==="high"?72:64;
-    const makeGillGeometry=(short)=>{
-      const start=short?THREE.MathUtils.lerp(inner,outer,.42):inner;
-      const end=outer;
-      const len=end-start;
-      const h=.16+.13*(1-start/outer);
-      const shape=new THREE.Shape();
-      shape.moveTo(-len/2,0);
-      shape.lineTo(len/2,0);
-      shape.lineTo(len/2,-h*.45);
-      shape.quadraticCurveTo(0,-h*1.08,-len/2,-h*.72);
-      shape.closePath();
-      return {geo:new THREE.ShapeGeometry(shape,5),start,end};
+    const spacing=this.variants.agaric_gill_spacing||"close";
+    const thicknessState=this.variants.agaric_gill_thickness||"thin";
+    const depthState=this.variants.agaric_gill_depth||"moderate";
+    const lamellulaeState=this.variants.agaric_lamellulae||"moderate";
+    const edgeState=this.variants.agaric_gill_edge||"even";
+
+    const spacingCount={distant:28,subdistant:42,close:66,crowded:104}[spacing]||66;
+    const tierFactor=this.realismTier.id==="interactive"?.86:this.realismTier.id==="high"?1.08:1;
+    const fullCount=Math.max(20,Math.round(spacingCount*tierFactor));
+    const plateThickness={thin:.012,moderate:.022,broad:.034}[thicknessState]||.012;
+    const plateDepth={shallow:.15,moderate:.25,deep:.37}[depthState]||.25;
+
+    const stipeRadius=.285;
+    const innerMap={
+      free_gills:stipeRadius+.16,
+      seceding:stipeRadius+.105,
+      adnexed:stipeRadius+.055,
+      adnate:stipeRadius+.018,
+      sinuate:stipeRadius+.018,
+      emarginate:stipeRadius+.020,
+      subdecurrent:Math.max(.11,stipeRadius-.025),
+      decurrent:Math.max(.08,stipeRadius-.055)
     };
-    for(const short of [false,true]){
-      const spec=makeGillGeometry(short);
-      const indices=[];
-      for(let i=0;i<total;i++)if((i%2===1)===short)indices.push(i);
-      const inst=new THREE.InstancedMesh(spec.geo,MATERIALS.gill.clone(),indices.length);
-      inst.userData={...group.userData,knowledgeId:attachmentKnowledge[type]||"lamella",hoverLabel:attachmentLabels[type]||"Lamella / gill",structureType:short?"lamellula":"lamella"};
-      inst.castShadow=this.realismTier.id==="high";inst.receiveShadow=true;
-      const dummy=new THREE.Object3D();
-      indices.forEach((i,j)=>{
-        const a=i/total*Math.PI*2;
-        const mid=(spec.start+spec.end)/2;
-        const undersideY=capState?.undersideHeight?capState.undersideHeight(mid,a):pileusY-.16;
-        dummy.position.set(stipeX+Math.cos(a)*mid,undersideY-((type==="decurrent")?.10:(type==="subdecurrent"?.045:0)),Math.sin(a)*mid);
-        dummy.rotation.set(0,-a,0);
-        if(type==="sinuate")dummy.rotation.z=.055*Math.sin(a*2);
-        if(type==="emarginate")dummy.rotation.z=.085*Math.sin(a*2);
-        if(type==="subdecurrent"&&!short)dummy.rotation.z=.055;
-        if(type==="decurrent"&&!short)dummy.rotation.z=.115;
-        if(type==="seceding"&&!short)dummy.rotation.z=-.018;
-        dummy.scale.set(1,1,1);dummy.updateMatrix();inst.setMatrixAt(j,dummy.matrix);
+    const inner=innerMap[type]??stipeRadius+.018;
+    const outer=capState?.radius?capState.radius*.82:1.32;
+    const attachmentLabels={
+      free_gills:"Free gills",seceding:"Seceding gills",adnexed:"Adnexed gills",adnate:"Adnate gills",
+      sinuate:"Sinuate gills",emarginate:"Emarginate gills",subdecurrent:"Subdecurrent gills",decurrent:"Decurrent gills"
+    };
+    const attachmentKnowledge={
+      free_gills:"free_gills",seceding:"seceding",adnexed:"adnexed",adnate:"adnate",
+      sinuate:"sinuate",emarginate:"emarginate",subdecurrent:"subdecurrent",decurrent:"decurrent"
+    };
+
+    const group=new THREE.Group();
+    group.userData={
+      id:"hymenophore",label:attachmentLabels[type]||"Lamellae / gills",category:"fertile",selectable:true,
+      knowledgeId:attachmentKnowledge[type]||"gill_attachment",attachmentType:type,
+      spacing,thickness:thicknessState,depth:depthState,lamellulae:lamellulaeState,edge:edgeState,
+      fullGillCount:fullCount
+    };
+
+    const fullSpecs=[];
+    for(let i=0;i<fullCount;i++){
+      const theta=i/fullCount*Math.PI*2;
+      const spec=this._agaricoidGillPlateGeometry({
+        start:inner,end:outer,theta,capState,depth:plateDepth,thickness:plateThickness,
+        attachment:type,edge:edgeState,shortTier:0
       });
-      inst.instanceMatrix.needsUpdate=true;group.add(inst);this.pickables.push(inst);
+      fullSpecs.push({theta,spec});
     }
-    this._addGillSecondaryDetail(group,type,pileusY,stipeX,inner,outer,capState);
+
+    // Plates use one shared reference geometry per attachment state; per-angle vertical
+    // placement follows the generated pileus underside.
+    const referenceFull=this._agaricoidGillPlateGeometry({
+      start:inner,end:outer,theta:0,capState,depth:plateDepth,thickness:plateThickness,
+      attachment:type,edge:edgeState,shortTier:0
+    });
+    const fullMesh=new THREE.InstancedMesh(referenceFull.geo,MATERIALS.gill.clone(),fullCount);
+    fullMesh.userData={
+      ...group.userData,knowledgeId:attachmentKnowledge[type]||"lamella",
+      hoverLabel:attachmentLabels[type]||"Lamella / gill",structureType:"lamella",
+      edgeKnowledgeId:"gill_edge"
+    };
+    fullMesh.castShadow=this.realismTier.id==="high";fullMesh.receiveShadow=true;
+    const dummy=new THREE.Object3D();
+    for(let i=0;i<fullCount;i++){
+      const theta=i/fullCount*Math.PI*2;
+      const mid=(inner+outer)/2;
+      const localY=capState?.undersideHeight?capState.undersideHeight(mid,theta):pileusY-.18;
+      const referenceY=capState?.undersideHeight?capState.undersideHeight(mid,0):pileusY-.18;
+      dummy.position.set(stipeX+Math.cos(theta)*mid,localY-referenceY,Math.sin(theta)*mid);
+      dummy.rotation.set(0,-theta,0);
+      dummy.scale.set(1,1,1);dummy.updateMatrix();fullMesh.setMatrixAt(i,dummy.matrix);
+    }
+    fullMesh.instanceMatrix.needsUpdate=true;
+    group.add(fullMesh);this.pickables.push(fullMesh);
+
+    const lamPlan=this._agaricoidLamellulaPlan(lamellulaeState,fullCount);
+    const tiers=[...new Set(lamPlan.map(x=>x.tier))];
+    let lamellulaCount=0;
+    for(const tier of tiers){
+      const entries=lamPlan.filter(x=>x.tier===tier);
+      const start=THREE.MathUtils.lerp(inner,outer,tier);
+      const tierIndex=Math.max(1,Math.round(tier*4));
+      const spec=this._agaricoidGillPlateGeometry({
+        start,end:outer,theta:0,capState,
+        depth:plateDepth*(.82+.10*tier),thickness:plateThickness*.92,
+        attachment:"free_gills",edge:edgeState,shortTier:tierIndex
+      });
+      const inst=new THREE.InstancedMesh(spec.geo,MATERIALS.gill.clone(),entries.length);
+      inst.userData={
+        ...group.userData,id:"lamellula",knowledgeId:"lamellula",hoverLabel:"Lamellula / short gill",
+        structureType:"lamellula",lengthTier:tierIndex,edgeKnowledgeId:"gill_edge"
+      };
+      inst.castShadow=false;inst.receiveShadow=true;
+      entries.forEach((entry,j)=>{
+        const theta=(entry.slot/fullCount)*Math.PI*2;
+        const mid=(start+outer)/2;
+        const localY=capState?.undersideHeight?capState.undersideHeight(mid,theta):pileusY-.18;
+        const referenceY=capState?.undersideHeight?capState.undersideHeight(mid,0):pileusY-.18;
+        dummy.position.set(stipeX+Math.cos(theta)*mid,localY-referenceY,Math.sin(theta)*mid);
+        dummy.rotation.set(0,-theta,0);dummy.scale.set(1,1,1);dummy.updateMatrix();inst.setMatrixAt(j,dummy.matrix);
+      });
+      inst.instanceMatrix.needsUpdate=true;
+      group.add(inst);this.pickables.push(inst);lamellulaCount+=entries.length;
+    }
+
+    group.userData.lamellulaCount=lamellulaCount;
+    group.userData.plateModel="agaricoid-gill-plate-v1";
+    group.userData.spacingDegrees=360/fullCount;
+    group.userData.attachmentGeometry={
+      innerRadius:inner,
+      descendsStipe:type==="decurrent"||type==="subdecurrent",
+      notched:type==="sinuate"||type==="emarginate",
+      detached:type==="free_gills"||type==="seceding"
+    };
+
     this.root.add(group);this.objects.set("hymenophore",group);
   }
 
