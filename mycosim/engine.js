@@ -1353,6 +1353,8 @@ export class MycoSimEngine{
       },this.realismTier||REALISM_TIERS.atlas),
       puffOrnament:this.objects.get("exoperidium")?.userData?.ornamentStats||null,
       puffGeometryModel:this.currentProfile?.id==="puffball"?this.objects.get("peridium")?.geometry?.userData||null:null,
+      objectIds:[...this.objects.keys()],
+      puffPbrMaterials:this.currentProfile?.id==="puffball"?Object.keys(PUFF_PBR):[],
       glebaRenderingModel:this.currentProfile?.id==="puffball"?{
         volume:this.objects.get("gleba")?.geometry?.userData||null,
         microstructure:this.objects.get("gleba")?.userData?.renderingModel||null,
