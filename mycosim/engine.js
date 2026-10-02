@@ -314,13 +314,24 @@ const seededRng=seed=>{
   };
 };
 
-const puffSurfacePoint=(shape,nx,ny,nz,bodyY,radius=1.165)=>{
-  let radial=1,vertical=1;
-  if(shape==="subglobose"){radial=1.035;vertical=.94;}
-  else if(shape==="pyriform"){radial=.78+.27*((ny+1)/2);vertical=1.08;}
-  else if(shape==="turbiniform"){radial=.67+.40*((ny+1)/2);vertical=1.02;}
-  else if(shape==="irregular"){radial=1+.045*Math.sin(ny*7+Math.atan2(nz,nx)*1.4);vertical=.90;}
-  return new THREE.Vector3(nx*radius*radial,bodyY+ny*(radius-.055)*vertical,nz*radius*radial);
+const puffSurfacePoint=(shape,nx,ny,nz,bodyY,radius=1.165,{
+  stageId="mature",subtypeId="true_puffball",seed=1,params={}
+}={})=>{
+  const theta=Math.atan2(nz,nx);
+  const sf=puffShapeFactors(shape,ny,theta);
+  const phase=((seed%10007)/10007)*Math.PI*2;
+  const dev=puffStageDeformation(stageId,ny,theta,phase,params);
+  const subtypeRadial=subtypeId==="giant_puffball_type"?1.025:subtypeId==="earthball_type"?1.01:1;
+  const field=(Math.sin(theta*3.0+Math.acos(THREE.MathUtils.clamp(ny,-1,1))*2.2+phase)+.55*Math.sin(theta*7.0-Math.acos(THREE.MathUtils.clamp(ny,-1,1))*4.1+phase*.63));
+  const amp=stageId==="young"?.006:stageId==="mature"?.012:.017;
+  const sinPhi=Math.sqrt(Math.max(0,1-ny*ny));
+  const mod=1+field*amp*(.30+.70*sinPhi);
+  const radial=radius*sf.radial*subtypeRadial*dev.radial*mod;
+  return new THREE.Vector3(
+    nx*radial+dev.xSlump,
+    bodyY+ny*radius*sf.vertical+dev.yOffset*radius,
+    nz*radial+dev.zSlump
+  );
 };
 
 const sampledPuffSurface=(target,seed,{cluster=.25,barePatch=.10,clusterCount=3,bareCount=2}={})=>{
@@ -2401,6 +2412,22 @@ export class MycoSimEngine{
       waterLoss:devParams.water_loss??0,
       depletion:devParams.spore_depletion??0
     });
+    const interfaceMat=glebaMat.clone();
+    interfaceMat.transparent=true;interfaceMat.opacity=stageId==="young"?.16:stageId==="mature"?.12:.08;
+    interfaceMat.side=THREE.DoubleSide;
+    const interfaceGeo=createGlebaVolumeGeometry({
+      radius:glebaRadius*1.035,stageId,seed:identitySeed+277,
+      segments:scaledSegments(44,this.realismTier,{min:28,max:60}),
+      rings:scaledSegments(28,this.realismTier,{min:18,max:38}),
+      maturity:devParams.gleba_maturity??.5,
+      waterLoss:devParams.water_loss??0,
+      depletion:devParams.spore_depletion??0,
+      shape
+    });
+    const glebaInterface=new THREE.Mesh(interfaceGeo,interfaceMat);
+    glebaInterface.userData={id:"gleba",label:"Peridium–gleba transition zone",category:"internal",parentId:"gleba",selectable:true,knowledgeId:"gleba"};
+    glebaInterface.castShadow=false;glebaInterface.receiveShadow=true;
+    gleba.add(glebaInterface);this.pickables.push(glebaInterface);
     glebaMicro.children.forEach(child=>{
       child.userData.parentId="gleba";
       this.pickables.push(child);
@@ -2625,7 +2652,7 @@ export class MycoSimEngine{
       for(let i=0;i<ornamentPoints.length&&write<count;i++){
         if(filterFn&&!filterFn(i))continue;
         const n=ornamentPoints[i];
-        const p=puffSurfacePoint(shape,n.x,n.y,n.z,bodyY,bodyRadius*1.01);
+        const p=puffSurfacePoint(shape,n.x,n.y,n.z,bodyY,bodyRadius*1.01,{stageId,subtypeId,seed:identitySeed,params:devParams});
         dummy.position.copy(p);
         const localNormalAxis=surface==="furfuraceous"?new THREE.Vector3(0,0,1):new THREE.Vector3(0,1,0);
         dummy.quaternion.setFromUnitVectors(localNormalAxis,n.clone().normalize());
@@ -2833,7 +2860,7 @@ export class MycoSimEngine{
       const dummy=new THREE.Object3D();
       for(let i=0;i<scarSample.points.length;i++){
         const n=scarSample.points[i];
-        const p=puffSurfacePoint(shape,n.x,n.y,n.z,bodyY,bodyRadius*1.008);
+        const p=puffSurfacePoint(shape,n.x,n.y,n.z,bodyY,bodyRadius*1.008,{stageId,subtypeId,seed:identitySeed,params:devParams});
         dummy.position.copy(p).addScaledVector(n,.003);
         dummy.quaternion.setFromUnitVectors(new THREE.Vector3(0,0,1),n.clone().normalize());
         dummy.rotation.z=scarSample.rng()*Math.PI*2;
