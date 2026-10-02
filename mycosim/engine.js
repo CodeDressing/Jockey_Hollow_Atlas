@@ -513,14 +513,50 @@ export class MycoSimEngine{
 
       const ornament=this.objects.get("exoperidium");
       if(ornament){
+        const surfaceType=this.variants.puff_surface||"glabrous";
         ornament.children.forEach((o,i)=>{
-          const ageKeep=Math.max(.08,retention);
-          o.visible=((i*37)%100)/100<ageKeep;
-          if(sid==="old"){
-            o.scale.multiplyScalar(.72);
-            o.rotation.z+=((i%7)-3)*.025;
+          const seed=((i*37)%100)/100;
+          let keep=1;
+          let scale=1;
+
+          if(sid==="young"){
+            keep=surfaceType==="glabrous"?0:1;
+            scale=1;
           }else if(sid==="mature"){
-            o.scale.multiplyScalar(.88);
+            // Generalized atlas default: youthful ornament is abraded substantially by maturity.
+            // Echinate spines become sparse, short, blunt remnants rather than fresh pointed spines.
+            keep=surfaceType==="echinate"?.32:
+                 surfaceType==="verrucose"?.50:
+                 surfaceType==="granular"?.42:
+                 surfaceType==="furfuraceous"?.34:0;
+            scale=surfaceType==="echinate"?.34:
+                  surfaceType==="verrucose"?.64:
+                  surfaceType==="granular"?.55:
+                  surfaceType==="furfuraceous"?.50:0;
+          }else{
+            // Old generalized puffball: no intact echinate spines. Only low residual ornament
+            // may persist for non-echinate surface states.
+            keep=surfaceType==="echinate"?0:
+                 surfaceType==="verrucose"?.14:
+                 surfaceType==="granular"?.10:
+                 surfaceType==="furfuraceous"?.06:0;
+            scale=surfaceType==="echinate"?0:
+                  surfaceType==="verrucose"?.28:
+                  surfaceType==="granular"?.24:
+                  surfaceType==="furfuraceous"?.20:0;
+          }
+
+          o.visible=seed<keep;
+          if(o.visible){
+            o.scale.multiplyScalar(scale);
+            if(sid==="mature"){
+              // Flatten youthful projections to read as worn/blunted remnants.
+              o.scale.y*=surfaceType==="echinate"?.55:.78;
+              o.rotation.z+=((i%5)-2)*.018;
+            }else if(sid==="old"){
+              o.scale.y*=.42;
+              o.rotation.z+=((i%7)-3)*.04;
+            }
           }
         });
       }
