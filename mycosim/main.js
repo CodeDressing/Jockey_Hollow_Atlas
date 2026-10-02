@@ -96,8 +96,15 @@ function updateMorphologySummary(engine){
     if(label)parts.push(label+suffix);
   };
 
-  add("pileus"," pileus");
-  add("stipe"," stipe");
+  if(currentProfile.id==="agaricoid"){
+    add("agaric_pileus_profile"," pileus");
+    add("agaric_pileus_center"," disc");
+    add("agaric_margin"," margin");
+    add("agaric_stipe_taper"," stipe");
+  }else{
+    add("pileus"," pileus");
+    add("stipe"," stipe");
+  }
 
   if(supported.has("hymenophore")){
     const h=variantLabel("hymenophore",state.hymenophore);
@@ -107,6 +114,24 @@ function updateMorphologySummary(engine){
   if(supported.has("veil")){
     const veil=variantLabel("veil",state.veil);
     if(veil)parts.push(veil==="None"?"No veil":veil);
+  }
+
+  if(currentProfile.id==="agaricoid"){
+    const phase=engine.qaSnapshot?.().agaricoidPhaseOne;
+    detail.textContent=phase
+      ? "Phase One body plan · "+[
+          phase.pileusModel,
+          phase.pileusProfile+" profile",
+          phase.pileusCenter+" disc",
+          phase.pileusMargin+" margin",
+          phase.stipeModel,
+          phase.stipeTaper+" stipe",
+          "disc thickness "+phase.capThickness?.disc,
+          "margin thickness "+phase.capThickness?.margin,
+          phase.supportsGillInsertion?"gill insertion surface ready":"gill insertion surface unavailable"
+        ].filter(Boolean).join(" · ")
+      : "Agaricoid Phase One morphology engine active.";
+    return;
   }
 
   if(currentProfile.id==="puffball"){
