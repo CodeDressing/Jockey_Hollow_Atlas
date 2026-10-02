@@ -332,6 +332,7 @@ function renderRegressionReport(report){
       <div><strong>${report.memory.pass?"PASS":"FAIL"}</strong><span>memory Δ geometry ${report.memory.delta.geometries}</span></div>
       <div><strong>${report.mobile.pass?"PASS":"FAIL"}</strong><span>${report.mobile.viewport} canvas ${report.mobile.canvas.width}×${report.mobile.canvas.height}</span></div>
       <div><strong>${report.specimenIsolation.pass?"PASS":"FAIL"}</strong><span>specimen isolation · ${report.specimenIsolation.networkWrites.length} writes</span></div>
+      <div><strong>${report.campaign?.pass?"PASS":"FAIL"}</strong><span>realism campaign · ${report.campaign?.stateCount||0}/${report.campaign?.expectedStateCount||0} gasteroid states</span></div>
     </div>
     <div class="qa-table-wrap"><table class="qa-table"><thead><tr><th>Family</th><th>Stage</th><th>Checks</th><th>FPS</th><th>Objects</th><th>Draw calls</th></tr></thead><tbody>${rows}</tbody></table></div>`;
 }
