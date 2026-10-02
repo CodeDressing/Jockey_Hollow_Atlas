@@ -17,8 +17,9 @@ export const MORPHOLOGY_VARIANTS = Object.freeze({
   hymenophore: {
     label:"Hymenophore",
     options:[
-      ["free_gills","Free gills"],["adnexed","Adnexed"],["adnate","Adnate"],["sinuate","Sinuate"],
-      ["decurrent","Decurrent"],["pores","Pores"],["tubes","Tubes"],["teeth","Teeth"],
+      ["free_gills","Free"],["adnexed","Adnexed"],["adnate","Adnate"],["sinuate","Sinuate"],
+      ["emarginate","Emarginate"],["subdecurrent","Subdecurrent"],["decurrent","Decurrent"],["seceding","Seceding"],
+      ["pores","Pores"],["tubes","Tubes"],["teeth","Teeth"],
       ["folds","Folds"],["smooth","Smooth fertile surface"]
     ]
   },
