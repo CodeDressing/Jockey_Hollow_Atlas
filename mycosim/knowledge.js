@@ -99,7 +99,27 @@ export const KNOWLEDGE_OBJECTS = Object.freeze({
     id:"lamella",label:"Lamella / gill",level:"macro",pronunciation:"lamella",
     beginner:"A plate-like gill under a mushroom cap.",
     expert:"Radial lamellate hymenophore element whose faces bear hymenium; attachment, spacing, thickness, branching and lamellulae are diagnostic.",
-    relationships:["gill_attachment","trama","subhymenium","hymenium"]
+    relationships:["gill_attachment","lamellula","gill_edge","trama","subhymenium","hymenium"]
+  },
+  lamellula:{
+    id:"lamellula",label:"Lamellula / short gill",level:"macro",pronunciation:"luh-MEL-yuh-luh",
+    beginner:"A short gill that begins at the cap margin but ends before reaching the stalk.",
+    expert:"A lamellula is an incomplete radial lamella intercalated between full lamellae. Number, length tiers, branching, and distribution can be useful macromorphological characters.",
+    whyItMatters:"Lamellulae change hymenophore density and organization and can help distinguish otherwise similar lamellate morphologies.",
+    developmentalSignificance:"Lamellulae expand with the pileus but remain shorter than full lamellae; mature specimens usually show their tiering most clearly.",
+    observation:"Observation: a plate-like hymenophoral element terminates before reaching the stipe. Record its relative length and position among full gills.",
+    identificationBoundary:"Identification boundary: lamellula presence and tiering are descriptive characters and do not establish species identity by themselves.",
+    relationships:["lamella","hymenophore","gill_attachment","gill_edge"]
+  },
+  gill_edge:{
+    id:"gill_edge",label:"Gill edge",level:"macro",pronunciation:"gill edge",
+    beginner:"The free lower edge of a gill plate.",
+    expert:"The exposed free margin of a lamella. It may be even, serrulate, fimbriate, crisped, differently colored, or otherwise differentiated from the lamellar face.",
+    whyItMatters:"Gill-edge form is a directly observable macromorphological character and can guide later microscopic examination of edge tissues or cystidia.",
+    developmentalSignificance:"Gill edges can remain even or become eroded, fringed, folded, or damaged as the basidiome expands and ages; intact mature edges are preferred for description.",
+    observation:"Observation: the free lower margin of the selected gill plate is visible. Record whether it is even, toothed, fringed, folded, or eroded before interpretation.",
+    identificationBoundary:"Identification boundary: an edge condition is one descriptive character among many and must not be treated as a species determination.",
+    relationships:["lamella","lamellula","hymenophore","trama"]
   },
   gill_attachment:{
     id:"gill_attachment",label:"Gill attachment",level:"macro",pronunciation:"gill attachment",
