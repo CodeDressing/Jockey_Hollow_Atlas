@@ -1,5 +1,5 @@
 import {MORPHOLOGY_PROFILES,PROFILE_BY_ID} from "./profiles.js";
-import {MORPHOLOGY_VARIANTS,variantLabel,variantTeaching} from "./variants.js";
+import {MORPHOLOGY_VARIANTS,variantLabel,variantTeaching,puffballSubtype} from "./variants.js";
 import {KNOWLEDGE_OBJECTS,getKnowledge,getPathFor,childKnowledge} from "./knowledge.js";
 import {MycoSimEngine} from "./engine.js";
 import {OBSERVATION_FIELDS,emptyObservationRecord,compareObservedToCandidates,fieldLabel} from "./identification.js";
@@ -110,7 +110,7 @@ function updateMorphologySummary(engine){
 
   if(currentProfile.id==="puffball"){
     const puffGroups=[
-      ["puff_shape","shape"],["puff_surface","surface"],["puff_base","base"],
+      ["puff_subtype","archetype"],["puff_shape","shape"],["puff_surface","surface"],["puff_base","base"],
       ["peridial_condition","peridium"],["ostiole_state","ostiole"],["rupture_pattern","rupture"],
       ["rupture_margin","margin"],["collapse_state","collapse"],["gleba_state","gleba"],
       ["section_view","view"],["texture_realism","detail"]
@@ -127,7 +127,9 @@ function updateMorphologySummary(engine){
   if(currentProfile.id==="puffball"){
     const dev=engine.getMorphologyState()?.developmental;
     const p=engine.getDevelopmentalStage()?.parameters||{};
+    const subtype=puffballSubtype(state.puff_subtype||"true_puffball");
     const continuity=[
+      `archetype ${subtype.label}`,
       `identity ${dev?.identityKey||"generalized"}`,
       `wall ${Math.round((p.peridial_thickness??p.wall_thickness??1)*100)}%`,
       `exo ${Math.round((p.exoperidial_retention??p.ornament_retention??1)*100)}%`,
@@ -209,13 +211,18 @@ function renderVariantControls(profile,engine){
     const wrap=document.createElement("section");
     wrap.className="variant-field";
     wrap.dataset.variantGroup=group;
+    const subtype=currentProfile.id==="puffball"?puffballSubtype(state.puff_subtype||"true_puffball"):null;
+    const allowedForGroup=subtype?.allowed?.[group]||null;
     wrap.innerHTML=`
       <div class="variant-field-head">
         <span>${def.label}</span>
         <strong data-variant-current="${group}">${variantLabel(group,state[group])}</strong>
       </div>
       <div class="variant-choice-grid">
-        ${def.options.map(([id,label])=>`<button type="button" class="variant-choice ${state[group]===id?"active":""}" data-variant="${group}" data-value="${id}" aria-pressed="${state[group]===id?"true":"false"}"><span>${label}</span>${state[group]===id?'<b aria-hidden="true">✓</b>':""}</button>`).join("")}
+        ${def.options.map(([id,label])=>{
+          const disallowed=allowedForGroup&&!allowedForGroup.includes(id);
+          return `<button type="button" class="variant-choice ${state[group]===id?"active":""} ${disallowed?"disabled":""}" data-variant="${group}" data-value="${id}" aria-pressed="${state[group]===id?"true":"false"}" ${disallowed?'disabled aria-disabled="true" title="Not supported by the selected teaching archetype"':""}><span>${label}</span>${state[group]===id?'<b aria-hidden="true">✓</b>':""}</button>`;
+        }).join("")}
       </div>`;
     variantControls.appendChild(wrap);
   }
