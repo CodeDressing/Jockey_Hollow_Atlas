@@ -206,7 +206,7 @@ export const PUFFBALL_SUBTYPE_LIBRARY=Object.freeze({
       puff_base:Object.freeze(["none","short"])
     }),
     defaults:Object.freeze({puff_shape:"subglobose",puff_surface:"granular",puff_base:"none",rupture_pattern:"apical_ostiole"}),
-    architecture:Object.freeze({wallFactor:.82,subglebaFactor:.10,stipeFactor:0,rayCount:7,glebaFactor:.78,ostioleBias:1.15}),
+    architecture:Object.freeze({wallFactor:.82,subglebaFactor:.10,stipeFactor:0,rayCountRange:Object.freeze([5,11]),glebaFactor:.78,ostioleBias:1.15}),
     development:Object.freeze({wallPersistence:.92,ornamentPersistence:.66,ruptureBias:.92,collapseBias:.54}),stageBehavior:Object.freeze({young:{ostiole_state:"absent",rupture_pattern:"intact"},mature:{ostiole_state:"developing",rupture_pattern:"apical_ostiole"},old:{ostiole_state:"open",rupture_pattern:"apical_ostiole"}})
   }),
   stalked_puffball_type:Object.freeze({
