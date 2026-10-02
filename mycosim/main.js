@@ -460,7 +460,7 @@ try{
       renderKnowledge(meta.knowledgeId||knowledgeForAnatomy(meta.id),engine);
     },
     onStatus:t=>status.textContent=t,
-    onStats:s=>{if(stats)stats.textContent=`${s.fps} FPS · ${s.objects} objects · ${s.drawCalls} draw calls`;}
+    onStats:s=>{if(stats)stats.textContent=`${s.fps} FPS · ${s.objects} objects · ${s.drawCalls} draw calls · ${Math.round((s.triangles||0)/1000)}k tris · ${s.quality||"atlas"}`;}
   });
 
   document.addEventListener("click",e=>{
