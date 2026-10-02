@@ -107,8 +107,11 @@ export const MORPHOLOGY_PROFILES = [
       A("exoperidium","Exoperidium","macro","Outermost peridial layer; may be smooth, granular, warted, spiny, or scurfy.","peridium"),
       A("endoperidium","Endoperidium","internal","Inner peridial wall retained beneath the exoperidium.","peridium"),
       A("gleba","Gleba","internal","Internal spore-bearing tissue."),
+      A("spore_mass","Spore mass","internal","Mature powdery internal spore mass derived from the gleba.","gleba"),
+      A("apical_region","Apical region","macro","Upper region where an ostiole or other dehiscence may develop.","peridium"),
       A("apical_pore","Ostiole / apical pore","macro","Spore-release opening that develops at maturity.","peridium"),
-      A("sterile_base","Sterile base / subgleba","macro","Basal non-spore-bearing tissue.")
+      A("sterile_base","Sterile base / subgleba","macro","Basal non-spore-bearing tissue."),
+      A("basal_attachment","Basal attachment","macro","Point where the puffball connects to substrate.","sterile_base")
     ]
   },
   {
