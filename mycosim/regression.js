@@ -232,6 +232,39 @@ function agaricoidGeometryContractPass(engine,profile){
   return {pass:shellOk&&materialOk&&hymOk&&anchorOk,model,size:{x:size.x,y:size.y,z:size.z},shellOk,materialOk,hymOk,anchorOk};
 }
 
+function agaricoidHymenophoreSyncPass(engine,profile){
+  if(profile.id!=="agaricoid")return {pass:true,reason:"not_agaricoid"};
+  const pileus=engine.objects.get("pileus");
+  const hym=engine.objects.get("hymenophore");
+  const state=engine._agaricoidCapState||{};
+  const attach=hym?.userData?.attachmentGeometry||{};
+  if(!pileus||!hym||typeof state.undersideHeight!=="function"){
+    return {pass:false,reason:"missing_sync_inputs"};
+  }
+
+  const pileusBox=new THREE.Box3().setFromObject(pileus);
+  const hymBox=new THREE.Box3().setFromObject(hym);
+  const pileusSize=pileusBox.getSize(new THREE.Vector3());
+  const hymSize=hymBox.getSize(new THREE.Vector3());
+
+  const verticalGap=Math.max(0,pileusBox.min.y-hymBox.max.y);
+  const radialOk=hymSize.x<=pileusSize.x*1.02 && hymSize.z<=pileusSize.z*1.02;
+  const verticalOk=verticalGap<.12;
+  const marginOk=Number.isFinite(attach.marginClearance)&&attach.marginClearance>=0;
+  const undersideOk=attach.followsPileusUnderside===true;
+
+  return {
+    pass:radialOk&&verticalOk&&marginOk&&undersideOk,
+    radialOk,verticalOk,marginOk,undersideOk,
+    verticalGap,
+    marginState:attach.marginState||null,
+    marginClearance:attach.marginClearance??null,
+    innerRadius:attach.innerRadius??null,
+    outerRadius:attach.outerRadius??null
+  };
+}
+
+
 function mobileContract(){
   const mq=matchMedia("(max-width: 900px)");
   const stage=document.querySelector(".stage-wrap");
@@ -300,6 +333,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
         const anatomy=requiredAnatomyPass(engine,profile);
         const pileusShell=agaricoidPileusShellPass(engine,profile);
         const agaricoidContract=agaricoidGeometryContractPass(engine,profile);
+        const hymenophoreSync=agaricoidHymenophoreSyncPass(engine,profile);
         const result={
           profileId:profile.id,
           family:profile.label,
@@ -321,6 +355,8 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
           agaricoidPileusShellDetail:pileusShell,
           agaricoidGeometryContract:agaricoidContract.pass,
           agaricoidGeometryContractDetail:agaricoidContract,
+          agaricoidHymenophoreSync:hymenophoreSync.pass,
+          agaricoidHymenophoreSyncDetail:hymenophoreSync,
           modePreserved:engine.mode===original.mode
         };
         engine.resetPresentation();
@@ -339,7 +375,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
         result.pass=[
           result.render,result.framing,result.hover,result.focus,result.isolateHide,
           result.exploded,result.section,result.transparency,result.anatomyNavigation,
-          result.requiredAnatomy,result.agaricoidPileusShell,result.agaricoidGeometryContract,result.modePreserved,result.fpsAcceptable,result.performancePass
+          result.requiredAnatomy,result.agaricoidPileusShell,result.agaricoidGeometryContract,result.agaricoidHymenophoreSync,result.modePreserved,result.fpsAcceptable,result.performancePass
         ].every(Boolean);
         rows.push(result);
         memorySamples.push({
