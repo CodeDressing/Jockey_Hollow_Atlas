@@ -340,6 +340,26 @@ function agaricoidStipeSprint3Pass(engine,profile){
 }
 
 
+function agaricoidStipeSprint4Pass(engine,profile){
+  if(profile.id!=="agaricoid")return {pass:true,reason:"not_agaricoid"};
+  const stipe=engine.objects.get("stipe");
+  const meta=stipe?.geometry?.userData||{};
+  const visual=engine.objects.get("stipe_development");
+  const stage=engine.getDevelopmentalStage()?.id||engine.developmentalStageId||"mature";
+  const modelOk=stipe?.userData?.developmentalModel==="phase7-sprint4-v1"&&meta.developmentalModel==="phase7-sprint4-v1";
+  const valuesOk=["hydration","weathering","fibreExposure","collapseStrength"].every(k=>Number.isFinite(stipe?.userData?.[k]));
+  const visualOk=!!visual&&visual.userData?.developmentalModel==="phase7-sprint4-v1"&&visual.userData?.stageId===stage;
+  return {
+    pass:modelOk&&valuesOk&&visualOk,
+    stage,modelOk,valuesOk,visualOk,
+    hydration:stipe?.userData?.hydration??null,
+    weathering:stipe?.userData?.weathering??null,
+    fibreExposure:stipe?.userData?.fibreExposure??null,
+    collapseStrength:stipe?.userData?.collapseStrength??null
+  };
+}
+
+
 function mobileContract(){
   const mq=matchMedia("(max-width: 900px)");
   const stage=document.querySelector(".stage-wrap");
@@ -412,6 +432,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
         const stipePhase7A=agaricoidStipePhase7APass(engine,profile);
         const stipePhase7B=agaricoidStipePhase7BPass(engine,profile);
         const stipeSprint3=agaricoidStipeSprint3Pass(engine,profile);
+        const stipeSprint4=agaricoidStipeSprint4Pass(engine,profile);
         const result={
           profileId:profile.id,
           family:profile.label,
@@ -441,6 +462,8 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
           agaricoidStipePhase7BDetail:stipePhase7B,
           agaricoidStipeSprint3:stipeSprint3.pass,
           agaricoidStipeSprint3Detail:stipeSprint3,
+          agaricoidStipeSprint4:stipeSprint4.pass,
+          agaricoidStipeSprint4Detail:stipeSprint4,
           modePreserved:engine.mode===original.mode
         };
         engine.resetPresentation();
@@ -459,7 +482,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
         result.pass=[
           result.render,result.framing,result.hover,result.focus,result.isolateHide,
           result.exploded,result.section,result.transparency,result.anatomyNavigation,
-          result.requiredAnatomy,result.agaricoidPileusShell,result.agaricoidGeometryContract,result.agaricoidHymenophoreSync,result.agaricoidStipePhase7A,result.agaricoidStipePhase7B,result.agaricoidStipeSprint3,result.modePreserved,result.fpsAcceptable,result.performancePass
+          result.requiredAnatomy,result.agaricoidPileusShell,result.agaricoidGeometryContract,result.agaricoidHymenophoreSync,result.agaricoidStipePhase7A,result.agaricoidStipePhase7B,result.agaricoidStipeSprint3,result.agaricoidStipeSprint4,result.modePreserved,result.fpsAcceptable,result.performancePass
         ].every(Boolean);
         rows.push(result);
         memorySamples.push({
@@ -578,6 +601,65 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
       cases:sprint3Rows
     };
 
+    // Sprint 4 developmental audit: same agaricoid identity across
+    // young -> mature -> old must show increasing tissue wear and collapse.
+    const sprint4Rows=[];
+    const developmentalSamples={};
+    for(const stageId of DEVELOPMENTAL_STAGE_ORDER){
+      engine.variants={
+        ...engine.variants,
+        agaric_stipe_form:"ventricose",
+        agaric_stipe_position:"eccentric",
+        agaric_stipe_surface_apex:"pruinose",
+        agaric_stipe_surface_mid:"scaly",
+        agaric_stipe_surface_base:"fibrillose"
+      };
+      engine.developmentalStageId=stageId;
+      engine.loadProfile("agaricoid");
+      engine.renderer.render(engine.scene,engine.camera);
+      await nextFrame();
+      const stipe=engine.objects.get("stipe");
+      const visual=engine.objects.get("stipe_development");
+      const meta=stipe?.geometry?.userData||{};
+      const surfaceApex=engine.objects.get("stipe_apex");
+      const surfaceMid=engine.objects.get("stipe_mid");
+      let exposedFibres=0,dryingFissures=0;
+      visual?.traverse?.(n=>{
+        if(n.userData?.developmentTrait==="exposed-longitudinal-fibres")exposedFibres++;
+        if(n.userData?.developmentTrait==="drying-fissure")dryingFissures++;
+      });
+      developmentalSamples[stageId]={
+        hydration:stipe?.userData?.hydration??null,
+        weathering:stipe?.userData?.weathering??null,
+        fibreExposure:stipe?.userData?.fibreExposure??null,
+        collapseStrength:stipe?.userData?.collapseStrength??null,
+        bloomRetention:surfaceApex?.userData?.retention??null,
+        scaleRetention:surfaceMid?.userData?.retention??null,
+        exposedFibres,dryingFissures,
+        geometryCollapse:meta.collapseStrength??null
+      };
+    }
+    const y=developmentalSamples.young||{},m=developmentalSamples.mature||{},o=developmentalSamples.old||{};
+    const monotonic={
+      hydration:Number.isFinite(y.hydration)&&y.hydration>m.hydration&&m.hydration>o.hydration,
+      weathering:Number.isFinite(y.weathering)&&y.weathering<m.weathering&&m.weathering<o.weathering,
+      fibreExposure:Number.isFinite(y.fibreExposure)&&y.fibreExposure<m.fibreExposure&&m.fibreExposure<o.fibreExposure,
+      collapse:Number.isFinite(y.collapseStrength)&&y.collapseStrength<=m.collapseStrength&&m.collapseStrength<o.collapseStrength,
+      bloomRetention:Number.isFinite(y.bloomRetention)&&y.bloomRetention>m.bloomRetention&&m.bloomRetention>o.bloomRetention,
+      scaleRetention:Number.isFinite(y.scaleRetention)&&y.scaleRetention>m.scaleRetention&&m.scaleRetention>o.scaleRetention
+    };
+    for(const stageId of DEVELOPMENTAL_STAGE_ORDER){
+      const s=developmentalSamples[stageId];
+      sprint4Rows.push({stageId,...s,pass:Number.isFinite(s.hydration)&&Number.isFinite(s.weathering)&&Number.isFinite(s.fibreExposure)&&Number.isFinite(s.collapseStrength)});
+    }
+    const stipeSprint4={
+      pass:sprint4Rows.every(x=>x.pass)&&Object.values(monotonic).every(Boolean)&&o.exposedFibres>0&&o.dryingFissures>0,
+      stageCount:sprint4Rows.length,
+      passedStages:sprint4Rows.filter(x=>x.pass).length,
+      monotonic,
+      stages:sprint4Rows
+    };
+
     // Final campaign audit: every gasteroid teaching archetype × developmental stage.
     const campaignRows=[];
     const subtypeIds=Object.keys(PUFFBALL_SUBTYPE_LIBRARY);
@@ -648,7 +730,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
 
     const failed=rows.filter(r=>!r.pass);
     return {
-      pass:failed.length===0&&memory.pass&&mobile.pass&&specimenIsolation.pass&&campaign.pass&&stipeSprint2.pass&&stipeSprint3.pass,
+      pass:failed.length===0&&memory.pass&&mobile.pass&&specimenIsolation.pass&&campaign.pass&&stipeSprint2.pass&&stipeSprint3.pass&&stipeSprint4.pass,
       generatedAt:new Date().toISOString(),
       totalCombinations:rows.length,
       passedCombinations:rows.length-failed.length,
@@ -663,6 +745,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
       campaignRows,
       stipeSprint2,
       stipeSprint3,
+      stipeSprint4,
       memory,
       mobile,
       specimenIsolation
@@ -681,5 +764,5 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
 
 export function formatRegressionSummary(report){
   const status=report.pass?"PASS":"FAIL";
-  return `${status} · ${report.passedCombinations}/${report.totalCombinations} family×stage combinations · campaign ${report.campaign?.stateCount||0}/${report.campaign?.expectedStateCount||0} states · stipe Sprint 2 ${report.stipeSprint2?.passedStates||0}/${report.stipeSprint2?.stateCount||0} · Sprint 3 ${report.stipeSprint3?.passedCases||0}/${report.stipeSprint3?.caseCount||0} · perf failures ${report.performanceFailures?.length||0} · memory Δ geom ${report.memory.delta.geometries} · writes ${report.specimenIsolation.networkWrites.length}`;
+  return `${status} · ${report.passedCombinations}/${report.totalCombinations} family×stage combinations · campaign ${report.campaign?.stateCount||0}/${report.campaign?.expectedStateCount||0} states · stipe Sprint 2 ${report.stipeSprint2?.passedStates||0}/${report.stipeSprint2?.stateCount||0} · Sprint 3 ${report.stipeSprint3?.passedCases||0}/${report.stipeSprint3?.caseCount||0} · Sprint 4 ${report.stipeSprint4?.passedStages||0}/${report.stipeSprint4?.stageCount||0} · perf failures ${report.performanceFailures?.length||0} · memory Δ geom ${report.memory.delta.geometries} · writes ${report.specimenIsolation.networkWrites.length}`;
 }
