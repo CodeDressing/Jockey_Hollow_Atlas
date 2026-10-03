@@ -8,6 +8,7 @@ import {developmentalStageOptions} from "./development.js";
 import {referenceSheet,VALIDATION_SOURCES} from "./validation_protocol.js";
 import {runMycoSimRegression,formatRegressionSummary} from "./regression.js";
 import {emptyQaMatrix,matrixFromRegression} from "./support_matrix.js";
+import {ATLAS_TERMS,AGARICOID_ARCHETYPES,archetypeList,archetypeReferenceSheet,atlasTerm,phase5Validation,PERFORMANCE_MODES} from "./phase5_atlas.js";
 
 const $=s=>document.querySelector(s);
 const canvas=$("#stage"), status=$("#modelStatus"), info=$("#structureInfo"), stats=$("#engineStats");
@@ -16,6 +17,7 @@ const breadcrumbs=$("#breadcrumbs"), eduTitle=$("#eduTitle"), eduLevel=$("#eduLe
 const eduRelations=$("#eduRelations"), eduChildren=$("#eduChildren"), eduPronounce=$("#eduPronounce");
 const eduRead=$("#eduRead"), orientation=$("#orientationLabel"), hoverProbe=$("#hoverProbe"), hoverProbeTitle=$("#hoverProbeTitle"), hoverProbeMeta=$("#hoverProbeMeta"), stageControls=$("#stageControls"), stageCompare=$("#stageCompare");
 const qaRun=$("#runRegression"), qaStatus=$("#regressionStatus"), qaResults=$("#regressionResults");
+const archetypeControls=$("#archetypeControls"), archetypeInfo=$("#archetypeInfo"), qualityControls=$("#qualityControls"), phase5Status=$("#phase5Status");
 let selected=null,currentProfile=MORPHOLOGY_PROFILES[0],knowledgeMode="beginner",currentKnowledge=getKnowledge("basidiome");
 let learnerMode="guided",highestLearningStep=1;
 let observationRecord=emptyObservationRecord();
@@ -324,13 +326,14 @@ function renderKnowledge(id,engine,{moveCamera=true}={}){
   eduTitle.textContent=currentKnowledge.label;
   eduLevel.textContent=currentKnowledge.level.toUpperCase();
   const definition=knowledgeMode==="expert"?currentKnowledge.expert:currentKnowledge.beginner;
+  const p5=phase5Knowledge(id);
   eduBody.textContent=[
-    "Definition: "+definition,
-    "Why it matters: "+currentKnowledge.whyItMatters,
-    "Developmental significance: "+currentKnowledge.developmentalSignificance,
-    currentKnowledge.identificationBoundary
+    "Definition: "+(p5?.definition||definition),
+    "Why it matters: "+(p5?.whyItMatters||currentKnowledge.whyItMatters),
+    "Developmental significance: "+(p5?.developmentalSignificance||currentKnowledge.developmentalSignificance),
+    p5?.identificationBoundary||currentKnowledge.identificationBoundary
   ].join("\n\n");
-  eduPronounce.textContent="Pronunciation: "+(currentKnowledge.pronunciation||currentKnowledge.label)+" · hear term";
+  eduPronounce.textContent="Pronunciation: "+(p5?.pronunciation||currentKnowledge.pronunciation||currentKnowledge.label)+" · hear term";
   eduRelations.innerHTML=(currentKnowledge.relationships||[]).length
     ? currentKnowledge.relationships.map(r=>`<button class="relation-chip" data-knowledge="${r}">${getKnowledge(r).label}</button>`).join("")
     : '<span class="muted-mini">No related structures authored.</span>';
@@ -396,6 +399,55 @@ function renderRegressionReport(report){
       <div><strong>${report.campaign?.pass?"PASS":"FAIL"}</strong><span>realism campaign · ${report.campaign?.stateCount||0}/${report.campaign?.expectedStateCount||0} gasteroid states</span></div>
     </div>
     <div class="qa-table-wrap"><table class="qa-table"><thead><tr><th>Family</th><th>Stage</th><th>Checks</th><th>FPS</th><th>Objects</th><th>Draw calls</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+
+
+function renderArchetypes(engine){
+  if(!archetypeControls)return;
+  if(currentProfile.id!=="agaricoid"){
+    archetypeControls.innerHTML='<span class="muted-mini">Teaching archetypes are currently scoped to the agaricoid engine.</span>';
+    if(archetypeInfo)archetypeInfo.textContent="Archetype presets do not alter non-agaricoid body plans.";
+    return;
+  }
+  archetypeControls.innerHTML=archetypeList().map((a,i)=>`<button type="button" class="archetype-choice ${i===0?"active":""}" data-archetype="${a.id}"><strong>${a.label}</strong><span>${a.summary}</span></button>`).join("");
+  if(archetypeInfo)archetypeInfo.textContent="Teaching archetypes constrain compatible morphology combinations. They are not genus or species identifications.";
+}
+
+function applyArchetype(id,engine){
+  const a=AGARICOID_ARCHETYPES[id];
+  if(!a||currentProfile.id!=="agaricoid")return;
+  for(const [group,value] of Object.entries(a.defaults)){
+    if(!(currentProfile.variantGroups||[]).includes(group))continue;
+    engine.setVariant(group,value);
+  }
+  renderVariantControls(currentProfile,engine);
+  renderStageControls(currentProfile,engine);
+  renderAnatomy(currentProfile);
+  updateVisibleState(engine);
+  const sheet=archetypeReferenceSheet(id);
+  if(archetypeInfo){
+    archetypeInfo.textContent=`${a.label} · ${a.boundary}\nAllowed cap forms: ${a.allowed.caps.join(", ")} · Gill logic: ${a.allowed.gills.join(", ")} · Stipe tendencies: ${a.allowed.stipes.join(", ")}\nGeneralized: ${sheet.generalized.join("; ")}\nVaries: ${sheet.varies.join("; ")}\nExcluded: ${sheet.excluded.join("; ")}`;
+  }
+}
+
+function renderQualityControls(engine){
+  if(!qualityControls)return;
+  const active=engine.qaSnapshot?.().realismTier||"atlas";
+  qualityControls.innerHTML=Object.values(PERFORMANCE_MODES).map(m=>`<button type="button" class="quality-choice ${active===m.id?"active":""}" data-quality="${m.id}"><strong>${m.label}</strong><span>${m.purpose}</span></button>`).join("");
+}
+
+function phase5Knowledge(id){
+  const direct=atlasTerm(id);
+  if(direct)return direct;
+  const k=getKnowledge(id);
+  const label=(k?.label||"").toLowerCase();
+  const aliases=[
+    ["pileus","pileus"],["disc","disc"],["margin","pileus_margin"],["lamell","lamella"],["hymenophore","hymenophore"],
+    ["stipe apex","stipe_apex"],["stipe base","stipe_base"],["stipe","stipe"],["annulus","annulus"],["volva","volva"],
+    ["umbo","umbo"],["umbil","umbilicate"],["infund","infundibuliform"]
+  ];
+  const hit=aliases.find(([needle])=>label.includes(needle));
+  return hit?ATLAS_TERMS[hit[1]]:null;
 }
 
 function renderObservationForm(){
@@ -556,6 +608,8 @@ try{
     $("#profileName").textContent=p.label.toUpperCase();
     if(window.MYCOSIM_BOOT_MS && status) status.textContent=`3D engine online · ${p.label} · ${engine.getDevelopmentalStage()?.label||"Mature"} · boot ${window.MYCOSIM_BOOT_MS} ms`;
     renderKnowledge("basidiome",engine,{moveCamera:false});
+    renderArchetypes(engine);
+    renderQualityControls(engine);
     updateVisibleState(engine);
   }
 
@@ -564,6 +618,20 @@ try{
     grid.querySelectorAll(".model-pick").forEach(x=>x.classList.remove("active")); b.classList.add("active");
     activateProfile(b.dataset.model);
     setLearningStep(2);
+  });
+
+  archetypeControls?.addEventListener("click",e=>{
+    const b=e.target.closest("[data-archetype]");if(!b)return;
+    archetypeControls.querySelectorAll(".archetype-choice").forEach(x=>x.classList.toggle("active",x===b));
+    applyArchetype(b.dataset.archetype,engine);
+    setLearningStep(3);
+  });
+
+  qualityControls?.addEventListener("click",e=>{
+    const b=e.target.closest("[data-quality]");if(!b)return;
+    engine.setRealismMode?.(b.dataset.quality);
+    renderQualityControls(engine);
+    updateVisibleState(engine);
   });
 
   stageControls.addEventListener("click",e=>{
@@ -689,6 +757,8 @@ try{
   renderSporeRows();
 
   renderSupportMatrix(emptyQaMatrix());
+  const p5Audit=phase5Validation({variantDefinitions:MORPHOLOGY_VARIANTS});
+  if(phase5Status) phase5Status.textContent=`Phase 5 scientific layer · ${p5Audit.pass?"PASS":"FAIL"} · ${p5Audit.terminology.count} standardized terms · ${p5Audit.archetypes.archetypeCount} agaricoid teaching archetypes · LOD + safe instancing + startup instrumentation active`;
   setLearnerMode("guided");
   activateProfile(MORPHOLOGY_PROFILES[0].id);
   setLearningStep(1);
