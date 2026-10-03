@@ -612,3 +612,59 @@ window.SPECIMEN_ENRICHMENTS["AN2-F17"] = {
     ["Identified","No — taxonomic identification unresolved"]
   ]
 };
+
+
+// AN2-F3 microscopy series — verified user-supplied accession batch, 2026-10-03.
+// Explicit user accession lock to AN2-F3; no visual-similarity assignment.
+window.DRIVE_PHOTOS = window.DRIVE_PHOTOS || [];
+window.DRIVE_PHOTOS.push(
+  {"folder":"Jockey_Hollow_Atlas/AN2-F3","collection":"AN2","family":"AN","specimen":"AN2-F3","category":"Microscopy","filename":"AN2-F3 SPM (1).png","caption":"AN2-F3 — annotated calibrated microscopy field; three fully legible linear measurements visible","id":"1R6WWjnVbQyAUprd3PCn6q-gOwYdawFDp","original":"https://drive.google.com/thumbnail?id=1R6WWjnVbQyAUprd3PCn6q-gOwYdawFDp&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1R6WWjnVbQyAUprd3PCn6q-gOwYdawFDp&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (1).png","drive_view":"https://drive.google.com/file/d/1R6WWjnVbQyAUprd3PCn6q-gOwYdawFDp/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F3","collection":"AN2","family":"AN","specimen":"AN2-F3","category":"Microscopy","filename":"AN2-F3 SPM (2).png","caption":"AN2-F3 — microscopy field showing repeated brown rounded to broadly ellipsoid spore-like bodies","id":"1s4wPAN8jiZzPzgFVzzddxkp3FhErqkxt","original":"https://drive.google.com/thumbnail?id=1s4wPAN8jiZzPzgFVzzddxkp3FhErqkxt&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1s4wPAN8jiZzPzgFVzzddxkp3FhErqkxt&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (2).png","drive_view":"https://drive.google.com/file/d/1s4wPAN8jiZzPzgFVzzddxkp3FhErqkxt/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F3","collection":"AN2","family":"AN","specimen":"AN2-F3","category":"Microscopy","filename":"AN2-F3 SPM (3).png","caption":"AN2-F3 — dense microscopy field showing abundant repeated brown spore-like bodies","id":"1JvDyRWlXXzGqTsWtG_qQt8MZXo8475XH","original":"https://drive.google.com/thumbnail?id=1JvDyRWlXXzGqTsWtG_qQt8MZXo8475XH&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1JvDyRWlXXzGqTsWtG_qQt8MZXo8475XH&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (3).png","drive_view":"https://drive.google.com/file/d/1JvDyRWlXXzGqTsWtG_qQt8MZXo8475XH/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F3","collection":"AN2","family":"AN","specimen":"AN2-F3","category":"Microscopy","filename":"AN2-F3 SPM (4).png","caption":"AN2-F3 — annotated calibrated microscopy field; sixteen fully legible linear measurements used in the validated dataset","id":"1cesuFBh0f9X9wB4Pqijd1R8P79VALYA8","original":"https://drive.google.com/thumbnail?id=1cesuFBh0f9X9wB4Pqijd1R8P79VALYA8&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1cesuFBh0f9X9wB4Pqijd1R8P79VALYA8&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (4).png","drive_view":"https://drive.google.com/file/d/1cesuFBh0f9X9wB4Pqijd1R8P79VALYA8/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F3","collection":"AN2","family":"AN","specimen":"AN2-F3","category":"Microscopy","filename":"AN2-F3 SPM (5).png","caption":"AN2-F3 — microscopy field showing clustered brown rounded to broadly ellipsoid spore-like bodies","id":"1ZI8qg-CL4rD-CdmHZmfGFGpADGMa2rdD","original":"https://drive.google.com/thumbnail?id=1ZI8qg-CL4rD-CdmHZmfGFGpADGMa2rdD&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1ZI8qg-CL4rD-CdmHZmfGFGpADGMa2rdD&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (5).png","drive_view":"https://drive.google.com/file/d/1ZI8qg-CL4rD-CdmHZmfGFGpADGMa2rdD/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F3","collection":"AN2","family":"AN","specimen":"AN2-F3","category":"Microscopy","filename":"AN2-F3 SPM (6).png","caption":"AN2-F3 — microscopy field showing dense clustered brown spore-like bodies","id":"1qeNWMs5Rb8wXUe1SzIujRz5Thui4SyYg","original":"https://drive.google.com/thumbnail?id=1qeNWMs5Rb8wXUe1SzIujRz5Thui4SyYg&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1qeNWMs5Rb8wXUe1SzIujRz5Thui4SyYg&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (6).png","drive_view":"https://drive.google.com/file/d/1qeNWMs5Rb8wXUe1SzIujRz5Thui4SyYg/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F3","collection":"AN2","family":"AN","specimen":"AN2-F3","category":"Microscopy","filename":"AN2-F3 SPM (7).png","caption":"AN2-F3 — microscopy field showing abundant repeated spore-like bodies across the mount","id":"1WlBZ54Ae987lHVElwkn7DUrqbKWxGSEy","original":"https://drive.google.com/thumbnail?id=1WlBZ54Ae987lHVElwkn7DUrqbKWxGSEy&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1WlBZ54Ae987lHVElwkn7DUrqbKWxGSEy&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (7).png","drive_view":"https://drive.google.com/file/d/1WlBZ54Ae987lHVElwkn7DUrqbKWxGSEy/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F3","collection":"AN2","family":"AN","specimen":"AN2-F3","category":"Microscopy","filename":"AN2-F3 SPM (8).png","caption":"AN2-F3 — microscopy field showing abundant brown spore-like bodies with variable focus depth","id":"1HZa4I1ITezr86gkwTdQiwzF9Q7-4zSi0","original":"https://drive.google.com/thumbnail?id=1HZa4I1ITezr86gkwTdQiwzF9Q7-4zSi0&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1HZa4I1ITezr86gkwTdQiwzF9Q7-4zSi0&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (8).png","drive_view":"https://drive.google.com/file/d/1HZa4I1ITezr86gkwTdQiwzF9Q7-4zSi0/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F3","collection":"AN2","family":"AN","specimen":"AN2-F3","category":"Microscopy","filename":"AN2-F3 SPM (9).png","caption":"AN2-F3 — microscopy field showing numerous brown rounded to broadly ellipsoid spore-like bodies","id":"175byrKze6sNReBJnjnslFtTttoS9aAXd","original":"https://drive.google.com/thumbnail?id=175byrKze6sNReBJnjnslFtTttoS9aAXd&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=175byrKze6sNReBJnjnslFtTttoS9aAXd&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (9).png","drive_view":"https://drive.google.com/file/d/175byrKze6sNReBJnjnslFtTttoS9aAXd/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F3","collection":"AN2","family":"AN","specimen":"AN2-F3","category":"Microscopy","filename":"AN2-F3 SPM (10).png","caption":"AN2-F3 — annotated calibrated microscopy field; thirteen fully legible linear measurements used in the validated dataset","id":"1QVGr4eTRw1Pym0-1HlUA3SEvduVg_SUv","original":"https://drive.google.com/thumbnail?id=1QVGr4eTRw1Pym0-1HlUA3SEvduVg_SUv&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1QVGr4eTRw1Pym0-1HlUA3SEvduVg_SUv&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (10).png","drive_view":"https://drive.google.com/file/d/1QVGr4eTRw1Pym0-1HlUA3SEvduVg_SUv/view"},
+  {"folder":"Jockey_Hollow_Atlas/AN2-F3","collection":"AN2","family":"AN","specimen":"AN2-F3","category":"Microscopy","filename":"AN2-F3 SPM (11).png","caption":"AN2-F3 — annotated calibrated microscopy field; ten fully legible linear measurements used; one cropped annotation excluded rather than inferred","id":"1_CAm-LJHOlJhnLXigHUlaSomtPT2DMsC","original":"https://drive.google.com/thumbnail?id=1_CAm-LJHOlJhnLXigHUlaSomtPT2DMsC&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1_CAm-LJHOlJhnLXigHUlaSomtPT2DMsC&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (11).png","drive_view":"https://drive.google.com/file/d/1_CAm-LJHOlJhnLXigHUlaSomtPT2DMsC/view"},
+);
+
+
+window.SPECIMEN_ENRICHMENTS = window.SPECIMEN_ENRICHMENTS || {};
+window.SPECIMEN_ENRICHMENTS["AN2-F3"] = {
+  status: "AN2-F3 complete dataset — verified wild context, verified laboratory specimen view, spore-print preparation, macroscopic measurements, and calibrated microscopy integrated.",
+  sourceLine: "Rutgers/Jockey Hollow accession AN2-F3. The record combines an existing wild-context image, a verified accession-linked laboratory specimen image, existing spore-print/preparation documentation, two preserved macroscopic measurement records, and eleven AN2-F3 microscopy fields supplied on 2026-10-03. Quantitative microscopy uses only fully legible on-image linear annotations. One cropped/partially unreadable annotation in AN2-F3 SPM (11) was excluded rather than reconstructed. No paired length × width dataset was supplied, so no formal Q ratio is calculated.",
+  summary: {
+    "Record type": "Curated full-data specimen record",
+    "Microscopy record": "Eleven accession-linked AN2-F3 microscopy images are preserved (AN2-F3 SPM (1) through AN2-F3 SPM (11)). Four annotated fields contribute the validated quantitative dataset: SPM (1) n=3, SPM (4) n=16, SPM (10) n=13, and SPM (11) n=10 after exclusion of one cropped annotation. Combined n=42.",
+    "Spores / microscopic bodies": "Across the submitted fields, abundant dark golden-brown to brown rounded, subglobose to broadly ellipsoid spore-like bodies are repeatedly visible, commonly in dense clusters and also as isolated elements. Some profiles appear slightly asymmetric in projection. This is recorded as direct microscopy observation only; no species-level identification is inferred from these images.",
+    "Microscopic measurements": "Validated linear measurement dataset: n=42 fully legible annotations, range 3.94–8.35 µm, mean 6.06 µm, median 6.03 µm, sample SD 1.03 µm. These are single-axis on-image measurements; paired length × width values were not collected, therefore formal Q is not calculated.",
+    "Measurement handling": "Only legible calibrated annotations were transcribed. One partially cropped value in AN2-F3 SPM (11) was excluded. No value was reconstructed from image appearance.",
+    "Macroscopic measurements": "Two previously preserved Rutgers measurement records remain attached to AN2-F3. Rep 1 records cap 9.5 cm; stipe top 1.0 cm, middle 0.5 cm, base 0.6 cm, height 1.2 cm, plus an additional 5.6 cm value whose field is unresolved. Rep 2 records cap 4.1 cm; stipe top 0.6 cm, middle 0.6 cm, base 0.45 cm; an additional 0.2 cm value is unresolved and height was not stated.",
+    "Spore print / preparation": "Existing AN2-F3 spore-print documentation is retained as accession-linked preparation evidence.",
+    "Identification status": "Taxonomic identification unresolved in the atlas; observed macro- and micromorphology are preserved without forcing genus or species.",
+    "Assignment rule": "The 2026-10-03 microscopy batch was explicitly identified by the user as AN2-F3 and stored under that accession. Existing wild, laboratory, preparation, and measurement records remain separated from conflicting AN3-F3-labeled material; no visual-similarity reassignment is used."
+  },
+  completeness: [
+    ["Photo provenance","Yes"],
+    ["Explicit specimen accession","Yes"],
+    ["Wild / field imagery","Yes"],
+    ["Embedded/source imagery","Yes — verified accession-linked laboratory view"],
+    ["Spore-print / preparation imagery","Yes"],
+    ["Microscopy imagery","Yes — 11 views"],
+    ["Measurements","Yes"],
+    ["Macroscopic measurements","Yes — 2 preserved source records"],
+    ["Spore / microscopic linear measurements","Yes — n=42"],
+    ["Microscopic measurement range","3.94–8.35 µm"],
+    ["Microscopic mean / median","6.06 / 6.03 µm"],
+    ["Microscopic sample SD","1.03 µm"],
+    ["Measured microscopy fields","4 — n=3 / 16 / 13 / 10"],
+    ["Unreadable annotations excluded","Yes — 1 cropped value excluded"],
+    ["Formal Q ratio","Not calculated — no paired length × width dataset"],
+    ["Successful microscopic record","Yes"],
+    ["Wild + laboratory pairing","Yes"],
+    ["Identified","No — taxonomic identification unresolved"]
+  ]
+};
