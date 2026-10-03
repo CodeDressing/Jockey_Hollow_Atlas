@@ -268,6 +268,14 @@ export const DEFAULT_VARIANTS = Object.freeze({
   agaric_stipe_surface_apex:"smooth",
   agaric_stipe_surface_mid:"smooth",
   agaric_stipe_surface_base:"smooth",
+  // Phase 7B regional blending defaults. These remain internal morphology
+  // controls so the visible apex/mid/base selectors stay simple while the
+  // tissue transition itself is continuous.
+  agaric_stipe_apex_mid_transition:.18,
+  agaric_stipe_mid_base_transition:.18,
+  agaric_stipe_transition_falloff:1.25,
+  agaric_stipe_texture_inheritance:.42,
+  agaric_stipe_surface_carryover:.30,
   agaric_stipe_taper:"equal",
   agaric_surface_primary:"smooth",
   agaric_surface_secondary:"none",
