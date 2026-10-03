@@ -193,6 +193,29 @@ function renderPass(engine){
   return !snap.boxEmpty&&snap.rootChildren>0&&snap.geometryCount>0&&snap.drawCalls>0;
 }
 
+function agaricoidPileusShellPass(engine,profile){
+  if(profile.id!=="agaricoid")return {pass:true,reason:"not_agaricoid"};
+  const pileus=engine.objects.get("pileus");
+  const geo=pileus?.geometry;
+  if(!geo?.index||!geo?.attributes?.position)return {pass:false,reason:"missing_indexed_pileus_geometry"};
+  const idx=geo.index.array,pos=geo.attributes.position;
+  const a=new THREE.Vector3(),b=new THREE.Vector3(),c=new THREE.Vector3();
+  let upward=0,downward=0;
+  const sample=Math.min(idx.length,900);
+  for(let i=0;i+2<sample;i+=3){
+    a.fromBufferAttribute(pos,idx[i]);
+    b.fromBufferAttribute(pos,idx[i+1]);
+    c.fromBufferAttribute(pos,idx[i+2]);
+    const n=b.clone().sub(a).cross(c.clone().sub(a));
+    const cy=(a.y+b.y+c.y)/3;
+    if(cy>-.05){
+      if(n.y>0)upward++;
+      else if(n.y<0)downward++;
+    }
+  }
+  return {pass:upward>downward&&upward>0,reason:"top_shell_winding",upward,downward};
+}
+
 function mobileContract(){
   const mq=matchMedia("(max-width: 900px)");
   const stage=document.querySelector(".stage-wrap");
@@ -259,6 +282,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
         const hover=hoverPass(engine);
         const knowledge=anatomyKnowledgePass(profile);
         const anatomy=requiredAnatomyPass(engine,profile);
+        const pileusShell=agaricoidPileusShellPass(engine,profile);
         const result={
           profileId:profile.id,
           family:profile.label,
@@ -276,6 +300,8 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
           anatomyFailures:knowledge.failures,
           requiredAnatomy:anatomy.pass,
           requiredAnatomyFailures:anatomy.failures,
+          agaricoidPileusShell:pileusShell.pass,
+          agaricoidPileusShellDetail:pileusShell,
           modePreserved:engine.mode===original.mode
         };
         engine.resetPresentation();
@@ -294,7 +320,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
         result.pass=[
           result.render,result.framing,result.hover,result.focus,result.isolateHide,
           result.exploded,result.section,result.transparency,result.anatomyNavigation,
-          result.requiredAnatomy,result.modePreserved,result.fpsAcceptable,result.performancePass
+          result.requiredAnatomy,result.agaricoidPileusShell,result.modePreserved,result.fpsAcceptable,result.performancePass
         ].every(Boolean);
         rows.push(result);
         memorySamples.push({
