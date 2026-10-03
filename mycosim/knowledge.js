@@ -5,6 +5,66 @@ export const KNOWLEDGE_OBJECTS = Object.freeze({
     expert:"Macroscopic sporocarp produced by a basidiomycete; architecture varies among agaricoid, boletoid, polyporoid, hydnoid, clavarioid, gasteroid and other forms.",
     relationships:["pileus","hymenophore","stipe"]
   },
+  pileipellis:{
+    id:"pileipellis",label:"Pileipellis / cap surface",level:"tissue",pronunciation:"pie-lee-PELL-iss",
+    beginner:"The outermost tissue of the mushroom cap.",
+    expert:"Differentiated outer pileus tissue whose organization and derivatives produce macroscopic characters such as fibrils, scales, warts, tomentum, cracking, and moisture response.",
+    whyItMatters:"Many cap-surface characters are expressions of pileipellis structure and can be taxonomically informative when described together with age and moisture state.",
+    developmentalSignificance:"Pileipellis characters can stretch, abrade, crack, flatten, gelatinize, or disappear as the cap expands and ages.",
+    observation:"Observation: the outer pileus surface is visible. Record relief, fiber/scale/wart presence, cracking, sheen, and moisture independently.",
+    identificationBoundary:"Identification boundary: pileipellis expression is descriptive morphology and must be combined with other characters before taxonomic identification.",
+    relationships:["pileus","surface_fibrils","pileus_scales","pileus_warts","pileus_cracks","pileus_tomentum"]
+  },
+  surface_fibrils:{
+    id:"surface_fibrils",label:"Surface fibrils",level:"macro",pronunciation:"FY-brils",
+    beginner:"Fine fibrous strands visible on the cap surface.",
+    expert:"Linear pileipellis-derived elements that may be innate, appressed, silky, radial, patchy, or weathered.",
+    whyItMatters:"Fibril orientation, relief, persistence, and distribution help distinguish cap-surface morphologies.",
+    developmentalSignificance:"Fibrils may flatten during expansion, concentrate on the disc, fragment, abrade, or become obscure with age.",
+    observation:"Observation: fine directional fibrous elements are visible on the pileus. Record orientation, density, relief, and distribution.",
+    identificationBoundary:"Identification boundary: fibrillose texture is one character and does not establish species identity.",
+    relationships:["pileipellis","pileus","pileus_scales"]
+  },
+  pileus_scales:{
+    id:"pileus_scales",label:"Pileus scales / squamules",level:"macro",pronunciation:"SKWAY-myools",
+    beginner:"Small scale-like pieces on the cap surface.",
+    expert:"Discrete plate-like or uplifted pileipellis elements ranging from fine squamules to coarse shaggy scales.",
+    whyItMatters:"Scale size, attachment, uplift, density, and disc-to-margin distribution can be diagnostically useful.",
+    developmentalSignificance:"Scales may separate as the pileus expands, lift, flatten, fragment, or weather away with age.",
+    observation:"Observation: discrete scale-like surface elements are visible. Record size, lift, spacing, color contrast, and distribution.",
+    identificationBoundary:"Identification boundary: scale morphology must be interpreted with the rest of the specimen.",
+    relationships:["pileipellis","surface_fibrils","pileus_margin"]
+  },
+  pileus_warts:{
+    id:"pileus_warts",label:"Pileus verrucae",level:"macro",pronunciation:"veh-ROO-kai",
+    beginner:"Blunt wart-like bumps on the cap surface.",
+    expert:"Discrete mound-like surface elevations distinct from fibrils or plate-like squamules.",
+    whyItMatters:"Verrucose relief is a recognizable macromorphological character and may reflect pileipellis or veil-derived structure.",
+    developmentalSignificance:"Warts may flatten, fragment, abrade, or persist differentially as the cap expands.",
+    observation:"Observation: blunt mound-like surface elevations are visible. Record size, shape, density, and persistence.",
+    identificationBoundary:"Identification boundary: verrucae alone do not identify a species.",
+    relationships:["pileipellis","pileus_scales","veil_structure"]
+  },
+  pileus_cracks:{
+    id:"pileus_cracks",label:"Areolate cracks",level:"macro",pronunciation:"AIR-ee-oh-late cracks",
+    beginner:"Cracks divide the cap surface into small plates or islands.",
+    expert:"A fissure network that separates surface tissue into polygonal or irregular areoles, often exposing contrasting context or lower pileipellis tissue.",
+    whyItMatters:"Crack geometry, depth, distribution, and age dependence can be important surface characters.",
+    developmentalSignificance:"Areolation commonly increases with expansion, drying, or senescence and may begin on the disc or margin depending on the morphology.",
+    observation:"Observation: visible fissures divide the surface into discrete areas. Record crack depth, plate size, and distribution.",
+    identificationBoundary:"Identification boundary: cracking may be developmental or environmental and must not be overinterpreted taxonomically.",
+    relationships:["pileipellis","pileus_context","pileus_margin"]
+  },
+  pileus_tomentum:{
+    id:"pileus_tomentum",label:"Pileus tomentum",level:"macro",pronunciation:"toh-MEN-tum",
+    beginner:"A fine velvety to woolly covering on the cap.",
+    expert:"Dense short to moderately long surface hyphal elements producing velvety, felted, or woolly macroscopic texture.",
+    whyItMatters:"Nap length, density, matting, and distribution distinguish velvety from more strongly tomentose surfaces.",
+    developmentalSignificance:"Tomentum may mat when wet, flatten during expansion, become patchy, or abrade with age.",
+    observation:"Observation: a fine nap or woolly covering is visible. Record density, fiber length, matting, and patchiness.",
+    identificationBoundary:"Identification boundary: tomentose or velvety texture is descriptive and not a standalone species diagnosis.",
+    relationships:["pileipellis","surface_fibrils"]
+  },
   pileus:{
     id:"pileus",label:"Pileus",level:"macro",pronunciation:"pileus",
     beginner:"The cap or upper part of many mushrooms.",
