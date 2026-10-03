@@ -1969,23 +1969,30 @@ export class MycoSimEngine{
     const x=THREE.MathUtils.clamp(r,0,1);
     const edge=THREE.MathUtils.smoothstep(x,.72,1);
     let y=0,radial=1,thicknessBoost=0;
-    if(margin==="incurved") y-=.075*edge*edge;
-    else if(margin==="decurved") y-=.12*edge*edge;
-    else if(margin==="uplifted") y+=.14*edge*edge;
-    else if(margin==="inrolled"){y-=.20*edge*edge;radial-=.025*edge;thicknessBoost=.055*edge;}
-    else if(margin==="undulate") y+=.085*Math.sin(theta*6+.45)*edge*edge;
-    else if(margin==="lobed") radial+=.055*Math.sin(theta*5+.30)*edge;
+
+    if(margin==="incurved"){y-=.060*edge;radial-=.018*edge;thicknessBoost+=.014*edge;}
+    else if(margin==="decurved") y-=.050*edge;
+    else if(margin==="uplifted"){y+=.070*edge;radial+=.010*edge;}
+    else if(margin==="inrolled"){y-=.105*edge;radial-=.040*edge;thicknessBoost+=.030*edge;}
+    else if(margin==="undulate") y+=.040*Math.sin(theta*6+.45)*edge;
+    else if(margin==="lobed") radial+=.030*Math.sin(theta*5+.30)*edge;
     else if(margin==="split_cracked"){
       const crackWave=Math.pow(Math.max(0,Math.cos(theta*6.0)),18);
-      radial-=.055*crackWave*edge;
-      y-=.045*crackWave*edge;
+      radial-=.030*crackWave*edge;
+      y-=.024*crackWave*edge;
     }else if(margin==="striate"){
-      radial+=.008*Math.sin(theta*28)*edge;
-      y+=.008*Math.sin(theta*28)*edge;
+      radial+=.006*Math.sin(theta*28)*edge;
+      y+=.006*Math.sin(theta*28)*edge;
     }else if(margin==="appendiculate"){
-      y-=.025*edge;
+      y-=.018*edge;
+      thicknessBoost+=.008*edge;
     }
-    return {y,radial,thicknessBoost};
+
+    return {
+      y:THREE.MathUtils.clamp(y,-.13,.10),
+      radial:THREE.MathUtils.clamp(radial,.90,1.08),
+      thicknessBoost:THREE.MathUtils.clamp(thicknessBoost,0,.045)
+    };
   }
 
   _agaricoidPileusGeometry({
@@ -1998,73 +2005,85 @@ export class MycoSimEngine{
     const phase=((seed%7919)/7919)*Math.PI*2;
     const row=segments+1;
 
-    const pointAt=(rr,theta,surface)=>{
-      const marginState=this._agaricMarginState(margin,rr,theta);
+    const topPoint=(rr,theta)=>{
+      const x=THREE.MathUtils.clamp(rr,0,1);
+      const m=this._agaricMarginState(margin,x,theta);
       const organicRadial=1+
-        .012*Math.sin(theta*2.17+phase)*(0.25+.75*rr)+
-        .008*Math.cos(theta*5.03-phase*.7)*rr*rr;
-      const effectiveRadius=radius*rr*marginState.radial*organicRadial;
-      const top=
-        this._agaricProfileHeight(profile,rr)+
-        this._agaricCenterOffset(center,rr)+
-        marginState.y+
-        (.010*Math.sin(theta*3.11+phase)+.006*Math.cos(theta*7.4-phase))*Math.pow(rr,1.35);
-      const discThickness=.235;
-      const edgeThickness=.065;
-      const taper=THREE.MathUtils.smoothstep(rr,.08,1);
-      const thickness=THREE.MathUtils.lerp(discThickness,edgeThickness,Math.pow(taper,.82))+marginState.thicknessBoost;
-      const underside=top-thickness-.012*Math.pow(rr,1.7);
-      const y=surface==="top"?top:underside;
+        .010*Math.sin(theta*2.17+phase)*(.25+.75*x)+
+        .006*Math.cos(theta*5.03-phase*.7)*x*x;
+      const effectiveRadius=radius*x*m.radial*organicRadial;
+      const y=
+        this._agaricProfileHeight(profile,x)+
+        this._agaricCenterOffset(center,x)+
+        m.y+
+        (.006*Math.sin(theta*3.11+phase)+.004*Math.cos(theta*7.4-phase))*Math.pow(x,1.25);
       return new THREE.Vector3(Math.cos(theta)*effectiveRadius,y,Math.sin(theta)*effectiveRadius);
     };
 
-    for(const surface of ["top","bottom"]){
-      for(let ir=0;ir<=rings;ir++){
-        const rr=ir/rings;
-        for(let it=0;it<=segments;it++){
-          const u=it/segments,theta=u*Math.PI*2;
-          const p=pointAt(rr,theta,surface);
-          verts.push(p.x,p.y,p.z);
-          uvs.push(u,rr);
-        }
+    const undersidePoint=(rr,theta)=>{
+      const x=THREE.MathUtils.clamp(rr,0,1);
+      const top=topPoint(x,theta);
+      const m=this._agaricMarginState(margin,x,theta);
+      const taper=THREE.MathUtils.smoothstep(x,.08,1);
+      const thickness=THREE.MathUtils.clamp(
+        THREE.MathUtils.lerp(.235,.072,Math.pow(taper,.82))+m.thicknessBoost,
+        .060,.290
+      );
+      return new THREE.Vector3(top.x,top.y-thickness-.006*Math.pow(x,1.55),top.z);
+    };
+
+    for(let ir=0;ir<=rings;ir++){
+      const rr=ir/rings;
+      for(let it=0;it<=segments;it++){
+        const u=it/segments,theta=u*Math.PI*2,p=topPoint(rr,theta);
+        verts.push(p.x,p.y,p.z);uvs.push(u,rr);
       }
     }
-    const surfaceStride=(rings+1)*row;
+
+    const undersideOffset=verts.length/3;
+    for(let ir=0;ir<=rings;ir++){
+      const rr=ir/rings;
+      for(let it=0;it<=segments;it++){
+        const u=it/segments,theta=u*Math.PI*2,p=undersidePoint(rr,theta);
+        verts.push(p.x,p.y,p.z);uvs.push(u,rr);
+      }
+    }
+
     for(let ir=0;ir<rings;ir++){
       for(let it=0;it<segments;it++){
         const a=ir*row+it,b=a+1,c=(ir+1)*row+it,d=c+1;
         indices.push(a,b,c,b,d,c);
-        const aa=surfaceStride+a,bb=surfaceStride+b,cc=surfaceStride+c,dd=surfaceStride+d;
+
+        const aa=undersideOffset+a,bb=undersideOffset+b,cc=undersideOffset+c,dd=undersideOffset+d;
         indices.push(aa,cc,bb,bb,cc,dd);
       }
     }
+
     const topEdge=rings*row;
-    const bottomEdge=surfaceStride+rings*row;
+    const bottomEdge=undersideOffset+rings*row;
     for(let it=0;it<segments;it++){
       const a=topEdge+it,b=a+1,c=bottomEdge+it,d=c+1;
-      indices.push(a,b,c,b,d,c);
+      indices.push(a,c,b,b,c,d);
     }
+
     const g=new THREE.BufferGeometry();
     g.setAttribute("position",new THREE.Float32BufferAttribute(verts,3));
     g.setAttribute("uv",new THREE.Float32BufferAttribute(uvs,2));
-    g.setIndex(indices);g.computeVertexNormals();g.computeBoundingSphere();
+    g.setIndex(indices);
+    g.computeVertexNormals();
+    g.computeBoundingBox();
+    g.computeBoundingSphere();
+
     g.userData={
-      model:"agaricoid-organic-pileus-v1",profile,center,margin,
-      thickness:{disc:.235,margin:.065},
-      supportsGillInsertion:true
+      model:"agaricoid-stable-pileus-v2",profile,center,margin,radius,
+      thickness:{disc:.235,margin:.072},
+      supportsGillInsertion:true,
+      recoveryContract:"continuous top + underside + rim; bounded margin deformation"
     };
-    g.userData.topPoint=(r,theta=0)=>{
-      const rr=THREE.MathUtils.clamp(r/radius,0,1);
-      return pointAt(rr,theta,"top");
-    };
+    g.userData.topPoint=(r,theta=0)=>topPoint(THREE.MathUtils.clamp(r/radius,0,1),theta);
     g.userData.topHeight=(r,theta=0)=>g.userData.topPoint(r,theta).y;
-    g.userData.undersideHeight=(r,theta=0)=>{
-      const rr=THREE.MathUtils.clamp(r/radius,0,1);
-      const m=this._agaricMarginState(margin,rr,theta);
-      const top=this._agaricProfileHeight(profile,rr)+this._agaricCenterOffset(center,rr)+m.y;
-      const thickness=THREE.MathUtils.lerp(.235,.065,Math.pow(THREE.MathUtils.smoothstep(rr,.08,1),.82))+m.thicknessBoost;
-      return top-thickness-.012*Math.pow(rr,1.7);
-    };
+    g.userData.undersidePoint=(r,theta=0)=>undersidePoint(THREE.MathUtils.clamp(r/radius,0,1),theta);
+    g.userData.undersideHeight=(r,theta=0)=>g.userData.undersidePoint(r,theta).y;
     return g;
   }
 
@@ -2364,6 +2383,8 @@ export class MycoSimEngine{
       clearcoat:.03,
       repeat:micro.repeat
     });
+    mat.side=THREE.DoubleSide;
+    mat.needsUpdate=true;
     cap.material=mat;
     old?.dispose?.();
     const finish={
@@ -2516,6 +2537,7 @@ export class MycoSimEngine{
   }
 
   _applyAgaricoidSurfaceSystem(cap,capState){
+    if(!cap?.geometry?.attributes?.position||!capState?.topPoint)return null;
     const selected=this._agaricSurfaceState();
     const state={
       ...selected,
@@ -2967,8 +2989,11 @@ export class MycoSimEngine{
       subdecurrent:Math.max(.11,stipeRadius-.025),
       decurrent:Math.max(.08,stipeRadius-.055)
     };
-    const inner=innerMap[type]??stipeRadius+.018;
-    const outer=capState?.radius?capState.radius*.82:1.32;
+    const requestedInner=innerMap[type]??stipeRadius+.018;
+    const safeInner=capState?.safeInnerRadius??.16;
+    const safeOuter=capState?.safeOuterRadius??(capState?.radius?capState.radius*.94:1.48);
+    const inner=THREE.MathUtils.clamp(requestedInner,safeInner,Math.max(safeInner+.05,safeOuter-.18));
+    const outer=THREE.MathUtils.clamp(capState?.radius?capState.radius*.90:1.32,inner+.18,safeOuter);
     const attachmentLabels={
       free_gills:"Free gills",seceding:"Seceding gills",adnexed:"Adnexed gills",adnate:"Adnate gills",
       sinuate:"Sinuate gills",emarginate:"Emarginate gills",subdecurrent:"Subdecurrent gills",decurrent:"Decurrent gills"
@@ -3001,7 +3026,9 @@ export class MycoSimEngine{
       start:inner,end:outer,theta:0,capState,depth:plateDepth,thickness:plateThickness,
       attachment:type,edge:edgeState,shortTier:0
     });
-    const fullMesh=new THREE.InstancedMesh(referenceFull.geo,MATERIALS.gill.clone(),fullCount);
+    const fullGillMaterial=MATERIALS.gill.clone();
+    fullGillMaterial.side=THREE.DoubleSide;
+    const fullMesh=new THREE.InstancedMesh(referenceFull.geo,fullGillMaterial,fullCount);
     fullMesh.userData={
       ...group.userData,knowledgeId:attachmentKnowledge[type]||"lamella",
       hoverLabel:attachmentLabels[type]||"Lamella / gill",structureType:"lamella",
@@ -3105,13 +3132,16 @@ export class MycoSimEngine{
       profile,center,margin,radius,
       seed:this.morphologyState?.developmental?.identitySeed||421
     });
-    const cap=this.register(new THREE.Mesh(capGeo,MATERIALS.cap.clone()),"pileus","Pileus / cap","macro");
+    const capMaterial=MATERIALS.cap.clone();
+    capMaterial.side=THREE.DoubleSide;
+    const cap=this.register(new THREE.Mesh(capGeo,capMaterial),"pileus","Pileus / cap","macro");
     cap.position.y=capY;
     cap.userData.profile=profile;cap.userData.center=center;cap.userData.margin=margin;
 
     const ctx=cap.clone();
     ctx.geometry=capGeo.clone();
     ctx.material=MATERIALS.flesh.clone();
+    ctx.material.side=THREE.DoubleSide;
     ctx.scale.set(.965,.82,.965);
     ctx.position.set(0,capY-.035,0);
     ctx.userData={id:"pileus_context",label:"Pileus context",category:"internal",parentId:"pileus",selectable:true,knowledgeId:"pileus_context"};
@@ -3133,7 +3163,15 @@ export class MycoSimEngine{
         return p.clone().add(new THREE.Vector3(0,capY,0));
       },
       topHeight:(r,theta=0)=>capY+(typeof capGeo.userData.topHeight==="function"?capGeo.userData.topHeight(r,theta):0),
-      undersideHeight:(r,theta=0)=>capY+(typeof underside==="function"?underside(r,theta):-.18)
+      undersidePoint:(r,theta=0)=>{
+        const p=typeof capGeo.userData.undersidePoint==="function"
+          ? capGeo.userData.undersidePoint(THREE.MathUtils.clamp(r,0,radius),theta)
+          : new THREE.Vector3(Math.cos(theta)*r,-.18,Math.sin(theta)*r);
+        return p.clone().add(new THREE.Vector3(0,capY,0));
+      },
+      undersideHeight:(r,theta=0)=>capY+(typeof underside==="function"?underside(THREE.MathUtils.clamp(r,0,radius),theta):-.18),
+      safeInnerRadius:radius*.10,
+      safeOuterRadius:radius*.94
     };
     this._agaricoidCapState=capState;
     this._applyAgaricoidSurfaceSystem(cap,capState);
