@@ -360,6 +360,41 @@ function agaricoidStipeSprint4Pass(engine,profile){
 }
 
 
+function sprint5PreservationPass(engine,profile){
+  const snap=engine.qaSnapshot();
+  const ids=new Set(snap.objectIds||[]);
+  const lod=snap.lodState||{};
+  const common={
+    teachingView:lod.teachingViewProtected===true&&lod.rootVisible===true&&lod.proxyVisible===false,
+    performance:snap.realismPerformance?.pass===true,
+    buildWithinHardLimit:(snap.profileBuildMs||0)<=(snap.startupMaximumMs||5000)
+  };
+  if(profile.id!=="agaricoid"){
+    return {pass:Object.values(common).every(Boolean),...common,profileId:profile.id};
+  }
+  const pileus=engine.objects.get("pileus");
+  const under=engine.objects.get("pileus_underside");
+  const hym=engine.objects.get("hymenophore");
+  const stipe=engine.objects.get("stipe");
+  const attach=hym?.userData?.attachmentGeometry||{};
+  const agaricoid={
+    pileusVisible:!!pileus&&pileus.visible!==false,
+    undersidePreserved:!!under&&typeof under.geometry?.userData?.undersideHeight==="function",
+    hymenophorePreserved:!!hym&&attach.followsPileusUnderside===true,
+    stipeProfilePreserved:stipe?.geometry?.userData?.model==="agaricoid-profile-stipe-v3"&&stipe.geometry.userData.profileDriven===true,
+    regionalBlendingPreserved:stipe?.userData?.surfaceBlendModel==="phase7b-regional-morphology-v1",
+    interactionPreserved:stipe?.userData?.interactionLayer==="phase7-sprint3-v1",
+    developmentPreserved:stipe?.userData?.developmentalModel==="phase7-sprint4-v1",
+    insertionPreserved:engine.objects.get("stipe_insertion")?.userData?.mechanicalSupport===true,
+    requiredIds:["pileus","pileus_underside","hymenophore","stipe","stipe_base","stipe_insertion"].every(id=>ids.has(id))
+  };
+  return {
+    pass:Object.values(common).every(Boolean)&&Object.values(agaricoid).every(Boolean),
+    ...common,...agaricoid,profileId:profile.id
+  };
+}
+
+
 function mobileContract(){
   const mq=matchMedia("(max-width: 900px)");
   const stage=document.querySelector(".stage-wrap");
@@ -433,6 +468,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
         const stipePhase7B=agaricoidStipePhase7BPass(engine,profile);
         const stipeSprint3=agaricoidStipeSprint3Pass(engine,profile);
         const stipeSprint4=agaricoidStipeSprint4Pass(engine,profile);
+        const sprint5Preservation=sprint5PreservationPass(engine,profile);
         const result={
           profileId:profile.id,
           family:profile.label,
@@ -464,6 +500,8 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
           agaricoidStipeSprint3Detail:stipeSprint3,
           agaricoidStipeSprint4:stipeSprint4.pass,
           agaricoidStipeSprint4Detail:stipeSprint4,
+          sprint5Preservation:sprint5Preservation.pass,
+          sprint5PreservationDetail:sprint5Preservation,
           modePreserved:engine.mode===original.mode
         };
         engine.resetPresentation();
@@ -482,7 +520,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
         result.pass=[
           result.render,result.framing,result.hover,result.focus,result.isolateHide,
           result.exploded,result.section,result.transparency,result.anatomyNavigation,
-          result.requiredAnatomy,result.agaricoidPileusShell,result.agaricoidGeometryContract,result.agaricoidHymenophoreSync,result.agaricoidStipePhase7A,result.agaricoidStipePhase7B,result.agaricoidStipeSprint3,result.agaricoidStipeSprint4,result.modePreserved,result.fpsAcceptable,result.performancePass
+          result.requiredAnatomy,result.agaricoidPileusShell,result.agaricoidGeometryContract,result.agaricoidHymenophoreSync,result.agaricoidStipePhase7A,result.agaricoidStipePhase7B,result.agaricoidStipeSprint3,result.agaricoidStipeSprint4,result.sprint5Preservation,result.modePreserved,result.fpsAcceptable,result.performancePass
         ].every(Boolean);
         rows.push(result);
         memorySamples.push({
@@ -660,6 +698,52 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
       stages:sprint4Rows
     };
 
+    // Sprint 5 performance + preservation audit over demanding agaricoid states.
+    const sprint5Cases=[
+      {name:"mature-high-detail",stageId:"mature",form:"ventricose",position:"eccentric",surface:"reticulate"},
+      {name:"old-weathered",stageId:"old",form:"bulbous_base",position:"eccentric",surface:"scaly"},
+      {name:"young-fibrillose",stageId:"young",form:"tapering",position:"central",surface:"fibrillose"}
+    ];
+    const sprint5Rows=[];
+    for(const test of sprint5Cases){
+      engine.variants={
+        ...engine.variants,
+        agaric_stipe_form:test.form,
+        agaric_stipe_position:test.position,
+        agaric_stipe_surface_apex:test.stageId==="young"?"pruinose":"smooth",
+        agaric_stipe_surface_mid:test.surface,
+        agaric_stipe_surface_base:test.stageId==="old"?"fibrillose":"smooth"
+      };
+      engine.developmentalStageId=test.stageId;
+      engine.loadProfile("agaricoid");
+      engine.renderer.render(engine.scene,engine.camera);
+      await nextFrame();
+      const snap=engine.qaSnapshot();
+      const preserve=sprint5PreservationPass(engine,PROFILE_BY_ID.agaricoid);
+      const perf=snap.realismPerformance||{};
+      sprint5Rows.push({
+        ...test,
+        pass:preserve.pass&&perf.pass===true,
+        preserve,
+        tier:snap.realismTier,
+        fps:snap.fps||0,
+        drawCalls:snap.drawCalls||0,
+        triangles:snap.complexity?.triangles||0,
+        buildMs:snap.profileBuildMs||0,
+        targets:perf.targets||null,
+        checks:perf.checks||null
+      });
+    }
+    const sprint5Performance={
+      pass:sprint5Rows.every(x=>x.pass),
+      caseCount:sprint5Rows.length,
+      passedCases:sprint5Rows.filter(x=>x.pass).length,
+      maxDrawCalls:Math.max(...sprint5Rows.map(x=>x.drawCalls)),
+      maxTriangles:Math.max(...sprint5Rows.map(x=>x.triangles)),
+      maxBuildMs:Math.max(...sprint5Rows.map(x=>x.buildMs)),
+      cases:sprint5Rows
+    };
+
     // Final campaign audit: every gasteroid teaching archetype × developmental stage.
     const campaignRows=[];
     const subtypeIds=Object.keys(PUFFBALL_SUBTYPE_LIBRARY);
@@ -730,7 +814,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
 
     const failed=rows.filter(r=>!r.pass);
     return {
-      pass:failed.length===0&&memory.pass&&mobile.pass&&specimenIsolation.pass&&campaign.pass&&stipeSprint2.pass&&stipeSprint3.pass&&stipeSprint4.pass,
+      pass:failed.length===0&&memory.pass&&mobile.pass&&specimenIsolation.pass&&campaign.pass&&stipeSprint2.pass&&stipeSprint3.pass&&stipeSprint4.pass&&sprint5Performance.pass,
       generatedAt:new Date().toISOString(),
       totalCombinations:rows.length,
       passedCombinations:rows.length-failed.length,
@@ -746,6 +830,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
       stipeSprint2,
       stipeSprint3,
       stipeSprint4,
+      sprint5Performance,
       memory,
       mobile,
       specimenIsolation
@@ -764,5 +849,5 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
 
 export function formatRegressionSummary(report){
   const status=report.pass?"PASS":"FAIL";
-  return `${status} · ${report.passedCombinations}/${report.totalCombinations} family×stage combinations · campaign ${report.campaign?.stateCount||0}/${report.campaign?.expectedStateCount||0} states · stipe Sprint 2 ${report.stipeSprint2?.passedStates||0}/${report.stipeSprint2?.stateCount||0} · Sprint 3 ${report.stipeSprint3?.passedCases||0}/${report.stipeSprint3?.caseCount||0} · Sprint 4 ${report.stipeSprint4?.passedStages||0}/${report.stipeSprint4?.stageCount||0} · perf failures ${report.performanceFailures?.length||0} · memory Δ geom ${report.memory.delta.geometries} · writes ${report.specimenIsolation.networkWrites.length}`;
+  return `${status} · ${report.passedCombinations}/${report.totalCombinations} family×stage combinations · campaign ${report.campaign?.stateCount||0}/${report.campaign?.expectedStateCount||0} states · stipe Sprint 2 ${report.stipeSprint2?.passedStates||0}/${report.stipeSprint2?.stateCount||0} · Sprint 3 ${report.stipeSprint3?.passedCases||0}/${report.stipeSprint3?.caseCount||0} · Sprint 4 ${report.stipeSprint4?.passedStages||0}/${report.stipeSprint4?.stageCount||0} · Sprint 5 ${report.sprint5Performance?.passedCases||0}/${report.sprint5Performance?.caseCount||0} · perf failures ${report.performanceFailures?.length||0} · memory Δ geom ${report.memory.delta.geometries} · writes ${report.specimenIsolation.networkWrites.length}`;
 }
