@@ -100,7 +100,12 @@ function updateMorphologySummary(engine){
     add("agaric_pileus_profile"," pileus");
     add("agaric_pileus_center"," disc");
     add("agaric_margin"," margin");
-    add("agaric_stipe_taper"," stipe");
+    add("agaric_stipe_position"," position");
+    add("agaric_stipe_form"," stipe form");
+    add("agaric_stipe_context"," context");
+    add("agaric_stipe_surface_apex"," apex");
+    add("agaric_stipe_surface_mid"," mid");
+    add("agaric_stipe_surface_base"," base");
     add("agaric_surface_primary"," surface");
     add("agaric_surface_secondary"," secondary");
     add("agaric_surface_distribution"," distribution");
@@ -152,6 +157,14 @@ function updateMorphologySummary(engine){
       "tomentum "+(three.counts?.tomentum||0),
       three.morphologicalDistribution?"morphological distribution":"distribution unavailable",
       three.transferableSurfaceEngine?"shared surface architecture":"agaricoid-only architecture"
+    ].filter(Boolean).join(" · "));
+    const four=snap.agaricoidPhaseFour;
+    if(four)lines.push("Phase Four stipe + development · "+[
+      four.stage+" stage",four.stipePosition+" position",four.stipeForm+" form",four.stipeContext+" context",
+      "apex "+four.stipeSurfaceApex,"mid "+four.stipeSurfaceMid,"base "+four.stipeSurfaceBase,
+      four.stipeModel,
+      four.developmentalContinuity?"developmental continuity":"continuity unavailable",
+      four.ageTransformsInsteadOfSwaps?"age transforms selected morphology":"stage replacement"
     ].filter(Boolean).join(" · "));
     detail.textContent=lines.join("\n")||"Agaricoid morphology engine active.";
     return;
