@@ -22,6 +22,42 @@ export const MORPHOLOGY_VARIANTS = Object.freeze({
       ["striate","Striate"],["appendiculate","Appendiculate"]
     ]
   },
+  agaric_stipe_position: {
+    label:"Stipe position",
+    options:[["central","Central"],["eccentric","Eccentric"]]
+  },
+  agaric_stipe_form: {
+    label:"Stipe form",
+    options:[
+      ["equal","Equal"],["tapering","Tapering"],["clavate","Clavate"],
+      ["ventricose","Ventricose"],["bulbous_base","Bulbous base"],["rooting","Rooting"]
+    ]
+  },
+  agaric_stipe_context: {
+    label:"Stipe context",
+    options:[["solid","Solid"],["stuffed","Stuffed"],["hollow","Hollow"]]
+  },
+  agaric_stipe_surface_apex: {
+    label:"Stipe apex surface",
+    options:[
+      ["smooth","Smooth"],["fibrillose","Fibrillose"],["floccose","Floccose"],["scaly","Scaly"],
+      ["reticulate","Reticulate"],["pruinose","Pruinose apex"],["longitudinal_striate","Longitudinally striate"]
+    ]
+  },
+  agaric_stipe_surface_mid: {
+    label:"Mid-stipe surface",
+    options:[
+      ["smooth","Smooth"],["fibrillose","Fibrillose"],["floccose","Floccose"],["scaly","Scaly"],
+      ["reticulate","Reticulate"],["longitudinal_striate","Longitudinally striate"]
+    ]
+  },
+  agaric_stipe_surface_base: {
+    label:"Stipe base surface",
+    options:[
+      ["smooth","Smooth"],["fibrillose","Fibrillose"],["floccose","Floccose"],["scaly","Scaly"],
+      ["reticulate","Reticulate"],["longitudinal_striate","Longitudinally striate"]
+    ]
+  },
   agaric_stipe_taper: {
     label:"Stipe taper",
     options:[
@@ -226,6 +262,12 @@ export const DEFAULT_VARIANTS = Object.freeze({
   agaric_pileus_profile:"convex",
   agaric_pileus_center:"even",
   agaric_margin:"decurved",
+  agaric_stipe_position:"central",
+  agaric_stipe_form:"equal",
+  agaric_stipe_context:"solid",
+  agaric_stipe_surface_apex:"smooth",
+  agaric_stipe_surface_mid:"smooth",
+  agaric_stipe_surface_base:"smooth",
   agaric_stipe_taper:"equal",
   agaric_surface_primary:"smooth",
   agaric_surface_secondary:"none",
@@ -412,6 +454,48 @@ export const VARIANT_TEACHING = Object.freeze({
     split_cracked:{anatomyId:"pileus_margin",short:"Margin contains discrete radial splits or notches.",detail:"A split margin shows interruptions produced by tissue separation or cracking."},
     striate:{anatomyId:"pileus_margin",short:"Margin shows radial striation.",detail:"A striate margin exhibits radial lines, commonly reflecting underlying lamellae or thin marginal tissue."},
     appendiculate:{anatomyId:"pileus_margin",short:"Margin bears hanging veil remnants.",detail:"Appendiculate margins retain fragments of partial or universal veil tissue along the cap edge."}
+  }),
+  agaric_stipe_position:Object.freeze({
+    central:{anatomyId:"stipe",short:"Stipe is centrally inserted beneath the pileus.",detail:"A central stipe intersects the pileus near its geometric center."},
+    eccentric:{anatomyId:"stipe",short:"Stipe is offset from the pileus center.",detail:"An eccentric stipe is displaced laterally while remaining integrated with the hymenophore and cap body plan."}
+  }),
+  agaric_stipe_form:Object.freeze({
+    equal:{anatomyId:"stipe",short:"Stipe diameter remains approximately uniform.",detail:"An equal stipe changes little in diameter from apex to base."},
+    tapering:{anatomyId:"stipe",short:"Stipe narrows progressively.",detail:"A tapering stipe changes gradually in diameter without a discrete club or bulb."},
+    clavate:{anatomyId:"stipe",short:"Stipe broadens toward a club-like base.",detail:"Clavate form expands gradually below, producing a club-shaped lower stipe."},
+    ventricose:{anatomyId:"stipe",short:"Stipe is swollen around the middle.",detail:"Ventricose describes a conspicuous mid-stipe swelling with narrower apex and base."},
+    bulbous_base:{anatomyId:"stipe_base",short:"Stipe terminates in a localized rounded basal swelling.",detail:"A bulbous base is more discrete than the gradual widening of a clavate stipe."},
+    rooting:{anatomyId:"stipe_base",short:"Stipe extends downward into a rooting process.",detail:"A rooting form narrows below the apparent substrate line into an elongated basal extension."}
+  }),
+  agaric_stipe_context:Object.freeze({
+    solid:{anatomyId:"stipe_context",short:"Stipe appears internally solid.",detail:"Context fills the stipe cross-section without a distinct axial cavity."},
+    stuffed:{anatomyId:"stipe_context",short:"Stipe contains loose or pithy internal tissue.",detail:"Stuffed context represents a partially filled axis rather than a dense solid core."},
+    hollow:{anatomyId:"stipe_context",short:"Stipe contains a continuous axial cavity.",detail:"Hollow stipes retain a tissue wall around a visible central lumen."}
+  }),
+  agaric_stipe_surface_apex:Object.freeze({
+    smooth:{anatomyId:"stipe_apex",short:"Apex lacks conspicuous ornament.",detail:"The upper stipe is macroscopically smooth."},
+    fibrillose:{anatomyId:"stipe_apex",short:"Apex bears fine fibrils.",detail:"Fine fibrous elements run on the upper stipe surface."},
+    floccose:{anatomyId:"stipe_apex",short:"Apex bears loose cottony tufts.",detail:"Floccose texture consists of soft irregular superficial tufts rather than scales."},
+    scaly:{anatomyId:"stipe_apex",short:"Apex bears small scale-like elements.",detail:"Discrete surface scales project from the upper stipe."},
+    reticulate:{anatomyId:"reticulation",short:"Apex bears a net-like ridge pattern.",detail:"Raised intersecting ridges form a reticulum."},
+    pruinose:{anatomyId:"pruina",short:"Apex carries a fine frosted bloom.",detail:"Pruinose texture is a delicate powdery or crystalline-looking superficial coating."},
+    longitudinal_striate:{anatomyId:"stipe_apex",short:"Apex shows longitudinal grooves or ridges.",detail:"Axial striation follows the long axis of the stipe."}
+  }),
+  agaric_stipe_surface_mid:Object.freeze({
+    smooth:{anatomyId:"stipe_mid",short:"Mid-stipe is smooth.",detail:"No conspicuous projecting ornament is present."},
+    fibrillose:{anatomyId:"stipe_mid",short:"Mid-stipe is fibrillose.",detail:"Fine fibers are distributed over the middle stipe."},
+    floccose:{anatomyId:"stipe_mid",short:"Mid-stipe is floccose.",detail:"Loose cottony surface tufts occur over the middle region."},
+    scaly:{anatomyId:"stipe_mid",short:"Mid-stipe is scaly.",detail:"Discrete scale-like elements occur over the middle region."},
+    reticulate:{anatomyId:"reticulation",short:"Mid-stipe is reticulate.",detail:"Raised net-like ridges occur over the middle region."},
+    longitudinal_striate:{anatomyId:"stipe_mid",short:"Mid-stipe is longitudinally striate.",detail:"Axial grooves or ridges run along the middle region."}
+  }),
+  agaric_stipe_surface_base:Object.freeze({
+    smooth:{anatomyId:"stipe_base",short:"Base is smooth.",detail:"No conspicuous surface ornament is present at the base."},
+    fibrillose:{anatomyId:"stipe_base",short:"Base is fibrillose.",detail:"Fine fibers occur over the basal region."},
+    floccose:{anatomyId:"stipe_base",short:"Base is floccose.",detail:"Loose cottony surface tufts occur at the base."},
+    scaly:{anatomyId:"stipe_base",short:"Base is scaly.",detail:"Discrete scale-like elements occur at the base."},
+    reticulate:{anatomyId:"reticulation",short:"Base is reticulate.",detail:"Raised net-like ridges occur over the basal region."},
+    longitudinal_striate:{anatomyId:"stipe_base",short:"Base is longitudinally striate.",detail:"Axial grooves or ridges run into the basal region."}
   }),
   agaric_stipe_taper:Object.freeze({
     equal:{anatomyId:"stipe",short:"Stipe diameter remains approximately uniform.",detail:"An equal stipe changes little in diameter between apex and base."},
