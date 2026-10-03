@@ -580,7 +580,7 @@ export class MycoSimEngine{
   addObject(mesh,meta){
     mesh.userData={...mesh.userData,...meta};
     mesh.castShadow=true; mesh.receiveShadow=true;
-    this.root.add(mesh); this.pickables.push(mesh); this.objects.set(meta.id,mesh); this._rememberTransform(mesh);
+    this.root.add(mesh); this.pickables.push(mesh); this.objects.set(meta.id,mesh);
     return mesh;
   }
 
@@ -595,6 +595,18 @@ export class MycoSimEngine{
     for(const [obj,t] of this.originalTransforms){
       if(!obj?.parent) continue;
       obj.position.copy(t.position); obj.rotation.copy(t.rotation); obj.scale.copy(t.scale);
+    }
+  }
+
+  _captureCurrentTransforms(){
+    this.originalTransforms.clear();
+    for(const obj of this.objects.values()){
+      if(!obj?.parent) continue;
+      this.originalTransforms.set(obj,{
+        position:obj.position.clone(),
+        rotation:obj.rotation.clone(),
+        scale:obj.scale.clone()
+      });
     }
   }
   register(mesh,id,label,category,parentId=null){
@@ -650,6 +662,10 @@ export class MycoSimEngine{
     if(typeof fn!=="function") throw new Error("Missing model factory: "+p.factory);
     fn.call(this);
     this.applyArchitectureDevelopmentalGeometry(id);
+    // Capture the completed biological state only after builders have assigned
+    // their real positions and developmental transforms. Presentation reset /
+    // exploded-view restoration must never use register-time (0,0,0) positions.
+    this._captureCurrentTransforms();
     this.currentProfile=p;
     if(PROFILE_REALISM_BUDGETS[id]?.lod){
       this.lodRecord=installDistanceLod(this,id,this.realismTier);
@@ -1496,6 +1512,7 @@ export class MycoSimEngine{
     for(const m of (Array.isArray(o.material)?o.material:[o.material])){m.transparent=true;m.opacity=opacity;m.depthWrite=false;}
   }
   setExploded(enabled=true){
+    if(this.originalTransforms.size===0)this._captureCurrentTransforms();
     this._restoreTransforms();
     this.exploded=!!enabled;
     if(!enabled){this.applyMode();return;}
@@ -1545,7 +1562,10 @@ export class MycoSimEngine{
   }
 
   resetPresentation(){
-    this.isolated=null;this.hidden.clear();this._restoreTransforms();this.exploded=false;this.setSection(false);this.clearKnowledgeProxy?.();this.applyMode();this.frameModel({animate:true});
+    this.isolated=null;this.hidden.clear();
+    if(this.originalTransforms.size===0)this._captureCurrentTransforms();
+    this._restoreTransforms();
+    this.exploded=false;this.setSection(false);this.clearKnowledgeProxy?.();this.applyMode();this.frameModel({animate:true});
   }
 
   frameModel({animate=false}={}){
@@ -3147,7 +3167,6 @@ export class MycoSimEngine{
     const margin=v.agaric_margin||"decurved";
     const form=v.agaric_stipe_form||v.agaric_stipe_taper||"equal";
     const stipePosition=v.agaric_stipe_position||"central";
-
     const capGeo=this._agaricoidPileusGeometry({
       profile,center,margin,radius,
       seed:this.morphologyState?.developmental?.identitySeed||421
