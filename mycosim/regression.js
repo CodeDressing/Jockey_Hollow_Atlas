@@ -315,6 +315,31 @@ function agaricoidStipePhase7BPass(engine,profile){
 }
 
 
+function agaricoidStipeSprint3Pass(engine,profile){
+  if(profile.id!=="agaricoid")return {pass:true,reason:"not_agaricoid"};
+  const stipe=engine.objects.get("stipe");
+  const geo=stipe?.geometry?.userData||{};
+  const insertion=engine.objects.get("stipe_insertion");
+  const position=engine.variants?.agaric_stipe_position||"central";
+  const surfaceGroups=["stipe_apex","stipe_mid","stipe_base_surface"].map(id=>engine.objects.get(id)).filter(Boolean);
+  const formInteractionOk=surfaceGroups.every(g=>g.userData?.surfaceFormInteraction==="phase7-sprint3-v1");
+  const mechanicsOk=geo.capLoadCoupled===true&&Number.isFinite(geo.capLoad)&&
+    typeof geo.surfaceStretchAt==="function"&&typeof geo.centerlineTangentAt==="function"&&typeof geo.radiusSlopeAt==="function";
+  const insertionOk=!!insertion&&insertion.userData?.mechanicalSupport===true;
+  const stanceOk=position!=="eccentric"||
+    (geo.eccentricCenterline===true&&(geo.basalCounterbalance||0)>0&&Math.abs(stipe?.userData?.apexX||0)>Math.abs(stipe?.userData?.baseX||0));
+  return {
+    pass:stipe?.userData?.interactionLayer==="phase7-sprint3-v1"&&formInteractionOk&&mechanicsOk&&insertionOk&&stanceOk,
+    position,formInteractionOk,mechanicsOk,insertionOk,stanceOk,
+    capLoad:geo.capLoad??null,
+    basalCounterbalance:geo.basalCounterbalance??null,
+    apexX:stipe?.userData?.apexX??null,
+    baseX:stipe?.userData?.baseX??null,
+    surfaceGroupCount:surfaceGroups.length
+  };
+}
+
+
 function mobileContract(){
   const mq=matchMedia("(max-width: 900px)");
   const stage=document.querySelector(".stage-wrap");
@@ -386,6 +411,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
         const hymenophoreSync=agaricoidHymenophoreSyncPass(engine,profile);
         const stipePhase7A=agaricoidStipePhase7APass(engine,profile);
         const stipePhase7B=agaricoidStipePhase7BPass(engine,profile);
+        const stipeSprint3=agaricoidStipeSprint3Pass(engine,profile);
         const result={
           profileId:profile.id,
           family:profile.label,
@@ -413,6 +439,8 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
           agaricoidStipePhase7ADetail:stipePhase7A,
           agaricoidStipePhase7B:stipePhase7B.pass,
           agaricoidStipePhase7BDetail:stipePhase7B,
+          agaricoidStipeSprint3:stipeSprint3.pass,
+          agaricoidStipeSprint3Detail:stipeSprint3,
           modePreserved:engine.mode===original.mode
         };
         engine.resetPresentation();
@@ -431,7 +459,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
         result.pass=[
           result.render,result.framing,result.hover,result.focus,result.isolateHide,
           result.exploded,result.section,result.transparency,result.anatomyNavigation,
-          result.requiredAnatomy,result.agaricoidPileusShell,result.agaricoidGeometryContract,result.agaricoidHymenophoreSync,result.agaricoidStipePhase7A,result.agaricoidStipePhase7B,result.modePreserved,result.fpsAcceptable,result.performancePass
+          result.requiredAnatomy,result.agaricoidPileusShell,result.agaricoidGeometryContract,result.agaricoidHymenophoreSync,result.agaricoidStipePhase7A,result.agaricoidStipePhase7B,result.agaricoidStipeSprint3,result.modePreserved,result.fpsAcceptable,result.performancePass
         ].every(Boolean);
         rows.push(result);
         memorySamples.push({
@@ -496,6 +524,58 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
       stateCount:stipeSurfaceAudit.length,
       passedStates:stipeSurfaceAudit.filter(x=>x.pass).length,
       states:stipeSurfaceAudit
+    };
+
+    // Sprint 3 interaction audit: verify local surface deformation, cap support,
+    // and eccentric load compensation under representative demanding states.
+    const sprint3Cases=[
+      {name:"ventricose-scaly-central",form:"ventricose",position:"central",surface:"scaly"},
+      {name:"bulbous-reticulate-central",form:"bulbous_base",position:"central",surface:"reticulate"},
+      {name:"tapering-fibrillose-eccentric",form:"tapering",position:"eccentric",surface:"fibrillose"},
+      {name:"ventricose-striate-eccentric",form:"ventricose",position:"eccentric",surface:"longitudinal_striate"}
+    ];
+    const sprint3Rows=[];
+    for(const test of sprint3Cases){
+      engine.variants={
+        ...engine.variants,
+        agaric_stipe_form:test.form,
+        agaric_stipe_position:test.position,
+        agaric_stipe_surface_apex:"smooth",
+        agaric_stipe_surface_mid:test.surface,
+        agaric_stipe_surface_base:"smooth"
+      };
+      engine.developmentalStageId="mature";
+      engine.loadProfile("agaricoid");
+      engine.renderer.render(engine.scene,engine.camera);
+      await nextFrame();
+      const stipe=engine.objects.get("stipe"),meta=stipe?.geometry?.userData||{};
+      const surface=engine.objects.get("stipe_mid");
+      const insertion=engine.objects.get("stipe_insertion");
+      const stretchLow=typeof meta.surfaceStretchAt==="function"?meta.surfaceStretchAt(.22):null;
+      const stretchMid=typeof meta.surfaceStretchAt==="function"?meta.surfaceStretchAt(.52):null;
+      const stretchHigh=typeof meta.surfaceStretchAt==="function"?meta.surfaceStretchAt(.82):null;
+      const formResponse=[stretchLow,stretchMid,stretchHigh].every(Number.isFinite)&&
+        Math.max(stretchLow,stretchMid,stretchHigh)-Math.min(stretchLow,stretchMid,stretchHigh)>.025;
+      const surfaceAttached=!!surface&&surface.userData?.surfaceFormInteraction==="phase7-sprint3-v1"&&(surface.userData?.elementCount||0)>0;
+      const capSupport=meta.capLoadCoupled===true&&Number.isFinite(meta.capLoad)&&!!insertion&&insertion.userData?.mechanicalSupport===true;
+      const stance=test.position!=="eccentric"||
+        ((meta.basalCounterbalance||0)>0&&Math.abs(stipe?.userData?.apexX||0)>Math.abs(stipe?.userData?.baseX||0)+.08);
+      sprint3Rows.push({
+        ...test,
+        pass:formResponse&&surfaceAttached&&capSupport&&stance,
+        formResponse,surfaceAttached,capSupport,stance,
+        stretch:{low:stretchLow,mid:stretchMid,high:stretchHigh},
+        capLoad:meta.capLoad??null,
+        apexX:stipe?.userData?.apexX??null,
+        baseX:stipe?.userData?.baseX??null,
+        basalCounterbalance:meta.basalCounterbalance??null
+      });
+    }
+    const stipeSprint3={
+      pass:sprint3Rows.every(x=>x.pass),
+      caseCount:sprint3Rows.length,
+      passedCases:sprint3Rows.filter(x=>x.pass).length,
+      cases:sprint3Rows
     };
 
     // Final campaign audit: every gasteroid teaching archetype × developmental stage.
@@ -568,7 +648,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
 
     const failed=rows.filter(r=>!r.pass);
     return {
-      pass:failed.length===0&&memory.pass&&mobile.pass&&specimenIsolation.pass&&campaign.pass&&stipeSprint2.pass,
+      pass:failed.length===0&&memory.pass&&mobile.pass&&specimenIsolation.pass&&campaign.pass&&stipeSprint2.pass&&stipeSprint3.pass,
       generatedAt:new Date().toISOString(),
       totalCombinations:rows.length,
       passedCombinations:rows.length-failed.length,
@@ -582,6 +662,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
       campaign,
       campaignRows,
       stipeSprint2,
+      stipeSprint3,
       memory,
       mobile,
       specimenIsolation
@@ -600,5 +681,5 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
 
 export function formatRegressionSummary(report){
   const status=report.pass?"PASS":"FAIL";
-  return `${status} · ${report.passedCombinations}/${report.totalCombinations} family×stage combinations · campaign ${report.campaign?.stateCount||0}/${report.campaign?.expectedStateCount||0} states · stipe Sprint 2 ${report.stipeSprint2?.passedStates||0}/${report.stipeSprint2?.stateCount||0} · perf failures ${report.performanceFailures?.length||0} · memory Δ geom ${report.memory.delta.geometries} · writes ${report.specimenIsolation.networkWrites.length}`;
+  return `${status} · ${report.passedCombinations}/${report.totalCombinations} family×stage combinations · campaign ${report.campaign?.stateCount||0}/${report.campaign?.expectedStateCount||0} states · stipe Sprint 2 ${report.stipeSprint2?.passedStates||0}/${report.stipeSprint2?.stateCount||0} · Sprint 3 ${report.stipeSprint3?.passedCases||0}/${report.stipeSprint3?.caseCount||0} · perf failures ${report.performanceFailures?.length||0} · memory Δ geom ${report.memory.delta.geometries} · writes ${report.specimenIsolation.networkWrites.length}`;
 }
