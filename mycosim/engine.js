@@ -1456,6 +1456,16 @@ export class MycoSimEngine{
       startupMaximumMs:this.realismTier?.targets?.hardStartupMs||5000,
       realismTier:this.realismTier?.id||"atlas",
       realismBudget:PROFILE_REALISM_BUDGETS[this.currentProfile?.id]||null,
+      lodState:this.lodRecord?{
+        enabled:true,
+        threshold:this.lodRecord.distance,
+        initialTeachingDistance:this.lodRecord.initialTeachingDistance??null,
+        rootVisible:this.root.visible,
+        proxyVisible:this.lodRecord.proxy?.visible===true,
+        teachingViewProtected:Number.isFinite(this.lodRecord.initialTeachingDistance)
+          ? this.lodRecord.distance>this.lodRecord.initialTeachingDistance
+          : true
+      }:{enabled:false,rootVisible:this.root.visible,proxyVisible:false,teachingViewProtected:true},
       complexity:this._lastComplexity,
       realismPerformance:performanceVerdict({
         fps:this.lastFps||0,
@@ -2729,7 +2739,7 @@ export class MycoSimEngine{
     const fissureCount=Math.round(dev.cracking*24+dev.weathering*10);
     if(fissureCount>0){
       const mat=new THREE.LineBasicMaterial({color:0x76614f,transparent:true,opacity:.18+.30*dev.cracking});
-      const rng=seededRng(9833);
+      const rng=seededRng(9833),segments=[];
       for(let i=0;i<fissureCount;i++){
         const a=rng()*Math.PI*2,start=.12+rng()*.70,len=.035+rng()*(.08+.10*dev.cracking),pts=[];
         for(let j=0;j<4;j++){
@@ -2737,10 +2747,11 @@ export class MycoSimEngine{
           const drift=(rng()-.5)*.018*j;
           pts.push(new THREE.Vector3(ctr.x+Math.cos(a+drift)*r,-height/2+t*height,ctr.z+Math.sin(a+drift)*r));
         }
-        const line=new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),mat.clone());
-        line.userData={...group.userData,developmentTrait:"drying-fissure"};
-        group.add(line);this.pickables.push(line);
+        for(let j=0;j<pts.length-1;j++)segments.push(pts[j],pts[j+1]);
       }
+      const line=new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(segments),mat);
+      line.userData={...group.userData,developmentTrait:"drying-fissure",fissureCount,performanceModel:"batched-line-segments"};
+      group.add(line);this.pickables.push(line);
     }
     stipe.add(group);this.objects.set("stipe_development",group);return group;
   }
