@@ -684,6 +684,28 @@ export class MycoSimEngine{
     }
     this.applyMode();
     this.frameModel({animate:false});
+
+    // The framed teaching view must always show the real morphology, never the
+    // coarse far-LOD proxy.  Previous fixed thresholds (8-11 units) were below
+    // the camera distance produced by frameModel(), so the first frame hid the
+    // full pileus/hymenophore and displayed only the crude proxy silhouette.
+    if(this.lodRecord){
+      const lodBox=new THREE.Box3().setFromObject(this.root);
+      if(!lodBox.isEmpty()){
+        const lodCenter=lodBox.getCenter(new THREE.Vector3());
+        const framedDistance=this.camera.position.distanceTo(lodCenter);
+        const modelSpan=lodBox.getSize(new THREE.Vector3()).length();
+        this.lodRecord.distance=Math.max(
+          this.lodRecord.distance||0,
+          framedDistance*1.45,
+          modelSpan*4.0
+        );
+        this.lodRecord.initialTeachingDistance=framedDistance;
+      }
+      this.root.visible=true;
+      this.lodRecord.proxy.visible=false;
+    }
+
     this._lastProfileBuildMs=performance.now()-profileBuildStart;
     this.onStatus?.("3D engine online · "+p.label+" · "+this.morphologyState.stage.label+" · "+Math.round(this._lastProfileBuildMs)+" ms");
     if(this._bootFastPath){
@@ -1968,7 +1990,13 @@ export class MycoSimEngine{
       if(adaptive.id!==this.realismTier.id&&!this._adaptiveTierApplied){
         this.realismTier=adaptive;this._adaptiveTierApplied=true;
         configureRendererForRealism(this.renderer,this.realismTier);
-        if(this.lodRecord)this.lodRecord.distance=this.realismTier.farLodDistance;
+        if(this.lodRecord){
+          this.lodRecord.distance=Math.max(
+            this.lodRecord.distance||0,
+            this.realismTier.farLodDistance,
+            (this.lodRecord.initialTeachingDistance||0)*1.45
+          );
+        }
       }
       this.onStats?.({fps,objects:this.objects.size,drawCalls:this.renderer.info.render.calls,triangles:this._lastComplexity.triangles,quality:this.realismTier.id});
       this.frames=0; this.fpsStart=now;
@@ -3147,7 +3175,6 @@ export class MycoSimEngine{
     }
     fullMesh.instanceMatrix.needsUpdate=true;
     group.add(fullMesh);this.pickables.push(fullMesh);
-
     const lamPlan=this._agaricoidLamellulaPlan(lamellulaeState,fullCount);
     const tiers=[...new Set(lamPlan.map(x=>x.tier))];
     let lamellulaCount=0;
