@@ -2921,6 +2921,34 @@ export class MycoSimEngine{
     return layer;
   }
 
+  _agaricGillMarginClearance(margin,radius){
+    const frac={
+      inrolled:.16,
+      incurved:.13,
+      straight:.075,
+      uplifted:.045,
+      decurved:.095,
+      undulate:.085,
+      lobed:.09,
+      split_cracked:.10,
+      striate:.07,
+      appendiculate:.105
+    }[margin]??.08;
+    return THREE.MathUtils.clamp(radius*frac,.06,radius*.20);
+  }
+
+  _agaricGillAttachmentProfile(attachment){
+    const a=attachment||"adnate";
+    return {
+      freeGap:a==="free_gills"?.16:a==="seceding"?.105:a==="adnexed"?.055:0,
+      notchLift:a==="emarginate"?.095:a==="sinuate"?.065:a==="adnexed"?.025:0,
+      runDown:a==="decurrent"?.18:a==="subdecurrent"?.085:0,
+      detached:a==="free_gills"||a==="seceding",
+      notched:a==="sinuate"||a==="emarginate"||a==="adnexed",
+      descending:a==="decurrent"||a==="subdecurrent"
+    };
+  }
+
   _agaricoidGillPlateGeometry({
     start=.22,end=1.30,theta=0,capState=null,depth=.24,thickness=.018,
     attachment="adnate",edge="even",shortTier=0
@@ -2929,32 +2957,44 @@ export class MycoSimEngine{
     const mid=(start+end)/2;
     const underside=(r)=>capState?.undersideHeight?capState.undersideHeight(r,theta):2.30;
     const midY=underside(mid);
-    const samples=20;
+    const attach=this._agaricGillAttachmentProfile(attachment);
+    const samples=this.realismTier?.id==="interactive"?14:20;
     const top=[];
+
     for(let i=0;i<=samples;i++){
-      const t=i/samples,r=THREE.MathUtils.lerp(start,end,t);
+      const t=i/samples;
+      const r=THREE.MathUtils.lerp(start,end,t);
       let y=underside(r)-midY;
-      if(attachment==="sinuate"&&t<.20)y+=.065*Math.sin((t/.20)*Math.PI);
-      if(attachment==="emarginate"&&t<.17)y+=.095*Math.sin((t/.17)*Math.PI);
-      if(attachment==="seceding"&&t<.14)y-=.018*(1-t/.14);
+
+      // Attachment morphology is expressed only in the proximal zone.
+      const proximal=Math.max(0,1-t/.22);
+      if(attach.notchLift>0)y+=attach.notchLift*Math.sin(Math.min(1,t/.20)*Math.PI)*proximal;
+      if(attach.runDown>0)y-=attach.runDown*proximal*proximal;
+      if(attachment==="seceding"&&t<.16)y-=.018*(1-t/.16);
+
       top.push(new THREE.Vector2((t-.5)*len,y));
     }
 
     const lower=[];
     for(let i=samples;i>=0;i--){
-      const t=i/samples,r=THREE.MathUtils.lerp(start,end,t);
-      const upper=underside(r)-midY;
+      const t=i/samples;
+      const r=THREE.MathUtils.lerp(start,end,t);
+      let upper=underside(r)-midY;
+
+      const proximal=Math.max(0,1-t/.22);
+      if(attach.notchLift>0)upper+=attach.notchLift*Math.sin(Math.min(1,t/.20)*Math.PI)*proximal;
+      if(attach.runDown>0)upper-=attach.runDown*proximal*proximal;
+      if(attachment==="seceding"&&t<.16)upper-=.018*(1-t/.16);
+
       const centerWeight=Math.sin(Math.PI*t);
-      let localDepth=depth*(.50+.50*centerWeight);
+      let localDepth=depth*(.48+.52*centerWeight);
       if(shortTier>0)localDepth*=.82+.06*shortTier;
-      if((attachment==="decurrent"||attachment==="subdecurrent")&&t<.16){
-        const run=(1-t/.16);
-        localDepth+=run*(attachment==="decurrent"?.22:.10);
-      }
+
       let edgeOffset=0;
       if(edge==="serrulate")edgeOffset=.018*Math.abs(Math.sin(t*Math.PI*16));
       else if(edge==="fimbriate")edgeOffset=.026*Math.abs(Math.sin(t*Math.PI*23+.4))*(.55+.45*Math.sin(t*Math.PI));
       else if(edge==="crisped")edgeOffset=.022*Math.sin(t*Math.PI*11+.7);
+
       lower.push(new THREE.Vector2((t-.5)*len,upper-localDepth-edgeOffset));
     }
 
@@ -2972,8 +3012,13 @@ export class MycoSimEngine{
     });
     geo.translate(0,0,-thickness/2);
     geo.computeVertexNormals();
+    geo.computeBoundingBox();
+    geo.computeBoundingSphere();
     geo.userData={
-      model:"agaricoid-gill-plate-v1",attachment,edge,depth,thickness,start,end,shortTier
+      model:"agaricoid-gill-plate-v2",
+      attachment,edge,depth,thickness,start,end,shortTier,
+      undersideSynchronized:true,
+      marginSynchronized:true
     };
     return {geo,mid,midY};
   }
@@ -3107,6 +3152,7 @@ export class MycoSimEngine{
     const plateDepth={shallow:.15,moderate:.25,deep:.37}[depthState]||.25;
 
     const stipeRadius=.285;
+    const attach=this._agaricGillAttachmentProfile(type);
     const innerMap={
       free_gills:stipeRadius+.16,
       seceding:stipeRadius+.105,
@@ -3117,11 +3163,13 @@ export class MycoSimEngine{
       subdecurrent:Math.max(.11,stipeRadius-.025),
       decurrent:Math.max(.08,stipeRadius-.055)
     };
-    const requestedInner=innerMap[type]??stipeRadius+.018;
+    const requestedInner=innerMap[type]??(stipeRadius+attach.freeGap+.018);
     const safeInner=capState?.safeInnerRadius??.16;
     const safeOuter=capState?.safeOuterRadius??(capState?.radius?capState.radius*.94:1.48);
+    const marginClearance=this._agaricGillMarginClearance(capState?.margin||this.variants.agaric_margin,capState?.radius||1.62);
     const inner=THREE.MathUtils.clamp(requestedInner,safeInner,Math.max(safeInner+.05,safeOuter-.18));
-    const outer=THREE.MathUtils.clamp(capState?.radius?capState.radius*.90:1.32,inner+.18,safeOuter);
+    const outerLimit=Math.max(inner+.20,safeOuter-marginClearance);
+    const outer=THREE.MathUtils.clamp(outerLimit,inner+.18,safeOuter);
     const attachmentLabels={
       free_gills:"Free gills",seceding:"Seceding gills",adnexed:"Adnexed gills",adnate:"Adnate gills",
       sinuate:"Sinuate gills",emarginate:"Emarginate gills",subdecurrent:"Subdecurrent gills",decurrent:"Decurrent gills"
@@ -3168,8 +3216,7 @@ export class MycoSimEngine{
       const theta=i/fullCount*Math.PI*2;
       const mid=(inner+outer)/2;
       const localY=capState?.undersideHeight?capState.undersideHeight(mid,theta):pileusY-.18;
-      const referenceY=capState?.undersideHeight?capState.undersideHeight(mid,0):pileusY-.18;
-      dummy.position.set(stipeX+Math.cos(theta)*mid,localY-referenceY,Math.sin(theta)*mid);
+      dummy.position.set(stipeX+Math.cos(theta)*mid,localY,Math.sin(theta)*mid);
       dummy.rotation.set(0,-theta,0);
       dummy.scale.set(1,1,1);dummy.updateMatrix();fullMesh.setMatrixAt(i,dummy.matrix);
     }
@@ -3187,7 +3234,9 @@ export class MycoSimEngine{
         depth:plateDepth*(.82+.10*tier),thickness:plateThickness*.92,
         attachment:"free_gills",edge:edgeState,shortTier:tierIndex
       });
-      const inst=new THREE.InstancedMesh(spec.geo,MATERIALS.gill.clone(),entries.length);
+      const lamMat=MATERIALS.gill.clone();
+      lamMat.side=THREE.DoubleSide;
+      const inst=new THREE.InstancedMesh(spec.geo,lamMat,entries.length);
       inst.userData={
         ...group.userData,id:"lamellula",knowledgeId:"lamellula",hoverLabel:"Lamellula / short gill",
         structureType:"lamellula",lengthTier:tierIndex,edgeKnowledgeId:"gill_edge"
@@ -3197,8 +3246,7 @@ export class MycoSimEngine{
         const theta=(entry.slot/fullCount)*Math.PI*2;
         const mid=(start+outer)/2;
         const localY=capState?.undersideHeight?capState.undersideHeight(mid,theta):pileusY-.18;
-        const referenceY=capState?.undersideHeight?capState.undersideHeight(mid,0):pileusY-.18;
-        dummy.position.set(stipeX+Math.cos(theta)*mid,localY-referenceY,Math.sin(theta)*mid);
+        dummy.position.set(stipeX+Math.cos(theta)*mid,localY,Math.sin(theta)*mid);
         dummy.rotation.set(0,-theta,0);dummy.scale.set(1,1,1);dummy.updateMatrix();inst.setMatrixAt(j,dummy.matrix);
       });
       inst.instanceMatrix.needsUpdate=true;
@@ -3217,9 +3265,13 @@ export class MycoSimEngine{
     group.userData.spacingDegrees=360/fullCount;
     group.userData.attachmentGeometry={
       innerRadius:inner,
-      descendsStipe:type==="decurrent"||type==="subdecurrent",
-      notched:type==="sinuate"||type==="emarginate",
-      detached:type==="free_gills"||type==="seceding"
+      outerRadius:outer,
+      marginClearance,
+      marginState:capState?.margin||this.variants.agaric_margin||null,
+      followsPileusUnderside:true,
+      descendsStipe:attach.descending,
+      notched:attach.notched,
+      detached:attach.detached
     };
 
     this.root.add(group);this.objects.set("hymenophore",group);
@@ -3497,7 +3549,6 @@ export class MycoSimEngine{
     });
     const per=this.register(new THREE.Mesh(bodyGeo,innerMat),"peridium","Peridium","macro");
     per.scale.set(1,subtypeId==="earthball_type"?.92:subtypeId==="giant_puffball_type"?.90:.95,1);per.position.y=bodyY;
-
     const endoMat=PUFF_PBR.endoperidium.clone();
     const endoRadius=bodyRadius*(subtypeId==="earthball_type"?.86:.94);
     const endoGeo=createBiologicalPuffballGeometry({
