@@ -8,10 +8,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#091011">
 <title>MycoScope — MycoSim</title>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+  }
+}
+</script>
 <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" crossorigin>
 <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/controls/OrbitControls.js" crossorigin>
-<link rel="modulepreload" href="mycosim/main.js?v=phase6-fastboot2-20261003">
-<link rel="modulepreload" href="mycosim/engine.js?v=phase6-fastboot2-20261003">
 <style>
 :root{--bg:#091011;--panel:#10191c;--line:#2a393f;--text:#eef4f5;--muted:#91a0a5;--accent:#d9b56d;--good:#9fd0a7}
 *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}body{min-height:100vh}
@@ -213,7 +219,7 @@ body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
 <main>
   <section class="stage-wrap">
     <canvas id="stage" aria-label="Interactive 3D mushroom sandbox"></canvas>
-    <div class="badge">MYCOSIM · OPTIONAL SIMULATION</div><div id="buildStamp" style="position:absolute;left:12px;top:46px;z-index:4;font-size:9px;letter-spacing:.08em;color:#9fb7b1">PHASE 6 RECOVERY · FAST BOOT 2 · BUILD 2026-10-03</div>
+    <div class="badge">MYCOSIM · OPTIONAL SIMULATION</div><div id="buildStamp" style="position:absolute;left:12px;top:46px;z-index:4;font-size:9px;letter-spacing:.08em;color:#9fb7b1">PHASE 6 RECOVERY · BOOT ORDER FIX · BUILD 2026-10-03</div>
     <div class="hint">Drag to rotate · wheel/pinch to zoom · right-drag to pan</div><div id="hoverProbe" class="hover-probe"><div class="probe-kicker">Cursor anatomy probe</div><strong id="hoverProbeTitle">Structure</strong><div id="hoverProbeMeta"></div></div><div id="modelStatus" style="position:absolute;right:16px;bottom:16px;padding:7px 10px;border-radius:7px;background:rgba(4,8,9,.72);color:#9fd0a7;font-size:11px">3D engine loading…</div>
   </section>
   <aside>
@@ -350,24 +356,17 @@ body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
     </div>
   </aside>
 </main>
-<script type="importmap">
-{
-  "imports": {
-    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
-    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
-  }
-}
-</script>
+
 <script>
 window.MYCOSIM_BOOT_STARTED=performance.now();
 window.MYCOSIM_BOOT_WATCHDOG=setTimeout(()=>{
   const el=document.getElementById("modelStatus");
   if(el && /loading|initializ/i.test(el.textContent||"")){
-    el.textContent="3D engine startup exceeded 5 s · reload or check connection";
-    el.style.color="#ffcf7a";
+    el.textContent="3D engine boot failed before 5 s · module graph did not complete";
+    el.style.color="#ff9b9b";
   }
 },5000);
 </script>
-<script type="module" src="mycosim/main.js?v=phase6-fastboot2-20261003"></script>
+<script type="module" src="mycosim/main.js?v=phase6-bootorder-20261003"></script>
 </body>
 </html>
