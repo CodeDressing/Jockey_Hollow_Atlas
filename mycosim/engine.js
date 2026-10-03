@@ -597,7 +597,6 @@ export class MycoSimEngine{
       obj.position.copy(t.position); obj.rotation.copy(t.rotation); obj.scale.copy(t.scale);
     }
   }
-
   register(mesh,id,label,category,parentId=null){
     return this.addObject(mesh,{id,label,category,parentId,selectable:true});
   }
@@ -1248,7 +1247,7 @@ export class MycoSimEngine{
       const rim=p.rim_thickness??1;
       const irregular=p.rim_irregularity??0;
       const collapse=p.collapse??0;
-      setScale("apothecium",openness,depth*(1-subtypeCollapse*.18),openness);
+      setScale("apothecium",openness,depth*(1-collapse*.18),openness);
       setScale("hymenophore",openness,1,openness);
       setScale("excipulum",openness,rim,openness);
       if(sid==="old"){
@@ -1797,7 +1796,6 @@ export class MycoSimEngine{
       screen:{clientX:e.clientX,clientY:e.clientY}
     };
   }
-
   _pick(e,select){
     const r=this.canvas.getBoundingClientRect();
     this.pointer.x=((e.clientX-r.left)/r.width)*2-1;
@@ -2035,9 +2033,9 @@ export class MycoSimEngine{
     for(let ir=0;ir<rings;ir++){
       for(let it=0;it<segments;it++){
         const a=ir*row+it,b=a+1,c=(ir+1)*row+it,d=c+1;
-        indices.push(a,c,b,b,c,d);
+        indices.push(a,b,c,b,d,c);
         const aa=surfaceStride+a,bb=surfaceStride+b,cc=surfaceStride+c,dd=surfaceStride+d;
-        indices.push(aa,bb,cc,bb,dd,cc);
+        indices.push(aa,cc,bb,bb,cc,dd);
       }
     }
     const topEdge=rings*row;
@@ -2997,7 +2995,6 @@ export class MycoSimEngine{
       });
       fullSpecs.push({theta,spec});
     }
-
     // Plates use one shared reference geometry per attachment state; per-angle vertical
     // placement follows the generated pileus underside.
     const referenceFull=this._agaricoidGillPlateGeometry({
@@ -3251,10 +3248,41 @@ export class MycoSimEngine{
   }
 
   build_coral(){
-    const group=new THREE.Group();group.userData={id:"branch_system",label:"Branch system",category:"macro",selectable:true};
-    const addBranch=(x,y,z,len,rad,depth)=>{const m=new THREE.Mesh(new THREE.CylinderGeometry(rad*.72,rad,len,10),MATERIALS.coral.clone());m.position.set(x,y+len/2,z);m.userData=group.userData;group.add(m);this.pickables.push(m);if(depth>0){[[-.35,.15],[.35,.1],[0,.36]].forEach(d=>addBranch(x+d[0],y+len*.92,z+d[1],len*.62,rad*.72,depth-1));}};
-    for(let i=-2;i<=2;i++)addBranch(i*.22,-.45,Math.abs(i%2)*.12,1.5-Math.abs(i)*.08,.13,2);
-    this.root.add(group);this.objects.set("branch_system",group);this.objects.set("hymenophore",group);
+    const base=this.register(
+      new THREE.Mesh(new THREE.CylinderGeometry(.34,.46,.58,scaledSegments(22,this.realismTier,{min:16,max:30})),MATERIALS.coral.clone()),
+      "base","Basal trunk","macro"
+    );
+    base.position.y=-.48;
+
+    const group=new THREE.Group();
+    group.userData={id:"branch_system",label:"Branch system",category:"macro",selectable:true,knowledgeId:"branch_system"};
+
+    const tips=new THREE.Group();
+    tips.userData={id:"branch_tips",label:"Branch tips",category:"macro",selectable:true,knowledgeId:"branch_tips"};
+
+    const addBranch=(x,y,z,len,rad,depth)=>{
+      const m=new THREE.Mesh(new THREE.CylinderGeometry(rad*.72,rad,len,10),MATERIALS.coral.clone());
+      m.position.set(x,y+len/2,z);
+      m.userData=group.userData;
+      group.add(m);
+      this.pickables.push(m);
+      if(depth>0){
+        [[-.35,.15],[.35,.1],[0,.36]].forEach(d=>addBranch(x+d[0],y+len*.92,z+d[1],len*.62,rad*.72,depth-1));
+      }else{
+        const tip=new THREE.Mesh(new THREE.SphereGeometry(rad*.82,10,8),MATERIALS.coral.clone());
+        tip.scale.set(.88,1.15,.88);
+        tip.position.set(x,y+len,z);
+        tip.userData=tips.userData;
+        tips.add(tip);
+        this.pickables.push(tip);
+      }
+    };
+    for(let i=-2;i<=2;i++)addBranch(i*.22,-.38,Math.abs(i%2)*.12,1.5-Math.abs(i)*.08,.13,2);
+
+    this.root.add(group,tips);
+    this.objects.set("branch_system",group);
+    this.objects.set("branch_tips",tips);
+    this.objects.set("hymenophore",group);
   }
 
   build_puffball(){
