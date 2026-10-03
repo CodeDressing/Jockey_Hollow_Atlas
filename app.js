@@ -340,7 +340,7 @@ function openGlossaryTerm(key,anchor){
   pop.querySelector("[data-glossary-close]").onclick=()=>pop.classList.remove("open");
 }
 const $=id=>document.getElementById(id);
-const FULL_DATA_SET_CODES=new Set(['AN2-F7','AN2-F9','AN2-F25','AN2-F34','AN2-F38','AN2-F41','AN2-F36','AN2-F32','AN2-F17']);
+const FULL_DATA_SET_CODES=new Set(['AN2-F3','AN2-F7','AN2-F9','AN2-F25','AN2-F34','AN2-F38','AN2-F41','AN2-F36','AN2-F32','AN2-F17']);
 let current=data[0]?.code||null,filter='',family='ALL',collection='ALL',imageType='ALL',workflow='ALL';
 const esc=s=>String(s??'').replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 const cls=v=>{v=String(v||'').toLowerCase();return v==='yes'?'yes':v==='no'?'no':'partial'};
@@ -424,7 +424,15 @@ function renderMeasurements(s){
     notes:'Notes',
     size_source_text:'Size — exact source text',
     cap_pileus_source_text:'Cap / pileus — exact source text',
-    stem_stipe_source_text:'Stem / stipe — exact source text'
+    stem_stipe_source_text:'Stem / stipe — exact source text',
+    microscopy_measurement_count:'Microscopy measurement count',
+    microscopy_range_um:'Microscopy range',
+    microscopy_mean_um:'Microscopy mean',
+    microscopy_median_um:'Microscopy median',
+    microscopy_sample_sd_um:'Microscopy sample SD',
+    measured_fields:'Measured microscopy fields',
+    measurement_values_um:'Validated measurement values',
+    q_ratio:'Q ratio / paired dimensions'
   };
   return `<section class="section measurement-section"><h2>Measurements <span>${rows.length}</span></h2><div class="summary-grid">${rows.map((m,i)=>{
     const fields=Object.entries(m.fields||{}).map(([k,v])=>`<div class="summary-item readable-section"><div class="section-read-head"><h4>${esc(labels[k]||k)}</h4>${sectionReadButton("Read section")}</div><p>${glossaryText(v)}${k.endsWith('_cm')?' cm':''}</p></div>`).join('');
