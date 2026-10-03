@@ -6,11 +6,17 @@ const A=(id,label,category,description,parentId=null)=>({
 
 export const MORPHOLOGY_PROFILES = [
   {
-    id:"agaricoid",label:"Agaricoid",group:"gilled",factory:"agaricoid",version:"4.0.0",
+    id:"agaricoid",label:"Agaricoid",group:"gilled",factory:"agaricoid",version:"5.0.0",
     description:"Organic cap-and-stipe teaching model with independent pileus, stipe, gill spacing, attachment, lamellulae and gill-edge morphology.",
-    variantGroups:["agaric_pileus_profile","agaric_pileus_center","agaric_margin","agaric_stipe_taper","agaric_gill_attachment","agaric_gill_spacing","agaric_gill_thickness","agaric_gill_depth","agaric_lamellulae","agaric_gill_edge","veil","texture_realism"],developmentalStages:["young","mature","old"],
+    variantGroups:["agaric_pileus_profile","agaric_pileus_center","agaric_margin","agaric_stipe_taper","agaric_surface_primary","agaric_surface_secondary","agaric_surface_distribution","agaric_surface_age","agaric_surface_moisture","agaric_gill_attachment","agaric_gill_spacing","agaric_gill_thickness","agaric_gill_depth","agaric_lamellulae","agaric_gill_edge","veil","texture_realism"],developmentalStages:["young","mature","old"],
     anatomy:[
       A("pileus","Pileus / cap","macro","Upper fruiting-body structure."),
+      A("pileipellis","Pileipellis / cap surface","tissue","Outermost differentiated tissue of the pileus responsible for many visible surface characters.","pileus"),
+      A("surface_fibrils","Surface fibrils","macro","Fine fibrous elements arranged on or within the pileipellis.","pileipellis"),
+      A("pileus_scales","Pileus scales / squamules","macro","Discrete flattened or uplifted scale-like surface elements.","pileipellis"),
+      A("pileus_warts","Pileus verrucae","macro","Blunt wart-like surface elevations.","pileipellis"),
+      A("pileus_cracks","Areolate cracks","macro","Fissures separating surface plates or areoles.","pileipellis"),
+      A("pileus_tomentum","Pileus tomentum","macro","Fine velvety to woolly surface covering.","pileipellis"),
       A("pileus_context","Pileus context","internal","Fleshy tissue beneath the pileipellis.","pileus"),
       A("hymenophore","Hymenophore","fertile","Fertile surface beneath the pileus.","pileus"),
       A("lamella","Lamella / gill","fertile","A full plate-like gill extending from the pileus margin toward the stipe.","hymenophore"),
