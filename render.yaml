@@ -4,3 +4,10 @@ services:
     runtime: static
     staticPublishPath: .
     buildCommand: ""
+    headers:
+      - path: /sandbox.html
+        name: Cache-Control
+        value: no-store, no-cache, must-revalidate, max-age=0
+      - path: /mycosim/*
+        name: Cache-Control
+        value: no-store, no-cache, must-revalidate, max-age=0
