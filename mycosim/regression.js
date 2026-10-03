@@ -216,6 +216,22 @@ function agaricoidPileusShellPass(engine,profile){
   return {pass:upward>downward&&upward>0,reason:"top_shell_winding",upward,downward};
 }
 
+function agaricoidGeometryContractPass(engine,profile){
+  if(profile.id!=="agaricoid")return {pass:true,reason:"not_agaricoid"};
+  const pileus=engine.objects.get("pileus");
+  const hym=engine.objects.get("hymenophore");
+  const geo=pileus?.geometry;
+  const box=geo?.boundingBox||null;
+  const size=box?box.getSize(new THREE.Vector3()):new THREE.Vector3();
+  const model=geo?.userData?.model||null;
+  const shellOk=!!geo&&size.x>1.8&&size.z>1.8&&size.y>.10;
+  const materialOk=!!pileus?.material&&pileus.material.visible!==false;
+  const hymOk=!!hym;
+  const state=engine._agaricoidCapState||{};
+  const anchorOk=Number.isFinite(state.safeInnerRadius)&&Number.isFinite(state.safeOuterRadius)&&state.safeOuterRadius>state.safeInnerRadius;
+  return {pass:shellOk&&materialOk&&hymOk&&anchorOk,model,size:{x:size.x,y:size.y,z:size.z},shellOk,materialOk,hymOk,anchorOk};
+}
+
 function mobileContract(){
   const mq=matchMedia("(max-width: 900px)");
   const stage=document.querySelector(".stage-wrap");
@@ -283,6 +299,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
         const knowledge=anatomyKnowledgePass(profile);
         const anatomy=requiredAnatomyPass(engine,profile);
         const pileusShell=agaricoidPileusShellPass(engine,profile);
+        const agaricoidContract=agaricoidGeometryContractPass(engine,profile);
         const result={
           profileId:profile.id,
           family:profile.label,
@@ -302,6 +319,8 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
           requiredAnatomyFailures:anatomy.failures,
           agaricoidPileusShell:pileusShell.pass,
           agaricoidPileusShellDetail:pileusShell,
+          agaricoidGeometryContract:agaricoidContract.pass,
+          agaricoidGeometryContractDetail:agaricoidContract,
           modePreserved:engine.mode===original.mode
         };
         engine.resetPresentation();
@@ -320,7 +339,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
         result.pass=[
           result.render,result.framing,result.hover,result.focus,result.isolateHide,
           result.exploded,result.section,result.transparency,result.anatomyNavigation,
-          result.requiredAnatomy,result.agaricoidPileusShell,result.modePreserved,result.fpsAcceptable,result.performancePass
+          result.requiredAnatomy,result.agaricoidPileusShell,result.agaricoidGeometryContract,result.modePreserved,result.fpsAcceptable,result.performancePass
         ].every(Boolean);
         rows.push(result);
         memorySamples.push({
