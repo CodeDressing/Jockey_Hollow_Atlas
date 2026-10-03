@@ -529,8 +529,10 @@ export class MycoSimEngine{
     this.canvas=canvas; this.onHover=onHover; this.onSelect=onSelect; this.onStatus=onStatus; this.onStats=onStats;
     this.renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:"high-performance"});
     const requestedRealism=DEFAULT_VARIANTS.texture_realism||"atlas";
+    this._bootRequestedRealism=requestedRealism;
+    this._bootFastPath=true;
     this.realismTier=selectRealismTier({
-      requested:requestedRealism,
+      requested:"simplified",
       deviceMemory:navigator.deviceMemory||8,
       dpr:window.devicePixelRatio||1,
       viewportWidth:window.innerWidth||1200
@@ -651,7 +653,7 @@ export class MycoSimEngine{
     }
     this.cleanupModel();
     this.realismTier=selectRealismTier({
-      requested:this.variants.texture_realism||"atlas",
+      requested:this._bootFastPath?"simplified":(this.variants.texture_realism||"atlas"),
       deviceMemory:navigator.deviceMemory||8,
       dpr:window.devicePixelRatio||1,
       viewportWidth:window.innerWidth||1200
@@ -684,6 +686,22 @@ export class MycoSimEngine{
     this.frameModel({animate:false});
     this._lastProfileBuildMs=performance.now()-profileBuildStart;
     this.onStatus?.("3D engine online · "+p.label+" · "+this.morphologyState.stage.label+" · "+Math.round(this._lastProfileBuildMs)+" ms");
+    if(this._bootFastPath){
+      this._bootFastPath=false;
+      const promote=()=>{
+        // Do not rebuild immediately; subsequent morphology interaction or
+        // explicit quality selection uses the requested Atlas/High tier.
+        this.realismTier=selectRealismTier({
+          requested:this.variants.texture_realism||this._bootRequestedRealism||"atlas",
+          deviceMemory:navigator.deviceMemory||8,
+          dpr:window.devicePixelRatio||1,
+          viewportWidth:window.innerWidth||1200
+        });
+        configureRendererForRealism(this.renderer,this.realismTier);
+      };
+      if("requestIdleCallback" in window)requestIdleCallback(promote,{timeout:1600});
+      else setTimeout(promote,250);
+    }
     return p;
   }
 
@@ -2447,7 +2465,6 @@ export class MycoSimEngine{
     else if(state.distribution==="irregular_patches")distribution=.45+.55*(.5+.5*Math.sin(theta*3.1+rn*11.3)*Math.cos(theta*1.7-rn*7.1));
     else if(state.distribution==="aging_from_disc")distribution=.32+.68*(1-rn);
     else if(state.distribution==="aging_from_margin")distribution=.32+.68*rn;
-
     const ageBase={fresh:0,slightly_weathered:.18,weathered:.46,old_broken:.76}[state.age]??0;
     let weather=THREE.MathUtils.clamp(ageBase+(state.developmentalWeathering||0)*.72,0,1);
     if(state.distribution==="aging_from_disc")weather*=1.18-rn*.72;
