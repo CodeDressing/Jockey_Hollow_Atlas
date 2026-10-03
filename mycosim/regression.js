@@ -297,6 +297,24 @@ function agaricoidStipePhase7APass(engine,profile){
 }
 
 
+function agaricoidStipePhase7BPass(engine,profile){
+  if(profile.id!=="agaricoid")return {pass:true,reason:"not_agaricoid"};
+  const stipe=engine.objects.get("stipe");
+  const model=stipe?.userData?.surfaceBlendModel||null;
+  const controls=stipe?.userData?.surfaceBlendControls||{};
+  const states=stipe?.userData?.surfaceStates||{};
+  const generators=["stipe_apex","stipe_mid","stipe_base_surface"].map(id=>engine.objects.get(id)).filter(Boolean);
+  const controlsOk=["apexMidLength","midBaseLength","falloff","inheritance","carryover"].every(k=>Number.isFinite(controls[k]));
+  const stateOk=["apex","mid","base"].every(k=>typeof states[k]==="string");
+  const generatorOk=generators.every(g=>g.userData?.generator==="phase7b-surface-state-v1"&&g.userData?.regionalBlend===true&&Array.isArray(g.userData?.blendBounds));
+  const continuousOk=generators.every(g=>g.userData.blendBounds[1]>g.userData.blendBounds[0]);
+  return {
+    pass:model==="phase7b-regional-morphology-v1"&&controlsOk&&stateOk&&generatorOk&&continuousOk,
+    model,controls,states,generatorCount:generators.length,generatorOk,continuousOk
+  };
+}
+
+
 function mobileContract(){
   const mq=matchMedia("(max-width: 900px)");
   const stage=document.querySelector(".stage-wrap");
@@ -367,6 +385,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
         const agaricoidContract=agaricoidGeometryContractPass(engine,profile);
         const hymenophoreSync=agaricoidHymenophoreSyncPass(engine,profile);
         const stipePhase7A=agaricoidStipePhase7APass(engine,profile);
+        const stipePhase7B=agaricoidStipePhase7BPass(engine,profile);
         const result={
           profileId:profile.id,
           family:profile.label,
@@ -392,6 +411,8 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
           agaricoidHymenophoreSyncDetail:hymenophoreSync,
           agaricoidStipePhase7A:stipePhase7A.pass,
           agaricoidStipePhase7ADetail:stipePhase7A,
+          agaricoidStipePhase7B:stipePhase7B.pass,
+          agaricoidStipePhase7BDetail:stipePhase7B,
           modePreserved:engine.mode===original.mode
         };
         engine.resetPresentation();
@@ -410,7 +431,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
         result.pass=[
           result.render,result.framing,result.hover,result.focus,result.isolateHide,
           result.exploded,result.section,result.transparency,result.anatomyNavigation,
-          result.requiredAnatomy,result.agaricoidPileusShell,result.agaricoidGeometryContract,result.agaricoidHymenophoreSync,result.agaricoidStipePhase7A,result.modePreserved,result.fpsAcceptable,result.performancePass
+          result.requiredAnatomy,result.agaricoidPileusShell,result.agaricoidGeometryContract,result.agaricoidHymenophoreSync,result.agaricoidStipePhase7A,result.agaricoidStipePhase7B,result.modePreserved,result.fpsAcceptable,result.performancePass
         ].every(Boolean);
         rows.push(result);
         memorySamples.push({
