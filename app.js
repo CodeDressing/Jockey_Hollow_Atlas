@@ -269,6 +269,8 @@ const GLOSSARY=Object.freeze({
   resupinate:{definition:"Growing flat against the substrate, with the fertile surface exposed outward.",pronounce:"resupinate"},
   reflexed:{definition:"Bent or turned back away from the substrate, often describing an edge or margin.",pronounce:"reflexed"},
   subglobose:{definition:"Almost spherical, but not perfectly round.",pronounce:"sub-GLOH-bohs"},
+  lunate:{definition:"Crescent- or moon-shaped in outline. In microscopy this may describe an observed profile and should be interpreted with specimen orientation in mind.",pronounce:"LOO-nate"},
+  crescentic:{definition:"Curved into a crescent-like outline. For spores, this may describe an observed projection rather than a fixed three-dimensional shape.",pronounce:"kreh-SEN-tik"},
   guttule:{definition:"A droplet-like inclusion visible inside a spore or cell.",pronounce:"guttule"},
   guttules:{definition:"Droplet-like inclusions visible inside spores or cells.",pronounce:"guttules"},
   hyaline:{definition:"Transparent, colorless, or nearly so; in mycology, describing spores, hyphae, or other structures that lack conspicuous pigmentation and transmit light readily.",pronounce:"hyaline"},
