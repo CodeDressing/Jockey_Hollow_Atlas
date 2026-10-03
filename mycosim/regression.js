@@ -79,6 +79,21 @@ function anatomyKnowledgePass(profile){
   return {pass:failures.length===0,failures};
 }
 
+function requiredAnatomyPass(engine,profile){
+  const failures=[];
+  for(const a of profile.anatomy||[]){
+    const obj=engine.objects.get(a.id);
+    if(!obj){
+      failures.push({id:a.id,reason:"missing_object"});
+      continue;
+    }
+    let hasGeometry=!!obj.geometry;
+    obj.traverse?.(n=>{if(n.geometry)hasGeometry=true;});
+    if(!hasGeometry)failures.push({id:a.id,reason:"no_geometry"});
+  }
+  return {pass:failures.length===0,failures};
+}
+
 function hoverPass(engine){
   const failures=[];
   let checked=0;
@@ -227,6 +242,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
 
         const hover=hoverPass(engine);
         const knowledge=anatomyKnowledgePass(profile);
+        const anatomy=requiredAnatomyPass(engine,profile);
         const result={
           profileId:profile.id,
           family:profile.label,
@@ -242,6 +258,8 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
           transparency:transparencyPass(engine),
           anatomyNavigation:knowledge.pass,
           anatomyFailures:knowledge.failures,
+          requiredAnatomy:anatomy.pass,
+          requiredAnatomyFailures:anatomy.failures,
           modePreserved:engine.mode===original.mode
         };
         engine.resetPresentation();
@@ -260,7 +278,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
         result.pass=[
           result.render,result.framing,result.hover,result.focus,result.isolateHide,
           result.exploded,result.section,result.transparency,result.anatomyNavigation,
-          result.modePreserved,result.fpsAcceptable,result.performancePass
+          result.requiredAnatomy,result.modePreserved,result.fpsAcceptable,result.performancePass
         ].every(Boolean);
         rows.push(result);
         memorySamples.push({
