@@ -1481,6 +1481,13 @@ export class MycoSimEngine{
         stipeSurfaceMid:this.variants.agaric_stipe_surface_mid||null,
         stipeSurfaceBase:this.variants.agaric_stipe_surface_base||null,
         stipeModel:this.objects.get("stipe")?.geometry?.userData?.model||null,
+        stipeProfileAnchors:this.objects.get("stipe")?.geometry?.userData?.profileAnchors||null,
+        stipeProfileRadii:this.objects.get("stipe")?.geometry?.userData?.profileRadii||null,
+        stipeBlendCorridors:this.objects.get("stipe")?.geometry?.userData?.blendCorridors||null,
+        stipeProfileDriven:this.objects.get("stipe")?.geometry?.userData?.profileDriven===true,
+        stipeRegionalBlending:this.objects.get("stipe")?.geometry?.userData?.regionBlending===true,
+        stipeNonPerfectRoundness:this.objects.get("stipe")?.geometry?.userData?.nonPerfectRoundness===true,
+        stipeEccentricCenterline:this.objects.get("stipe")?.geometry?.userData?.eccentricCenterline===true,
         developmentalParameters:this.morphologyState?.stage?.parameters||null,
         developmentalContinuity:true,
         ageTransformsInsteadOfSwaps:true
@@ -2258,49 +2265,137 @@ export class MycoSimEngine{
     return g;
   }
 
-  _agaricoidStipeGeometry(form="equal",{height=2.55,top=.285,bottom=.34,seed=727,development={}}={}){
-    const segments=scaledSegments(56,this.realismTier,{min:34,max:76});
-    const rings=scaledSegments(34,this.realismTier,{min:22,max:48});
+  _agaricoidStipeProfile(form="equal",{top=.285,bottom=.34,development={}}={}){
+    const nominal=Math.max(.08,(top+bottom)*.5);
+    const presets={
+      equal:{apex:.97,upperMid:1.00,lowerMid:1.00,base:1.03,rootTip:1.01},
+      tapering:{apex:.72,upperMid:.84,lowerMid:.98,base:1.12,rootTip:1.10},
+      clavate:{apex:1.10,upperMid:1.17,lowerMid:.96,base:.90,rootTip:.88},
+      ventricose:{apex:.88,upperMid:1.08,lowerMid:1.15,base:.94,rootTip:.92},
+      bulbous_base:{apex:.88,upperMid:.93,lowerMid:1.00,base:1.40,rootTip:1.46},
+      rooting:{apex:.88,upperMid:.95,lowerMid:1.02,base:.88,rootTip:.28}
+    };
+    const preset=presets[form]||presets.equal;
+    const readRadius=(key,fallback)=>{
+      const raw=this.variants?.[key];
+      return Number.isFinite(raw)&&raw>0?raw:fallback;
+    };
+    const waterLoss=development.water_loss??0;
+    const shrink=t=>1-waterLoss*(.040+.040*t);
+    const radii={
+      apex:readRadius("agaric_stipe_apex_radius",nominal*preset.apex),
+      upperMid:readRadius("agaric_stipe_upper_mid_radius",nominal*preset.upperMid),
+      lowerMid:readRadius("agaric_stipe_lower_mid_radius",nominal*preset.lowerMid),
+      base:readRadius("agaric_stipe_base_radius",nominal*preset.base),
+      rootTip:readRadius("agaric_stipe_root_tip_radius",nominal*preset.rootTip)
+    };
+    const anchors=form==="rooting"
+      ? [
+          {t:0.00,r:radii.rootTip},
+          {t:0.18,r:radii.base},
+          {t:0.43,r:radii.lowerMid},
+          {t:0.72,r:radii.upperMid},
+          {t:1.00,r:radii.apex}
+        ]
+      : [
+          {t:0.00,r:radii.rootTip},
+          {t:0.10,r:radii.base},
+          {t:0.42,r:radii.lowerMid},
+          {t:0.72,r:radii.upperMid},
+          {t:1.00,r:radii.apex}
+        ];
+
+    const radiusAt=t=>{
+      const x=THREE.MathUtils.clamp(t,0,1);
+      let i=0;
+      while(i<anchors.length-2&&x>anchors[i+1].t)i++;
+      const a=anchors[i],b=anchors[i+1];
+      const prev=anchors[Math.max(0,i-1)];
+      const next=anchors[Math.min(anchors.length-1,i+2)];
+      const span=Math.max(.0001,b.t-a.t);
+      const u=THREE.MathUtils.clamp((x-a.t)/span,0,1);
+      const m0=(b.r-prev.r)/Math.max(.0001,b.t-prev.t);
+      const m1=(next.r-a.r)/Math.max(.0001,next.t-a.t);
+      const u2=u*u,u3=u2*u;
+      const h00=2*u3-3*u2+1;
+      const h10=u3-2*u2+u;
+      const h01=-2*u3+3*u2;
+      const h11=u3-u2;
+      const r=h00*a.r+h10*span*m0+h01*b.r+h11*span*m1;
+      return Math.max(.055,r*shrink(x));
+    };
+
+    const apexBlendLength=THREE.MathUtils.clamp(
+      Number.isFinite(this.variants?.agaric_stipe_apex_blend_length)?this.variants.agaric_stipe_apex_blend_length:.18,
+      .08,.30
+    );
+    const baseBlendLength=THREE.MathUtils.clamp(
+      Number.isFinite(this.variants?.agaric_stipe_base_blend_length)?this.variants.agaric_stipe_base_blend_length:.18,
+      .08,.30
+    );
+    const regionWeights=t=>{
+      const x=THREE.MathUtils.clamp(t,0,1);
+      const apex=THREE.MathUtils.smoothstep(x,1-apexBlendLength,1);
+      const base=1-THREE.MathUtils.smoothstep(x,0,baseBlendLength);
+      const mid=THREE.MathUtils.clamp(1-Math.max(apex,base),0,1);
+      return {apex,mid,base};
+    };
+
+    return {
+      form,nominal,anchors,radii,radiusAt,regionWeights,
+      blendCorridors:{
+        apexMid:[Math.max(.45,1-apexBlendLength-.14),1-apexBlendLength+.04],
+        midBase:[Math.max(.02,baseBlendLength-.04),Math.min(.48,baseBlendLength+.14)]
+      }
+    };
+  }
+
+  _agaricoidStipeGeometry(form="equal",{height=2.55,top=.285,bottom=.34,seed=727,development={},position="central"}={}){
+    const segments=scaledSegments(64,this.realismTier,{min:38,max:84});
+    const rings=scaledSegments(42,this.realismTier,{min:28,max:58});
     const verts=[],uvs=[],indices=[];
     const phase=((seed%6151)/6151)*Math.PI*2;
     const row=segments+1;
-    const waterLoss=development.water_loss??0;
     const aging=development.stipe_aging??0;
     const collapse=development.collapse??0;
     const deformation=development.deformation??0;
-    const radiusAt=t=>{
-      let r=THREE.MathUtils.lerp(bottom,top,t);
-      if(form==="tapering")r*=1.14-.28*t;
-      else if(form==="clavate")r*=.84+.48*Math.pow(1-t,2.15);
-      else if(form==="ventricose")r*=.88+.34*Math.exp(-Math.pow((t-.50)/.22,2));
-      else if(form==="bulbous_base")r*=.88+.66*Math.exp(-Math.pow((t-.07)/.13,2));
-      else if(form==="rooting"){
-        r*=.76+.28*THREE.MathUtils.smoothstep(t,.05,.34);
-        if(t<.17)r*=.48+.52*(t/.17);
-      }
-      r*=1-waterLoss*(.045+.035*t);
-      return Math.max(.06,r);
+    const profile=this._agaricoidStipeProfile(form,{top,bottom,development});
+    const eccentricOffset=position==="eccentric"?.22:0;
+
+    const centerlineAt=t=>{
+      const x=THREE.MathUtils.clamp(t,0,1);
+      const naturalBow=Math.sin(Math.PI*x);
+      const eccentricProgress=THREE.MathUtils.smoothstep(x,.04,.98);
+      const ageLean=(.012+.035*collapse+.028*deformation)*naturalBow;
+      return {
+        x:eccentricOffset*eccentricProgress+
+          (.010+ageLean)*Math.sin(phase)*naturalBow-
+          eccentricOffset*.08*Math.sin(Math.PI*x*2)*naturalBow,
+        z:(.008+ageLean*.72)*Math.cos(phase*.83)*naturalBow
+      };
     };
 
     for(let iy=0;iy<=rings;iy++){
       const t=iy/rings;
       const y=-height/2+t*height;
-      const ageLean=(.030+.055*collapse+.040*deformation)*Math.sin(t*Math.PI);
-      const leanX=(.030+ageLean)*Math.sin(phase)*Math.sin(t*Math.PI);
-      const leanZ=(.024+ageLean*.75)*Math.cos(phase*.83)*Math.sin(t*Math.PI);
-      const r0=radiusAt(t);
+      const center=centerlineAt(t);
+      const r0=profile.radiusAt(t);
+      const weights=profile.regionWeights(t);
+      const regionalIrregularity=.75+weights.mid*.20+weights.base*.08;
       for(let ix=0;ix<=segments;ix++){
         const u=ix/segments,theta=u*Math.PI*2;
+        const oval=.010*Math.cos(theta*2-phase*.45)*Math.sin(Math.PI*t);
         const asymmetric=1+
-          .020*Math.sin(theta*3+phase+t*4.3)+
-          .010*Math.cos(theta*7-phase*.6)+
-          aging*.009*Math.sin(theta*2.2+t*9.0);
+          regionalIrregularity*.014*Math.sin(theta*3+phase+t*4.3)+
+          .007*Math.cos(theta*7-phase*.6)+
+          oval+
+          aging*.007*Math.sin(theta*2.2+t*9.0);
         const r=r0*asymmetric;
-        const wrinkle=aging*.010*Math.sin(t*18+theta*2.4);
+        const wrinkle=aging*.007*Math.sin(t*18+theta*2.4);
         verts.push(
-          Math.cos(theta)*(r+wrinkle)+leanX,
-          y-.045*collapse*Math.pow(Math.max(0,t-.55)/.45,2)+.008*Math.sin(theta*2.2+phase)*Math.sin(t*Math.PI),
-          Math.sin(theta)*(r+wrinkle)+leanZ
+          Math.cos(theta)*(r+wrinkle)+center.x,
+          y-.045*collapse*Math.pow(Math.max(0,t-.55)/.45,2)+.006*Math.sin(theta*2.2+phase)*Math.sin(t*Math.PI),
+          Math.sin(theta)*(r+wrinkle)+center.z
         );
         uvs.push(u,t);
       }
@@ -2314,8 +2409,22 @@ export class MycoSimEngine{
     const g=new THREE.BufferGeometry();
     g.setAttribute("position",new THREE.Float32BufferAttribute(verts,3));
     g.setAttribute("uv",new THREE.Float32BufferAttribute(uvs,2));
-    g.setIndex(indices);g.computeVertexNormals();g.computeBoundingSphere();
-    g.userData={model:"agaricoid-organic-stipe-v2",form,height,top,bottom,waterLoss,aging,collapse};
+    g.setIndex(indices);g.computeVertexNormals();g.computeBoundingBox();g.computeBoundingSphere();
+    g.userData={
+      model:"agaricoid-profile-stipe-v3",
+      form,height,top,bottom,position,
+      waterLoss:development.water_loss??0,aging,collapse,
+      profileAnchors:profile.anchors.map(a=>({t:a.t,r:a.r})),
+      profileRadii:{...profile.radii},
+      blendCorridors:{...profile.blendCorridors},
+      regionBlending:true,
+      profileDriven:true,
+      nonPerfectRoundness:true,
+      eccentricCenterline:position==="eccentric",
+      radiusAt:profile.radiusAt,
+      centerlineAt,
+      regionWeights:profile.regionWeights
+    };
     return g;
   }
 
@@ -2331,16 +2440,13 @@ export class MycoSimEngine{
     const waterLoss=development.water_loss??0;
     const retain=Math.max(.18,1-aging*(state==="pruinose"?.82:.48));
 
-    const radiusAt=t=>{
-      let r=THREE.MathUtils.lerp(bottom,top,t);
-      const form=this.variants.agaric_stipe_form||this.variants.agaric_stipe_taper||"equal";
-      if(form==="tapering")r*=1.14-.28*t;
-      else if(form==="clavate")r*=.84+.48*Math.pow(1-t,2.15);
-      else if(form==="ventricose")r*=.88+.34*Math.exp(-Math.pow((t-.50)/.22,2));
-      else if(form==="bulbous_base")r*=.88+.66*Math.exp(-Math.pow((t-.07)/.13,2));
-      else if(form==="rooting")r*=.76+.28*THREE.MathUtils.smoothstep(t,.05,.34);
-      return r*(1-waterLoss*(.045+.035*t));
-    };
+    const geoState=stipe.geometry?.userData||{};
+    const fallbackProfile=this._agaricoidStipeProfile(
+      this.variants.agaric_stipe_form||this.variants.agaric_stipe_taper||"equal",
+      {top,bottom,development}
+    );
+    const radiusAt=typeof geoState.radiusAt==="function"?geoState.radiusAt:fallbackProfile.radiusAt;
+    const centerlineAt=typeof geoState.centerlineAt==="function"?geoState.centerlineAt:(()=>({x:0,z:0}));
 
     if(state==="longitudinal_striate"||state==="reticulate"){
       const mat=new THREE.LineBasicMaterial({color:0x8d7964,transparent:true,opacity:state==="reticulate"?.62:.42});
@@ -2350,7 +2456,8 @@ export class MycoSimEngine{
         for(let j=0;j<=10;j++){
           const t=THREE.MathUtils.lerp(bounds[0],bounds[1],j/10);
           const r=radiusAt(t)*1.018;
-          pts.push(new THREE.Vector3(Math.cos(a)*r,-height/2+t*height,Math.sin(a)*r));
+          const center=centerlineAt(t);
+          pts.push(new THREE.Vector3(center.x+Math.cos(a)*r,-height/2+t*height,center.z+Math.sin(a)*r));
         }
         const line=new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),mat.clone());
         line.userData=group.userData;group.add(line);this.pickables.push(line);
@@ -2361,7 +2468,8 @@ export class MycoSimEngine{
           const r=radiusAt(t)*1.020,pts=[];
           for(let i=0;i<=28;i++){
             const a=i/28*Math.PI*2;
-            pts.push(new THREE.Vector3(Math.cos(a)*r,-height/2+t*height,Math.sin(a)*r));
+            const center=centerlineAt(t);
+            pts.push(new THREE.Vector3(center.x+Math.cos(a)*r,-height/2+t*height,center.z+Math.sin(a)*r));
           }
           const line=new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),mat.clone());
           line.userData={...group.userData,knowledgeId:"reticulation"};group.add(line);this.pickables.push(line);
@@ -2387,7 +2495,8 @@ export class MycoSimEngine{
         const t=THREE.MathUtils.lerp(bounds[0],bounds[1],rng());
         const a=rng()*Math.PI*2;
         const r=radiusAt(t)*1.025;
-        dummy.position.set(Math.cos(a)*r,-height/2+t*height,Math.sin(a)*r);
+        const center=centerlineAt(t);
+        dummy.position.set(center.x+Math.cos(a)*r,-height/2+t*height,center.z+Math.sin(a)*r);
         dummy.rotation.set(0,-a,state==="fibrillose"?(rng()-.5)*.22:0);
         const g=.55+rng()*.9;
         if(state==="fibrillose")dummy.scale.set(g,1.1+rng()*.8,g);
@@ -2437,27 +2546,44 @@ export class MycoSimEngine{
     const rootingExtra=form==="rooting"?.58:0;
     const height=Math.max(.8,topY-baseY+rootingExtra);
     const centerY=baseY-rootingExtra+height/2;
-    const geo=this._agaricoidStipeGeometry(form,{height,top,bottom,seed:this.morphologyState?.developmental?.identitySeed||727,development});
+    const geo=this._agaricoidStipeGeometry(form,{
+      height,top,bottom,
+      seed:this.morphologyState?.developmental?.identitySeed||727,
+      development,position
+    });
     const st=this.register(new THREE.Mesh(geo,MATERIALS.stipe.clone()),"stipe","Stipe","macro");
-    const offsetX=position==="eccentric"?.22:0;
-    st.position.set(offsetX,centerY,0);
+    st.position.set(0,centerY,0);
+    const centerlineAt=geo.userData.centerlineAt;
+    const apexCenter=typeof centerlineAt==="function"?centerlineAt(1):{x:0,z:0};
+    const baseCenter=typeof centerlineAt==="function"?centerlineAt(0):{x:0,z:0};
     st.userData.apexY=topY;
     st.userData.baseY=baseY-rootingExtra;
+    st.userData.apexX=apexCenter.x;
+    st.userData.apexZ=apexCenter.z;
+    st.userData.baseX=baseCenter.x;
+    st.userData.baseZ=baseCenter.z;
     st.userData.form=form;
     st.userData.positionType=position;
+    st.userData.profileDriven=true;
+    st.userData.regionalBlending=true;
 
-    const baseRadius=form==="bulbous_base"?.54:form==="clavate"?.43:form==="rooting"?.18:bottom;
-    const baseGeo=form==="rooting"
-      ? new THREE.ConeGeometry(baseRadius,.70,scaledSegments(36,this.realismTier,{min:24,max:48}))
-      : new THREE.SphereGeometry(baseRadius,scaledSegments(40,this.realismTier,{min:26,max:56}),scaledSegments(22,this.realismTier,{min:16,max:30}));
-    const base=this.register(new THREE.Mesh(baseGeo,MATERIALS.stipe.clone()),"stipe_base",
-      form==="rooting"?"Rooting base":form==="bulbous_base"?"Bulbous base":"Stipe base","macro","stipe");
-    if(form==="rooting"){
-      base.position.set(offsetX,baseY-rootingExtra-.23,0);base.rotation.x=Math.PI;base.scale.set(.72,1,.72);
-    }else{
-      base.position.set(offsetX,baseY+.02,0);
-      base.scale.set(1,form==="bulbous_base"?.66:form==="clavate"?.48:.34,1);
-    }
+    // Preserve the selectable stipe-base anatomy without hiding the continuous
+    // profile-driven silhouette behind a separate spherical "plug".
+    const baseRadius=Math.max(.07,geo.userData.radiusAt?.(0.035)??bottom);
+    const baseGeo=new THREE.SphereGeometry(
+      baseRadius,
+      scaledSegments(36,this.realismTier,{min:24,max:48}),
+      scaledSegments(18,this.realismTier,{min:12,max:26})
+    );
+    const base=this.register(
+      new THREE.Mesh(baseGeo,MATERIALS.stipe.clone()),
+      "stipe_base",
+      form==="rooting"?"Rooting base":form==="bulbous_base"?"Bulbous base":"Stipe base",
+      "macro","stipe"
+    );
+    base.position.set(baseCenter.x,baseY-rootingExtra+.015,baseCenter.z);
+    base.scale.set(1,.16,1);
+    base.userData.continuousWithProfile=true;
 
     const context=this.variants.agaric_stipe_context||"solid";
     this._agaricStipeContextVisual(st,context,{height,top,bottom});
@@ -2466,7 +2592,6 @@ export class MycoSimEngine{
     this._agaricStipeSurfaceRegion(st,"base",this.variants.agaric_stipe_surface_base||"smooth",{height,top,bottom,development});
     return st;
   }
-
 
   _agaricSurfaceState(){
     const p=this.morphologyState?.stage?.parameters||{};
@@ -3343,7 +3468,7 @@ export class MycoSimEngine{
     const apexLocal=typeof underside==="function"?underside(0,0):-.22;
     const stipeTopY=capY+apexLocal+.025;
     const stipe=this._addAgaricoidStipe(form,{baseY:-.46,topY:stipeTopY,top:.285,bottom:.34,position:stipePosition});
-    const stipeX=stipe?.position.x||0;
+    const stipeX=stipe?.userData?.apexX??stipe?.position.x??0;
 
     const capState={
       radius,
