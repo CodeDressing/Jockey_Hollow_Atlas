@@ -6,9 +6,9 @@ const A=(id,label,category,description,parentId=null)=>({
 
 export const MORPHOLOGY_PROFILES = [
   {
-    id:"agaricoid",label:"Agaricoid",group:"gilled",factory:"agaricoid",version:"5.0.0",
+    id:"agaricoid",label:"Agaricoid",group:"gilled",factory:"agaricoid",version:"6.0.0",
     description:"Organic cap-and-stipe teaching model with independent pileus, stipe, gill spacing, attachment, lamellulae and gill-edge morphology.",
-    variantGroups:["agaric_pileus_profile","agaric_pileus_center","agaric_margin","agaric_stipe_taper","agaric_surface_primary","agaric_surface_secondary","agaric_surface_distribution","agaric_surface_age","agaric_surface_moisture","agaric_gill_attachment","agaric_gill_spacing","agaric_gill_thickness","agaric_gill_depth","agaric_lamellulae","agaric_gill_edge","veil","texture_realism"],developmentalStages:["young","mature","old"],
+    variantGroups:["agaric_pileus_profile","agaric_pileus_center","agaric_margin","agaric_stipe_position","agaric_stipe_form","agaric_stipe_context","agaric_stipe_surface_apex","agaric_stipe_surface_mid","agaric_stipe_surface_base","agaric_surface_primary","agaric_surface_secondary","agaric_surface_distribution","agaric_surface_age","agaric_surface_moisture","agaric_gill_attachment","agaric_gill_spacing","agaric_gill_thickness","agaric_gill_depth","agaric_lamellulae","agaric_gill_edge","veil","texture_realism"],developmentalStages:["young","mature","old"],
     anatomy:[
       A("pileus","Pileus / cap","macro","Upper fruiting-body structure."),
       A("pileipellis","Pileipellis / cap surface","tissue","Outermost differentiated tissue of the pileus responsible for many visible surface characters.","pileus"),
@@ -23,8 +23,14 @@ export const MORPHOLOGY_PROFILES = [
       A("lamellula","Lamellula / short gill","fertile","A shorter gill terminating before the stipe and interspersed among full lamellae.","hymenophore"),
       A("gill_edge","Gill edge","fertile","Free lower edge of a lamella; may be even, serrulate, fimbriate, or crisped.","lamella"),
       A("stipe","Stipe","macro","Supporting axis where present."),
-      A("veil_structure","Veil / basal structure","veil","Configured veil or universal-veil structure."),
-      A("stipe_base","Stipe base","macro","Basal stipe morphology.","stipe")
+      A("stipe_apex","Stipe apex","macro","Upper stipe region immediately beneath the hymenophore.","stipe"),
+      A("stipe_mid","Mid-stipe","macro","Middle region of the stipe.","stipe"),
+      A("stipe_base","Stipe base","macro","Basal stipe morphology.","stipe"),
+      A("stipe_context","Stipe context","internal","Internal tissue state of the stipe; solid, stuffed, or hollow.","stipe"),
+      A("stipe_surface","Stipe surface","macro","Outer stipe surface supporting regional ornament.","stipe"),
+      A("pruina","Pruina / pruinose coating","macro","Fine powdery or frosted coating, commonly strongest near the apex.","stipe_surface"),
+      A("reticulation","Reticulation","macro","Raised net-like ridging on the stipe.","stipe_surface"),
+      A("veil_structure","Veil / basal structure","veil","Configured veil or universal-veil structure.")
     ]
   },
   {
