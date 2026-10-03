@@ -1497,6 +1497,13 @@ export class MycoSimEngine{
         stipeEccentricStance:this.objects.get("stipe")?.userData?.eccentricStance===true,
         stipeBasalCounterbalance:this.objects.get("stipe")?.userData?.basalCounterbalance??0,
         stipeInsertionMechanical:this.objects.get("stipe_insertion")?.userData?.mechanicalSupport===true,
+        stipeDevelopmentalStage:this.objects.get("stipe")?.userData?.developmentalStage||null,
+        stipeDevelopmentalModel:this.objects.get("stipe")?.userData?.developmentalModel||null,
+        stipeHydration:this.objects.get("stipe")?.userData?.hydration??null,
+        stipeWeathering:this.objects.get("stipe")?.userData?.weathering??null,
+        stipeFibreExposure:this.objects.get("stipe")?.userData?.fibreExposure??null,
+        stipeCollapseStrength:this.objects.get("stipe")?.userData?.collapseStrength??null,
+        stipeDevelopmentVisual:this.objects.get("stipe_development")?.userData||null,
         stipeSurfaceGenerators:["stipe_apex","stipe_mid","stipe_base_surface"].map(id=>({id,state:this.objects.get(id)?.userData?.surfaceState||"smooth",generator:this.objects.get(id)?.userData?.generator||null,regionalBlend:this.objects.get(id)?.userData?.regionalBlend===true,elementCount:this.objects.get(id)?.userData?.elementCount||0,bounds:this.objects.get(id)?.userData?.blendBounds||null})),
         developmentalParameters:this.morphologyState?.stage?.parameters||null,
         developmentalContinuity:true,
@@ -2360,15 +2367,38 @@ export class MycoSimEngine{
     };
   }
 
+  _agaricStipeDevelopmentState(development={}){
+    const stageId=this.morphologyState?.stage?.id||this.developmentalStageId||"mature";
+    const waterLoss=THREE.MathUtils.clamp(development.water_loss??0,0,1);
+    const aging=THREE.MathUtils.clamp(development.stipe_aging??development.senescence_factor??0,0,1);
+    const weathering=THREE.MathUtils.clamp(development.surface_weathering??development.surface_wear??0,0,1);
+    const scaleLoss=THREE.MathUtils.clamp(development.scale_loss??0,0,1);
+    const cracking=THREE.MathUtils.clamp(development.surface_cracking??0,0,1);
+    const collapse=THREE.MathUtils.clamp(development.collapse??0,0,1);
+    const deformation=THREE.MathUtils.clamp(development.deformation??0,0,1);
+    const firmness=THREE.MathUtils.clamp(development.tissue_firmness??(.82-aging*.42),.20,1);
+    const hydration=THREE.MathUtils.clamp(1-waterLoss,0,1);
+    const tissueTension=THREE.MathUtils.clamp(.45*firmness+.55*hydration,0,1);
+    const bloomRetention=THREE.MathUtils.clamp(1-weathering*.72-aging*.22,0,1);
+    const fibreExposure=THREE.MathUtils.clamp(aging*.48+weathering*.36+waterLoss*.34,0,1);
+    const ornamentRetention=THREE.MathUtils.clamp(1-scaleLoss*.82-weathering*.18,0,1);
+    const collapseStrength=THREE.MathUtils.clamp(collapse*.72+deformation*.28+Math.max(0,waterLoss-.45)*.22,0,1);
+    return {
+      stageId,waterLoss,aging,weathering,scaleLoss,cracking,collapse,deformation,
+      firmness,hydration,tissueTension,bloomRetention,fibreExposure,
+      ornamentRetention,collapseStrength,
+      developmentalModel:"phase7-sprint4-v1"
+    };
+  }
+
   _agaricoidStipeGeometry(form="equal",{height=2.55,top=.285,bottom=.34,seed=727,development={},position="central",capRadius=1.62,capExpansion=1}={}){
     const segments=scaledSegments(64,this.realismTier,{min:38,max:84});
     const rings=scaledSegments(42,this.realismTier,{min:28,max:58});
     const verts=[],uvs=[],indices=[];
     const phase=((seed%6151)/6151)*Math.PI*2;
     const row=segments+1;
-    const aging=development.stipe_aging??0;
-    const collapse=development.collapse??0;
-    const deformation=development.deformation??0;
+    const dev=this._agaricStipeDevelopmentState(development);
+    const {aging,collapse,deformation,waterLoss,weathering,cracking,tissueTension,fibreExposure,collapseStrength}=dev;
     const profile=this._agaricoidStipeProfile(form,{top,bottom,development});
     const normalizedCapLoad=THREE.MathUtils.clamp((capRadius/1.62)*(.78+.22*capExpansion),.72,1.42);
     const eccentricOffset=position==="eccentric"?.22*normalizedCapLoad:0;
@@ -2381,13 +2411,16 @@ export class MycoSimEngine{
       const eccentricProgress=THREE.MathUtils.smootherstep(x,.03,.985);
       const loadBow=(position==="eccentric"?.058:.012)*(normalizedCapLoad-0.55)*Math.sin(Math.PI*x);
       const counter=basalCounterbalance*(1-THREE.MathUtils.smoothstep(x,.02,.42));
-      const ageLean=(.012+.035*collapse+.028*deformation)*naturalBow;
+      const ageLean=(.010+.040*collapseStrength+.032*deformation)*naturalBow;
+      const senescentSlump=collapseStrength*THREE.MathUtils.smoothstep(x,.38,.98)*naturalBow;
       return {
         x:eccentricOffset*eccentricProgress-counter+
-          (.010+ageLean)*Math.sin(phase)*naturalBow-
-          loadBow*Math.sin(Math.PI*x*1.15),
-        z:(.008+ageLean*.72)*Math.cos(phase*.83)*naturalBow+
-          loadBow*.16*Math.sin(phase*.51)*naturalBow
+          (.009+ageLean)*Math.sin(phase)*naturalBow-
+          loadBow*Math.sin(Math.PI*x*1.15)+
+          senescentSlump*.045*Math.sin(phase*.73),
+        z:(.007+ageLean*.72)*Math.cos(phase*.83)*naturalBow+
+          loadBow*.16*Math.sin(phase*.51)*naturalBow+
+          senescentSlump*.035*Math.cos(phase*.61)
       };
     };
     const centerlineTangentAt=t=>{
@@ -2417,16 +2450,23 @@ export class MycoSimEngine{
       for(let ix=0;ix<=segments;ix++){
         const u=ix/segments,theta=u*Math.PI*2;
         const oval=.010*Math.cos(theta*2-phase*.45)*Math.sin(Math.PI*t);
+        const hydratedFullness=(1-waterLoss)*.018*(.35+.65*Math.sin(Math.PI*t));
+        const axialWrinkle=(.003+.016*fibreExposure)*Math.sin(theta*(3.0+Math.floor((phase%1)*3))+t*3.2+phase);
+        const dryFurrow=(.003+.015*waterLoss+.010*weathering)*Math.sin(theta*5.0+phase+t*2.1)*Math.sin(Math.PI*t);
         const asymmetric=1+
           regionalIrregularity*.014*Math.sin(theta*3+phase+t*4.3)+
           .007*Math.cos(theta*7-phase*.6)+
           oval+
-          aging*.007*Math.sin(theta*2.2+t*9.0);
-        const r=r0*asymmetric;
-        const wrinkle=aging*.007*Math.sin(t*18+theta*2.4);
+          aging*.007*Math.sin(theta*2.2+t*9.0)+
+          hydratedFullness+
+          axialWrinkle-dryFurrow;
+        const localCollapse=collapseStrength*THREE.MathUtils.smoothstep(t,.42,.98);
+        const collapseConstrict=1-localCollapse*(.022+.020*Math.sin(theta*2+phase));
+        const r=r0*asymmetric*collapseConstrict;
+        const wrinkle=aging*.007*Math.sin(t*18+theta*2.4)+cracking*.004*Math.sin(t*27+theta*1.7);
         verts.push(
           Math.cos(theta)*(r+wrinkle)+center.x,
-          y-.045*collapse*Math.pow(Math.max(0,t-.55)/.45,2)+.006*Math.sin(theta*2.2+phase)*Math.sin(t*Math.PI),
+          y-.075*collapseStrength*Math.pow(Math.max(0,t-.42)/.58,2)+.006*tissueTension*Math.sin(theta*2.2+phase)*Math.sin(t*Math.PI),
           Math.sin(theta)*(r+wrinkle)+center.z
         );
         uvs.push(u,t);
@@ -2445,7 +2485,13 @@ export class MycoSimEngine{
     g.userData={
       model:"agaricoid-profile-stipe-v3",
       form,height,top,bottom,position,
-      waterLoss:development.water_loss??0,aging,collapse,
+      waterLoss,aging,collapse,
+      developmentalStage:dev.stageId,
+      developmentalModel:dev.developmentalModel,
+      weathering,cracking,tissueTension,fibreExposure,collapseStrength,
+      hydration:dev.hydration,
+      ornamentRetention:dev.ornamentRetention,
+      bloomRetention:dev.bloomRetention,
       profileAnchors:profile.anchors.map(a=>({t:a.t,r:a.r})),
       profileRadii:{...profile.radii},
       blendCorridors:{...profile.blendCorridors},
@@ -2505,7 +2551,18 @@ export class MycoSimEngine{
       category:"macro",selectable:true,knowledgeId:region==="apex"?"stipe_apex":region==="mid"?"stipe_mid":"stipe_base",
       surfaceState:state,generator:"phase7b-surface-state-v1",regionalBlend:true,transitionControls:{...blend},blendBounds:[...bounds],surfaceFormInteraction:"phase7-sprint3-v1"};
     const seed=region==="apex"?8301:region==="mid"?8419:8537,rng=seededRng(seed+state.length*37);
-    const aging=development.stipe_aging??0,retain=Math.max(.16,1-aging*(state==="pruinose"?.82:.48));
+    const dev=this._agaricStipeDevelopmentState(development);
+    const aging=dev.aging;
+    const retain=Math.max(.10,
+      state==="pruinose"?dev.bloomRetention:
+      state==="scaly"?dev.ornamentRetention:
+      state==="floccose"?THREE.MathUtils.clamp(1-dev.weathering*.62-dev.aging*.30,.12,1):
+      1-dev.weathering*.24
+    );
+    group.userData.developmentalStage=dev.stageId;
+    group.userData.weathering=dev.weathering;
+    group.userData.retention=retain;
+    group.userData.fibreExposure=dev.fibreExposure;
     const meta=stipe.geometry?.userData||{};
     const fallback=this._agaricoidStipeProfile(this.variants.agaric_stipe_form||"equal",{top,bottom,development});
     const radiusAt=typeof meta.radiusAt==="function"?meta.radiusAt:fallback.radiusAt;
@@ -2538,10 +2595,12 @@ export class MycoSimEngine{
       const mat=MATERIALS.flesh.clone();mat.color.setHex(state==="reticulate"?0x8d735c:0x9b866d);mat.roughness=.96;
       const add=(p0,p1,k,phase=0)=>{
         if(k<.055)return;
+        if(state==="reticulate"&&dev.cracking>.18&&Math.sin(phase*2.31+p0.y*19)>1.72-dev.cracking*.55)return;
         const d=p1.clone().sub(p0),len=d.length(),mid=p0.clone().add(p1).multiplyScalar(.5);
         dummy.position.copy(mid);dummy.quaternion.setFromUnitVectors(axis,d.normalize());
         const tm=(p0.y+p1.y+height)/(2*height),stretch=stretchAt(THREE.MathUtils.clamp(tm,0,1));
-        const thick=((state==="reticulate"?.0034:.0028)+k*(state==="reticulate"?.0048:.0036))/Math.sqrt(stretch);
+        const ageRelief=1+dev.waterLoss*.28+dev.fibreExposure*.22;
+        const thick=((state==="reticulate"?.0034:.0028)+k*(state==="reticulate"?.0048:.0036))*ageRelief/Math.sqrt(stretch);
         dummy.scale.set(thick,len*.5,thick*(.76+.12*Math.sin(phase)));dummy.updateMatrix();mats.push(dummy.matrix.clone());
       };
       const midStretch=stretchAt((bounds[0]+bounds[1])*.5);
@@ -2571,7 +2630,12 @@ export class MycoSimEngine{
     }else{
       const avgStretch=(stretchAt(bounds[0])+stretchAt((bounds[0]+bounds[1])*.5)+stretchAt(bounds[1]))/3;
       const baseCount={fibrillose:180,floccose:104,scaly:86,pruinose:390}[state]||90;
-      const count=Math.max(12,Math.round(baseCount*(state==="pruinose"?Math.sqrt(avgStretch):avgStretch)));
+      const developmentalDensity=
+        state==="fibrillose"?1+dev.fibreExposure*.52:
+        state==="scaly"?Math.max(.22,dev.ornamentRetention):
+        state==="pruinose"?Math.max(.28,dev.bloomRetention):
+        state==="floccose"?Math.max(.28,retain):1;
+      const count=Math.max(12,Math.round(baseCount*(state==="pruinose"?Math.sqrt(avgStretch):avgStretch)*developmentalDensity));
       let geo;
       if(state==="scaly"){
         geo=new THREE.PlaneGeometry(.055,.075,1,1);
@@ -2601,19 +2665,20 @@ export class MycoSimEngine{
             dummy.rotateZ(Math.atan2(localUp.clone().cross(projected).dot(normal),localUp.dot(projected))*.35);
           }
           dummy.rotateX(-.06-.18*rng()*k);
-          const s=(.65+rng()*.7)*(.72+.28*k);
+          const wear=Math.max(.42,1-dev.scaleLoss*.52-dev.weathering*.18);
+          const s=(.65+rng()*.7)*(.72+.28*k)*wear;
           dummy.scale.set(s*Math.sqrt(stretch),s*(.82+rng()*.28)/Math.sqrt(stretch),1);
         }else if(state==="fibrillose"){
           const tangent=tangentAt(t),normal=surfaceNormal(t,a);
           dummy.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),tangent);
           dummy.rotateY((rng()-.5)*.14);
           dummy.rotateX((rng()-.5)*.05);
-          const s=.7+rng()*.7;
+          const s=(.7+rng()*.7)*(1+dev.fibreExposure*.30);
           dummy.scale.set(.75/Math.sqrt(stretch),s*(.8+.5*k)*Math.sqrt(stretch),.75);
         }else if(state==="floccose"){
-          const cl=.8+.28*Math.sin(a*4+t*24),s=(.55+rng())*(.65+.35*k)*cl;dummy.scale.set(s,s*(.65+rng()*.55),s);dummy.rotation.set(rng()*Math.PI,rng()*Math.PI,rng()*Math.PI);
+          const cl=.8+.28*Math.sin(a*4+t*24),wear=Math.max(.42,1-dev.weathering*.42),s=(.55+rng())*(.65+.35*k)*cl*wear;dummy.scale.set(s,s*(.65+rng()*.55),s);dummy.rotation.set(rng()*Math.PI,rng()*Math.PI,rng()*Math.PI);
         }else{
-          const s=(.5+rng()*.75)*(.55+.45*k);dummy.scale.set(s,s*(.7+rng()*.35),s);dummy.rotation.set(rng()*Math.PI,rng()*Math.PI,rng()*Math.PI);
+          const s=(.5+rng()*.75)*(.55+.45*k)*(.76+.24*dev.bloomRetention);dummy.scale.set(s,s*(.7+rng()*.35),s);dummy.rotation.set(rng()*Math.PI,rng()*Math.PI,rng()*Math.PI);
         }
         dummy.updateMatrix();inst.setMatrixAt(written++,dummy.matrix);
       }
@@ -2623,6 +2688,61 @@ export class MycoSimEngine{
       group.add(inst);this.pickables.push(inst);group.userData.elementCount=written;
     }
     stipe.add(group);this.objects.set(id,group);return group;
+  }
+
+  _agaricStipeDevelopmentVisual(stipe,{height,top,bottom,development={}}={}){
+    if(!stipe)return null;
+    const dev=this._agaricStipeDevelopmentState(development);
+    const meta=stipe.geometry?.userData||{};
+    const radiusAt=typeof meta.radiusAt==="function"?meta.radiusAt:(t=>THREE.MathUtils.lerp(bottom,top,t));
+    const centerlineAt=typeof meta.centerlineAt==="function"?meta.centerlineAt:(()=>({x:0,z:0}));
+    const tangentAt=typeof meta.centerlineTangentAt==="function"?meta.centerlineTangentAt:(()=>new THREE.Vector3(0,1,0));
+    const group=new THREE.Group();
+    group.userData={
+      id:"stipe_development",label:"Stipe developmental state",category:"macro",selectable:true,
+      knowledgeId:"stipe",stageId:dev.stageId,developmentalModel:dev.developmentalModel,
+      weathering:dev.weathering,fibreExposure:dev.fibreExposure,collapseStrength:dev.collapseStrength
+    };
+
+    // Senescent exposed fibres and shallow drying fissures remain subordinate
+    // to the selected surface state, so age transforms the tissue rather than
+    // replacing its diagnostic morphology.
+    const fibreCount=Math.round((18+dev.fibreExposure*58)*(this.realismTier.id==="high"?1.25:this.realismTier.id==="interactive"?.72:1));
+    if(dev.fibreExposure>.10&&fibreCount>0){
+      const geo=new THREE.CylinderGeometry(.0026,.0018,.10,5);
+      const mat=MATERIALS.flesh.clone();mat.color.setHex(0x8b765f);mat.roughness=1;
+      const inst=new THREE.InstancedMesh(geo,mat,fibreCount);
+      const rng=seededRng(9731),dummy=new THREE.Object3D();
+      for(let i=0;i<fibreCount;i++){
+        const t=.16+rng()*.72,a=rng()*Math.PI*2,r=radiusAt(t)*1.012,ctr=centerlineAt(t);
+        dummy.position.set(ctr.x+Math.cos(a)*r,-height/2+t*height,ctr.z+Math.sin(a)*r);
+        dummy.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),tangentAt(t));
+        const s=.55+rng()*.85;
+        dummy.scale.set(.65,s*(.7+dev.fibreExposure*.75),.65);
+        dummy.updateMatrix();inst.setMatrixAt(i,dummy.matrix);
+      }
+      inst.instanceMatrix.needsUpdate=true;inst.castShadow=false;inst.receiveShadow=true;
+      inst.userData={...group.userData,developmentTrait:"exposed-longitudinal-fibres"};
+      group.add(inst);this.pickables.push(inst);
+    }
+
+    const fissureCount=Math.round(dev.cracking*24+dev.weathering*10);
+    if(fissureCount>0){
+      const mat=new THREE.LineBasicMaterial({color:0x76614f,transparent:true,opacity:.18+.30*dev.cracking});
+      const rng=seededRng(9833);
+      for(let i=0;i<fissureCount;i++){
+        const a=rng()*Math.PI*2,start=.12+rng()*.70,len=.035+rng()*(.08+.10*dev.cracking),pts=[];
+        for(let j=0;j<4;j++){
+          const t=THREE.MathUtils.clamp(start+len*j/3,0,1),ctr=centerlineAt(t),r=radiusAt(t)*1.016;
+          const drift=(rng()-.5)*.018*j;
+          pts.push(new THREE.Vector3(ctr.x+Math.cos(a+drift)*r,-height/2+t*height,ctr.z+Math.sin(a+drift)*r));
+        }
+        const line=new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),mat.clone());
+        line.userData={...group.userData,developmentTrait:"drying-fissure"};
+        group.add(line);this.pickables.push(line);
+      }
+    }
+    stipe.add(group);this.objects.set("stipe_development",group);return group;
   }
 
   _agaricStipeContextVisual(stipe,context,{height,top,bottom}={}){
@@ -2665,7 +2785,17 @@ export class MycoSimEngine{
       seed:this.morphologyState?.developmental?.identitySeed||727,
       development,position,capRadius,capExpansion
     });
-    const st=this.register(new THREE.Mesh(geo,MATERIALS.stipe.clone()),"stipe","Stipe","macro");
+    const stipeDev=this._agaricStipeDevelopmentState(development);
+    const stipeMat=MATERIALS.stipe.clone();
+    stipeMat.roughness=THREE.MathUtils.clamp(.78+stipeDev.waterLoss*.18+stipeDev.weathering*.08,.72,1);
+    if(stipeDev.stageId==="young"){
+      stipeMat.color.lerp(new THREE.Color(0xf0e6d0),.08);
+      stipeMat.clearcoat=Math.max(stipeMat.clearcoat||0,.055);
+    }else if(stipeDev.stageId==="old"){
+      stipeMat.color.lerp(new THREE.Color(0x8f7964),.12+stipeDev.weathering*.12);
+      stipeMat.clearcoat=(stipeMat.clearcoat||0)*.35;
+    }
+    const st=this.register(new THREE.Mesh(geo,stipeMat),"stipe","Stipe","macro");
     st.position.set(0,centerY,0);
     const centerlineAt=geo.userData.centerlineAt;
     const apexCenter=typeof centerlineAt==="function"?centerlineAt(1):{x:0,z:0};
@@ -2685,6 +2815,12 @@ export class MycoSimEngine{
     st.userData.capLoadCoupled=true;
     st.userData.eccentricStance=position==="eccentric";
     st.userData.basalCounterbalance=geo.userData.basalCounterbalance||0;
+    st.userData.developmentalStage=stipeDev.stageId;
+    st.userData.developmentalModel=stipeDev.developmentalModel;
+    st.userData.hydration=stipeDev.hydration;
+    st.userData.weathering=stipeDev.weathering;
+    st.userData.fibreExposure=stipeDev.fibreExposure;
+    st.userData.collapseStrength=stipeDev.collapseStrength;
 
     // A subtle apical insertion collar makes the shaft read as mechanically
     // continuous with the cap without creating an annulus-like false structure.
@@ -2719,6 +2855,7 @@ export class MycoSimEngine{
 
     const context=this.variants.agaric_stipe_context||"solid";
     this._agaricStipeContextVisual(st,context,{height,top,bottom});
+    this._agaricStipeDevelopmentVisual(st,{height,top,bottom,development});
     const surfaceStates={apex:this.variants.agaric_stipe_surface_apex||"smooth",mid:this.variants.agaric_stipe_surface_mid||"smooth",base:this.variants.agaric_stipe_surface_base||"smooth"};
     st.userData.surfaceBlendModel="phase7b-regional-morphology-v1";
     st.userData.surfaceBlendControls={...this._agaricStipeBlendControls()};
