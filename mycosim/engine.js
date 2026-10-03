@@ -822,6 +822,7 @@ export class MycoSimEngine{
 
       const capYScale=Math.max(.82,1+(sid==="young"?.24:0)-flatten*.16-collapse*.05);
       setScale("pileus",Math.max(.88,expansion),capYScale,Math.max(.88,expansion));
+      setScale("pileus_underside",Math.max(.88,expansion),capYScale,Math.max(.88,expansion));
       setScale("pileipellis",Math.max(.88,expansion),capYScale,Math.max(.88,expansion));
       setScale("pileus_context",expansion,1-collapse*.06,expansion);
       setScale("hymenophore",expansion,Math.max(.20,p.lamella_exposure??1),expansion);
@@ -846,13 +847,16 @@ export class MycoSimEngine{
       }
       if(sid==="young"){
         move("pileus",0,-.12*(1-marginRelease),0);
+        move("pileus_underside",0,-.12*(1-marginRelease),0);
         move("pileipellis",0,-.12*(1-marginRelease),0);
         move("hymenophore",0,.03,0);
       }else if(sid==="old"){
         const pileus=this.objects.get("pileus");
+        const undersideObj=this.objects.get("pileus_underside");
         const surface=this.objects.get("pileipellis");
         const tilt=.025+.055*deform;
         if(pileus){pileus.rotation.z+=tilt;pileus.rotation.x+=.012+.025*deform;}
+        if(undersideObj){undersideObj.rotation.z+=tilt;undersideObj.rotation.x+=.012+.025*deform;}
         if(surface){surface.rotation.z+=tilt;surface.rotation.x+=.012+.025*deform;}
         const stipe=this.objects.get("stipe");
         if(stipe)stipe.rotation.z+=.015+.025*deform;
@@ -1517,7 +1521,7 @@ export class MycoSimEngine{
     this.exploded=!!enabled;
     if(!enabled){this.applyMode();return;}
     const offsets={
-      pileus:[0,1.15,0],pileus_context:[0,.65,0],hymenophore:[0,.22,0],
+      pileus:[0,1.15,0],pileus_underside:[0,.95,0],pileus_context:[0,.65,0],hymenophore:[0,.22,0],
       tube_layer:[0,.18,0],context:[0,.48,0],stipe:[0,-.35,0],
       stipe_base:[0,-.75,0],veil_structure:[.85,0,0],peridium:[0,.55,0],
       gleba:[0,0,0],apical_pore:[0,1.0,0],sterile_base:[0,-.55,0],
@@ -2128,6 +2132,86 @@ export class MycoSimEngine{
     return g;
   }
 
+  _agaricoidPileusTopGeometry({
+    profile="convex",center="even",margin="decurved",radius=1.62,
+    segments=96,rings=42,seed=421
+  }={}){
+    segments=scaledSegments(segments,this.realismTier,{min:56,max:132});
+    rings=scaledSegments(rings,this.realismTier,{min:30,max:58});
+    const verts=[],uvs=[],indices=[],row=segments+1;
+    const phase=((seed%7919)/7919)*Math.PI*2;
+    const sample=(rr,theta)=>{
+      const x=THREE.MathUtils.clamp(rr,0,1);
+      const m=this._agaricMarginState(margin,x,theta);
+      const radial=radius*x*m.radial*(1+.007*Math.sin(theta*2.17+phase)*(.25+.75*x));
+      const y=this._agaricProfileHeight(profile,x)+this._agaricCenterOffset(center,x)+m.y+
+        .003*Math.sin(theta*3.11+phase)*Math.pow(x,1.2);
+      return new THREE.Vector3(Math.cos(theta)*radial,y,Math.sin(theta)*radial);
+    };
+    for(let ir=0;ir<=rings;ir++){
+      const rr=ir/rings;
+      for(let it=0;it<=segments;it++){
+        const u=it/segments,p=sample(rr,u*Math.PI*2);
+        verts.push(p.x,p.y,p.z);uvs.push(u,rr);
+      }
+    }
+    for(let ir=0;ir<rings;ir++){
+      for(let it=0;it<segments;it++){
+        const a=ir*row+it,b=a+1,c=(ir+1)*row+it,d=c+1;
+        indices.push(a,b,c,b,d,c);
+      }
+    }
+    const g=new THREE.BufferGeometry();
+    g.setAttribute("position",new THREE.Float32BufferAttribute(verts,3));
+    g.setAttribute("uv",new THREE.Float32BufferAttribute(uvs,2));
+    g.setIndex(indices);g.computeVertexNormals();g.computeBoundingBox();g.computeBoundingSphere();
+    g.userData={model:"agaricoid-visible-top-v4",profile,center,margin,radius};
+    g.userData.topPoint=(r,theta=0)=>sample(THREE.MathUtils.clamp(r/radius,0,1),theta);
+    g.userData.topHeight=(r,theta=0)=>g.userData.topPoint(r,theta).y;
+    return g;
+  }
+
+  _agaricoidPileusUnderGeometry({
+    profile="convex",center="even",margin="decurved",radius=1.62,
+    segments=96,rings=42,seed=421
+  }={}){
+    segments=scaledSegments(segments,this.realismTier,{min:56,max:132});
+    rings=scaledSegments(rings,this.realismTier,{min:30,max:58});
+    const verts=[],uvs=[],indices=[],row=segments+1;
+    const phase=((seed%7919)/7919)*Math.PI*2;
+    const sample=(rr,theta)=>{
+      const x=THREE.MathUtils.clamp(rr,0,1);
+      const m=this._agaricMarginState(margin,x,theta);
+      const radial=radius*x*m.radial*(1+.007*Math.sin(theta*2.17+phase)*(.25+.75*x));
+      const top=this._agaricProfileHeight(profile,x)+this._agaricCenterOffset(center,x)+m.y;
+      const thickness=THREE.MathUtils.clamp(
+        THREE.MathUtils.lerp(.245,.080,Math.pow(x,.88))+m.thicknessBoost,.068,.300
+      );
+      return new THREE.Vector3(Math.cos(theta)*radial,top-thickness,Math.sin(theta)*radial);
+    };
+    for(let ir=0;ir<=rings;ir++){
+      const rr=ir/rings;
+      for(let it=0;it<=segments;it++){
+        const u=it/segments,p=sample(rr,u*Math.PI*2);
+        verts.push(p.x,p.y,p.z);uvs.push(u,rr);
+      }
+    }
+    for(let ir=0;ir<rings;ir++){
+      for(let it=0;it<segments;it++){
+        const a=ir*row+it,b=a+1,c=(ir+1)*row+it,d=c+1;
+        indices.push(a,c,b,b,c,d);
+      }
+    }
+    const g=new THREE.BufferGeometry();
+    g.setAttribute("position",new THREE.Float32BufferAttribute(verts,3));
+    g.setAttribute("uv",new THREE.Float32BufferAttribute(uvs,2));
+    g.setIndex(indices);g.computeVertexNormals();g.computeBoundingBox();g.computeBoundingSphere();
+    g.userData={model:"agaricoid-visible-under-v4",profile,center,margin,radius};
+    g.userData.undersidePoint=(r,theta=0)=>sample(THREE.MathUtils.clamp(r/radius,0,1),theta);
+    g.userData.undersideHeight=(r,theta=0)=>g.userData.undersidePoint(r,theta).y;
+    return g;
+  }
+
   _agaricoidStipeGeometry(form="equal",{height=2.55,top=.285,bottom=.34,seed=727,development={}}={}){
     const segments=scaledSegments(56,this.realismTier,{min:34,max:76});
     const rings=scaledSegments(34,this.realismTier,{min:22,max:48});
@@ -2393,64 +2477,23 @@ export class MycoSimEngine{
   }
 
   _agaricApplySurfaceFinish(cap,state){
-    let mat=cap.material;
+    const mat=cap?.material;
     if(!mat)return;
-    const micro={
-      glabrous:{variance:.035,bump:.006,repeat:5},
-      smooth:{variance:.050,bump:.010,repeat:6},
-      innately_fibrillose:{variance:.075,bump:.020,repeat:8},
-      appressed_fibrillose:{variance:.065,bump:.016,repeat:9},
-      silky:{variance:.045,bump:.012,repeat:10},
-      squamulose:{variance:.090,bump:.026,repeat:7},
-      shaggy_scaly:{variance:.105,bump:.032,repeat:7},
-      verrucose:{variance:.085,bump:.025,repeat:7},
-      areolate:{variance:.10,bump:.028,repeat:6},
-      viscid:{variance:.040,bump:.008,repeat:5},
-      glutinous:{variance:.035,bump:.006,repeat:5},
-      dry:{variance:.070,bump:.018,repeat:8},
-      waxy:{variance:.035,bump:.007,repeat:5},
-      velvety:{variance:.055,bump:.020,repeat:11},
-      tomentose:{variance:.070,bump:.026,repeat:10}
-    }[state.primary]||{variance:.05,bump:.012,repeat:6};
-    const baseHex=mat.color?.getHex?.()??0x9a4a2d;
-    const old=mat;
-    mat=pbrFungalMaterial(baseHex,{
-      seed:7331+state.primary.length*17+state.age.length*11,
-      variance:micro.variance,
-      roughness:.88,
-      bumpScale:micro.bump,
-      sheen:.08,
-      clearcoat:.03,
-      repeat:micro.repeat
-    });
     mat.side=THREE.DoubleSide;
-    mat.needsUpdate=true;
-    cap.material=mat;
-    old?.dispose?.();
-    const finish={
-      dry:{roughness:.94,clearcoat:.015,clearcoatRoughness:.92,sheen:.06},
-      subviscid:{roughness:.66,clearcoat:.22,clearcoatRoughness:.42,sheen:.09},
-      viscid:{roughness:.38,clearcoat:.48,clearcoatRoughness:.23,sheen:.10},
-      glutinous:{roughness:.24,clearcoat:.70,clearcoatRoughness:.14,sheen:.12},
-      waxy:{roughness:.50,clearcoat:.30,clearcoatRoughness:.34,sheen:.22}
-    }[state.moisture]||{roughness:.88,clearcoat:.04,clearcoatRoughness:.75,sheen:.08};
-    if("roughness" in mat)mat.roughness=finish.roughness;
-    if("clearcoat" in mat)mat.clearcoat=finish.clearcoat;
-    if("clearcoatRoughness" in mat)mat.clearcoatRoughness=finish.clearcoatRoughness;
-    if("sheen" in mat)mat.sheen=finish.sheen;
+    mat.transparent=false;mat.opacity=1;mat.depthWrite=true;
+    mat.color?.setHex?.(0x9a5d36);
+    const f={
+      dry:[.94,.015,.92],subviscid:[.66,.22,.42],viscid:[.38,.48,.23],
+      glutinous:[.24,.70,.14],waxy:[.50,.30,.34]
+    }[state.moisture]||[.86,.04,.75];
+    if("roughness" in mat)mat.roughness=f[0];
+    if("clearcoat" in mat)mat.clearcoat=f[1];
+    if("clearcoatRoughness" in mat)mat.clearcoatRoughness=f[2];
     if(state.primary==="waxy"){mat.roughness=.46;if("clearcoat" in mat)mat.clearcoat=.32;}
     if(state.primary==="viscid"){mat.roughness=.34;if("clearcoat" in mat)mat.clearcoat=.52;}
     if(state.primary==="glutinous"){mat.roughness=.22;if("clearcoat" in mat)mat.clearcoat=.72;}
     if(["velvety","tomentose"].includes(state.primary)){mat.roughness=.98;if("clearcoat" in mat)mat.clearcoat=0;}
-    const devDry=state.developmentalWaterLoss||0;
-    if(devDry>0){
-      mat.roughness=Math.min(1,(mat.roughness??.8)+devDry*.16);
-      if("clearcoat" in mat)mat.clearcoat=Math.max(0,mat.clearcoat*(1-devDry*.42));
-    }
-    if(state.age==="weathered"||state.age==="old_broken"||(state.developmentalWeathering||0)>.35){
-      mat.roughness=Math.min(1,(mat.roughness??.8)+(state.age==="old_broken"?.13:.07));
-      if(mat.color)mat.color.offsetHSL(0,-.025,state.age==="old_broken"?-.035:-.015);
-    }
+    mat.needsUpdate=true;
   }
 
   _agaricAddFibrils(group,capState,state,{appressed=false,silky=false,secondary=false}={}){
@@ -3167,34 +3210,45 @@ export class MycoSimEngine{
     const margin=v.agaric_margin||"decurved";
     const form=v.agaric_stipe_form||v.agaric_stipe_taper||"equal";
     const stipePosition=v.agaric_stipe_position||"central";
-    const capGeo=this._agaricoidPileusGeometry({
-      profile,center,margin,radius,
-      seed:this.morphologyState?.developmental?.identitySeed||421
-    });
+
+    const identitySeed=this.morphologyState?.developmental?.identitySeed||421;
+    const capGeo=this._agaricoidPileusTopGeometry({profile,center,margin,radius,seed:identitySeed});
+    const underGeo=this._agaricoidPileusUnderGeometry({profile,center,margin,radius,seed:identitySeed});
+
     const capMaterial=MATERIALS.cap.clone();
     capMaterial.side=THREE.DoubleSide;
+    capMaterial.roughness=.82;
     const cap=this.register(new THREE.Mesh(capGeo,capMaterial),"pileus","Pileus / cap","macro");
     cap.position.y=capY;
     cap.userData.profile=profile;cap.userData.center=center;cap.userData.margin=margin;
-    cap.userData.recoveryBuild="phase6-pileus-v3";
+    cap.userData.recoveryBuild="phase6-pileus-v4";
     cap.userData.expectedVisiblePileus=true;
 
-    const ctx=cap.clone();
-    ctx.geometry=capGeo.clone();
+    const underMat=MATERIALS.flesh.clone();
+    underMat.side=THREE.DoubleSide;
+    const undersideMesh=new THREE.Mesh(underGeo,underMat);
+    undersideMesh.position.y=capY;
+    undersideMesh.userData={id:"pileus_underside",label:"Pileus underside",category:"macro",parentId:"pileus",selectable:true,knowledgeId:"pileus"};
+    this.root.add(undersideMesh);this.pickables.push(undersideMesh);this.objects.set("pileus_underside",undersideMesh);
+
+    const ctx=undersideMesh.clone();
+    ctx.geometry=underGeo.clone();
     ctx.material=MATERIALS.flesh.clone();
     ctx.material.side=THREE.DoubleSide;
-    ctx.scale.set(.965,.82,.965);
-    ctx.position.set(0,capY-.035,0);
+    ctx.scale.set(.965,.94,.965);
+    ctx.position.set(0,capY-.018,0);
     ctx.userData={id:"pileus_context",label:"Pileus context",category:"internal",parentId:"pileus",selectable:true,knowledgeId:"pileus_context"};
     ctx.visible=false;
-    this.root.add(ctx);this.objects.set("pileus_context",ctx);this._rememberTransform(ctx);
-    const underside=capGeo.userData.undersideHeight;
+    this.root.add(ctx);this.objects.set("pileus_context",ctx);
+
+    const topPoint=capGeo.userData.topPoint;
+    const undersidePointLocal=underGeo.userData.undersidePoint;
+    const underside=underGeo.userData.undersideHeight;
     const apexLocal=typeof underside==="function"?underside(0,0):-.22;
     const stipeTopY=capY+apexLocal+.025;
     const stipe=this._addAgaricoidStipe(form,{baseY:-.46,topY:stipeTopY,top:.285,bottom:.34,position:stipePosition});
     const stipeX=stipe?.position.x||0;
 
-    const topPoint=capGeo.userData.topPoint;
     const capState={
       radius,
       profile,center,margin,
@@ -3204,8 +3258,8 @@ export class MycoSimEngine{
       },
       topHeight:(r,theta=0)=>capY+(typeof capGeo.userData.topHeight==="function"?capGeo.userData.topHeight(r,theta):0),
       undersidePoint:(r,theta=0)=>{
-        const p=typeof capGeo.userData.undersidePoint==="function"
-          ? capGeo.userData.undersidePoint(THREE.MathUtils.clamp(r,0,radius),theta)
+        const p=typeof undersidePointLocal==="function"
+          ? undersidePointLocal(THREE.MathUtils.clamp(r,0,radius),theta)
           : new THREE.Vector3(Math.cos(theta)*r,-.18,Math.sin(theta)*r);
         return p.clone().add(new THREE.Vector3(0,capY,0));
       },
@@ -3497,7 +3551,6 @@ export class MycoSimEngine{
       }
     }
     this.root.add(earthstarRays);this.objects.set("earthstar_rays",earthstarRays);
-
     const stalkHeight=subtypeArch.stipeFactor||0;
     const stalk=this.register(new THREE.Mesh(
       new THREE.CylinderGeometry(.16,.20,Math.max(.08,stalkHeight),18),
