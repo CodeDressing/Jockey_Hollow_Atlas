@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import {MORPHOLOGY_PROFILES} from "./profiles.js";
+import {MORPHOLOGY_PROFILES,PROFILE_BY_ID} from "./profiles.js";
 import {DEVELOPMENTAL_STAGE_ORDER} from "./stages.js";
 import {KNOWLEDGE_OBJECTS} from "./knowledge.js";
 import {PUFFBALL_SUBTYPE_LIBRARY,applyPuffballSubtypeDefaults,enforcePuffballSubtype,puffballSubtypeStageDefaults} from "./variants.js";
