@@ -5,6 +5,56 @@ export const KNOWLEDGE_OBJECTS = Object.freeze({
     expert:"Macroscopic sporocarp produced by a basidiomycete; architecture varies among agaricoid, boletoid, polyporoid, hydnoid, clavarioid, gasteroid and other forms.",
     relationships:["pileus","hymenophore","stipe"]
   },
+  stipe_context:{
+    id:"stipe_context",label:"Stipe context",level:"internal",pronunciation:"STYPE KON-text",
+    beginner:"The internal tissue of the stipe.",
+    expert:"Internal stipe tissue that may remain solid, become loosely stuffed, or form a continuous axial cavity.",
+    whyItMatters:"Context state is an important descriptive character and may change through development.",
+    developmentalSignificance:"Some stipes begin relatively filled and become more hollow or collapsed with age, while others remain solid.",
+    observation:"Observation: record whether the stipe appears solid, stuffed, or hollow and whether the condition is uniform along its length.",
+    identificationBoundary:"Identification boundary: stipe context is one character and does not establish species identity by itself.",
+    relationships:["stipe","stipe_apex","stipe_mid","stipe_base"]
+  },
+  stipe_apex:{
+    id:"stipe_apex",label:"Stipe apex",level:"macro",pronunciation:"STYPE AY-peks",
+    beginner:"The upper portion of the stipe directly beneath the cap.",
+    expert:"The proximal stipe region immediately below hymenophore insertion, often carrying surface characters distinct from the mid-stipe and base.",
+    whyItMatters:"Apex ornament such as pruina, fibrils, reticulation, or striation can be diagnostically useful.",
+    developmentalSignificance:"Delicate apex coatings may be strongest when young and become abraded, darkened, or stretched with age.",
+    observation:"Observation: record apex diameter, surface ornament, color, and its relationship to the gill insertion zone.",
+    identificationBoundary:"Identification boundary: apex morphology contributes to description but is not a standalone identification.",
+    relationships:["stipe","hymenophore","pruina","reticulation"]
+  },
+  stipe_mid:{
+    id:"stipe_mid",label:"Mid-stipe",level:"macro",pronunciation:"mid STYPE",
+    beginner:"The middle region of the stipe.",
+    expert:"The central longitudinal region used to describe taper, swelling, surface ornament, and developmental wear independent of apex and base.",
+    whyItMatters:"Separating apex, middle, and base prevents regional characters from being averaged into an inaccurate single stipe description.",
+    developmentalSignificance:"The middle region can elongate, wrinkle, fibrillose, discolor, or collapse as water content and tissue integrity change.",
+    observation:"Observation: record diameter, swelling, longitudinal texture, ornament, and discoloration in the middle region.",
+    identificationBoundary:"Identification boundary: mid-stipe characters must be interpreted with the remainder of the basidiome.",
+    relationships:["stipe","stipe_apex","stipe_base","stipe_context"]
+  },
+  pruina:{
+    id:"pruina",label:"Pruina / pruinose coating",level:"macro",pronunciation:"PROO-in-uh / PROO-in-ose",
+    beginner:"A fine powdery or frosted coating on the surface.",
+    expert:"A delicate superficial bloom of fine particles or short surface elements, frequently most evident near the stipe apex.",
+    whyItMatters:"A pruinose apex is a classic macromorphological character in many agaricoid groups.",
+    developmentalSignificance:"Pruina is readily removed by expansion, abrasion, rain, or handling and may become much less conspicuous in older basidiomata.",
+    observation:"Observation: record a fine frosted or powdery coating separately from fibrils, scales, or reticulation.",
+    identificationBoundary:"Identification boundary: pruinose texture is descriptive and must be combined with other characters.",
+    relationships:["stipe_apex","stipe_surface"]
+  },
+  reticulation:{
+    id:"reticulation",label:"Reticulation",level:"macro",pronunciation:"reh-tik-yuh-LAY-shun",
+    beginner:"A raised net-like pattern on the stipe.",
+    expert:"Intersecting longitudinal and transverse ridges forming a mesh or reticulum over part or all of the stipe surface.",
+    whyItMatters:"The position, coarseness, and extent of reticulation can be a high-value morphological character.",
+    developmentalSignificance:"Reticulation may stretch during elongation and become more or less conspicuous as the stipe expands, dries, or discolors.",
+    observation:"Observation: record whether raised ridges form a coherent network and which stipe region bears it.",
+    identificationBoundary:"Identification boundary: reticulation alone does not determine species identity.",
+    relationships:["stipe_surface","stipe_apex","stipe_mid","stipe_base"]
+  },
   pileipellis:{
     id:"pileipellis",label:"Pileipellis / cap surface",level:"tissue",pronunciation:"pie-lee-PELL-iss",
     beginner:"The outermost tissue of the mushroom cap.",
