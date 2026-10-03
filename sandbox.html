@@ -191,6 +191,14 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
 .learning-path-chip.locked{opacity:.36;cursor:not-allowed}
 body[data-learner-mode="explore"] .learning-step{display:block}
 body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
+.archetype-grid,.quality-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.archetype-choice,.quality-choice{border:1px solid var(--line);background:#0d1518;color:var(--text);padding:9px;border-radius:8px;text-align:left;cursor:pointer}
+.archetype-choice.active,.quality-choice.active{border-color:#8c7440;background:#211d12;color:#f0dda9}
+.archetype-choice strong,.quality-choice strong{display:block;font-size:10px}
+.archetype-choice span,.quality-choice span{display:block;font-size:9px;color:var(--muted);margin-top:3px;line-height:1.35}
+.phase5-info{white-space:pre-line;margin-top:8px;padding:9px;border:1px solid var(--line);border-radius:8px;background:#0a1113;color:var(--muted);font-size:9px;line-height:1.45}
+.phase5-status{margin-top:8px;color:var(--good);font-size:9px;line-height:1.4}
+@media(max-width:900px){.archetype-grid,.quality-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -259,7 +267,10 @@ body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
       <p id="variantTeachingBody"></p>
       <p id="variantTeachingDetail" class="teach-detail"></p>
     </div>
-    <div id="variantControls" class="variant-panel"></div>
+    <div class="step-subhead">Taxon-informed teaching archetype</div>
+      <div id="archetypeControls" class="archetype-grid"></div>
+      <div id="archetypeInfo" class="phase5-info">Teaching archetypes constrain morphology without asserting taxonomic identity.</div>
+      <div id="variantControls" class="variant-panel"></div>
     </section>
 
     <section class="learning-step" data-learning-step="4">
@@ -303,6 +314,10 @@ body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
       </div>
     </section>
 
+    <h2>Validation & performance</h2>
+    <p class="copy">Atlas Standard is the default teaching mode. High Detail increases geometry for close inspection. Distance LOD, safe instancing, adaptive performance budgets, and startup instrumentation remain active.</p>
+    <div id="qualityControls" class="quality-grid"></div>
+    <div id="phase5Status" class="phase5-status">Phase 5 validation layer initializing…</div>
     <h2>Next simulation layers</h2>
     <p class="copy">Parameterized character states now control pileus form, stipe form, hymenophore architecture, and veil/base structures where biologically appropriate. Non-agaric families use independent body-plan factories rather than inheriting an agaricoid template.</p>
   
