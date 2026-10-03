@@ -1,14 +1,13 @@
-import {MORPHOLOGY_PROFILES,PROFILE_BY_ID} from "./profiles.js?v=phase6-pileus-v4-20261003";
-import {MORPHOLOGY_VARIANTS,variantLabel,variantTeaching,puffballSubtype} from "./variants.js?v=phase6-pileus-v4-20261003";
-import {KNOWLEDGE_OBJECTS,getKnowledge,getPathFor,childKnowledge} from "./knowledge.js?v=phase6-pileus-v4-20261003";
-import {MycoSimEngine} from "./engine.js?v=phase6-pileus-v4-20261003";
-import {OBSERVATION_FIELDS,emptyObservationRecord,compareObservedToCandidates,fieldLabel} from "./identification.js?v=phase6-pileus-v4-20261003";
-import {newSporeMeasurement,summarizeSpores,formatStat} from "./sporelab.js?v=phase6-pileus-v4-20261003";
-import {developmentalStageOptions} from "./development.js?v=phase6-pileus-v4-20261003";
-import {referenceSheet,VALIDATION_SOURCES} from "./validation_protocol.js?v=phase6-pileus-v4-20261003";
-import {runMycoSimRegression,formatRegressionSummary} from "./regression.js?v=phase6-pileus-v4-20261003";
-import {emptyQaMatrix,matrixFromRegression} from "./support_matrix.js?v=phase6-pileus-v4-20261003";
-import {ATLAS_TERMS,AGARICOID_ARCHETYPES,archetypeList,archetypeReferenceSheet,atlasTerm,phase5Validation,PERFORMANCE_MODES} from "./phase5_atlas.js?v=phase6-pileus-v4-20261003";
+import {MORPHOLOGY_PROFILES,PROFILE_BY_ID} from "./profiles.js?v=phase6-fastboot-20261003";
+import {MORPHOLOGY_VARIANTS,variantLabel,variantTeaching,puffballSubtype} from "./variants.js?v=phase6-fastboot-20261003";
+import {KNOWLEDGE_OBJECTS,getKnowledge,getPathFor,childKnowledge} from "./knowledge.js?v=phase6-fastboot-20261003";
+import {MycoSimEngine} from "./engine.js?v=phase6-fastboot-20261003";
+import {OBSERVATION_FIELDS,emptyObservationRecord,compareObservedToCandidates,fieldLabel} from "./identification.js?v=phase6-fastboot-20261003";
+import {newSporeMeasurement,summarizeSpores,formatStat} from "./sporelab.js?v=phase6-fastboot-20261003";
+import {developmentalStageOptions} from "./development.js?v=phase6-fastboot-20261003";
+import {referenceSheet,VALIDATION_SOURCES} from "./validation_protocol.js?v=phase6-fastboot-20261003";
+import {emptyQaMatrix,matrixFromRegression} from "./support_matrix.js?v=phase6-fastboot-20261003";
+import {ATLAS_TERMS,AGARICOID_ARCHETYPES,archetypeList,archetypeReferenceSheet,atlasTerm,phase5Validation,PERFORMANCE_MODES} from "./phase5_atlas.js?v=phase6-fastboot-20261003";
 
 const $=s=>document.querySelector(s);
 const canvas=$("#stage"), status=$("#modelStatus"), info=$("#structureInfo"), stats=$("#engineStats");
@@ -22,6 +21,13 @@ let selected=null,currentProfile=MORPHOLOGY_PROFILES[0],knowledgeMode="beginner"
 let learnerMode="guided",highestLearningStep=1;
 let observationRecord=emptyObservationRecord();
 let sporeMeasurements=[];
+let regressionToolsPromise=null;
+async function loadRegressionTools(){
+  if(!regressionToolsPromise){
+    regressionToolsPromise=import("./regression.js?v=phase6-fastboot-20261003");
+  }
+  return regressionToolsPromise;
+}
 
 function showError(err){
   status.textContent="3D engine error";
@@ -727,6 +733,7 @@ try{
       qaStatus.className="regression-status";
       qaResults.innerHTML="";
       try{
+        const {runMycoSimRegression}=await loadRegressionTools();
         const report=await runMycoSimRegression(engine,{
           onProgress:p=>{qaStatus.textContent=`Regression ${p.index}/${p.total} · ${p.profile} · ${p.stageId}`;}
         });
@@ -743,25 +750,32 @@ try{
     };
   }
 
-  renderObservationForm();
-  $("#compareCandidates").onclick=renderCandidateResults;
-  $("#clearObservation").onclick=()=>{observationRecord=emptyObservationRecord();renderObservationForm();$("#candidateResults").innerHTML="";};
-
-  $("#addSporeRow").onclick=()=>{collectSporeRows();sporeMeasurements.push(newSporeMeasurement());renderSporeRows();};
-  $("#summarizeSpores").onclick=renderSporeSummary;
-  $("#sporeRows").addEventListener("click",e=>{
-    const b=e.target.closest("[data-remove-spore]");if(!b)return;
-    collectSporeRows();sporeMeasurements.splice(Number(b.dataset.removeSpore),1);renderSporeRows();renderSporeSummary();
-  });
-  sporeMeasurements.push(newSporeMeasurement());
-  renderSporeRows();
-
-  renderSupportMatrix(emptyQaMatrix());
-  const p5Audit=phase5Validation({variantDefinitions:MORPHOLOGY_VARIANTS});
-  if(phase5Status) phase5Status.textContent=`Phase 5 scientific layer · ${p5Audit.pass?"PASS":"FAIL"} · ${p5Audit.terminology.count} standardized terms · ${p5Audit.archetypes.archetypeCount} agaricoid teaching archetypes · LOD + safe instancing + startup instrumentation active`;
+  // First usable frame is the startup contract. Build/render the default model
+  // before populating science forms, QA matrices, or other nonessential panels.
   setLearnerMode("guided");
   activateProfile(MORPHOLOGY_PROFILES[0].id);
   setLearningStep(1);
+
+  const hydrateSecondaryUi=()=>{
+    renderObservationForm();
+    $("#compareCandidates").onclick=renderCandidateResults;
+    $("#clearObservation").onclick=()=>{observationRecord=emptyObservationRecord();renderObservationForm();$("#candidateResults").innerHTML="";};
+
+    $("#addSporeRow").onclick=()=>{collectSporeRows();sporeMeasurements.push(newSporeMeasurement());renderSporeRows();};
+    $("#summarizeSpores").onclick=renderSporeSummary;
+    $("#sporeRows").addEventListener("click",e=>{
+      const b=e.target.closest("[data-remove-spore]");if(!b)return;
+      collectSporeRows();sporeMeasurements.splice(Number(b.dataset.removeSpore),1);renderSporeRows();renderSporeSummary();
+    });
+    sporeMeasurements.push(newSporeMeasurement());
+    renderSporeRows();
+
+    renderSupportMatrix(emptyQaMatrix());
+    const p5Audit=phase5Validation({variantDefinitions:MORPHOLOGY_VARIANTS});
+    if(phase5Status) phase5Status.textContent=`Phase 5 scientific layer · ${p5Audit.pass?"PASS":"FAIL"} · ${p5Audit.terminology.count} standardized terms · ${p5Audit.archetypes.archetypeCount} agaricoid teaching archetypes · LOD + safe instancing + startup instrumentation active`;
+  };
+  if("requestIdleCallback" in window) requestIdleCallback(hydrateSecondaryUi,{timeout:1800});
+  else setTimeout(hydrateSecondaryUi,0);
   if(new URLSearchParams(location.search).get("qa")==="1"&&qaRun){
     setTimeout(()=>qaRun.click(),250);
   }
