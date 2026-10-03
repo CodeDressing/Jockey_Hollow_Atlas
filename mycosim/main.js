@@ -1,13 +1,13 @@
-import {MORPHOLOGY_PROFILES,PROFILE_BY_ID} from "./profiles.js?v=phase6-hym-sync-20261003";
-import {MORPHOLOGY_VARIANTS,variantLabel,variantTeaching,puffballSubtype} from "./variants.js?v=phase6-hym-sync-20261003";
-import {KNOWLEDGE_OBJECTS,getKnowledge,getPathFor,childKnowledge} from "./knowledge.js?v=phase6-hym-sync-20261003";
-import {MycoSimEngine} from "./engine.js?v=phase6-hym-sync-20261003";
-import {OBSERVATION_FIELDS,emptyObservationRecord,compareObservedToCandidates,fieldLabel} from "./identification.js?v=phase6-hym-sync-20261003";
-import {newSporeMeasurement,summarizeSpores,formatStat} from "./sporelab.js?v=phase6-hym-sync-20261003";
-import {developmentalStageOptions} from "./development.js?v=phase6-hym-sync-20261003";
-import {referenceSheet,VALIDATION_SOURCES} from "./validation_protocol.js?v=phase6-hym-sync-20261003";
-import {emptyQaMatrix,matrixFromRegression} from "./support_matrix.js?v=phase6-hym-sync-20261003";
-import {ATLAS_TERMS,AGARICOID_ARCHETYPES,archetypeList,archetypeReferenceSheet,atlasTerm,phase5Validation,PERFORMANCE_MODES} from "./phase5_atlas.js?v=phase6-hym-sync-20261003";
+import {MORPHOLOGY_PROFILES,PROFILE_BY_ID} from "./profiles.js?v=phase7-sprint2-20261003";
+import {MORPHOLOGY_VARIANTS,variantLabel,variantTeaching,puffballSubtype} from "./variants.js?v=phase7-sprint2-20261003";
+import {KNOWLEDGE_OBJECTS,getKnowledge,getPathFor,childKnowledge} from "./knowledge.js?v=phase7-sprint2-20261003";
+import {MycoSimEngine} from "./engine.js?v=phase7-sprint2-20261003";
+import {OBSERVATION_FIELDS,emptyObservationRecord,compareObservedToCandidates,fieldLabel} from "./identification.js?v=phase7-sprint2-20261003";
+import {newSporeMeasurement,summarizeSpores,formatStat} from "./sporelab.js?v=phase7-sprint2-20261003";
+import {developmentalStageOptions} from "./development.js?v=phase7-sprint2-20261003";
+import {referenceSheet,VALIDATION_SOURCES} from "./validation_protocol.js?v=phase7-sprint2-20261003";
+import {emptyQaMatrix,matrixFromRegression} from "./support_matrix.js?v=phase7-sprint2-20261003";
+import {ATLAS_TERMS,AGARICOID_ARCHETYPES,archetypeList,archetypeReferenceSheet,atlasTerm,phase5Validation,PERFORMANCE_MODES} from "./phase5_atlas.js?v=phase7-sprint2-20261003";
 
 const $=s=>document.querySelector(s);
 const canvas=$("#stage"), status=$("#modelStatus"), info=$("#structureInfo"), stats=$("#engineStats");
@@ -24,7 +24,7 @@ let sporeMeasurements=[];
 let regressionToolsPromise=null;
 async function loadRegressionTools(){
   if(!regressionToolsPromise){
-    regressionToolsPromise=import("./regression.js?v=phase6-hym-sync-20261003");
+    regressionToolsPromise=import("./regression.js?v=phase7-sprint2-20261003");
   }
   return regressionToolsPromise;
 }
