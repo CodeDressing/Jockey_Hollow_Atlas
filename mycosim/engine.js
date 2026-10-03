@@ -697,7 +697,6 @@ export class MycoSimEngine{
   }
 
   setMode(mode){this.mode=mode;this.applyMode();}
-
   setVariant(group,value){
     let next={...this.variants,[group]:value};
     if(this.currentProfile?.id==="puffball" || group==="puff_subtype"){
@@ -711,6 +710,20 @@ export class MycoSimEngine{
   }
 
   getVariantState(){return {...this.variants};}
+
+  setRealismMode(mode){
+    const requested=mode==="high"?"high":"atlas";
+    this.variants={...this.variants,texture_realism:requested};
+    this.realismTier=selectRealismTier({
+      requested,
+      deviceMemory:navigator.deviceMemory||8,
+      dpr:window.devicePixelRatio||1,
+      viewportWidth:window.innerWidth||1200
+    });
+    configureRendererForRealism(this.renderer,this.realismTier);
+    if(this.currentProfile)this.loadProfile(this.currentProfile.id);
+    return this.realismTier.id;
+  }
 
   setDevelopmentalStage(stageId){
     if(!this.currentProfile){
@@ -3147,7 +3160,6 @@ export class MycoSimEngine{
       this.root.add(remnants);this.objects.set("pileus_margin",remnants);
     }
   }
-
   build_boletoid(){
     const v=this.variants,capY=2.55;
     this._addPileus(v.pileus,1.72,capY,MATERIALS.cap2);
