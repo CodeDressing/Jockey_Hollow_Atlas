@@ -101,6 +101,11 @@ function updateMorphologySummary(engine){
     add("agaric_pileus_center"," disc");
     add("agaric_margin"," margin");
     add("agaric_stipe_taper"," stipe");
+    add("agaric_surface_primary"," surface");
+    add("agaric_surface_secondary"," secondary");
+    add("agaric_surface_distribution"," distribution");
+    add("agaric_surface_age"," age");
+    add("agaric_surface_moisture"," finish");
     add("agaric_gill_attachment"," gills");
     add("agaric_gill_spacing"," spacing");
     add("agaric_gill_thickness"," thickness");
@@ -137,6 +142,16 @@ function updateMorphologySummary(engine){
       two.fullGillCount+" full gills",two.thickness+" thickness",two.depth+" depth",
       two.lamellulae+" lamellulae ("+two.lamellulaCount+")",two.edge+" edge",
       two.attachmentGeometry?.descendsStipe?"descending attachment":two.attachmentGeometry?.notched?"notched attachment":two.attachmentGeometry?.detached?"detached attachment":"direct attachment"
+    ].filter(Boolean).join(" · "));
+    const three=snap.agaricoidPhaseThree;
+    if(three)lines.push("Phase Three surface engine · "+[
+      three.generator,three.primary+" primary",three.secondary+" secondary",
+      three.distribution,three.age,three.moisture+" finish",
+      "fibrils "+(three.counts?.fibrils||0),"scales "+(three.counts?.scales||0),
+      "warts "+(three.counts?.warts||0),"cracks "+(three.counts?.cracks||0),
+      "tomentum "+(three.counts?.tomentum||0),
+      three.morphologicalDistribution?"morphological distribution":"distribution unavailable",
+      three.transferableSurfaceEngine?"shared surface architecture":"agaricoid-only architecture"
     ].filter(Boolean).join(" · "));
     detail.textContent=lines.join("\n")||"Agaricoid morphology engine active.";
     return;
