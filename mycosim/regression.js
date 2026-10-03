@@ -265,6 +265,38 @@ function agaricoidHymenophoreSyncPass(engine,profile){
 }
 
 
+function agaricoidStipePhase7APass(engine,profile){
+  if(profile.id!=="agaricoid")return {pass:true,reason:"not_agaricoid"};
+  const stipe=engine.objects.get("stipe");
+  const geo=stipe?.geometry;
+  const meta=geo?.userData||{};
+  const anchors=meta.profileAnchors||[];
+  const radii=meta.profileRadii||{};
+  const blend=meta.blendCorridors||{};
+  const form=engine.variants?.agaric_stipe_form||engine.variants?.agaric_stipe_taper||"equal";
+  const profileOk=meta.model==="agaricoid-profile-stipe-v3"&&meta.profileDriven===true;
+  const anchorsOk=anchors.length>=5&&anchors.every(a=>Number.isFinite(a.t)&&Number.isFinite(a.r)&&a.r>0);
+  const radiiOk=["apex","upperMid","lowerMid","base","rootTip"].every(k=>Number.isFinite(radii[k])&&radii[k]>0);
+  const blendOk=meta.regionBlending===true&&Array.isArray(blend.apexMid)&&Array.isArray(blend.midBase);
+  const organicOk=meta.nonPerfectRoundness===true;
+  const eccentricOk=(engine.variants?.agaric_stipe_position||"central")!=="eccentric"||meta.eccentricCenterline===true;
+  const silhouetteOk=(()=>{
+    if(!radiiOk)return false;
+    if(form==="tapering")return radii.base>radii.upperMid&&radii.upperMid>radii.apex;
+    if(form==="clavate")return radii.upperMid>radii.lowerMid&&radii.upperMid>radii.base;
+    if(form==="ventricose")return radii.lowerMid>radii.apex&&radii.lowerMid>radii.base;
+    if(form==="bulbous_base")return radii.base>radii.lowerMid*1.15;
+    if(form==="rooting")return radii.rootTip<radii.base*.55;
+    return Math.max(radii.apex,radii.upperMid,radii.lowerMid,radii.base)/Math.min(radii.apex,radii.upperMid,radii.lowerMid,radii.base)<1.16;
+  })();
+  return {
+    pass:profileOk&&anchorsOk&&radiiOk&&blendOk&&organicOk&&eccentricOk&&silhouetteOk,
+    form,profileOk,anchorsOk,radiiOk,blendOk,organicOk,eccentricOk,silhouetteOk,
+    model:meta.model||null,anchors,radii,blend
+  };
+}
+
+
 function mobileContract(){
   const mq=matchMedia("(max-width: 900px)");
   const stage=document.querySelector(".stage-wrap");
@@ -334,6 +366,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
         const pileusShell=agaricoidPileusShellPass(engine,profile);
         const agaricoidContract=agaricoidGeometryContractPass(engine,profile);
         const hymenophoreSync=agaricoidHymenophoreSyncPass(engine,profile);
+        const stipePhase7A=agaricoidStipePhase7APass(engine,profile);
         const result={
           profileId:profile.id,
           family:profile.label,
@@ -357,6 +390,8 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
           agaricoidGeometryContractDetail:agaricoidContract,
           agaricoidHymenophoreSync:hymenophoreSync.pass,
           agaricoidHymenophoreSyncDetail:hymenophoreSync,
+          agaricoidStipePhase7A:stipePhase7A.pass,
+          agaricoidStipePhase7ADetail:stipePhase7A,
           modePreserved:engine.mode===original.mode
         };
         engine.resetPresentation();
@@ -375,7 +410,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
         result.pass=[
           result.render,result.framing,result.hover,result.focus,result.isolateHide,
           result.exploded,result.section,result.transparency,result.anatomyNavigation,
-          result.requiredAnatomy,result.agaricoidPileusShell,result.agaricoidGeometryContract,result.agaricoidHymenophoreSync,result.modePreserved,result.fpsAcceptable,result.performancePass
+          result.requiredAnatomy,result.agaricoidPileusShell,result.agaricoidGeometryContract,result.agaricoidHymenophoreSync,result.agaricoidStipePhase7A,result.modePreserved,result.fpsAcceptable,result.performancePass
         ].every(Boolean);
         rows.push(result);
         memorySamples.push({
