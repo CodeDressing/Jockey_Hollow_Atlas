@@ -633,27 +633,60 @@ window.DRIVE_PHOTOS.push(
 
 
 window.SPECIMEN_ENRICHMENTS = window.SPECIMEN_ENRICHMENTS || {};
+
+
+// AN2-F3 field hymenophore confirmation — user-supplied field documentation, 2026-10-03.
+// Accession explicitly locked by user to AN2-F3; no visual-similarity reassignment.
+window.DRIVE_PHOTOS = window.DRIVE_PHOTOS || [];
+window.DRIVE_PHOTOS.push(
+  {"folder":"Jockey_Hollow_Atlas/AN2-F3","collection":"AN2","family":"AN","specimen":"AN2-F3","category":"Wild / field context","filename":"AN2-F3 field hymenophore underside 2026-10-03.jpg","caption":"AN2-F3 — field underside view documenting a poroid, tubular hymenophore with a dense angular-to-polygonal pore field, pileus-margin relationship, and dark textured stipe; used as direct macromorphology evidence","id":"1ZXuG2rSJ6UuQ-uk42sHiLSvIPlk9C58K","original":"https://drive.google.com/thumbnail?id=1ZXuG2rSJ6UuQ-uk42sHiLSvIPlk9C58K&sz=w2400","thumb":"https://drive.google.com/thumbnail?id=1ZXuG2rSJ6UuQ-uk42sHiLSvIPlk9C58K&sz=w1200","source_relpath":"Jockey_Hollow_Atlas/AN2-F3/AN2-F3 field hymenophore underside 2026-10-03.jpg","drive_view":"https://drive.google.com/file/d/1ZXuG2rSJ6UuQ-uk42sHiLSvIPlk9C58K/view"}
+);
+
 window.SPECIMEN_ENRICHMENTS["AN2-F3"] = {
-  status: "AN2-F3 complete dataset — verified wild context, verified laboratory specimen view, spore-print preparation, macroscopic measurements, and calibrated microscopy integrated.",
-  sourceLine: "Rutgers/Jockey Hollow accession AN2-F3. The record combines an existing wild-context image, a verified accession-linked laboratory specimen image, existing spore-print/preparation documentation, two preserved macroscopic measurement records, and eleven AN2-F3 microscopy fields supplied on 2026-10-03. Quantitative microscopy uses only fully legible on-image linear annotations. One cropped/partially unreadable annotation in AN2-F3 SPM (11) was excluded rather than reconstructed. No paired length × width dataset was supplied, so no formal Q ratio is calculated.",
+  status: "AN2-F3 complete dataset — verified wild context, underside hymenophore field documentation, verified laboratory specimen view, spore-print / extraction evidence, macroscopic measurements, and calibrated microscopy integrated.",
+  sourceLine: "Rutgers/Jockey Hollow accession AN2-F3. The record combines existing wild-context documentation, a 2026-10-03 underside field photograph explicitly assigned to AN2-F3, a verified accession-linked laboratory specimen image, existing spore-print/preparation documentation, two preserved macroscopic measurement records, and eleven AN2-F3 microscopy fields. The new field underside view directly documents a poroid hymenophore and its relationship to the pileus margin and stipe. Laboratory spore extraction is recorded as producing a black spore deposit. Quantitative microscopy uses only fully legible on-image linear annotations; one cropped/partially unreadable annotation in AN2-F3 SPM (11) was excluded rather than reconstructed. No paired length × width dataset was supplied, so no formal Q ratio is calculated.",
   summary: {
     "Record type": "Curated full-data specimen record",
+    "Observation / interpretation rule": "Directly visible morphology, user-reported laboratory observations, interpretation, and taxonomic identification remain separate. Poroid/tubular hymenophore, pore geometry, margin relationship, stipe texture, black laboratory spore deposit, and bulbous base are recorded as morphology or laboratory observations. No genus or species is assigned from these characters alone.",
+    "Basidiome architecture": "Stipitate poroid fruit body. The documented underside carries a continuous pore-bearing fertile surface rather than lamellae. The record is therefore described with poroid/tubular hymenophore terminology; gill-attachment terminology is not applied.",
+    "Hymenophore": "Poroid and tubular. The field underside photograph shows a dense pore-bearing hymenophore composed of numerous small openings rather than lamellae or teeth. The pore field is continuous across the visible underside and approaches the stipe region as an attached fertile surface.",
+    "Pore surface": "Pores are densely packed and predominantly angular to polygonal in the documented view, producing a geometric reticulate-looking pattern at the surface. Pore size is not assigned numerically because no calibrated field scale is present in this photograph.",
+    "Tube layer": "A tubular poroid hymenophore is recorded for AN2-F3. The field view establishes the pore-bearing underside morphology; tube depth is not measured and is not inferred from the photograph.",
+    "Hymenophore–stipe relationship": "The fertile pore surface is attached/continuous toward the stipe region rather than free. Because this is a poroid specimen, the atlas does not use lamellar terms such as adnate, adnexed, free, or decurrent as 'gill attachment' labels.",
+    "Pileus margin": "The visible pileus margin is thick and irregular, with a downturned to weakly incurved aspect in the underside field view. The margin visibly overhangs the pore field, and the poroid hymenophore terminates beneath the pileus edge rather than projecting beyond it.",
+    "Hymenophore–margin relationship": "The pore field fits beneath the pileus and terminates within the margin footprint. This relationship is retained as a teaching character because it documents how the fertile tubular layer is carried by the cap rather than existing as a detached structure.",
+    "Stipe": "Stipe central to near-central in the documented underside view, dark brown, and visibly textured. Surface is recorded as fibrillose to velvety based on the field/laboratory observation set. Exact microscopic hyphal construction of the surface is not inferred from macroscopic texture alone.",
+    "Stipe base": "Base recorded as bulbous from the specimen documentation. 'Bulbous' describes basal enlargement and is kept separate from veil terminology.",
+    "Volva": "Not confirmed. A bulbous base does not by itself establish a volva. The atlas will only upgrade this field if a universal-veil remnant or other diagnostic volval structure is directly documented.",
+    "Spore deposit / extraction": "Laboratory extraction is recorded as yielding a black spore deposit. This is preserved as a laboratory observation linked to AN2-F3 and is not converted by itself into a species-level identification.",
     "Microscopy record": "Eleven accession-linked AN2-F3 microscopy images are preserved (AN2-F3 SPM (1) through AN2-F3 SPM (11)). Four annotated fields contribute the validated quantitative dataset: SPM (1) n=3, SPM (4) n=16, SPM (10) n=13, and SPM (11) n=10 after exclusion of one cropped annotation. Combined n=42.",
     "Spores / microscopic bodies": "Across the submitted fields, abundant dark golden-brown to brown rounded, subglobose to broadly ellipsoid spore-like bodies are repeatedly visible, commonly in dense clusters and also as isolated elements. Some profiles appear slightly asymmetric in projection. This is recorded as direct microscopy observation only; no species-level identification is inferred from these images.",
     "Microscopic measurements": "Validated linear measurement dataset: n=42 fully legible annotations, range 3.94–8.35 µm, mean 6.06 µm, median 6.03 µm, sample SD 1.03 µm. These are single-axis on-image measurements; paired length × width values were not collected, therefore formal Q is not calculated.",
     "Measurement handling": "Only legible calibrated annotations were transcribed. One partially cropped value in AN2-F3 SPM (11) was excluded. No value was reconstructed from image appearance.",
     "Macroscopic measurements": "Two previously preserved Rutgers measurement records remain attached to AN2-F3. Rep 1 records cap 9.5 cm; stipe top 1.0 cm, middle 0.5 cm, base 0.6 cm, height 1.2 cm, plus an additional 5.6 cm value whose field is unresolved. Rep 2 records cap 4.1 cm; stipe top 0.6 cm, middle 0.6 cm, base 0.45 cm; an additional 0.2 cm value is unresolved and height was not stated.",
-    "Spore print / preparation": "Existing AN2-F3 spore-print documentation is retained as accession-linked preparation evidence.",
+    "Evidence classes": "Field morphology: poroid/tubular hymenophore, pore pattern, pileus-margin relationship, stipe position/texture, and basal form. Laboratory evidence: black spore deposit/extraction and microscopy. Quantitative evidence: preserved macroscopic measurements plus validated n=42 microscopy linear-measurement dataset. Identification remains unresolved.",
+    "Spore print / preparation": "Existing AN2-F3 spore-print/preparation documentation is retained as accession-linked preparation evidence. Laboratory extraction is additionally recorded as producing a black spore deposit.",
     "Identification status": "Taxonomic identification unresolved in the atlas; observed macro- and micromorphology are preserved without forcing genus or species.",
-    "Assignment rule": "The 2026-10-03 microscopy batch was explicitly identified by the user as AN2-F3 and stored under that accession. Existing wild, laboratory, preparation, and measurement records remain separated from conflicting AN3-F3-labeled material; no visual-similarity reassignment is used."
+    "Assignment rule": "The 2026-10-03 microscopy batch and the 2026-10-03 underside field image were explicitly identified by the user as AN2-F3 and stored under that accession. Existing wild, laboratory, preparation, and measurement records remain separated from conflicting AN3-F3-labeled material; no visual-similarity reassignment is used."
   },
   completeness: [
     ["Photo provenance","Yes"],
     ["Explicit specimen accession","Yes"],
-    ["Wild / field imagery","Yes"],
+    ["Wild / field imagery","Yes — includes underside hymenophore confirmation"],
     ["Embedded/source imagery","Yes — verified accession-linked laboratory view"],
     ["Spore-print / preparation imagery","Yes"],
     ["Microscopy imagery","Yes — 11 views"],
+    ["Hymenophore documented","Yes — poroid, tubular"],
+    ["Pore surface documented","Yes — dense, angular to polygonal"],
+    ["Tube depth measured","No — not available; not inferred"],
+    ["Hymenophore–stipe relationship","Yes — attached/continuous fertile surface; lamellar attachment terminology not used"],
+    ["Pileus margin documented","Yes — thick, irregular, downturned to weakly incurved"],
+    ["Hymenophore–margin relationship","Yes — pore field terminates beneath the pileus margin"],
+    ["Stipe position documented","Yes — central to near-central"],
+    ["Stipe surface documented","Yes — fibrillose to velvety"],
+    ["Stipe base documented","Yes — bulbous"],
+    ["Volva","Unconfirmed — bulbous base alone is insufficient"],
+    ["Black spore deposit / extraction","Yes — laboratory observation"],
     ["Measurements","Yes"],
     ["Macroscopic measurements","Yes — 2 preserved source records"],
     ["Spore / microscopic linear measurements","Yes — n=42"],
@@ -664,6 +697,8 @@ window.SPECIMEN_ENRICHMENTS["AN2-F3"] = {
     ["Unreadable annotations excluded","Yes — 1 cropped value excluded"],
     ["Formal Q ratio","Not calculated — no paired length × width dataset"],
     ["Successful microscopic record","Yes"],
+    ["Field + laboratory + microscopy linkage","Yes"],
+    ["Observation / interpretation separation","Yes"],
     ["Wild + laboratory pairing","Yes"],
     ["Identified","No — taxonomic identification unresolved"]
   ]
