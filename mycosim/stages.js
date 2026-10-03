@@ -34,20 +34,26 @@ export const DEVELOPMENTAL_STAGE_LIBRARY = Object.freeze({
   agaricoid:{
     young:stage("young","Young",0.25,{
       ...common.young,
-      pileus_expansion:0.48,margin_inroll:0.85,stipe_elongation:0.72,
-      hymenophore_exposure:0.38,veil_persistence:0.88,lamella_exposure:0.35
+      pileus_expansion:0.48,margin_inroll:0.85,margin_release:0.12,stipe_elongation:0.72,
+      hymenophore_exposure:0.38,veil_persistence:0.88,lamella_exposure:0.35,
+      gill_darkening:0.02,surface_weathering:0.03,scale_loss:0.00,surface_cracking:0.00,
+      water_loss:0.05,stipe_aging:0.06,collapse:0.00,deformation:0.03
     },"Compact fruit body with incompletely expanded pileus, relatively protected lamellae, and veil structures often still evident.",
     ["Young margins and veil remnants can obscure mature attachment characters."]),
     mature:stage("mature","Mature",0.60,{
       ...common.mature,
-      pileus_expansion:1.00,margin_inroll:0.18,stipe_elongation:1.00,
-      hymenophore_exposure:1.00,veil_persistence:0.55,lamella_exposure:1.00
+      pileus_expansion:1.00,margin_inroll:0.18,margin_release:0.66,stipe_elongation:1.00,
+      hymenophore_exposure:1.00,veil_persistence:0.55,lamella_exposure:1.00,
+      gill_darkening:0.16,surface_weathering:0.18,scale_loss:0.12,surface_cracking:0.08,
+      water_loss:0.22,stipe_aging:0.24,collapse:0.04,deformation:0.08
     },"Canonical reference stage with expanded pileus and fully readable hymenophore and stipe characters."),
     old:stage("old","Old",0.92,{
       ...common.old,
-      pileus_expansion:1.12,margin_inroll:0.00,stipe_elongation:0.98,
+      pileus_expansion:1.12,margin_inroll:0.00,margin_release:0.96,stipe_elongation:0.98,
       hymenophore_exposure:1.00,veil_persistence:0.20,lamella_exposure:1.00,
-      margin_irregularity:0.72,cap_flattening:0.68
+      margin_irregularity:0.72,cap_flattening:0.68,gill_darkening:0.48,
+      surface_weathering:0.72,scale_loss:0.58,surface_cracking:0.44,
+      water_loss:0.74,stipe_aging:0.80,collapse:0.34,deformation:0.30
     },"Senescent fruit body with flattened or distorted pileus, irregular margins, increased wear, and degraded veil features.",
     ["Advanced age can distort color, texture, margin form, and veil characters."])
   },
