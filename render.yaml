@@ -10,4 +10,4 @@ services:
         value: no-store, no-cache, must-revalidate, max-age=0
       - path: /mycosim/*
         name: Cache-Control
-        value: no-store, no-cache, must-revalidate, max-age=0
+        value: public, max-age=31536000, immutable
