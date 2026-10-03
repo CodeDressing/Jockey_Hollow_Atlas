@@ -79,19 +79,35 @@ function anatomyKnowledgePass(profile){
   return {pass:failures.length===0,failures};
 }
 
+const CORE_ANATOMY_REQUIRED=Object.freeze({
+  agaricoid:["pileus","hymenophore","stipe"],
+  boletoid:["pileus","tube_layer","hymenophore","stipe"],
+  polyporoid:["pileus","context","tube_layer","hymenophore","substrate"],
+  hoof_conk:["pileus","context","tube_layer","hymenophore","substrate"],
+  hydnoid:["pileus","hymenophore","stipe"],
+  hydnoid_bracket:["pileus","context","hymenophore","substrate"],
+  morel:["fertile_head","hymenophore","stipe","internal_cavity"],
+  coral:["branch_system","branch_tips","base","hymenophore"],
+  puffball:["peridium","endoperidium","gleba","sterile_base"],
+  cup:["apothecium","hymenophore","excipulum","stipe"],
+  jelly:["lobes","hymenophore","attachment"],
+  crust:["margin","context","hymenophore","substrate"]
+});
+
 function requiredAnatomyPass(engine,profile){
   const failures=[];
-  for(const a of profile.anatomy||[]){
-    const obj=engine.objects.get(a.id);
+  const required=CORE_ANATOMY_REQUIRED[profile.id]||[];
+  for(const id of required){
+    const obj=engine.objects.get(id);
     if(!obj){
-      failures.push({id:a.id,reason:"missing_object"});
+      failures.push({id,reason:"missing_core_object"});
       continue;
     }
     let hasGeometry=!!obj.geometry;
     obj.traverse?.(n=>{if(n.geometry)hasGeometry=true;});
-    if(!hasGeometry)failures.push({id:a.id,reason:"no_geometry"});
+    if(!hasGeometry)failures.push({id,reason:"core_object_has_no_geometry"});
   }
-  return {pass:failures.length===0,failures};
+  return {pass:failures.length===0,failures,required};
 }
 
 function hoverPass(engine){
