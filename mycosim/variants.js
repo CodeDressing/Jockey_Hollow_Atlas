@@ -44,6 +44,44 @@ export const MORPHOLOGY_VARIANTS = Object.freeze({
       ["eccentric","Eccentric"],["absent","Absent"]
     ]
   },
+  agaric_surface_primary: {
+    label:"Pileus surface expression",
+    options:[
+      ["glabrous","Glabrous"],["smooth","Smooth"],["innately_fibrillose","Innately fibrillose"],
+      ["appressed_fibrillose","Appressed fibrillose"],["silky","Silky"],["squamulose","Scaly / squamulose"],
+      ["shaggy_scaly","Shaggy-scaly"],["verrucose","Verrucose"],["areolate","Areolate / cracked"],
+      ["viscid","Viscid"],["glutinous","Glutinous"],["dry","Dry"],["waxy","Waxy"],
+      ["velvety","Velvety"],["tomentose","Tomentose"]
+    ]
+  },
+  agaric_surface_secondary: {
+    label:"Secondary surface state",
+    options:[
+      ["none","None"],["fibrillose","Fibrillose"],["squamulose_disc","Squamulose disc"],
+      ["scaly","Scaly"],["silky","Silky"],["weathered","Weathered"],["cracked","Cracked"],
+      ["waxy","Waxy"],["tomentose","Tomentose"]
+    ]
+  },
+  agaric_surface_distribution: {
+    label:"Surface distribution",
+    options:[
+      ["uniform","Uniform"],["disc_emphasized","Disc emphasized"],["margin_emphasized","Margin emphasized"],
+      ["radial","Radial"],["concentric","Concentric"],["irregular_patches","Irregular patches"],
+      ["aging_from_disc","Aging from disc"],["aging_from_margin","Aging from margin"]
+    ]
+  },
+  agaric_surface_age: {
+    label:"Surface age / weathering",
+    options:[
+      ["fresh","Fresh"],["slightly_weathered","Slightly weathered"],["weathered","Weathered"],["old_broken","Old / broken-up"]
+    ]
+  },
+  agaric_surface_moisture: {
+    label:"Surface moisture / finish",
+    options:[
+      ["dry","Dry"],["subviscid","Subviscid"],["viscid","Viscid"],["glutinous","Glutinous"],["waxy","Waxy"]
+    ]
+  },
   agaric_gill_attachment: {
     label:"Gill attachment",
     options:[
@@ -189,6 +227,11 @@ export const DEFAULT_VARIANTS = Object.freeze({
   agaric_pileus_center:"even",
   agaric_margin:"decurved",
   agaric_stipe_taper:"equal",
+  agaric_surface_primary:"smooth",
+  agaric_surface_secondary:"none",
+  agaric_surface_distribution:"uniform",
+  agaric_surface_age:"fresh",
+  agaric_surface_moisture:"dry",
   agaric_gill_attachment:"adnate",
   agaric_gill_spacing:"close",
   agaric_gill_thickness:"thin",
@@ -398,6 +441,57 @@ export const VARIANT_TEACHING = Object.freeze({
     lateral:{anatomyId:"stipe",short:"Stipe attaches at the side rather than centrally.",detail:"A lateral stipe is positioned near the pileus edge and produces an asymmetric fruit-body architecture."},
     eccentric:{anatomyId:"stipe",short:"Stipe is offset from the pileus center.",detail:"An eccentric stipe is displaced from the center but is not fully lateral."},
     absent:{anatomyId:"pileus",short:"No differentiated stipe is present.",detail:"A sessile form attaches directly by the pileus, bracket, or basal tissue rather than through a distinct stipe."}
+  }),
+  agaric_surface_primary:Object.freeze({
+    glabrous:{anatomyId:"pileipellis",short:"Surface lacks conspicuous hairs, scales, or warts.",detail:"Glabrous denotes a macroscopically smooth pileus without evident projecting ornament."},
+    smooth:{anatomyId:"pileipellis",short:"Surface is macroscopically even.",detail:"Smooth pileus surfaces retain only low-relief natural micro-undulation without discrete ornament."},
+    innately_fibrillose:{anatomyId:"surface_fibrils",short:"Fine innate fibrils traverse the pileus.",detail:"Innately fibrillose surfaces show directional fibrils arising from the pileipellis rather than merely from weathering."},
+    appressed_fibrillose:{anatomyId:"surface_fibrils",short:"Fibrils lie flattened against the pileus.",detail:"Appressed fibrils remain directional but have low relief and lie close to the pileipellis."},
+    silky:{anatomyId:"surface_fibrils",short:"Very fine fibers create a silky luster.",detail:"Silky surfaces combine fine aligned fibrils with directional sheen rather than coarse projecting ornament."},
+    squamulose:{anatomyId:"pileus_scales",short:"Pileus bears small scale-like squamules.",detail:"Squamulose surfaces carry discrete flattened or slightly raised scales, commonly varying between disc and margin."},
+    shaggy_scaly:{anatomyId:"pileus_scales",short:"Pileus bears coarse uplifted shaggy scales.",detail:"Shaggy-scaly surfaces carry larger, more erect and irregular scale elements with strong three-dimensional relief."},
+    verrucose:{anatomyId:"pileus_warts",short:"Pileus bears blunt wart-like elevations.",detail:"Verrucose ornament consists of mound-like elevations rather than fibrous or plate-like scales."},
+    areolate:{anatomyId:"pileus_cracks",short:"Surface breaks into polygonal cracked areas.",detail:"Areolate surfaces develop a network of fissures separating surface plates and exposing underlying tissue."},
+    viscid:{anatomyId:"pileipellis",short:"Surface is distinctly sticky or slimy when moist.",detail:"Viscid pilei show a coherent wet-film response with strong specular reflection but limited bulk mucus."},
+    glutinous:{anatomyId:"pileipellis",short:"Surface carries a thicker gelatinous/slimy coating.",detail:"Glutinous pilei exhibit a thicker mucilaginous surface layer than merely viscid forms."},
+    dry:{anatomyId:"pileipellis",short:"Surface lacks wet sheen.",detail:"Dry pilei emphasize roughness and microtexture with little or no moisture-film reflectance."},
+    waxy:{anatomyId:"pileipellis",short:"Surface appears smooth with a soft wax-like luster.",detail:"Waxy surfaces show subdued broad highlights and a sealed appearance without the wet-film behavior of viscid or glutinous states."},
+    velvety:{anatomyId:"pileus_tomentum",short:"Surface has a dense short nap.",detail:"Velvety pilei bear very fine short erect surface elements producing a matte soft appearance."},
+    tomentose:{anatomyId:"pileus_tomentum",short:"Surface is visibly woolly or felted.",detail:"Tomentose pilei bear a denser, longer, often irregularly tufted covering than velvety surfaces."}
+  }),
+  agaric_surface_secondary:Object.freeze({
+    none:{anatomyId:"pileipellis",short:"No secondary surface layer.",detail:"Only the primary cap-surface expression is rendered."},
+    fibrillose:{anatomyId:"surface_fibrils",short:"Adds a secondary fibrillose field.",detail:"Fine fibrils overlay the primary surface without replacing it."},
+    squamulose_disc:{anatomyId:"pileus_scales",short:"Adds squamules concentrated on the disc.",detail:"Discrete scales are restricted primarily to the central disc over the underlying primary surface."},
+    scaly:{anatomyId:"pileus_scales",short:"Adds a secondary scale field.",detail:"A secondary scale layer is combined with the selected ground surface."},
+    silky:{anatomyId:"surface_fibrils",short:"Adds fine silky directional luster.",detail:"A fine aligned fibril/sheens layer overlays the primary surface."},
+    weathered:{anatomyId:"pileipellis",short:"Adds wear and partial surface loss.",detail:"Weathering selectively reduces or fragments the primary ornament."},
+    cracked:{anatomyId:"pileus_cracks",short:"Adds an areolate crack network.",detail:"Cracking overlays the primary ground and exposes darker or lighter tissue in fissures."},
+    waxy:{anatomyId:"pileipellis",short:"Adds a wax-like finish.",detail:"A soft sealed luster overlays the primary surface."},
+    tomentose:{anatomyId:"pileus_tomentum",short:"Adds woolly surface tufts.",detail:"Tomentum overlays the primary surface in a secondary patchy layer."}
+  }),
+  agaric_surface_distribution:Object.freeze({
+    uniform:{anatomyId:"pileipellis",short:"Surface state is distributed broadly.",detail:"Texture probability remains relatively even across disc, mid-zone and margin."},
+    disc_emphasized:{anatomyId:"pileipellis",short:"Surface ornament is strongest on the disc.",detail:"Density or relief is biased toward the pileus center and declines toward the margin."},
+    margin_emphasized:{anatomyId:"pileus_margin",short:"Surface expression increases toward the margin.",detail:"Density or relief is biased toward the pileus edge."},
+    radial:{anatomyId:"pileipellis",short:"Texture follows radial organization.",detail:"Surface structures align or recur along radial trajectories from disc toward margin."},
+    concentric:{anatomyId:"pileipellis",short:"Texture occurs in concentric zones.",detail:"Surface intensity varies in annular bands around the pileus center."},
+    irregular_patches:{anatomyId:"pileipellis",short:"Texture occurs in irregular patches.",detail:"A deterministic patch field creates localized high- and low-density regions."},
+    aging_from_disc:{anatomyId:"pileipellis",short:"Weathering begins or concentrates on the disc.",detail:"Age-related breakdown is weighted toward the center and propagates outward."},
+    aging_from_margin:{anatomyId:"pileus_margin",short:"Weathering begins or concentrates at the margin.",detail:"Age-related breakdown is weighted toward the pileus edge and propagates inward."}
+  }),
+  agaric_surface_age:Object.freeze({
+    fresh:{anatomyId:"pileipellis",short:"Surface is freshly expressed.",detail:"Primary ornament and finish are retained with minimal abrasion."},
+    slightly_weathered:{anatomyId:"pileipellis",short:"Minor wear is present.",detail:"A small proportion of ornament is reduced, flattened, or interrupted."},
+    weathered:{anatomyId:"pileipellis",short:"Surface shows substantial age-related wear.",detail:"Ornament becomes patchy, fractured, abraded, or locally absent."},
+    old_broken:{anatomyId:"pileipellis",short:"Surface is strongly weathered and broken.",detail:"Advanced senescence produces extensive ornament loss, cracking, fragmentation and roughened ground."}
+  }),
+  agaric_surface_moisture:Object.freeze({
+    dry:{anatomyId:"pileipellis",short:"High-roughness dry finish.",detail:"No coherent wet film is represented."},
+    subviscid:{anatomyId:"pileipellis",short:"Slightly tacky low-level sheen.",detail:"Subviscid surfaces show modest specular enhancement without a conspicuous slime layer."},
+    viscid:{anatomyId:"pileipellis",short:"Distinct wet-film sheen.",detail:"Viscid surfaces show reduced roughness and stronger coherent highlights."},
+    glutinous:{anatomyId:"pileipellis",short:"Thicker mucilaginous surface effect.",detail:"Glutinous finishes combine strong gloss, subtle translucent film, and localized pooling/streaking."},
+    waxy:{anatomyId:"pileipellis",short:"Soft broad wax-like luster.",detail:"Waxy surfaces are smoother and lustrous without appearing wet or slimy."}
   }),
   agaric_gill_attachment:Object.freeze({
     free_gills:{anatomyId:"hymenophore",short:"Gills stop short of the stipe.",detail:"Free lamellae leave a visible annular gap around the stipe apex."},
