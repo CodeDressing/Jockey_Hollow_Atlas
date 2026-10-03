@@ -1491,6 +1491,12 @@ export class MycoSimEngine{
         stipeSurfaceBlendModel:this.objects.get("stipe")?.userData?.surfaceBlendModel||null,
         stipeSurfaceBlendControls:this.objects.get("stipe")?.userData?.surfaceBlendControls||null,
         stipeSurfaceStates:this.objects.get("stipe")?.userData?.surfaceStates||null,
+        stipeInteractionLayer:this.objects.get("stipe")?.userData?.interactionLayer||null,
+        stipeCapLoad:this.objects.get("stipe")?.userData?.capLoad??null,
+        stipeCapLoadCoupled:this.objects.get("stipe")?.userData?.capLoadCoupled===true,
+        stipeEccentricStance:this.objects.get("stipe")?.userData?.eccentricStance===true,
+        stipeBasalCounterbalance:this.objects.get("stipe")?.userData?.basalCounterbalance??0,
+        stipeInsertionMechanical:this.objects.get("stipe_insertion")?.userData?.mechanicalSupport===true,
         stipeSurfaceGenerators:["stipe_apex","stipe_mid","stipe_base_surface"].map(id=>({id,state:this.objects.get(id)?.userData?.surfaceState||"smooth",generator:this.objects.get(id)?.userData?.generator||null,regionalBlend:this.objects.get(id)?.userData?.regionalBlend===true,elementCount:this.objects.get(id)?.userData?.elementCount||0,bounds:this.objects.get(id)?.userData?.blendBounds||null})),
         developmentalParameters:this.morphologyState?.stage?.parameters||null,
         developmentalContinuity:true,
@@ -2354,7 +2360,7 @@ export class MycoSimEngine{
     };
   }
 
-  _agaricoidStipeGeometry(form="equal",{height=2.55,top=.285,bottom=.34,seed=727,development={},position="central"}={}){
+  _agaricoidStipeGeometry(form="equal",{height=2.55,top=.285,bottom=.34,seed=727,development={},position="central",capRadius=1.62,capExpansion=1}={}){
     const segments=scaledSegments(64,this.realismTier,{min:38,max:84});
     const rings=scaledSegments(42,this.realismTier,{min:28,max:58});
     const verts=[],uvs=[],indices=[];
@@ -2364,26 +2370,48 @@ export class MycoSimEngine{
     const collapse=development.collapse??0;
     const deformation=development.deformation??0;
     const profile=this._agaricoidStipeProfile(form,{top,bottom,development});
-    const eccentricOffset=position==="eccentric"?.22:0;
+    const normalizedCapLoad=THREE.MathUtils.clamp((capRadius/1.62)*(.78+.22*capExpansion),.72,1.42);
+    const eccentricOffset=position==="eccentric"?.22*normalizedCapLoad:0;
+    const supportCompression=.020*normalizedCapLoad;
+    const basalCounterbalance=position==="eccentric"?.050*normalizedCapLoad:0;
 
     const centerlineAt=t=>{
       const x=THREE.MathUtils.clamp(t,0,1);
       const naturalBow=Math.sin(Math.PI*x);
-      const eccentricProgress=THREE.MathUtils.smoothstep(x,.04,.98);
+      const eccentricProgress=THREE.MathUtils.smootherstep(x,.03,.985);
+      const loadBow=(position==="eccentric"?.058:.012)*(normalizedCapLoad-0.55)*Math.sin(Math.PI*x);
+      const counter=basalCounterbalance*(1-THREE.MathUtils.smoothstep(x,.02,.42));
       const ageLean=(.012+.035*collapse+.028*deformation)*naturalBow;
       return {
-        x:eccentricOffset*eccentricProgress+
+        x:eccentricOffset*eccentricProgress-counter+
           (.010+ageLean)*Math.sin(phase)*naturalBow-
-          eccentricOffset*.08*Math.sin(Math.PI*x*2)*naturalBow,
-        z:(.008+ageLean*.72)*Math.cos(phase*.83)*naturalBow
+          loadBow*Math.sin(Math.PI*x*1.15),
+        z:(.008+ageLean*.72)*Math.cos(phase*.83)*naturalBow+
+          loadBow*.16*Math.sin(phase*.51)*naturalBow
       };
+    };
+    const centerlineTangentAt=t=>{
+      const e=.004,a=centerlineAt(Math.max(0,t-e)),b=centerlineAt(Math.min(1,t+e));
+      return new THREE.Vector3(b.x-a.x,Math.max(.0001,2*e*height),b.z-a.z).normalize();
+    };
+    const radiusSlopeAt=t=>{
+      const e=.006,a=profile.radiusAt(Math.max(0,t-e)),b=profile.radiusAt(Math.min(1,t+e));
+      return (b-a)/Math.max(.0001,2*e*height);
+    };
+    const circumferenceAt=t=>Math.PI*2*profile.radiusAt(THREE.MathUtils.clamp(t,0,1));
+    const referenceCircumference=Math.PI*2*profile.nominal;
+    const surfaceStretchAt=t=>THREE.MathUtils.clamp(circumferenceAt(t)/Math.max(.0001,referenceCircumference),.48,1.72);
+    const supportFactorAt=t=>{
+      const x=THREE.MathUtils.clamp(t,0,1);
+      const apical=THREE.MathUtils.smoothstep(x,.76,1);
+      return 1+apical*(.035+.035*normalizedCapLoad)-supportCompression*apical*(1-x);
     };
 
     for(let iy=0;iy<=rings;iy++){
       const t=iy/rings;
       const y=-height/2+t*height;
       const center=centerlineAt(t);
-      const r0=profile.radiusAt(t);
+      const r0=profile.radiusAt(t)*supportFactorAt(t);
       const weights=profile.regionWeights(t);
       const regionalIrregularity=.75+weights.mid*.20+weights.base*.08;
       for(let ix=0;ix<=segments;ix++){
@@ -2425,8 +2453,17 @@ export class MycoSimEngine{
       profileDriven:true,
       nonPerfectRoundness:true,
       eccentricCenterline:position==="eccentric",
-      radiusAt:profile.radiusAt,
+      capLoadCoupled:true,
+      capLoad:normalizedCapLoad,
+      supportCompression,
+      basalCounterbalance,
+      radiusAt:t=>profile.radiusAt(t)*supportFactorAt(t),
+      rawRadiusAt:profile.radiusAt,
       centerlineAt,
+      centerlineTangentAt,
+      radiusSlopeAt,
+      surfaceStretchAt,
+      supportFactorAt,
       regionWeights:profile.regionWeights
     };
     return g;
@@ -2466,13 +2503,16 @@ export class MycoSimEngine{
         : [.015,Math.min(.54,.30+blend.midBaseLength*(1+blend.carryover))];
     group.userData={id,label:region==="apex"?"Stipe apex surface":region==="mid"?"Mid-stipe surface":"Stipe base surface",
       category:"macro",selectable:true,knowledgeId:region==="apex"?"stipe_apex":region==="mid"?"stipe_mid":"stipe_base",
-      surfaceState:state,generator:"phase7b-surface-state-v1",regionalBlend:true,transitionControls:{...blend},blendBounds:[...bounds]};
+      surfaceState:state,generator:"phase7b-surface-state-v1",regionalBlend:true,transitionControls:{...blend},blendBounds:[...bounds],surfaceFormInteraction:"phase7-sprint3-v1"};
     const seed=region==="apex"?8301:region==="mid"?8419:8537,rng=seededRng(seed+state.length*37);
     const aging=development.stipe_aging??0,retain=Math.max(.16,1-aging*(state==="pruinose"?.82:.48));
     const meta=stipe.geometry?.userData||{};
     const fallback=this._agaricoidStipeProfile(this.variants.agaric_stipe_form||"equal",{top,bottom,development});
     const radiusAt=typeof meta.radiusAt==="function"?meta.radiusAt:fallback.radiusAt;
     const centerlineAt=typeof meta.centerlineAt==="function"?meta.centerlineAt:(()=>({x:0,z:0}));
+    const tangentAt=typeof meta.centerlineTangentAt==="function"?meta.centerlineTangentAt:(()=>new THREE.Vector3(0,1,0));
+    const slopeAt=typeof meta.radiusSlopeAt==="function"?meta.radiusSlopeAt:(()=>0);
+    const stretchAt=typeof meta.surfaceStretchAt==="function"?meta.surfaceStretchAt:(()=>1);
     const influence=t=>{
       const w=this._agaricStipeRegionWeights(t,blend);
       let q=w[region]||0;
@@ -2484,6 +2524,14 @@ export class MycoSimEngine{
       const ctr=centerlineAt(t),r=radiusAt(t)*lift;
       return new THREE.Vector3(ctr.x+Math.cos(a)*r,-height/2+t*height,ctr.z+Math.sin(a)*r);
     };
+    const surfaceNormal=(t,a)=>{
+      const radial=new THREE.Vector3(Math.cos(a),-slopeAt(t),Math.sin(a)).normalize();
+      const tangent=tangentAt(t);
+      const circum=new THREE.Vector3(-Math.sin(a),0,Math.cos(a)).normalize();
+      const n=circum.clone().cross(tangent).normalize();
+      if(n.dot(radial)<0)n.multiplyScalar(-1);
+      return n.lerp(radial,.42).normalize();
+    };
 
     if(state==="longitudinal_striate"||state==="reticulate"){
       const segGeo=new THREE.CylinderGeometry(1,1,1,5,1,false),axis=new THREE.Vector3(0,1,0),dummy=new THREE.Object3D(),mats=[];
@@ -2492,10 +2540,12 @@ export class MycoSimEngine{
         if(k<.055)return;
         const d=p1.clone().sub(p0),len=d.length(),mid=p0.clone().add(p1).multiplyScalar(.5);
         dummy.position.copy(mid);dummy.quaternion.setFromUnitVectors(axis,d.normalize());
-        const thick=(state==="reticulate"?.0034:.0028)+k*(state==="reticulate"?.0048:.0036);
+        const tm=(p0.y+p1.y+height)/(2*height),stretch=stretchAt(THREE.MathUtils.clamp(tm,0,1));
+        const thick=((state==="reticulate"?.0034:.0028)+k*(state==="reticulate"?.0048:.0036))/Math.sqrt(stretch);
         dummy.scale.set(thick,len*.5,thick*(.76+.12*Math.sin(phase)));dummy.updateMatrix();mats.push(dummy.matrix.clone());
       };
-      const longs=state==="reticulate"?14:22,steps=13;
+      const midStretch=stretchAt((bounds[0]+bounds[1])*.5);
+      const longs=Math.max(10,Math.round((state==="reticulate"?14:22)*midStretch)),steps=13;
       for(let i=0;i<longs;i++){
         const a=i/longs*Math.PI*2+.03*Math.sin(i*1.71);
         for(let j=0;j<steps;j++){
@@ -2505,8 +2555,9 @@ export class MycoSimEngine{
         }
       }
       if(state==="reticulate"){
-        for(let j=1;j<=6;j++){
-          const t=THREE.MathUtils.lerp(bounds[0],bounds[1],j/7),k=influence(t);
+        const crossRings=Math.max(4,Math.round(6/Math.sqrt(Math.max(.55,midStretch))));
+        for(let j=1;j<=crossRings;j++){
+          const t=THREE.MathUtils.lerp(bounds[0],bounds[1],j/(crossRings+1)),k=influence(t);
           for(let i=0;i<24;i++){
             const a0=i/24*Math.PI*2,a1=(i+1)/24*Math.PI*2,dt=.010*Math.sin(i*.9+j*1.4);
             add(point(t+dt,a0,1.012),point(t+dt,a1,1.012),k,j+i*.2);
@@ -2518,7 +2569,9 @@ export class MycoSimEngine{
       inst.userData={...group.userData,knowledgeId:state==="reticulate"?"reticulation":"stipe_mid",relief:state==="reticulate"?"networked-ridges":"axial-ridges"};
       group.add(inst);this.pickables.push(inst);group.userData.elementCount=mats.length;
     }else{
-      const count={fibrillose:180,floccose:104,scaly:86,pruinose:390}[state]||90;
+      const avgStretch=(stretchAt(bounds[0])+stretchAt((bounds[0]+bounds[1])*.5)+stretchAt(bounds[1]))/3;
+      const baseCount={fibrillose:180,floccose:104,scaly:86,pruinose:390}[state]||90;
+      const count=Math.max(12,Math.round(baseCount*(state==="pruinose"?Math.sqrt(avgStretch):avgStretch)));
       let geo;
       if(state==="scaly"){
         geo=new THREE.PlaneGeometry(.055,.075,1,1);
@@ -2534,14 +2587,29 @@ export class MycoSimEngine{
       while(written<count&&tries++<count*10){
         const t=THREE.MathUtils.lerp(bounds[0],bounds[1],rng()),k=influence(t);
         const density=state==="pruinose"?.95:state==="fibrillose"?.82:state==="floccose"?.72:.68;
-        if(rng()>THREE.MathUtils.clamp(k*density+.02,0,1))continue;
+        const stretch=stretchAt(t);
+        const densityResponse=state==="pruinose"?1/Math.sqrt(stretch):state==="scaly"?Math.sqrt(stretch):1;
+        if(rng()>THREE.MathUtils.clamp((k*density+.02)*densityResponse,0,1))continue;
         const a=rng()*Math.PI*2,lift=state==="scaly"?1.018:state==="floccose"?1.020:1.011;
         dummy.position.copy(point(t,a,lift));
         if(state==="scaly"){
-          dummy.quaternion.setFromUnitVectors(new THREE.Vector3(0,0,1),new THREE.Vector3(Math.cos(a),0,Math.sin(a)));
-          dummy.rotateZ((rng()-.5)*.4);const s=(.65+rng()*.7)*(.72+.28*k);dummy.scale.set(s,s*(.8+rng()*.3),1);
+          const normal=surfaceNormal(t,a),tangent=tangentAt(t);
+          dummy.quaternion.setFromUnitVectors(new THREE.Vector3(0,0,1),normal);
+          const projected=tangent.clone().projectOnPlane(normal).normalize();
+          if(projected.lengthSq()>.001){
+            const localUp=new THREE.Vector3(0,1,0).applyQuaternion(dummy.quaternion);
+            dummy.rotateZ(Math.atan2(localUp.clone().cross(projected).dot(normal),localUp.dot(projected))*.35);
+          }
+          dummy.rotateX(-.06-.18*rng()*k);
+          const s=(.65+rng()*.7)*(.72+.28*k);
+          dummy.scale.set(s*Math.sqrt(stretch),s*(.82+rng()*.28)/Math.sqrt(stretch),1);
         }else if(state==="fibrillose"){
-          dummy.rotation.set((rng()-.5)*.07,-a,(rng()-.5)*.12);const s=.7+rng()*.7;dummy.scale.set(.75,s*(.8+.5*k),.75);
+          const tangent=tangentAt(t),normal=surfaceNormal(t,a);
+          dummy.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),tangent);
+          dummy.rotateY((rng()-.5)*.14);
+          dummy.rotateX((rng()-.5)*.05);
+          const s=.7+rng()*.7;
+          dummy.scale.set(.75/Math.sqrt(stretch),s*(.8+.5*k)*Math.sqrt(stretch),.75);
         }else if(state==="floccose"){
           const cl=.8+.28*Math.sin(a*4+t*24),s=(.55+rng())*(.65+.35*k)*cl;dummy.scale.set(s,s*(.65+rng()*.55),s);dummy.rotation.set(rng()*Math.PI,rng()*Math.PI,rng()*Math.PI);
         }else{
@@ -2587,7 +2655,7 @@ export class MycoSimEngine{
   }
 
 
-  _addAgaricoidStipe(form,{baseY=-.47,topY=2.28,top=.285,bottom=.34,position="central"}={}){
+  _addAgaricoidStipe(form,{baseY=-.47,topY=2.28,top=.285,bottom=.34,position="central",capRadius=1.62,capExpansion=1}={}){
     const development=this.morphologyState?.stage?.parameters||{};
     const rootingExtra=form==="rooting"?.58:0;
     const height=Math.max(.8,topY-baseY+rootingExtra);
@@ -2595,7 +2663,7 @@ export class MycoSimEngine{
     const geo=this._agaricoidStipeGeometry(form,{
       height,top,bottom,
       seed:this.morphologyState?.developmental?.identitySeed||727,
-      development,position
+      development,position,capRadius,capExpansion
     });
     const st=this.register(new THREE.Mesh(geo,MATERIALS.stipe.clone()),"stipe","Stipe","macro");
     st.position.set(0,centerY,0);
@@ -2612,6 +2680,24 @@ export class MycoSimEngine{
     st.userData.positionType=position;
     st.userData.profileDriven=true;
     st.userData.regionalBlending=true;
+    st.userData.interactionLayer="phase7-sprint3-v1";
+    st.userData.capLoad=geo.userData.capLoad;
+    st.userData.capLoadCoupled=true;
+    st.userData.eccentricStance=position==="eccentric";
+    st.userData.basalCounterbalance=geo.userData.basalCounterbalance||0;
+
+    // A subtle apical insertion collar makes the shaft read as mechanically
+    // continuous with the cap without creating an annulus-like false structure.
+    const collarRadius=Math.max(.075,geo.userData.radiusAt?.(.985)??top);
+    const collarGeo=new THREE.CylinderGeometry(
+      collarRadius*1.055,collarRadius*.99,.095,
+      scaledSegments(36,this.realismTier,{min:24,max:48}),3,false
+    );
+    const collar=new THREE.Mesh(collarGeo,MATERIALS.stipe.clone());
+    collar.position.set(apexCenter.x,height/2-.050,apexCenter.z);
+    collar.scale.y=.72+.10*(geo.userData.capLoad||1);
+    collar.userData={id:"stipe_insertion",label:"Stipe-pileus insertion",category:"macro",parentId:"stipe",selectable:true,knowledgeId:"stipe_apex",mechanicalSupport:true};
+    st.add(collar);this.pickables.push(collar);this.objects.set("stipe_insertion",collar);
 
     // Preserve the selectable stipe-base anatomy without hiding the continuous
     // profile-driven silhouette behind a separate spherical "plug".
@@ -3517,7 +3603,8 @@ export class MycoSimEngine{
     const underside=underGeo.userData.undersideHeight;
     const apexLocal=typeof underside==="function"?underside(0,0):-.22;
     const stipeTopY=capY+apexLocal+.025;
-    const stipe=this._addAgaricoidStipe(form,{baseY:-.46,topY:stipeTopY,top:.285,bottom:.34,position:stipePosition});
+    const capExpansion=this.morphologyState?.stage?.parameters?.pileus_expansion??1;
+    const stipe=this._addAgaricoidStipe(form,{baseY:-.46,topY:stipeTopY,top:.285,bottom:.34,position:stipePosition,capRadius:radius,capExpansion});
     const stipeX=stipe?.userData?.apexX??stipe?.position.x??0;
 
     const capState={
