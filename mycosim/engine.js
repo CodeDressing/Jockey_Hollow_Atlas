@@ -2143,8 +2143,38 @@ export class MycoSimEngine{
   }
 
   _agaricApplySurfaceFinish(cap,state){
-    const mat=cap.material;
+    let mat=cap.material;
     if(!mat)return;
+    const micro={
+      glabrous:{variance:.035,bump:.006,repeat:5},
+      smooth:{variance:.050,bump:.010,repeat:6},
+      innately_fibrillose:{variance:.075,bump:.020,repeat:8},
+      appressed_fibrillose:{variance:.065,bump:.016,repeat:9},
+      silky:{variance:.045,bump:.012,repeat:10},
+      squamulose:{variance:.090,bump:.026,repeat:7},
+      shaggy_scaly:{variance:.105,bump:.032,repeat:7},
+      verrucose:{variance:.085,bump:.025,repeat:7},
+      areolate:{variance:.10,bump:.028,repeat:6},
+      viscid:{variance:.040,bump:.008,repeat:5},
+      glutinous:{variance:.035,bump:.006,repeat:5},
+      dry:{variance:.070,bump:.018,repeat:8},
+      waxy:{variance:.035,bump:.007,repeat:5},
+      velvety:{variance:.055,bump:.020,repeat:11},
+      tomentose:{variance:.070,bump:.026,repeat:10}
+    }[state.primary]||{variance:.05,bump:.012,repeat:6};
+    const baseHex=mat.color?.getHex?.()??0x9a4a2d;
+    const old=mat;
+    mat=pbrFungalMaterial(baseHex,{
+      seed:7331+state.primary.length*17+state.age.length*11,
+      variance:micro.variance,
+      roughness:.88,
+      bumpScale:micro.bump,
+      sheen:.08,
+      clearcoat:.03,
+      repeat:micro.repeat
+    });
+    cap.material=mat;
+    old?.dispose?.();
     const finish={
       dry:{roughness:.94,clearcoat:.015,clearcoatRoughness:.92,sheen:.06},
       subviscid:{roughness:.66,clearcoat:.22,clearcoatRoughness:.42,sheen:.09},
@@ -2290,12 +2320,17 @@ export class MycoSimEngine{
   }
 
   _applyAgaricoidSurfaceSystem(cap,capState){
-    const state=this._agaricSurfaceState();
+    const selected=this._agaricSurfaceState();
+    const state={
+      ...selected,
+      age:selected.secondary==="weathered"&&selected.age==="fresh"?"weathered":selected.age,
+      moisture:selected.secondary==="waxy"&&selected.moisture==="dry"?"waxy":selected.moisture
+    };
     this._agaricApplySurfaceFinish(cap,state);
     const group=new THREE.Group();
     group.userData={
       id:"pileipellis",label:"Pileipellis / cap surface",category:"tissue",selectable:true,knowledgeId:"pileipellis",
-      state:{...state},generator:"agaricoid-cap-surface-v1"
+      state:{...state},selectedState:{...selected},generator:"agaricoid-cap-surface-v1"
     };
     const counts={fibrils:0,scales:0,warts:0,cracks:0,tomentum:0};
 
