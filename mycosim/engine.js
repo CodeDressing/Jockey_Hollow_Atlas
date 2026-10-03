@@ -684,7 +684,7 @@ export class MycoSimEngine{
     const alpha=this.mode==="internal"?.34:this.mode==="micro"?.16:this.mode==="spore"?.1:1;
     if(alpha<1){
       for(const [id,o] of this.objects){
-        if(["hymenophore","tube_layer","fertile_head","gleba"].includes(id)) continue;
+        if(["hymenophore","tube_layer","fertile_head","gleba","stipe_context"].includes(id)) continue;
         o.traverse?.(n=>{
           if(!n.material)return;
           for(const m of (Array.isArray(n.material)?n.material:[n.material])){
@@ -785,26 +785,54 @@ export class MycoSimEngine{
       const expansion=p.pileus_expansion??1;
       const elong=p.stipe_elongation??1;
       const flatten=p.cap_flattening??0;
-      const wear=p.surface_wear??0;
-      setScale("pileus",expansion,1+(sid==="young"?.38:0)-flatten*.42,expansion);
-      setScale("pileus_context",expansion,1,expansion);
-      setScale("hymenophore",expansion,p.lamella_exposure??1,expansion);
-      setScale("stipe",1,elong,1);
-      setScale("stipe_base",sid==="young"?.88:sid==="old"?1.04:1,1, sid==="young"?.88:sid==="old"?1.04:1);
+      const wear=p.surface_weathering??p.surface_wear??0;
+      const waterLoss=p.water_loss??0;
+      const collapse=p.collapse??0;
+      const deform=p.deformation??0;
+      const gillDark=p.gill_darkening??0;
+      const marginRelease=p.margin_release??(1-(p.margin_inroll??0));
+
+      const capYScale=Math.max(.58,1+(sid==="young"?.34:0)-flatten*.38-collapse*.10);
+      setScale("pileus",expansion,capYScale,expansion);
+      setScale("pileipellis",expansion,capYScale,expansion);
+      setScale("pileus_context",expansion,1-collapse*.06,expansion);
+      setScale("hymenophore",expansion,Math.max(.20,p.lamella_exposure??1),expansion);
+      setScale("stipe",1-waterLoss*.055,elong*(1-collapse*.08),1-waterLoss*.055);
+      setScale("stipe_base",sid==="young"?.88:sid==="old"?1.04:1,1-collapse*.05,sid==="young"?.88:sid==="old"?1.04:1);
+
+      const hym=this.objects.get("hymenophore");
+      hym?.traverse?.(node=>{
+        if(!node.material)return;
+        for(const mat of (Array.isArray(node.material)?node.material:[node.material])){
+          if(mat.color){
+            const hsl={h:0,s:0,l:0};mat.color.getHSL(hsl);
+            mat.color.setHSL(hsl.h,Math.max(0,hsl.s*(1-gillDark*.14)),Math.max(.12,hsl.l*(1-gillDark*.34)));
+          }
+          if("roughness" in mat)mat.roughness=Math.min(1,(mat.roughness??.82)+waterLoss*.10);
+        }
+      });
+
       if(this.objects.get("veil_structure")){
-        const veil=Math.max(.22,p.veil_persistence??1);
+        const veil=Math.max(.18,p.veil_persistence??1);
         setScale("veil_structure",veil,veil,veil);
       }
       if(sid==="young"){
-        move("pileus",0,-.12,0);
-        move("hymenophore",0,.02,0);
+        move("pileus",0,-.12*(1-marginRelease),0);
+        move("pileipellis",0,-.12*(1-marginRelease),0);
+        move("hymenophore",0,.03,0);
       }else if(sid==="old"){
         const pileus=this.objects.get("pileus");
-        if(pileus){pileus.rotation.z+=.035;pileus.rotation.x+=.018;}
+        const surface=this.objects.get("pileipellis");
+        const tilt=.025+.055*deform;
+        if(pileus){pileus.rotation.z+=tilt;pileus.rotation.x+=.012+.025*deform;}
+        if(surface){surface.rotation.z+=tilt;surface.rotation.x+=.012+.025*deform;}
+        const stipe=this.objects.get("stipe");
+        if(stipe)stipe.rotation.z+=.015+.025*deform;
       }
-      weather("pileus",wear);
-      weather("hymenophore",wear*.8);
-      weather("stipe",wear*.55);
+      weather("pileus",wear+waterLoss*.18);
+      weather("pileipellis",wear+waterLoss*.15);
+      weather("hymenophore",wear*.65+gillDark*.20);
+      weather("stipe",wear*.45+(p.stipe_aging??0)*.18);
     }
 
     if(profileId==="boletoid"){
@@ -2241,13 +2269,18 @@ export class MycoSimEngine{
 
 
   _agaricSurfaceState(){
+    const p=this.morphologyState?.stage?.parameters||{};
     return {
       primary:this.variants.agaric_surface_primary||"smooth",
       secondary:this.variants.agaric_surface_secondary||"none",
       distribution:this.variants.agaric_surface_distribution||"uniform",
       age:this.variants.agaric_surface_age||"fresh",
       moisture:this.variants.agaric_surface_moisture||"dry",
-      realism:this.variants.texture_realism||"atlas"
+      realism:this.variants.texture_realism||"atlas",
+      developmentalWeathering:p.surface_weathering??p.surface_wear??0,
+      developmentalScaleLoss:p.scale_loss??0,
+      developmentalCracking:p.surface_cracking??0,
+      developmentalWaterLoss:p.water_loss??0
     };
   }
 
@@ -2262,7 +2295,7 @@ export class MycoSimEngine{
     else if(state.distribution==="aging_from_margin")distribution=.32+.68*rn;
 
     const ageBase={fresh:0,slightly_weathered:.18,weathered:.46,old_broken:.76}[state.age]??0;
-    let weather=ageBase;
+    let weather=THREE.MathUtils.clamp(ageBase+(state.developmentalWeathering||0)*.72,0,1);
     if(state.distribution==="aging_from_disc")weather*=1.18-rn*.72;
     else if(state.distribution==="aging_from_margin")weather*=.45+rn*.85;
     else weather*=.82+.18*Math.sin(theta*2.4+rn*8.2)**2;
@@ -2270,7 +2303,7 @@ export class MycoSimEngine{
     return {
       distribution:THREE.MathUtils.clamp(distribution,0,1),
       weather:THREE.MathUtils.clamp(weather,0,1),
-      retain:THREE.MathUtils.clamp(1-weather*.72,0.12,1),
+      retain:THREE.MathUtils.clamp(1-weather*.72-(state.developmentalScaleLoss||0)*.38,0.08,1),
       disc:THREE.MathUtils.clamp(1-rn/.48,0,1),
       margin:THREE.MathUtils.smoothstep(rn,.62,1)
     };
@@ -2337,7 +2370,12 @@ export class MycoSimEngine{
     if(state.primary==="viscid"){mat.roughness=.34;if("clearcoat" in mat)mat.clearcoat=.52;}
     if(state.primary==="glutinous"){mat.roughness=.22;if("clearcoat" in mat)mat.clearcoat=.72;}
     if(["velvety","tomentose"].includes(state.primary)){mat.roughness=.98;if("clearcoat" in mat)mat.clearcoat=0;}
-    if(state.age==="weathered"||state.age==="old_broken"){
+    const devDry=state.developmentalWaterLoss||0;
+    if(devDry>0){
+      mat.roughness=Math.min(1,(mat.roughness??.8)+devDry*.16);
+      if("clearcoat" in mat)mat.clearcoat=Math.max(0,mat.clearcoat*(1-devDry*.42));
+    }
+    if(state.age==="weathered"||state.age==="old_broken"||(state.developmentalWeathering||0)>.35){
       mat.roughness=Math.min(1,(mat.roughness??.8)+(state.age==="old_broken"?.13:.07));
       if(mat.color)mat.color.offsetHSL(0,-.025,state.age==="old_broken"?-.035:-.015);
     }
@@ -2500,7 +2538,7 @@ export class MycoSimEngine{
     else if(secondary==="cracked")counts.cracks+=this._agaricAddCracks(group,capState,state,{secondary:true});
     else if(secondary==="tomentose")counts.tomentum+=this._agaricAddTomentum(group,capState,state,{secondary:true});
 
-    if(state.age==="weathered"||state.age==="old_broken"){
+    if(state.age==="weathered"||state.age==="old_broken"||(state.developmentalCracking||0)>.12){
       counts.cracks+=this._agaricAddCracks(group,capState,{...state,secondary:"cracked"},{secondary:true});
     }
 
