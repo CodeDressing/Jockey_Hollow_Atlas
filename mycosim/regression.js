@@ -445,6 +445,59 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
       }
     }
 
+    // Sprint 2 stipe surface-state audit: verify every rebuilt generator actually
+    // produces geometry and crosses its nominal regional boundary rather than
+    // reverting to hard apex/mid/base bands.
+    const stipeSurfaceCases=[
+      {state:"longitudinal_striate",region:"mid",objectId:"stipe_mid",expectedRelief:"axial-ridges"},
+      {state:"pruinose",region:"apex",objectId:"stipe_apex",expectedRelief:"microgranular-bloom"},
+      {state:"fibrillose",region:"mid",objectId:"stipe_mid",expectedRelief:"longitudinal-fibres"},
+      {state:"floccose",region:"mid",objectId:"stipe_mid",expectedRelief:"soft-tufts"},
+      {state:"scaly",region:"mid",objectId:"stipe_mid",expectedRelief:"raised-squamules"},
+      {state:"reticulate",region:"mid",objectId:"stipe_mid",expectedRelief:"networked-ridges"}
+    ];
+    const stipeSurfaceAudit=[];
+    for(const test of stipeSurfaceCases){
+      engine.variants={
+        ...engine.variants,
+        agaric_stipe_surface_apex:test.region==="apex"?test.state:"smooth",
+        agaric_stipe_surface_mid:test.region==="mid"?test.state:"smooth",
+        agaric_stipe_surface_base:test.region==="base"?test.state:"smooth"
+      };
+      engine.developmentalStageId="mature";
+      engine.loadProfile("agaricoid");
+      engine.renderer.render(engine.scene,engine.camera);
+      await nextFrame();
+      const group=engine.objects.get(test.objectId);
+      let relief=null,geometryCount=0;
+      group?.traverse?.(n=>{
+        if(n.geometry)geometryCount++;
+        if(!relief&&n.userData?.relief)relief=n.userData.relief;
+      });
+      const bounds=group?.userData?.blendBounds||null;
+      const boundaryCrossing=Array.isArray(bounds)&&(
+        test.region==="apex"?bounds[0]<.72:
+        test.region==="base"?bounds[1]>.30:
+        bounds[0]<.30&&bounds[1]>.72
+      );
+      const elementCount=group?.userData?.elementCount||0;
+      stipeSurfaceAudit.push({
+        state:test.state,region:test.region,
+        pass:!!group&&group.userData?.generator==="phase7b-surface-state-v1"&&
+          group.userData?.regionalBlend===true&&geometryCount>0&&elementCount>0&&
+          relief===test.expectedRelief&&boundaryCrossing,
+        generator:group?.userData?.generator||null,
+        regionalBlend:group?.userData?.regionalBlend===true,
+        geometryCount,elementCount,relief,bounds,boundaryCrossing
+      });
+    }
+    const stipeSprint2={
+      pass:stipeSurfaceAudit.every(x=>x.pass),
+      stateCount:stipeSurfaceAudit.length,
+      passedStates:stipeSurfaceAudit.filter(x=>x.pass).length,
+      states:stipeSurfaceAudit
+    };
+
     // Final campaign audit: every gasteroid teaching archetype × developmental stage.
     const campaignRows=[];
     const subtypeIds=Object.keys(PUFFBALL_SUBTYPE_LIBRARY);
@@ -515,7 +568,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
 
     const failed=rows.filter(r=>!r.pass);
     return {
-      pass:failed.length===0&&memory.pass&&mobile.pass&&specimenIsolation.pass&&campaign.pass,
+      pass:failed.length===0&&memory.pass&&mobile.pass&&specimenIsolation.pass&&campaign.pass&&stipeSprint2.pass,
       generatedAt:new Date().toISOString(),
       totalCombinations:rows.length,
       passedCombinations:rows.length-failed.length,
@@ -528,6 +581,7 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
       rows,
       campaign,
       campaignRows,
+      stipeSprint2,
       memory,
       mobile,
       specimenIsolation
@@ -546,5 +600,5 @@ export async function runMycoSimRegression(engine,{onProgress=()=>{}}={}){
 
 export function formatRegressionSummary(report){
   const status=report.pass?"PASS":"FAIL";
-  return `${status} · ${report.passedCombinations}/${report.totalCombinations} family×stage combinations · campaign ${report.campaign?.stateCount||0}/${report.campaign?.expectedStateCount||0} states · perf failures ${report.performanceFailures?.length||0} · memory Δ geom ${report.memory.delta.geometries} · writes ${report.specimenIsolation.networkWrites.length}`;
+  return `${status} · ${report.passedCombinations}/${report.totalCombinations} family×stage combinations · campaign ${report.campaign?.stateCount||0}/${report.campaign?.expectedStateCount||0} states · stipe Sprint 2 ${report.stipeSprint2?.passedStates||0}/${report.stipeSprint2?.stateCount||0} · perf failures ${report.performanceFailures?.length||0} · memory Δ geom ${report.memory.delta.geometries} · writes ${report.specimenIsolation.networkWrites.length}`;
 }
