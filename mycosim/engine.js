@@ -804,9 +804,9 @@ export class MycoSimEngine{
       const gillDark=p.gill_darkening??0;
       const marginRelease=p.margin_release??(1-(p.margin_inroll??0));
 
-      const capYScale=Math.max(.58,1+(sid==="young"?.34:0)-flatten*.38-collapse*.10);
-      setScale("pileus",expansion,capYScale,expansion);
-      setScale("pileipellis",expansion,capYScale,expansion);
+      const capYScale=Math.max(.82,1+(sid==="young"?.24:0)-flatten*.16-collapse*.05);
+      setScale("pileus",Math.max(.88,expansion),capYScale,Math.max(.88,expansion));
+      setScale("pileipellis",Math.max(.88,expansion),capYScale,Math.max(.88,expansion));
       setScale("pileus_context",expansion,1-collapse*.06,expansion);
       setScale("hymenophore",expansion,Math.max(.20,p.lamella_exposure??1),expansion);
       setScale("stipe",1-waterLoss*.055,elong*(1-collapse*.08),1-waterLoss*.055);
@@ -2001,88 +2001,109 @@ export class MycoSimEngine{
   }={}){
     segments=scaledSegments(segments,this.realismTier,{min:56,max:132});
     rings=scaledSegments(rings,this.realismTier,{min:30,max:58});
-    const verts=[],uvs=[],indices=[];
     const phase=((seed%7919)/7919)*Math.PI*2;
-    const row=segments+1;
 
-    const topPoint=(rr,theta)=>{
-      const x=THREE.MathUtils.clamp(rr,0,1);
-      const m=this._agaricMarginState(margin,x,theta);
-      const organicRadial=1+
-        .010*Math.sin(theta*2.17+phase)*(.25+.75*x)+
-        .006*Math.cos(theta*5.03-phase*.7)*x*x;
-      const effectiveRadius=radius*x*m.radial*organicRadial;
-      const y=
-        this._agaricProfileHeight(profile,x)+
+    const marginY=(t,theta)=>{
+      const edge=THREE.MathUtils.smoothstep(t,.72,1);
+      if(margin==="incurved")return -.055*edge;
+      if(margin==="decurved")return -.050*edge;
+      if(margin==="uplifted")return .065*edge;
+      if(margin==="inrolled")return -.100*edge;
+      if(margin==="undulate")return .035*Math.sin(theta*6+.45)*edge;
+      if(margin==="split_cracked"){
+        const crack=Math.pow(Math.max(0,Math.cos(theta*6)),18);
+        return -.020*crack*edge;
+      }
+      if(margin==="striate")return .005*Math.sin(theta*28)*edge;
+      if(margin==="appendiculate")return -.016*edge;
+      return 0;
+    };
+
+    const radialFactor=(t,theta)=>{
+      const edge=THREE.MathUtils.smoothstep(t,.72,1);
+      let factor=1;
+      if(margin==="incurved")factor-=.012*edge;
+      else if(margin==="inrolled")factor-=.030*edge;
+      else if(margin==="uplifted")factor+=.008*edge;
+      else if(margin==="lobed")factor+=.026*Math.sin(theta*5+.30)*edge;
+      else if(margin==="split_cracked"){
+        const crack=Math.pow(Math.max(0,Math.cos(theta*6)),18);
+        factor-=.024*crack*edge;
+      }else if(margin==="striate")factor+=.004*Math.sin(theta*28)*edge;
+      return THREE.MathUtils.clamp(factor,.91,1.07);
+    };
+
+    const topHeightAt=(t,theta=0)=>{
+      const x=THREE.MathUtils.clamp(t,0,1);
+      return this._agaricProfileHeight(profile,x)+
         this._agaricCenterOffset(center,x)+
-        m.y+
-        (.006*Math.sin(theta*3.11+phase)+.004*Math.cos(theta*7.4-phase))*Math.pow(x,1.25);
-      return new THREE.Vector3(Math.cos(theta)*effectiveRadius,y,Math.sin(theta)*effectiveRadius);
+        marginY(x,theta)+
+        (.004*Math.sin(theta*3.11+phase)+.003*Math.cos(theta*7.4-phase))*Math.pow(x,1.22);
     };
 
-    const undersidePoint=(rr,theta)=>{
-      const x=THREE.MathUtils.clamp(rr,0,1);
-      const top=topPoint(x,theta);
-      const m=this._agaricMarginState(margin,x,theta);
-      const taper=THREE.MathUtils.smoothstep(x,.08,1);
-      const thickness=THREE.MathUtils.clamp(
-        THREE.MathUtils.lerp(.235,.072,Math.pow(taper,.82))+m.thicknessBoost,
-        .060,.290
-      );
-      return new THREE.Vector3(top.x,top.y-thickness-.006*Math.pow(x,1.55),top.z);
+    const thicknessAt=(t)=>{
+      const x=THREE.MathUtils.clamp(t,0,1);
+      const edge=THREE.MathUtils.smoothstep(x,.72,1);
+      let thickness=THREE.MathUtils.lerp(.245,.082,Math.pow(x,.88));
+      if(margin==="inrolled")thickness+=.028*edge;
+      if(margin==="incurved")thickness+=.012*edge;
+      if(margin==="appendiculate")thickness+=.008*edge;
+      return THREE.MathUtils.clamp(thickness,.070,.300);
     };
 
-    for(let ir=0;ir<=rings;ir++){
-      const rr=ir/rings;
-      for(let it=0;it<=segments;it++){
-        const u=it/segments,theta=u*Math.PI*2,p=topPoint(rr,theta);
-        verts.push(p.x,p.y,p.z);uvs.push(u,rr);
-      }
+    const profilePts=[];
+    for(let i=0;i<=rings;i++){
+      const t=i/rings;
+      profilePts.push(new THREE.Vector2(radius*t,topHeightAt(t,0)));
+    }
+    for(let i=rings;i>=0;i--){
+      const t=i/rings;
+      profilePts.push(new THREE.Vector2(radius*t,topHeightAt(t,0)-thicknessAt(t)));
     }
 
-    const undersideOffset=verts.length/3;
-    for(let ir=0;ir<=rings;ir++){
-      const rr=ir/rings;
-      for(let it=0;it<=segments;it++){
-        const u=it/segments,theta=u*Math.PI*2,p=undersidePoint(rr,theta);
-        verts.push(p.x,p.y,p.z);uvs.push(u,rr);
-      }
+    const g=new THREE.LatheGeometry(profilePts,segments);
+    const pos=g.attributes.position;
+
+    for(let i=0;i<pos.count;i++){
+      const x=pos.getX(i),y=pos.getY(i),z=pos.getZ(i);
+      const planar=Math.hypot(x,z);
+      if(planar<1e-6)continue;
+      const theta=Math.atan2(z,x);
+      const t=THREE.MathUtils.clamp(planar/radius,0,1);
+      const f=radialFactor(t,theta);
+      const baseMargin=marginY(t,0);
+      const localMargin=marginY(t,theta);
+      pos.setXYZ(i,x*f,y+(localMargin-baseMargin),z*f);
     }
-
-    for(let ir=0;ir<rings;ir++){
-      for(let it=0;it<segments;it++){
-        const a=ir*row+it,b=a+1,c=(ir+1)*row+it,d=c+1;
-        indices.push(a,b,c,b,d,c);
-
-        const aa=undersideOffset+a,bb=undersideOffset+b,cc=undersideOffset+c,dd=undersideOffset+d;
-        indices.push(aa,cc,bb,bb,cc,dd);
-      }
-    }
-
-    const topEdge=rings*row;
-    const bottomEdge=undersideOffset+rings*row;
-    for(let it=0;it<segments;it++){
-      const a=topEdge+it,b=a+1,c=bottomEdge+it,d=c+1;
-      indices.push(a,c,b,b,c,d);
-    }
-
-    const g=new THREE.BufferGeometry();
-    g.setAttribute("position",new THREE.Float32BufferAttribute(verts,3));
-    g.setAttribute("uv",new THREE.Float32BufferAttribute(uvs,2));
-    g.setIndex(indices);
+    pos.needsUpdate=true;
     g.computeVertexNormals();
     g.computeBoundingBox();
     g.computeBoundingSphere();
 
     g.userData={
-      model:"agaricoid-stable-pileus-v2",profile,center,margin,radius,
-      thickness:{disc:.235,margin:.072},
+      model:"agaricoid-recovery-pileus-v3",profile,center,margin,radius,
+      thickness:{disc:.245,margin:.082},
       supportsGillInsertion:true,
-      recoveryContract:"continuous top + underside + rim; bounded margin deformation"
+      recoveryContract:"closed LatheGeometry cap with bounded margin deformation"
     };
-    g.userData.topPoint=(r,theta=0)=>topPoint(THREE.MathUtils.clamp(r/radius,0,1),theta);
+
+    const effectiveRadius=(r,theta=0)=>{
+      const rr=THREE.MathUtils.clamp(r,0,radius);
+      const t=rr/radius;
+      return rr*radialFactor(t,theta);
+    };
+    g.userData.topPoint=(r,theta=0)=>{
+      const rr=THREE.MathUtils.clamp(r,0,radius);
+      const er=effectiveRadius(rr,theta);
+      return new THREE.Vector3(Math.cos(theta)*er,topHeightAt(rr/radius,theta),Math.sin(theta)*er);
+    };
     g.userData.topHeight=(r,theta=0)=>g.userData.topPoint(r,theta).y;
-    g.userData.undersidePoint=(r,theta=0)=>undersidePoint(THREE.MathUtils.clamp(r/radius,0,1),theta);
+    g.userData.undersidePoint=(r,theta=0)=>{
+      const rr=THREE.MathUtils.clamp(r,0,radius);
+      const er=effectiveRadius(rr,theta);
+      const t=rr/radius;
+      return new THREE.Vector3(Math.cos(theta)*er,topHeightAt(t,theta)-thicknessAt(t),Math.sin(theta)*er);
+    };
     g.userData.undersideHeight=(r,theta=0)=>g.userData.undersidePoint(r,theta).y;
     return g;
   }
@@ -2097,7 +2118,6 @@ export class MycoSimEngine{
     const aging=development.stipe_aging??0;
     const collapse=development.collapse??0;
     const deformation=development.deformation??0;
-
     const radiusAt=t=>{
       let r=THREE.MathUtils.lerp(bottom,top,t);
       if(form==="tapering")r*=1.14-.28*t;
@@ -3137,6 +3157,8 @@ export class MycoSimEngine{
     const cap=this.register(new THREE.Mesh(capGeo,capMaterial),"pileus","Pileus / cap","macro");
     cap.position.y=capY;
     cap.userData.profile=profile;cap.userData.center=center;cap.userData.margin=margin;
+    cap.userData.recoveryBuild="phase6-pileus-v3";
+    cap.userData.expectedVisiblePileus=true;
 
     const ctx=cap.clone();
     ctx.geometry=capGeo.clone();
@@ -3147,7 +3169,6 @@ export class MycoSimEngine{
     ctx.userData={id:"pileus_context",label:"Pileus context",category:"internal",parentId:"pileus",selectable:true,knowledgeId:"pileus_context"};
     ctx.visible=false;
     this.root.add(ctx);this.objects.set("pileus_context",ctx);this._rememberTransform(ctx);
-
     const underside=capGeo.userData.undersideHeight;
     const apexLocal=typeof underside==="function"?underside(0,0):-.22;
     const stipeTopY=capY+apexLocal+.025;
