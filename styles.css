@@ -189,3 +189,193 @@
   .fullset-panel{padding:8px}
   .fullset-btn{padding:8px}
 }
+
+
+/* ============================================================
+   UNIVERSAL MYCOSCOPE WORKBENCH
+   2026-10-03
+   One layout on every screen: preserve the desktop atlas UI.
+   This intentionally overrides all earlier mobile/narrow rules.
+   ============================================================ */
+@media (max-width:900px){
+  html,body{
+    width:100%;
+    min-width:0;
+    height:100%;
+    overflow:hidden !important;
+  }
+
+  .app{
+    display:grid !important;
+    grid-template-columns:clamp(220px,24vw,310px) minmax(0,1fr) !important;
+    width:100% !important;
+    min-width:0 !important;
+    height:100vh !important;
+  }
+
+  .sidebar{
+    display:block !important;
+    min-width:0 !important;
+    padding:14px 12px !important;
+    overflow:auto !important;
+    border-right:1px solid var(--line) !important;
+  }
+
+  .content{
+    display:block !important;
+    min-width:0 !important;
+    height:100vh !important;
+    overflow:auto !important;
+  }
+
+  .topbar{
+    position:sticky !important;
+    top:0 !important;
+    z-index:50 !important;
+    display:flex !important;
+    justify-content:space-between !important;
+    align-items:flex-start !important;
+    gap:14px !important;
+    padding:10px 14px !important;
+    background:rgba(13,17,19,.95) !important;
+    backdrop-filter:blur(12px) !important;
+    border-bottom:1px solid var(--line) !important;
+  }
+
+  .topbar .desktopOnly{
+    display:block !important;
+  }
+
+  /* Never substitute the mobile navigation experience. */
+  .mobileControls,
+  .mobile-fullset-panel,
+  .mobile-sandbox{
+    display:none !important;
+  }
+
+  .container{
+    width:100% !important;
+    max-width:1480px !important;
+    margin:0 auto !important;
+    padding:18px 18px 80px !important;
+  }
+
+  .spec-head{
+    display:flex !important;
+    align-items:flex-start !important;
+    justify-content:space-between !important;
+    gap:18px !important;
+  }
+
+  .spec-head h1{
+    font-size:clamp(25px,3vw,34px) !important;
+  }
+
+  .navBtns{
+    display:flex !important;
+    margin-top:0 !important;
+  }
+
+  .hero{
+    display:grid !important;
+    grid-template-columns:minmax(0,1.55fr) minmax(230px,.72fr) !important;
+    gap:14px !important;
+  }
+
+  .summary-grid{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:10px !important;
+  }
+
+  .gallery{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:14px !important;
+  }
+
+  .image-wrap{
+    aspect-ratio:4/3 !important;
+    min-height:0 !important;
+    max-height:none !important;
+  }
+
+  .image-wrap img{
+    width:100% !important;
+    height:100% !important;
+    max-height:none !important;
+    object-fit:contain !important;
+  }
+
+  .section h2{
+    position:static !important;
+    top:auto !important;
+    background:transparent !important;
+    z-index:auto !important;
+    padding-top:0 !important;
+  }
+
+  .viewer-bar{
+    display:flex !important;
+  }
+
+  .viewer-title{
+    grid-column:auto !important;
+  }
+
+  .toolbtn{
+    width:auto !important;
+    padding:9px 11px !important;
+  }
+}
+
+/* On exceptionally narrow viewports, keep the same workbench architecture
+   rather than switching UI paradigms.  The sidebar compresses but remains
+   present and usable. */
+@media (max-width:680px){
+  .app{
+    grid-template-columns:190px minmax(0,1fr) !important;
+  }
+
+  .sidebar{
+    padding:10px 8px !important;
+  }
+
+  .brand{
+    font-size:20px !important;
+  }
+
+  .subtitle{
+    font-size:10px !important;
+  }
+
+  .search,.filter,select{
+    padding:8px !important;
+    font-size:12px !important;
+  }
+
+  .fullset-head span{
+    display:none !important;
+  }
+
+  .fullset-btn{
+    padding:7px 8px !important;
+  }
+
+  .container{
+    padding:14px 12px 70px !important;
+  }
+
+  .hero{
+    grid-template-columns:minmax(0,1fr) !important;
+  }
+
+  .summary-grid,
+  .gallery{
+    grid-template-columns:1fr !important;
+  }
+
+  .topbar .desktopOnly{
+    display:none !important;
+  }
+}
