@@ -410,7 +410,25 @@ function renderList(){
 }
 function setCurrent(code){
   if(!data.some(x=>x.code===code))return;
-  current=code;renderList();renderSpec();window.scrollTo({top:0,behavior:'smooth'});
+  current=code;
+  renderList();
+  renderSpec();
+
+  const content=document.querySelector('.content');
+  if(window.matchMedia('(max-width:900px)').matches){
+    requestAnimationFrame(()=>{
+      const main=document.getElementById('main');
+      if(main){
+        main.scrollIntoView({block:'start',behavior:'smooth'});
+      }else{
+        window.scrollTo({top:0,behavior:'smooth'});
+      }
+    });
+  }else if(content){
+    content.scrollTo({top:0,behavior:'smooth'});
+  }else{
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
 }
 function nav(delta){
   const rows=filtered();
