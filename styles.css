@@ -81,12 +81,62 @@
 /* Mobile Full Data Sets launcher */
 .mobile-fullset-panel{display:none}
 @media(max-width:900px){
-  .mobile-fullset-panel{display:block;margin:8px 0 10px;padding:9px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+  .mobile-fullset-panel{
+    display:block;
+    margin:8px 0 10px;
+    padding:8px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    background:rgba(255,255,255,.02);
+    max-width:100%;
+    overflow:hidden
+  }
   .mobile-fullset-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:7px}
   .mobile-fullset-head strong{font-size:13px}
   .mobile-fullset-head span{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-  .mobile-fullset-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
-  .mobile-fullset-list .fullset-btn{min-height:52px;padding:8px}
+  .mobile-fullset-list{
+    display:flex;
+    gap:7px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:1px 1px 5px;
+    scroll-snap-type:x proximity;
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch
+  }
+  .mobile-fullset-list .fullset-btn{
+    flex:0 0 min(220px,78vw);
+    min-height:58px;
+    padding:9px 10px;
+    scroll-snap-align:start
+  }
   .mobile-fullset-list .fullset-btn small{font-size:9px}
   .mobile-fullset-list .fullset-btn b{display:none}
+  .topbar{max-height:none}
+}
+
+
+/* Narrow desktop / scaled secondary-monitor recovery.
+   A fine-pointer device may report <900 CSS px because of OS/browser scaling.
+   Preserve a usable split workbench down to 760 px rather than forcing the
+   full mobile launcher over the specimen record. */
+@media (min-width:760px) and (max-width:900px) and (pointer:fine){
+  body{overflow:hidden}
+  .app{display:grid;height:100vh;grid-template-columns:250px minmax(0,1fr)}
+  .sidebar{display:block;padding:14px 11px;overflow:auto}
+  .content{overflow:auto;min-width:0}
+  .topbar{display:flex;padding:10px 14px}
+  .topbar .desktopOnly{display:block}
+  .mobileControls,.mobile-fullset-panel,.mobile-sandbox{display:none}
+  .container{padding:18px 16px 70px;max-width:100%}
+  .spec-head{display:flex}
+  .spec-head h1{font-size:30px}
+  .hero{grid-template-columns:minmax(0,1.35fr) minmax(250px,.65fr)}
+  .summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .image-wrap{aspect-ratio:4/3;min-height:0;max-height:none}
+  .image-wrap img{height:100%;max-height:none}
+  .section h2{position:static}
+  .fullset-panel{padding:8px}
+  .fullset-btn{padding:8px}
 }
