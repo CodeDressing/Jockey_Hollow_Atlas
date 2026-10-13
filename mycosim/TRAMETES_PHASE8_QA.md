@@ -41,3 +41,16 @@ Status: first incremental implementation committed; browser/runtime, mobile, vis
 3. Phase 8 Part 5: integrate selectable microlayer views and objective evidentiary citations.
 4. Phase 8 Part 6: staged animation, farm-to-human evidence map and quiz.
 5. Phase 8 Part 7: performance, regression and live deployment verification.
+
+## Additive integration update — 2026-10-13
+
+The original statement that core files were unchanged reflects the first opt-in implementation only. A second, additive integration now also exists:
+- `mycosim/trametes_versicolor.js` exports a species-specific builder for the existing `MycoSimEngine`.
+- `mycosim/profiles.js`, `stages.js`, `engine.js`, and `knowledge.js` gained Turkey Tail profile/stage/factory/knowledge entries; the generic polyporoid and other factories remain in place.
+- Species profile ID: `trametes_versicolor`; linked anatomical and molecular knowledge includes Dectin-1, hemITAM, SYK and CARD9. Object IDs `basidiome_1` through `basidiome_8` match the species anatomy registry.
+- The standalone opt-in scene and integrated model selection currently coexist. This is transitional architecture, not a finalized renderer unification.
+- Static connector checks confirmed unique species profile, existence of stage, factory method, module export, knowledge map and associated navigation. These are not equivalent to browser/runtime tests.
+- Render workspace remains unconfirmed for deployment management; live site not verified.
+- Additional reference: https://pmc.ncbi.nlm.nih.gov/articles/PMC5453709/ (experimental antifungal innate receptor signaling). Neither pathway demonstrates ingestion efficacy of whole Turkey Tail powder.
+
+Before claiming release: run syntax checks, WebGL browser checks, existing regression QA, mobile/touch QA and deploy SHA comparison. 
