@@ -359,6 +359,7 @@ body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
 
   <section id="trametes-simulator" aria-label="Trametes versicolor 3D educational reconstruction" style="grid-column:1/-1;padding:16px;border:1px solid #4b625f;border-radius:12px;background:#101a1b;color:#dce9e4;margin:12px 0">
     <div style="display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;align-items:center"><div><div class="kicker">MYCOSIM · SPECIES RECONSTRUCTION · PHASE 8</div><h2 style="margin:5px 0">Trametes versicolor — interactive hardwood log</h2><p class="copy">Procedurally generated 3D educational reconstruction, not a scanned or identified specimen. Distinguishes macroscopic tissues from inferred and magnified structures.</p></div><span class="badge" style="position:static">EDUCATIONAL RECONSTRUCTION</span></div>
+    <button id="tv-start" type="button" style="margin:9px 0;padding:10px 14px;font-weight:700">Start Turkey Tail 3D simulation</button>
     <canvas id="tv-canvas" style="display:block;width:100%;height:clamp(260px,44vw,510px);min-height:260px;touch-action:none;border-radius:10px;background:#0b1417" aria-label="Three dimensional interactive Turkey Tail mushrooms growing on hardwood log"></canvas>
     <p class="copy">Drag to orbit · pinch or wheel to zoom · tap a structure to select. This scene is independent of the original MycoSim renderer and specimen records.</p>
     <div style="display:flex;gap:7px;flex-wrap:wrap;margin:12px 0" role="group" aria-label="Select fungal anatomy">
@@ -385,6 +386,21 @@ window.MYCOSIM_BOOT_WATCHDOG=setTimeout(()=>{
 },5000);
 </script>
 <script type="module" src="mycosim/main.js?v=phase7-sprint5-20261003"></script>
-<script type="module" src="mycosim/trametes_sim.js?v=20261013-phase8"></script>
+<script type="module">
+const start=document.getElementById("tv-start");
+if(start)start.addEventListener("click",async()=>{
+  start.disabled=true;start.textContent="Initializing Turkey Tail scene…";
+  try{
+    await import("./mycosim/trametes_sim.js?v=20261013-phase8");
+    start.textContent="3D scene ready";
+    start.setAttribute("aria-pressed","true");
+  }catch(error){
+    console.error("Turkey Tail module failed",error);
+    start.disabled=false;start.textContent="Retry 3D simulation";
+    const info=document.getElementById("tv-info");
+    if(info)info.textContent="Unable to initialize 3D scene: "+String(error?.message||error);
+  }
+},{once:false});
+</script>
 </body>
 </html>
