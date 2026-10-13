@@ -2,7 +2,7 @@ import {mountTrametesCurriculum} from "./trametes-education.js";
 import {MORPHOLOGY_PROFILES,PROFILE_BY_ID} from "./profiles.js?v=phase7-sprint5-20261003";
 import {MORPHOLOGY_VARIANTS,variantLabel,variantTeaching,puffballSubtype} from "./variants.js?v=phase7-sprint5-20261003";
 import {KNOWLEDGE_OBJECTS,getKnowledge,getPathFor,childKnowledge} from "./knowledge.js?v=phase7-sprint5-20261003";
-import {MycoSimEngine} from "./engine.js?v=phase7-sprint5-20261003";
+import {MycoSimEngine} from "./engine.js?v=phase8-integrity-20261013";
 import {OBSERVATION_FIELDS,emptyObservationRecord,compareObservedToCandidates,fieldLabel} from "./identification.js?v=phase7-sprint5-20261003";
 import {newSporeMeasurement,summarizeSpores,formatStat} from "./sporelab.js?v=phase7-sprint5-20261003";
 import {developmentalStageOptions} from "./development.js?v=phase7-sprint5-20261003";
