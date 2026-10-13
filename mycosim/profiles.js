@@ -47,6 +47,28 @@ export const MORPHOLOGY_PROFILES = [
     ]
   },
   {
+    id:"trametes_versicolor",label:"Trametes versicolor — Turkey Tail",group:"bracket",factory:"trametes_versicolor",version:"0.1.0",
+    description:"Procedural educational reconstruction: overlapping zonate brackets on decaying hardwood; not a verified specimen.",
+    variantGroups:[],developmentalStages:["young","mature","old"],
+    anatomy:[
+      A("substrate","Decaying hardwood log","ecology","Wood supporting extracellular decomposition."),
+      A("bark","Bark and cracks","ecology","Outer bark represented procedurally.","substrate"),
+      A("mycelium","Vegetative mycelium (inferred)","internal","Internal wood-colonizing hyphae shown schematically.","substrate"),
+      A("pileus","Concentrically zoned upper surface","macro","Thin, often hairy, concentrically banded upper bracket surface."),
+      A("context","Context / trama","internal","Thin internal tissue of a fruiting body."),
+      A("tube_layer","Tubes","fertile","Short tube system within the poroid hymenophore."),
+      A("hymenophore","Whitish pore surface","fertile","Underside with minute pores; represented schematically."),
+      A("basidiome_1","Individual bracket 1","macro","Individually selectable reconstructed basidiome."),
+      A("basidiome_2","Individual bracket 2","macro","Individually selectable reconstructed basidiome."),
+      A("basidiome_3","Individual bracket 3","macro","Individually selectable reconstructed basidiome."),
+      A("basidiome_4","Individual bracket 4","macro","Individually selectable reconstructed basidiome."),
+      A("basidiome_5","Individual bracket 5","macro","Individually selectable reconstructed basidiome."),
+      A("basidiome_6","Individual bracket 6","macro","Individually selectable reconstructed basidiome."),
+      A("basidiome_7","Individual bracket 7","macro","Individually selectable reconstructed basidiome."),
+      A("basidiome_8","Individual bracket 8","macro","Individually selectable reconstructed basidiome.")
+    ]
+  },
+  {
     id:"polyporoid",label:"Bracket polypore",group:"bracket",factory:"polyporoid",version:"2.0.0",
     description:"Shelf or bracket body with context, tube layer and pore surface.",
     variantGroups:[],developmentalStages:["young","mature","old"],
