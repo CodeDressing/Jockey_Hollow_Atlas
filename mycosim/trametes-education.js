@@ -1,0 +1,45 @@
+// Public MycoSim curriculum. Educational mechanisms are not clinical outcomes.
+// Stable identifiers allow future cross-atlas links without sharing private data.
+export const TRAMETES_CURRICULUM_VERSION="1.0.0";
+const ref=[
+ {label:"MycoBank nomenclature",url:"https://www.mycobank.org/"},
+ {label:"PubMed: fungal wood decay",url:"https://pubmed.ncbi.nlm.nih.gov/?term=white+rot+fungi+lignin+Trametes+versicolor"},
+ {label:"PubMed: Dectin-1 SYK CARD9",url:"https://pubmed.ncbi.nlm.nih.gov/?term=Dectin-1+SYK+CARD9+fungal+beta+glucan"},
+ {label:"NCI: medicinal mushrooms evidence",url:"https://www.cancer.gov/about-cancer/treatment/cam/hp/mushrooms-pdq"},
+ {label:"FDA: food labeling",url:"https://www.fda.gov/food/food-labeling-nutrition"}
+];
+export const TRAMETES_LESSONS=Object.freeze([
+ {id:"JHA.TV.LIFE.01",title:"Life cycle: spore to established mycelium",tier:"Established biology; timing schematic",pronunciation:"BYOO-tuh-ree-oh-SPORE",text:"Basidiospores disperse from hymenial tubes and may germinate when conditions permit. Compatible monokaryotic hyphae can mate, producing dikaryotic mycelium. The schematic sequence is not an experimentally measured timeline for this specimen.",steps:["Basidiospore dispersal","Spore germination","Compatible hyphal interaction","Dikaryotic mycelium establishment"],related:["basidiospore","hypha","dikaryon"]},
+ {id:"JHA.TV.LIFE.02",title:"Wood colonization and white rot",tier:"Established biology; modeled geometry",pronunciation:"LIG-nin; SEL-yoo-lohs",text:"Extracellular oxidative enzymes can modify lignin, while hydrolytic enzymes degrade cellulose and hemicellulose. Soluble breakdown products can be absorbed by fungal hyphae. Different strains and wood substrates vary; the bright internal mycelium is inferred, not a specimen scan.",steps:["Hyphae penetrate suitable wood","Extracellular oxidative and hydrolytic enzymes act","Wood polymers are modified and fragmented","Fungal cells acquire usable breakdown products"],related:["lignin","cellulose","hemicellulose","mycelium"]},
+ {id:"JHA.TV.LIFE.03",title:"Bracket formation and reproduction",tier:"Established biology; procedural reconstruction",pronunciation:"BA-sid-ee-uh",text:"Fruiting-body primordia grow into overlapping fan-shaped brackets. Their upper surfaces develop concentric bands. A whitish underside contains small pores leading to tubes lined with hymenium, where basidia ultimately form basidiospores. Growth, weathering, and decomposition vary among individuals.",steps:["Primordia","Thin bracket expansion","Pore and tube development","Basidia and spore production","Dispersal and aging"],related:["pileus","context","hymenophore","basidia"]},
+ {id:"JHA.TV.IMMUNE.01",title:"Fungal cell walls and Dectin-1",tier:"Experimentally supported receptor mechanism",pronunciation:"DEK-tin one; BAY-tuh GLOO-kan",text:"Some suitably exposed fungal beta-1,3-glucan configurations bind Dectin-1, an innate pattern-recognition receptor encoded by CLEC7A. Dectin-1 is found on subsets of macrophages, dendritic cells and neutrophils. Receptor engagement depends on glucan structure, presentation and immune-cell context.",steps:["Accessible fungal beta-glucan","Dectin-1 (CLEC7A) receptor clustering","Phosphorylation of the hemITAM signaling motif","SYK kinase recruitment and activation"],related:["CLEC7A","macrophage","dendritic_cell","neutrophil"]},
+ {id:"JHA.TV.IMMUNE.02",title:"SYK to immune-response transcription",tier:"Experimentally supported molecular pathway; context dependent",pronunciation:"SICK; CARD nine; en eff KAP-uh bee",text:"Activated SYK can initiate CARD9–BCL10–MALT1 signaling, which contributes to IKK and NF-kappa-B pathway activation and immune-response gene transcription. These pathways influence antifungal responses in relevant experimental conditions. Binding does not imply every response occurs or that oral mushroom powder has the same effect.",steps:["SYK kinase signaling","CARD9–BCL10–MALT1 assembly","IKK activation","NF-κB signaling","Immune-response gene transcription"],related:["SYK","CARD9","BCL10","MALT1","IKK","NFKB"]},
+ {id:"JHA.TV.FOOD.01",title:"Forest to verified food material",tier:"Food-safety workflow, not identification certification",pronunciation:"TRAM-uh-teez ver-sih-KUL-or",text:"Harvesting requires reliable species identification and assessment of substrate, contamination, decomposition, local collection rules and food safety. Record location, date, identifier, photos, substrate and physical lot. A simulation or color-pattern match must never authorize consumption.",steps:["Field observation","Qualified identity verification","Harvest and exclusion checks","Physical lot assignment","Clean processing"],related:["taxonomy","identification","lot"]},
+ {id:"JHA.TV.FOOD.02",title:"Drying, milling and ingestion",tier:"Processing facts; clinical outcomes unproven",pronunciation:"pol-ee-SAK-uh-ride",text:"Drying, milling and packaging require validated hygiene, moisture control and traceability. Whole fruiting-body powder differs substantially from concentrated extracts and from specifically standardized PSK and PSP. After ingestion, digestion, microbial fermentation and mucosal barriers alter exposure. No particular Dectin-1 cascade or immune-health benefit is established for routine consumption of ordinary dried Turkey Tail powder.",steps:["Dry and document conditions","Mill without cross-contamination","Package with lot and compliant labeling","Oral ingestion and digestion","Possible microbial and mucosal interactions","Interpret human evidence separately"],related:["whole_fruiting_body","PSK","PSP","microbiome"]}
+]);
+export function mountTrametesCurriculum(root){
+ if(!root||root.dataset.trametesMounted)return;
+ root.dataset.trametesMounted="true";
+ root.style.cssText="border:1px solid #3c5652;border-radius:12px;padding:12px;margin-top:15px;background:#0b1818;color:#e8eeec;max-width:100%;font:13px system-ui,sans-serif";
+ const heading=document.createElement("h2");heading.textContent="Turkey Tail · Guided Biological Pathways";root.append(heading);
+ const note=document.createElement("p");note.textContent="Select a pathway to follow biology from the hardwood log through fungal anatomy, experimental immune mechanisms, and food processing. Procedural reconstructions are not specimen observations or evidence of clinical efficacy.";root.append(note);
+ const nav=document.createElement("div");nav.style.cssText="display:flex;flex-wrap:wrap;gap:5px;margin:12px 0";root.append(nav);
+ const title=document.createElement("h3"),tier=document.createElement("p"),detail=document.createElement("p"),pronounce=document.createElement("p"),steps=document.createElement("ol"),refs=document.createElement("div");
+ root.append(title,tier,detail,pronounce,steps,refs);
+ const control=document.createElement("div");control.style.cssText="display:flex;flex-wrap:wrap;gap:6px;margin:10px 0";root.append(control);
+ let current=0;
+ const button=(txt,fn,parent=control)=>{const b=document.createElement("button");b.type="button";b.textContent=txt;b.style.cssText="padding:8px;border:1px solid #61736c;border-radius:7px;background:#1c2a27;color:#f5ead8;cursor:pointer";b.addEventListener("click",fn);parent.append(b);return b;};
+ const speaker=()=>{if(!("speechSynthesis" in window))return;window.speechSynthesis.cancel();const t=TRAMETES_LESSONS[current];const u=new SpeechSynthesisUtterance(t.title+". "+t.pronunciation+". "+t.text+" Steps: "+t.steps.join(". "));u.rate=.88;window.speechSynthesis.speak(u);};
+ function show(i){
+ current=(i+TRAMETES_LESSONS.length)%TRAMETES_LESSONS.length;
+ const t=TRAMETES_LESSONS[current];title.textContent=t.title;tier.textContent="Evidence classification: "+t.tier;detail.textContent=t.text;pronounce.textContent="Pronunciation: "+t.pronunciation;
+ steps.replaceChildren();for(const s of t.steps){const li=document.createElement("li");li.textContent=s;steps.append(li);}
+ [...nav.children].forEach((b,j)=>b.setAttribute("aria-pressed",String(j===current)));
+ }
+ TRAMETES_LESSONS.forEach((t,i)=>button((i+1)+". "+(i<3?"Development":i<5?"Immunology":"Farm to food"),()=>show(i),nav));
+ button("← Previous",()=>show(current-1));button("Next →",()=>show(current+1));button("🔊 Read lesson",speaker);
+ const test=document.createElement("details");test.style.marginTop="12px";const sum=document.createElement("summary");sum.textContent="Knowledge check: does eating ordinary powder prove SYK activation?";test.append(sum);const ans=document.createElement("p");ans.textContent="No. Experimental receptor recognition does not establish oral exposure, a specific in-vivo response, or clinical efficacy.";test.append(ans);root.append(test);
+ const foot=document.createElement("p");foot.textContent="Public educational references (external; evaluate individual papers and evidence levels):";root.append(foot);
+ ref.forEach(r=>{const a=document.createElement("a");a.href=r.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=r.label;a.style.cssText="display:block;color:#d9b56d;margin:4px 0";refs.append(a);});
+ show(0);
+}
