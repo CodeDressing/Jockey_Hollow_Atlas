@@ -84,15 +84,15 @@ export function buildTrametesVersicolor(engine){
     const top=new THREE.Mesh(bracketGeometry(width,false),upperMat());
     const under=new THREE.Mesh(bracketGeometry(width,true),lowerMat());
     group.add(top,under);
-    group.position.set(x,.16+y,side*.60);
+    group.position.set(x,.42+y,side*.60);
     group.rotation.y=side>0?0:Math.PI;
     group.rotation.z=(i%2?-.07:.06);
-    group.userData={id:"bracket_"+String(i+1).padStart(2,"0"),label:"Turkey Tail basidioma "+(i+1),category:"macro",parentId:"pileus",selectable:true,knowledgeId:"pileus"};
+    group.userData={id:"basidiome_"+(i+1),label:"Turkey Tail basidioma "+(i+1),category:"macro",parentId:"pileus",selectable:true,knowledgeId:"pileus"};
     engine.root.add(group);engine.objects.set(group.userData.id,group);
     engine.pickables.push(top,under);
   });
   // Representative registered structure IDs preserve existing anatomy controls.
-  const first=engine.objects.get("bracket_01");
+  const first=engine.objects.get("basidiome_1");
   if(first){
     const pileus=new THREE.Group();
     pileus.userData={id:"pileus",label:"Zoned upper bracket surface",category:"macro",selectable:true};
