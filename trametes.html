@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Trametes versicolor | MycoSim</title>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+<style>
+:root{color-scheme:dark;--bg:#091011;--line:#2b4140;--accent:#d9b56d;--ink:#e8eeec;--muted:#adc1bb}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px system-ui,Segoe UI,sans-serif}
+header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:12px 18px;background:#0b1818;border-bottom:1px solid var(--line)}
+a{color:#e9d397}header a{text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:9px}
+main{display:grid;grid-template-columns:minmax(0,1fr) 350px;min-height:calc(100dvh - 65px)}
+#sceneWrap{position:sticky;top:0;height:calc(100dvh - 65px);min-height:480px;background:radial-gradient(circle at 50% 36%,#26412e,#071010 76%);overflow:hidden}
+canvas{width:100%;height:100%;touch-action:none;display:block}
+#hint{position:absolute;bottom:12px;left:12px;padding:9px;background:#071010cc;border:1px solid var(--line);border-radius:8px;font-size:11px;color:var(--muted)}
+aside{padding:18px;background:#111d1d;border-left:1px solid var(--line)}
+h1{font-size:24px;margin:2px 0 8px}h2{font-size:14px;margin:18px 0 7px;color:#e4d19b}p{line-height:1.55;color:var(--muted)}
+button{background:#162525;border:1px solid #3c5652;color:var(--ink);padding:10px;border-radius:8px;cursor:pointer;font:inherit}
+button[aria-pressed=true]{background:#4c4028;border-color:#d9b56d;color:#fff0c1}
+.buttons{display:grid;grid-template-columns:1fr 1fr;gap:7px}.buttons button{font-size:12px;text-align:left}
+#detail{background:#0b1616;border:1px solid var(--line);border-radius:9px;padding:11px;min-height:135px}
+#detail strong{display:block;font-size:16px;color:#f2dca5}#detail p{margin:6px 0;font-size:12px}
+.note{border-left:3px solid #bc9760;padding:8px 11px;background:#18201a;font-size:11px;line-height:1.5}
+#status{font-size:11px;color:#a8d5a9}
+@media(max-width:900px){main{display:block}#sceneWrap{position:relative;height:54dvh;min-height:350px}aside{border-left:0}header{position:relative}}
+</style></head><body>
+<header><strong>MYCOSIM · TRAMETES VERSICOLOR · 3D TEACHING SCENE</strong><nav><a href="sandbox.html">← MycoSim Sandbox</a> <a href="./">Specimen Atlas</a></nav></header>
+<main><div id="sceneWrap"><canvas id="scene" aria-label="Rotatable 3D reconstruction of Turkey Tail brackets on a decaying hardwood log"></canvas><div id="hint">Drag rotate · pinch/wheel zoom · click a structure · right-drag pan</div></div>
+<aside><small style="color:#d9b56d">SPECIES LEARNING MODULE · PROCEDURAL RECONSTRUCTION</small><h1><i>Trametes versicolor</i></h1>
+<p>A research-informed, illustrative hardwood-log reconstruction. It is not a scan, exact microscopic model, field identification, or evidence that eating this species produces a clinical outcome.</p>
+<h2>View and dissection</h2><div class="buttons">
+<button id="whole" type="button">Whole specimen</button><button id="cross" type="button" aria-pressed="false">Transparent wood</button>
+<button id="explode" type="button" aria-pressed="false">Explode brackets</button><button id="pores" type="button">Pore undersurface</button>
+<button id="mycelium" type="button">Wood mycelium</button><button id="read" type="button">🔊 Read selected</button>
+</div>
+<h2>Developmental stage</h2><div class="buttons" id="stages">
+<button type="button" data-stage="young" aria-pressed="false">Young brackets</button>
+<button type="button" data-stage="mature" aria-pressed="true">Mature brackets</button>
+<button type="button" data-stage="old" aria-pressed="false">Aged brackets</button></div>
+<h2>Anatomical selection</h2><div class="buttons" id="parts">
+<button data-part="log" type="button">Hardwood substrate</button><button data-part="mycelium" type="button">Vegetative mycelium</button>
+<button data-part="pileus" type="button">Upper bands / pileus</button><button data-part="margin" type="button">Growing margin</button>
+<button data-part="context" type="button">Bracket context</button><button data-part="hymenophore" type="button">Tubes and pores</button>
+<button data-part="spores" type="button">Basidia and spores</button><button data-part="beta" type="button">Cell-wall β-glucans</button></div>
+<h2>Linked knowledge</h2><div id="detail" aria-live="polite"><strong>Whole basidiome</strong><p>Select any anatomical component to learn its role.</p></div>
+<h2>Research boundaries</h2><div class="note">Many Turkey Tail look-alikes exist, including smooth or nonporoid crusts. Identification requires examination of the underside, upper surface, attachment and relevant microscopic characters. The model is schematic, not diagnostic. The Dectin-1 → SYK → CARD9 → NF-κB mechanism is experimental immunology, not proof of clinical benefit from oral whole-mushroom powder.</div>
+<p id="status">Loading Three.js model…</p>
+</aside></main>
+<script type="module">
+import * as THREE from "three";
+import {OrbitControls} from "three/addons/controls/OrbitControls.js";
+const canvas=document.getElementById("scene"),wrap=document.getElementById("sceneWrap");
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:"high-performance"});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.outputColorSpace=THREE.SRGBColorSpace;
+const scene=new THREE.Scene();scene.background=new THREE.Color(0x0a1613);
+const camera=new THREE.PerspectiveCamera(43,1,.1,100);camera.position.set(6,5.5,9.6);
+const controls=new OrbitControls(camera,canvas);controls.enableDamping=true;controls.target.set(0,.1,0);controls.minDistance=3;controls.maxDistance=23;
+scene.add(new THREE.HemisphereLight(0xdff6e5,0x3b2419,2.1));
+const sun=new THREE.DirectionalLight(0xffe1b1,2.6);sun.position.set(-4,8,6);scene.add(sun);
+const ground=new THREE.Mesh(new THREE.PlaneGeometry(32,32),new THREE.MeshStandardMaterial({color:0x142219,roughness:1}));ground.rotation.x=-Math.PI/2;ground.position.y=-1.68;scene.add(ground);
+const stage=new THREE.Group();scene.add(stage);
+const logGroup=new THREE.Group(),fungi=new THREE.Group(),myceliumGroup=new THREE.Group();stage.add(logGroup,fungi,myceliumGroup);
+const material=(color,side=THREE.DoubleSide)=>new THREE.MeshStandardMaterial({color,roughness:.92,side});
+const bark=material(0x594433),wood=material(0xb99b71),cut=material(0xc8a47b);
+const trunk=new THREE.Mesh(new THREE.CylinderGeometry(.89,1.01,6.1,48,1),bark);trunk.rotation.z=Math.PI/2;trunk.position.y=-.49;trunk.userData.part="log";logGroup.add(trunk);
+for(const x of [-3.07,3.07]){const end=new THREE.Mesh(new THREE.CylinderGeometry(x<0?1.01:.89,x<0?1.01:.89,.04,48),cut);end.rotation.z=Math.PI/2;end.position.set(x,-.49,0);end.userData.part="log";logGroup.add(end)}
+for(let i=0;i<85;i++){let x=-3+6*(i/85),a=(i*2.399),rr=.92;const mark=new THREE.Mesh(new THREE.BoxGeometry(.25+(.17*Math.sin(i*2.7)**2),.011,.026),material(i%3===0?0x30251d:0x826348));mark.position.set(x,-.49+rr*Math.cos(a),rr*Math.sin(a));mark.rotation.x=a;mark.userData.part="log";logGroup.add(mark)}
+for(let i=0;i<65;i++){const x=-2.85+5.7*((i*37%67)/67),ang=(i*13.7)%6.28;const pts=[];for(let k=0;k<12;k++){const xx=x+(k/11-.5)*(.4+i%4*.15),aa=ang+Math.sin(k*.9+i)*.21;pts.push(new THREE.Vector3(xx,-.49+.915*Math.cos(aa),.915*Math.sin(aa)))}const l=new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),new THREE.LineBasicMaterial({color:0xe5d5a8,transparent:true,opacity:.72}));l.userData.part="mycelium";myceliumGroup.add(l)}
+const palettes=["#44382c","#907755","#c8ad87","#6c5741","#3b4339","#c1ab8d","#75604e","#d4c7a6"];
+function shelfGeometry(radius,under=false){
+ const positions=[],colors=[],indices=[],steps=44,bands=24;
+ const color=new THREE.Color();
+ for(let j=0;j<=bands;j++){const v=j/bands,rad=.07+radius*v;for(let i=0;i<=steps;i++){const u=i/steps,angle=(u-.5)*Math.PI*.94;const x=rad*Math.sin(angle),z=rad*Math.cos(angle);
+ const y=(under?-.072:.023)+.19*(1-v*v)-.11*Math.abs(Math.sin(angle))*(v*v)+.014*Math.sin(rad*33+angle*5);
+ positions.push(x,y,z);
+ if(under)color.set("#e7dfc9");else color.set(palettes[Math.min(palettes.length-1,Math.floor((v*.99)*palettes.length))]).multiplyScalar(.88+.12*Math.sin(angle*17+v*23)**2);
+ colors.push(color.r,color.g,color.b);
+ }}for(let j=0;j<bands;j++)for(let i=0;i<steps;i++){const a=j*(steps+1)+i,b=a+steps+1;indices.push(a,b,a+1,b,b+1,a+1)}
+ const g=new THREE.BufferGeometry();g.setAttribute("position",new THREE.Float32BufferAttribute(positions,3));g.setAttribute("color",new THREE.Float32BufferAttribute(colors,3));g.setIndex(indices);g.computeVertexNormals();return g;
+}
+const upperMat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,side:THREE.DoubleSide}),underMat=upperMat.clone();
+const brackets=[];
+for(let i=0;i<18;i++){
+ const x=-2.58+(i%9)*.62+Math.sin(i*5.4)*.14,ring=Math.floor(i/9),rad=.54+(i%4)*.095;
+ const group=new THREE.Group();group.position.set(x,.08+ring*.35,-.05+ring*.12);group.rotation.y=-.9+((i*3)%7)*.28;group.rotation.z=(i%3-1)*.1;
+ const top=new THREE.Mesh(shelfGeometry(rad),upperMat);top.userData.part="pileus";group.add(top);
+ const bottom=new THREE.Mesh(shelfGeometry(rad,true),underMat);bottom.userData.part="hymenophore";group.add(bottom);
+ const rim=new THREE.Mesh(new THREE.TorusGeometry(rad*.78,.018,6,48,Math.PI*.96),material(0xd7cba8));rim.rotation.x=Math.PI/2;rim.position.set(0,-.04,rad*.25);rim.userData.part="margin";group.add(rim);
+ for(let k=0;k<45;k++){const a=(k/45-.5)*2.75,r=.16+(.55*rad)*(k%9)/9;const pore=new THREE.Mesh(new THREE.CircleGeometry(.007,6),material(0x8e8979));pore.position.set(r*Math.sin(a),-.077,r*Math.cos(a));pore.rotation.x=Math.PI/2;pore.userData.part="hymenophore";group.add(pore)}
+ group.userData.home=group.position.clone();group.userData.radius=rad;fungi.add(group);brackets.push(group)
+}
+const descriptions={
+log:["Hardwood substrate","Turkey Tail is a saprotrophic white-rot fungus. Hyphae secrete extracellular enzymes that modify lignin and break down wood polymers. This illustrated hardwood log does not claim a particular host species."],
+mycelium:["Vegetative mycelium","Networks of fungal hyphae colonize suitable wood and absorb degradation products. Bright lines are visualization aids, not a mapped real specimen."],
+pileus:["Pileus · concentric zones","The upper surface of Trametes versicolor often shows multicolored concentric zones and fine tomentose texture. Color alone does not establish identification."],
+margin:["Advancing bracket margin","Thin, outward-growing fan margins are important morphological characters. Size and thickness vary with age and growth conditions."],
+context:["Context / trama","Bracket tissue between the upper surface and pore-bearing undersurface. The actual hyphal systems require microscopic examination; this model approximates the macroscopic layer."],
+hymenophore:["Poroid hymenophore","The pale underside carries many small pores opening into tubes. The hymenium lines the tubes; this is a key feature distinguishing Turkey Tail from certain look-alikes. Pores here are enlarged schematic marks."],
+spores:["Basidia and basidiospores","Microscopic basidia produce basidiospores in the hymenium lining pore tubes. These cells and spores are below the scale of the log scene; no individual spore geometries are shown."],
+beta:["Fungal cell-wall β-glucans","Certain exposed fungal β-glucan configurations engage Dectin-1 on some immune cells in experiments, initiating SYK → CARD9/BCL10/MALT1 → NF-κB signaling. Eating whole Turkey Tail powder does not establish a specific clinical effect."]
+};
+const target={log:trunk,mycelium:myceliumGroup,pileus:brackets[8],margin:brackets[8],context:brackets[8],hymenophore:brackets[8],spores:brackets[8],beta:brackets[8]};
+let selected="pileus",transparent=false,exploded=false,life="mature";
+function choose(part){selected=part;const [name,desc]=descriptions[part];document.getElementById("detail").innerHTML="<strong>"+name+"</strong><p>"+desc+"</p><small style='color:#d9b56d'>Evidence: structural biology / experimental mechanism; not a clinical outcome claim</small>";
+ document.querySelectorAll("[data-part]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.part===part)));}
+function stageUpdate(){const scale=life==="young"?.48:life==="old"?.93:1;brackets.forEach((g,i)=>{g.scale.setScalar(scale);g.position.copy(g.userData.home);if(exploded)g.position.add(new THREE.Vector3((i%9-4)*.075,.34+(Math.floor(i/9)*.24),.24));g.children[0].material=upperMat;});
+ bark.opacity=transparent?.22:1;bark.transparent=transparent;bark.depthWrite=!transparent;
+ myceliumGroup.visible=transparent||selected==="mycelium";
+ document.querySelectorAll("[data-stage]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.stage===life)));
+ document.getElementById("cross").setAttribute("aria-pressed",String(transparent));
+ document.getElementById("explode").setAttribute("aria-pressed",String(exploded));
+ document.getElementById("status").textContent="3D ready · "+brackets.length+" bracket reconstructions · "+life+" stage";
+}
+document.getElementById("whole").onclick=()=>{transparent=false;exploded=false;life="mature";choose("pileus");stageUpdate();camera.position.set(6,5.5,9.6);controls.target.set(0,.1,0)};
+document.getElementById("cross").onclick=()=>{transparent=!transparent;stageUpdate()};
+document.getElementById("explode").onclick=()=>{exploded=!exploded;stageUpdate()};
+document.getElementById("pores").onclick=()=>{choose("hymenophore");camera.position.set(1,-.45,7.5);controls.target.set(0,0,0);stageUpdate()};
+document.getElementById("mycelium").onclick=()=>{choose("mycelium");transparent=true;stageUpdate()};
+document.getElementById("read").onclick=()=>{if(!("speechSynthesis" in window))return; speechSynthesis.cancel();const s=new SpeechSynthesisUtterance(descriptions[selected].join(". "));s.rate=.88;speechSynthesis.speak(s)};
+document.querySelectorAll("[data-part]").forEach(b=>b.onclick=()=>{choose(b.dataset.part);if(selected==="mycelium")transparent=true;stageUpdate()});
+document.querySelectorAll("[data-stage]").forEach(b=>b.onclick=()=>{life=b.dataset.stage;stageUpdate()});
+const ray=new THREE.Raycaster(),mouse=new THREE.Vector2();let down=null;
+canvas.addEventListener("pointerdown",e=>{down={x:e.clientX,y:e.clientY}});
+canvas.addEventListener("pointerup",e=>{if(!down||Math.hypot(e.clientX-down.x,e.clientY-down.y)>6)return;const rect=canvas.getBoundingClientRect();mouse.set((e.clientX-rect.left)/rect.width*2-1,-(e.clientY-rect.top)/rect.height*2+1);ray.setFromCamera(mouse,camera);const hits=ray.intersectObjects([logGroup,fungi,myceliumGroup],true);if(hits.length){let obj=hits[0].object;choose(obj.userData.part||"pileus");stageUpdate()}});
+function resize(){const w=wrap.clientWidth,h=wrap.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
+new ResizeObserver(resize).observe(wrap);resize();choose("pileus");stageUpdate();
+renderer.setAnimationLoop(()=>{controls.update();renderer.render(scene,camera)});
+</script></body></html>
