@@ -224,6 +224,7 @@ body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
   </section>
   <aside>
     <section class="science-panel" aria-label="Trametes versicolor 3D species module"><h3>Species simulator: Turkey Tail</h3><p class="science-note">Open the separate interactive 3D hardwood-log reconstruction. Existing MycoSim profiles and specimen records remain unchanged.</p><a href="./trametes.html" style="display:inline-block;padding:10px 12px;background:#23342e;border:1px solid #806f42;color:#f3dfae;border-radius:8px;text-decoration:none">Explore Trametes versicolor in 3D →</a></section>
+    <section id="tv-curriculum" hidden aria-label="Trametes versicolor guided pathways"></section>
     <div class="kicker" id="profileName">GENERALIZED AGARICOID</div>
     <h1>MycoSim</h1>
     <p class="copy">This is an optional mycology simulation and teaching model, not a specimen record and not a species identification. It establishes the interaction architecture for future specimen-derived fungal models.</p>
@@ -385,7 +386,7 @@ window.MYCOSIM_BOOT_WATCHDOG=setTimeout(()=>{
   }
 },5000);
 </script>
-<script type="module" src="mycosim/main.js?v=phase7-sprint5-20261003"></script>
+<script type="module" src="mycosim/main.js?v=phase8-part2-20261013"></script>
 <script type="module">
 const start=document.getElementById("tv-start");
 if(start)start.addEventListener("click",async()=>{
