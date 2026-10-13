@@ -41,6 +41,7 @@ button[aria-pressed=true]{background:#4c4028;border-color:#d9b56d;color:#fff0c1}
 <button data-part="context" type="button">Bracket context</button><button data-part="hymenophore" type="button">Tubes and pores</button>
 <button data-part="spores" type="button">Basidia and spores</button><button data-part="beta" type="button">Cell-wall β-glucans</button></div>
 <h2>Linked knowledge</h2><div id="detail" aria-live="polite"><strong>Whole basidiome</strong><p>Select any anatomical component to learn its role.</p></div>
+<div id="tv-curriculum" aria-label="Trametes versicolor guided pathways"></div>
 <h2>Research boundaries</h2><div class="note">Many Turkey Tail look-alikes exist, including smooth or nonporoid crusts. Identification requires examination of the underside, upper surface, attachment and relevant microscopic characters. The model is schematic, not diagnostic. The Dectin-1 → SYK → CARD9 → NF-κB mechanism is experimental immunology, not proof of clinical benefit from oral whole-mushroom powder.</div>
 <p id="status">Loading Three.js model…</p>
 </aside></main>
@@ -123,4 +124,4 @@ canvas.addEventListener("pointerup",e=>{if(!down||Math.hypot(e.clientX-down.x,e.
 function resize(){const w=wrap.clientWidth,h=wrap.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
 new ResizeObserver(resize).observe(wrap);resize();choose("pileus");stageUpdate();
 renderer.setAnimationLoop(()=>{controls.update();renderer.render(scene,camera)});
-</script></body></html>
+</script><script type="module">import {mountTrametesCurriculum} from "./mycosim/trametes-education.js";mountTrametesCurriculum(document.getElementById("tv-curriculum"));</script></body></html>
