@@ -69,6 +69,20 @@ export const MORPHOLOGY_PROFILES = [
     ]
   },
   {
+    id:"trametes_versicolor",label:"Trametes versicolor · Turkey Tail",group:"bracket",factory:"trametes_versicolor",version:"1.0.0",
+    description:"Species-specific educational reconstruction: overlapping zoned brackets on a decaying hardwood log. Not a specimen ID.",
+    variantGroups:[],developmentalStages:["young","mature","old"],
+    anatomy:[
+      A("substrate","Decaying hardwood log","ecology","Hardwood host/substrate; illustrative reconstruction."),
+      A("bark","Cracked hardwood bark","ecology","Weathered bark patches around exposed sapwood.","substrate"),
+      A("mycelium","Vegetative mycelium","internal","Hidden internal hyphae involved in extracellular wood decay.","substrate"),
+      A("pileus","Concentrically zoned pileus","macro","Overlapping, fan-shaped, thin bracket upper surfaces."),
+      A("context","Trama / contextual tissue","internal","Thin internal bracket tissue, schematic magnification.","pileus"),
+      A("tube_layer","Pore tubes","fertile","Fine downward-oriented hymenial tubes, schematic magnification.","pileus"),
+      A("hymenophore","Pore-bearing underside","fertile","Pale pore surface; not individual pores at literal scene scale.","tube_layer")
+    ]
+  },
+  {
     id:"polyporoid",label:"Bracket polypore",group:"bracket",factory:"polyporoid",version:"2.0.0",
     description:"Shelf or bracket body with context, tube layer and pore surface.",
     variantGroups:[],developmentalStages:["young","mature","old"],
