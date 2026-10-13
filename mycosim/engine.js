@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import {buildTrametesVersicolor} from "./trametes.js";
 import {OrbitControls} from "three/addons/controls/OrbitControls.js";
 import {PROFILE_BY_ID} from "./profiles.js";
 import {DEFAULT_VARIANTS,validateVariantSelection,puffballSubtype,puffballSubtypeStageDefaults,applyPuffballSubtypeDefaults,enforcePuffballSubtype} from "./variants.js";
@@ -3805,6 +3806,8 @@ export class MycoSimEngine{
     if(st)this._addBoleteReticulation(st,2.55,.38,.52);
     this._addVeil(v.veil,st?.position.x||0,capY);
   }
+
+  build_trametes_versicolor(){buildTrametesVersicolor(this);}
 
   build_polyporoid(){
     const trunk=this.register(new THREE.Mesh(new THREE.CylinderGeometry(.94,1.10,3.5,scaledSegments(40,this.realismTier,{min:24,max:56})),MATERIALS.wood.clone()),"substrate","Woody substrate","ecology");
