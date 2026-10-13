@@ -356,6 +356,22 @@ body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
       <div id="sporeSummary" class="spore-summary">No measurements entered.</div>
     </div>
   </aside>
+
+  <section id="trametes-simulator" aria-label="Trametes versicolor 3D educational reconstruction" style="grid-column:1/-1;padding:16px;border:1px solid #4b625f;border-radius:12px;background:#101a1b;color:#dce9e4;margin:12px 0">
+    <div style="display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;align-items:center"><div><div class="kicker">MYCOSIM · SPECIES RECONSTRUCTION · PHASE 8</div><h2 style="margin:5px 0">Trametes versicolor — interactive hardwood log</h2><p class="copy">Procedurally generated 3D educational reconstruction, not a scanned or identified specimen. Distinguishes macroscopic tissues from inferred and magnified structures.</p></div><span class="badge" style="position:static">EDUCATIONAL RECONSTRUCTION</span></div>
+    <canvas id="tv-canvas" style="display:block;width:100%;height:clamp(260px,44vw,510px);min-height:260px;touch-action:none;border-radius:10px;background:#0b1417" aria-label="Three dimensional interactive Turkey Tail mushrooms growing on hardwood log"></canvas>
+    <p class="copy">Drag to orbit · pinch or wheel to zoom · tap a structure to select. This scene is independent of the original MycoSim renderer and specimen records.</p>
+    <div style="display:flex;gap:7px;flex-wrap:wrap;margin:12px 0" role="group" aria-label="Select fungal anatomy">
+      <button type="button" data-tv-part="bark">Bark</button><button type="button" data-tv-part="wood">Wood</button><button type="button" data-tv-part="mycelium">Internal mycelium</button><button type="button" data-tv-part="pileus">Zoned pileus</button><button type="button" data-tv-part="hymenophore">Pore surface</button><button type="button" data-tv-part="tubes">Tubes</button>
+    </div>
+    <div style="display:flex;gap:7px;flex-wrap:wrap;margin:12px 0" role="group" aria-label="Structure visualization controls">
+      <button id="tv-isolate" type="button">Isolate selected</button><button id="tv-hide" type="button">Hide selected</button><button id="tv-transparent" type="button">Transparent context</button><button id="tv-reset" type="button">Reset scene</button><button id="tv-speak" type="button">🔊 Read selection</button><button id="tv-immune" type="button">Molecular immune pathway</button>
+    </div>
+    <p id="tv-info" class="copy" role="status" style="min-height:4em"></p>
+    <div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px"><label for="tv-flow">Educational sequence</label><select id="tv-flow"><option value="life">Fungal life cycle</option><option value="farm">Forest → human consumption</option></select><button type="button" id="tv-prev">← Previous</button><button type="button" id="tv-next">Next →</button></div>
+    <p id="tv-steps" class="copy" aria-live="polite"></p><p id="tv-stage" class="copy"></p>
+    <details><summary>Source foundations and scientific boundaries</summary><p class="copy">For identification, compare peer-reviewed morphology and microscopy sources; common look-alikes may have different undersides. For cancer and immunology see <a href="https://www.cancer.gov/about-cancer/treatment/cam/hp/mushrooms-pdq" target="_blank" rel="noopener noreferrer">NCI Medicinal Mushrooms PDQ</a>. The Dectin-1–SYK pathway reflects experimentally presented fungal glucans; no clinical effect from ordinary Turkey Tail powder is presumed. Do not use this simulator to certify food safety or species identity.</p></details>
+  </section>
 </main>
 
 <script>
@@ -369,5 +385,6 @@ window.MYCOSIM_BOOT_WATCHDOG=setTimeout(()=>{
 },5000);
 </script>
 <script type="module" src="mycosim/main.js?v=phase7-sprint5-20261003"></script>
+<script type="module" src="mycosim/trametes_sim.js?v=20261013-phase8"></script>
 </body>
 </html>
