@@ -678,6 +678,14 @@ export const KNOWLEDGE_OBJECTS = Object.freeze({
     expert:"Shared basal tissue from which clavarioid branches arise.",
     relationships:["branch_system","substrate"]
   }
+  trametes_versicolor:{id:"trametes_versicolor",label:"Trametes versicolor",level:"species",pronunciation:"TRAM-uh-teez ver-SIK-uh-lor",beginner:"Turkey Tail is a wood-decomposing bracket fungus with overlapping, concentrically zoned upper surfaces and a pale porous underside.",expert:"Trametes versicolor is a white-rot basidiomycete on dead hardwood. This is a procedural teaching reconstruction, not a verified collection. Microscopic structures are enlarged schematics and require specimen-level examination.",whyItMatters:"Identity must be verified before any food sale or ingestion. Stereum look-alikes lack a true poroid hymenophore.",relationships:["pileus","hymenophore","substrate","mycelium","fungal_beta_glucan"]},
+  mycelium:{id:"mycelium",label:"Vegetative mycelium",level:"internal",pronunciation:"my-SEE-lee-um",beginner:"A network of fungal threads that grows within wood and absorbs nutrients.",expert:"Wood colonization involves secreted oxidative and hydrolytic enzymes that modify lignin and degrade cellulose and hemicellulose. The displayed strands indicate inferred topology rather than a measured network.",relationships:["substrate","trama","fungal_beta_glucan"]},
+  fungal_beta_glucan:{id:"fungal_beta_glucan",label:"Fungal β-glucan",level:"molecular",pronunciation:"BAY-tuh GLOO-kan",beginner:"A polysaccharide that forms part of many fungal cell walls.",expert:"Certain exposed beta-(1,3)/(1,6)-glucan presentations engage Dectin-1 in experimental systems. Molecular structure, accessibility and physical presentation alter recognition. Oral whole powder is not equivalent to experimentally applied particulate beta-glucans.",relationships:["dectin1","mycelium"]},
+  dectin1:{id:"dectin1",label:"Dectin-1 (CLEC7A)",level:"receptor",pronunciation:"DEK-tin one",beginner:"A receptor on some immune cells that recognizes certain exposed fungal beta-glucans.",expert:"Dectin-1 receptor clustering can facilitate hemITAM tyrosine phosphorylation and SYK recruitment. This mechanistic pathway does not imply demonstrated clinical benefits of orally ingested Trametes products.",relationships:["fungal_beta_glucan","hemitam","syk"]},
+  hemitam:{id:"hemitam",label:"hemITAM",level:"molecular",pronunciation:"hem EYE-tam",beginner:"A short receptor-tail signaling sequence whose tyrosine can receive a phosphate group.",expert:"The half immunoreceptor tyrosine-based activation motif has one signaling tyrosine; Src-family kinases can help phosphorylate it. Phosphorylation creates a docking platform for SYK but is distinct from full SYK activation.",relationships:["dectin1","syk"]},
+  syk:{id:"syk",label:"SYK kinase",level:"molecular",pronunciation:"sick",beginner:"SYK is an enzyme inside immune cells that transfers phosphate groups from ATP to specific proteins.",expert:"Spleen tyrosine kinase is a non-receptor protein tyrosine kinase with tandem SH2 domains and a catalytic kinase domain. SYK is recruited downstream of phosphorylated ITAM/hemITAM receptors and propagates context-dependent signaling.",relationships:["hemitam","card9"]},
+  card9:{id:"card9",label:"CARD9–BCL10–MALT1",level:"molecular",pronunciation:"card nine, B C L ten, malt one",beginner:"A group of proteins that can relay a fungal-recognition signal inside an immune cell.",expert:"CARD9, BCL10 and MALT1 participate in a signaling axis that can promote IKK and NF-κB activation downstream of suitable Dectin-1/SYK signals. Multiple intermediates and contextual dependencies are omitted from the simplified sequence.",relationships:["syk","nfkb"]},
+  nfkb:{id:"nfkb",label:"IKK and NF-κB",level:"molecular",pronunciation:"eye kay kay, en eff kappa bee",beginner:"Proteins that help control which immune-response genes are transcribed.",expert:"IKK-dependent regulation can promote NF-κB nuclear signaling and context-dependent immune-response gene expression. A receptor signal does not guarantee a specific clinical outcome.",relationships:["card9"]},
 });
 
 export const NAVIGATION_PATHS = Object.freeze({
@@ -689,6 +697,10 @@ export const NAVIGATION_PATHS = Object.freeze({
   boletoid:[
     ["basidiome","pileus","tube_layer","tube","pore_surface","hymenium","basidium","basidiospore"],
     ["basidiome","stipe","stipe_base"]
+  ],
+  trametes_versicolor:[
+    ["trametes_versicolor","pileus","context","tube_layer","pore_surface","hymenium","basidium","basidiospore"],
+    ["trametes_versicolor","substrate","mycelium","fungal_beta_glucan","dectin1","hemitam","syk","card9","nfkb"]
   ],
   polyporoid:[
     ["basidiome","pileus","context","tube_layer","tube","pore_surface","hymenium","basidium","basidiospore"],
