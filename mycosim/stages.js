@@ -75,6 +75,11 @@ export const DEVELOPMENTAL_STAGE_LIBRARY = Object.freeze({
     ["Pore color and bruising may intensify or degrade with age."])
   },
 
+  trametes_versicolor:{
+    young:stage("young","Young",0.25,{...common.young,shelf_expansion:.66,context_thickness:.65,tube_depth:.45,zonation_visibility:.45,margin_activity:1},"Young fruit bodies developing outward from colonized hardwood."),
+    mature:stage("mature","Mature",.60,{...common.mature,shelf_expansion:1,context_thickness:1,tube_depth:1,zonation_visibility:1,margin_activity:.6},"Mature zoned brackets with pale pore-bearing undersides."),
+    old:stage("old","Old",.92,{...common.old,shelf_expansion:1.04,context_thickness:1.04,tube_depth:1,zonation_visibility:.7,margin_activity:.12},"Aged and weathered brackets. Colors and decay states are illustrative.")
+  },
   polyporoid:{
     young:stage("young","Young",0.25,{
       ...common.young,shelf_expansion:0.58,margin_thickness:0.42,tube_depth:0.40,
