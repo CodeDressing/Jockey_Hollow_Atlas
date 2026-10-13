@@ -12,7 +12,7 @@ function material(hex,roughness=0.91){return new THREE.MeshStandardMaterial({col
 function addSelectable(engine,mesh,id,label,category,parent=null){
   return engine.register(mesh,id,label,category,parent);
 }
-// Build around a vertical fallen-wood section; individual shelves are separate selectable objects.
+// Educational upright hardwood section; individual shelves are separately selectable. The linked dedicated Turkey Tail scene uses a horizontal decaying log.
 export function buildTrametesVersicolor(engine){
   const stage=engine.developmentalStageId||"mature";
   const age=stage==="young"?.58:stage==="old"?.87:1;
@@ -33,7 +33,7 @@ export function buildTrametesVersicolor(engine){
     }
     cracks.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(points),crackMat));
   }
-  cracks.position.copy(outer.position);cracks.rotation.copy(outer.rotation);outer.add(cracks);
+  outer.add(cracks);
   const hyphae=new THREE.Group();
   const threadMaterial=new THREE.LineBasicMaterial({color:0xd9d3a9,transparent:true,opacity:.52});
   for(let i=0;i<38;i++){
@@ -55,7 +55,7 @@ export function buildTrametesVersicolor(engine){
     const phi=theta+Math.PI/2;
     group.position.set(-.55+Math.cos(phi)*.64,y,Math.sin(phi)*.64);
     group.rotation.y=phi-Math.PI/2;
-    const segment=30,radial=14;
+    const segment=30;
     for(let band=0;band<7;band++){
       const inner=band/7*radius,outerR=(band+1)/7*radius;
       const verts=[],indices=[];
