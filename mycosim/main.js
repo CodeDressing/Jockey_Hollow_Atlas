@@ -1,3 +1,4 @@
+import {mountTrametesCurriculum} from "./trametes-education.js";
 import {MORPHOLOGY_PROFILES,PROFILE_BY_ID} from "./profiles.js?v=phase7-sprint5-20261003";
 import {MORPHOLOGY_VARIANTS,variantLabel,variantTeaching,puffballSubtype} from "./variants.js?v=phase7-sprint5-20261003";
 import {KNOWLEDGE_OBJECTS,getKnowledge,getPathFor,childKnowledge} from "./knowledge.js?v=phase7-sprint5-20261003";
@@ -602,6 +603,8 @@ try{
   function activateProfile(id){
     const p=PROFILE_BY_ID[id]; if(!p)return;
     currentProfile=p; selected=null; actions.hidden=true;
+    const tvCurriculum=document.getElementById("tv-curriculum");
+    if(tvCurriculum){tvCurriculum.hidden=id!=="trametes_versicolor";if(id==="trametes_versicolor")mountTrametesCurriculum(tvCurriculum);}
     info.textContent="Loading morphology model…";
     engine.loadProfile(id);
     if(!window.MYCOSIM_BOOT_MS){
