@@ -14,12 +14,12 @@ if(host&&!document.getElementById("myco-lab-nav")){
  const sourceNodes=[...host.children].filter(el=>el!==glossary&&!allModuleIds.has(el.id));
  const specimen=document.createElement("section");specimen.id="myco-specimen-pane";specimen.setAttribute("aria-label","Forest specimen and species reconstruction");
  sourceNodes.forEach(el=>specimen.append(el));
- const nav=document.createElement("nav");nav.id="myco-lab-nav";nav.setAttribute("aria-label","MycoSim consolidated laboratory sections");
+ const nav=document.createElement("nav");nav.id="myco-lab-nav";nav.setAttribute("aria-label","MycoSim consolidated laboratory sections");nav.setAttribute("role","tablist");
  nav.innerHTML='<style>#myco-lab-nav{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 12px;padding:9px;border:1px solid #49635f;border-radius:10px;background:#0a191b}#myco-lab-nav button{padding:10px 12px;flex:1 1 145px;min-width:0;border-radius:7px;color:#eaf1ea;background:#14292c;border:1px solid #526965;cursor:pointer;font-size:12px}#myco-lab-nav button[aria-selected="true"]{background:#6a5227;border-color:#f3d28e;color:#fff}#myco-lab-nav button:focus-visible{outline:2px solid #f8df9e;outline-offset:2px}#trametes-simulator [hidden]{display:none!important}</style>';
  const panels=new Map([["specimen",[specimen]]]);
  for(const group of categories.slice(1))panels.set(group.key,group.ids.map(id=>document.getElementById(id)).filter(Boolean));
  for(const group of categories){
-  const button=document.createElement("button");button.type="button";button.textContent=group.title;button.dataset.lab=group.key;button.setAttribute("aria-selected","false");
+  const button=document.createElement("button");button.type="button";button.textContent=group.title;button.dataset.lab=group.key;button.setAttribute("role","tab");button.setAttribute("aria-selected","false");
   button.setAttribute("aria-controls",panels.get(group.key).map(el=>el.id).join(" "));
   button.onclick=()=>activate(group.key);
   nav.append(button);
