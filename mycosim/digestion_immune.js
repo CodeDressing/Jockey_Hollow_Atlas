@@ -70,14 +70,15 @@ const diagram=[...panel.querySelectorAll(".bio-item")],steps=panel.querySelector
 stages.forEach((stage,i)=>{const b=document.createElement("button");b.textContent=String(i+1);b.type="button";b.setAttribute("aria-label",stage[0]);b.onclick=()=>setStage(i);steps.append(b);});
 const buttons=[...steps.querySelectorAll("button")];
 function stop(){playing=false;if(interval!==null){clearInterval(interval);interval=null;}}
-function render(){const s=stages[index];panel.querySelector("#bio-progress").textContent="STEP "+(index+1)+" OF "+stages.length+" · "+s[1];panel.querySelector("#bio-title").textContent=s[0];panel.querySelector("#bio-detail").textContent=s[2];panel.querySelector("#bio-evidence").textContent="Evidence: "+s[3];diagram.forEach((n,i)=>i===index?n.setAttribute("aria-current","step"):n.removeAttribute("aria-current"));buttons.forEach((n,i)=>i===index?n.setAttribute("aria-current","step"):n.removeAttribute("aria-current"));panel.querySelector('[data-bio="play"]').textContent=playing?"⏸ Pause":"▶ Play";}
-function setStage(i){stop();index=Math.min(stages.length-1,Math.max(0,i));render();}
+function render(){const s=stages[index];panel.querySelector("#bio-progress").textContent="STEP "+(index+1)+" OF "+stages.length+" · "+s[1];panel.querySelector("#bio-title").textContent=s[0];panel.querySelector("#bio-detail").textContent=s[2];panel.querySelector("#bio-evidence").textContent="Evidence: "+s[3];diagram.forEach((n,i)=>i===index?n.setAttribute("aria-current","step"):n.removeAttribute("aria-current"));buttons.forEach((n,i)=>i===index?n.setAttribute("aria-current","step"):n.removeAttribute("aria-current"));const playButton=panel.querySelector('[data-bio="play"]');playButton.textContent=playing?"⏸ Pause":"▶ Play";playButton.setAttribute("aria-pressed",String(playing));}
+function setStage(i){stop();if("speechSynthesis" in window)speechSynthesis.cancel();index=Math.min(stages.length-1,Math.max(0,i));render();}
 diagram.forEach((n,i)=>{n.addEventListener("click",()=>setStage(i));n.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();setStage(i);}});});
 panel.querySelector('[data-bio="prev"]').onclick=()=>setStage(index-1);
 panel.querySelector('[data-bio="next"]').onclick=()=>setStage(index+1);
 panel.querySelector('[data-bio="reset"]').onclick=()=>{setStage(0);if("speechSynthesis" in window)speechSynthesis.cancel();};
 panel.querySelector('[data-bio="play"]').onclick=()=>{if(playing){stop();render();return;}if(index===stages.length-1)index=0;playing=true;render();interval=setInterval(()=>{if(index===stages.length-1){stop();render();return;}index++;render();},4000);};
 panel.querySelector('[data-bio="read"]').onclick=()=>{if(!("speechSynthesis" in window))return;speechSynthesis.cancel();const s=stages[index],utterance=new SpeechSynthesisUtterance(s[0]+". "+s[2]+". Evidence: "+s[3]);utterance.rate=.86;speechSynthesis.speak(utterance);};
+document.addEventListener("visibilitychange",()=>{if(document.hidden&&playing){stop();render();}});
 window.addEventListener("pagehide",()=>{stop();if("speechSynthesis" in window)speechSynthesis.cancel();},{once:true});
 render();
 }
