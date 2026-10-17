@@ -52,3 +52,18 @@ test("Course navigation does not destroy glossary or scientific disclaimers",asy
  await page.locator('#myco-lab-nav [data-lab="digestion"]').click();
  await expect(page.locator("#tv-biology .bio-alert")).toBeVisible();
 });
+
+
+test("Phase 13 technical acceptance runs unattended without false hidden-canvas failures",async({page})=>{
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
+ await page.locator('#myco-lab-nav [data-lab="quality"]').click();
+ await expect(page.locator("#accept-run")).toBeVisible();
+ await page.locator("#accept-run").click();
+ await expect(page.locator("#accept-log")).toContainText("Phase 13 acceptance diagnostics:",{timeout:90000});
+ const result=await page.locator("#accept-log").innerText();
+ expect(result).not.toContain("FAIL ");
+ expect(result).toContain("3D anatomy canvas visible dimensions");
+ await expect(page.locator("#accept-status")).toContainText("Release gate: HOLD");
+ await expect(page.locator("#trametes-simulator")).toHaveAttribute("data-active-lab","quality");
+});
