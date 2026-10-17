@@ -111,6 +111,6 @@ host.querySelector("#tv-speak").onclick=()=>{if("speechSynthesis" in window){spe
 host.querySelector("#tv-immune").onclick=()=>{info.textContent="Mechanistic teaching link: accessible fungal β-glucan → Dectin-1/CLEC7A → hemITAM phosphorylation → SYK → CARD9–BCL10–MALT1 → IKK → NF-κB → context-dependent transcription. This is not proof the same cascade is activated by oral Turkey Tail powder."};
 const ro=new ResizeObserver(()=>{const w=Math.max(1,canvas.clientWidth),h=Math.max(1,canvas.clientHeight);renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()});ro.observe(canvas);
 canvas.addEventListener("pointerup",e=>{const rect=canvas.getBoundingClientRect();pointer.set((e.clientX-rect.left)/rect.width*2-1,-(e.clientY-rect.top)/rect.height*2+1);ray.setFromCamera(pointer,camera);const hits=ray.intersectObjects(pickables.filter(o=>o.visible),false);if(hits.length)show(hits[0].object.userData.part);});
-function tick(){if(!running)return;control.update();renderer.render(scene,camera);requestAnimationFrame(tick)}tick();show("pileus");updateStep();
+function tick(){if(!running)return;if(!document.hidden&&!host.querySelector("#myco-specimen-pane")?.hidden){control.update();renderer.render(scene,camera);}requestAnimationFrame(tick)}tick();show("pileus");updateStep();
 window.addEventListener("pagehide",()=>{running=false;ro.disconnect();control.dispose();renderer.dispose();for(const m of materials)m.dispose();scene.traverse(o=>o.geometry?.dispose?.());},{once:true});
 }
