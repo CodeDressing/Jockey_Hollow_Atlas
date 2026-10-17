@@ -1,0 +1,85 @@
+{
+  "module_id": "gymnopilus-pk-pd-v1",
+  "date": "2026-10-17",
+  "scientific_status": "RESEARCH_STAGING_NOT_DEPLOYED",
+  "species": "Gymnopilus spectabilis / Gymnopilus junonius complex",
+  "warning": "Unknown compound content and identity; oral psilocybin clinical data must not be treated as a Gymnopilus-specific intoxication prediction.",
+  "branches": [
+    {
+      "id": "psilocybin-conditional",
+      "label": "Oral psilocybin / psilocin: CONDITIONAL",
+      "evidence": "human clinical psilocybin studies; not Gymnopilus-specific",
+      "onset_minutes": [
+        20,
+        60
+      ],
+      "peak_subjective_hours": [
+        1,
+        3
+      ],
+      "main_effects_hours": [
+        4,
+        6
+      ],
+      "psilocin_plasma_tmax_hours": [
+        1.05,
+        3.71
+      ],
+      "psilocin_terminal_half_life_hours": [
+        1.23,
+        4.72
+      ],
+      "metabolism": [
+        "psilocybin -> psilocin (dephosphorylation)",
+        "psilocin -> 4-hydroxyindole-3-acetic acid (4-HIAA)",
+        "psilocin -> psilocin glucuronides"
+      ],
+      "mechanism": [
+        "psilocin",
+        "5-HT2A receptor",
+        "Gq/11",
+        "PLC-beta",
+        "IP3 + DAG",
+        "intracellular calcium mobilization and PKC",
+        "altered excitability/cortical network signaling"
+      ],
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/39812743/",
+        "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/psilocybin"
+      ]
+    },
+    {
+      "id": "gymnopilin-experimental",
+      "label": "Gymnopilin fraction: nAChR inhibition",
+      "evidence": "2014 PC12 cultured cell study; no validated human PK/duration",
+      "human_onset_minutes": null,
+      "human_peak_hours": null,
+      "human_duration_hours": null,
+      "human_half_life_hours": null,
+      "assay_ca_response_reduction_approx_percent": 50,
+      "assay_response_not_human_probability": true,
+      "mechanism": [
+        "gymnopilin-containing fraction",
+        "nicotinic acetylcholine receptor inhibition",
+        "suppressed DMPP/nicotine-evoked currents",
+        "reduced agonist-evoked intracellular calcium response"
+      ],
+      "voltage_gated_calcium_channel_inhibition_observed": false,
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/24491353/"
+      ]
+    }
+  ],
+  "integration_targets": [
+    "protected Gymnopilus model research accordion",
+    "NSA separate serotonergic GPCR vs nicotinic ion channel branches",
+    "evidence labels and source links"
+  ],
+  "requirements": [
+    "Do not graph a specimen-specific timeline without confirmed analytes and exposure data",
+    "Show uncertainty and differences between clinical and in-vitro models",
+    "Do not present as ingestion advice",
+    "Retain existing model and access gate",
+    "Visual time course must be marked illustrative, not predictive"
+  ]
+}
