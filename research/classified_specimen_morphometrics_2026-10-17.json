@@ -10,7 +10,9 @@
       19.5,
       12,
       11,
-      7.5
+      7.5,
+      6,
+      7
     ],
     "additional_spoken_measurement": {
       "verbatim": "6, 7 meters wide",
@@ -18,7 +20,7 @@
         6,
         7
       ],
-      "status": "UNCONFIRMED - ambiguous speech/units; excluded from confirmed observations"
+      "status": "UNIT CONFIRMED as centimeters by observer; whether 6 and 7 are distinct caps or an approximate 6–7 cm range remains uncertain."
     },
     "margin_thickness_cm_approx": 1,
     "margin_description": "May be wavy or undulating."
@@ -69,7 +71,7 @@
     "Unlinked measurements are not assumed to belong to the same specimen.",
     "Age-stage correlation is not established from these oral measurements alone.",
     "Cap thickness 1 cm is a margin observation, not average cap thickness.",
-    "Do not scale the model from ambiguous 6/7 measurement until verified.",
+    "6 and 7 cm are observer-confirmed units; exact interpretation as separate caps versus range remains uncertain.",
     "These dimensions do not establish species identity."
   ],
   "simulator_guidance": {
