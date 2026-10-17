@@ -113,7 +113,7 @@ qaButton.addEventListener("click",()=>{
   check("Previous returns",index===0);
   setStage(7);panel.querySelector('[data-bio="next"]').click();
   check("Last-stage boundary",index===7);
-  diagram[3].click();
+  diagram[3].dispatchEvent(new MouseEvent("click",{bubbles:true,cancelable:true}));
   check("Diagram node selection",index===3);
   const keyEvent=new KeyboardEvent("keydown",{key:"Enter",bubbles:true,cancelable:true});
   diagram[4].dispatchEvent(keyEvent);
