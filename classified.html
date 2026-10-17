@@ -22,11 +22,29 @@
 .mechanism-evidence a{display:inline-block;margin:4px 16px 4px 0}
 .mechanism-warning{border-left:3px solid #c69b55;padding:10px;background:#23221a}
 @media(max-width:850px){.mechanism-layout{grid-template-columns:1fr}.mechanism-stage canvas{height:280px}}
-</style>
+
+.photo-archive{border:1px solid #6d6550;background:#101d1f;border-radius:12px;margin:18px 0;padding:17px}
+.photo-archive h3{color:#ebd29d}.photo-toolbar{display:flex;align-items:end;flex-wrap:wrap;gap:12px;margin:12px 0}
+.photo-toolbar label{display:grid;gap:5px}.photo-toolbar select,.photo-toolbar input{background:#101a1c;border:1px solid #82938a;color:#e7ebdf;padding:8px;min-width:180px}
+.photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:12px 0}
+.photo-tile{padding:5px;text-align:left;background:#122326;display:flex;flex-direction:column;gap:6px;border:1px solid #455b58}
+.photo-tile:hover,.photo-tile:focus-visible{border-color:#dabb80}.photo-tile img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+.photo-tile span{font-size:11px;line-height:1.4}.photo-viewer{background:#091316;padding:12px;border:1px solid #50666a;border-radius:8px}
+.photo-viewer figure{margin:0;text-align:center}.photo-viewer figcaption{padding:8px;color:#ddd0b5}.photo-privacy{color:#b4c4ba;font-size:12px}</style>
 <header><b id="classifiedName">MYCOSIM · CLASSIFIED SPECIMEN</b><a href="sandbox.html">Return to MycoSim</a></header>
 <main><canvas id="view" aria-label="Protected interactive 3D specimen viewer"></canvas><aside><h2>Interactive mushroom anatomy</h2><p>Restricted morphology reconstruction for research. Not a diagnostic specimen.</p><button id="top">Cap view</button><button id="under">Gill view</button><button id="reset">Reset view</button><button id="gills">Toggle gills</button><button id="log">Toggle log</button><h2>CLASSIFIED FIELD RECONSTRUCTION</h2><button id="fieldMode">Field-colony 3D (40 photos)</button><button id="specimenMode">Isolated specimens</button><h3>Isolate one specimen by age</h3><div id="ageControls" role="group" aria-label="Specimen developmental stage"><button data-age="juvenile">Juvenile / button</button><button data-age="young">Young convex</button><button data-age="mature">Mature</button><button data-age="expanded">Expanded / aging</button></div><p id="modeNote">Select a reconstruction mode after unlocking.</p><p>Drag to rotate, wheel to zoom. Key features: robust stems, ochre caps, rust-colored gills, annular zones and decaying hardwood habitat.</p><p><b>Research only.</b> Psilocybin reports vary by collection and taxonomic identification; no concentration or safe exposure can be inferred from this model.</p></aside></main>
 <section id="research" hidden style="padding:22px;background:#10191b;border-top:1px solid #53604e;max-width:1100px;margin:auto">
-<h2>Specimen research dossier · literature, mechanisms, and image-reference intake</h2>
+<h2>Specimen research dossier · literature, mechanisms, and image-reference intake</h2><section id="classifiedPhotoArchive" aria-label="Classified photograph library" class="photo-archive">
+<h3>Specimen photograph archive — 60 reference photographs</h3>
+<p>Field collection and anatomy documentation: IMG_1576.JPG through IMG_1635.JPG. Original uploads from this conversation do not automatically appear on the public website. Import your images once; the gallery saves them privately in this browser, where you can enlarge, filter, and compare them. Images are not transmitted to GitHub or Render.</p>
+<label for="classifiedPhotoInput">Import specimen photographs or select all 60 images</label>
+<input id="classifiedPhotoInput" data-photo-input type="file" accept="image/jpeg,image/png,image/webp" multiple>
+<div class="photo-toolbar"><label>Find photo <input data-photo-search type="search" placeholder="IMG_1600 or gills"></label><label>Study group <select data-photo-filter><option value="">All photographs</option><option>Field colony / habitat</option><option>Cap / gill comparison</option><option>Gills / veil / stipe</option><option>Unassigned</option></select></label><button data-photo-clear type="button">Clear local archive</button></div>
+<p data-photo-status aria-live="polite">Gallery initializing after specimen unlock...</p>
+<div data-photo-grid class="photo-grid"></div>
+<div data-photo-viewer class="photo-viewer" hidden></div>
+<p class="photo-privacy">Private-gallery note: IndexedDB keeps photos on this browser/device only. Other computers require their own import. This browser storage is not an encrypted research vault; avoid sharing this browser profile.</p>
+</section>
 <div id="mechanismLauncher" class="mechanism-intro">
   <h3>Interactive molecular and receptor pathway simulator</h3>
   <p>Study the conditional psilocybin–psilocin–5-HT2A cascade separately from the experimentally observed gymnopilin–nicotinic acetylcholine receptor response. These two mechanisms must not be conflated.</p>
@@ -139,7 +157,7 @@ document.querySelector("#specimenMode").onclick=()=>mode("mature");
 for(const button of document.querySelectorAll("[data-age]"))button.onclick=()=>mode(button.dataset.age);
 mode("colony");
 function render(){requestAnimationFrame(render);orbit.update();renderer.render(scene,camera)}render()}
-document.querySelector("#unlock").onsubmit=async e=>{e.preventDefault();const inp=document.querySelector("#pass");try{let model=await unlock(inp.value.trim().toUpperCase());inp.value="";document.querySelector("#gate").hidden=true;document.querySelector("#classifiedName").textContent="MYCOSIM · Gymnopilus junonius · historical G. spectabilis";document.querySelector("#research").hidden=false;document.title="MycoSim · Gymnopilus junonius";scene3d(model)}catch(_){inp.value="";document.querySelector("#status").textContent="Passcode incorrect or encrypted data unavailable."}};
+document.querySelector("#unlock").onsubmit=async e=>{e.preventDefault();const inp=document.querySelector("#pass");try{let model=await unlock(inp.value.trim().toUpperCase());inp.value="";document.querySelector("#gate").hidden=true;document.querySelector("#classifiedName").textContent="MYCOSIM · Gymnopilus junonius · historical G. spectabilis";document.querySelector("#research").hidden=false;import("./mycosim/classified_photo_gallery.js").then(m=>m.setupClassifiedPhotoGallery(document.getElementById("classifiedPhotoArchive"))).catch(error=>{console.error("Photo gallery unavailable",error);document.querySelector("[data-photo-status]").textContent="Local photo gallery could not initialize";});document.title="MycoSim · Gymnopilus junonius";scene3d(model)}catch(_){inp.value="";document.querySelector("#status").textContent="Passcode incorrect or encrypted data unavailable."}};
 
 // Separate receptor lab loads on user request, only after the protected research section is unlocked.
 document.getElementById("openMechanisms").addEventListener("click",async()=>{
