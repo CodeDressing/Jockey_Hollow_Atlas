@@ -1,10 +1,67 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MycoSim · Classified Specimen</title>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
-<style>body{margin:0;background:#0a1114;color:#e4e8e0;font:14px system-ui}header,aside{padding:16px;background:#152024}header{display:flex;justify-content:space-between}a{color:#e0bc75}main{display:grid;grid-template-columns:1fr 310px}canvas{width:100%;height:calc(100vh - 58px);display:block;touch-action:none}button,input{padding:10px;margin:5px;background:#243329;color:#fff;border:1px solid #ac8e48;border-radius:7px}#gate{position:fixed;inset:0;background:#081014;display:grid;place-items:center}#gate[hidden]{display:none}.panel{max-width:390px;border:1px solid #a88b52;padding:25px;background:#152024}p{line-height:1.55;color:#b8c3bd}@media(max-width:850px){main{grid-template-columns:1fr}canvas{height:55vh}}</style>
+<style>body{margin:0;background:#0a1114;color:#e4e8e0;font:14px system-ui}header,aside{padding:16px;background:#152024}header{display:flex;justify-content:space-between}a{color:#e0bc75}main{display:grid;grid-template-columns:1fr 310px}canvas{width:100%;height:calc(100vh - 58px);display:block;touch-action:none}button,input{padding:10px;margin:5px;background:#243329;color:#fff;border:1px solid #ac8e48;border-radius:7px}#gate{position:fixed;inset:0;background:#081014;display:grid;place-items:center}#gate[hidden]{display:none}.panel{max-width:390px;border:1px solid #a88b52;padding:25px;background:#152024}p{line-height:1.55;color:#b8c3bd}@media(max-width:850px){main{grid-template-columns:1fr}canvas{height:55vh}}
+/* Classified educational mechanism module: loaded only after research unlock */
+.mechanism-intro,.mechanism-module{margin:20px 0;border:1px solid #626241;border-radius:12px;padding:17px;background:#101f22}
+.mechanism-intro h3,.mechanism-module h3{margin:3px 0 12px;color:#efd59a}
+.mechanism-intro p,.mechanism-module p{line-height:1.58}
+.mechanism-module[hidden]{display:none}
+.mechanism-tabs,.mechanism-actions{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.mechanism-module button{cursor:pointer}
+.mechanism-module button[aria-pressed="true"],.mechanism-module button.active{background:#756037;color:#fff1c7;border-color:#e1bc71}
+.mechanism-title{font-size:19px;font-weight:750;color:#f6e2af}
+.method-label{font-weight:400;color:#a3c8cb;font-size:12px}
+.mechanism-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,1fr);gap:16px}
+.mechanism-stage{min-width:0;background:#071216;border:1px solid #385057;border-radius:10px;padding:8px}
+.mechanism-stage canvas{display:block;width:100%;height:370px}
+.mechanism-stage p{font-size:12px;color:#a1bec0}
+.mechanism-steps{display:flex;flex-wrap:wrap;gap:3px}
+.mechanism-steps button{padding:7px 8px;font-size:12px}
+.mechanism-workflow{min-width:0}
+.mechanism-evidence{border-top:1px solid #425454;margin:18px 0;padding-top:12px}
+.mechanism-evidence a{display:inline-block;margin:4px 16px 4px 0}
+.mechanism-warning{border-left:3px solid #c69b55;padding:10px;background:#23221a}
+@media(max-width:850px){.mechanism-layout{grid-template-columns:1fr}.mechanism-stage canvas{height:280px}}
+</style>
 <header><b id="classifiedName">MYCOSIM · CLASSIFIED SPECIMEN</b><a href="sandbox.html">Return to MycoSim</a></header>
 <main><canvas id="view" aria-label="Protected interactive 3D specimen viewer"></canvas><aside><h2>Interactive mushroom anatomy</h2><p>Restricted morphology reconstruction for research. Not a diagnostic specimen.</p><button id="top">Cap view</button><button id="under">Gill view</button><button id="reset">Reset view</button><button id="gills">Toggle gills</button><button id="log">Toggle log</button><h2>CLASSIFIED FIELD RECONSTRUCTION</h2><button id="fieldMode">Field-colony 3D (40 photos)</button><button id="specimenMode">Isolated specimens</button><h3>Isolate one specimen by age</h3><div id="ageControls" role="group" aria-label="Specimen developmental stage"><button data-age="juvenile">Juvenile / button</button><button data-age="young">Young convex</button><button data-age="mature">Mature</button><button data-age="expanded">Expanded / aging</button></div><p id="modeNote">Select a reconstruction mode after unlocking.</p><p>Drag to rotate, wheel to zoom. Key features: robust stems, ochre caps, rust-colored gills, annular zones and decaying hardwood habitat.</p><p><b>Research only.</b> Psilocybin reports vary by collection and taxonomic identification; no concentration or safe exposure can be inferred from this model.</p></aside></main>
 <section id="research" hidden style="padding:22px;background:#10191b;border-top:1px solid #53604e;max-width:1100px;margin:auto">
 <h2>Specimen research dossier · literature, mechanisms, and image-reference intake</h2>
+<div id="mechanismLauncher" class="mechanism-intro">
+  <h3>Interactive molecular and receptor pathway simulator</h3>
+  <p>Study the conditional psilocybin–psilocin–5-HT2A cascade separately from the experimentally observed gymnopilin–nicotinic acetylcholine receptor response. These two mechanisms must not be conflated.</p>
+  <button id="openMechanisms" type="button" aria-expanded="false" aria-controls="mechanismModule">Open separate 3D pathway simulator</button>
+</div>
+<div id="mechanismModule" hidden aria-label="Interactive 3D receptor mechanism simulator" class="mechanism-module">
+  <h3>3D molecular signaling laboratory <span class="method-label">Schematic educational visualization</span></h3>
+  <div class="mechanism-tabs" role="group" aria-label="Research mechanism choice">
+    <button type="button" data-mode="serotonin" aria-pressed="true">A — Conditional 5-HT2A signaling</button>
+    <button type="button" data-mode="gymnopilin" aria-pressed="false">B — Gymnopilin nAChR experiments</button>
+  </div>
+  <p data-title class="mechanism-title">Conditional serotonergic signaling</p>
+  <p data-note>Requires verified compound presence in specimen.</p>
+  <div class="mechanism-layout">
+    <div class="mechanism-stage">
+      <canvas aria-label="Interactive schematic 3D receptor, ligand, membrane, and intracellular messenger visualization" tabindex="0"></canvas>
+      <p>Drag to orbit; scroll to zoom. Molecular components are symbolic, not atomic-resolution structures.</p>
+    </div>
+    <div class="mechanism-workflow">
+      <p data-progress>Stage 1</p>
+      <div data-steps class="mechanism-steps"></div>
+      <p data-explanation aria-live="polite"></p>
+      <div class="mechanism-actions">
+        <button type="button" data-prev>Previous</button>
+        <button type="button" data-next>Next</button>
+        <button type="button" data-play>Play animation</button>
+        <button type="button" data-reset>Reset</button>
+        <button type="button" data-read><span aria-hidden="true">▶ </span>Read lesson aloud</button>
+      </div>
+      <p data-reader hidden></p>
+    </div>
+  </div>
+  <div data-evidence class="mechanism-evidence"></div>
+  <p class="mechanism-warning"><b>Quantitative integrity:</b> A 2014 PC12-cell assay reported approximately 50% suppression of an acetylcholine-evoked calcium signal. That is neither a mushroom compound percentage nor a human adverse-event rate. The occurrence and concentration of psilocybin or psilocin in these photographed mushrooms remain unverified.</p>
+</div>
 <p>Taxonomy: <i>Gymnopilus spectabilis</i> historically applied within the <i>G. junonius</i> complex. Attribution to a modern taxon requires morphology plus voucher and, preferably, molecular analysis. This is a research reconstruction, never an identification authority.</p>
 <details open><summary><b>Research evidence ledger — primary studies</b></summary>
 <ol>
@@ -83,4 +140,17 @@ for(const button of document.querySelectorAll("[data-age]"))button.onclick=()=>m
 mode("colony");
 function render(){requestAnimationFrame(render);orbit.update();renderer.render(scene,camera)}render()}
 document.querySelector("#unlock").onsubmit=async e=>{e.preventDefault();const inp=document.querySelector("#pass");try{let model=await unlock(inp.value.trim().toUpperCase());inp.value="";document.querySelector("#gate").hidden=true;document.querySelector("#classifiedName").textContent="MYCOSIM · Gymnopilus junonius · historical G. spectabilis";document.querySelector("#research").hidden=false;document.title="MycoSim · Gymnopilus junonius";scene3d(model)}catch(_){inp.value="";document.querySelector("#status").textContent="Passcode incorrect or encrypted data unavailable."}};
+
+// Separate receptor lab loads on user request, only after the protected research section is unlocked.
+document.getElementById("openMechanisms").addEventListener("click",async()=>{
+ const panel=document.getElementById("mechanismModule"),button=document.getElementById("openMechanisms");
+ if(document.getElementById("research").hidden)return;
+ if(!panel.hidden){panel.hidden=true;button.textContent="Open separate 3D pathway simulator";button.setAttribute("aria-expanded","false");return}
+ panel.hidden=false;button.textContent="Hide 3D pathway simulator";button.setAttribute("aria-expanded","true");
+ if(panel.dataset.mounted!=="true"){
+  try{const module=await import("./mycosim/classified_mechanisms.js");module.mountMechanismSimulator(panel)}
+  catch(error){panel.hidden=true;button.textContent="Unable to load 3D pathway simulator — retry";button.setAttribute("aria-expanded","false");console.error("Mechanism module initialization failed",error)}
+ }
+ panel.scrollIntoView({block:"start",behavior:"smooth"});
+});
 </script></html>
