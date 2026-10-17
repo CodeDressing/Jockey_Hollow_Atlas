@@ -62,7 +62,10 @@ if(host&&!document.getElementById("myco-campaign")){
    gate(10,"RUN","WebGL 3D anatomy QA");const p10=launchTest("tv-anatomy3d","Run Phase 10 3D QA","pre[role=status]",10);
    gate(10,"PASS",p10);append("Phase 10: "+p10+" checks passed");
    current=11;
-   gate(11,"RUN","molecular pathway lesson");const uniq=new Set(steps.map(s=>s[0]));
+   gate(11,"RUN","molecular visualization QA");
+   const p11=launchTest("tv-molecular","Run Phase 11 QA","#m-qa-result",11);
+   append("Phase 11 visual process: "+p11+" browser checks passed");
+   const uniq=new Set(steps.map(s=>s[0]));
    if(steps.length!==7||uniq.size!==7||!steps[3][3].includes("HYPOTHETICAL"))throw Error("Phase 11 pathway scientific invariant failed");
    for(let i=0;i<steps.length;i++){show(i);if(sel.value!==String(i)||!panel.querySelector("#myco-detail").textContent)throw Error("Phase 11 lesson step "+(i+1)+" failed");}
    show(0);gate(11,"PASS","7 educational steps rendered");append("Phase 11: 7 educational steps and hypothesis flag verified");
