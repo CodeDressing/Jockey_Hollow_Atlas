@@ -120,5 +120,44 @@ section.querySelector('[data-action="focus"]').onclick=focus;
 section.querySelector('[data-action="reset"]').onclick=reset;
 section.querySelector('[data-action="read"]').onclick=()=>{if(!("speechSynthesis" in window))return;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(name.textContent+". "+info.textContent);u.rate=.86;window.speechSynthesis.speak(u);};
 window.addEventListener("pagehide",dispose,{once:true});
+// Opt-in browser diagnostics; these manipulate only this independent 3D scene.
+const qaButton=document.createElement("button");qaButton.type="button";qaButton.textContent="Run Phase 10 3D QA";
+const qaOutput=document.createElement("pre");qaOutput.setAttribute("role","status");
+qaOutput.style.cssText="white-space:pre-wrap;font:11px/1.5 monospace;background:#0d1d20;border:1px solid #47605d;padding:10px;border-radius:8px;overflow:auto";
+qaOutput.textContent="3D QA not yet run.";
+const qaBox=document.createElement("div");qaBox.style.marginTop="12px";qaBox.append(qaButton,qaOutput);section.append(qaBox);
+qaButton.onclick=()=>{
+ const oldMode=mode,oldSelected=selected,oldIsolated=isolated,oldTransparent=transparent;
+ const results=[],check=(label,pass)=>results.push({label,pass:Boolean(pass)});
+ qaButton.disabled=true;
+ try{
+  init();
+  check("WebGL initialized",started&&Boolean(renderer&&scene&&camera&&controls));
+  check("Canvas has a rendered frame",Boolean(renderer&&canvas.width>0&&canvas.height>0));
+  check("Digestive and immune modes registered",modes.gut.length===4&&modes.cell.length===6);
+  for(const sceneMode of ["gut","cell"]){
+   changeMode(sceneMode);
+   check(sceneMode+" expected mesh categories",modes[sceneMode].every(p=>parts.has(p[0])&&parts.get(p[0]).length>0));
+   check(sceneMode+" geometry built",meshes.length>0&&geometrySet.size>0);
+   const target=modes[sceneMode][0][0];
+   select(target);isolated=true;transparent=false;applyVisibility();
+   check(sceneMode+" isolate selected",meshes.every(o=>o.visible===(o.userData.part===target)));
+   isolated=false;transparent=true;applyVisibility();
+   check(sceneMode+" context transparency",meshes.some(o=>o.userData.part!==target&&o.material.opacity<1));
+   focus();
+   check(sceneMode+" focus camera valid",camera.position.toArray().every(Number.isFinite));
+  }
+  reset();check("Reset restores visible meshes",meshes.every(o=>o.visible));
+ }catch(e){results.push({label:"Unexpected exception: "+String(e),pass:false});}
+ finally{
+  changeMode(oldMode);select(oldSelected);isolated=oldIsolated;transparent=oldTransparent;if(started)applyVisibility();
+  qaButton.disabled=false;
+ }
+ const count=results.filter(r=>r.pass).length;
+ qaOutput.textContent="Phase 10 browser checks: "+count+"/"+results.length+" passed\\n"+
+ results.map(r=>(r.pass?"PASS ":"FAIL ")+r.label).join("\\n")+
+ "\\nScope: WebGL creation, DOM controls, geometry, selection and visibility. Does not confirm medical anatomical fidelity, FPS endurance or production deployment.";
+ qaOutput.style.borderColor=count===results.length?"#4e815d":"#b8655a";
+};
 changeMode("gut");
 }
