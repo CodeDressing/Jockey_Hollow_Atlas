@@ -21,6 +21,19 @@
 <p><b>Safety:</b> Possible poisoning and misidentification. This model is an educational visualization; it does not support ingestion decisions or identification of wild mushrooms.</p>
 <p><a href="https://docs.google.com/document/d/1pW8lhC5gUPyhv0uproMjGDS3yDbGayGBDobFUHt9yuQ/edit" target="_blank" rel="noopener">Open companion Google Drive research record</a></p>
 </section>
+<section id="pkpd" style="max-width:1100px;margin:0 auto 20px;padding:20px;background:#112024;border:1px solid #52675b;border-radius:10px">
+<h2>Pharmacokinetics and receptor mechanisms — research module</h2>
+<p><strong>Important:</strong> This is an educational comparison, not a prediction for an ingested Gymnopilus specimen. The chemicals present and their quantities vary or may be unknown. A clinical psilocybin timeline must not be presented as a Gymnopilus-specific timeline.</p>
+<details open><summary><b>Oral psilocybin / psilocin (conditional serotonergic branch)</b></summary>
+<p><b>Typical onset:</b> 20–60 minutes, sometimes later. <b>Subjective peak:</b> approximately 1–3 hours. <b>Main effects:</b> often 4–6 hours, with possible longer residual effects. These are generalized human clinical observations for psilocybin, not parameters established for this species.</p>
+<p><b>Pharmacokinetics:</b> psilocybin dephosphorylation → psilocin; measured plasma concentrations peak after oral dosing; biotransformation includes glucuronidation and oxidation to 4-HIAA. Plasma half-life and subjective duration are not identical.</p>
+<p><b>Pharmacodynamics:</b> psilocin → serotonin 5-HT2A receptor → Gq/11 → phospholipase Cβ → IP3 and DAG → intracellular Ca²⁺ mobilization / PKC → altered cortical excitability and network dynamics. This branch is conditional on verified psilocybin/psilocin presence.</p></details>
+<details><summary><b>Gymnopilins (experimental nicotinic receptor branch)</b></summary>
+<p><b>Human onset, Tmax, half-life, duration:</b> unestablished. No valid percentage of human neurological effects has been derived.</p><p>Gymnopilin-containing fractions from Japanese G. junonius inhibited nicotinic acetylcholine receptor responses in PC12 cells. An acetylcholine-evoked calcium response was reduced by about 50% under specific conditions; tested voltage-gated calcium channel currents were not inhibited. These are cultured-cell observations, not demonstrated human kinetics.</p><p>Reference: <a href="https://doi.org/10.1016/j.toxicon.2014.01.014" target="_blank" rel="noopener">Toxicon 2014 · gymnopilins and nAChRs</a>.</p></details>
+<details><summary><b>NSA integration schema and model safeguards</b></summary>
+<p>The structured companion dataset is saved as <code>mycosim/research/gymnopilus_pk_pd_20261017.json</code>. Keep the 5-HT2A GPCR pathway separate from the nicotinic ligand-gated ion-channel pathway. No new model animation should imply that a photographed specimen contains psilocybin. Distinguish observation, experimental results, hypotheses and unavailable human data.</p></details>
+<p><b>Exposure safety:</b> Poisonings and identification errors can be dangerous. For actual ingestion in the U.S., contact Poison Control (1-800-222-1222) promptly; urgent symptoms require emergency evaluation.</p>
+</section>
 <div id="gate"><form class="panel" id="unlock"><h2>Protected 3D research specimen</h2><p>Enter the specimen passcode. Encrypted model morphology is decrypted locally, not protected by server-side authorization.</p><input id="pass" type="password" placeholder="Specimen passcode" required autocomplete="off"><button>Unlock model</button><p id="status" role="status"></p></form></div>
 <script type="module">
 import * as THREE from "three";import {OrbitControls} from "three/addons/controls/OrbitControls.js";
