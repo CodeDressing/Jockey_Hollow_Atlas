@@ -1,0 +1,50 @@
+name: MycoSim automatic QA
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'sandbox.html'
+      - 'mycosim/**'
+      - 'tests/mycosim-campaign.spec.mjs'
+      - '.github/workflows/mycosim-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser test tooling
+        run: |
+          npm install --no-save @playwright/test
+          npx playwright install --with-deps chromium
+      - name: Start local site
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/mycosim-http.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8765/sandbox.html -o /dev/null; then exit 0; fi
+            sleep 1
+          done
+          echo "Local web server did not start" >&2
+          exit 1
+      - name: Test integrated simulation and responsive layout
+        run: npx playwright test tests/mycosim-campaign.spec.mjs --browser=chromium --workers=1 --reporter=line
+      - name: Upload failure artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mycosim-playwright-failures
+          path: |
+            test-results/
+            /tmp/mycosim-http.log
+          if-no-files-found: ignore
