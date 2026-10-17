@@ -1,77 +1,106 @@
-// Gymnopilus field-colony educational geometry, reference batch IMG_1596-1635.
-// This is an artistically reconstructed morphology study, not photogrammetry and not an ID.
+// MycoSim protected specimen: photo-informed morphology, not a verified identification.
+// Every lamella is built in local cap coordinates and meets the stipe at its inner edge.
+// No private image files or authentication credentials are embedded here.
+export const AGE_STAGES=[
+  {id:"juvenile",label:"Juvenile / button",maturity:.08,radius:.34,height:.58},
+  {id:"young",label:"Young convex",maturity:.30,radius:.49,height:.85},
+  {id:"mature",label:"Mature",maturity:.65,radius:.72,height:1.15},
+  {id:"expanded",label:"Expanded / aging",maturity:.95,radius:.96,height:1.08}
+];
 export function buildGymnopilusFieldColony(THREE){
-  const group=new THREE.Group();
-  group.name="Field-colony reconstruction, specimen taxon unresolved";
-  const material=(hex,roughness=.92)=>new THREE.MeshStandardMaterial({color:hex,roughness,side:THREE.DoubleSide});
-  const ground=new THREE.Mesh(new THREE.CylinderGeometry(5.0,5.1,.22,64),material(0x283222));
-  ground.position.y=-1.52;group.add(ground);
-  let seed=1635;
-  const random=()=>{seed=(1664525*seed+1013904223)>>>0;return seed/4294967296};
-  // Fallen leaves form photographic context. Substrate is unverified; do not imply wood identification.
-  const leafGeometry=new THREE.BufferGeometry();
-  const v=[],inds=[];
-  for(let i=0;i<95;i++){
-    const angle=random()*Math.PI*2,dist=Math.sqrt(random())*4.6;
-    const x=Math.cos(angle)*dist,z=Math.sin(angle)*dist,y=-1.394+random()*.035;
-    const r=.10+random()*.24,rot=random()*Math.PI*2;
-    const verts=[];
-    for(let k=0;k<6;k++){
-      const a=k*Math.PI/3+rot,scale=k%2===0?1:.54;
-      verts.push([x+Math.cos(a)*r*scale,y+(random()-.5)*.065,z+Math.sin(a)*r*scale]);
+  const root=new THREE.Group();root.name="Photo-informed specimen reconstruction";
+  const mat=(color,roughness=.88)=>new THREE.MeshStandardMaterial({color,roughness,side:THREE.DoubleSide});
+  const capMats=[0xd48a24,0xe3a137,0xc77b24,0xe5a83d,0xcc8626].map(x=>mat(x));
+  const stipeMat=mat(0xcda365),gillYoung=mat(0xc6a16a),gillOld=mat(0x936b3d),veilMat=mat(0x977143);
+  const groundMat=mat(0x283627),leafMat=[mat(0x967b38),mat(0x6c4b2d),mat(0xb69a54)];
+  const terrain=new THREE.Group();root.add(terrain);
+  let seed=1635;const rand=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296};
+  const ground=new THREE.Mesh(new THREE.CylinderGeometry(5,5,.17,64),groundMat);ground.position.y=-.10;terrain.add(ground);
+  for(let i=0;i<125;i++){
+    const a=rand()*Math.PI*2,d=Math.sqrt(rand())*4.75,r=.08+rand()*.17;
+    const leaf=new THREE.Mesh(new THREE.PlaneGeometry(r*2,r*1.2),leafMat[i%3]);
+    leaf.rotation.set(-Math.PI/2+(rand()-.5)*.35,(rand()-.5)*.6,rand()*Math.PI*2);
+    leaf.position.set(Math.cos(a)*d,.006+rand()*.04,Math.sin(a)*d);
+    terrain.add(leaf);
+  }
+  function capProfile(t,maturity,angle){
+    const dome=(.23+.26*(1-maturity))*(1-t*t);
+    const waves=maturity*.085*Math.pow(t,5)*(Math.sin(5*angle+1.2)+.32*Math.sin(9*angle));
+    return dome+waves;
+  }
+  function capOutline(radius,t,maturity,angle){
+    const wrinkle=1+(.015+.055*maturity)*Math.sin(5*angle+1.1)*Math.pow(t,5);
+    return radius*t*wrinkle;
+  }
+  function capSurface(radius,maturity){
+    const positions=[],indices=[],rows=18,steps=96;
+    for(let j=0;j<=rows;j++)for(let k=0;k<=steps;k++){
+      const t=j/rows,a=k/steps*Math.PI*2,r=capOutline(radius,t,maturity,a);
+      positions.push(Math.cos(a)*r,capProfile(t,maturity,a),Math.sin(a)*r);
+      if(j<rows&&k<steps){const n=j*(steps+1)+k;indices.push(n,n+steps+1,n+1,n+1,n+steps+1,n+steps+2)}
     }
-    const base=v.length/3;
-    v.push(x,y,z);for(const p of verts)v.push(...p);
-    for(let k=0;k<6;k++)inds.push(base,base+k+1,base+(k+1)%6+1);
+    const g=new THREE.BufferGeometry();g.setAttribute("position",new THREE.Float32BufferAttribute(positions,3));g.setIndex(indices);g.computeVertexNormals();return g;
   }
-  leafGeometry.setAttribute("position",new THREE.Float32BufferAttribute(v,3));
-  leafGeometry.setIndex(inds);leafGeometry.computeVertexNormals();
-  const leaves=new THREE.Mesh(leafGeometry,material(0x927b3a));group.add(leaves);
-  const caps=[0xdf9a2d,0xe9ad3c,0xc98325,0xe5a832,0xd38c24].map(x=>material(x,.87));
-  const stems=[material(0xd5a45d),material(0xdfb465)];
-  const gillMat=material(0xb58a55),olderGills=material(0x866341),veilMat=material(0xb98950);
-  const points=[];
-  for(let i=0;i<24;i++){
-    const a=(i/24)*Math.PI*2+random()*.37,rad=.45+Math.sqrt(random())*2.25;
-    points.push({x:Math.cos(a)*rad,z:Math.sin(a)*rad,r:.35+random()*.48,h:.38+random()*.67,tilt:(random()-.5)*.45,maturity:random()});
+  // Gills: individual radial, vertical curved lamellae; inner edges originate at stipe radius,
+  // while upper edges touch cap's underside from the attachment point to the margin.
+  function addGills(head,radius,maturity,gillGroups){
+    const g=new THREE.Group();g.name="Attached lamellae";g.userData.isFieldGills=true;head.add(g);gillGroups.push(g);
+    const count=maturity<.2?56:96;
+    const inner=.132,outer=radius*.975;
+    for(let i=0;i<count;i++){
+      const a=i*Math.PI*2/count;
+      const vertices=[],faces=[],divisions=12;
+      for(let j=0;j<=divisions;j++){
+        const t=j/divisions,r=inner+(outer-inner)*t;
+        const normalized=r/radius,top=capProfile(normalized,maturity,a)-.035;
+        const depth=(.105+.075*maturity)*Math.sin(Math.PI*(.08+.83*t));
+        const rad=capOutline(radius,normalized,maturity,a);
+        const x=Math.cos(a)*rad,z=Math.sin(a)*rad;
+        vertices.push(x,top,z,x,top-depth,z);
+        if(j<divisions){const p=j*2;faces.push(p,p+1,p+2,p+1,p+3,p+2)}
+      }
+      const geometry=new THREE.BufferGeometry();
+      geometry.setAttribute("position",new THREE.Float32BufferAttribute(vertices,3));geometry.setIndex(faces);geometry.computeVertexNormals();
+      g.add(new THREE.Mesh(geometry,maturity>.78?gillOld:gillYoung));
+    }
   }
-  const modelCap=(radius,maturity,capMat)=>{
-    const rings=12,segments=48,positions=[],indices=[];
-    const dome=.2+.33*(1-maturity);
-    for(let row=0;row<=rings;row++){
-      const t=row/rings,rad=radius*t;
-      for(let s=0;s<=segments;s++){
-        const ang=s/segments*Math.PI*2;
-        // Broad, often irregular and overlapping with asymmetric mature margins.
-        const wave=1+(.035+.085*maturity)*Math.sin(5*ang+1.4)+(.02*maturity)*Math.sin(9*ang);
-        const edgeDip=maturity*.20*Math.pow(t,7)*Math.sin(4*ang+1.3);
-        positions.push(Math.cos(ang)*rad*wave,dome*(1-t*t)+edgeDip,Math.sin(ang)*rad*wave);
-        if(row<rings&&s<segments){const n=row*(segments+1)+s;indices.push(n,n+segments+1,n+1,n+1,n+segments+1,n+segments+2)}
+  const allGills=[],mushrooms=[];
+  function makeMushroom({x=0,z=0,radius=.6,height=1,maturity=.55,tilt=0,materialIndex=0}){
+    const mushroom=new THREE.Group();mushroom.position.set(x,.05,z);mushroom.rotation.z=tilt;root.add(mushroom);
+    const stipe=new THREE.Mesh(new THREE.CylinderGeometry(.135,.19,height,20),stipeMat);stipe.position.y=height/2;mushroom.add(stipe);
+    const head=new THREE.Group();head.position.y=height;mushroom.add(head);
+    const cap=new THREE.Mesh(capSurface(radius,maturity),capMats[materialIndex%capMats.length]);head.add(cap);
+    addGills(head,radius,maturity,allGills);
+    if(maturity>.18){
+      const ring=new THREE.Mesh(new THREE.TorusGeometry(.155,.026,8,28),veilMat);
+      ring.rotation.x=Math.PI/2;ring.position.y=-.17;mushroom.add(ring);ring.position.y=height-.19;
+      if(maturity>.4)for(let j=0;j<4;j++){
+        const fragment=new THREE.Mesh(new THREE.ConeGeometry(.05,.12,7),veilMat);
+        const a=j*Math.PI/2;fragment.position.set(Math.cos(a)*.155,height-.25,Math.sin(a)*.155);fragment.rotation.z=.6*Math.cos(a);mushroom.add(fragment);
       }
     }
-    const geom=new THREE.BufferGeometry();geom.setAttribute("position",new THREE.Float32BufferAttribute(positions,3));geom.setIndex(indices);geom.computeVertexNormals();
-    return new THREE.Mesh(geom,capMat);
-  };
-  const gills=[];
-  points.forEach((p,i)=>{
-    const stem=new THREE.Group();stem.position.set(p.x,-1.37,p.z);stem.rotation.z=p.tilt;group.add(stem);
-    const stalk=new THREE.Mesh(new THREE.CylinderGeometry(.12,.19,p.h,14),stems[i%2]);stalk.position.y=p.h/2;stem.add(stalk);
-    const head=new THREE.Group();head.position.set(0,p.h,0);stem.add(head);
-    head.add(modelCap(p.r,p.maturity,caps[i%caps.length]));
-    const underside=new THREE.Group();head.add(underside);underside.userData.isFieldGills=true;gills.push(underside);
-    for(let j=0;j<84;j++){
-      const a=j*Math.PI*2/84;
-      const length=p.r*(.80-(j%4===0?0:.09));
-      const blade=new THREE.Mesh(new THREE.BoxGeometry(length,.105,.010),p.maturity>.76?olderGills:gillMat);
-      blade.position.set(Math.cos(a)*length*.53,-.09,Math.sin(a)*length*.53);
-      blade.rotation.y=-a;underside.add(blade);
-    }
-    const ring=new THREE.Mesh(new THREE.TorusGeometry(.135,.028,6,20),veilMat);
-    ring.rotation.x=Math.PI/2;ring.position.y=-.13;head.add(ring);
-    // Torn partial veil fragments; visible in lower field images and IMG_1625-1628.
-    if(i%3===0){for(let k=0;k<4;k++){const a=k*Math.PI/2+.2;const frag=new THREE.Mesh(new THREE.ConeGeometry(.07,.20,5),veilMat);frag.position.set(Math.cos(a)*.16,-.17,Math.sin(a)*.16);frag.rotation.z=Math.cos(a)*.7;head.add(frag)}}
-  });
-  group.userData.gills=gills;
-  group.userData.reference="IMG_1596-1635 (40 photographs, user-supplied; image assets are not bundled in this source)";
-  return group;
+    mushrooms.push({group:mushroom,maturity});
+    return mushroom;
+  }
+  const specimens=new THREE.Group();root.add(specimens);
+  // Isolated presets use the same shared mesh construction, ensuring anatomy consistency.
+  for(const [index,stage] of AGE_STAGES.entries()){
+    const m=makeMushroom({radius:stage.radius,height:stage.height,maturity:stage.maturity,materialIndex:index});
+    m.visible=false;m.name="Age "+stage.id;
+  }
+  const isolate=mushrooms.slice(0,AGE_STAGES.length);
+  for(let i=0;i<24;i++){
+    const a=i/24*Math.PI*2+rand()*.24,d=.42+Math.sqrt(rand())*2.15;
+    makeMushroom({x:Math.cos(a)*d,z:Math.sin(a)*d,radius:.37+rand()*.42,height:.50+rand()*.60,maturity:.24+rand()*.73,tilt:(rand()-.5)*.28,materialIndex:i});
+  }
+  const colony=mushrooms.slice(AGE_STAGES.length);
+  function select(mode){
+    const field=mode==="colony";
+    terrain.visible=field;
+    colony.forEach(x=>x.group.visible=field);
+    isolate.forEach((x,i)=>x.group.visible=!field&&AGE_STAGES[i].id===mode);
+    root.userData.selectedMode=mode;
+  }
+  root.userData={gills:allGills,select,selectedMode:"colony",reference:"40 user-supplied images in prior photo register; source images not bundled"};
+  select("colony");return root;
 }
