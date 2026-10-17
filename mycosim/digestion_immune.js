@@ -80,5 +80,58 @@ panel.querySelector('[data-bio="play"]').onclick=()=>{if(playing){stop();render(
 panel.querySelector('[data-bio="read"]').onclick=()=>{if(!("speechSynthesis" in window))return;speechSynthesis.cancel();const s=stages[index],utterance=new SpeechSynthesisUtterance(s[0]+". "+s[2]+". Evidence: "+s[3]);utterance.rate=.86;speechSynthesis.speak(utterance);};
 document.addEventListener("visibilitychange",()=>{if(document.hidden&&playing){stop();render();}});
 window.addEventListener("pagehide",()=>{stop();if("speechSynthesis" in window)speechSynthesis.cancel();},{once:true});
+// Browser-side smoke tests. This runs only on explicit user action and restores the prior stage.
+const qaArea=document.createElement("div");
+qaArea.style.marginTop="12px";
+const qaButton=document.createElement("button");
+qaButton.type="button";qaButton.textContent="Run Phase 9 browser QA";
+qaButton.setAttribute("aria-controls","bio-qa-report");
+const qaReport=document.createElement("pre");
+qaReport.id="bio-qa-report";qaReport.setAttribute("role","status");
+qaReport.style.cssText="white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.5 monospace;background:#101d20;border:1px solid #47605d;border-radius:8px;padding:10px;max-height:360px;overflow:auto";
+qaReport.textContent="QA has not run. Tests do not verify Render deployment or clinical evidence.";
+qaArea.append(qaButton,qaReport);panel.append(qaArea);
+qaButton.addEventListener("click",()=>{
+ const previous=index,checks=[];
+ const check=(name,condition)=>checks.push({name,pass:Boolean(condition)});
+ qaButton.disabled=true;
+ try{
+  stop();render();
+  check("Eight stage definitions",stages.length===8&&buttons.length===8&&diagram.length===8);
+  check("Initial module mounted once",document.querySelectorAll("#tv-biology").length===1);
+  check("Original anatomy canvas retained",Boolean(document.getElementById("tv-canvas")));
+  check("Original engine canvas retained",Boolean(document.getElementById("stage")));
+  for(let i=0;i<stages.length;i++){
+   setStage(i);
+   check("Stage "+(i+1)+" title and state",panel.querySelector("#bio-title").textContent===stages[i][0]&&
+    buttons[i].getAttribute("aria-current")==="step"&&
+    diagram[i].getAttribute("aria-current")==="step");
+  }
+  setStage(0);panel.querySelector('[data-bio="next"]').click();
+  check("Next advances",index===1);
+  panel.querySelector('[data-bio="prev"]').click();
+  check("Previous returns",index===0);
+  setStage(7);panel.querySelector('[data-bio="next"]').click();
+  check("Last-stage boundary",index===7);
+  diagram[3].click();
+  check("Diagram node selection",index===3);
+  const keyEvent=new KeyboardEvent("keydown",{key:"Enter",bubbles:true,cancelable:true});
+  diagram[4].dispatchEvent(keyEvent);
+  check("Keyboard selects diagram nodes",index===4);
+  panel.querySelector('[data-bio="play"]').click();
+  check("Playback starts with accessible state",playing&&panel.querySelector('[data-bio="play"]').getAttribute("aria-pressed")==="true");
+  panel.querySelector('[data-bio="play"]').click();
+  check("Playback pauses and clears timer",!playing&&interval===null&&panel.querySelector('[data-bio="play"]').getAttribute("aria-pressed")==="false");
+  setStage(5);panel.querySelector('[data-bio="reset"]').click();
+  check("Reset restores initial stage",index===0);
+  check("Uncertainty notice is present",Boolean(panel.querySelector(".bio-alert"))&&panel.querySelector(".bio-alert").textContent.includes("not been shown"));
+ }catch(error){checks.push({name:"Unexpected test exception: "+String(error),pass:false});}
+ finally{setStage(previous);qaButton.disabled=false;}
+ const passed=checks.filter(x=>x.pass).length;
+ qaReport.textContent="Phase 9 browser checks: "+passed+"/"+checks.length+" passed\n"+
+  checks.map(x=>(x.pass?"PASS":"FAIL")+"  "+x.name).join("\n")+
+  "\n\nScope: mounted DOM and controls only. This does not validate GPU rendering, network availability, clinical claims or long-duration memory use.";
+ qaReport.style.borderColor=passed===checks.length?"#4e815d":"#b56557";
+});
 render();
 }
