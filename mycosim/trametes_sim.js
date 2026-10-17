@@ -66,7 +66,39 @@ function visibility(){for(const [id,list] of parts){for(const o of list){o.visib
 const life=["Spore dispersal","Germination","Compatible hyphal interaction","Dikaryotic mycelium","Wood colonization","Primordia","Bracket development","Mature pore production","Spore release","Aging and decomposition"];
 const farm=["Forest","Verified identification","Harvest","Processing","Drying","Milling","Packaging","Consumption","Digestion","Microbiome","Immune recognition hypotheses","Evidence interpretation"];
 let flow="life",step=0;
-function updateStep(){const a=flow==="life"?life:farm;steps.textContent=(step+1)+"/"+a.length+" · "+a[step];stage.textContent=flow==="life"?"Life cycle: representative developmental stages are conceptual, not calibrated growth rates.":"Farm to human: standardized PSK/PSP studies are not interchangeable with ordinary powdered fruiting bodies. No cancer cure or wellness benefit is established.";}
+// Each stop has a narrated lesson; these are conceptual sequences, not quantitative predictions.
+const lifeLessons=[
+"Basidiospores are produced on fertile basidia lining the pores beneath mature brackets. Air movement disperses spores; release is not represented at real scale.",
+"A viable basidiospore can germinate under suitable moisture, temperature and substrate conditions, producing an initial hyphal network.",
+"Compatible mating-type interactions may establish a fertile dikaryotic mycelium. Pairing depends on fungal mating systems, not merely proximity.",
+"Dikaryotic hyphae grow through suitable substrate. This hidden network is distinct from the visible bracket fruiting body.",
+"Extracellular enzymes depolymerize wood components. As a white-rot fungus, T. versicolor can modify lignin and other cell-wall polymers.",
+"Environmental and developmental cues can initiate small fruiting-body primordia; exact triggers and timing vary.",
+"Thin, overlapping bracket-shaped fruiting bodies expand and develop concentric surface zones. Pigment bands alone are not diagnostic.",
+"The underside develops a poroid hymenophore. Microscopic basidia line fertile surfaces inside pores and tubes.",
+"Mature basidia form basidiospores through meiosis and release them for dispersal. The 3D scene is not a calibrated spore model.",
+"Older brackets can weather, dry or be colonized by other organisms while the wood-decay community continues to change."
+];
+const farmLessons=[
+"Observe the fungus on its original wood substrate. Document host tree, locality, context and multiple views before removing any material.",
+"Identification requires multiple characters, including the fine-pored underside, thin zoned brackets and exclusion of look-alikes. This simulator cannot verify an actual specimen.",
+"Record collection date, site, collector, condition and a traceable lot identifier. Avoid unsafe or contaminated collection sites.",
+"Separate and inspect material; track any cleaning, trimming and processing operations by lot. Never treat appearance alone as a contamination test.",
+"Drying reduces water activity when validated and performed correctly. Actual shelf stability requires process controls; the scene cannot certify a batch.",
+"Milling changes particle size but does not automatically make every fungal polymer bioavailable. Processing and extraction methods influence composition.",
+"Record species identification, ingredients, processing method, net weight, lot and appropriate safety information; distinguish a raw powder from a standardized extract.",
+"Ingestion introduces complex fungal material into the gastrointestinal tract. Oral exposure is not equivalent to applying purified β-glucan directly to immune cells.",
+"Digestive conditions and the food matrix affect release and transit. Not all mushroom polysaccharides are absorbed intact across the intestinal barrier.",
+"Microbes may transform some dietary polysaccharides. Species, molecular structure and individual microbiomes affect these interactions.",
+"Some accessible fungal β-glucans are recognized by receptors such as Dectin-1, which can signal through SYK and CARD9 pathways in experimental settings. Oral Turkey Tail powder is not proven to trigger the same response in humans.",
+"Distinguish cell studies, animal experiments and clinical trials. PSK and PSP preparations cannot be assumed equivalent to ordinary Turkey Tail powders; no cancer treatment claim is implied."
+];
+function updateStep(){
+const a=flow==="life"?life:farm;
+const detail=(flow==="life"?lifeLessons:farmLessons)[step];
+steps.textContent=(step+1)+"/"+a.length+" · "+a[step];
+stage.textContent=detail+" Educational reconstruction; not a specimen ID, processing validation or clinical recommendation.";
+}
 host.querySelector("#tv-next").onclick=()=>{step=(step+1)%(flow==="life"?life.length:farm.length);updateStep()};
 host.querySelector("#tv-prev").onclick=()=>{step=(step-1+(flow==="life"?life.length:farm.length))%(flow==="life"?life.length:farm.length);updateStep()};
 host.querySelector("#tv-flow").onchange=e=>{flow=e.target.value;step=0;updateStep()};
