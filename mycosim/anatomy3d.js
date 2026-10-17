@@ -98,7 +98,7 @@ function init(){
   ray=new THREE.Raycaster();started=true;resize();rebuild();
   resizeObserver=new ResizeObserver(resize);resizeObserver.observe(canvas);
   canvas.addEventListener("click",pick);
-  const loop=()=>{if(!started)return;if(!document.hidden){controls.update();renderer.render(scene,camera);}raf=requestAnimationFrame(loop);};loop();
+  const loop=()=>{if(!started)return;if(!document.hidden&&!section.hidden){controls.update();renderer.render(scene,camera);}raf=requestAnimationFrame(loop);};loop();
   status.textContent="3D ready · "+mode+" model. Click a structure or use the selection controls.";
   section.querySelector('[data-action="start"]').disabled=true;
  }catch(e){status.textContent="3D initialization failed: "+String(e?.message||e);console.error(e);dispose();}
