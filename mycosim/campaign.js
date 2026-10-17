@@ -35,6 +35,7 @@ if(host&&!document.getElementById("myco-campaign")){
  function gate(n,status,detail){const el=gateElements.get(n);el.textContent="Phase "+n+": "+status+" — "+detail;el.style.borderColor=status==="PASS"?"#5c9e6c":status==="FAIL"?"#c16c61":"#b09a65";}
  function append(s){last+="\n"+s;log.textContent=last;}
  function launchTest(sectionId,buttonText,reportId,phase){
+  window.MycoSimWorkspace?.activate(phase===9?"digestion":phase===10?"anatomy":phase===11?"pathways":"quality");
   const section=document.getElementById(sectionId);
   if(!section)throw Error("Phase "+phase+" module not mounted");
   const b=[...section.querySelectorAll("button")].find(x=>x.textContent.trim()===buttonText);
@@ -62,6 +63,7 @@ if(host&&!document.getElementById("myco-campaign")){
    gate(10,"RUN","WebGL 3D anatomy QA");const p10=launchTest("tv-anatomy3d","Run Phase 10 3D QA","pre[role=status]",10);
    gate(10,"PASS",p10);append("Phase 10: "+p10+" checks passed");
    current=11;
+   window.MycoSimWorkspace?.activate("pathways");
    gate(11,"RUN","molecular visualization QA");
    const p11=launchTest("tv-molecular","Run Phase 11 QA","#m-qa-result",11);
    append("Phase 11 visual process: "+p11+" browser checks passed");
@@ -76,6 +78,6 @@ if(host&&!document.getElementById("myco-campaign")){
    gate(12,"PASS","schema and destination link");append("Phase 12: structured research handoff validated (NO remote sync test)");
    append("Browser smoke tests passed. Release remains CONDITIONAL pending manual visual, scientific, accessibility, endurance and production deployment QA.");
   }catch(e){gate(current,"FAIL","campaign stopped");append("STOP — Phase "+current+": "+String(e?.message||e));}
-  finally{executing=false;btn.disabled=false;}
+  finally{window.MycoSimWorkspace?.activate("quality");executing=false;btn.disabled=false;}
  };
 }
