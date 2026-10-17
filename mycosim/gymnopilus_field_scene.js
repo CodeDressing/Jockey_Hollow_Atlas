@@ -52,18 +52,18 @@ export function buildGymnopilusFieldColony(THREE){
     const geom=new THREE.BufferGeometry();geom.setAttribute("position",new THREE.Float32BufferAttribute(positions,3));geom.setIndex(indices);geom.computeVertexNormals();
     return new THREE.Mesh(geom,capMat);
   };
-  const gills=new THREE.Group();group.add(gills);
+  const gills=[];
   points.forEach((p,i)=>{
     const stem=new THREE.Group();stem.position.set(p.x,-1.37,p.z);stem.rotation.z=p.tilt;group.add(stem);
     const stalk=new THREE.Mesh(new THREE.CylinderGeometry(.12,.19,p.h,14),stems[i%2]);stalk.position.y=p.h/2;stem.add(stalk);
     const head=new THREE.Group();head.position.set(0,p.h,0);stem.add(head);
     head.add(modelCap(p.r,p.maturity,caps[i%caps.length]));
-    const underside=new THREE.Group();head.add(underside);underside.userData.isFieldGills=true;gills.add(underside);
+    const underside=new THREE.Group();head.add(underside);underside.userData.isFieldGills=true;gills.push(underside);
     for(let j=0;j<84;j++){
       const a=j*Math.PI*2/84;
       const length=p.r*(.80-(j%4===0?0:.09));
-      const blade=new THREE.Mesh(new THREE.BoxGeometry(length,.025,.009),p.maturity>.76?olderGills:gillMat);
-      blade.position.set(Math.cos(a)*length*.53,-.043,Math.sin(a)*length*.53);
+      const blade=new THREE.Mesh(new THREE.BoxGeometry(length,.105,.010),p.maturity>.76?olderGills:gillMat);
+      blade.position.set(Math.cos(a)*length*.53,-.09,Math.sin(a)*length*.53);
       blade.rotation.y=-a;underside.add(blade);
     }
     const ring=new THREE.Mesh(new THREE.TorusGeometry(.135,.028,6,20),veilMat);
