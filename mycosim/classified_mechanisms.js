@@ -60,20 +60,35 @@ export function mountMechanismSimulator(target){
  const camera=new THREE.PerspectiveCamera(42,1,.1,100);camera.position.set(1.6,2.5,8.6);
  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false});
  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.75));
- renderer.outputColorSpace=THREE.SRGBColorSpace;
+ renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.45;
  scene.add(new THREE.HemisphereLight(0xcadcec,0x1a3c3b,2));
  const key=new THREE.DirectionalLight(0xfbe3af,3);key.position.set(-3,7,6);scene.add(key);
  const controls=new OrbitControls(camera,canvas);controls.enableDamping=true;controls.target.set(0,0,0);controls.minDistance=4;controls.maxDistance=18;
  // Membrane is a translucent slab. The embedded receptor is intentionally symbolic.
- const membrane=new THREE.Mesh(new THREE.BoxGeometry(7.6,.26,3.2),mat(0x345c61,true,.6));membrane.position.y=-.3;scene.add(membrane);
+ const membrane=new THREE.Mesh(new THREE.BoxGeometry(7.6,.18,3.2),mat(0x254b51,true,.18));membrane.position.y=-.3;scene.add(membrane);
+// A dense paired phospholipid headgroup lattice conveys the bilayer instead of a flat slab.
+const lipidHeads=new THREE.InstancedMesh(new THREE.SphereGeometry(.075,10,8),mat(0x5cb8b0),2*35*13);
+const dummy=new THREE.Object3D();let li=0;
+for(let side of [-1,1])for(let x=0;x<35;x++)for(let z=0;z<13;z++){
+ dummy.position.set(-3.65+x*.215,side===1?-.16:-.45,-1.43+z*.23);
+ dummy.scale.set(1,.62,1);dummy.updateMatrix();lipidHeads.setMatrixAt(li++,dummy.matrix);
+}
+lipidHeads.instanceMatrix.needsUpdate=true;scene.add(lipidHeads);
+// Visual direction cues are metaphorical, not atomistic receptor structure.
+const bilayerCore=new THREE.Mesh(new THREE.BoxGeometry(7.4,.17,3.0),mat(0x21464e,true,.32));bilayerCore.position.y=-.305;scene.add(bilayerCore);
  const protein=new THREE.Group();scene.add(protein);
  const receptorCore=new THREE.Mesh(new THREE.TorusGeometry(.86,.31,16,46),mat(0x9b8bf2));receptorCore.rotation.x=Math.PI/2;receptorCore.position.y=-.19;protein.add(receptorCore);
  for(let i=0;i<5;i++){let angle=i*Math.PI*2/5;let column=capsule(.25,1.1,0x83a7a9);column.position.set(Math.cos(angle)*.77,.08,Math.sin(angle)*.77);protein.add(column)}
  const ligand=sphere(.28,0x93d6ed);ligand.position.set(-2.5,1.4,.3);scene.add(ligand);
  const effector=new THREE.Group();effector.position.set(2,-1.5,0);scene.add(effector);
  const cell=sphere(.62,0x429d97);cell.material.transparent=true;cell.material.opacity=.75;effector.add(cell);
+const halo=new THREE.Mesh(new THREE.TorusGeometry(.79,.025,8,64),mat(0x4ccfc8,true,.83));halo.rotation.x=.75;effector.add(halo);
+for(let j=0;j<10;j++){const vesicle=sphere(.09,j%2?0xdeb277:0x4bcaec);const a=j*Math.PI*2/10;vesicle.position.set(Math.cos(a)*1.0,.3*Math.sin(j*2),Math.sin(a)*.7);effector.add(vesicle)}
+
  const particles=[];for(let i=0;i<28;i++){let m=sphere(.048,i%2===0?0xf7cd81:0x8ad1ee);m.position.set((i%7-3)*.45,-1.15-(Math.floor(i/7))*.38,Math.sin(i)*.25);scene.add(m);particles.push(m)}
  const pathwayLines=new THREE.Group();scene.add(pathwayLines);
+const signalRail=new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([new THREE.Vector3(-3,2.05,0),new THREE.Vector3(-1.5,2.22,0),new THREE.Vector3(0,2.05,0),new THREE.Vector3(1.5,2.22,0),new THREE.Vector3(3,2.05,0)]),70,.023,7,false),mat(0x508e9c));pathwayLines.add(signalRail);
+
  const nodes=[];
  for(let i=0;i<7;i++){const marker=sphere(.11,0x4c8a99);marker.position.set(-3+i,2.05,0);pathwayLines.add(marker);nodes.push(marker)}
  let mode="serotonin",step=0,running=false,elapsed=0,raf=0,alive=true,visible=true;
