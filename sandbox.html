@@ -24,8 +24,9 @@
 header{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line);background:#0c1416;position:sticky;top:0;z-index:10}
 .brand{font-weight:800;letter-spacing:.04em}.brand small{display:block;color:var(--muted);font-weight:500;font-size:11px;letter-spacing:.09em;margin-top:3px}
 .back{color:var(--text);text-decoration:none;border:1px solid var(--line);padding:9px 12px;border-radius:8px;background:#111a1d}
-main{display:grid;grid-template-columns:minmax(0,1fr) 340px;min-height:calc(100vh - 65px);align-items:start}
-.stage-wrap{position:sticky;top:65px;height:calc(100vh - 65px);min-height:560px;background:radial-gradient(circle at 50% 35%,#183027 0,#0b1315 40%,#070b0c 100%);overflow:hidden}
+main{display:block;min-width:0;min-height:calc(100vh - 65px)}
+.workspace-row{display:grid;grid-template-columns:minmax(0,1fr) 340px;align-items:start;min-width:0}
+ .stage-wrap{position:sticky;top:65px;height:calc(100vh - 65px);min-height:560px;min-width:0;background:radial-gradient(circle at 50% 35%,#183027 0,#0b1315 40%,#070b0c 100%);overflow:hidden}
 #stage{width:100%;height:100%;min-height:0;display:block;touch-action:none}
 .badge{position:absolute;top:16px;left:16px;padding:7px 10px;border:1px solid #5e5332;border-radius:999px;color:#f0dca9;background:rgba(35,30,16,.76);font-size:11px;letter-spacing:.08em}
 .hint{position:absolute;left:16px;bottom:16px;color:var(--muted);background:rgba(4,8,9,.72);padding:9px 11px;border-radius:8px;font-size:12px}
@@ -34,7 +35,7 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
 .mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.mode{border:1px solid var(--line);background:#0d1518;color:var(--text);padding:10px;border-radius:8px;text-align:left;cursor:pointer}.mode.active{border-color:#806f42;background:#1a1b12;color:#f3dfae}
 .structure{border:1px solid var(--line);border-radius:8px;padding:10px 11px;margin:7px 0;background:#0d1518}.structure strong{display:block;font-size:13px}.structure span{font-size:11px;color:var(--muted)}
 .notice{border:1px solid #425c49;background:#102017;padding:11px;border-radius:8px;color:#cde9d1;font-size:12px;line-height:1.5}
-@media(max-width:900px){main{grid-template-columns:1fr}.stage-wrap{position:relative;top:auto;height:58vh;min-height:420px}.stage-wrap,#stage{min-height:0}aside{border-left:0;border-top:1px solid var(--line)}header{align-items:flex-start}.brand{max-width:70%}}
+@media(max-width:900px){.workspace-row{grid-template-columns:1fr}.stage-wrap{position:relative;top:auto;height:58vh;min-height:420px}.stage-wrap,#stage{min-height:0}aside{border-left:0;border-top:1px solid var(--line)}header{align-items:flex-start}.brand{max-width:70%}}
 
 .model-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .model-pick{border:1px solid var(--line);background:#0d1518;color:var(--text);padding:10px;border-radius:8px;text-align:left;cursor:pointer}
@@ -172,7 +173,7 @@ h1{font-size:26px;margin:0 0 4px}h2{font-size:15px;margin:22px 0 10px;color:#dfe
 .morphology-summary strong{display:block;margin-top:4px;font-size:12px;line-height:1.4;color:#f0dda9}
 .morphology-summary p{margin:4px 0 0;font-size:9px;line-height:1.35;color:var(--muted)}
 
-.learning-path{position:sticky;top:0;z-index:12;display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin:10px 0 12px;padding:7px;background:rgba(7,14,16,.94);border:1px solid var(--line);border-radius:10px;backdrop-filter:blur(8px)}
+.learning-path{position:sticky;top:70px;z-index:5;display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin:10px 0 12px;padding:7px;background:rgba(7,14,16,.94);border:1px solid var(--line);border-radius:10px;backdrop-filter:blur(8px)}
 .learning-path-chip{display:flex;align-items:center;justify-content:center;gap:5px;min-width:0;border:1px solid var(--line);background:#0d1518;color:var(--muted);border-radius:7px;padding:6px 4px;cursor:pointer;font-size:9px}
 .learning-path-chip b{display:grid;place-items:center;width:17px;height:17px;border-radius:999px;border:1px solid currentColor;font-size:8px}
 .learning-path-chip.active{border-color:#8c7440;background:#201c11;color:#f0dda9}
@@ -217,6 +218,7 @@ body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
   <a class="back" href="./">← Back to Atlas</a>
 </header>
 <main>
+  <div class="workspace-row">
   <section class="stage-wrap">
     <canvas id="stage" aria-label="Interactive 3D mushroom sandbox"></canvas>
     <div class="badge">MYCOSIM · OPTIONAL SIMULATION</div><div id="buildStamp" style="position:absolute;left:12px;top:46px;z-index:4;font-size:9px;letter-spacing:.08em;color:#9fb7b1">PHASE 6 · HYMENOPHORE–MARGIN–PILEUS SYNC · BUILD 2026-10-03</div>
@@ -357,6 +359,7 @@ body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
       <div id="sporeSummary" class="spore-summary">No measurements entered.</div>
     </div>
   </aside>
+  </div>
 
   <section id="trametes-simulator" aria-label="Trametes versicolor 3D educational reconstruction" style="grid-column:1/-1;padding:16px;border:1px solid #4b625f;border-radius:12px;background:#101a1b;color:#dce9e4;margin:12px 0">
     <div style="display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;align-items:center"><div><div class="kicker">MYCOSIM · SPECIES RECONSTRUCTION · PHASE 8</div><h2 style="margin:5px 0">Trametes versicolor — interactive hardwood log</h2><p class="copy">Procedurally generated 3D educational reconstruction, not a scanned or identified specimen. Distinguishes macroscopic tissues from inferred and magnified structures.</p></div><span class="badge" style="position:static">EDUCATIONAL RECONSTRUCTION</span></div>
