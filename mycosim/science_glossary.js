@@ -51,6 +51,7 @@ if(host&&!document.getElementById("myco-science-terms")){
   }
   if(queue.size&&!scheduled){scheduled=true;requestAnimationFrame(drain);}
  });
- scan(host);observer.observe(host,{subtree:true,childList:true,characterData:true});
+ const coverage=document.querySelector("main")||host;
+ scan(coverage);observer.observe(coverage,{subtree:true,childList:true,characterData:true});
  window.addEventListener("pagehide",()=>{observer.disconnect();if("speechSynthesis" in window)window.speechSynthesis.cancel();},{once:true});
 }
