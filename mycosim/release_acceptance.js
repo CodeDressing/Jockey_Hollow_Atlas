@@ -26,8 +26,11 @@ const measure=async()=>{
  test("All education modules mounted",["tv-biology","tv-anatomy3d","tv-molecular","myco-campaign","myco-science-terms"].every(id=>!!document.getElementById(id)));
  test("No duplicate main canvas",document.querySelectorAll("#stage").length===1);
  test("No page horizontal overflow",document.documentElement.scrollWidth<=window.innerWidth+12,String(document.documentElement.scrollWidth)+" / "+window.innerWidth+" px");
+ const workspaceMode=window.MycoSimWorkspace?.getActive();
+ window.MycoSimWorkspace?.activate("anatomy");
  const webgl=document.getElementById("tv-anatomy-canvas");
  test("3D anatomy canvas visible dimensions",!!webgl&&webgl.clientWidth>0&&webgl.clientHeight>0);
+ if(workspaceMode)window.MycoSimWorkspace?.activate(workspaceMode);
  const missing=[...document.querySelectorAll("#trametes-simulator button")].filter(b=>!b.textContent.trim()&&!b.getAttribute("aria-label")&&!b.title);
  test("Buttons have accessible names",missing.length===0,String(missing.length)+" missing");
  test("Scientific warnings mounted",!!document.querySelector("#tv-biology .bio-alert")&&!!document.querySelector("#tv-molecular .m-warning"));
