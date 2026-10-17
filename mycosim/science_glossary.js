@@ -1,0 +1,56 @@
+// Jockey Hollow Atlas MycoSim shared scientific glossary.
+const ENTRIES=[["Dectin-1","DEK-tin one","A fungal β-glucan-recognizing receptor (CLEC7A) on some immune cells.","Dectin one"],["CLEC7A","see leck seven ay","The gene/protein designation for Dectin-1.","C L E C seven A"],["SYK","sick","Spleen tyrosine kinase, an enzyme that participates in phosphorylation-dependent immune-receptor signaling.","sick"],["CARD9","card nine","Caspase recruitment domain-containing protein 9, an immune signaling adaptor.","card nine"],["BCL10","bee see ell ten","B-cell lymphoma/leukemia 10, a signaling adaptor in the CARD9–BCL10–MALT1 complex.","B C L ten"],["MALT1","malt one","Mucosa-associated lymphoid tissue lymphoma translocation protein 1, a signaling scaffold and paracaspase.","malt one"],["hemITAM","hem eye tam","Half immunoreceptor tyrosine-based activation motif, a receptor-tail sequence that can recruit SYK after phosphorylation.","hem eye tam"],["ITAM","eye tam","Immunoreceptor tyrosine-based activation motif, a protein-signaling sequence.","eye tam"],["NF-κB","en eff kappa bee","Nuclear factor kappa B, a family of transcription factors controlling many immune-response genes.","N F kappa B"],["NF-kB","en eff kappa bee","An alternative spelling for NF-κB, a family of gene-regulating transcription factors.","N F kappa B"],["IKK","eye kay kay","IκB kinase, a protein kinase complex involved in NF-κB activation.","I K K"],["IκB","eye kappa bee","Inhibitor of NF-κB, a protein that helps restrain NF-κB signaling.","I kappa B"],["β-glucan","bay-tuh gloo-kan","A glucose polymer with beta glycosidic linkages; molecular structure changes its biological properties.","beta glucan"],["beta-glucan","bay-tuh gloo-kan","A structurally variable polysaccharide made of linked glucose units.","beta glucan"],["phosphorylation","fos-for-ih-LAY-shun","Addition of a phosphate group, often to a protein, by a kinase.","phosphorylation"],["polysaccharide","pol-ee-SAK-uh-ride","A carbohydrate composed of many linked monosaccharides.","polysaccharide"],["ligand","LIG-und","A molecule that binds a protein, often a receptor.","ligand"],["kinase","KYE-nays","An enzyme that transfers a phosphate group to a target molecule.","kinase"],["receptor","ree-SEP-ter","A protein that detects a ligand and can initiate cellular signaling.","receptor"],["cytoplasm","SY-toh-plaz-um","The cellular region within the plasma membrane but outside the nucleus.","cytoplasm"],["epithelium","ep-ih-THEE-lee-um","Cellular tissue covering a surface or lining an organ, including the intestine.","epithelium"],["hymenophore","high-MEN-oh-for","The spore-producing surface of a fungal fruiting body.","hymenophore"],["mycelium","my-SEE-lee-um","A network of fungal hyphae growing through a substrate.","mycelium"],["hyphae","HIGH-fee","Plural of hypha: threadlike fungal filaments.","hyphae"],["basidia","buh-SID-ee-uh","Plural of basidium, a fungal spore-producing cell.","basidia"],["basidiospores","buh-SID-ee-oh-sporz","Sexual spores formed on basidia.","basidiospores"],["Trametes versicolor","truh-MEE-teez ver-SIK-uh-lor","The scientific name for Turkey Tail, a wood-decaying polypore.","Trametes versicolor"],["PSK","pee ess kay","Polysaccharide-K (krestin), a studied preparation distinct from ordinary Turkey Tail powder.","P S K"],["PSP","pee ess pee","Polysaccharopeptide, a Turkey Tail-derived preparation not equivalent to ordinary whole powder.","P S P"],["ATP","ay tee pee","Adenosine triphosphate, a cellular phosphoryl-group donor and energy carrier.","A T P"]];
+
+const host=document.getElementById("trametes-simulator");
+if(host&&!document.getElementById("myco-science-terms")){
+ const terms=new Map(ENTRIES.map(e=>[e[0].toLowerCase(),e]));
+ const section=document.createElement("section");section.id="myco-science-terms";
+ section.style.cssText="margin:12px 0;padding:14px;border:1px solid #66807a;border-radius:10px;background:#0e1d20;color:#ecf5ef";
+ section.innerHTML='<style>#myco-science-terms h3{font-size:17px;margin:4px 0;color:#f1d79e}#myco-science-terms p{font-size:12px;line-height:1.55}#myco-science-terms input,#myco-science-terms button{padding:7px 9px;border:1px solid #68877e;border-radius:6px;background:#1a3034;color:#eaf4ed}#myco-science-terms button{cursor:pointer}#myco-science-terms button:focus-visible,.myco-defined:focus-visible{outline:2px solid #f2d58d}#myco-term-list{display:flex;flex-wrap:wrap;gap:6px;max-height:120px;overflow:auto;margin:8px 0}.myco-defined{border:0!important;border-bottom:1px dotted #dfbd6e!important;background:transparent!important;padding:0 1px!important;color:inherit!important;font:inherit!important;cursor:help!important;display:inline!important}</style><h3>Scientific glossary · Definitions, pronunciation and readback</h3><label for="myco-term-search">Find any technical term: </label><input id="myco-term-search" type="search" placeholder="SYK, Dectin-1, CARD9" autocomplete="off"><div id="myco-term-list"></div><div aria-live="polite"><strong id="myco-term-title">Select a highlighted term</strong><p id="myco-term-pron"></p><p id="myco-term-definition"></p></div><button id="myco-term-read" type="button">🔊 Hear term and definition</button> <button id="myco-term-stop" type="button">Stop readback</button>';
+ host.prepend(section);
+ let active=ENTRIES[0];
+ const termTitle=section.querySelector("#myco-term-title"),termPron=section.querySelector("#myco-term-pron"),termDefinition=section.querySelector("#myco-term-definition");
+ function selectTerm(label){const found=terms.get(label.toLowerCase());if(!found)return;active=found;termTitle.textContent=found[0];termPron.textContent="Pronunciation: "+found[1];termDefinition.textContent="Definition: "+found[2];}
+ function speak(){if(!("speechSynthesis" in window))return;window.speechSynthesis.cancel();const utterance=new SpeechSynthesisUtterance(active[3]+". "+active[2]);utterance.lang="en-US";utterance.rate=.8;window.speechSynthesis.speak(utterance);}
+ section.querySelector("#myco-term-read").onclick=speak;
+ section.querySelector("#myco-term-stop").onclick=()=>{if("speechSynthesis" in window)window.speechSynthesis.cancel();};
+ const searchInput=section.querySelector("#myco-term-search"),list=section.querySelector("#myco-term-list");
+ function renderList(){const q=searchInput.value.trim().toLowerCase();list.replaceChildren();const found=ENTRIES.filter(e=>e[0].toLowerCase().includes(q)||e[2].toLowerCase().includes(q)).slice(0,24);for(const item of found){const btn=document.createElement("button");btn.type="button";btn.textContent=item[0];btn.onclick=()=>selectTerm(item[0]);list.append(btn);}if(!found.length)list.textContent="No matching entries.";}
+ searchInput.addEventListener("input",renderList);selectTerm("Dectin-1");renderList();
+ // Highlight only ordinary prose; never alter buttons, labels, inputs or code.
+ const exclusions="button,a,label,input,textarea,select,option,svg,pre,code,script,style,[contenteditable],[aria-live],#myco-science-terms";
+ const names=ENTRIES.map(e=>e[0]).sort((a,b)=>b.length-a.length);
+ const escapeRegex=s=>s.replace(/[|\\{}()[\]^$+*?.]/g,"\\$&");
+ const matcher=new RegExp("(?<![\\p{L}\\p{N}])("+names.map(escapeRegex).join("|")+")(?![\\p{L}\\p{N}])","giu");
+ function highlight(node){
+  const parent=node.parentElement;if(!parent||parent.closest(exclusions))return;
+  const value=node.nodeValue;if(!value||value.length>1400)return;
+  matcher.lastIndex=0;if(!matcher.test(value))return;matcher.lastIndex=0;
+  const frag=document.createDocumentFragment();let last=0,m;
+  while((m=matcher.exec(value))){
+   if(!terms.has(m[0].toLowerCase()))continue;
+   if(m.index>last)frag.append(document.createTextNode(value.slice(last,m.index)));
+   const b=document.createElement("button");b.type="button";b.className="myco-defined";b.textContent=m[0];b.title="Definition and pronunciation: "+m[0];b.setAttribute("aria-label","Explain "+m[0]);
+   b.onclick=()=>{selectTerm(m[0]);section.scrollIntoView({block:"nearest",behavior:"smooth"});};
+   frag.append(b);last=m.index+m[0].length;
+  }
+  if(!last)return;if(last<value.length)frag.append(document.createTextNode(value.slice(last)));node.replaceWith(frag);
+ }
+ function scan(element){
+  if(!element||element.nodeType!==1||element.closest("#myco-science-terms")||element.matches(exclusions))return;
+  const walker=document.createTreeWalker(element,NodeFilter.SHOW_TEXT);const nodes=[];
+  while(walker.nextNode()){if(!walker.currentNode.parentElement?.closest(exclusions))nodes.push(walker.currentNode);}
+  nodes.forEach(highlight);
+ }
+ let scheduled=false;const queue=new Set();
+ function drain(){scheduled=false;const copy=[...queue];queue.clear();copy.forEach(scan);}
+ const observer=new MutationObserver(records=>{
+  for(const rec of records){
+   if(rec.type==="characterData"){if(rec.target.parentElement)queue.add(rec.target.parentElement);}
+   else for(const node of rec.addedNodes){if(node.nodeType===1)queue.add(node);else if(node.nodeType===3&&node.parentElement)queue.add(node.parentElement);}
+  }
+  if(queue.size&&!scheduled){scheduled=true;requestAnimationFrame(drain);}
+ });
+ scan(host);observer.observe(host,{subtree:true,childList:true,characterData:true});
+ window.addEventListener("pagehide",()=>{observer.disconnect();if("speechSynthesis" in window)window.speechSynthesis.cancel();},{once:true});
+}
