@@ -76,7 +76,7 @@ function rebuild(){
 function applyVisibility(){
  for(const [id,objects] of parts)for(const obj of objects){
   const on=!isolated||id===selected;obj.visible=on;
-  if(obj.material){const fade=transparent&&id!==selected;obj.material.transparent=fade||id==="mucus";obj.material.opacity=fade?.14:(id==="mucus"?.55:1);obj.material.depthWrite=!fade;obj.material.needsUpdate=true;}
+  if(obj.material){const fade=transparent&&id!==selected;obj.material.transparent=fade||id==="mucus";obj.material.opacity=fade?.14:(id==="mucus"?.55:1);obj.material.depthWrite=!obj.material.transparent;obj.material.needsUpdate=true;}
  }
  section.querySelector('[data-action="isolate"]').setAttribute("aria-pressed",String(isolated));
  section.querySelector('[data-action="context"]').setAttribute("aria-pressed",String(transparent));
@@ -98,7 +98,7 @@ function init(){
   ray=new THREE.Raycaster();started=true;resize();rebuild();
   resizeObserver=new ResizeObserver(resize);resizeObserver.observe(canvas);
   canvas.addEventListener("click",pick);
-  const loop=()=>{if(!started)return;controls.update();renderer.render(scene,camera);raf=requestAnimationFrame(loop);};loop();
+  const loop=()=>{if(!started)return;if(!document.hidden){controls.update();renderer.render(scene,camera);}raf=requestAnimationFrame(loop);};loop();
   status.textContent="3D ready · "+mode+" model. Click a structure or use the selection controls.";
   section.querySelector('[data-action="start"]').disabled=true;
  }catch(e){status.textContent="3D initialization failed: "+String(e?.message||e);console.error(e);dispose();}
@@ -110,7 +110,7 @@ function pick(event){
  const hits=ray.intersectObjects(meshes.filter(m=>m.visible),false);if(hits.length)select(hits[0].object.userData.part);
 }
 function focus(){if(!started)return;const objects=parts.get(selected)||[];if(!objects.length)return;const box=new THREE.Box3();objects.forEach(o=>box.expandByObject(o));const point=box.getCenter(new THREE.Vector3());const dist=Math.max(2.1,box.getSize(new THREE.Vector3()).length()*1.7);controls.target.copy(point);camera.position.copy(point).add(new THREE.Vector3(dist*.65,dist*.5,dist));controls.update();}
-function reset(){isolated=false;transparent=false;if(started){rebuild();}else describe();}
+function reset(){isolated=false;transparent=false;if(started){rebuild();}else{describe();section.querySelector('[data-action="isolate"]').setAttribute("aria-pressed","false");section.querySelector('[data-action="context"]').setAttribute("aria-pressed","false");}}
 function dispose(){started=false;cancelAnimationFrame(raf);resizeObserver?.disconnect();canvas.removeEventListener("click",pick);if(scene)releaseGeometry();controls?.dispose();renderer?.dispose();renderer=null;scene=null;}
 section.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>changeMode(b.dataset.mode));
 section.querySelector('[data-action="start"]').onclick=init;
@@ -154,9 +154,9 @@ qaButton.onclick=()=>{
   qaButton.disabled=false;
  }
  const count=results.filter(r=>r.pass).length;
- qaOutput.textContent="Phase 10 browser checks: "+count+"/"+results.length+" passed\\n"+
- results.map(r=>(r.pass?"PASS ":"FAIL ")+r.label).join("\\n")+
- "\\nScope: WebGL creation, DOM controls, geometry, selection and visibility. Does not confirm medical anatomical fidelity, FPS endurance or production deployment.";
+ qaOutput.textContent="Phase 10 browser checks: "+count+"/"+results.length+" passed\n"+
+ results.map(r=>(r.pass?"PASS ":"FAIL ")+r.label).join("\n")+
+ "\nScope: WebGL creation, DOM controls, geometry, selection and visibility. Does not confirm medical anatomical fidelity, FPS endurance or production deployment.";
  qaOutput.style.borderColor=count===results.length?"#4e815d":"#b8655a";
 };
 changeMode("gut");
