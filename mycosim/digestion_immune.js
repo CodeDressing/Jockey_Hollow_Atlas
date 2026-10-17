@@ -12,7 +12,7 @@ const stages=[
 ["IKK → NF-κB","Gene regulation","Downstream pathways can alter NF-κB-dependent transcription; they do not predict patient cytokine levels, tumor outcomes or clinical benefits.","Mechanistic endpoint, not clinical evidence"]
 ];
 const panel=document.createElement("section");panel.id="tv-biology";panel.setAttribute("aria-label","Digestion and immune system interactive simulation");
-panel.innerHTML=\`
+panel.innerHTML=`
 <style>
 #tv-biology{margin-top:18px;padding:16px;border:1px solid #49615e;border-radius:12px;background:#0a1518;color:#e8f0ed}
 #tv-biology h3{color:#f0dda9;font-size:19px;margin:4px 0}
@@ -63,7 +63,7 @@ panel.innerHTML=\`
 <div class="bio-card" aria-live="polite"><small id="bio-progress"></small><h4 id="bio-title"></h4><p id="bio-detail"></p><small id="bio-evidence"></small></div>
 </div><div class="bio-steps" aria-label="Choose stage"></div>
 <div class="bio-buttons" style="margin-top:10px"><button type="button" data-bio="prev">← Previous</button><button type="button" data-bio="next">Next →</button><button type="button" data-bio="play">▶ Play</button><button type="button" data-bio="read">🔊 Read stage</button><button type="button" data-bio="reset">Reset</button></div>
-<details style="margin-top:12px"><summary>Definitions and evidence sources</summary><p>β-glucan: structurally diverse glucose polymers. Dectin-1 / CLEC7A: fungal-pattern recognition receptor. hemITAM: receptor phosphorylation motif. SYK: spleen tyrosine kinase. CARD9–BCL10–MALT1: downstream signaling complex. NF-κB: transcription factor family. PSK, PSP, whole fruiting body and powdered or extracted products are not interchangeable. This simulator does not represent human dosing or efficacy. <a href="https://www.cancer.gov/about-cancer/treatment/cam/hp/mushrooms-pdq" target="_blank" rel="noopener noreferrer">NCI medicinal mushrooms evidence overview</a>.</p></details>\`;
+<details style="margin-top:12px"><summary>Definitions and evidence sources</summary><p>β-glucan: structurally diverse glucose polymers. Dectin-1 / CLEC7A: fungal-pattern recognition receptor. hemITAM: receptor phosphorylation motif. SYK: spleen tyrosine kinase. CARD9–BCL10–MALT1: downstream signaling complex. NF-κB: transcription factor family. PSK, PSP, whole fruiting body and powdered or extracted products are not interchangeable. This simulator does not represent human dosing or efficacy. <a href="https://www.cancer.gov/about-cancer/treatment/cam/hp/mushrooms-pdq" target="_blank" rel="noopener noreferrer">NCI medicinal mushrooms evidence overview</a>.</p></details>`;
 host.append(panel);
 let index=0,interval=null,playing=false;
 const diagram=[...panel.querySelectorAll(".bio-item")],steps=panel.querySelector(".bio-steps");
