@@ -133,7 +133,9 @@ qaButton.onclick=()=>{
  try{
   init();
   check("WebGL initialized",started&&Boolean(renderer&&scene&&camera&&controls));
-  check("Canvas has a rendered frame",Boolean(renderer&&canvas.width>0&&canvas.height>0));
+  if(started){renderer.render(scene,camera);}
+  check("Canvas dimensions valid",Boolean(renderer&&canvas.width>0&&canvas.height>0));
+  check("GPU draw calls occurred",Boolean(renderer&&renderer.info.render.calls>0));
   check("Digestive and immune modes registered",modes.gut.length===4&&modes.cell.length===6);
   for(const sceneMode of ["gut","cell"]){
    changeMode(sceneMode);
@@ -148,6 +150,11 @@ qaButton.onclick=()=>{
    check(sceneMode+" focus camera valid",camera.position.toArray().every(Number.isFinite));
   }
   reset();check("Reset restores visible meshes",meshes.every(o=>o.visible));
+  check("Reset clears isolation and transparency",!isolated&&!transparent);
+  check("Mode buttons expose state",section.querySelectorAll("[data-mode][aria-pressed=true]").length===1);
+  check("Accessible structure selections",Array.from(picker.querySelectorAll("button")).every(b=>b.getAttribute("aria-pressed")!==null));
+  check("Original fungal canvas preserved",Boolean(document.getElementById("tv-canvas")));
+  check("Phase 9 biology retained",Boolean(document.getElementById("tv-biology")));
  }catch(e){results.push({label:"Unexpected exception: "+String(e),pass:false});}
  finally{
   changeMode(oldMode);select(oldSelected);isolated=oldIsolated;transparent=oldTransparent;if(started)applyVisibility();
