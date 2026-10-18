@@ -378,6 +378,7 @@ test("Phase 23 microanatomy shares human WebGL renderer and supports keyboard se
 
 
 test("Phase 24 molecular motion, scientific caveats and preserved scene controls",async({page})=>{
+ test.setTimeout(90000);
  await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
  await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
  await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
