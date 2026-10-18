@@ -54,7 +54,34 @@ function updatePicker(){
 function describe(){const entry=modes[mode].find(p=>p[0]===selected)||modes[mode][0];name.textContent=entry[1];info.textContent=entry[2];section.querySelectorAll("[data-part]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.part===selected)));if(typeof updateFidelity25==="function")updateFidelity25();}
 function material(color,opacity=1){const m=new THREE.MeshStandardMaterial({color,roughness:.56,metalness:.04,transparent:opacity<1,opacity,side:THREE.DoubleSide,depthWrite:opacity===1,emissive:color,emissiveIntensity:.055});materialSet.add(m);return m;}
 function add(id,geo,mat,pos,scale,parent=root){geometrySet.add(geo);const obj=new THREE.Mesh(geo,mat);obj.position.set(...pos);if(scale)obj.scale.set(...scale);obj.userData.part=id;parent.add(obj);meshes.push(obj);if(!parts.has(id))parts.set(id,[]);parts.get(id).push(obj);return obj;}
-function sphere(id,pos,scale,color){return add(id,new THREE.SphereGeometry(1,28,20),material(color),pos,scale);}
+// Phase 27: one sphere buffer per scene (instead of one allocation per cell).
+// The microscopic modes use lower screen-appropriate tessellation; teaching shapes are schematic.
+let sharedSphere27=null;
+function sphereGeometry27(){
+ if(!sharedSphere27){
+  const detail={gut:[28,20],cell:[22,16],tissue:[18,12],micro:[16,12]}[mode]||[22,16];
+  sharedSphere27=new THREE.SphereGeometry(1,...detail);
+  geometrySet.add(sharedSphere27);
+ }
+ return sharedSphere27;
+}
+function sphere(id,pos,scale,color){return add(id,sphereGeometry27(),material(color),pos,scale);}
+// One selectable InstancedMesh per same-type/color repeated cell group.
+// Instances share geometry and material, retaining the semantic part ID and pick/isolate controls.
+function repeatedSpheres27(id,entries,color){
+ if(entries.length===1)return sphere(id,entries[0][0],entries[0][1],color);
+ const mesh=new THREE.InstancedMesh(sphereGeometry27(),material(color),entries.length);
+ const transform=new THREE.Object3D();
+ entries.forEach(([pos,scale],index)=>{
+  transform.position.set(...pos);transform.scale.set(...scale);
+  transform.rotation.set(0,0,0);transform.updateMatrix();mesh.setMatrixAt(index,transform.matrix);
+ });
+ mesh.instanceMatrix.needsUpdate=true;
+ mesh.userData.part=id;mesh.userData.instanceCount27=entries.length;mesh.frustumCulled=false;
+ root.add(mesh);meshes.push(mesh);
+ if(!parts.has(id))parts.set(id,[]);parts.get(id).push(mesh);
+ return mesh;
+}
 function tube(id,pts,radius,color){const curve=new THREE.CatmullRomCurve3(pts.map(p=>new THREE.Vector3(...p)));return add(id,new THREE.TubeGeometry(curve,Math.max(24,pts.length*12),radius,10,false),material(color),[0,0,0],null);}
 function buildGut(){
  sphere("stomach",[-.9,1.1,0],[.65,.92,.43],0xc87975);
@@ -64,7 +91,7 @@ function buildGut(){
 }
 function buildCell(){
  // Four simplified epithelial cells lined horizontally; one selectable barrier layer.
- for(let i=0;i<5;i++){sphere("epithelium",[-2.25+i*1.12,1.05,0],[.48,.67,.38],0xb2c8bf);}
+ repeatedSpheres27("epithelium",Array.from({length:5},(_,i)=>[[-2.25+i*1.12,1.05,0],[.48,.67,.38]]),0xb2c8bf);
  add("mucus",new THREE.BoxGeometry(5.7,.23,.95),material(0x7eb8b1,.55),[0,1.92,0],null);
  sphere("membrane",[0,-.85,0],[1.6,1.03,.7],0x6aada8);
  sphere("cytoplasm",[0,-.85,.1],[1.47,.91,.64],0x32716e);
@@ -75,19 +102,13 @@ function buildCell(){
 }
 function buildTissue(){
  // Shared renderer, schematic teaching layers; no external 3D scene or remote assets.
- for(let i=0;i<5;i++){
-  const x=-2.0+i*1.0;
-  sphere("villus",[x,1.37,-.35],[.39,.63,.36],0xabc7bf);
-  sphere("junction",[x+.46,1.28,-.05],[.095,.45,.07],0xe6ca87);
- }
+ repeatedSpheres27("villus",Array.from({length:5},(_,i)=>[[-2+i,1.37,-.35],[.39,.63,.36]]),0xabc7bf);
+ repeatedSpheres27("junction",Array.from({length:5},(_,i)=>[[-1.54+i,1.28,-.05],[.095,.45,.07]]),0xe6ca87);
  sphere("villus",[0,2.01,-.35],[2.75,.17,.63],0x78b8b4);
  tube("vessel",[[-2.25,.25,-.55],[-1.2,.05,-.6],[0,-.02,-.6],[1.2,.05,-.6],[2.2,.25,-.55]],.18,0xae6268);
- for(let j=0;j<5;j++)sphere("vessel",[-1.8+j*.9,.08,-.38],[.12,.09,.06],0xdd8585);
- for(let j=0;j<4;j++){
-  const x=-1.52+j*1.02;
-  sphere("hepatocyte",[x,-.82,-.16],[.4,.37,.34],0xc6a575);
-  sphere("hepatocyte",[x+.1,-.84,.16],[.14,.13,.12],0x805d77);
- }
+ repeatedSpheres27("vessel",Array.from({length:5},(_,j)=>[[-1.8+j*.9,.08,-.38],[.12,.09,.06]]),0xdd8585);
+ repeatedSpheres27("hepatocyte",Array.from({length:4},(_,j)=>[[-1.52+j*1.02,-.82,-.16],[.4,.37,.34]]),0xc6a575);
+ repeatedSpheres27("hepatocyte",Array.from({length:4},(_,j)=>[[-1.42+j*1.02,-.84,.16],[.14,.13,.12]]),0x805d77);
  sphere("macrophage",[-1.6,-1.64,.42],[.4,.37,.34],0x55a6a0);
  for(let a=0;a<6;a++){const theta=a*Math.PI/3;tube("macrophage",[[-1.6,-1.64,.42],[-1.6+Math.cos(theta)*.59,-1.64+Math.sin(theta)*.45,.42]],.047,0x78c3b3);}
  sphere("neuron",[.5,-1.55,.43],[.27,.27,.25],0x9581c5);
@@ -95,13 +116,13 @@ function buildTissue(){
  for(let a=0;a<4;a++){const q=a*Math.PI/2;tube("neuron",[[.35,-1.55,.43],[.10+Math.cos(q)*.40,-1.55+Math.sin(q)*.39,.43]],.042,0xb8a4d9);}
  sphere("synapse",[1.97,-1.40,.43],[.22,.18,.18],0xe6bc77);
  sphere("synapse",[2.52,-1.40,.43],[.22,.18,.18],0x82b6cd);
- for(let i=0;i<4;i++)sphere("synapse",[2.13+(i%2)*.12,-1.48+Math.floor(i/2)*.12,.57],[.035,.035,.03],0xffdb94);
+ repeatedSpheres27("synapse",Array.from({length:4},(_,i)=>[[2.13+(i%2)*.12,-1.48+Math.floor(i/2)*.12,.57],[.035,.035,.03]]),0xffdb94);
 }
 
 function buildMicro(){
  add("bilayer",new THREE.BoxGeometry(5.5,.12,.95),material(0x578fa9,.66),[0,1.4,-.2],null);
  add("bilayer",new THREE.BoxGeometry(5.5,.12,.95),material(0x89c0c5,.66),[0,1.12,-.2],null);
- for(let i=0;i<8;i++){const x=-2.3+i*.62;sphere("bilayer",[x,1.53,.24],[.11,.09,.09],0xb1dfe2);sphere("bilayer",[x,1.0,.24],[.11,.09,.09],0xb1dfe2);}
+ repeatedSpheres27("bilayer",Array.from({length:16},(_,i)=>[[-2.3+(i%8)*.62,i<8?1.53:1.0,.24],[.11,.09,.09]]),0xb1dfe2);
  sphere("nucleus23",[-1.5,-.27,-.1],[.66,.57,.5],0xa38bc5);
  sphere("nucleus23",[-1.5,-.27,.37],[.33,.27,.16],0x715393);
  sphere("mitochondrion",[.05,-.3,-.14],[.73,.37,.42],0xc78d7b);
@@ -118,7 +139,7 @@ function buildMicro(){
  tube("axon23",[[.67,-1.6,.3],[1.25,-1.58,.3],[1.74,-1.45,.32]],.085,0xada0dd);
  sphere("synapse23",[1.99,-1.4,.34],[.27,.23,.25],0xe8ba79);
  sphere("synapse23",[2.62,-1.4,.34],[.26,.25,.25],0x87b7ca);
- for(let i=0;i<4;i++)sphere("synapse23",[2.19+(i%2)*.11,-1.5+Math.floor(i/2)*.11,.61],[.041,.037,.035],0xffdc91);
+ repeatedSpheres27("synapse23",Array.from({length:4},(_,i)=>[[2.19+(i%2)*.11,-1.5+Math.floor(i/2)*.11,.61],[.041,.037,.035]]),0xffdc91);
 }
 
 function makeDynamics24Particles(){
@@ -149,7 +170,7 @@ function releaseGeometry(){
  if(root)scene.remove(root);
  for(const geo of geometrySet)geo.dispose();
  for(const mat of materialSet)mat.dispose();
- geometrySet.clear();materialSet.clear();parts.clear();meshes=[];dynamics24Particles=[];
+ geometrySet.clear();materialSet.clear();parts.clear();meshes=[];dynamics24Particles=[];sharedSphere27=null;
 }
 function rebuild(){
  if(!started)return;
@@ -228,7 +249,7 @@ function pick(event){
  if(!started)return;
  const box=canvas.getBoundingClientRect(),pointer=new THREE.Vector2((event.clientX-box.left)/box.width*2-1,-(event.clientY-box.top)/box.height*2+1);
  ray.setFromCamera(pointer,camera);
- const hits=ray.intersectObjects(meshes.filter(m=>m.visible),false);if(hits.length)select(hits[0].object.userData.part);
+ const hits=ray.intersectObjects(meshes.filter(m=>m.visible),false);if(hits.length)select(hits[0].object.userData.part); // includes InstancedMesh ray hits
 }
 function focus(){if(!started)return;const objects=parts.get(selected)||[];if(!objects.length)return;const box=new THREE.Box3();objects.forEach(o=>box.expandByObject(o));const point=box.getCenter(new THREE.Vector3());const dist=Math.max(2.1,box.getSize(new THREE.Vector3()).length()*1.7);controls.target.copy(point);camera.position.copy(point).add(new THREE.Vector3(dist*.65,dist*.5,dist));controls.update();}
 function reset(){isolated=false;transparent=false;if(started){rebuild();}else{describe();section.querySelector('[data-action="isolate"]').setAttribute("aria-pressed","false");section.querySelector('[data-action="context"]').setAttribute("aria-pressed","false");}}
