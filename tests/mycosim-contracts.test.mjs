@@ -203,7 +203,7 @@ test('Phase 23 microanatomy is selectable within one retained WebGL renderer',()
  for(const mag of ['overview','cell','molecular'])assert.ok(src.includes('data-mag="'+mag+'"'),mag);
  assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
  assert.equal((src.match(/<canvas /g)||[]).length,1);
- assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase23-micro-20261018/);
+ assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase24-motion-20261018/);
 });
 
 
