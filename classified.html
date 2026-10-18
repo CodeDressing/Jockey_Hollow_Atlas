@@ -103,12 +103,12 @@
 <div class="tracker-actions"><button type="button" id="openMicroscopyUpload">Import microscopy images</button><button type="button" id="showMicroscopyGroup">Show microscopy photographs</button></div>
 <p class="anatomy-disclaimer">Security limitation: this static page uses a client-side passcode, not server-side authentication. The images are intentionally not hosted as unencrypted public assets.</p>
 </section><section id="classifiedPhotoArchive" aria-label="Classified photograph library" class="photo-archive">
-<h3>Specimen photograph archive — 60 reference photographs</h3>
-<p>Field collection and anatomy documentation: IMG_1576.JPG through IMG_1635.JPG. Original uploads from this conversation do not automatically appear on the public website. Import your images or the original-photo ZIP once; the gallery saves them privately in this browser, where you can enlarge, filter, and compare them. Images are not transmitted to GitHub or Render.</p>
-<label for="classifiedPhotoInput">Import one ZIP or select all 60 photographs</label>
+<h3>Gym Juno — Classified original photograph gallery (71 images)</h3>
+<p><strong>71 original photographs recorded:</strong> 60 field/anatomy photographs (IMG_1576–1635) and 11 microscopy PNGs. <strong>Important:</strong> the photos are NOT automatically uploaded from ChatGPT to the live static site. To view the originals here without publishing them to the public repository, download the combined 71-photo ZIP supplied in the chat and import it once in this browser. It stays on this device only.</p>
+<label for="classifiedPhotoInput"><strong>Load all 71 original photos — select the combined uncompressed ZIP</strong></label>
 <input id="classifiedPhotoInput" data-photo-input type="file" accept=".zip,image/jpeg,image/png,image/webp" multiple>
 <div class="photo-toolbar"><label>Find photo <input data-photo-search type="search" placeholder="IMG_1600 or gills"></label><label>Study group <select data-photo-filter><option value="">All photographs</option><option>Field colony / habitat</option><option>Cap / gill comparison</option><option>Gills / veil / stipe</option><option>Microscopy / spore studies</option><option>Unassigned</option></select></label><button data-photo-clear type="button">Clear local archive</button></div>
-<p data-photo-status aria-live="polite">Gallery initializing after specimen unlock...</p>
+<p data-photo-status aria-live="polite">Gallery initializing. If no photographs appear, import the 71-photo ZIP from our chat into this browser; no images are stored on the website.</p>
 <div data-photo-grid class="photo-grid"></div>
 <div data-photo-viewer class="photo-viewer" hidden></div>
 <p class="photo-privacy">Private-gallery note: IndexedDB keeps photos on this browser/device only. Other computers require their own import. This browser storage is not an encrypted research vault; avoid sharing this browser profile.</p>
