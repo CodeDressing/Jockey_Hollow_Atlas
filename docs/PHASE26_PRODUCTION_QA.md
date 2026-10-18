@@ -12,7 +12,9 @@ Release decision: **HOLD** until complete Chromium results, Render confirmation,
   3. Phase 19 browser assertion expected obsolete 21/21 while the implemented diagnostic returned 23/23;
   4. Phase 23 browser assertion expected obsolete 21/21 while the implemented diagnostic returned 22/22.
 - The browser test now uses a 120-second timeout for Phase 9–12 and evaluates Phase 19/23 actual passed/total values, not stale literals. The Phase 13 test tolerates only its known low-frequency performance warning for **CI execution continuity**, emits a conspicuous PERFORMANCE HOLD warning, and does not mark performance acceptance as passed.
-- Follow-up runs #94 / #95 launched after these repairs; their final Chromium outcomes were still in progress when this document was drafted. Do not claim green CI until a completed run shows success.
+- Run #94: 17/19 Chromium tests passed. Remaining failures were traced to Phase 10 campaign routing to the wrong generic `pre[role=status]` node, and an overall 30-second timeout in the Phase 24 WebGL motion test.
+- Run #95: 18/20 Chromium tests passed. The **new Phase 26 browser profiling test passed** and recorded 90 frames with 174.81 ms mean requestAnimationFrame interval, 183.4 ms p95 interval, 45 peak draw calls and 42,680 peak triangles in GitHub headless Chromium. This is roughly 5–6 scheduled frame callbacks per second, **not a GPU performance pass**.
+- Repairs committed after these outcomes: stable `#anatomy10-report` identifier and corrected campaign selector, with a focused source contract; Phase 24 WebGL test timeout increased to 90 seconds without weakening motion assertions. Follow-up run #100 was still in progress as this document was revised. Do not claim green CI until it completes successfully.
 
 ## Actual renderer changes
 - Fixed hidden-parent visibility bug: the anatomy 3D loop now draws only when the section is connected and has visible client rectangles, rather than checking only the section's `hidden` property.
@@ -32,6 +34,6 @@ The connected Render app reports the workspace `My Workspace`, but its tools req
 1. Completed green GitHub-hosted Chromium report on current commit; triage every failing case. Artifacts from previous runs are accessible on GitHub Actions.
 2. Inspect live Render service deployment after the user confirms workspace identity; compare exact deployed commit and script asset hash.
 3. Validate accessibility, reduced motion, keyboard actions and screen-reader announcements in a real browser.
-4. Profile across realistic GPUs with prolonged memory/frames and driver diversity. The 15.7 requestAnimationFrame callbacks/s warning remains unresolved.
+4. Profile across realistic GPUs with prolonged memory/frames and driver diversity. Phase 13 diagnostics have observed approximately 8–16 requestAnimationFrame callbacks/s in CI; the Phase 26 actual 90-frame microanatomy sample had 174.81 ms mean interval. Neither is evidence of production GPU speed. This remains an unresolved performance acceptance concern.
 5. Scientific anatomical review and data-backed measured dimensions where necessary.
 6. Human acceptance and release gate explicitly signed off. Until then status is HOLD.
