@@ -261,12 +261,12 @@ function dispose(){perf26.active=false;started=false;cancelAnimationFrame(raf);r
 section.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>changeMode(b.dataset.mode));
 section.querySelectorAll("[data-mag]").forEach(b=>b.onclick=()=>{magnification=b.dataset.mag;applyMagnification();});
 section.querySelector('[data-action="start"]').onclick=init;
-section.querySelector('[data-action="isolate"]').onclick=()=>{isolateActivationCount27++;isolated=!isolated;if(started)applyVisibility();};
-section.querySelector('[data-action="context"]').onclick=()=>{transparent=!transparent;if(started)applyVisibility();};
+section.querySelector('[data-action="isolate"]').onclick=()=>{isolateActivationCount27++;isolated=!isolated;applyVisibility();};
+section.querySelector('[data-action="context"]').onclick=()=>{transparent=!transparent;applyVisibility();};
 section.querySelector('[data-action="focus"]').onclick=focus;
 section.querySelector('[data-action="reset"]').onclick=reset;
 section.querySelector('[data-action="read"]').onclick=()=>{if(!("speechSynthesis" in window))return;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(name.textContent+". "+info.textContent);u.rate=.86;window.speechSynthesis.speak(u);};
-window.MycoSimSelection27=Object.freeze({getState:()=>({isolateActivationCount27,isolated,transparent,selected,mode,visibleParts:meshes.filter(m=>m.visible).map(m=>m.userData.part),instanceGroups:meshes.filter(m=>m.isInstancedMesh).map(m=>({part:m.userData.part,count:m.count}))})});
+window.MycoSimSelection27=Object.freeze({getState:()=>({started,isolateActivationCount27,isolated,transparent,selected,mode,visibleParts:meshes.filter(m=>m.visible).map(m=>m.userData.part),instanceGroups:meshes.filter(m=>m.isInstancedMesh).map(m=>({part:m.userData.part,count:m.count}))})});
 window.addEventListener("pagehide",dispose,{once:true});
 // Opt-in browser diagnostics; these manipulate only this independent 3D scene.
 
