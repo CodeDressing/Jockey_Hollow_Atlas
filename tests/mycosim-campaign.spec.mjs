@@ -212,3 +212,30 @@ test("Phase 19 integrated gut-brain neural pathway retains earlier modules",asyn
  await expect(page.locator("#trametes-simulator")).toHaveAttribute("data-active-lab","anatomy");
  await expect(page.locator("#tv-anatomy3d")).toBeVisible();
 });
+
+
+test("Phase 20 reuses molecular lab and distinguishes human from preclinical Lion's Mane evidence",async({page})=>{
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
+ await page.locator('#myco-lab-nav [data-lab="pathways"]').click();
+ const lab=page.locator("#myco-neuro20");
+ await expect(lab).toBeVisible();
+ await expect(page.locator("#tv-molecular #myco-neuro20")).toHaveCount(1);
+ await expect(lab.locator("#neuro20-steps button")).toHaveCount(8);
+ await lab.locator("#neuro20-compound").selectOption("1");
+ await expect(lab.locator("#neuro20-chemistry")).toContainText("mycelium");
+ await expect(lab.locator("#neuro20-grade")).toContainText("Preclinical");
+ await lab.locator("#neuro20-compound").selectOption("2");
+ await expect(lab.locator("#neuro20-grade")).toContainText("Limited, heterogeneous human trials");
+ await lab.locator("#neuro20-steps button").nth(7).click();
+ await expect(lab.locator("#neuro20-evidence")).toContainText("not clinical proof");
+ await lab.locator("#neuro20-qa").click();
+ await expect(lab.locator("#neuro20-report")).toContainText("Phase 20 browser checks: 24/24 passed");
+ await lab.locator("#neuro20-gut").click();
+ await expect(page.locator("#trametes-simulator")).toHaveAttribute("data-active-lab","digestion");
+ await expect(page.locator("#myco-neural19")).toBeVisible();
+ await page.locator('#myco-lab-nav [data-lab="pathways"]').click();
+ await lab.locator("#neuro20-3d").click();
+ await expect(page.locator("#trametes-simulator")).toHaveAttribute("data-active-lab","anatomy");
+ await expect(page.locator("#tv-anatomy3d")).toBeVisible();
+});
