@@ -187,5 +187,21 @@ test('Phase 22 tissue structures reuse the existing anatomy renderer',()=>{
  assert.match(src,/releaseGeometry\(\)/);
  assert.match(src,/geometrySet\.size===geo/);
  assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
- assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase22-tissue-20261018/);
+ assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase23-micro-20261018/);
+});
+
+
+test('Phase 23 microanatomy is selectable within one retained WebGL renderer',()=>{
+ const src=read('mycosim/anatomy3d.js');
+ const labels=['bilayer','nucleus23','mitochondrion','er','tight23','dectin23','syk23','axon23','synapse23'];
+ for(const id of labels)assert.ok(src.includes('["'+id+'"'),id);
+ assert.match(src,/function buildMicro\(\)/);
+ assert.match(src,/else buildMicro\(\)/);
+ assert.match(src,/anatomy23-run/);
+ assert.match(src,/Phase 23 browser checks:/);
+ assert.match(src,/NOT TO SCALE/);
+ for(const mag of ['overview','cell','molecular'])assert.ok(src.includes('data-mag="'+mag+'"'),mag);
+ assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
+ assert.equal((src.match(/<canvas /g)||[]).length,1);
+ assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase23-micro-20261018/);
 });
