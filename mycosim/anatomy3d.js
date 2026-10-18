@@ -49,11 +49,11 @@ function updatePicker(){
   const b=document.createElement("button");b.type="button";b.textContent=label;b.dataset.part=id;b.setAttribute("aria-pressed",String(id===selected));b.onclick=()=>select(id);picker.append(b);
  }
 }
-function describe(){const entry=modes[mode].find(p=>p[0]===selected)||modes[mode][0];name.textContent=entry[1];info.textContent=entry[2];section.querySelectorAll("[data-part]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.part===selected)));}
-function material(color,opacity=1){const m=new THREE.MeshStandardMaterial({color,roughness:.7,metalness:0,transparent:opacity<1,opacity,side:THREE.DoubleSide,depthWrite:opacity===1});materialSet.add(m);return m;}
+function describe(){const entry=modes[mode].find(p=>p[0]===selected)||modes[mode][0];name.textContent=entry[1];info.textContent=entry[2];section.querySelectorAll("[data-part]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.part===selected)));if(typeof updateFidelity25==="function")updateFidelity25();}
+function material(color,opacity=1){const m=new THREE.MeshStandardMaterial({color,roughness:.56,metalness:.04,transparent:opacity<1,opacity,side:THREE.DoubleSide,depthWrite:opacity===1,emissive:color,emissiveIntensity:.055});materialSet.add(m);return m;}
 function add(id,geo,mat,pos,scale,parent=root){geometrySet.add(geo);const obj=new THREE.Mesh(geo,mat);obj.position.set(...pos);if(scale)obj.scale.set(...scale);obj.userData.part=id;parent.add(obj);meshes.push(obj);if(!parts.has(id))parts.set(id,[]);parts.get(id).push(obj);return obj;}
-function sphere(id,pos,scale,color){return add(id,new THREE.SphereGeometry(1,24,16),material(color),pos,scale);}
-function tube(id,pts,radius,color){const curve=new THREE.CatmullRomCurve3(pts.map(p=>new THREE.Vector3(...p)));return add(id,new THREE.TubeGeometry(curve,Math.max(24,pts.length*10),radius,8,false),material(color),[0,0,0],null);}
+function sphere(id,pos,scale,color){return add(id,new THREE.SphereGeometry(1,28,20),material(color),pos,scale);}
+function tube(id,pts,radius,color){const curve=new THREE.CatmullRomCurve3(pts.map(p=>new THREE.Vector3(...p)));return add(id,new THREE.TubeGeometry(curve,Math.max(24,pts.length*12),radius,10,false),material(color),[0,0,0],null);}
 function buildGut(){
  sphere("stomach",[-.9,1.1,0],[.65,.92,.43],0xc87975);
  tube("small",[[-.4,.4,0],[.5,.3,0],[.55,-.1,.25],[-.45,-.1,.3],[-.5,-.5,.35],[.55,-.5,.2],[.6,-1.0,0],[-.35,-1.0,.2],[.15,-1.3,0]],.17,0xd7978a);
@@ -179,12 +179,14 @@ function init(){
  try{
   renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:"low-power"});
   renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.5));
-  renderer.outputColorSpace=THREE.SRGBColorSpace;
-  scene=new THREE.Scene();scene.background=new THREE.Color(0x0b171a);
+  renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
+  scene=new THREE.Scene();scene.background=new THREE.Color(0x0b171a);scene.fog=new THREE.FogExp2(0x0b171a,.018);
   camera=new THREE.PerspectiveCamera(47,1,.1,100);
   controls=new OrbitControls(camera,canvas);controls.enableDamping=true;controls.minDistance=1.5;controls.maxDistance=17;
-  scene.add(new THREE.HemisphereLight(0xd9edeb,0x625048,2));
-  const light=new THREE.DirectionalLight(0xffe9cf,2);light.position.set(3,7,6);scene.add(light);
+  scene.add(new THREE.HemisphereLight(0xd9edeb,0x625048,1.65));
+  const light=new THREE.DirectionalLight(0xffe9cf,2.15);light.position.set(3,7,6);scene.add(light);
+  const rim=new THREE.DirectionalLight(0x85bdde,1.3);rim.position.set(-4,2,-5);scene.add(rim);
+  const lowerFill=new THREE.PointLight(0xf2aa8a,13,13,2);lowerFill.position.set(1,-3,4);scene.add(lowerFill);
   ray=new THREE.Raycaster();started=true;resize();rebuild();
   resizeObserver=new ResizeObserver(resize);resizeObserver.observe(canvas);
   canvas.addEventListener("click",pick);
@@ -227,6 +229,17 @@ section.querySelector('[data-action="reset"]').onclick=reset;
 section.querySelector('[data-action="read"]').onclick=()=>{if(!("speechSynthesis" in window))return;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(name.textContent+". "+info.textContent);u.rate=.86;window.speechSynthesis.speak(u);};
 window.addEventListener("pagehide",dispose,{once:true});
 // Opt-in browser diagnostics; these manipulate only this independent 3D scene.
+
+// Phase 25 rendering instrumentation; observation only, not GPU throughput certification.
+const fidelity25=document.createElement("section");
+fidelity25.id="anatomy25-fidelity";fidelity25.setAttribute("aria-label","Phase 25 anatomy display quality and render diagnostic");
+fidelity25.style.cssText="margin-top:12px;padding:12px;background:#10252a;border:1px solid #5c7d75;border-radius:9px";
+fidelity25.innerHTML='<strong>Phase 25 · Anatomy visibility and material guide</strong><p id="anatomy25-guide" style="font-size:12px;line-height:1.6"></p><p class="anatomy-warning">Scientific geometry remains PROCEDURAL and NOT TO SCALE. Color identifies a structure category; it does not represent staining, measured molecular shape, or verified patient anatomy.</p><button type="button" id="anatomy25-qa">Run Phase 25 visual-regression checks</button><pre id="anatomy25-report" role="status" style="white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.5 monospace">Not run.</pre>';
+section.append(fidelity25);
+function updateFidelity25(){
+ const p=fidelity25.querySelector("#anatomy25-guide");
+ if(p)p.textContent="Selected: "+name.textContent+" · "+mode+" view · "+magnification+" focus. Materials use rough non-metallic surfaces, warm key light, cool edge light, tone mapping and depth shading. Camera and light colors are illustrative.";
+}
 const qaButton=document.createElement("button");qaButton.type="button";qaButton.textContent="Run Phase 10 3D QA";
 const qaOutput=document.createElement("pre");qaOutput.setAttribute("role","status");
 qaOutput.style.cssText="white-space:pre-wrap;font:11px/1.5 monospace;background:#0d1d20;border:1px solid #47605d;padding:10px;border-radius:8px;overflow:auto";
@@ -410,6 +423,30 @@ d24("dynamics24-qa").onclick=()=>{
 };
 window.MycoSimMotion24=Object.freeze({getState:()=>({process:DYNAMICS24[dynamics24Index].id,stage:dynamics24Step,progress:dynamics24Progress,playing:dynamics24Playing,mode,particles:dynamics24Particles.map(b=>b.position.toArray())})});
 renderDynamics24();
+
+
+fidelity25.querySelector("#anatomy25-qa").onclick=()=>{
+ const old={mode,selected,isolated,transparent,magnification},checks=[],check=(n,v)=>checks.push({n,pass:!!v});
+ try{
+  init();changeMode("micro");
+  check("Original canvas and renderer",section.querySelectorAll("canvas").length===1&&!!renderer);
+  check("PBR material support",meshes.every(m=>m.material.isMeshStandardMaterial));
+  check("Tone mapping applied",renderer.toneMapping===THREE.ACESFilmicToneMapping);
+  check("High-DPI cap preserved",renderer.getPixelRatio()<=1.5);
+  check("Scene includes fog and depth",scene.fog instanceof THREE.FogExp2);
+  check("Anatomical explanations visible",!!fidelity25.querySelector("#anatomy25-guide").textContent.includes("Selected:"));
+  check("Scientific accuracy warning",fidelity25.textContent.includes("NOT TO SCALE"));
+  const labels=["gut","cell","tissue","micro"];
+  for(const label of labels){changeMode(label);check("Preserved "+label+" selection",meshes.length>0&&picker.querySelectorAll("button").length===modes[label].length);}
+  const meshesBefore=meshes.length,geometriesBefore=geometrySet.size,materialsBefore=materialSet.size;
+  rebuild();
+  check("Resource accounting stable",meshes.length===meshesBefore&&geometrySet.size===geometriesBefore&&materialSet.size===materialsBefore);
+  check("Single animation engine",typeof window.MycoSimMotion24?.getState==="function");
+ }catch(e){check("Unexpected error: "+String(e),false);}
+ finally{magnification=old.magnification;changeMode(old.mode);select(old.selected);isolated=old.isolated;transparent=old.transparent;applyMagnification();if(started)applyVisibility();}
+ const passed=checks.filter(x=>x.pass).length;
+ fidelity25.querySelector("#anatomy25-report").textContent="Phase 25 browser checks: "+passed+"/"+checks.length+" passed\n"+checks.map(c=>(c.pass?"PASS ":"FAIL ")+c.n).join("\n")+"\nRenderer smoke checks do not establish measured FPS, visual fidelity against microscopy, real-world exposure, or production acceptance.";
+};
 
 changeMode("gut");
 }
