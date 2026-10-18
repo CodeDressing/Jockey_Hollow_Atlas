@@ -37,6 +37,8 @@ const modes={gut:[
 ["neuron","Enteric neuron and axon","Stylized neuron soma, neurites and axon representing enteric signaling; not a complete ENS anatomical map."],
 ["synapse","Synaptic terminals","Two illustrative pre- and postsynaptic terminals with vesicles. Synaptic transport, receptor occupancy and brain effects are not simulated."]
 ],micro:[["bilayer","Cell membrane bilayer","An illustrative phospholipid bilayer with no physical molecular scaling."],["nucleus23","Nucleus and envelope","Nuclear compartment with chromatin proxy and double-membrane envelope; not an electron micrograph."],["mitochondrion","Mitochondrion and cristae","Cristae support oxidative phosphorylation but fold positions are schematic."],["er","Endoplasmic reticulum","Membrane networks contribute to protein and lipid production; chemistry is not simulated."],["tight23","Epithelial tight junction","Apical claudin-associated barrier, not a measured permeability model."],["dectin23","Dectin-1 receptor","Fungal ligand recognition is conditional on cellular access and does not demonstrate effects from consuming mushrooms."],["syk23","SYK and CARD9","Conditional immune signaling downstream from receptor stimulation; not measured receptor occupancy."],["axon23","Enteric neuron and axon","Schematic neuronal projection, not to scale with nearby protein structures."],["synapse23","Synaptic terminal and vesicles","Stylized synaptic terminals and vesicles without NMDA/AMPA conductance modeling."]]};
+const DYNAMICS24=[{"id":"dectin","label":"Dectin-1 / accessible β-glucan","target":"dectin23","color":15320437,"from":[-1.5,2.1,0.75],"to":[-0.54,2.03,0.78],"steps":[["Ligand proximity","A β-glucan ligand must be structurally accessible to a Dectin-1-expressing cell.","Accessible ligand","AK-SESS-ih-bul LIG-and","A ligand whose molecular presentation permits binding to a receptor."],["Conditional receptor engagement","Appropriate receptor clustering can initiate a cellular response under experimental conditions; this does not establish oral exposure.","Dectin-1","DEK-tin one","A C-type lectin receptor recognizing suitably exposed fungal β-glucans."],["Downstream signaling opportunity","Productive receptor engagement can permit hemITAM signaling, but exposure, dose and human outcomes are not inferred.","Receptor engagement","ree-SEP-ter en-GAYJ-ment","Ligand-dependent receptor interaction that may precede intracellular signaling."]],"evidence":"Experimental receptor mechanism; intact orally consumed mushroom β-glucan reaching this receptor UNVERIFIED."},{"id":"syk","label":"hemITAM → SYK → CARD9","target":"syk23","color":10479269,"from":[-0.65,1.28,0.9],"to":[-0.2,0.5,0.92],"steps":[["hemITAM phosphorylation","Following appropriate receptor activation, Src-family kinases can phosphorylate the hemITAM tyrosine motif.","Phosphorylation","foss-for-ih-LAY-shun","Covalent addition of a phosphate group to a molecular substrate."],["SYK recruitment","SYK kinase can associate with phosphorylated signaling motifs and participate in a signaling cascade.","SYK","sick","Spleen tyrosine kinase, involved in immunoreceptor signal transduction."],["CARD9–BCL10–MALT1 relay","Adaptor complexes can transmit a context-dependent signal toward NF-κB transcriptional responses.","CARD9","card nine","An innate immune signaling adaptor, not a measure of clinical immune benefit."]],"evidence":"Well-characterized cell signaling; no proof of in-vivo receptor engagement after mushroom consumption."},{"id":"barrier","label":"Epithelial transport barrier","target":"tight23","color":15981193,"from":[1.78,1.7,0.85],"to":[1.78,0.05,0.85],"steps":[["Luminal bioaccessibility","Material must first leave the food matrix before any uptake can be considered.","Bioaccessibility","bye-oh-ak-sess-ih-BIL-ih-tee","Release of a constituent into a potentially available digestive form."],["Selective epithelial barrier","Transcellular and paracellular processes are regulated; large fungal polymers cannot simply be assumed to pass intact.","Tight junction","TYTE JUNK-shun","Apical epithelial barrier complex restricting unregulated paracellular exchange."],["Uptake requires evidence","Any transit depicted is hypothetical unless a specified material and transport mechanism have been experimentally demonstrated.","Bioavailability","bye-oh-uh-vay-luh-BIL-ih-tee","Extent of systemic or target-site availability, depending on context."]],"evidence":"Human intestinal physiology established; transport of any unspecified fungal polysaccharide remains HYPOTHETICAL."},{"id":"nmda","label":"NMDA receptor gating","target":"synapse23","color":8508415,"from":[2.16,-1.32,0.99],"to":[2.53,-1.37,0.99],"steps":[["Co-agonist and glutamate binding","NMDA channels generally require glutamate plus glycine or D-serine binding for activation.","NMDA","en em dee ay","N-methyl-D-aspartate-type ionotropic glutamate receptor."],["Voltage-dependent Mg²⁺ block","At negative membrane potential, extracellular magnesium blocks many NMDA channel pores; sufficient depolarization can relieve block.","Magnesium block","mag-NEE-zee-um BLOK","Voltage-dependent pore occupancy by Mg²⁺ in many NMDA receptors."],["Conditional ion conduction","When gating and electrochemical conditions permit, NMDA receptors conduct ions including calcium; no quantitative current is modeled.","Ionotropic","eye-on-oh-TROP-ik","A receptor that directly gates an ion channel."]],"evidence":"Established receptor physiology; no demonstration that ingested mushrooms act as NMDA drugs."},{"id":"ampa","label":"AMPA receptor transmission","target":"synapse23","color":14721791,"from":[2.12,-1.39,0.99],"to":[2.56,-1.39,0.99],"steps":[["Glutamate released","Presynaptic release introduces glutamate into a synaptic cleft in an excitatory synapse.","Glutamate","GLOO-tuh-mayt","Principal excitatory neurotransmitter in many central synapses."],["AMPA receptor gating","Glutamate binding can open an AMPA-type cation channel; permeability depends on receptor subunit composition.","AMPA","AM-puh","Ionotropic glutamate receptor mediating much rapid excitatory transmission."],["Postsynaptic response","AMPA channel activity changes postsynaptic conductance; the magnitude depends on conditions and is not predicted here.","Depolarization","dee-poh-ler-ih-ZAY-shun","A membrane potential shift toward less negative values."]],"evidence":"Established synaptic physiology; no mushroom-derived AMPA agonist effect asserted."},{"id":"gaba","label":"GABA-A inhibitory signaling","target":"synapse23","color":10213067,"from":[2.12,-1.49,0.92],"to":[2.55,-1.49,0.92],"steps":[["GABA neurotransmitter release","Presynaptic GABA can be released into a synaptic cleft in inhibitory networks.","GABA","GAB-uh","Gamma-aminobutyric acid, a major inhibitory neurotransmitter."],["GABA-A receptor activation","GABA-A is a ligand-gated anion channel; GABA-B is a separate G-protein-coupled receptor class.","GABA-A","GAB-uh AY","Ionotropic receptor for GABA with chloride and bicarbonate permeability."],["Gradient-dependent response","The effect of anion conductance depends on ionic gradients and membrane potential; inhibition is not universal hyperpolarization.","Chloride gradient","KLOR-ide GRAY-dee-ent","Difference in chloride electrochemical potential across a membrane."]],"evidence":"Established receptor mechanism; no clinical sedative effect from a fungal product inferred."},{"id":"vesicle","label":"Synaptic vesicle release","target":"synapse23","color":15908737,"from":[1.89,-1.43,0.95],"to":[2.59,-1.43,0.95],"steps":[["Action potential arrives","A presynaptic action potential depolarizes the nerve terminal.","Action potential","AK-shun poh-TEN-shul","Rapid regenerative electrical signal of an excitable membrane."],["Ca²⁺ channel opening and fusion","Voltage-gated calcium channels can allow calcium entry, promoting regulated SNARE-dependent vesicle fusion.","SNARE","snair","Protein machinery contributing to intracellular membrane fusion."],["Transmitter crosses cleft","Released neurotransmitters diffuse and may bind suitable postsynaptic receptors; no millisecond kinetics are calculated.","Exocytosis","ek-soh-sye-TOH-sis","Fusion-mediated release of vesicle contents to the extracellular space."]],"evidence":"Established synaptic mechanism; this animation does not model measured vesicle speed or drug effects."}];
+let dynamics24Index=0,dynamics24Step=0,dynamics24Progress=0,dynamics24Playing=false,dynamics24Particles=[],dynamics24LastFrame=0;
 let magnification="overview";
 let mode="gut",selected="stomach",isolated=false,transparent=false,started=false,renderer=null,scene=null,camera=null,controls=null,root=null,ray=null,resizeObserver=null,raf=0;
 let parts=new Map(),meshes=[],geometrySet=new Set(),materialSet=new Set();
@@ -117,18 +119,42 @@ function buildMicro(){
  for(let i=0;i<4;i++)sphere("synapse23",[2.19+(i%2)*.11,-1.5+Math.floor(i/2)*.11,.61],[.041,.037,.035],0xffdc91);
 }
 
+function makeDynamics24Particles(){
+ dynamics24Particles=[];
+ for(let i=0;i<3;i++){
+  const bead=sphere("motion24",[0,0,0],[.075,.075,.075],0xf0d59b);
+  bead.userData.motion24=true;
+  dynamics24Particles.push(bead);
+ }
+ updateDynamics24Particles();
+}
+function updateDynamics24Particles(){
+ if(mode!=="micro"||!dynamics24Particles.length)return;
+ const process=DYNAMICS24[dynamics24Index],smooth=dynamics24Progress*dynamics24Progress*(3-2*dynamics24Progress);
+ const fraction=Math.min(1,(dynamics24Step+smooth)/3);
+ for(let i=0;i<dynamics24Particles.length;i++){
+  const bead=dynamics24Particles[i],offset=i*.16;
+  bead.position.set(
+   THREE.MathUtils.lerp(process.from[0],process.to[0],fraction)+offset,
+   THREE.MathUtils.lerp(process.from[1],process.to[1],fraction)+Math.sin(Math.PI*fraction)*offset,
+   THREE.MathUtils.lerp(process.from[2],process.to[2],fraction)+i*.07
+  );
+  bead.material.color.setHex(process.color);
+  bead.visible=!isolated||(selected==="motion24");
+ }
+}
 function releaseGeometry(){
  if(root)scene.remove(root);
  for(const geo of geometrySet)geo.dispose();
  for(const mat of materialSet)mat.dispose();
- geometrySet.clear();materialSet.clear();parts.clear();meshes=[];
+ geometrySet.clear();materialSet.clear();parts.clear();meshes=[];dynamics24Particles=[];
 }
 function rebuild(){
  if(!started)return;
  releaseGeometry();root=new THREE.Group();scene.add(root);
- if(mode==="gut")buildGut();else if(mode==="cell")buildCell();else if(mode==="tissue")buildTissue();else buildMicro();
+ if(mode==="gut")buildGut();else if(mode==="cell")buildCell();else if(mode==="tissue")buildTissue();else {buildMicro();makeDynamics24Particles();}
  controls.target.set(0,0,0);camera.position.set(4,2.5,7);controls.update();
- applyVisibility();describe();applyMagnification();
+ applyVisibility();describe();applyMagnification();updateDynamics24Particles();
 }
 function applyVisibility(){
  for(const [id,objects] of parts)for(const obj of objects){
@@ -139,7 +165,7 @@ function applyVisibility(){
  section.querySelector('[data-action="context"]').setAttribute("aria-pressed",String(transparent));
 }
 function select(id){if(!modes[mode].some(p=>p[0]===id))return;selected=id;describe();if(started)applyVisibility();}
-function changeMode(next){mode=next;selected=modes[mode][0][0];isolated=false;transparent=false;section.querySelectorAll("[data-mode]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===mode)));updatePicker();if(started)rebuild();else describe();}
+function changeMode(next){dynamics24Playing=false;dynamics24LastFrame=0;mode=next;selected=modes[mode][0][0];isolated=false;transparent=false;section.querySelectorAll("[data-mode]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===mode)));updatePicker();if(started)rebuild();else describe();}
 function applyMagnification(){
  const dist={overview:7,cell:4.5,molecular:2.7}[magnification]||7;
  section.querySelectorAll("[data-mag]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mag===magnification)));
@@ -162,7 +188,22 @@ function init(){
   ray=new THREE.Raycaster();started=true;resize();rebuild();
   resizeObserver=new ResizeObserver(resize);resizeObserver.observe(canvas);
   canvas.addEventListener("click",pick);
-  const loop=()=>{if(!started)return;if(!document.hidden&&!section.hidden){controls.update();renderer.render(scene,camera);}raf=requestAnimationFrame(loop);};loop();
+  const loop=(time)=>{
+   if(!started)return;
+   if(!document.hidden&&!section.hidden){
+    const reduced=window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches===true;
+    if(dynamics24Playing&&mode==="micro"&&!reduced){
+     const delta=dynamics24LastFrame?Math.min(80,time-dynamics24LastFrame):0;
+     dynamics24Progress=Math.min(1,dynamics24Progress+delta/1300);
+     if(dynamics24Progress>=1){dynamics24Progress=0;if(dynamics24Step<2)dynamics24Step++;else dynamics24Playing=false;renderDynamics24();}
+     updateDynamics24Particles();
+     const scrub=section.querySelector("#dynamics24-progress");if(scrub)scrub.value=String(Math.round(dynamics24Progress*100));
+    }else if(reduced&&dynamics24Playing){dynamics24Playing=false;renderDynamics24();}
+    dynamics24LastFrame=time;
+    controls.update();renderer.render(scene,camera);
+   }else dynamics24LastFrame=0;
+   raf=requestAnimationFrame(loop);
+  };loop();
   status.textContent="3D ready · "+mode+" model. Click a structure or use the selection controls.";
   section.querySelector('[data-action="start"]').disabled=true;
  }catch(e){status.textContent="3D initialization failed: "+String(e?.message||e);console.error(e);dispose();}
