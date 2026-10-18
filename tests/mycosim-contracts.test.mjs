@@ -178,7 +178,7 @@ test('Phase 22 tissue structures reuse the existing anatomy renderer',()=>{
  const src=read('mycosim/anatomy3d.js');
  for(const label of ['villus','junction','vessel','hepatocyte','macrophage','neuron','synapse'])assert.ok(src.includes('["'+label+'"'),label);
  assert.match(src,/function buildTissue\(\)/);
- assert.match(src,/else buildTissue\(\)/);
+ assert.match(src,/else if\(mode==="tissue"\)buildTissue\(\)/);
  assert.ok(src.includes('data-mode=\\\"tissue\\\"')||src.includes('data-mode="tissue"'));
  assert.match(src,/anatomy22-run/);
  assert.match(src,/Phase 22 browser checks:/);
