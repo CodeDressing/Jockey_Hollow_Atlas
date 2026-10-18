@@ -307,3 +307,29 @@ test("Phase 21 consolidated workspace switches without duplicate live modules",a
  expect(diagnostic.elapsed).toBeLessThan(3000);
  // A DOM-navigation smoke budget, NOT renderer frame-rate or long-term GPU endurance.
 });
+
+
+test("Phase 22 shared 3D tissue mode retains original controls and geometry lifecycle",async({page})=>{
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
+ await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
+ const anatomy=page.locator("#tv-anatomy3d");
+ await expect(anatomy).toBeVisible();
+ await expect(anatomy.locator("canvas")).toHaveCount(1);
+ await anatomy.locator('[data-mode="tissue"]').click();
+ await expect(anatomy.locator('[data-mode="tissue"]')).toHaveAttribute("aria-pressed","true");
+ await expect(anatomy.locator(".anatomy-picker button")).toHaveCount(7);
+ for(const name of ["Hepatocytes","Macrophage","Enteric neuron and axon","Synaptic terminals"]){
+  await expect(anatomy.locator(".anatomy-picker")).toContainText(name);
+ }
+ await anatomy.locator("#anatomy22-run").click();
+ await expect(anatomy.locator("#anatomy22-report")).toContainText("Phase 22 browser checks: 17/17 passed",{timeout:30000});
+ await expect(anatomy.locator("#tv-anatomy-canvas")).toBeVisible();
+ await anatomy.locator('[data-mode="gut"]').click();
+ await expect(anatomy.locator(".anatomy-picker button")).toHaveCount(4);
+ await anatomy.locator('[data-mode="cell"]').click();
+ await expect(anatomy.locator(".anatomy-picker button")).toHaveCount(6);
+ await anatomy.locator('[data-mode="tissue"]').click();
+ await anatomy.locator('[data-part="neuron"]').click();
+ await expect(anatomy.locator('[data-part="neuron"]')).toHaveAttribute("aria-pressed","true");
+});
