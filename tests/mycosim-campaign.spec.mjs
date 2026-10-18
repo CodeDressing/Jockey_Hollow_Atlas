@@ -383,7 +383,7 @@ test("Phase 24 molecular motion, scientific caveats and preserved scene controls
  const before=await page.evaluate(()=>window.MycoSimMotion24.getState());
  expect(before.particles).toHaveLength(3);
  await lab.locator("#dynamics24-play").click();
- await expect.poll(async()=>page.evaluate(()=>window.MycoSimMotion24.getState().progress),{timeout:5000}).toBeGreaterThan(0);
+ await expect.poll(async()=>page.evaluate(()=>window.MycoSimMotion24.getState().progress),{timeout:5000}).toBeGreaterThan(before.progress+0.02);
  const during=await page.evaluate(()=>window.MycoSimMotion24.getState());
  expect(during.particles).not.toEqual(before.particles);
  await lab.locator("#dynamics24-play").click();
