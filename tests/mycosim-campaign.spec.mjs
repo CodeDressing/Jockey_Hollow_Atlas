@@ -453,3 +453,35 @@ test("Phase 25 improved anatomy fidelity retains existing rendering engine and v
  await expect(anatomy.locator('[data-action="read"]')).toBeVisible();
  await expect(page.locator("#myco-dynamics24")).toHaveCount(1);
 });
+
+
+test("Phase 26 measures visible browser frames and pauses hidden anatomy rendering",async({page})=>{
+ test.setTimeout(90000);
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
+ await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
+ const anatomy=page.locator("#tv-anatomy3d");
+ await anatomy.locator('[data-mode="micro"]').click();
+ await anatomy.locator('[data-part="tight23"]').click();
+ await expect(anatomy.locator("#anatomy26-references a")).toHaveAttribute("href","https://pubmed.ncbi.nlm.nih.gov/19855405/");
+ await anatomy.locator('[data-part="dectin23"]').click();
+ await expect(anatomy.locator("#anatomy26-references a")).toHaveAttribute("href","https://pubmed.ncbi.nlm.nih.gov/21267996/");
+ await anatomy.locator('[data-part="synapse23"]').click();
+ await expect(anatomy.locator("#anatomy26-references a")).toHaveAttribute("href","https://pubmed.ncbi.nlm.nih.gov/24183019/");
+ await anatomy.locator("#anatomy26-profile").click();
+ await expect.poll(async()=>page.evaluate(()=>window.MycoSimPerf26.getSnapshot()?.sampleCount||0),{timeout:45000}).toBe(90);
+ const profile=await page.evaluate(()=>window.MycoSimPerf26.getSnapshot());
+ expect(profile.maximumDrawCalls).toBeGreaterThan(0);
+ expect(profile.maximumTriangles).toBeGreaterThan(0);
+ expect(profile.meanFrameIntervalMs).toBeGreaterThan(0);
+ expect(profile.gpuTimingMeasured).toBe(false);
+ console.log("Phase 26 REAL CHROMIUM measured visible frame sample",JSON.stringify(profile));
+ await page.locator('#myco-lab-nav [data-lab="quality"]').click();
+ await page.waitForTimeout(250);
+ const hiddenBefore=await page.evaluate(()=>window.MycoSimPerf26.getRenderCount());
+ await page.waitForTimeout(350);
+ const hiddenAfter=await page.evaluate(()=>window.MycoSimPerf26.getRenderCount());
+ expect(hiddenAfter).toBe(hiddenBefore);
+ await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
+ await expect.poll(async()=>page.evaluate(()=>window.MycoSimPerf26.getRenderCount()),{timeout:10000}).toBeGreaterThan(hiddenAfter);
+});
