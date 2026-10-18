@@ -408,6 +408,7 @@ d24("dynamics24-qa").onclick=()=>{
  const count=checks.filter(x=>x.pass).length;
  d24("dynamics24-report").textContent="Phase 24 browser checks: "+count+"/"+checks.length+" passed\n"+checks.map(c=>(c.pass?"PASS ":"FAIL ")+c.n).join("\n")+"\nEducational UI/scene checks only; not molecular-dynamics simulation, in-vivo measurements or clinical validation.";
 };
+window.MycoSimMotion24=Object.freeze({getState:()=>({process:DYNAMICS24[dynamics24Index].id,stage:dynamics24Step,progress:dynamics24Progress,playing:dynamics24Playing,mode,particles:dynamics24Particles.map(b=>b.position.toArray())})});
 renderDynamics24();
 
 changeMode("gut");
