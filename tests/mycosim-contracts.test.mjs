@@ -196,7 +196,7 @@ test('Phase 23 microanatomy is selectable within one retained WebGL renderer',()
  const labels=['bilayer','nucleus23','mitochondrion','er','tight23','dectin23','syk23','axon23','synapse23'];
  for(const id of labels)assert.ok(src.includes('["'+id+'"'),id);
  assert.match(src,/function buildMicro\(\)/);
- assert.match(src,/else buildMicro\(\)/);
+ assert.match(src,/else \{buildMicro\(\);makeDynamics24Particles\(\);\}/);
  assert.match(src,/anatomy23-run/);
  assert.match(src,/Phase 23 browser checks:/);
  assert.match(src,/NOT TO SCALE/);
