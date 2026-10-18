@@ -172,3 +172,20 @@ test('Phase 21 reference ledger has valid provenance and no false clinical extra
  assert.match(src,/manual-local-JSON-only/);
  assert.match(src,/replaceChildren\(\)/);
 });
+
+
+test('Phase 22 tissue structures reuse the existing anatomy renderer',()=>{
+ const src=read('mycosim/anatomy3d.js');
+ for(const label of ['villus','junction','vessel','hepatocyte','macrophage','neuron','synapse'])assert.ok(src.includes('["'+label+'"'),label);
+ assert.match(src,/function buildTissue\(\)/);
+ assert.match(src,/else buildTissue\(\)/);
+ assert.match(src,/data-mode=\\"tissue\\"/);
+ assert.match(src,/anatomy22-run/);
+ assert.match(src,/Phase 22 browser checks:/);
+ assert.match(src,/NOT TO SCALE/);
+ assert.match(src,/renderer\.setPixelRatio\(Math\.min\(window\.devicePixelRatio\|\|1,1\.5\)\)/);
+ assert.match(src,/releaseGeometry\(\)/);
+ assert.match(src,/geometrySet\.size===geo/);
+ assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
+ assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase22-tissue-20261018/);
+});
