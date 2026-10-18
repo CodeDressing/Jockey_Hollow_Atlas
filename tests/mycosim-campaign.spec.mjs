@@ -486,3 +486,38 @@ test("Phase 26 measures visible browser frames and pauses hidden anatomy renderi
  await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
  await expect.poll(async()=>page.evaluate(()=>window.MycoSimPerf26.getRenderCount()),{timeout:10000}).toBeGreaterThan(hiddenAfter);
 });
+
+
+test("Phase 27 instancing retains semantic selection and beats Phase 26 scene complexity baseline",async({page})=>{
+ test.setTimeout(110000);
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
+ await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
+ const lab=page.locator("#tv-anatomy3d");
+ await lab.locator('[data-mode="micro"]').click();
+ await lab.locator('[data-part="bilayer"]').click();
+ await expect(lab.locator('[data-part="bilayer"]')).toHaveAttribute("aria-pressed","true");
+ await lab.locator('[data-action="isolate"]').click();
+ await expect(lab.locator('[data-action="isolate"]')).toHaveAttribute("aria-pressed","true");
+ await lab.locator('[data-action="isolate"]').click();
+ await lab.locator('[data-action="context"]').click();
+ await expect(lab.locator('[data-action="context"]')).toHaveAttribute("aria-pressed","true");
+ await lab.locator('[data-action="context"]').click();
+ await lab.locator("#anatomy26-profile").click();
+ await expect.poll(async()=>page.evaluate(()=>window.MycoSimPerf26.getSnapshot()?.sampleCount||0),{timeout:60000}).toBe(90);
+ const micro=await page.evaluate(()=>window.MycoSimPerf26.getSnapshot());
+ console.log("Phase 27 ACTUAL CHROMIUM micro profile",JSON.stringify(micro));
+ expect(micro.maximumDrawCalls).toBeLessThan(45);
+ expect(micro.maximumTriangles).toBeLessThan(42680);
+ expect(micro.gpuTimingMeasured).toBe(false);
+ await lab.locator('[data-mode="tissue"]').click();
+ for(const key of ["villus","junction","hepatocyte","synapse"]){
+  await lab.locator('[data-part="'+key+'"]').click();
+  await expect(lab.locator('[data-part="'+key+'"]')).toHaveAttribute("aria-pressed","true");
+ }
+ await lab.locator('[data-mode="cell"]').click();
+ await lab.locator('[data-part="epithelium"]').click();
+ await expect(lab.locator('[data-part="epithelium"]')).toHaveAttribute("aria-pressed","true");
+ await lab.locator('[data-mode="gut"]').click();
+ await expect(lab.locator(".anatomy-picker button")).toHaveCount(4);
+});
