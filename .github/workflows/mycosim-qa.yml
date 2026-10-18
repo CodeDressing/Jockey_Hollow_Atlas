@@ -41,7 +41,7 @@ jobs:
           echo "Local web server did not start" >&2
           exit 1
       - name: Test integrated simulation and responsive layout
-        run: npx playwright test tests/mycosim-campaign.spec.mjs --browser=chromium --workers=1 --reporter=line,html --trace=retain-on-failure --screenshot=only-on-failure
+        run: npx playwright test tests/mycosim-campaign.spec.mjs --browser=chromium --workers=1 --reporter=line,html --trace=retain-on-failure
       - name: Upload browser HTML report
         if: always()
         uses: actions/upload-artifact@v4
