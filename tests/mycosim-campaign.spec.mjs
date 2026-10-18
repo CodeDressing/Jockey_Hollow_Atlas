@@ -67,3 +67,26 @@ test("Phase 13 technical acceptance runs unattended without false hidden-canvas 
  await expect(page.locator("#accept-status")).toContainText("Release gate: HOLD");
  await expect(page.locator("#trametes-simulator")).toHaveAttribute("data-active-lab","quality");
 });
+
+
+test("Unified laboratory keyboard tabs and module preservation",async({page})=>{
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ const navigation=page.locator("#myco-lab-nav");
+ await expect(navigation).toBeVisible({timeout:45000});
+ await expect(navigation.locator('[role="tab"]')).toHaveCount(5);
+ await navigation.locator('[data-lab="specimen"]').focus();
+ await page.keyboard.press("ArrowRight");
+ await expect(navigation.locator('[data-lab="digestion"]')).toHaveAttribute("aria-selected","true");
+ await expect(page.locator("#tv-biology")).toBeVisible();
+ await expect(page.locator("#myco-specimen-pane")).toBeHidden();
+ await page.keyboard.press("End");
+ await expect(navigation.locator('[data-lab="quality"]')).toHaveAttribute("aria-selected","true");
+ await expect(page.locator("#myco-acceptance")).toBeVisible();
+ await page.keyboard.press("Home");
+ await expect(navigation.locator('[data-lab="specimen"]')).toHaveAttribute("aria-selected","true");
+ await expect(page.locator("#tv-canvas")).toBeVisible();
+ await expect(page.locator("#stage")).toHaveCount(1);
+ await expect(page.locator("#tv-biology")).toHaveCount(1);
+ await expect(page.locator("#tv-anatomy3d")).toHaveCount(1);
+ await expect(page.locator("#tv-molecular")).toHaveCount(1);
+});
