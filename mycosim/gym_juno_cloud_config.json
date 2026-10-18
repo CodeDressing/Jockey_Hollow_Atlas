@@ -1,0 +1,7 @@
+{
+  "enabled": false,
+  "supabaseUrl": "",
+  "supabasePublishableKey": "",
+  "bucket": "gym-juno-private",
+  "notes": "Only public publishable key goes here; never service_role. Set up and invite owner before enabling."
+}
