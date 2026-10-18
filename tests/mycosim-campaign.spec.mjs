@@ -497,6 +497,8 @@ test("Phase 27 instancing retains semantic selection and beats Phase 26 scene co
  await lab.locator('[data-mode="micro"]').click();
  await lab.locator('[data-part="bilayer"]').click();
  await expect(lab.locator('[data-part="bilayer"]')).toHaveAttribute("aria-pressed","true");
+ await lab.locator('[data-action="start"]').click();
+ await expect.poll(async()=>page.evaluate(()=>window.MycoSimSelection27.getState().started)).toBe(true);
  await lab.locator('[data-action="reset"]').click();
  await expect(lab.locator('[data-action="isolate"]')).toHaveAttribute("aria-pressed","false");
  await lab.locator('[data-action="isolate"]').focus();
@@ -507,7 +509,9 @@ test("Phase 27 instancing retains semantic selection and beats Phase 26 scene co
  console.log("Phase 27 isolate key diagnostic",JSON.stringify({beforeKey,afterKey}));
  await expect(lab.locator('[data-action="isolate"]')).toHaveAttribute("aria-pressed","true");
  expect((await page.evaluate(()=>window.MycoSimSelection27.getState())).isolated).toBe(true);
- expect((await page.evaluate(()=>window.MycoSimSelection27.getState())).visibleParts.every(p=>p==="bilayer")).toBe(true);
+ const isolatedParts=(await page.evaluate(()=>window.MycoSimSelection27.getState())).visibleParts;
+ expect(isolatedParts.length).toBeGreaterThan(0);
+ expect(isolatedParts.every(p=>p==="bilayer")).toBe(true);
  await page.keyboard.press("Enter");
  await expect(lab.locator('[data-action="isolate"]')).toHaveAttribute("aria-pressed","false");
  expect((await page.evaluate(()=>window.MycoSimSelection27.getState())).isolated).toBe(false);
