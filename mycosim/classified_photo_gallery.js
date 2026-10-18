@@ -1,8 +1,9 @@
 // Private research photo archive: files stay in this browser using IndexedDB.
 // This is a convenience gallery, not a substitute for authenticated server storage.
 const DB_NAME="mycosim-classified-photos",STORE="images";
-const expected=Array.from({length:60},(_,i)=>"IMG_"+(1576+i)+".JPG");
+const expected=Array.from({length:60},(_,i)=>"IMG_"+(1576+i)+".JPG").concat(Array.from({length:11},(_,i)=>"Gymnopilus Junonius Spore Micro  ("+(i+1)+").png"));
 const labelFor=n=>{
+ if(/Gymnopilus Junonius Spore Micro\s*\(\d+\)\.png$/i.test(n))return "Microscopy / spore studies";
  const i=Number((n.match(/IMG_(\d+)/i)||[])[1]||0);
  if(i>=1576&&i<=1610)return "Field colony / habitat";
  if(i>=1611&&i<=1624)return "Cap / gill comparison";
@@ -41,7 +42,7 @@ export async function setupClassifiedPhotoGallery(container){
   cleanup();grid.replaceChildren();
   const term=search.value.trim().toLowerCase(),cat=filter.value;
   const selected=all.filter(r=>(!term||r.name.toLowerCase().includes(term)||r.category.toLowerCase().includes(term))&&(!cat||r.category===cat));
-  status.textContent=all.length+" of "+expected.length+" photographs available in this browser · "+selected.length+" shown. Photos are stored on this device only; no upload to the public website.";
+  status.textContent=all.length+" of "+expected.length+" specimen images available in this browser · "+selected.length+" shown. Photos are stored on this device only; no upload to the public website.";
   for(const item of selected){const button=document.createElement("button");button.type="button";button.className="photo-tile";
     const image=document.createElement("img");const url=URL.createObjectURL(item.blob);previews.push(url);image.src=url;image.loading="lazy";image.alt=item.name+" specimen reference";
     const text=document.createElement("span");text.textContent=item.name+" · "+item.category;button.append(image,text);button.addEventListener("click",()=>showLarge(item));grid.append(button)}
