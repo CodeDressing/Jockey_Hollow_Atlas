@@ -1,0 +1,41 @@
+name: MycoSim Phase 27 focused browser QA
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'mycosim/anatomy3d.js'
+      - 'tests/mycosim-campaign.spec.mjs'
+      - '.github/workflows/mycosim-phase27.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  focused-chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser tooling
+        run: |
+          npm install --no-save @playwright/test
+          npx playwright install --with-deps chromium
+      - name: Serve local atlas
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/mycosim-http.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8765/sandbox.html -o /dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - name: Phase 27 browser acceptance
+        run: npx playwright test tests/mycosim-campaign.spec.mjs --browser=chromium --workers=1 --grep "Phase 27 instancing" --reporter=line --trace=retain-on-failure
+      - name: Save failure artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mycosim-phase27-failures
+          path: test-results/
+          if-no-files-found: ignore
