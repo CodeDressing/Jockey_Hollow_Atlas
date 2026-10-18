@@ -360,3 +360,57 @@ test("Phase 23 microanatomy shares human WebGL renderer and supports keyboard se
  await anatomy.locator('[data-mode="cell"]').click();
  await expect(anatomy.locator(".anatomy-picker button")).toHaveCount(6);
 });
+
+
+test("Phase 24 molecular motion, scientific caveats and preserved scene controls",async({page})=>{
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
+ await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
+ const anatomy=page.locator("#tv-anatomy3d"),lab=anatomy.locator("#myco-dynamics24");
+ await expect(lab).toBeVisible();
+ await expect(anatomy.locator("canvas")).toHaveCount(1);
+ await expect(lab.locator("#dynamics24-process option")).toHaveCount(7);
+ await expect(lab.locator(".d24warning")).toContainText("NOT molecular dynamics");
+ await lab.locator("#dynamics24-process").selectOption({label:"NMDA receptor gating"});
+ await expect(anatomy.locator('[data-mode="micro"]')).toHaveAttribute("aria-pressed","true");
+ await expect(lab.locator("#dynamics24-title")).toContainText("Stage 1/3");
+ await lab.locator("#dynamics24-next").click();
+ await expect(lab.locator("#dynamics24-title")).toContainText("Stage 2/3");
+ await lab.locator("#dynamics24-progress").fill("50");
+ await expect(lab.locator("#dynamics24-progress")).toHaveValue("50");
+ await lab.locator("#dynamics24-qa").click();
+ await expect(lab.locator("#dynamics24-report")).toContainText("Phase 24 browser checks: 19/19 passed",{timeout:30000});
+ const before=await page.evaluate(()=>window.MycoSimMotion24.getState());
+ expect(before.particles).toHaveLength(3);
+ await lab.locator("#dynamics24-play").click();
+ await expect.poll(async()=>page.evaluate(()=>window.MycoSimMotion24.getState().progress),{timeout:5000}).toBeGreaterThan(0);
+ const during=await page.evaluate(()=>window.MycoSimMotion24.getState());
+ expect(during.particles).not.toEqual(before.particles);
+ await lab.locator("#dynamics24-play").click();
+ await expect(lab.locator("#dynamics24-play")).toHaveAttribute("aria-pressed","false");
+ await anatomy.locator('[data-mode="gut"]').click();
+ await expect(anatomy.locator(".anatomy-picker button")).toHaveCount(4);
+ await anatomy.locator('[data-mode="cell"]').click();
+ await expect(anatomy.locator(".anatomy-picker button")).toHaveCount(6);
+ await anatomy.locator('[data-mode="tissue"]').click();
+ await expect(anatomy.locator(".anatomy-picker button")).toHaveCount(7);
+ await anatomy.locator('[data-mode="micro"]').click();
+ await expect(anatomy.locator(".anatomy-picker button")).toHaveCount(9);
+});
+
+test("Phase 24 honors reduced motion and retains manual accessible scrubbing",async({page})=>{
+ await page.emulateMedia({reducedMotion:"reduce"});
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
+ await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
+ const lab=page.locator("#myco-dynamics24");
+ await lab.locator("#dynamics24-process").selectOption("gaba");
+ await lab.locator("#dynamics24-play").click();
+ await expect(lab.locator("#dynamics24-state")).toContainText("Reduced motion");
+ expect((await page.evaluate(()=>window.MycoSimMotion24.getState())).playing).toBe(false);
+ await lab.locator("#dynamics24-progress").focus();
+ await page.keyboard.press("ArrowRight");
+ expect((await page.evaluate(()=>window.MycoSimMotion24.getState())).progress).toBeGreaterThan(0);
+ await lab.locator("#dynamics24-next").click();
+ await expect(lab.locator("#dynamics24-title")).toContainText("Stage 2/3");
+});
