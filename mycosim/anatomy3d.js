@@ -334,5 +334,81 @@ microscopeQA.querySelector("#anatomy23-run").onclick=()=>{
  microscopeQA.querySelector("#anatomy23-report").textContent="Phase 23 browser checks: "+passed+"/"+checks.length+" passed\n"+checks.map(x=>(x.pass?"PASS ":"FAIL ")+x.label).join("\n")+"\nEducational DOM and WebGL checks only; not clinical or histological certification.";
 };
 
+
+const dynamics24Panel=document.createElement("section");
+dynamics24Panel.id="myco-dynamics24";dynamics24Panel.setAttribute("aria-label","Phase 24 interactive conditional molecular mechanisms");
+dynamics24Panel.style.cssText="margin-top:14px;padding:15px;border-radius:10px;border:1px solid #64867e;background:#14252b";
+dynamics24Panel.innerHTML="\n<style>#myco-dynamics24 h3{font-size:18px;color:#f1dba4}#myco-dynamics24 p{font-size:12px;line-height:1.6}#myco-dynamics24 .d24controls{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}#myco-dynamics24 button,#myco-dynamics24 select{border:1px solid #658a80;border-radius:7px;padding:9px;background:#18343a;color:#f1f6f1;cursor:pointer}#myco-dynamics24 button:focus-visible,#myco-dynamics24 select:focus-visible,#myco-dynamics24 input:focus-visible{outline:2px solid #f9dba2}#myco-dynamics24 button[aria-pressed=true]{background:#765829;border-color:#e8d196}#myco-dynamics24 .d24card{border:1px solid #4f7069;padding:12px;background:#0e2025;border-radius:9px}#myco-dynamics24 .d24warning{border-left:3px solid #e1b97a;padding:9px;background:#31271b}#myco-dynamics24 input[type=range]{width:100%;accent-color:#e3c485}</style>\n<div class=\"kicker\">PHASE 24 · CONTROLLED CELLULAR BIOCHEMISTRY</div><h3>Conceptual signaling and membrane processes</h3>\n<p class=\"d24warning\">SCHEMATIC motion only — NOT molecular dynamics, molecular docking, measured transport, ion flux, receptor occupancy, or clinical efficacy. Motion paths and timing are illustrative. Ordinary mushroom consumption has not been shown to trigger the depicted neural pathways.</p>\n<label for=\"dynamics24-process\">Biochemical process </label><select id=\"dynamics24-process\"></select>\n<div class=\"d24controls\"><button id=\"dynamics24-prev\" type=\"button\">← Previous stage</button><button id=\"dynamics24-next\" type=\"button\">Next stage →</button><button id=\"dynamics24-play\" type=\"button\" aria-pressed=\"false\">Play motion</button><button id=\"dynamics24-reset\" type=\"button\">Reset</button><button id=\"dynamics24-read\" type=\"button\">🔊 Read explanation</button></div>\n<label for=\"dynamics24-progress\">Manual progress within current stage</label><input id=\"dynamics24-progress\" type=\"range\" min=\"0\" max=\"100\" step=\"1\" value=\"0\" aria-label=\"Scrub biochemical animation within current stage\">\n<div class=\"d24card\" aria-live=\"polite\"><strong id=\"dynamics24-title\"></strong><p id=\"dynamics24-mechanism\"></p><p id=\"dynamics24-evidence\"></p><p id=\"dynamics24-term\"></p><p id=\"dynamics24-pron\"></p><p id=\"dynamics24-definition\"></p></div>\n<p id=\"dynamics24-state\" role=\"status\">Paused · Stage 1 of 3</p><button id=\"dynamics24-qa\" type=\"button\">Run Phase 24 QA</button>\n<pre id=\"dynamics24-report\" role=\"status\" style=\"font:11px/1.5 monospace;white-space:pre-wrap;overflow-wrap:anywhere\">Not run.</pre>";
+section.append(dynamics24Panel);
+const d24=id=>dynamics24Panel.querySelector("#"+id);
+for(let i=0;i<DYNAMICS24.length;i++){const option=document.createElement("option");option.value=String(i);option.textContent=DYNAMICS24[i].label;d24("dynamics24-process").append(option);}
+function renderDynamics24(){
+ const p=DYNAMICS24[dynamics24Index],st=p.steps[dynamics24Step];
+ d24("dynamics24-process").value=String(dynamics24Index);
+ d24("dynamics24-title").textContent="Stage "+(dynamics24Step+1)+"/3 · "+st[0];
+ d24("dynamics24-mechanism").textContent="Scientific mechanism: "+st[1];
+ d24("dynamics24-evidence").textContent="Evidence classification: "+p.evidence;
+ d24("dynamics24-term").textContent="Definition: "+st[2];
+ d24("dynamics24-pron").textContent="Pronunciation: "+st[3];
+ d24("dynamics24-definition").textContent=st[4];
+ d24("dynamics24-progress").value=String(Math.round(dynamics24Progress*100));
+ d24("dynamics24-play").setAttribute("aria-pressed",String(dynamics24Playing));
+ d24("dynamics24-play").textContent=dynamics24Playing?"Pause motion":"Play motion";
+ d24("dynamics24-state").textContent=(dynamics24Playing?"Playing":"Paused")+" · Stage "+(dynamics24Step+1)+" of 3 · "+Math.round(dynamics24Progress*100)+"% · illustrative timing";
+ if(mode==="micro"&&started)updateDynamics24Particles();
+}
+function setDynamics24Process(next){
+ dynamics24Index=Math.max(0,Math.min(DYNAMICS24.length-1,next));dynamics24Step=0;dynamics24Progress=0;dynamics24Playing=false;dynamics24LastFrame=0;
+ if(mode!=="micro")changeMode("micro");
+ select(DYNAMICS24[dynamics24Index].target);renderDynamics24();
+}
+function dynamics24Stage(next){
+ dynamics24Playing=false;dynamics24Step=Math.max(0,Math.min(2,next));dynamics24Progress=0;dynamics24LastFrame=0;renderDynamics24();
+}
+d24("dynamics24-process").onchange=e=>setDynamics24Process(Number(e.target.value));
+d24("dynamics24-prev").onclick=()=>dynamics24Stage(dynamics24Step-1);
+d24("dynamics24-next").onclick=()=>dynamics24Stage(dynamics24Step+1);
+d24("dynamics24-play").onclick=()=>{
+ if(mode!=="micro")changeMode("micro");
+ if(!started)init();
+ if(window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches){dynamics24Playing=false;d24("dynamics24-state").textContent="Reduced motion is enabled. Advance or scrub manually.";return;}
+ if(dynamics24Step===2&&dynamics24Progress>=1){dynamics24Step=0;dynamics24Progress=0;}
+ dynamics24Playing=!dynamics24Playing;dynamics24LastFrame=0;renderDynamics24();
+};
+d24("dynamics24-reset").onclick=()=>{dynamics24Playing=false;dynamics24Step=0;dynamics24Progress=0;dynamics24LastFrame=0;renderDynamics24();};
+d24("dynamics24-progress").oninput=e=>{dynamics24Playing=false;dynamics24Progress=Math.max(0,Math.min(1,Number(e.target.value)/100));renderDynamics24();};
+d24("dynamics24-read").onclick=()=>{
+ if(!("speechSynthesis" in window))return;window.speechSynthesis.cancel();const p=DYNAMICS24[dynamics24Index],st=p.steps[dynamics24Step];
+ const u=new SpeechSynthesisUtterance(p.label+". "+st[0]+". "+st[1]+". "+p.evidence+". "+st[2]+": "+st[4]);u.rate=.83;u.lang="en-US";window.speechSynthesis.speak(u);
+};
+d24("dynamics24-qa").onclick=()=>{
+ const old={mode,selected,isolated,transparent,index:dynamics24Index,step:dynamics24Step,progress:dynamics24Progress};
+ const checks=[],check=(n,v)=>checks.push({n,pass:!!v});
+ try{
+  dynamics24Playing=false;init();changeMode("micro");
+  check("Existing single WebGL canvas",section.querySelectorAll("canvas").length===1&&!!renderer);
+  check("Seven mechanism choices",DYNAMICS24.length===7&&d24("dynamics24-process").options.length===7);
+  check("Three complete stages per process",DYNAMICS24.every(p=>p.steps.length===3&&p.steps.every(st=>st.length===5&&st.every(Boolean))));
+  for(let i=0;i<DYNAMICS24.length;i++){setDynamics24Process(i);check("Mechanism "+(i+1)+" uses existing anatomy",parts.has(DYNAMICS24[i].target));}
+  check("Three mesh motion markers",dynamics24Particles.length===3&&meshes.filter(m=>m.userData.motion24).length===3);
+  setDynamics24Process(3);dynamics24Stage(1);check("Stage advance",dynamics24Step===1&&d24("dynamics24-title").textContent.includes("Stage 2/3"));
+  dynamics24Stage(99);check("Final stage boundary",dynamics24Step===2);
+  dynamics24Stage(-1);check("First stage boundary",dynamics24Step===0);
+  d24("dynamics24-progress").value="50";d24("dynamics24-progress").dispatchEvent(new Event("input"));
+  check("Manual scrub pauses",dynamics24Progress===.5&&!dynamics24Playing);
+  check("Accessible playback",d24("dynamics24-play").getAttribute("aria-pressed")==="false");
+  check("Unvalidated dynamics explicitly disclosed",dynamics24Panel.textContent.includes("NOT molecular dynamics"));
+  check("Legacy anatomy retained",modes.gut.length===4&&modes.cell.length===6&&modes.tissue.length===7&&modes.micro.length===9);
+  const n=meshes.length,g=geometrySet.size;rebuild();check("Rebuild bounded",meshes.length===n&&geometrySet.size===g);
+ }catch(e){check("Unexpected error "+String(e),false);}
+ finally{
+  dynamics24Index=old.index;dynamics24Step=old.step;dynamics24Progress=old.progress;dynamics24Playing=false;dynamics24LastFrame=0;
+  changeMode(old.mode);select(old.selected);isolated=old.isolated;transparent=old.transparent;if(started)applyVisibility();renderDynamics24();
+ }
+ const count=checks.filter(x=>x.pass).length;
+ d24("dynamics24-report").textContent="Phase 24 browser checks: "+count+"/"+checks.length+" passed\n"+checks.map(c=>(c.pass?"PASS ":"FAIL ")+c.n).join("\n")+"\nEducational UI/scene checks only; not molecular-dynamics simulation, in-vivo measurements or clinical validation.";
+};
+renderDynamics24();
+
 changeMode("gut");
 }
