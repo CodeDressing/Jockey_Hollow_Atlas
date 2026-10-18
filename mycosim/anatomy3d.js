@@ -11,8 +11,8 @@ section.style.cssText="margin-top:18px;padding:16px;border:1px solid #49615e;bor
 section.innerHTML='<style>#tv-anatomy3d h3{color:#f0dca9;margin:5px 0;font-size:19px}#tv-anatomy3d p{font-size:12px;line-height:1.55;color:#c8d6d1}#tv-anatomy3d canvas{display:block;width:100%;height:440px;touch-action:none;background:#0a1417;border-radius:9px}#tv-anatomy3d .anatomy-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(220px,1fr);gap:12px}#tv-anatomy3d .anatomy-controls{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}#tv-anatomy3d button{padding:8px 11px;color:#edf3ec;background:#1b2c2f;border:1px solid #536e69;border-radius:7px;cursor:pointer}#tv-anatomy3d button[aria-pressed=true]{background:#634f29;border-color:#f1d18c}#tv-anatomy3d button:focus-visible{outline:2px solid #f6d689}#tv-anatomy3d .anatomy-info{border:1px solid #3b5355;background:#101f22;padding:12px;border-radius:9px}#tv-anatomy3d .anatomy-info h4{margin:0 0 8px;color:#f0dca9;font-size:15px}#tv-anatomy3d .anatomy-status{font-size:11px;color:#c1d0ca}#tv-anatomy3d .anatomy-warning{border-left:3px solid #ddb978;padding:9px;background:#242018;color:#f1dcb1}#tv-anatomy3d .anatomy-picker{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}@media(max-width:800px){#tv-anatomy3d .anatomy-grid{grid-template-columns:1fr}#tv-anatomy3d canvas{height:350px}}</style>'+
 '<div class="kicker">MYCOSIM · PHASE 10 · 3D ANATOMICAL RECONSTRUCTION</div><h3>Human digestion and immune-cell anatomy</h3><p>Interactive procedural 3D schematic: drag to orbit, scroll to zoom, click a structure, then isolate or reveal surrounding layers. Switch between digestive organs and a magnified intestinal immune interface. Relative positions and shapes are simplified for teaching.</p>'+
 '<p class="anatomy-warning">Illustrative anatomy, not a patient-specific scan. The immune-cell view does not establish that orally consumed Turkey Tail material reaches the shown receptor.</p>'+
-'<div class="anatomy-controls" role="group" aria-label="3D scene mode"><button type="button" data-mode="gut" aria-pressed="true">Digestive organs</button><button type="button" data-mode="cell" aria-pressed="false">Intestinal barrier + immune cell</button><button type="button" data-mode="tissue" aria-pressed="false">Multi-system tissue layers</button><button type="button" data-action="start">Start 3D</button></div>'+
-'<div class="anatomy-grid"><div><canvas id="tv-anatomy-canvas" aria-label="Procedural 3D anatomical reconstruction of digestive organs or epithelial barrier and immune cell"></canvas><p class="anatomy-status" id="tv-anatomy-status" role="status">Scene not started. Choose Start 3D.</p></div>'+
+'<div class="anatomy-controls" role="group" aria-label="3D scene mode"><button type="button" data-mode="gut" aria-pressed="true">Digestive organs</button><button type="button" data-mode="cell" aria-pressed="false">Intestinal barrier + immune cell</button><button type="button" data-mode="tissue" aria-pressed="false">Multi-system tissue layers</button><button type="button" data-mode="micro" aria-pressed="false">Cellular microanatomy</button><button type="button" data-action="start">Start 3D</button></div>'+
+'<div id="anatomy23-zoom" class="anatomy-controls" role="group" aria-label="Conceptual magnification"><button type="button" data-mag="overview" aria-pressed="true">Overview</button><button type="button" data-mag="cell" aria-pressed="false">Cell focus</button><button type="button" data-mag="molecular" aria-pressed="false">Molecular focus</button><span id="anatomy23-scale" role="status">NOT TO SCALE</span></div><div class="anatomy-grid"><div><canvas id="tv-anatomy-canvas" aria-label="Procedural 3D anatomical reconstruction of digestive organs or epithelial barrier and immune cell"></canvas><p class="anatomy-status" id="tv-anatomy-status" role="status">Scene not started. Choose Start 3D.</p></div>'+
 '<aside class="anatomy-info"><h4 id="tv-anatomy-name">Digestive organs</h4><p id="tv-anatomy-detail">Select Start 3D, then click any anatomical part.</p><div class="anatomy-picker" role="group" aria-label="Select anatomical structures"></div><div class="anatomy-controls"><button type="button" data-action="isolate" aria-pressed="false">Isolate selected</button><button type="button" data-action="context" aria-pressed="false">Transparent context</button><button type="button" data-action="focus">Focus selection</button><button type="button" data-action="reset">Reset view</button><button type="button" data-action="read">🔊 Read</button></div></aside></div>';
 host.append(section);
 const canvas=section.querySelector("canvas"),info=section.querySelector("#tv-anatomy-detail"),name=section.querySelector("#tv-anatomy-name"),status=section.querySelector("#tv-anatomy-status");
@@ -36,7 +36,8 @@ const modes={gut:[
 ["macrophage","Macrophage","A simplified innate immune cell near a tissue interface, not proof of oral fungal-glucan receptor engagement."],
 ["neuron","Enteric neuron and axon","Stylized neuron soma, neurites and axon representing enteric signaling; not a complete ENS anatomical map."],
 ["synapse","Synaptic terminals","Two illustrative pre- and postsynaptic terminals with vesicles. Synaptic transport, receptor occupancy and brain effects are not simulated."]
-]};
+],micro:[["bilayer","Cell membrane bilayer","An illustrative phospholipid bilayer with no physical molecular scaling."],["nucleus23","Nucleus and envelope","Nuclear compartment with chromatin proxy and double-membrane envelope; not an electron micrograph."],["mitochondrion","Mitochondrion and cristae","Cristae support oxidative phosphorylation but fold positions are schematic."],["er","Endoplasmic reticulum","Membrane networks contribute to protein and lipid production; chemistry is not simulated."],["tight23","Epithelial tight junction","Apical claudin-associated barrier, not a measured permeability model."],["dectin23","Dectin-1 receptor","Fungal ligand recognition is conditional on cellular access and does not demonstrate effects from consuming mushrooms."],["syk23","SYK and CARD9","Conditional immune signaling downstream from receptor stimulation; not measured receptor occupancy."],["axon23","Enteric neuron and axon","Schematic neuronal projection, not to scale with nearby protein structures."],["synapse23","Synaptic terminal and vesicles","Stylized synaptic terminals and vesicles without NMDA/AMPA conductance modeling."]]};
+let magnification="overview";
 let mode="gut",selected="stomach",isolated=false,transparent=false,started=false,renderer=null,scene=null,camera=null,controls=null,root=null,ray=null,resizeObserver=null,raf=0;
 let parts=new Map(),meshes=[],geometrySet=new Set(),materialSet=new Set();
 const picker=section.querySelector(".anatomy-picker");
@@ -92,6 +93,30 @@ function buildTissue(){
  sphere("synapse",[2.52,-1.40,.43],[.22,.18,.18],0x82b6cd);
  for(let i=0;i<4;i++)sphere("synapse",[2.13+(i%2)*.12,-1.48+Math.floor(i/2)*.12,.57],[.035,.035,.03],0xffdb94);
 }
+
+function buildMicro(){
+ add("bilayer",new THREE.BoxGeometry(5.5,.12,.95),material(0x578fa9,.66),[0,1.4,-.2],null);
+ add("bilayer",new THREE.BoxGeometry(5.5,.12,.95),material(0x89c0c5,.66),[0,1.12,-.2],null);
+ for(let i=0;i<8;i++){const x=-2.3+i*.62;sphere("bilayer",[x,1.53,.24],[.11,.09,.09],0xb1dfe2);sphere("bilayer",[x,1.0,.24],[.11,.09,.09],0xb1dfe2);}
+ sphere("nucleus23",[-1.5,-.27,-.1],[.66,.57,.5],0xa38bc5);
+ sphere("nucleus23",[-1.5,-.27,.37],[.33,.27,.16],0x715393);
+ sphere("mitochondrion",[.05,-.3,-.14],[.73,.37,.42],0xc78d7b);
+ for(let i=0;i<3;i++)tube("mitochondrion",[[-.45+i*.3,-.45,.2],[-.33+i*.3,-.12,.24],[-.16+i*.3,-.28,.24]],.048,0xf4c39a);
+ for(let i=0;i<3;i++)tube("er",[[-2.18+i*.26,-1.33,.0],[-1.5+i*.26,-1.08,.12],[-.73+i*.26,-1.33,.0]],.068,0x7da6cd);
+ sphere("tight23",[1.35,.4,0],[.42,.43,.35],0x9fc3a9);
+ sphere("tight23",[2.25,.4,0],[.42,.43,.35],0x9fc3a9);
+ tube("tight23",[[1.8,.83,.25],[1.8,.5,.25],[1.8,.32,.28]],.065,0xe7cb87);
+ tube("dectin23",[[-.72,1.4,.3],[-.72,1.77,.36],[-.55,1.95,.36]],.075,0xe9c77b);
+ sphere("dectin23",[-.54,2.02,.36],[.16,.14,.14],0xf7d992);
+ sphere("syk23",[-.54,.7,.43],[.21,.16,.15],0x9ccd9f);
+ sphere("syk23",[-.14,.48,.43],[.17,.15,.14],0xc3ac85);
+ sphere("axon23",[.45,-1.6,.3],[.31,.27,.28],0x9c8fcd);
+ tube("axon23",[[.67,-1.6,.3],[1.25,-1.58,.3],[1.74,-1.45,.32]],.085,0xada0dd);
+ sphere("synapse23",[1.99,-1.4,.34],[.27,.23,.25],0xe8ba79);
+ sphere("synapse23",[2.62,-1.4,.34],[.26,.25,.25],0x87b7ca);
+ for(let i=0;i<4;i++)sphere("synapse23",[2.19+(i%2)*.11,-1.5+Math.floor(i/2)*.11,.61],[.041,.037,.035],0xffdc91);
+}
+
 function releaseGeometry(){
  if(root)scene.remove(root);
  for(const geo of geometrySet)geo.dispose();
@@ -101,9 +126,9 @@ function releaseGeometry(){
 function rebuild(){
  if(!started)return;
  releaseGeometry();root=new THREE.Group();scene.add(root);
- if(mode==="gut")buildGut();else if(mode==="cell")buildCell();else buildTissue();
+ if(mode==="gut")buildGut();else if(mode==="cell")buildCell();else if(mode==="tissue")buildTissue();else buildMicro();
  controls.target.set(0,0,0);camera.position.set(4,2.5,7);controls.update();
- applyVisibility();describe();
+ applyVisibility();describe();applyMagnification();
 }
 function applyVisibility(){
  for(const [id,objects] of parts)for(const obj of objects){
@@ -115,6 +140,13 @@ function applyVisibility(){
 }
 function select(id){if(!modes[mode].some(p=>p[0]===id))return;selected=id;describe();if(started)applyVisibility();}
 function changeMode(next){mode=next;selected=modes[mode][0][0];isolated=false;transparent=false;section.querySelectorAll("[data-mode]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===mode)));updatePicker();if(started)rebuild();else describe();}
+function applyMagnification(){
+ const dist={overview:7,cell:4.5,molecular:2.7}[magnification]||7;
+ section.querySelectorAll("[data-mag]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mag===magnification)));
+ const label=section.querySelector("#anatomy23-scale");
+ if(label)label.textContent="Conceptual "+magnification+" focus · NOT TO SCALE";
+ if(started){const target=controls.target.clone(),direction=camera.position.clone().sub(target).normalize();if(direction.lengthSq()<.5)direction.set(0,.3,1).normalize();camera.position.copy(target).addScaledVector(direction,dist);controls.update();}
+}
 function resize(){if(!renderer)return;const width=Math.max(1,canvas.clientWidth),height=Math.max(1,canvas.clientHeight);renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();}
 function init(){
  if(started)return;
@@ -145,6 +177,7 @@ function focus(){if(!started)return;const objects=parts.get(selected)||[];if(!ob
 function reset(){isolated=false;transparent=false;if(started){rebuild();}else{describe();section.querySelector('[data-action="isolate"]').setAttribute("aria-pressed","false");section.querySelector('[data-action="context"]').setAttribute("aria-pressed","false");}}
 function dispose(){started=false;cancelAnimationFrame(raf);resizeObserver?.disconnect();canvas.removeEventListener("click",pick);if(scene)releaseGeometry();controls?.dispose();renderer?.dispose();renderer=null;scene=null;}
 section.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>changeMode(b.dataset.mode));
+section.querySelectorAll("[data-mag]").forEach(b=>b.onclick=()=>{magnification=b.dataset.mag;applyMagnification();});
 section.querySelector('[data-action="start"]').onclick=init;
 section.querySelector('[data-action="isolate"]').onclick=()=>{isolated=!isolated;if(started)applyVisibility();};
 section.querySelector('[data-action="context"]').onclick=()=>{transparent=!transparent;if(started)applyVisibility();};
@@ -229,6 +262,35 @@ tissueQA.querySelector("#anatomy22-run").onclick=()=>{
  }
  const passed=checks.filter(x=>x.pass).length;
  tissueQA.querySelector("#anatomy22-report").textContent="Phase 22 browser checks: "+passed+"/"+checks.length+" passed\n"+checks.map(x=>(x.pass?"PASS ":"FAIL ")+x.label).join("\n")+"\nNot a scientific anatomy, screen-reader, or GPU endurance certification.";
+};
+
+
+const microscopeQA=document.createElement("div");microscopeQA.style.cssText="margin-top:12px;padding:12px;background:#12272b;border:1px solid #587d72;border-radius:8px";
+microscopeQA.innerHTML='<strong>Phase 23 · Microscopic anatomy diagnostics</strong><p class="anatomy-warning">Cell structures are SCHEMATIC and NOT TO SCALE; no measured receptor activity or clinical outcome.</p><button id="anatomy23-run" type="button">Run Phase 23 renderer QA</button><pre id="anatomy23-report" role="status" style="white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.5 monospace">Not run.</pre>';
+section.append(microscopeQA);
+microscopeQA.querySelector("#anatomy23-run").onclick=()=>{
+ const before={mode,selected,isolated,transparent,magnification},checks=[],check=(label,pass)=>checks.push({label,pass:!!pass});
+ try{
+  init();changeMode("micro");
+  check("Existing renderer and canvas",started&&!!renderer&&canvas.id==="tv-anatomy-canvas");
+  check("No duplicate canvas",section.querySelectorAll("canvas").length===1);
+  check("Nine cellular selections",modes.micro.length===9&&picker.querySelectorAll("button").length===9);
+  for(const [id] of modes.micro)check(id+" geometry",parts.has(id)&&parts.get(id).length>0);
+  check("Detailed structure definitions",modes.micro.every(s=>s[2].length>40));
+  check("Three conceptual magnifications",section.querySelectorAll("[data-mag]").length===3);
+  for(const key of ["overview","cell","molecular"]){magnification=key;applyMagnification();check(key+" state",section.querySelector('[data-mag="'+key+'"]').getAttribute("aria-pressed")==="true");}
+  select("dectin23");isolated=true;transparent=false;applyVisibility();
+  check("Receptor isolation",meshes.every(m=>m.visible===(m.userData.part==="dectin23")));
+  isolated=false;transparent=true;applyVisibility();
+  check("Transparent context",meshes.some(m=>m.userData.part!=="dectin23"&&m.material.opacity<1));
+  const geos=geometrySet.size,mats=materialSet.size,count=meshes.length;rebuild();
+  check("Rebuild and dispose bounded",geometrySet.size===geos&&materialSet.size===mats&&meshes.length===count);
+  check("All legacy modes retained",modes.gut.length===4&&modes.cell.length===6&&modes.tissue.length===7);
+  check("Schematic disclaimer",microscopeQA.textContent.includes("NOT TO SCALE"));
+ }catch(e){check("Unexpected exception "+String(e),false);}
+ finally{magnification=before.magnification;changeMode(before.mode);select(before.selected);isolated=before.isolated;transparent=before.transparent;applyMagnification();if(started)applyVisibility();}
+ const passed=checks.filter(x=>x.pass).length;
+ microscopeQA.querySelector("#anatomy23-report").textContent="Phase 23 browser checks: "+passed+"/"+checks.length+" passed\n"+checks.map(x=>(x.pass?"PASS ":"FAIL ")+x.label).join("\n")+"\nEducational DOM and WebGL checks only; not clinical or histological certification.";
 };
 
 changeMode("gut");
