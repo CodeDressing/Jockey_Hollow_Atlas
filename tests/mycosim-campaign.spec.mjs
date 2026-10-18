@@ -140,3 +140,26 @@ test("Phase 16 shared microbiome and gut brain lab passes unattended QA",async({
  await expect(page.locator("#tv-anatomy3d")).toBeVisible();
  await expect(page.locator("#tv-biology")).toBeHidden();
 });
+
+
+test("Phase 17 immune signaling reuses molecular pathway and existing human anatomy",async({page})=>{
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
+ await page.locator('#myco-lab-nav [data-lab="pathways"]').click();
+ const lab=page.locator("#myco-immune17");
+ await expect(lab).toBeVisible();
+ await expect(page.locator("#tv-molecular #myco-immune17")).toHaveCount(1);
+ await expect(lab.locator("#immune17-steps button")).toHaveCount(8);
+ await lab.locator("#immune17-cell").selectOption("epithelial");
+ await expect(lab.locator("#immune17-cell-note")).toContainText("barrier");
+ await lab.locator("#immune17-cell").selectOption("macrophage");
+ await lab.locator("#immune17-steps button").nth(7).click();
+ await expect(lab.locator("#immune17-evidence")).toContainText("HYPOTHETICAL");
+ await expect(lab.locator("#immune17-definition")).not.toBeEmpty();
+ await lab.locator("#immune17-qa").click();
+ await expect(lab.locator("#immune17-report")).toContainText("Phase 17 browser checks: 20/20 passed");
+ await lab.locator("#immune17-anatomy").click();
+ await expect(page.locator("#trametes-simulator")).toHaveAttribute("data-active-lab","anatomy");
+ await expect(page.locator("#tv-anatomy3d")).toBeVisible();
+ await expect(page.locator("#tv-molecular")).toBeHidden();
+});
