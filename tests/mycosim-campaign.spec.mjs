@@ -186,3 +186,29 @@ test("Phase 18 shares ingestion model and exposes conservative compound disposit
  await expect(page.locator("#tv-anatomy3d")).toBeVisible();
  await expect(page.locator("#tv-biology")).toBeHidden();
 });
+
+
+test("Phase 19 integrated gut-brain neural pathway retains earlier modules",async({page})=>{
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
+ await page.locator('#myco-lab-nav [data-lab="digestion"]').click();
+ const lab=page.locator("#myco-neural19");
+ await expect(lab).toBeVisible();
+ await expect(page.locator("#tv-biology #myco-ingestion-lab #myco-microbiome #myco-neural19")).toHaveCount(1);
+ await expect(lab.locator("#neural19-steps button")).toHaveCount(8);
+ await lab.locator("#neural19-route").selectOption("endocrine");
+ await expect(lab.locator("#neural19-route-note")).toContainText("enteroendocrine");
+ await lab.locator("#neural19-steps button").nth(2).click();
+ await expect(lab.locator("#neural19-evidence")).toContainText("HYPOTHETICAL");
+ await lab.locator("#neural19-steps button").nth(7).click();
+ await expect(lab.locator("#neural19-evidence")).toContainText("NOT TESTED");
+ await lab.locator("#neural19-qa").click();
+ await expect(lab.locator("#neural19-report")).toContainText("Phase 19 browser checks: 21/21 passed");
+ await lab.locator("#neural19-immune").click();
+ await expect(page.locator("#trametes-simulator")).toHaveAttribute("data-active-lab","pathways");
+ await expect(page.locator("#myco-immune17")).toBeVisible();
+ await page.locator('#myco-lab-nav [data-lab="digestion"]').click();
+ await lab.locator("#neural19-3d").click();
+ await expect(page.locator("#trametes-simulator")).toHaveAttribute("data-active-lab","anatomy");
+ await expect(page.locator("#tv-anatomy3d")).toBeVisible();
+});
