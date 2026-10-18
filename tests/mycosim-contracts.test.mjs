@@ -187,7 +187,7 @@ test('Phase 22 tissue structures reuse the existing anatomy renderer',()=>{
  assert.match(src,/releaseGeometry\(\)/);
  assert.match(src,/geometrySet\.size===geo/);
  assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
- assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase23-micro-20261018/);
+ assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase24-motion-20261018/);
 });
 
 
@@ -204,4 +204,26 @@ test('Phase 23 microanatomy is selectable within one retained WebGL renderer',()
  assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
  assert.equal((src.match(/<canvas /g)||[]).length,1);
  assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase23-micro-20261018/);
+});
+
+
+test('Phase 24 controlled signaling uses existing scene loop and preserves scientific limits',()=>{
+ const src=read('mycosim/anatomy3d.js');
+ const data=JSON.parse(src.match(/const DYNAMICS24=(\[[^\n]+\]);/)[1]);
+ assert.equal(data.length,7);
+ for(const id of ['dectin','syk','barrier','nmda','ampa','gaba','vesicle'])assert.ok(data.some(p=>p.id===id),id);
+ assert.ok(data.every(p=>p.steps.length===3&&p.steps.every(st=>st.length===5&&st.every(Boolean))));
+ assert.ok(data.every(p=>p.evidence&&p.target&&p.from.length===3&&p.to.length===3));
+ assert.match(src,/function updateDynamics24Particles\(\)/);
+ assert.match(src,/function renderDynamics24\(\)/);
+ assert.match(src,/dynamics24LastFrame/);
+ assert.match(src,/prefers-reduced-motion: reduce/);
+ assert.match(src,/dynamics24-progress/);
+ assert.match(src,/dynamics24-read/);
+ assert.match(src,/SpeechSynthesisUtterance/);
+ assert.match(src,/MycoSimMotion24=Object\.freeze/);
+ assert.match(src,/NOT molecular dynamics/);
+ assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
+ assert.equal((src.match(/raf=requestAnimationFrame\(loop\)/g)||[]).length,1);
+ assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase24-motion-20261018/);
 });
