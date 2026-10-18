@@ -239,3 +239,52 @@ test("Phase 20 reuses molecular lab and distinguishes human from preclinical Lio
  await expect(page.locator("#trametes-simulator")).toHaveAttribute("data-active-lab","anatomy");
  await expect(page.locator("#tv-anatomy3d")).toBeVisible();
 });
+
+
+test("Phase 21 claim ledger and offline Neural Atlas export preserve evidence boundaries",async({page})=>{
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
+ await page.locator('#myco-lab-nav [data-lab="quality"]').click();
+ const ledger=page.locator("#myco-evidence21");
+ await expect(ledger).toBeVisible();
+ await expect(ledger.locator(".evidence21-record")).toHaveCount(7);
+ await ledger.locator("#evidence21-filter").selectOption("20");
+ await expect(ledger.locator(".evidence21-record")).toHaveCount(2);
+ await ledger.locator("#evidence21-filter").selectOption("all");
+ const anchors=ledger.locator(".evidence21-record a");
+ await expect(anchors).toHaveCount(4);
+ await expect(anchors.first()).toHaveAttribute("rel","noopener noreferrer");
+ await ledger.locator("#evidence21-build").click();
+ await expect(ledger.locator("#evidence21-output")).toHaveValue(/jha\.mycosim\.research\.v2/);
+ const exported=await ledger.locator("#evidence21-output").inputValue();
+ const envelope=JSON.parse(exported);
+ expect(envelope.remote_sync).toBe(false);
+ expect(envelope.human_signoff).toBe(false);
+ expect(envelope.claims).toHaveLength(7);
+ expect(envelope.sources).toHaveLength(4);
+ expect(envelope.integrity.algorithm).toBe("SHA-256");
+ expect(envelope.integrity.digest).toMatch(/^[a-f0-9]{64}$/);
+ expect(envelope.claims.some(c=>c.grade==="unverified-hypothesis"&&c.source_ids.length===0)).toBe(true);
+ await expect(ledger.locator("#evidence21-status")).toContainText("No remote transmission");
+});
+
+test("Phase 21 keyboard, reduced motion and original model preservation",async({page})=>{
+ await page.emulateMedia({reducedMotion:"reduce"});
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ await expect(page.locator("#myco-lab-nav [role=tab]")).toHaveCount(5,{timeout:45000});
+ await page.locator('#myco-lab-nav [data-lab="quality"]').click();
+ await expect(page.locator("#myco-evidence21")).toBeVisible();
+ await page.locator("#evidence21-filter").focus();
+ await page.keyboard.press("End");
+ await expect(page.locator("#evidence21-filter")).toHaveValue("20");
+ await page.locator('#myco-lab-nav [data-lab="digestion"]').click();
+ await expect(page.locator("#myco-ingestion-lab")).toHaveCount(1);
+ await expect(page.locator("#myco-microbiome")).toHaveCount(1);
+ await expect(page.locator("#myco-circulation18")).toHaveCount(1);
+ await expect(page.locator("#myco-neural19")).toHaveCount(1);
+ await page.locator('#myco-lab-nav [data-lab="pathways"]').click();
+ await expect(page.locator("#myco-immune17")).toHaveCount(1);
+ await expect(page.locator("#myco-neuro20")).toHaveCount(1);
+ await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
+ await expect(page.locator("#tv-anatomy3d")).toBeVisible();
+});
