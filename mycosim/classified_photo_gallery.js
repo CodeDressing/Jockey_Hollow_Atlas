@@ -11,6 +11,7 @@ const labelFor=n=>{
  return "Unassigned";
 };
 function db(){return new Promise((resolve,reject)=>{const open=indexedDB.open(DB_NAME,1);open.onupgradeneeded=()=>{if(!open.result.objectStoreNames.contains(STORE))open.result.createObjectStore(STORE,{keyPath:"name"})};open.onsuccess=()=>resolve(open.result);open.onerror=()=>reject(open.error)})}
+export async function getClassifiedLocalPhotoRecords(){return await listFiles()}
 async function listFiles(){const d=await db();try{return await new Promise((resolve,reject)=>{const tx=d.transaction(STORE,"readonly");const rq=tx.objectStore(STORE).getAll();rq.onsuccess=()=>resolve(rq.result);rq.onerror=()=>reject(rq.error)})}finally{d.close()}}
 async function saveFiles(files){const d=await db();try{await new Promise((resolve,reject)=>{const tx=d.transaction(STORE,"readwrite");const os=tx.objectStore(STORE);for(const f of files)os.put(f);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)})}finally{d.close()}}
 async function expandStoredZip(file){
