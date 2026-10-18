@@ -5,7 +5,7 @@ import {readFileSync} from 'node:fs';
 import {Script} from 'node:vm';
 const read=(p)=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const html=read('sandbox.html');
-const files=['mycosim/digestion_immune.js','mycosim/human_ingestion.js','mycosim/molecular_process.js','mycosim/campaign.js','mycosim/science_glossary.js','mycosim/release_acceptance.js','mycosim/lab_workspace.js'];
+const files=['mycosim/digestion_immune.js','mycosim/human_ingestion.js','mycosim/gut_brain.js','mycosim/molecular_process.js','mycosim/campaign.js','mycosim/science_glossary.js','mycosim/release_acceptance.js','mycosim/lab_workspace.js'];
 
 test('MycoSim modules are mounted exactly once and in working order',()=>{
  const scripts=[...html.matchAll(/src="(mycosim\/[^"?]+\.js)\?[^\"]*"/g)].map(x=>x[1]);
@@ -76,4 +76,19 @@ test('Phase 15 reuses original digestion and anatomy with explicit absorption un
  assert.ok(stages.every(stage=>stage.enzyme&&stage.barrier&&stage.fate&&stage.evidence&&stage.definition&&stage.pron));
  const glossary=read('mycosim/science_glossary.js');
  for(const term of ['Amylase','Pepsin','Bioaccessibility','Bioavailability','Enterocyte','SCFA'])assert.ok(glossary.includes('"'+term+'"'));
+});
+
+test('Phase 16 extends the ingestion system and protects neural-claim limits',()=>{
+ const module=read('mycosim/gut_brain.js');
+ assert.match(module,/getElementById\("myco-ingestion-lab"\)/);
+ assert.match(module,/getElementById\("tv-anatomy3d"\)/);
+ assert.match(module,/HYPOTHETICAL/);
+ assert.match(module,/NOT established/);
+ assert.match(module,/SpeechSynthesisUtterance/);
+ assert.match(module,/Phase 16 browser checks:/);
+ const stages=JSON.parse(module.match(/const MICROBIOME_STAGES=(\[[^\n]+\]);/)[1]);
+ assert.equal(stages.length,7);
+ assert.ok(stages.every(s=>s.name&&s.structure&&s.organism&&s.metabolite&&s.barrier&&s.axis&&s.evidence&&s.definition&&s.pron));
+ const glossary=read('mycosim/science_glossary.js');
+ for(const term of ['Butyrate','Propionate','Acetate','Enteric nervous system','Vagus nerve','Blood–brain barrier'])assert.ok(glossary.includes('"'+term+'"'),term);
 });
