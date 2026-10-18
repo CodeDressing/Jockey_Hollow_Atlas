@@ -1,0 +1,132 @@
+{
+  "archive_id": "GYM-JUNO-MICRO-2026-10-18",
+  "title": "Classified research microscopy specimen record",
+  "taxon_provisional": "Gymnopilus junonius (Fr.) P.D. Orton",
+  "taxon_historical": "Gymnopilus spectabilis (Weinm.) A.H. Sm.",
+  "scope": "11 original user-supplied microscopy screenshots from this conversation; image binaries intentionally not committed into public static repo",
+  "original_images": [
+    {
+      "id": "GJ-MIC-01",
+      "filename": "Gymnopilus Junonius Spore Micro  (1).png",
+      "type": "Photomicrograph",
+      "annotation": "Unannotated field of view",
+      "anatomy": "Putative dispersed spores and other refractile structures; identification not verified",
+      "species_attribution": "Provisional: user-supplied Gymnopilus junonius label",
+      "review_status": "Requires microscopy verification"
+    },
+    {
+      "id": "GJ-MIC-02",
+      "filename": "Gymnopilus Junonius Spore Micro  (2).png",
+      "type": "Photomicrograph",
+      "annotation": "Measurement-overlay field of view",
+      "anatomy": "Putative dispersed spores and other refractile structures; identification not verified",
+      "species_attribution": "Provisional: user-supplied Gymnopilus junonius label",
+      "review_status": "Requires microscopy verification"
+    },
+    {
+      "id": "GJ-MIC-03",
+      "filename": "Gymnopilus Junonius Spore Micro  (3).png",
+      "type": "Photomicrograph",
+      "annotation": "Measurement-overlay field of view",
+      "anatomy": "Putative dispersed spores and other refractile structures; identification not verified",
+      "species_attribution": "Provisional: user-supplied Gymnopilus junonius label",
+      "review_status": "Requires microscopy verification"
+    },
+    {
+      "id": "GJ-MIC-04",
+      "filename": "Gymnopilus Junonius Spore Micro  (4).png",
+      "type": "Photomicrograph",
+      "annotation": "Measurement-overlay field of view",
+      "anatomy": "Putative dispersed spores and other refractile structures; identification not verified",
+      "species_attribution": "Provisional: user-supplied Gymnopilus junonius label",
+      "review_status": "Requires microscopy verification"
+    },
+    {
+      "id": "GJ-MIC-05",
+      "filename": "Gymnopilus Junonius Spore Micro  (5).png",
+      "type": "Photomicrograph",
+      "annotation": "Measurement-overlay field of view",
+      "anatomy": "Putative dispersed spores and other refractile structures; identification not verified",
+      "species_attribution": "Provisional: user-supplied Gymnopilus junonius label",
+      "review_status": "Requires microscopy verification"
+    },
+    {
+      "id": "GJ-MIC-06",
+      "filename": "Gymnopilus Junonius Spore Micro  (6).png",
+      "type": "Photomicrograph",
+      "annotation": "Measurement-overlay field of view",
+      "anatomy": "Putative dispersed spores and other refractile structures; identification not verified",
+      "species_attribution": "Provisional: user-supplied Gymnopilus junonius label",
+      "review_status": "Requires microscopy verification"
+    },
+    {
+      "id": "GJ-MIC-07",
+      "filename": "Gymnopilus Junonius Spore Micro  (7).png",
+      "type": "Photomicrograph",
+      "annotation": "Measurement-overlay field of view",
+      "anatomy": "Putative dispersed spores and other refractile structures; identification not verified",
+      "species_attribution": "Provisional: user-supplied Gymnopilus junonius label",
+      "review_status": "Requires microscopy verification"
+    },
+    {
+      "id": "GJ-MIC-08",
+      "filename": "Gymnopilus Junonius Spore Micro  (8).png",
+      "type": "Photomicrograph",
+      "annotation": "Measurement-overlay field of view",
+      "anatomy": "Putative dispersed spores and other refractile structures; identification not verified",
+      "species_attribution": "Provisional: user-supplied Gymnopilus junonius label",
+      "review_status": "Requires microscopy verification"
+    },
+    {
+      "id": "GJ-MIC-09",
+      "filename": "Gymnopilus Junonius Spore Micro  (9).png",
+      "type": "Photomicrograph",
+      "annotation": "Unannotated field of view",
+      "anatomy": "Putative dispersed spores and other refractile structures; identification not verified",
+      "species_attribution": "Provisional: user-supplied Gymnopilus junonius label",
+      "review_status": "Requires microscopy verification"
+    },
+    {
+      "id": "GJ-MIC-10",
+      "filename": "Gymnopilus Junonius Spore Micro  (10).png",
+      "type": "Photomicrograph",
+      "annotation": "Unannotated field of view",
+      "anatomy": "Putative dispersed spores and other refractile structures; identification not verified",
+      "species_attribution": "Provisional: user-supplied Gymnopilus junonius label",
+      "review_status": "Requires microscopy verification"
+    },
+    {
+      "id": "GJ-MIC-11",
+      "filename": "Gymnopilus Junonius Spore Micro  (11).png",
+      "type": "Photomicrograph",
+      "annotation": "Unannotated field of view",
+      "anatomy": "Putative dispersed spores and other refractile structures; identification not verified",
+      "species_attribution": "Provisional: user-supplied Gymnopilus junonius label",
+      "review_status": "Requires microscopy verification"
+    }
+  ],
+  "visible_measurement_notes": {
+    "units": "micrometres as shown in microscope software",
+    "illustrative_labels": [
+      "L3:9.06 µm (frame 2)",
+      "L6:3.64 µm (frame 2)",
+      "L7:10.77 µm (frame 2)",
+      "L1:4.43 µm (frame 2)",
+      "L4:5.75 µm (frame 2)",
+      "L2:4.00 µm (frame 2)",
+      "L5:4.50 µm (frame 2)"
+    ],
+    "methodology": "Unverified individually labeled segments, not guaranteed corresponding to the major axes of single spores. Some overlays are on overlapping or irregular objects. Do not compute a species diagnostic spore range from raw on-screen labels.",
+    "calibration": "Original calibration file, objective, optical magnification, reticle calibration, mounting medium, and sampling protocol not supplied",
+    "morphology": "Many elliptical-to-bent or crescent-like refractile bodies are visible; possible optical effects, overlap, artifacts, or mixed material. Species-level microscopy unconfirmed"
+  },
+  "needed_followup": [
+    "Capture objective magnification and calibration method",
+    "Obtain spore print and mount metadata",
+    "Measure length and width of a well-defined nonoverlapping sample of 20-30 verified spores",
+    "Check ornamentation with appropriate microscopy and scale",
+    "Use voucher and DNA barcoding for taxonomic corroboration"
+  ],
+  "safety": "Photomicrographs and dimensional annotations do not determine psychoactive chemistry, toxicity, edibility, or human dosage.",
+  "preservation": "Original PNG pixels retained in user-provided microscopy ZIP and can be imported into per-browser classified gallery; not public-hosted."
+}
