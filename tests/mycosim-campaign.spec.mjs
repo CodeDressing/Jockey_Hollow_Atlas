@@ -497,9 +497,13 @@ test("Phase 27 instancing retains semantic selection and beats Phase 26 scene co
  await lab.locator('[data-mode="micro"]').click();
  await lab.locator('[data-part="bilayer"]').click();
  await expect(lab.locator('[data-part="bilayer"]')).toHaveAttribute("aria-pressed","true");
- await lab.locator('[data-action="isolate"]').click();
+ await lab.locator('[data-action="reset"]').click();
+ await expect(lab.locator('[data-action="isolate"]')).toHaveAttribute("aria-pressed","false");
+ await lab.locator('[data-action="isolate"]').focus();
+ await page.keyboard.press("Enter");
  await expect(lab.locator('[data-action="isolate"]')).toHaveAttribute("aria-pressed","true");
- await lab.locator('[data-action="isolate"]').click();
+ await page.keyboard.press("Enter");
+ await expect(lab.locator('[data-action="isolate"]')).toHaveAttribute("aria-pressed","false");
  await lab.locator('[data-action="context"]').click();
  await expect(lab.locator('[data-action="context"]')).toHaveAttribute("aria-pressed","true");
  await lab.locator('[data-action="context"]').click();
