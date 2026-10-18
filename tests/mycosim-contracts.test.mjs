@@ -5,7 +5,7 @@ import {readFileSync} from 'node:fs';
 import {Script} from 'node:vm';
 const read=(p)=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const html=read('sandbox.html');
-const files=['mycosim/digestion_immune.js','mycosim/molecular_process.js','mycosim/campaign.js','mycosim/science_glossary.js','mycosim/release_acceptance.js','mycosim/lab_workspace.js'];
+const files=['mycosim/digestion_immune.js','mycosim/human_ingestion.js','mycosim/molecular_process.js','mycosim/campaign.js','mycosim/science_glossary.js','mycosim/release_acceptance.js','mycosim/lab_workspace.js'];
 
 test('MycoSim modules are mounted exactly once and in working order',()=>{
  const scripts=[...html.matchAll(/src="(mycosim\/[^"?]+\.js)\?[^\"]*"/g)].map(x=>x[1]);
@@ -59,4 +59,21 @@ test('Production approval is not inferred from smoke tests',()=>{
  assert.match(release,/Release gate: HOLD/);
  assert.match(release,/scientific or production certification/);
  assert.match(release,/checkbox/);
+});
+
+
+test('Phase 15 reuses original digestion and anatomy with explicit absorption uncertainty',()=>{
+ const module=read('mycosim/human_ingestion.js');
+ assert.match(module,/getElementById\("tv-biology"\)/);
+ assert.match(module,/getElementById\("tv-anatomy3d"\)/);
+ assert.match(module,/HYPOTHETICAL/);
+ assert.match(module,/PSK or PSP/);
+ assert.match(module,/SpeechSynthesisUtterance/);
+ assert.match(module,/Phase 15 browser checks:/);
+ assert.match(module,/const INGESTION_STAGES=/);
+ const stages=JSON.parse(module.match(/const INGESTION_STAGES=(\[[^\n]+\]);/)[1]);
+ assert.equal(stages.length,7);
+ assert.ok(stages.every(stage=>stage.enzyme&&stage.barrier&&stage.fate&&stage.evidence&&stage.definition&&stage.pron));
+ const glossary=read('mycosim/science_glossary.js');
+ for(const term of ['Amylase','Pepsin','Bioaccessibility','Bioavailability','Enterocyte','SCFA'])assert.ok(glossary.includes('"'+term+'"'));
 });
