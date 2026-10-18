@@ -42,6 +42,8 @@ let dynamics24Index=0,dynamics24Step=0,dynamics24Progress=0,dynamics24Playing=fa
 let magnification="overview";
 let mode="gut",selected="stomach",isolated=false,transparent=false,started=false,renderer=null,scene=null,camera=null,controls=null,root=null,ray=null,resizeObserver=null,raf=0;
 let parts=new Map(),meshes=[],geometrySet=new Set(),materialSet=new Set();
+// Phase 26: opt-in frame measurements. No additional rendering loop.
+const perf26={active:false,samples:[],calls:[],triangles:[],previous:null,result:null};
 const picker=section.querySelector(".anatomy-picker");
 function updatePicker(){
  picker.replaceChildren();
@@ -192,7 +194,7 @@ function init(){
   canvas.addEventListener("click",pick);
   const loop=(time)=>{
    if(!started)return;
-   if(!document.hidden&&!section.hidden){
+   if(!document.hidden&&section.isConnected&&section.getClientRects().length>0){
     const reduced=window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches===true;
     if(dynamics24Playing&&mode==="micro"&&!reduced){
      const delta=dynamics24LastFrame?Math.min(80,time-dynamics24LastFrame):0;
@@ -203,7 +205,19 @@ function init(){
     }else if(reduced&&dynamics24Playing){dynamics24Playing=false;renderDynamics24();}
     dynamics24LastFrame=time;
     controls.update();renderer.render(scene,camera);
-   }else dynamics24LastFrame=0;
+    if(perf26.active){
+     if(perf26.previous!==null){
+      const gap=time-perf26.previous;
+      if(Number.isFinite(gap)&&gap>0&&gap<250){
+       perf26.samples.push(gap);
+       perf26.calls.push(renderer.info.render.calls);
+       perf26.triangles.push(renderer.info.render.triangles);
+      }
+     }
+     perf26.previous=time;
+     if(perf26.samples.length>=90)finishPerf26();
+    }
+   }else{dynamics24LastFrame=0;if(perf26.active)perf26.previous=null;}
    raf=requestAnimationFrame(loop);
   };loop();
   status.textContent="3D ready · "+mode+" model. Click a structure or use the selection controls.";
@@ -218,7 +232,7 @@ function pick(event){
 }
 function focus(){if(!started)return;const objects=parts.get(selected)||[];if(!objects.length)return;const box=new THREE.Box3();objects.forEach(o=>box.expandByObject(o));const point=box.getCenter(new THREE.Vector3());const dist=Math.max(2.1,box.getSize(new THREE.Vector3()).length()*1.7);controls.target.copy(point);camera.position.copy(point).add(new THREE.Vector3(dist*.65,dist*.5,dist));controls.update();}
 function reset(){isolated=false;transparent=false;if(started){rebuild();}else{describe();section.querySelector('[data-action="isolate"]').setAttribute("aria-pressed","false");section.querySelector('[data-action="context"]').setAttribute("aria-pressed","false");}}
-function dispose(){started=false;cancelAnimationFrame(raf);resizeObserver?.disconnect();canvas.removeEventListener("click",pick);if(scene)releaseGeometry();controls?.dispose();renderer?.dispose();renderer=null;scene=null;}
+function dispose(){perf26.active=false;started=false;cancelAnimationFrame(raf);resizeObserver?.disconnect();canvas.removeEventListener("click",pick);if(scene)releaseGeometry();controls?.dispose();renderer?.dispose();renderer=null;scene=null;}
 section.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>changeMode(b.dataset.mode));
 section.querySelectorAll("[data-mag]").forEach(b=>b.onclick=()=>{magnification=b.dataset.mag;applyMagnification();});
 section.querySelector('[data-action="start"]').onclick=init;
@@ -234,12 +248,60 @@ window.addEventListener("pagehide",dispose,{once:true});
 const fidelity25=document.createElement("section");
 fidelity25.id="anatomy25-fidelity";fidelity25.setAttribute("aria-label","Phase 25 anatomy display quality and render diagnostic");
 fidelity25.style.cssText="margin-top:12px;padding:12px;background:#10252a;border:1px solid #5c7d75;border-radius:9px";
-fidelity25.innerHTML='<strong>Phase 25 · Anatomy visibility and material guide</strong><p id="anatomy25-guide" style="font-size:12px;line-height:1.6"></p><p class="anatomy-warning">Scientific geometry remains PROCEDURAL and NOT TO SCALE. Color identifies a structure category; it does not represent staining, measured molecular shape, or verified patient anatomy.</p><button type="button" id="anatomy25-qa">Run Phase 25 visual-regression checks</button><pre id="anatomy25-report" role="status" style="white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.5 monospace">Not run.</pre>';
+fidelity25.innerHTML='<strong>Phase 25 · Anatomy visibility and material guide</strong><p id="anatomy25-guide" style="font-size:12px;line-height:1.6"></p><div id="anatomy26-references" aria-label="Relevant scientific references" style="font-size:12px"></div><p class="anatomy-warning">Scientific geometry remains PROCEDURAL and NOT TO SCALE. Color identifies a structure category; it does not represent staining, measured molecular shape, or verified patient anatomy.</p><button type="button" id="anatomy25-qa">Run Phase 25 visual-regression checks</button><pre id="anatomy25-report" role="status" style="white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.5 monospace">Not run.</pre>';
 section.append(fidelity25);
 function updateFidelity25(){
  const p=fidelity25.querySelector("#anatomy25-guide");
- if(p)p.textContent="Selected: "+name.textContent+" · "+mode+" view · "+magnification+" focus. Materials use rough non-metallic surfaces, warm key light, cool edge light, tone mapping and depth shading. Camera and light colors are illustrative.";
+ if(p)p.textContent="Selected: "+name.textContent+" · "+mode+" view · "+magnification+" focus. Materials use rough non-metallic surfaces, warm key light, cool edge light, tone mapping and depth shading. Camera and light colors are illustrative.";updateReferences26();
 }
+
+const SCIENCE26_REFERENCES=Object.freeze({
+ barrier:{label:"Turner (2009), intestinal epithelial barrier · DOI 10.1038/nri2653 · PMID 19855405",url:"https://pubmed.ncbi.nlm.nih.gov/19855405/"},
+ immune:{label:"Drummond et al. (2011), SYK/CARD9 fungal immune recognition · DOI 10.1002/eji.201041252 · PMID 21267996",url:"https://pubmed.ncbi.nlm.nih.gov/21267996/"},
+ synapse:{label:"Südhof (2013), synaptic vesicle release · DOI 10.1016/j.neuron.2013.10.022 · PMID 24183019",url:"https://pubmed.ncbi.nlm.nih.gov/24183019/"}
+});
+const sourceByPart=Object.freeze({
+ junction:"barrier",tight23:"barrier",epithelium:"barrier",villus:"barrier",
+ receptor:"immune",dectin23:"immune",syk23:"immune",membrane:"immune",
+ synapse:"synapse",synapse23:"synapse",axon23:"synapse",neuron:"synapse"
+});
+function updateReferences26(){
+ const area=fidelity25.querySelector("#anatomy26-references");if(!area)return;
+ area.replaceChildren();
+ const tag=sourceByPart[selected];
+ const p=document.createElement("p");
+ p.textContent="Research context, NOT validation of the drawn geometry, scale, timing or dietary efficacy.";
+ area.append(p);
+ if(tag){
+  const a=document.createElement("a"),source=SCIENCE26_REFERENCES[tag];
+  a.href=source.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=source.label;a.style.color="#d3dfad";area.append(a);
+ }else{
+  const p2=document.createElement("p");p2.textContent="No claim-specific research citation assigned to this visual structure; expert review pending.";area.append(p2);
+ }
+}
+const perf26Panel=document.createElement("section");perf26Panel.id="anatomy26-performance";
+perf26Panel.setAttribute("aria-label","Phase 26 opt in frame timing profile");
+perf26Panel.style.cssText="margin-top:12px;padding:12px;background:#10262b;border:1px solid #51736e;border-radius:9px";
+perf26Panel.innerHTML='<strong>Phase 26 · Visible-frame performance sample</strong><p style="font-size:12px">Capture 90 consecutive rendered frame intervals using the EXISTING animation loop. Figures describe browser scheduling plus CPU-side rendering; they are NOT GPU timings or FPS certification.</p><button type="button" id="anatomy26-profile">Profile 90 visible frames</button><p id="anatomy26-profile-status" role="status">Idle. Start the 3D scene and keep the anatomy panel visible.</p>';
+section.append(perf26Panel);
+function finishPerf26(){
+ perf26.active=false;perf26.previous=null;
+ const gaps=[...perf26.samples].sort((a,b)=>a-b),mean=perf26.samples.reduce((a,b)=>a+b,0)/Math.max(1,perf26.samples.length);
+ const p95=gaps[Math.min(gaps.length-1,Math.floor(gaps.length*.95))]||0;
+ const peakCalls=Math.max(...perf26.calls),peakTriangles=Math.max(...perf26.triangles);
+ perf26.result={sampleCount:perf26.samples.length,meanFrameIntervalMs:Math.round(mean*100)/100,p95IntervalMs:Math.round(p95*100)/100,maximumDrawCalls:peakCalls,maximumTriangles:peakTriangles,mode,clock:"requestAnimationFrame",gpuTimingMeasured:false};
+ perf26Panel.querySelector("#anatomy26-profile-status").textContent="Profile complete: "+perf26.result.sampleCount+" frames · mean "+perf26.result.meanFrameIntervalMs+" ms · p95 "+perf26.result.p95IntervalMs+" ms · max draw calls "+peakCalls+" · max triangles "+peakTriangles+". Not GPU timing.";
+ perf26Panel.querySelector("#anatomy26-profile").disabled=false;
+}
+perf26Panel.querySelector("#anatomy26-profile").onclick=()=>{
+ init();
+ if(!started){perf26Panel.querySelector("#anatomy26-profile-status").textContent="Cannot profile: renderer failed to initialize.";return;}
+ perf26.active=true;perf26.samples=[];perf26.calls=[];perf26.triangles=[];perf26.previous=null;perf26.result=null;
+ perf26Panel.querySelector("#anatomy26-profile").disabled=true;
+ perf26Panel.querySelector("#anatomy26-profile-status").textContent="Collecting 90 visible rendered frame intervals…";
+};
+window.MycoSimPerf26=Object.freeze({getSnapshot:()=>({...perf26.result}),isProfiling:()=>perf26.active});
+
 const qaButton=document.createElement("button");qaButton.type="button";qaButton.textContent="Run Phase 10 3D QA";
 const qaOutput=document.createElement("pre");qaOutput.setAttribute("role","status");
 qaOutput.style.cssText="white-space:pre-wrap;font:11px/1.5 monospace;background:#0d1d20;border:1px solid #47605d;padding:10px;border-radius:8px;overflow:auto";
