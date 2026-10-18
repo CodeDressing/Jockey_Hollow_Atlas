@@ -163,3 +163,26 @@ test("Phase 17 immune signaling reuses molecular pathway and existing human anat
  await expect(page.locator("#tv-anatomy3d")).toBeVisible();
  await expect(page.locator("#tv-molecular")).toBeHidden();
 });
+
+
+test("Phase 18 shares ingestion model and exposes conservative compound disposition",async({page})=>{
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
+ await page.locator('#myco-lab-nav [data-lab="digestion"]').click();
+ const lab=page.locator("#myco-circulation18");
+ await expect(lab).toBeVisible();
+ await expect(page.locator("#tv-biology #myco-ingestion-lab #myco-circulation18")).toHaveCount(1);
+ await expect(lab.locator("#circulation-steps button")).toHaveCount(7);
+ await lab.locator("#circulation-preparation").selectOption("extract");
+ await expect(lab.locator("#circulation-prep-note")).toContainText("measured composition");
+ await lab.locator("#circulation-preparation").selectOption("powder");
+ await lab.locator("#circulation-steps button").nth(5).click();
+ await expect(lab.locator("#circulation-fate")).toContainText("HYPOTHETICAL");
+ await expect(lab.locator("#circulation-definition")).not.toBeEmpty();
+ await lab.locator("#circulation-qa").click();
+ await expect(lab.locator("#circulation-report")).toContainText("Phase 18 browser checks: 21/21 passed");
+ await lab.locator("#circulation-anatomy").click();
+ await expect(page.locator("#trametes-simulator")).toHaveAttribute("data-active-lab","anatomy");
+ await expect(page.locator("#tv-anatomy3d")).toBeVisible();
+ await expect(page.locator("#tv-biology")).toBeHidden();
+});
