@@ -269,7 +269,7 @@ test('Phase 26 campaign selects uniquely identified original anatomy QA report',
  assert.match(c,/"#anatomy10-report"/);
  assert.match(a,/qaOutput\.id="anatomy10-report"/);
  assert.ok(!c.includes('"pre[role=status]"'));
- assert.match(html,/mycosim\/campaign\.js\?v=phase27-instances-20261018/);
+ assert.match(html,/mycosim\/campaign\.js\?v=phase26-qafix-20261018/);
 });
 
 
