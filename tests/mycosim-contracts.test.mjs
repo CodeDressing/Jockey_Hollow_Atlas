@@ -5,7 +5,7 @@ import {readFileSync} from 'node:fs';
 import {Script} from 'node:vm';
 const read=(p)=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const html=read('sandbox.html');
-const files=['mycosim/digestion_immune.js','mycosim/human_ingestion.js','mycosim/gut_brain.js','mycosim/absorption_circulation18.js','mycosim/neural_interface19.js','mycosim/neurochemistry20.js','mycosim/molecular_process.js','mycosim/immune_signaling17.js','mycosim/campaign.js','mycosim/science_glossary.js','mycosim/release_acceptance.js','mycosim/lab_workspace.js'];
+const files=['mycosim/digestion_immune.js','mycosim/human_ingestion.js','mycosim/gut_brain.js','mycosim/absorption_circulation18.js','mycosim/neural_interface19.js','mycosim/neurochemistry20.js','mycosim/evidence21.js','mycosim/molecular_process.js','mycosim/immune_signaling17.js','mycosim/campaign.js','mycosim/science_glossary.js','mycosim/release_acceptance.js','mycosim/lab_workspace.js'];
 
 test('MycoSim modules are mounted exactly once and in working order',()=>{
  const scripts=[...html.matchAll(/src="(mycosim\/[^"?]+\.js)\?[^\"]*"/g)].map(x=>x[1]);
@@ -144,4 +144,31 @@ test('Phase 20 neurochemistry retains molecular anatomy and grades fungal eviden
  assert.ok(compounds.some(c=>c.evidence.includes('Limited, heterogeneous human trials')));
  const glossary=read('mycosim/science_glossary.js').toLowerCase();
  for(const term of ['NMDA','AMPA','GABA','BDNF','Hericenones','Erinacines'])assert.ok(glossary.includes('"'+term.toLowerCase()+'"'),term);
+});
+
+
+test('Phase 21 reference ledger has valid provenance and no false clinical extrapolations',()=>{
+ const src=read('mycosim/evidence21.js');
+ const references=JSON.parse(src.match(/const EVIDENCE21_SOURCES=(\[[^\n]+\]);/)[1]);
+ const claims=JSON.parse(src.match(/const EVIDENCE21_CLAIMS=(\[[^\n]+\]);/)[1]);
+ assert.equal(references.length,4);
+ assert.ok(claims.length>=6);
+ const ids=new Set(references.map(s=>s.id));
+ assert.equal(ids.size,references.length);
+ for(const s of references){
+  assert.match(s.url,/^https:\/\/pubmed\.ncbi\.nlm\.nih\.gov\/[0-9]+\/$/);
+  assert.ok(/^\d+$/.test(s.pmid));
+  if(s.doi)assert.match(s.doi,/^10\.[0-9]{4,9}\//);
+ }
+ for(const c of claims){
+  assert.ok(c.phase>=15&&c.phase<=20);
+  assert.ok(c.grade&&c.limit);
+  assert.ok(c.source_ids.every(id=>ids.has(id)));
+  if(c.grade==='unverified-hypothesis')assert.equal(c.source_ids.length,0);
+ }
+ assert.match(src,/remote_sync:false/);
+ assert.match(src,/human_signoff:false/);
+ assert.match(src,/SHA-256/);
+ assert.match(src,/manual-local-JSON-only/);
+ assert.match(src,/replaceChildren\(\)/);
 });
