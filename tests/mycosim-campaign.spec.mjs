@@ -288,3 +288,22 @@ test("Phase 21 keyboard, reduced motion and original model preservation",async({
  await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
  await expect(page.locator("#tv-anatomy3d")).toBeVisible();
 });
+
+
+test("Phase 21 consolidated workspace switches without duplicate live modules",async({page})=>{
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
+ const diagnostic=await page.evaluate(()=>{
+  const order=["digestion","pathways","quality","anatomy","specimen"];
+  const start=performance.now();
+  for(let i=0;i<30;i++)window.MycoSimWorkspace.activate(order[i%order.length]);
+  const elapsed=performance.now()-start;
+  const ids=["tv-biology","tv-molecular","tv-anatomy3d","myco-ingestion-lab","myco-microbiome","myco-immune17","myco-circulation18","myco-neural19","myco-neuro20","myco-evidence21"];
+  const duplicateIds=ids.filter(id=>document.querySelectorAll("#"+id).length!==1);
+  return {elapsed,duplicateIds,active:window.MycoSimWorkspace.getActive()};
+ });
+ expect(diagnostic.duplicateIds).toEqual([]);
+ expect(diagnostic.active).toBe("specimen");
+ expect(diagnostic.elapsed).toBeLessThan(3000);
+ // A DOM-navigation smoke budget, NOT renderer frame-rate or long-term GPU endurance.
+});
