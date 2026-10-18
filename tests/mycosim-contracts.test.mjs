@@ -5,7 +5,7 @@ import {readFileSync} from 'node:fs';
 import {Script} from 'node:vm';
 const read=(p)=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const html=read('sandbox.html');
-const files=['mycosim/digestion_immune.js','mycosim/human_ingestion.js','mycosim/gut_brain.js','mycosim/molecular_process.js','mycosim/campaign.js','mycosim/science_glossary.js','mycosim/release_acceptance.js','mycosim/lab_workspace.js'];
+const files=['mycosim/digestion_immune.js','mycosim/human_ingestion.js','mycosim/gut_brain.js','mycosim/molecular_process.js','mycosim/immune_signaling17.js','mycosim/campaign.js','mycosim/science_glossary.js','mycosim/release_acceptance.js','mycosim/lab_workspace.js'];
 
 test('MycoSim modules are mounted exactly once and in working order',()=>{
  const scripts=[...html.matchAll(/src="(mycosim\/[^"?]+\.js)\?[^\"]*"/g)].map(x=>x[1]);
@@ -91,4 +91,23 @@ test('Phase 16 extends the ingestion system and protects neural-claim limits',()
  assert.ok(stages.every(s=>s.name&&s.structure&&s.organism&&s.metabolite&&s.barrier&&s.axis&&s.evidence&&s.definition&&s.pron));
  const glossary=read('mycosim/science_glossary.js');
  for(const term of ['Butyrate','Propionate','Acetate','Enteric nervous system','Vagus nerve','Blood–brain barrier'])assert.ok(glossary.includes('"'+term+'"'),term);
+});
+
+test('Phase 17 extends existing molecular lab and preserves mechanistic uncertainty',()=>{
+ const module=read('mycosim/immune_signaling17.js');
+ assert.match(module,/getElementById\("tv-molecular"\)/);
+ assert.match(module,/getElementById\("tv-anatomy3d"\)/);
+ assert.match(module,/Dectin-1/);
+ assert.match(module,/CARD9/);
+ assert.match(module,/BCL10/);
+ assert.match(module,/MALT1/);
+ assert.match(module,/SYK/);
+ assert.match(module,/HYPOTHETICAL/);
+ assert.match(module,/SpeechSynthesisUtterance/);
+ assert.match(module,/Phase 17 browser checks:/);
+ const stages=JSON.parse(module.match(/const IMMUNE_STEPS=(\[[^\n]+\]);/)[1]);
+ assert.equal(stages.length,8);
+ assert.ok(stages.every(x=>x.mechanism&&x.evidence&&x.term&&x.pron&&x.definition));
+ const glossary=read('mycosim/science_glossary.js');
+ for(const term of ['Macrophage','Dendritic cell','Phosphorylation','Antigen presentation'])assert.ok(glossary.includes('"'+term+'"'),term);
 });
