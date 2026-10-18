@@ -180,6 +180,9 @@ function rebuild(){
  applyVisibility();describe();applyMagnification();updateDynamics24Particles();
 }
 function applyVisibility(){
+ // Always synchronize accessible controls before mesh updates, including after reused/instanced geometry changes.
+ section.querySelector('[data-action="isolate"]').setAttribute("aria-pressed",String(isolated));
+ section.querySelector('[data-action="context"]').setAttribute("aria-pressed",String(transparent));
  for(const [id,objects] of parts)for(const obj of objects){
   const on=!isolated||id===selected;obj.visible=on;
   if(obj.material){const fade=transparent&&id!==selected;obj.material.transparent=fade||id==="mucus";obj.material.opacity=fade?.14:(id==="mucus"?.55:1);obj.material.depthWrite=!obj.material.transparent;obj.material.needsUpdate=true;}
@@ -262,6 +265,7 @@ section.querySelector('[data-action="context"]').onclick=()=>{transparent=!trans
 section.querySelector('[data-action="focus"]').onclick=focus;
 section.querySelector('[data-action="reset"]').onclick=reset;
 section.querySelector('[data-action="read"]').onclick=()=>{if(!("speechSynthesis" in window))return;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(name.textContent+". "+info.textContent);u.rate=.86;window.speechSynthesis.speak(u);};
+window.MycoSimSelection27=Object.freeze({getState:()=>({isolated,transparent,selected,mode,visibleParts:meshes.filter(m=>m.visible).map(m=>m.userData.part),instanceGroups:meshes.filter(m=>m.isInstancedMesh).map(m=>({part:m.userData.part,count:m.count}))})});
 window.addEventListener("pagehide",dispose,{once:true});
 // Opt-in browser diagnostics; these manipulate only this independent 3D scene.
 
