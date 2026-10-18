@@ -114,3 +114,29 @@ test("Phase 15 ingestion reuses digestion and anatomy and passes educational QA"
  await expect(page.locator("#tv-anatomy3d")).toBeVisible();
  await expect(page.locator("#tv-biology")).toBeHidden();
 });
+
+
+test("Phase 16 shared microbiome and gut brain lab passes unattended QA",async({page})=>{
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
+ await page.locator('#myco-lab-nav [data-lab="digestion"]').click();
+ const lab=page.locator("#myco-microbiome");
+ await expect(lab).toBeVisible();
+ await expect(page.locator("#tv-biology #myco-ingestion-lab #myco-microbiome")).toHaveCount(1);
+ await expect(lab.locator("#micro-stage-buttons button")).toHaveCount(7);
+ await lab.locator("#micro-substrate").selectOption("unknown");
+ await expect(lab.locator("#micro-constraint")).toContainText("Unknown preparation");
+ await lab.locator("#micro-substrate").selectOption("fungal");
+ await lab.locator("#micro-stage-buttons button").nth(3).click();
+ await expect(lab.locator("#micro-evidence")).toContainText("HYPOTHETICAL");
+ await lab.locator("#micro-stage-buttons button").nth(6).click();
+ await expect(lab.locator("#micro-axis")).toContainText("not a live synchronized");
+ await expect(lab.locator("#micro-pron")).not.toBeEmpty();
+ await expect(lab.locator("#micro-definition")).not.toBeEmpty();
+ await lab.locator("#micro-qa").click();
+ await expect(lab.locator("#micro-report")).toContainText("Phase 16 browser checks: 19/19 passed");
+ await lab.locator("#micro-3d").click();
+ await expect(page.locator("#trametes-simulator")).toHaveAttribute("data-active-lab","anatomy");
+ await expect(page.locator("#tv-anatomy3d")).toBeVisible();
+ await expect(page.locator("#tv-biology")).toBeHidden();
+});
