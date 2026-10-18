@@ -1,4 +1,6 @@
 import {test, expect} from "@playwright/test";
+// Screenshot capture is a Playwright test option, not a playwright test CLI flag.
+test.use({screenshot:"only-on-failure"});
 
 const pageUrl="http://127.0.0.1:8765/sandbox.html";
 test("Phases 9-12 browser campaign passes in consolidated workspace",async({page})=>{
