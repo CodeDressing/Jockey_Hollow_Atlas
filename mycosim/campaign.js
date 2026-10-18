@@ -60,7 +60,7 @@ if(host&&!document.getElementById("myco-campaign")){
    gate(9,"RUN","digestion and immune QA");const p9=launchTest("tv-biology","Run Phase 9 browser QA","#bio-qa-report",9);
    gate(9,"PASS",p9);append("Phase 9: "+p9+" checks passed");
    current=10;
-   gate(10,"RUN","WebGL 3D anatomy QA");const p10=launchTest("tv-anatomy3d","Run Phase 10 3D QA","pre[role=status]",10);
+   gate(10,"RUN","WebGL 3D anatomy QA");const p10=launchTest("tv-anatomy3d","Run Phase 10 3D QA","#anatomy10-report",10);
    gate(10,"PASS",p10);append("Phase 10: "+p10+" checks passed");
    current=11;
    window.MycoSimWorkspace?.activate("pathways");
