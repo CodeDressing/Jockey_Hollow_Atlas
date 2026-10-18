@@ -303,7 +303,7 @@ perf26Panel.querySelector("#anatomy26-profile").onclick=()=>{
 window.MycoSimPerf26=Object.freeze({getSnapshot:()=>({...perf26.result}),isProfiling:()=>perf26.active,getRenderCount:()=>perf26.renderedFrames});
 
 const qaButton=document.createElement("button");qaButton.type="button";qaButton.textContent="Run Phase 10 3D QA";
-const qaOutput=document.createElement("pre");qaOutput.setAttribute("role","status");
+const qaOutput=document.createElement("pre");qaOutput.id="anatomy10-report";qaOutput.setAttribute("role","status");
 qaOutput.style.cssText="white-space:pre-wrap;font:11px/1.5 monospace;background:#0d1d20;border:1px solid #47605d;padding:10px;border-radius:8px;overflow:auto";
 qaOutput.textContent="3D QA not yet run.";
 const qaBox=document.createElement("div");qaBox.style.marginTop="12px";qaBox.append(qaButton,qaOutput);section.append(qaBox);
