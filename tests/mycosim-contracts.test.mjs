@@ -8,7 +8,7 @@ const html=read('sandbox.html');
 const files=['mycosim/digestion_immune.js','mycosim/molecular_process.js','mycosim/campaign.js','mycosim/science_glossary.js','mycosim/release_acceptance.js','mycosim/lab_workspace.js'];
 
 test('MycoSim modules are mounted exactly once and in working order',()=>{
- const scripts=[...html.matchAll(/src="(mycosim\\/[^"?]+\\.js)\\?[^\"]*"/g)].map(x=>x[1]);
+ const scripts=[...html.matchAll(/src="(mycosim\/[^"?]+\.js)\?[^\"]*"/g)].map(x=>x[1]);
  for(const path of files)assert.equal(scripts.filter(p=>p===path).length,1,path);
  assert.ok(scripts.indexOf('mycosim/lab_workspace.js')>scripts.indexOf('mycosim/release_acceptance.js'));
  assert.equal((html.match(/id="trametes-simulator"/g)||[]).length,1);
@@ -23,11 +23,11 @@ test('All classic educational scripts parse',()=>{
 test('Seven Phase 11 research steps and hypothetical handoff remain protected',()=>{
  const campaign=read('mycosim/campaign.js');
  assert.match(campaign,/HYPOTHETICAL/);
- assert.match(campaign,/handoff\\.entries\\.length!==7/);
+ assert.match(campaign,/handoff\.entries\.length!==7/);
  assert.match(campaign,/NO remote sync test/);
- assert.match(campaign,/launchTest\\("tv-biology"/);
- assert.match(campaign,/launchTest\\("tv-anatomy3d"/);
- assert.match(campaign,/launchTest\\("tv-molecular"/);
+ assert.match(campaign,/launchTest\("tv-biology"/);
+ assert.match(campaign,/launchTest\("tv-anatomy3d"/);
+ assert.match(campaign,/launchTest\("tv-molecular"/);
 });
 
 test('Oral consumption uncertainty remains explicitly disclosed',()=>{
@@ -48,9 +48,9 @@ test('Glossary pronunciation and readback remain integrated',()=>{
 test('Consolidation hides inactive modules without deleting original models',()=>{
  const workspace=read('mycosim/lab_workspace.js');
  for(const id of ['tv-biology','tv-anatomy3d','tv-molecular','myco-campaign','myco-acceptance'])assert.ok(workspace.includes(id),id);
- assert.match(workspace,/element\\.hidden=group!==key/);
- assert.match(workspace,/element\\.inert=group!==key/);
- assert.match(read('mycosim/anatomy3d.js'),/!section\\.hidden/);
+ assert.match(workspace,/element\.hidden=group!==key/);
+ assert.match(workspace,/element\.inert=group!==key/);
+ assert.match(read('mycosim/anatomy3d.js'),/!section\.hidden/);
  assert.match(read('mycosim/trametes_sim.js'),/myco-specimen-pane/);
 });
 
