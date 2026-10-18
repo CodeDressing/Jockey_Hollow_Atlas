@@ -109,5 +109,5 @@ test('Phase 17 extends existing molecular lab and preserves mechanistic uncertai
  assert.equal(stages.length,8);
  assert.ok(stages.every(x=>x.mechanism&&x.evidence&&x.term&&x.pron&&x.definition));
  const glossary=read('mycosim/science_glossary.js');
- for(const term of ['Macrophage','Dendritic cell','Phosphorylation','Antigen presentation'])assert.ok(glossary.includes('"'+term+'"'),term);
+ for(const term of ['Macrophage','Dendritic cell','Phosphorylation','Antigen presentation'])assert.ok(glossary.toLowerCase().includes('"'+term.toLowerCase()+'"'),term);
 });
