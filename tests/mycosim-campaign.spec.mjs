@@ -414,3 +414,27 @@ test("Phase 24 honors reduced motion and retains manual accessible scrubbing",as
  await lab.locator("#dynamics24-next").click();
  await expect(lab.locator("#dynamics24-title")).toContainText("Stage 2/3");
 });
+
+
+test("Phase 25 improved anatomy fidelity retains existing rendering engine and visual controls",async({page})=>{
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
+ await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
+ const anatomy=page.locator("#tv-anatomy3d");
+ await expect(anatomy.locator("#anatomy25-fidelity")).toBeVisible();
+ await expect(anatomy.locator("canvas")).toHaveCount(1);
+ await anatomy.locator('[data-mode="micro"]').click();
+ await anatomy.locator('[data-part="dectin23"]').click();
+ await expect(anatomy.locator("#anatomy25-guide")).toContainText("Dectin-1 receptor");
+ await anatomy.locator("#anatomy25-qa").click();
+ await expect(anatomy.locator("#anatomy25-report")).toContainText("Phase 25 browser checks: 13/13 passed",{timeout:30000});
+ for(const [mode,count] of [["gut",4],["cell",6],["tissue",7],["micro",9]]){
+  await anatomy.locator('[data-mode="'+mode+'"]').click();
+  await expect(anatomy.locator(".anatomy-picker button")).toHaveCount(count);
+ }
+ await expect(anatomy.locator('[data-action="isolate"]')).toBeVisible();
+ await expect(anatomy.locator('[data-action="context"]')).toBeVisible();
+ await expect(anatomy.locator('[data-action="reset"]')).toBeVisible();
+ await expect(anatomy.locator('[data-action="read"]')).toBeVisible();
+ await expect(page.locator("#myco-dynamics24")).toHaveCount(1);
+});
