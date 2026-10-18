@@ -50,7 +50,7 @@ test('Consolidation hides inactive modules without deleting original models',()=
  for(const id of ['tv-biology','tv-anatomy3d','tv-molecular','myco-campaign','myco-acceptance'])assert.ok(workspace.includes(id),id);
  assert.match(workspace,/element\.hidden=group!==key/);
  assert.match(workspace,/element\.inert=group!==key/);
- assert.match(read('mycosim/anatomy3d.js'),/!section\.hidden/);
+ assert.match(read('mycosim/anatomy3d.js'),/section\.isConnected&&section\.getClientRects\(\)\.length>0/);
  assert.match(read('mycosim/trametes_sim.js'),/myco-specimen-pane/);
 });
 
@@ -187,7 +187,7 @@ test('Phase 22 tissue structures reuse the existing anatomy renderer',()=>{
  assert.match(src,/releaseGeometry\(\)/);
  assert.match(src,/geometrySet\.size===geo/);
  assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
- assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase25-fidelity-20261018/);
+ assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase26-visibility-20261018/);
 });
 
 
@@ -203,7 +203,7 @@ test('Phase 23 microanatomy is selectable within one retained WebGL renderer',()
  for(const mag of ['overview','cell','molecular'])assert.ok(src.includes('data-mag="'+mag+'"'),mag);
  assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
  assert.equal((src.match(/<canvas /g)||[]).length,1);
- assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase25-fidelity-20261018/);
+ assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase26-visibility-20261018/);
 });
 
 
@@ -225,7 +225,7 @@ test('Phase 24 controlled signaling uses existing scene loop and preserves scien
  assert.match(src,/NOT molecular dynamics/);
  assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
  assert.equal((src.match(/raf=requestAnimationFrame\(loop\)/g)||[]).length,1);
- assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase25-fidelity-20261018/);
+ assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase26-visibility-20261018/);
 });
 
 
@@ -243,5 +243,22 @@ test('Phase 25 fidelity upgrades preserve one existing renderer, measured limits
  assert.match(src,/NOT TO SCALE/);
  assert.match(src,/NOT molecular dynamics/);
  assert.match(src,/resource accounting stable/i);
- assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase25-fidelity-20261018/);
+ assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase26-visibility-20261018/);
+});
+
+
+test('Phase 26 real parent-tab visibility and honest frame diagnostics',()=>{
+ const src=read('mycosim/anatomy3d.js');
+ assert.match(src,/!document\.hidden&&section\.isConnected&&section\.getClientRects\(\)\.length>0/);
+ assert.match(src,/const perf26=\{/);
+ assert.match(src,/function finishPerf26\(\)/);
+ assert.match(src,/getRenderCount:\(\)=>perf26\.renderedFrames/);
+ assert.match(src,/getSnapshot:\(\)=>/);
+ assert.match(src,/gpuTimingMeasured:false/);
+ assert.match(src,/anatomy26-profile/);
+ assert.match(src,/anatomy26-references/);
+ for(const pmid of ['19855405','21267996','24183019'])assert.ok(src.includes(pmid),pmid);
+ assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
+ assert.equal((src.match(/raf=requestAnimationFrame\(loop\)/g)||[]).length,1);
+ assert.match(html,/anatomy3d\.js\?v=phase26-visibility-20261018/);
 });
