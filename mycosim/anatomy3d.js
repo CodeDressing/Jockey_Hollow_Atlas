@@ -11,7 +11,7 @@ section.style.cssText="margin-top:18px;padding:16px;border:1px solid #49615e;bor
 section.innerHTML='<style>#tv-anatomy3d h3{color:#f0dca9;margin:5px 0;font-size:19px}#tv-anatomy3d p{font-size:12px;line-height:1.55;color:#c8d6d1}#tv-anatomy3d canvas{display:block;width:100%;height:440px;touch-action:none;background:#0a1417;border-radius:9px}#tv-anatomy3d .anatomy-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(220px,1fr);gap:12px}#tv-anatomy3d .anatomy-controls{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}#tv-anatomy3d button{padding:8px 11px;color:#edf3ec;background:#1b2c2f;border:1px solid #536e69;border-radius:7px;cursor:pointer}#tv-anatomy3d button[aria-pressed=true]{background:#634f29;border-color:#f1d18c}#tv-anatomy3d button:focus-visible{outline:2px solid #f6d689}#tv-anatomy3d .anatomy-info{border:1px solid #3b5355;background:#101f22;padding:12px;border-radius:9px}#tv-anatomy3d .anatomy-info h4{margin:0 0 8px;color:#f0dca9;font-size:15px}#tv-anatomy3d .anatomy-status{font-size:11px;color:#c1d0ca}#tv-anatomy3d .anatomy-warning{border-left:3px solid #ddb978;padding:9px;background:#242018;color:#f1dcb1}#tv-anatomy3d .anatomy-picker{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}@media(max-width:800px){#tv-anatomy3d .anatomy-grid{grid-template-columns:1fr}#tv-anatomy3d canvas{height:350px}}</style>'+
 '<div class="kicker">MYCOSIM · PHASE 10 · 3D ANATOMICAL RECONSTRUCTION</div><h3>Human digestion and immune-cell anatomy</h3><p>Interactive procedural 3D schematic: drag to orbit, scroll to zoom, click a structure, then isolate or reveal surrounding layers. Switch between digestive organs and a magnified intestinal immune interface. Relative positions and shapes are simplified for teaching.</p>'+
 '<p class="anatomy-warning">Illustrative anatomy, not a patient-specific scan. The immune-cell view does not establish that orally consumed Turkey Tail material reaches the shown receptor.</p>'+
-'<div class="anatomy-controls" role="group" aria-label="3D scene mode"><button type="button" data-mode="gut" aria-pressed="true">Digestive organs</button><button type="button" data-mode="cell" aria-pressed="false">Intestinal barrier + immune cell</button><button type="button" data-action="start">Start 3D</button></div>'+
+'<div class="anatomy-controls" role="group" aria-label="3D scene mode"><button type="button" data-mode="gut" aria-pressed="true">Digestive organs</button><button type="button" data-mode="cell" aria-pressed="false">Intestinal barrier + immune cell</button><button type="button" data-mode="tissue" aria-pressed="false">Multi-system tissue layers</button><button type="button" data-action="start">Start 3D</button></div>'+
 '<div class="anatomy-grid"><div><canvas id="tv-anatomy-canvas" aria-label="Procedural 3D anatomical reconstruction of digestive organs or epithelial barrier and immune cell"></canvas><p class="anatomy-status" id="tv-anatomy-status" role="status">Scene not started. Choose Start 3D.</p></div>'+
 '<aside class="anatomy-info"><h4 id="tv-anatomy-name">Digestive organs</h4><p id="tv-anatomy-detail">Select Start 3D, then click any anatomical part.</p><div class="anatomy-picker" role="group" aria-label="Select anatomical structures"></div><div class="anatomy-controls"><button type="button" data-action="isolate" aria-pressed="false">Isolate selected</button><button type="button" data-action="context" aria-pressed="false">Transparent context</button><button type="button" data-action="focus">Focus selection</button><button type="button" data-action="reset">Reset view</button><button type="button" data-action="read">🔊 Read</button></div></aside></div>';
 host.append(section);
@@ -28,6 +28,14 @@ const modes={gut:[
 ["receptor","Dectin-1 receptor","Schematic surface receptor recognizing appropriately accessible fungal β-glucan in laboratory systems. Oral access is not established here."],
 ["cytoplasm","Cytoplasm","Intracellular compartment hosting signaling proteins including SYK and CARD9-associated networks in appropriate experimental contexts."],
 ["nucleus","Nucleus","DNA-containing compartment; NF-κB may regulate transcription following appropriate cell stimulation."]
+],tissue:[
+["villus","Epithelial villus and mucus","Schematic intestinal villus lined by enterocytes with a semitransparent mucus cap; dimensions are illustrative, not an anatomical reference model."],
+["junction","Tight junction barrier","Simplified junction rings between enterocytes. Real tight junctions are nanoscale molecular complexes not represented to scale."],
+["vessel","Portal microvasculature","A stylized vessel and circulating blood-cell markers; portal supply, flow and hepatocyte access are not quantitative simulations."],
+["hepatocyte","Hepatocytes","Cluster of liver parenchymal cells with approximate nuclei; metabolism and extraction fractions are not modeled."],
+["macrophage","Macrophage","A simplified innate immune cell near a tissue interface, not proof of oral fungal-glucan receptor engagement."],
+["neuron","Enteric neuron and axon","Stylized neuron soma, neurites and axon representing enteric signaling; not a complete ENS anatomical map."],
+["synapse","Synaptic terminals","Two illustrative pre- and postsynaptic terminals with vesicles. Synaptic transport, receptor occupancy and brain effects are not simulated."]
 ]};
 let mode="gut",selected="stomach",isolated=false,transparent=false,started=false,renderer=null,scene=null,camera=null,controls=null,root=null,ray=null,resizeObserver=null,raf=0;
 let parts=new Map(),meshes=[],geometrySet=new Set(),materialSet=new Set();
@@ -60,6 +68,30 @@ function buildCell(){
  body.rotation.z=-.28;
  sphere("receptor",[-.78,.4,.19],[.22,.17,.18],0xf0cf8a);
 }
+function buildTissue(){
+ // Shared renderer, schematic teaching layers; no external 3D scene or remote assets.
+ for(let i=0;i<5;i++){
+  const x=-2.0+i*1.0;
+  sphere("villus",[x,1.37,-.35],[.39,.63,.36],0xabc7bf);
+  sphere("junction",[x+.46,1.28,-.05],[.095,.45,.07],0xe6ca87);
+ }
+ sphere("villus",[0,2.01,-.35],[2.75,.17,.63],0x78b8b4);
+ tube("vessel",[[-2.25,.25,-.55],[-1.2,.05,-.6],[0,-.02,-.6],[1.2,.05,-.6],[2.2,.25,-.55]],.18,0xae6268);
+ for(let j=0;j<5;j++)sphere("vessel",[-1.8+j*.9,.08,-.38],[.12,.09,.06],0xdd8585);
+ for(let j=0;j<4;j++){
+  const x=-1.52+j*1.02;
+  sphere("hepatocyte",[x,-.82,-.16],[.4,.37,.34],0xc6a575);
+  sphere("hepatocyte",[x+.1,-.84,.16],[.14,.13,.12],0x805d77);
+ }
+ sphere("macrophage",[-1.6,-1.64,.42],[.4,.37,.34],0x55a6a0);
+ for(let a=0;a<6;a++){const theta=a*Math.PI/3;tube("macrophage",[[-1.6,-1.64,.42],[-1.6+Math.cos(theta)*.59,-1.64+Math.sin(theta)*.45,.42]],.047,0x78c3b3);}
+ sphere("neuron",[.5,-1.55,.43],[.27,.27,.25],0x9581c5);
+ tube("neuron",[[.7,-1.56,.43],[1.3,-1.52,.4],[1.8,-1.43,.42]],.08,0x9f95db);
+ for(let a=0;a<4;a++){const q=a*Math.PI/2;tube("neuron",[[.35,-1.55,.43],[.10+Math.cos(q)*.40,-1.55+Math.sin(q)*.39,.43]],.042,0xb8a4d9);}
+ sphere("synapse",[1.97,-1.40,.43],[.22,.18,.18],0xe6bc77);
+ sphere("synapse",[2.52,-1.40,.43],[.22,.18,.18],0x82b6cd);
+ for(let i=0;i<4;i++)sphere("synapse",[2.13+(i%2)*.12,-1.48+Math.floor(i/2)*.12,.57],[.035,.035,.03],0xffdb94);
+}
 function releaseGeometry(){
  if(root)scene.remove(root);
  for(const geo of geometrySet)geo.dispose();
@@ -69,7 +101,7 @@ function releaseGeometry(){
 function rebuild(){
  if(!started)return;
  releaseGeometry();root=new THREE.Group();scene.add(root);
- if(mode==="gut")buildGut();else buildCell();
+ if(mode==="gut")buildGut();else if(mode==="cell")buildCell();else buildTissue();
  controls.target.set(0,0,0);camera.position.set(4,2.5,7);controls.update();
  applyVisibility();describe();
 }
@@ -166,5 +198,38 @@ qaButton.onclick=()=>{
  "\nScope: WebGL creation, DOM controls, geometry, selection and visibility. Does not confirm medical anatomical fidelity, FPS endurance or production deployment.";
  qaOutput.style.borderColor=count===results.length?"#4e815d":"#b8655a";
 };
+
+const tissueQA=document.createElement("div");
+tissueQA.style.cssText="margin-top:12px;padding:12px;background:#122328;border:1px solid #55746e;border-radius:9px";
+tissueQA.innerHTML='<strong>Phase 22 · Tissue anatomy validation</strong><p class="anatomy-warning">SCHEMATIC / NOT TO SCALE: tissue structures are educational, not imaging-derived, histologically validated, or measured human exposure models.</p><button type="button" id="anatomy22-run">Run Phase 22 renderer QA</button><pre id="anatomy22-report" role="status" style="font:11px/1.5 monospace;white-space:pre-wrap;overflow-wrap:anywhere">Not run.</pre>';
+section.append(tissueQA);
+tissueQA.querySelector("#anatomy22-run").onclick=()=>{
+ const before={mode,selected,isolated,transparent};const checks=[],check=(label,valid)=>checks.push({label,pass:!!valid});
+ try{
+  init();changeMode("tissue");
+  check("Reuse original WebGL canvas and renderer",started&&canvas.id==="tv-anatomy-canvas"&&!!renderer);
+  check("Seven tissue structure categories",modes.tissue.length===7);
+  for(const [id] of modes.tissue)check(id+" meshes and selection",parts.has(id)&&parts.get(id).length>0);
+  check("All selectable structures have descriptions",modes.tissue.every(item=>item[2].length>40));
+  check("No new canvas required",section.querySelectorAll("canvas").length===1);
+  check("Low power pixel ratio capped",renderer.getPixelRatio()<=1.5);
+  const total=meshes.length,geo=geometrySet.size,mat=materialSet.size;
+  rebuild();
+  check("Rebuild disposes and replaces geometry without growth",meshes.length===total&&geometrySet.size===geo&&materialSet.size===mat);
+  select("synapse");isolated=true;applyVisibility();
+  check("Synapse isolation",meshes.every(o=>o.visible===(o.userData.part==="synapse")));
+  isolated=false;transparent=true;applyVisibility();
+  check("Context overlay transparency",meshes.some(o=>o.userData.part!=="synapse"&&o.material.opacity<1));
+  check("Original legacy scene types preserved",modes.gut.length===4&&modes.cell.length===6);
+  check("Schematic / no clinical promise",tissueQA.textContent.includes("NOT TO SCALE"));
+ }catch(e){check("Unexpected 3D exception "+String(e),false);}
+ finally{
+  changeMode(before.mode);select(before.selected);isolated=before.isolated;transparent=before.transparent;
+  if(started)applyVisibility();
+ }
+ const passed=checks.filter(x=>x.pass).length;
+ tissueQA.querySelector("#anatomy22-report").textContent="Phase 22 browser checks: "+passed+"/"+checks.length+" passed\n"+checks.map(x=>(x.pass?"PASS ":"FAIL ")+x.label).join("\n")+"\nNot a scientific anatomy, screen-reader, or GPU endurance certification.";
+};
+
 changeMode("gut");
 }
