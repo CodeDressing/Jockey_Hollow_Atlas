@@ -43,7 +43,7 @@ let magnification="overview";
 let mode="gut",selected="stomach",isolated=false,transparent=false,started=false,renderer=null,scene=null,camera=null,controls=null,root=null,ray=null,resizeObserver=null,raf=0;
 let parts=new Map(),meshes=[],geometrySet=new Set(),materialSet=new Set();
 // Phase 26: opt-in frame measurements. No additional rendering loop.
-const perf26={active:false,samples:[],calls:[],triangles:[],previous:null,result:null};
+const perf26={active:false,samples:[],calls:[],triangles:[],previous:null,result:null,renderedFrames:0};
 const picker=section.querySelector(".anatomy-picker");
 function updatePicker(){
  picker.replaceChildren();
@@ -204,7 +204,7 @@ function init(){
      const scrub=section.querySelector("#dynamics24-progress");if(scrub)scrub.value=String(Math.round(dynamics24Progress*100));
     }else if(reduced&&dynamics24Playing){dynamics24Playing=false;renderDynamics24();}
     dynamics24LastFrame=time;
-    controls.update();renderer.render(scene,camera);
+    controls.update();renderer.render(scene,camera);perf26.renderedFrames++;
     if(perf26.active){
      if(perf26.previous!==null){
       const gap=time-perf26.previous;
@@ -300,7 +300,7 @@ perf26Panel.querySelector("#anatomy26-profile").onclick=()=>{
  perf26Panel.querySelector("#anatomy26-profile").disabled=true;
  perf26Panel.querySelector("#anatomy26-profile-status").textContent="Collecting 90 visible rendered frame intervals…";
 };
-window.MycoSimPerf26=Object.freeze({getSnapshot:()=>({...perf26.result}),isProfiling:()=>perf26.active});
+window.MycoSimPerf26=Object.freeze({getSnapshot:()=>({...perf26.result}),isProfiling:()=>perf26.active,getRenderCount:()=>perf26.renderedFrames});
 
 const qaButton=document.createElement("button");qaButton.type="button";qaButton.textContent="Run Phase 10 3D QA";
 const qaOutput=document.createElement("pre");qaOutput.setAttribute("role","status");
