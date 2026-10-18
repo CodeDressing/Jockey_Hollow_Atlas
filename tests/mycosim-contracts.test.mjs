@@ -187,7 +187,7 @@ test('Phase 22 tissue structures reuse the existing anatomy renderer',()=>{
  assert.match(src,/releaseGeometry\(\)/);
  assert.match(src,/geometrySet\.size===geo/);
  assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
- assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase24-motion-20261018/);
+ assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase25-fidelity-20261018/);
 });
 
 
@@ -203,7 +203,7 @@ test('Phase 23 microanatomy is selectable within one retained WebGL renderer',()
  for(const mag of ['overview','cell','molecular'])assert.ok(src.includes('data-mag="'+mag+'"'),mag);
  assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
  assert.equal((src.match(/<canvas /g)||[]).length,1);
- assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase24-motion-20261018/);
+ assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase25-fidelity-20261018/);
 });
 
 
@@ -225,5 +225,23 @@ test('Phase 24 controlled signaling uses existing scene loop and preserves scien
  assert.match(src,/NOT molecular dynamics/);
  assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
  assert.equal((src.match(/raf=requestAnimationFrame\(loop\)/g)||[]).length,1);
- assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase24-motion-20261018/);
+ assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase25-fidelity-20261018/);
+});
+
+
+test('Phase 25 fidelity upgrades preserve one existing renderer, measured limits and evidence warnings',()=>{
+ const src=read('mycosim/anatomy3d.js');
+ assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
+ assert.equal((src.match(/raf=requestAnimationFrame\(loop\)/g)||[]).length,1);
+ assert.match(src,/ACESFilmicToneMapping/);
+ assert.match(src,/FogExp2/);
+ assert.match(src,/function updateFidelity25\(\)/);
+ assert.match(src,/new THREE\.DirectionalLight\(0x85bdde/);
+ assert.match(src,/renderer\.setPixelRatio\(Math\.min\(window\.devicePixelRatio\|\|1,1\.5\)\)/);
+ assert.match(src,/anatomy25-qa/);
+ assert.match(src,/Phase 25 browser checks:/);
+ assert.match(src,/NOT TO SCALE/);
+ assert.match(src,/NOT molecular dynamics/);
+ assert.match(src,/resource accounting stable/i);
+ assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase25-fidelity-20261018/);
 });
