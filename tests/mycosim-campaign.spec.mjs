@@ -376,7 +376,7 @@ test("Phase 24 molecular motion, scientific caveats and preserved scene controls
  await expect(lab.locator("#dynamics24-title")).toContainText("Stage 1/3");
  await lab.locator("#dynamics24-next").click();
  await expect(lab.locator("#dynamics24-title")).toContainText("Stage 2/3");
- await lab.locator("#dynamics24-progress").fill("50");
+ await lab.locator("#dynamics24-progress").evaluate(el=>{el.value="50";el.dispatchEvent(new Event("input",{bubbles:true}));});
  await expect(lab.locator("#dynamics24-progress")).toHaveValue("50");
  await lab.locator("#dynamics24-qa").click();
  await expect(lab.locator("#dynamics24-report")).toContainText("Phase 24 browser checks: 19/19 passed",{timeout:30000});
@@ -404,7 +404,7 @@ test("Phase 24 honors reduced motion and retains manual accessible scrubbing",as
  await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
  await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
  const lab=page.locator("#myco-dynamics24");
- await lab.locator("#dynamics24-process").selectOption("gaba");
+ await lab.locator("#dynamics24-process").selectOption({label:"GABA-A inhibitory signaling"});
  await lab.locator("#dynamics24-play").click();
  await expect(lab.locator("#dynamics24-state")).toContainText("Reduced motion");
  expect((await page.evaluate(()=>window.MycoSimMotion24.getState())).playing).toBe(false);
