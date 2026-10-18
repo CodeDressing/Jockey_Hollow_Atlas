@@ -502,8 +502,11 @@ test("Phase 27 instancing retains semantic selection and beats Phase 26 scene co
  await lab.locator('[data-action="isolate"]').focus();
  await page.keyboard.press("Enter");
  await expect(lab.locator('[data-action="isolate"]')).toHaveAttribute("aria-pressed","true");
+ expect((await page.evaluate(()=>window.MycoSimSelection27.getState())).isolated).toBe(true);
+ expect((await page.evaluate(()=>window.MycoSimSelection27.getState())).visibleParts.every(p=>p==="bilayer")).toBe(true);
  await page.keyboard.press("Enter");
  await expect(lab.locator('[data-action="isolate"]')).toHaveAttribute("aria-pressed","false");
+ expect((await page.evaluate(()=>window.MycoSimSelection27.getState())).isolated).toBe(false);
  await lab.locator('[data-action="context"]').click();
  await expect(lab.locator('[data-action="context"]')).toHaveAttribute("aria-pressed","true");
  await lab.locator('[data-action="context"]').click();
