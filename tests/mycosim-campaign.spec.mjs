@@ -90,3 +90,27 @@ test("Unified laboratory keyboard tabs and module preservation",async({page})=>{
  await expect(page.locator("#tv-anatomy3d")).toHaveCount(1);
  await expect(page.locator("#tv-molecular")).toHaveCount(1);
 });
+
+
+test("Phase 15 ingestion reuses digestion and anatomy and passes educational QA",async({page})=>{
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
+ await page.locator('#myco-lab-nav [data-lab="digestion"]').click();
+ const lab=page.locator("#myco-ingestion-lab");
+ await expect(lab).toBeVisible();
+ await expect(page.locator("#tv-biology #myco-ingestion-lab")).toHaveCount(1);
+ await expect(lab.locator("#ingestion-steps button")).toHaveCount(7);
+ await lab.locator("#ingestion-material").selectOption("extract");
+ await expect(lab.locator("#ingestion-preparation")).toContainText("extraction method");
+ await lab.locator("#ingestion-material").selectOption("powder");
+ await expect(lab.locator(".ingestion-warning")).toContainText("PSK or PSP");
+ await lab.locator("#ingestion-steps button").nth(5).click();
+ await expect(lab.locator("#ingestion-evidence")).toContainText("HYPOTHETICAL");
+ await expect(lab.locator("#ingestion-definition")).not.toBeEmpty();
+ await lab.locator("#ingestion-qa").click();
+ await expect(lab.locator("#ingestion-qa-result")).toContainText("Phase 15 browser checks: 17/17 passed");
+ await lab.locator("#ingestion-3d").click();
+ await expect(page.locator("#trametes-simulator")).toHaveAttribute("data-active-lab","anatomy");
+ await expect(page.locator("#tv-anatomy3d")).toBeVisible();
+ await expect(page.locator("#tv-biology")).toBeHidden();
+});
