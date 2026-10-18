@@ -7,6 +7,7 @@ on:
       - 'sandbox.html'
       - 'mycosim/**'
       - 'tests/mycosim-campaign.spec.mjs'
+      - 'tests/mycosim-contracts.test.mjs'
       - '.github/workflows/mycosim-qa.yml'
   workflow_dispatch:
 
@@ -24,6 +25,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Validate MycoSim contracts without a browser
+        run: node --test tests/mycosim-contracts.test.mjs
       - name: Install browser test tooling
         run: |
           npm install --no-save @playwright/test
@@ -38,7 +41,7 @@ jobs:
           echo "Local web server did not start" >&2
           exit 1
       - name: Test integrated simulation and responsive layout
-        run: npx playwright test tests/mycosim-campaign.spec.mjs --browser=chromium --workers=1 --reporter=line
+        run: npx playwright test tests/mycosim-campaign.spec.mjs --browser=chromium --workers=1 --reporter=line --trace=retain-on-failure --screenshot=only-on-failure
       - name: Upload failure artifacts
         if: failure()
         uses: actions/upload-artifact@v4
