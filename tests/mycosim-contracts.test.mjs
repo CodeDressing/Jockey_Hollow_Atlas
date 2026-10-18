@@ -187,7 +187,7 @@ test('Phase 22 tissue structures reuse the existing anatomy renderer',()=>{
  assert.match(src,/releaseGeometry\(\)/);
  assert.match(src,/geometrySet\.size===geo/);
  assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
- assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase26-visibility-20261018/);
+ assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase26-qafix-20261018/);
 });
 
 
@@ -203,7 +203,7 @@ test('Phase 23 microanatomy is selectable within one retained WebGL renderer',()
  for(const mag of ['overview','cell','molecular'])assert.ok(src.includes('data-mag="'+mag+'"'),mag);
  assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
  assert.equal((src.match(/<canvas /g)||[]).length,1);
- assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase26-visibility-20261018/);
+ assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase26-qafix-20261018/);
 });
 
 
@@ -225,7 +225,7 @@ test('Phase 24 controlled signaling uses existing scene loop and preserves scien
  assert.match(src,/NOT molecular dynamics/);
  assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
  assert.equal((src.match(/raf=requestAnimationFrame\(loop\)/g)||[]).length,1);
- assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase26-visibility-20261018/);
+ assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase26-qafix-20261018/);
 });
 
 
@@ -243,7 +243,7 @@ test('Phase 25 fidelity upgrades preserve one existing renderer, measured limits
  assert.match(src,/NOT TO SCALE/);
  assert.match(src,/NOT molecular dynamics/);
  assert.match(src,/resource accounting stable/i);
- assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase26-visibility-20261018/);
+ assert.match(read('sandbox.html'),/anatomy3d\.js\?v=phase26-qafix-20261018/);
 });
 
 
@@ -260,5 +260,14 @@ test('Phase 26 real parent-tab visibility and honest frame diagnostics',()=>{
  for(const pmid of ['19855405','21267996','24183019'])assert.ok(src.includes(pmid),pmid);
  assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
  assert.equal((src.match(/raf=requestAnimationFrame\(loop\)/g)||[]).length,1);
- assert.match(html,/anatomy3d\.js\?v=phase26-visibility-20261018/);
+ assert.match(html,/anatomy3d\.js\?v=phase26-qafix-20261018/);
+});
+
+
+test('Phase 26 campaign selects uniquely identified original anatomy QA report',()=>{
+ const c=read('mycosim/campaign.js'),a=read('mycosim/anatomy3d.js');
+ assert.match(c,/"#anatomy10-report"/);
+ assert.match(a,/qaOutput\.id="anatomy10-report"/);
+ assert.ok(!c.includes('"pre[role=status]"'));
+ assert.match(html,/mycosim\/campaign\.js\?v=phase26-qafix-20261018/);
 });
