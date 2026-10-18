@@ -5,7 +5,7 @@ import {readFileSync} from 'node:fs';
 import {Script} from 'node:vm';
 const read=(p)=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const html=read('sandbox.html');
-const files=['mycosim/digestion_immune.js','mycosim/human_ingestion.js','mycosim/gut_brain.js','mycosim/absorption_circulation18.js','mycosim/neural_interface19.js','mycosim/molecular_process.js','mycosim/immune_signaling17.js','mycosim/campaign.js','mycosim/science_glossary.js','mycosim/release_acceptance.js','mycosim/lab_workspace.js'];
+const files=['mycosim/digestion_immune.js','mycosim/human_ingestion.js','mycosim/gut_brain.js','mycosim/absorption_circulation18.js','mycosim/neural_interface19.js','mycosim/neurochemistry20.js','mycosim/molecular_process.js','mycosim/immune_signaling17.js','mycosim/campaign.js','mycosim/science_glossary.js','mycosim/release_acceptance.js','mycosim/lab_workspace.js'];
 
 test('MycoSim modules are mounted exactly once and in working order',()=>{
  const scripts=[...html.matchAll(/src="(mycosim\/[^"?]+\.js)\?[^\"]*"/g)].map(x=>x[1]);
@@ -131,4 +131,17 @@ test('Phase 19 neural interface is integrated and preserves causal uncertainties
  assert.ok(steps.every(s=>s.title&&s.mechanism&&s.barrier&&s.evidence&&s.term&&s.pron&&s.definition));
  const glossary=read('mycosim/science_glossary.js').toLowerCase();
  for(const term of ['Nucleus tractus solitarius','Enteroendocrine cell','Neurovascular unit','Hypothalamus','Pharmacodynamics'])assert.ok(glossary.includes('"'+term.toLowerCase()+'"'),term);
+});
+
+test('Phase 20 neurochemistry retains molecular anatomy and grades fungal evidence',()=>{
+ const module=read('mycosim/neurochemistry20.js');
+ for(const word of ['tv-molecular','myco-neural19','myco-immune17','tv-anatomy3d','SpeechSynthesisUtterance','Phase 20 browser checks:'])assert.ok(module.includes(word),word);
+ const steps=JSON.parse(module.match(/const NEURO20_STEPS=(\[[^\n]+\]);/)[1]);
+ const compounds=JSON.parse(module.match(/const LION20_EVIDENCE=(\[[^\n]+\]);/)[1]);
+ assert.equal(steps.length,8);assert.equal(compounds.length,4);
+ assert.ok(steps.every(s=>s.mechanism&&s.role&&s.evidence&&s.term&&s.pron&&s.definition));
+ assert.ok(compounds.every(c=>c.preparation&&c.mechanism&&c.evidence));
+ assert.ok(compounds.some(c=>c.evidence.includes('Limited, heterogeneous human trials')));
+ const glossary=read('mycosim/science_glossary.js').toLowerCase();
+ for(const term of ['NMDA','AMPA','GABA','BDNF','Hericenones','Erinacines'])assert.ok(glossary.includes('"'+term.toLowerCase()+'"'),term);
 });
