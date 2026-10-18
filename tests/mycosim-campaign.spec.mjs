@@ -333,3 +333,30 @@ test("Phase 22 shared 3D tissue mode retains original controls and geometry life
  await anatomy.locator('[data-part="neuron"]').click();
  await expect(anatomy.locator('[data-part="neuron"]')).toHaveAttribute("aria-pressed","true");
 });
+
+
+test("Phase 23 microanatomy shares human WebGL renderer and supports keyboard selection",async({page})=>{
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
+ await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
+ const anatomy=page.locator("#tv-anatomy3d");
+ await anatomy.locator('[data-mode="micro"]').click();
+ await expect(anatomy.locator('[data-mode="micro"]')).toHaveAttribute("aria-pressed","true");
+ await expect(anatomy.locator(".anatomy-picker button")).toHaveCount(9);
+ await expect(anatomy.locator("canvas")).toHaveCount(1);
+ await anatomy.locator('[data-mag="cell"]').click();
+ await expect(anatomy.locator('[data-mag="cell"]')).toHaveAttribute("aria-pressed","true");
+ await anatomy.locator('[data-mag="molecular"]').click();
+ await expect(anatomy.locator("#anatomy23-scale")).toContainText("NOT TO SCALE");
+ await anatomy.locator('[data-part="dectin23"]').focus();
+ await page.keyboard.press("Enter");
+ await expect(anatomy.locator('[data-part="dectin23"]')).toHaveAttribute("aria-pressed","true");
+ await anatomy.locator("#anatomy23-run").click();
+ await expect(anatomy.locator("#anatomy23-report")).toContainText("Phase 23 browser checks: 21/21 passed",{timeout:30000});
+ await anatomy.locator('[data-mode="tissue"]').click();
+ await expect(anatomy.locator(".anatomy-picker button")).toHaveCount(7);
+ await anatomy.locator('[data-mode="gut"]').click();
+ await expect(anatomy.locator(".anatomy-picker button")).toHaveCount(4);
+ await anatomy.locator('[data-mode="cell"]').click();
+ await expect(anatomy.locator(".anatomy-picker button")).toHaveCount(6);
+});
