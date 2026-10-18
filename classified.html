@@ -314,7 +314,7 @@ function setupResearchWorkspace(){
   const button=document.createElement("button");button.type="button";button.textContent=label;button.setAttribute("role","tab");button.setAttribute("aria-controls","researchPanel-"+id);button.id="researchTab-"+id;button.addEventListener("click",()=>select(id,true));
   nav.append(button);tabs.set(id,button);
   const panel=document.createElement("section");panel.className="research-workspace";panel.id="researchPanel-"+id;panel.setAttribute("role","tabpanel");panel.setAttribute("aria-labelledby",button.id);panel.tabIndex=-1;
-  const heading=document.createElement("h3");heading.textContent=label.replace(/^\\d+ · /,"");panel.append(heading);
+  const heading=document.createElement("h3");heading.textContent=label.slice(5);panel.append(heading);
   const intro=document.createElement("p");intro.className="workspace-description";intro.textContent=description;panel.append(intro);
   content.append(panel);panels.set(id,panel);
  }
