@@ -5,7 +5,7 @@ import {readFileSync} from 'node:fs';
 import {Script} from 'node:vm';
 const read=(p)=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const html=read('sandbox.html');
-const files=['mycosim/digestion_immune.js','mycosim/human_ingestion.js','mycosim/gut_brain.js','mycosim/molecular_process.js','mycosim/immune_signaling17.js','mycosim/campaign.js','mycosim/science_glossary.js','mycosim/release_acceptance.js','mycosim/lab_workspace.js'];
+const files=['mycosim/digestion_immune.js','mycosim/human_ingestion.js','mycosim/gut_brain.js','mycosim/absorption_circulation18.js','mycosim/molecular_process.js','mycosim/immune_signaling17.js','mycosim/campaign.js','mycosim/science_glossary.js','mycosim/release_acceptance.js','mycosim/lab_workspace.js'];
 
 test('MycoSim modules are mounted exactly once and in working order',()=>{
  const scripts=[...html.matchAll(/src="(mycosim\/[^"?]+\.js)\?[^\"]*"/g)].map(x=>x[1]);
@@ -110,4 +110,15 @@ test('Phase 17 extends existing molecular lab and preserves mechanistic uncertai
  assert.ok(stages.every(x=>x.mechanism&&x.evidence&&x.term&&x.pron&&x.definition));
  const glossary=read('mycosim/science_glossary.js');
  for(const term of ['Macrophage','Dendritic cell','Phosphorylation','Antigen presentation'])assert.ok(glossary.toLowerCase().includes('"'+term.toLowerCase()+'"'),term);
+});
+
+test('Phase 18 preserves earlier models and flags uncertain absorption and brain exposure',()=>{
+ const module=read('mycosim/absorption_circulation18.js');
+ assert.match(module,/getElementById\("myco-ingestion-lab"\)/);
+ for(const term of ['myco-microbiome','myco-immune17','tv-anatomy3d','HYPOTHETICAL','PSK\/PSP','SpeechSynthesisUtterance','Phase 18 browser checks:'])assert.ok(module.includes(term),term);
+ const stages=JSON.parse(module.match(/const CIRCULATION_STAGES=(\[[^\n]+\]);/)[1]);
+ assert.equal(stages.length,7);
+ assert.ok(stages.every(s=>s.where&&s.mechanism&&s.barrier&&s.fate&&s.evidence&&s.term&&s.pron&&s.definition));
+ const glossary=read('mycosim/science_glossary.js').toLowerCase();
+ for(const term of ['Hepatocyte','Cytochrome P450','Clearance','Elimination','Hepatic portal vein'])assert.ok(glossary.includes('"'+term.toLowerCase()+'"'),term);
 });
