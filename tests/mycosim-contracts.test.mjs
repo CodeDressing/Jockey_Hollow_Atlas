@@ -5,7 +5,7 @@ import {readFileSync} from 'node:fs';
 import {Script} from 'node:vm';
 const read=(p)=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const html=read('sandbox.html');
-const files=['mycosim/digestion_immune.js','mycosim/human_ingestion.js','mycosim/gut_brain.js','mycosim/absorption_circulation18.js','mycosim/molecular_process.js','mycosim/immune_signaling17.js','mycosim/campaign.js','mycosim/science_glossary.js','mycosim/release_acceptance.js','mycosim/lab_workspace.js'];
+const files=['mycosim/digestion_immune.js','mycosim/human_ingestion.js','mycosim/gut_brain.js','mycosim/absorption_circulation18.js','mycosim/neural_interface19.js','mycosim/molecular_process.js','mycosim/immune_signaling17.js','mycosim/campaign.js','mycosim/science_glossary.js','mycosim/release_acceptance.js','mycosim/lab_workspace.js'];
 
 test('MycoSim modules are mounted exactly once and in working order',()=>{
  const scripts=[...html.matchAll(/src="(mycosim\/[^"?]+\.js)\?[^\"]*"/g)].map(x=>x[1]);
@@ -121,4 +121,14 @@ test('Phase 18 preserves earlier models and flags uncertain absorption and brain
  assert.ok(stages.every(s=>s.where&&s.mechanism&&s.barrier&&s.fate&&s.evidence&&s.term&&s.pron&&s.definition));
  const glossary=read('mycosim/science_glossary.js').toLowerCase();
  for(const term of ['Hepatocyte','Cytochrome P450','Clearance','Elimination','Hepatic portal vein'])assert.ok(glossary.includes('"'+term.toLowerCase()+'"'),term);
+});
+
+test('Phase 19 neural interface is integrated and preserves causal uncertainties',()=>{
+ const src=read('mycosim/neural_interface19.js');
+ for(const item of ['myco-microbiome','myco-ingestion-lab','myco-immune17','myco-circulation18','tv-anatomy3d','HYPOTHETICAL','NOT TESTED','SpeechSynthesisUtterance','Phase 19 browser checks:'])assert.ok(src.includes(item),item);
+ const steps=JSON.parse(src.match(/const NEURAL19_STEPS=(\[[^\n]+\]);/)[1]);
+ assert.equal(steps.length,8);
+ assert.ok(steps.every(s=>s.title&&s.mechanism&&s.barrier&&s.evidence&&s.term&&s.pron&&s.definition));
+ const glossary=read('mycosim/science_glossary.js').toLowerCase();
+ for(const term of ['Nucleus tractus solitarius','Enteroendocrine cell','Neurovascular unit','Hypothalamus','Pharmacodynamics'])assert.ok(glossary.includes('"'+term.toLowerCase()+'"'),term);
 });
