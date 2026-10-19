@@ -15,6 +15,56 @@ section.innerHTML='<style>#tv-anatomy3d h3{color:#f0dca9;margin:5px 0;font-size:
 '<div id="anatomy23-zoom" class="anatomy-controls" role="group" aria-label="Conceptual magnification"><button type="button" data-mag="overview" aria-pressed="true">Overview</button><button type="button" data-mag="cell" aria-pressed="false">Cell focus</button><button type="button" data-mag="molecular" aria-pressed="false">Molecular focus</button><span id="anatomy23-scale" role="status">NOT TO SCALE</span></div><div class="anatomy-grid"><div><canvas id="tv-anatomy-canvas" aria-label="Procedural 3D anatomical reconstruction of digestive organs or epithelial barrier and immune cell"></canvas><p class="anatomy-status" id="tv-anatomy-status" role="status">Scene not started. Choose Start 3D.</p></div>'+
 '<aside class="anatomy-info"><h4 id="tv-anatomy-name">Digestive organs</h4><p id="tv-anatomy-detail">Select Start 3D, then click any anatomical part.</p><div class="anatomy-picker" role="group" aria-label="Select anatomical structures"></div><div class="anatomy-controls"><button type="button" data-action="isolate" aria-pressed="false">Isolate selected</button><button type="button" data-action="context" aria-pressed="false">Transparent context</button><button type="button" data-action="focus">Focus selection</button><button type="button" data-action="reset">Reset view</button><button type="button" data-action="read">🔊 Read</button></div></aside></div>';
 host.append(section);
+// Campaign 6: pre-start teaching illustration and progressive laboratory navigation.
+// Keeps the original WebGL canvas, renderer, picker, lesson data, and diagnostics.
+const campaign6Style=document.createElement("style");
+campaign6Style.textContent=`
+#tv-anatomy3d .anatomy-stage6{position:relative;min-height:340px;border-radius:12px;overflow:hidden;background:radial-gradient(ellipse at 45% 20%,#234d50 0%,#11262c 52%,#081419 100%)}
+#tv-anatomy3d .anatomy-stage6 canvas{height:440px}
+#tv-anatomy3d .anatomy-intro6{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:22px;background:linear-gradient(155deg,rgba(10,26,30,.96),rgba(12,38,42,.95))}
+#tv-anatomy3d .anatomy-intro6[hidden]{display:none}
+#tv-anatomy3d .anatomy-intro6 svg{width:min(100%,440px);height:auto;max-height:180px}
+#tv-anatomy3d .anatomy-intro6 h4{font-size:clamp(20px,2.4vw,29px);margin:0;color:#f7dda2}
+#tv-anatomy3d .anatomy-intro6 p{font-size:15px;max-width:58ch;margin:0;color:#dcebe5}
+#tv-anatomy3d .anatomy-intro6 button{min-height:48px;font-size:16px;font-weight:800;background:#bc995e;color:#101b1b;border-color:#f1dba5}
+#tv-anatomy3d .anatomy-controls6{margin:10px 0;border:1px solid #466b66;padding:11px;border-radius:10px;background:#102526}
+#tv-anatomy3d .anatomy-controls6 summary{cursor:pointer;color:#f3dca6;font-size:14px;font-weight:700;padding:4px}
+#tv-anatomy3d .anatomy-intro6 :focus-visible{outline:3px solid #fff1ba;outline-offset:3px}
+#tv-anatomy3d .anatomy-info{min-width:0}
+#tv-anatomy3d .anatomy-info .anatomy-picker button{min-height:40px}
+#tv-anatomy3d #tv-anatomy-status{font-size:13px;line-height:1.5}
+@media(max-width:800px){#tv-anatomy3d .anatomy-stage6 canvas{height:350px}#tv-anatomy3d .anatomy-intro6 svg{max-height:120px}}
+@media(prefers-reduced-motion:reduce){#tv-anatomy3d .anatomy-intro6 *{animation:none!important;transition:none!important}}
+`;
+section.append(campaign6Style);
+const stage6=document.createElement("div");stage6.className="anatomy-stage6";
+const sourceCanvas6=section.querySelector("#tv-anatomy-canvas");
+sourceCanvas6.parentNode.insertBefore(stage6,sourceCanvas6);stage6.append(sourceCanvas6);
+const intro6=document.createElement("div");intro6.className="anatomy-intro6";
+intro6.innerHTML=`<svg viewBox="0 0 460 180" role="img" aria-label="Illustrative journey from stomach to intestinal barrier and immune cell">
+<path d="M72 23 C23 30 27 112 91 143 Q151 164 169 107 Q184 64 125 58 Q106 33 72 23Z" fill="#a76e75" stroke="#edb1a5" stroke-width="4"/>
+<path d="M206 42 Q251 22 306 58 Q358 94 313 125 Q266 155 227 128 Q192 106 225 83 Q260 64 286 92" fill="none" stroke="#d9ac78" stroke-width="21" stroke-linecap="round"/>
+<g transform="translate(378 88)"><circle r="53" fill="#427b79" stroke="#addacc" stroke-width="4"/><circle r="25" fill="#234b69" stroke="#97bbda" stroke-width="3"/><path d="M-46 0H46M0-46V46" stroke="#90c2ac" stroke-width="2" opacity=".35"/></g>
+<path d="M168 92h30M336 92h18" stroke="#f0d99d" stroke-width="3" stroke-dasharray="6 6"/>
+<g fill="#f7e6c7" font-family="sans-serif" font-size="12" text-anchor="middle"><text x="95" y="172">Digest</text><text x="255" y="172">Absorption barrier</text><text x="385" y="172">Cell signaling</text></g></svg>
+<h4>Journey inside the human body</h4>
+<p>Follow digestion, examine the intestinal barrier, and investigate cellular signaling. Each step distinguishes established physiology from hypotheses.</p>
+<button type="button" id="anatomy6-begin">Start 3D exploration →</button>
+<p style="font-size:12px">Illustrative anatomy · not to scale · no mushroom-treatment efficacy implied</p>`;
+stage6.append(intro6);
+const advanced6=document.createElement("details");advanced6.className="anatomy-controls6";
+const summary6=document.createElement("summary");summary6.textContent="Advanced 3D controls · scene modes, zoom and structure tools";
+advanced6.append(summary6);
+const modeRow6=section.querySelector('[aria-label="3D scene mode"]');
+const zoomRow6=section.querySelector('[aria-label="Conceptual magnification"]');
+const infoControls6=section.querySelector(".anatomy-info .anatomy-controls");
+if(modeRow6)advanced6.append(modeRow6);
+if(zoomRow6)advanced6.append(zoomRow6);
+if(infoControls6)advanced6.append(infoControls6);
+const heading6=section.querySelector(".anatomy-grid");
+heading6.parentNode.insertBefore(advanced6,heading6);
+const begin6=()=>{init();if(started){intro6.hidden=true;advanced6.open=true;status.textContent="3D ready — select a structure or continue the guided discovery above.";}};
+intro6.querySelector("#anatomy6-begin").addEventListener("click",begin6);
 const canvas=section.querySelector("canvas"),info=section.querySelector("#tv-anatomy-detail"),name=section.querySelector("#tv-anatomy-name"),status=section.querySelector("#tv-anatomy-status");
 const modes={gut:[
 ["stomach","Stomach","Receives swallowed material and mixes it with acidic gastric fluid. This model represents a simplified organ contour."],
@@ -214,6 +264,8 @@ function init(){
   const light=new THREE.DirectionalLight(0xffe9cf,2.15);light.position.set(3,7,6);scene.add(light);
   const rim=new THREE.DirectionalLight(0x85bdde,1.3);rim.position.set(-4,2,-5);scene.add(rim);
   const lowerFill=new THREE.PointLight(0xf2aa8a,13,13,2);lowerFill.position.set(1,-3,4);scene.add(lowerFill);
+  // Campaign 6: soft fill improves organ contour separation without extra animation loops.
+  const frontFill6=new THREE.DirectionalLight(0xc9e5ce,.7);frontFill6.position.set(-3,1,8);scene.add(frontFill6);
   ray=new THREE.Raycaster();started=true;resize();rebuild();
   resizeObserver=new ResizeObserver(resize);resizeObserver.observe(canvas);
   canvas.addEventListener("click",pick);
@@ -607,7 +659,7 @@ function showLesson28(index,navigate){
  }
 }
 function startLesson28(){
- init();
+ begin6();
  if(!started){g28("g28-status").textContent="3D could not start. You can still use the text lesson and narration above.";return;}
  lesson28Started=true;
  changeMode(LESSON28[lesson28Index].mode);
