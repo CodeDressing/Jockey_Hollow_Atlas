@@ -90,6 +90,7 @@ function setLearningStep(step,{scroll=false}={}){
     document.querySelector('[data-learning-step="'+n+'"]')?.scrollIntoView({behavior:"smooth",block:"start"});
   }
   updateLessonNavigation();
+  updatePresenterPrompt();
 }
 
 const MYCOSIM_LESSON_NAMES=["Family","Stage","Morphology","Anatomy","Deeper"];
@@ -112,6 +113,40 @@ function mountLessonNavigation(){
   next.addEventListener("click",()=>{if(!next.disabled)setLearningStep(currentLearningStep+1,{scroll:true});});
   back.addEventListener("click",()=>setLearningStep(currentLearningStep,{scroll:true}));
   updateLessonNavigation();
+}
+
+
+const MYCOSIM_TEACHING_PROMPTS=[
+  "Ask the audience: what characteristics distinguish the visible fungal body plan from a species identification?",
+  "Compare young, mature, and old forms. Which changes reflect development rather than a new species?",
+  "Observe a single morphological character. What changed, and what remains uncertain?",
+  "Locate one anatomical structure. Explain its role using the linked atlas knowledge.",
+  "Connect macroscopic observations to tissue, microscopy, and spore evidence. What must still be verified?"
+];
+function updatePresenterPrompt(){
+  const el=$("#mycosim-presenter-prompt");
+  if(el)el.textContent="Lesson "+currentLearningStep+" of 5 · "+MYCOSIM_TEACHING_PROMPTS[currentLearningStep-1];
+}
+function mountPresenter(){
+  const toggle=$("#mycosim-present-toggle"),read=$("#mycosim-present-read"),stop=$("#mycosim-present-stop");
+  if(!toggle||!read||!stop)return;
+  function setPresent(on){
+    document.body.classList.toggle("mycosim-presenting",on);
+    toggle.setAttribute("aria-pressed",on?"true":"false");
+    toggle.textContent=on?"Exit classroom mode":"Enable classroom mode";
+    if(!on && "speechSynthesis" in window)speechSynthesis.cancel();
+  }
+  toggle.addEventListener("click",()=>setPresent(!document.body.classList.contains("mycosim-presenting")));
+  read.addEventListener("click",()=>speak($("#mycosim-presenter-prompt")?.textContent||""));
+  stop.addEventListener("click",()=>{if("speechSynthesis" in window)speechSynthesis.cancel();});
+  document.addEventListener("keydown",event=>{
+    if(!document.body.classList.contains("mycosim-presenting"))return;
+    if(event.altKey||event.ctrlKey||event.metaKey||event.target?.closest?.("input, textarea, select, [contenteditable]"))return;
+    if(event.key==="Escape"){setPresent(false);return;}
+    const button=event.key==="ArrowRight"?$("#mycosim-lesson-next"):event.key==="ArrowLeft"?$("#mycosim-lesson-prev"):null;
+    if(button&&!button.disabled){event.preventDefault();button.click();}
+  });
+  updatePresenterPrompt();
 }
 
 function updateMorphologySummary(engine){
@@ -668,6 +703,7 @@ try{
 
   mountLessonNavigation();
   mountDiscovery();
+  mountPresenter();
 
   const grid=$("#modelGrid");
   grid.innerHTML=MORPHOLOGY_PROFILES.map((p,i)=>`<button class="model-pick ${i===0?"active":""}" data-model="${p.id}"><strong>${p.label}</strong><span>${p.description}</span></button>`).join("");
