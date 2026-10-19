@@ -295,7 +295,7 @@ test('Family contextual biology shows Turkey Tail only with matching selected pr
  const biology=read('mycosim/family_biology28.js'),main=read('mycosim/main.js'),turkey=read('mycosim/trametes_sim.js');
  assert.match(main,/mycosim:family-change/);
  assert.match(biology,/mycosim:family-change/);
- assert.match(biology,/id==="trametes_versicolor"/);
+ assert.match(biology,/family==="trametes_versicolor"/);
  assert.match(biology,/biologyVisible/);
  for(const id of ['agaricus_bisporus','pleurotus_ostreatus','amanita_muscaria','coprinopsis_cinerea','armillaria_mellea'])assert.ok(biology.includes(id),id);
  assert.match(html,/id="tv-species-only" hidden/);
