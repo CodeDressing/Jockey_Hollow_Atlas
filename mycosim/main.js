@@ -974,6 +974,7 @@ try{
 
   const hydrateSecondaryUi=()=>{
     renderObservationForm();
+    mountObservationVisualBridge();
     $("#compareCandidates").onclick=renderCandidateResults;
     $("#clearObservation").onclick=()=>{observationRecord=emptyObservationRecord();renderObservationForm();$("#candidateResults").innerHTML="";};
 
