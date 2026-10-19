@@ -574,7 +574,14 @@ test("Guided anatomy teaches five discoveries with accessible navigation and opt
  test.setTimeout(90000);
  await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
  await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
- await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
+ const course=page.locator("#myco-course-overview");
+ await expect(course).toBeVisible();
+ await expect(course.locator("#course28-progress span")).toHaveCount(5);
+ await expect(course.locator("#course28-goal")).toContainText("Chapter 1 of 5");
+ await course.locator("#course28-next").click();
+ await expect(page.locator("#trametes-simulator")).toHaveAttribute("data-active-lab","digestion");
+ await course.locator("#course28-next").click();
+ await expect(page.locator("#trametes-simulator")).toHaveAttribute("data-active-lab","anatomy");
  const guide=page.locator("#myco-guided-anatomy");
  await expect(guide).toBeVisible();
  await expect(guide.locator("#g28-chapters button")).toHaveCount(5);
@@ -593,6 +600,7 @@ test("Guided anatomy teaches five discoveries with accessible navigation and opt
  await expect(page.locator('[data-part="dectin23"]')).toHaveAttribute("aria-pressed","true");
  await guide.locator("#g28-next").click();
  await expect(guide.locator("#g28-evidence")).toContainText("neuroscience");
+ await expect(guide.locator("#g28-source")).toHaveAttribute("href","https://pubmed.ncbi.nlm.nih.gov/24183019/");
  await expect(guide.locator("#g28-back")).toBeEnabled();
  await page.locator("#anatomy-instructor-tools summary").click();
  await expect(page.locator("#anatomy25-fidelity")).toBeVisible();
