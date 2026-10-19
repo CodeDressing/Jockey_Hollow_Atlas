@@ -9,6 +9,7 @@ test("Phases 9-12 browser campaign passes in consolidated workspace",async({page
  page.on("pageerror",err=>errors.push(err.message));
  await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
  await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
+ await page.locator("#myco-glossary-details summary").click();
  await expect(page.locator("#myco-science-terms")).toBeVisible();
  const tabs=page.locator("#myco-lab-nav [role=tab]");
  await expect(tabs).toHaveCount(5);
@@ -50,6 +51,7 @@ test("Course navigation does not destroy glossary or scientific disclaimers",asy
  await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
  await page.locator('#myco-lab-nav [data-lab="pathways"]').click();
  await expect(page.locator("#tv-molecular .m-warning")).toBeVisible();
+ await page.locator("#myco-glossary-details summary").click();
  await expect(page.locator("#myco-term-search")).toBeVisible();
  await page.locator("#myco-term-search").fill("CARD9");
  await expect(page.locator("#myco-term-list")).toContainText("CARD9");
