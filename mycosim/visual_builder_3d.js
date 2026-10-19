@@ -41,10 +41,10 @@ if(host&&!host.querySelector("#mb-real3d")){
   for(let j=0;j<rings;j++)for(let i=0;i<radial;i++){const p=j*(radial+1)+i;indices.push(p,p+radial+1,p+1,p+1,p+radial+1,p+radial+2);}
   const g=new THREE.BufferGeometry();g.setAttribute("position",new THREE.Float32BufferAttribute(positions,3));g.setAttribute("uv",new THREE.Float32BufferAttribute(uv,2));g.setIndex(indices);g.computeVertexNormals();return g;
  }
- function fertile(surface){
+ function fertile(surface,attachment){
   const tan=mat(0xbba078,THREE.DoubleSide);
   if(surface==="gills"){
-    for(let i=0;i<38;i++){const a=i/38*Math.PI*2,r0=.18,r1=1.31;const pts=new Float32Array([r0*Math.cos(a),2.015,r0*Math.sin(a),r1*Math.cos(a),2.015,r1*Math.sin(a),r1*Math.cos(a),1.76,r1*Math.sin(a),r0*Math.cos(a),1.85,r0*Math.sin(a)]);const g=new THREE.BufferGeometry();g.setAttribute("position",new THREE.BufferAttribute(pts,3));g.setIndex([0,1,2,0,2,3]);g.computeVertexNormals();mesh(g,tan.clone());}
+    for(let i=0;i<38;i++){const a=i/38*Math.PI*2,r0=attachment==="free"?.38:attachment==="decurrent"?.10:.18,r1=1.31;const pts=new Float32Array([r0*Math.cos(a),2.015,r0*Math.sin(a),r1*Math.cos(a),2.015,r1*Math.sin(a),r1*Math.cos(a),1.76,r1*Math.sin(a),r0*Math.cos(a),1.85,r0*Math.sin(a)]);const g=new THREE.BufferGeometry();g.setAttribute("position",new THREE.BufferAttribute(pts,3));g.setIndex([0,1,2,0,2,3]);g.computeVertexNormals();mesh(g,tan.clone());}
   }else if(surface==="pores"){
     const poreMat=mat(0x5b4130);for(let ring=1;ring<=5;ring++){const count=ring*13;for(let i=0;i<count;i++){const a=i/count*Math.PI*2,r=.20+ring*.21;const p=mesh(new THREE.CylinderGeometry(.042,.042,.025,8),poreMat.clone());p.position.set(r*Math.cos(a),1.99,r*Math.sin(a));}}
   }else if(surface==="teeth"){
@@ -57,9 +57,11 @@ if(host&&!host.querySelector("#mb-real3d")){
   if(state.substrate!=="soil"){const log=mesh(new THREE.CylinderGeometry(.38,.43,3.5,20),mat(0x785538));log.rotation.z=Math.PI/2;log.position.set(0,.06,-.1);}
   if(state.substrate==="living_tree"){const tree=mesh(new THREE.CylinderGeometry(.32,.38,3.7,20),mat(0x77543b));tree.position.set(-1.65,1.35,-.55);}
   if(state.form==="agaric"){
-   const stem=mesh(new THREE.CylinderGeometry(.16,.24,1.92,28,12),stipeMat);stem.position.y=1.07;
+   const topRadius=state.stipe==="tapered"?.11:.16,baseRadius=state.stipe==="bulbous"?.36:state.stipe==="tapered"?.30:.18;
+   const stem=mesh(new THREE.CylinderGeometry(topRadius,baseRadius,1.92,28,12),stipeMat);stem.position.y=1.07;
+   if(state.attachment==="decurrent"&&state.surface==="gills"){const skirt=mesh(new THREE.CylinderGeometry(.18,.13,.36,32),mat(0xbba078,THREE.DoubleSide));skirt.position.y=1.80;}
    const cap=mesh(capGeometry(state.cap),capMat);cap.userData.part="pileus";
-   fertile(state.surface);
+   fertile(state.surface,state.attachment);
   }else if(state.form==="bracket"){
    const bracket=mesh(capGeometry(state.cap,1.18),capMat);bracket.scale.set(1,.52,.72);bracket.position.set(-.25,-.75,0);
    const edge=mesh(new THREE.CylinderGeometry(.96,.96,.07,42),mat(state.surface==="smooth"?0xc6b690:0x866545));edge.scale.z=.74;edge.position.set(-.25,1.27,0);
@@ -67,7 +69,7 @@ if(host&&!host.querySelector("#mb-real3d")){
    const cup=mesh(new THREE.LatheGeometry(Array.from({length:18},(_,i)=>{const t=i/17;return new THREE.Vector2(.15+1.15*t, .85+.87*t*t)}),48),mat(0xc69d5a,THREE.DoubleSide));cup.position.y=.1;
    const inner=mesh(new THREE.CircleGeometry(1.2,48),mat(0x916e4d,THREE.DoubleSide));inner.rotation.x=-Math.PI/2;inner.position.y=1.82;
   }
-  status.textContent="3D updated: "+state.form+" · "+state.cap+" · "+state.surface+" · "+state.substrate+". "+(state.form==="agaric"?"Geometry displays the selected fertile surface.":"Non-agaric fertile structures remain schematic.")+" No taxonomic identification implied.";
+  status.textContent="3D updated: "+state.form+" · "+state.cap+" · "+state.stipe+" · "+state.attachment+" · "+state.surface+" · "+state.substrate+". "+(state.form==="agaric"?"Geometry displays the selected fertile surface.":"Non-agaric fertile structures remain schematic.")+" No taxonomic identification implied.";
   const shape=state.spore==="globose"?'<circle cx="49" cy="33" r="19"/>':state.spore==="fusiform"?'<path d="M13 33 Q49 -1 86 33 Q49 67 13 33Z"/>':'<ellipse cx="49" cy="33" rx="32" ry="18"/>';
   frame.querySelector("#mb-microscopy").innerHTML='<svg viewBox="0 0 100 68" role="img" aria-label="'+state.spore+' diagrammatic spore"><g fill="#a48cba" stroke="#edcffe" stroke-width="3">'+shape+'</g></svg><span><strong>Microscopy:</strong> '+state.spore+' spore (diagram, not to scale)</span>';
  }
