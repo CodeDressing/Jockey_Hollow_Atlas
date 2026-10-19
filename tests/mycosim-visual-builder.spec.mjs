@@ -1,0 +1,30 @@
+import {test,expect} from "@playwright/test";
+test("MycoSim visual studio teaches and builds without changing scientific record", async ({page}) => {
+  await page.goto("http://127.0.0.1:8765/sandbox.html");
+  const studio=page.locator("#myco-visual-builder");
+  await expect(studio).toBeVisible({timeout:30000});
+  const original=await page.locator("#observationForm").count();
+  expect(original).toBe(1);
+  await studio.locator('[data-mb-trait="surface"]').selectOption("pores");
+  await expect(studio.locator("#mb-explanation")).toContainText("Pores:");
+  await expect(studio.locator("#mb-drawing title")).toContainText("pores");
+  await studio.locator('[data-mb-trait="form"]').selectOption("bracket");
+  await expect(studio.locator("#mb-explanation")).toContainText("Bracket:");
+  await studio.locator('[data-mb-mode="build"]').click();
+  await expect(studio.locator('[data-mb-mode="build"]')).toHaveAttribute("aria-pressed","true");
+  const downloadPromise=page.waitForEvent("download");
+  await studio.locator("#mb-save").click();
+  const download=await downloadPromise;
+  expect(download.suggestedFilename()).toBe("mycosim-custom-specimen.json");
+  await studio.locator('[data-mb-mode="identify"]').click();
+  await expect(studio.locator("#mb-explanation")).toContainText("not a real specimen");
+  await studio.locator("#mb-reset").click();
+  await expect(studio.locator('[data-mb-trait="form"]')).toHaveValue("agaric");
+  await expect(page.locator("#compareCandidates")).toHaveCount(1);
+});
+test("MycoSim visual studio mobile layout preserves controls",async({page})=>{
+  await page.setViewportSize({width:375,height:812});
+  await page.goto("http://127.0.0.1:8765/sandbox.html");
+  await expect(page.locator("#myco-visual-builder")).toBeVisible({timeout:30000});
+  await expect(page.locator("#myco-visual-builder #mb-apply")).toBeVisible();
+});
