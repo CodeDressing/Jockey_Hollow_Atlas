@@ -11,6 +11,11 @@ on:
       - '.github/workflows/mycosim-qa.yml'
   workflow_dispatch:
 
+# Cancel superseded commits so obsolete browser runs do not pile up.
+concurrency:
+  group: mycosim-main-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
