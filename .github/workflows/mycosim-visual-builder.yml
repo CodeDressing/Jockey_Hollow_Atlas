@@ -5,6 +5,7 @@ on:
   pull_request:
     paths:
       - 'mycosim/visual_builder.js'
+      - 'mycosim/visual_builder_3d.js'
       - 'sandbox.html'
       - 'tests/mycosim-visual-builder.spec.mjs'
   workflow_dispatch:
@@ -20,7 +21,9 @@ jobs:
         with:
           node-version: '22'
       - name: Syntax check
-        run: node --check mycosim/visual_builder.js
+        run: |
+          node --check mycosim/visual_builder.js
+          node --check mycosim/visual_builder_3d.js
       - name: Install Playwright Chromium
         run: |
           npm install --no-save @playwright/test
