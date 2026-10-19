@@ -70,8 +70,20 @@ if(host&&!document.getElementById("myco-lab-nav")){
   const current=Math.max(0,keys.indexOf(host.dataset.activeLab));
   activate(keys[(current+1)%keys.length]);
  };
- // Glossary remains available in all tabs; the course orientation appears before tab navigation.
- host.append(course,nav,specimen);
+ // Visitors see the course and its navigation first. The full searchable glossary is opt-in.
+ // Preserve the original glossary DOM and its listeners; move the element, never clone it.
+ if(glossary){
+  const glossaryDetails=document.createElement("details");glossaryDetails.id="myco-glossary-details";
+  glossaryDetails.style.cssText="margin:10px 0 14px;border:1px solid #57776f;border-radius:10px;padding:10px 12px;background:#102527";
+  const glossarySummary=document.createElement("summary");glossarySummary.textContent="📖 Open scientific glossary · definitions, pronunciation and readback";
+  glossarySummary.style.cssText="cursor:pointer;color:#eddbad;font-size:15px;font-weight:700;min-height:38px;padding:7px;outline-offset:3px";
+  glossaryDetails.append(glossarySummary);
+  host.insertBefore(course,glossary);
+  host.insertBefore(nav,glossary);
+  host.insertBefore(glossaryDetails,glossary);
+  glossaryDetails.append(glossary);
+ }else host.append(course,nav);
+ host.append(specimen);
 
  const keys=categories.map(c=>c.key);
  function activate(key,{focus=false}={}){
