@@ -39,3 +39,18 @@ Base: ux01-run1-visitor-orientation at 73090486
 SOURCE GATE: PASS.
 RUNTIME / VISUAL / SCIENCE REVIEW: NOT COMPLETE.
 PRODUCTION RELEASE: HOLD. No merge or deployment performed.
+
+## Additional acceptance audit — October 19, 2026
+
+Campaign 6 startup synchronization correction: e09623dc76021420b155edae9906effa557d412d. Successful 3D initialization now hides the initial overlay for all supported start paths; initialization errors restore the guidance layer and display failure information; guided starts do not automatically expand advanced controls.
+
+Final static verification: **14/14 PASS** using GitHub contents read from the development branch and main:
+- JavaScript parses in a V8 Function after excluding ESM import declarations solely for parsing.
+- Model mode definitions byte-identical to main; renderer count one; anatomy canvas preserved.
+- Start action, introduction, advanced control disclosure, legacy initiation and error fallback present.
+- Five guided lessons, narration stop, scientific source references, disclaimers and original QA code retained.
+- Production HTML remains untouched. Render deployment inspection shows the live commit still 5a60eb0ebe9da605e3b46065b220c38387c1c385.
+
+**Staging assessment:** Existing Render static site uses main with automatic production deploys. Pull-request previews are OFF. Documentation says previews of free static sites have no base service price, but all static sites contribute to shared outbound bandwidth and pipeline minute usage. Because no confirmed account-level zero-spend protection or remaining usage budget is available through the connected tools, no preview, second site, or paid service was created.
+
+**Runtime status remains NOT TESTED:** No isolated browser execution of development branch, WebGL screenshot confirmation, real keyboard/mobile accessibility validation, speech playback test, performance benchmark, or on-page campaign browser QA was possible. Container GitHub access failed DNS resolution. The final safety gate therefore remains **HOLD — NO PRODUCTION DEPLOYMENT** despite passing static checks.
