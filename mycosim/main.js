@@ -719,6 +719,32 @@ try{
   mountDiscovery();
   mountPresenter();
 
+  // Visual Studio → authoritative morphology renderer. No specimen/evidence writes.
+  // The existing stage canvas remains owned by MycoSimEngine.
+  window.MycoSimMorphologyBridge=Object.freeze({
+    getState:()=>({family:currentProfile.id,stage:engine.getDevelopmentalStage()?.id||"mature",variants:engine.getVariantState(),supported:[...(currentProfile.variantGroups||[])]}),
+    apply:({family="agaricoid",variants={},stage}={})=>{
+      if(!PROFILE_BY_ID[family])return {ok:false,error:"Unsupported family"};
+      if(currentProfile.id!==family)activateProfile(family);
+      const groups=new Set(currentProfile.variantGroups||[]);
+      const applied=[],rejected=[];
+      for(const [group,value] of Object.entries(variants)){
+        if(!groups.has(group)||!MORPHOLOGY_VARIANTS[group]?.options.some(option=>option[0]===value)){rejected.push(group);continue;}
+        if(engine.getVariantState()[group]===value)continue;
+        try{engine.setVariant(group,value);applied.push(group);}catch(error){rejected.push(group+": "+String(error.message||error));}
+      }
+      if(stage&&["young","mature","old"].includes(stage))engine.setDevelopmentalStage(stage);
+      renderVariantControls(currentProfile,engine);
+      renderStageControls(currentProfile,engine);
+      renderAnatomy(currentProfile);
+      updateVisibleState(engine);
+      setLearningStep(3);
+      document.dispatchEvent(new CustomEvent("mycosim:studio-applied",{detail:{family,applied,rejected}}));
+      return {ok:rejected.length===0,family,applied,rejected};
+    },
+    focus:()=>{document.querySelector("#stage")?.scrollIntoView({behavior:"smooth",block:"center"});}
+  });
+
   const grid=$("#modelGrid");
   grid.innerHTML=MORPHOLOGY_PROFILES.map((p,i)=>`<button class="model-pick ${i===0?"active":""}" data-model="${p.id}"><strong>${p.label}</strong><span>${p.description}</span></button>`).join("");
 
