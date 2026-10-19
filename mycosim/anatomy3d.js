@@ -244,6 +244,7 @@ function applyVisibility(){
 function select(id){if(!modes[mode].some(p=>p[0]===id))return;selected=id;describe();if(started)applyVisibility();}
 function changeMode(next){dynamics24Playing=false;dynamics24LastFrame=0;mode=next;selected=modes[mode][0][0];isolated=false;transparent=false;section.querySelectorAll("[data-mode]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===mode)));updatePicker();if(started)rebuild();else describe();}
 function applyMagnification(){
+ // These are conceptual camera distances, not actual optical magnifications.
  const dist={overview:7,cell:4.5,molecular:2.7}[magnification]||7;
  section.querySelectorAll("[data-mag]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mag===magnification)));
  const label=section.querySelector("#anatomy23-scale");
@@ -630,7 +631,7 @@ guide28.innerHTML='<style>'+
  '<p><strong>What the evidence supports:</strong> <span id="g28-evidence"></span></p><p id="g28-source-line"><strong>Research reference:</strong> <a id="g28-source" href="#" target="_blank" rel="noopener noreferrer" style="color:#ecd29b;text-decoration:underline"></a><span id="g28-source-pending"> General physiology; a dedicated citation has not yet been assigned to this lesson.</span></p></div>'+
  '<div class="g28-actions"><button type="button" id="g28-start">▶ Start guided 3D lesson</button>'+
  '<button type="button" id="g28-back">← Previous</button><button type="button" id="g28-next">Next discovery →</button>'+
- '<button type="button" id="g28-read">🔊 Listen to lesson</button></div>'+
+ '<button type="button" id="g28-read">🔊 Listen to lesson</button><button type="button" id="g28-stop">■ Stop narration</button></div>'+
  '<p id="g28-status" role="status">The interactive 3D view stays off until you press Start, so this page loads faster.</p>'+
  '<p style="font-size:12px;color:#dccaa1">Teaching model only: not a patient scan, clinical demonstration, validated molecule simulation or evidence of mushroom treatment efficacy.</p>';
 const firstHeading=section.querySelector("h3");
@@ -651,6 +652,8 @@ function showLesson28(index,navigate){
  g28("g28-source").hidden=!reference;g28("g28-source-pending").hidden=!!reference;
  if(reference){g28("g28-source").href=reference.url;g28("g28-source").textContent=reference.label;}
  g28("g28-progress").textContent="Discovery "+(lesson28Index+1)+" of "+LESSON28.length+(lesson28Started?" · 3D ready":" · choose Start");
+ // Evidence remains learner-visible, even if the 3D engine cannot initialize.
+ g28("g28-evidence").setAttribute("data-science-status",chapter.reference?"referenced":"general-physiology");
  [...chapterList.children].forEach((b,i)=>{if(i===lesson28Index)b.setAttribute("aria-current","step");else b.removeAttribute("aria-current");});
  g28("g28-back").disabled=lesson28Index===0;g28("g28-next").textContent=lesson28Index===LESSON28.length-1?"Review from beginning ↻":"Next discovery →";
  if(navigate&&lesson28Started){
@@ -669,6 +672,7 @@ function startLesson28(){
  showLesson28(lesson28Index,false);
  if(!window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches)canvas.scrollIntoView({behavior:"smooth",block:"nearest"});
 }
+g28("g28-stop").onclick=()=>{if("speechSynthesis" in window)window.speechSynthesis.cancel();g28("g28-status").textContent="Narration stopped. You can continue the current discovery.";};
 g28("g28-start").onclick=startLesson28;
 g28("g28-back").onclick=()=>showLesson28(lesson28Index-1,true);
 g28("g28-next").onclick=()=>showLesson28((lesson28Index+1)%LESSON28.length,true);
