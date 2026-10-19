@@ -536,5 +536,104 @@ fidelity25.querySelector("#anatomy25-qa").onclick=()=>{
  fidelity25.querySelector("#anatomy25-report").textContent="Phase 25 browser checks: "+passed+"/"+checks.length+" passed\n"+checks.map(c=>(c.pass?"PASS ":"FAIL ")+c.n).join("\n")+"\nRenderer smoke checks do not establish measured FPS, visual fidelity against microscopy, real-world exposure, or production acceptance.";
 };
 
+
+// Visitor-first guided course. This uses the original anatomy modes and one renderer.
+const LESSON28=[
+ {title:"Follow food through digestion",mode:"gut",part:"stomach",topic:"Where does swallowed material go?",why:"The stomach mixes swallowed food with acidic fluid. It is not a site where a mushroom supplement has been shown to stimulate neurons directly.",do:"Select Stomach, then Small intestine in the structure panel. Rotate the view to locate each organ.",question:"How is digesting a food different from absorbing one of its molecules?",evidence:"Established human digestive physiology. Organ positions are schematic."},
+ {title:"Find the intestinal barrier",mode:"cell",part:"epithelium",topic:"What separates the gut contents from the body?",why:"The epithelial barrier and mucus restrict or regulate exposure. Bioaccessibility does not prove absorption, immune-cell contact, or entry into the bloodstream.",do:"Select Epithelium, then Mucus layer. Try Transparent context to see neighboring structures.",question:"Why can an in-vitro mushroom extract result differ from what happens after swallowing powder?",evidence:"Established barrier physiology; uptake and exposure of particular fungal compounds require separate studies."},
+ {title:"Explore tissue and circulation",mode:"tissue",part:"villus",topic:"How could absorbed molecules reach other tissues?",why:"Intestinal surfaces, blood vessels and liver cells participate in nutrient handling. The models combine anatomical concepts rather than reconstructing one actual piece of human tissue.",do:"Select Portal microvasculature, then Hepatocytes. Notice that the geometry is not to scale.",question:"What measurements would be needed before claiming a compound circulates at a particular concentration?",evidence:"Established anatomical relationships; no product-specific pharmacokinetic values are supplied."},
+ {title:"Meet an immune receptor",mode:"micro",part:"dectin23",topic:"What can Dectin-1 detect?",why:"Dectin-1 can recognize appropriately accessible fungal β-glucans in defined cell contexts, and signaling can involve SYK and CARD9. Dietary exposure at that receptor is not established here.",do:"Select Dectin-1, then SYK and CARD9. Use Cell focus to examine the educational proxy.",question:"What evidence would connect laboratory receptor activation to a clinical human outcome?",evidence:"Experimental and reviewed receptor biology; no demonstrated benefit from consuming a particular mushroom powder."},
+ {title:"Examine neural communication",mode:"micro",part:"synapse23",topic:"How do nerve cells send messages?",why:"Neurons can release neurotransmitters at synapses. NMDA, AMPA and GABA receptor mechanisms are established neuroscience, not verified direct effects of Turkey Tail or Lion’s Mane powders.",do:"Select Synaptic terminal and vesicles, then explore the existing molecular-signaling module if you want to go deeper.",question:"Does an animated synapse establish that an ingested mushroom changes brain signaling? Why not?",evidence:"Established general synaptic physiology; mushroom-specific brain engagement remains unverified."}
+];
+let lesson28Index=0,lesson28Started=false;
+const guide28=document.createElement("section");
+guide28.id="myco-guided-anatomy";
+guide28.setAttribute("aria-label","Guided five-stage human biology lesson");
+guide28.innerHTML='<style>'+
+ '#myco-guided-anatomy{padding:18px;border:1px solid #8eab9f;border-radius:12px;background:linear-gradient(145deg,#183732,#101d24);margin:15px 0 18px}'+
+ '#myco-guided-anatomy h4{color:#f2d8a0;font-size:21px;margin:7px 0 10px;line-height:1.25}'+
+ '#myco-guided-anatomy p{font-size:14px;line-height:1.6;margin:8px 0}'+
+ '#myco-guided-anatomy .g28-label{font-size:12px;letter-spacing:.055em;color:#eacb8c;font-weight:700}'+
+ '#myco-guided-anatomy .g28-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:13px 0}'+
+ '#myco-guided-anatomy .g28-grid button{min-height:56px;text-align:left;font-size:12px;padding:10px}'+
+ '#myco-guided-anatomy .g28-grid button[aria-current=step]{background:#775b2f;border:2px solid #ffe1a0}'+
+ '#myco-guided-anatomy .g28-actions{display:flex;flex-wrap:wrap;gap:9px;margin:15px 0 7px}'+
+ '#myco-guided-anatomy button{min-height:44px;font-size:14px}'+
+ '#myco-guided-anatomy #g28-start{font-weight:750;background:#b99658;color:#101b1b;border-color:#ead19b}'+
+ '#myco-guided-anatomy .g28-answer{padding:10px 13px;background:#0b1b1f;border-left:3px solid #bcb188;border-radius:4px}'+
+ '#myco-guided-anatomy .g28-why{font-weight:650;color:#f2e2b9}'+
+ '#myco-guided-anatomy #g28-progress{color:#c1dacb}'+
+ '#tv-anatomy3d #anatomy-instructor-tools{margin-top:18px;padding:12px;border:1px solid #59756e;border-radius:10px}'+
+ '#tv-anatomy3d #anatomy-instructor-tools>summary{cursor:pointer;font-weight:700;font-size:15px;padding:9px;color:#efddb0}'+
+ '@media(max-width:780px){#myco-guided-anatomy .g28-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}'+
+ '</style>'+
+ '<div class="g28-label">START HERE · 5 DISCOVERIES · NO PRIOR BIOLOGY REQUIRED</div>'+
+ '<h4>Journey inside the human body</h4>'+
+ '<p>Explore what happens between the digestive system, intestinal barrier, immune cells and nerve signaling. Choose a discovery, inspect the 3D model and answer one question at a time.</p>'+
+ '<div id="g28-progress" role="status">Discovery 1 of 5 · ready to begin</div>'+
+ '<div id="g28-chapters" class="g28-grid" role="group" aria-label="Choose a lesson chapter"></div>'+
+ '<div aria-live="polite" aria-atomic="true"><h4 id="g28-title"></h4><p id="g28-topic" class="g28-why"></p><p id="g28-why"></p>'+
+ '<p><strong>Try this:</strong> <span id="g28-try"></span></p>'+
+ '<p class="g28-answer"><strong>Discuss together:</strong> <span id="g28-question"></span></p>'+
+ '<p><strong>What the evidence supports:</strong> <span id="g28-evidence"></span></p></div>'+
+ '<div class="g28-actions"><button type="button" id="g28-start">▶ Start guided 3D lesson</button>'+
+ '<button type="button" id="g28-back">← Previous</button><button type="button" id="g28-next">Next discovery →</button>'+
+ '<button type="button" id="g28-read">🔊 Listen to lesson</button></div>'+
+ '<p id="g28-status" role="status">The interactive 3D view stays off until you press Start, so this page loads faster.</p>'+
+ '<p style="font-size:12px;color:#dccaa1">Teaching model only: not a patient scan, clinical demonstration, validated molecule simulation or evidence of mushroom treatment efficacy.</p>';
+const firstHeading=section.querySelector("h3");
+firstHeading.insertAdjacentElement("afterend",guide28);
+const g28=id=>guide28.querySelector("#"+id);
+const chapterList=g28("g28-chapters");
+LESSON28.forEach((chapter,i)=>{
+ const button=document.createElement("button");button.type="button";button.textContent=(i+1)+". "+chapter.title;button.onclick=()=>showLesson28(i,true);
+ chapterList.append(button);
+});
+function showLesson28(index,navigate){
+ lesson28Index=Math.max(0,Math.min(LESSON28.length-1,index));
+ const chapter=LESSON28[lesson28Index];
+ g28("g28-title").textContent=chapter.title;g28("g28-topic").textContent=chapter.topic;
+ g28("g28-why").textContent=chapter.why;g28("g28-try").textContent=chapter.do;
+ g28("g28-question").textContent=chapter.question;g28("g28-evidence").textContent=chapter.evidence;
+ g28("g28-progress").textContent="Discovery "+(lesson28Index+1)+" of "+LESSON28.length+(lesson28Started?" · 3D ready":" · choose Start");
+ [...chapterList.children].forEach((b,i)=>{if(i===lesson28Index)b.setAttribute("aria-current","step");else b.removeAttribute("aria-current");});
+ g28("g28-back").disabled=lesson28Index===0;g28("g28-next").textContent=lesson28Index===LESSON28.length-1?"Review from beginning ↻":"Next discovery →";
+ if(navigate&&lesson28Started){
+  changeMode(chapter.mode);select(chapter.part);
+  g28("g28-status").textContent="Now explore: "+chapter.title+". The same 3D scene is ready below.";
+ }
+}
+function startLesson28(){
+ init();
+ if(!started){g28("g28-status").textContent="3D could not start. You can still use the text lesson and narration above.";return;}
+ lesson28Started=true;
+ changeMode(LESSON28[lesson28Index].mode);
+ select(LESSON28[lesson28Index].part);
+ g28("g28-start").textContent="✓ Lesson started · restart this chapter";
+ g28("g28-status").textContent="3D is ready. Select a structure, rotate the scene, then choose Next discovery.";
+ showLesson28(lesson28Index,false);
+ if(!window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches)canvas.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+g28("g28-start").onclick=startLesson28;
+g28("g28-back").onclick=()=>showLesson28(lesson28Index-1,true);
+g28("g28-next").onclick=()=>showLesson28((lesson28Index+1)%LESSON28.length,true);
+g28("g28-read").onclick=()=>{
+ if(!("speechSynthesis" in window)){g28("g28-status").textContent="Voice readback is unavailable; the full lesson remains visible above.";return;}
+ window.speechSynthesis.cancel();const c=LESSON28[lesson28Index];
+ const u=new SpeechSynthesisUtterance(c.title+". "+c.topic+". "+c.why+". Try this. "+c.do+". Discuss together. "+c.question+". Evidence. "+c.evidence);
+ u.lang="en-US";u.rate=.86;window.speechSynthesis.speak(u);
+};
+window.MycoSimGuided28=Object.freeze({getState:()=>({chapter:lesson28Index,started:lesson28Started,mode,selected})});
+showLesson28(0,false);
+// Diagnostics remain available to the presenter, but are not the visitor's default learning path.
+const instructor28=document.createElement("details");
+instructor28.id="anatomy-instructor-tools";
+const summary28=document.createElement("summary");summary28.textContent="Instructor / developer tools · research references, rendering measurements and QA";
+instructor28.append(summary28);
+for(const diag of [fidelity25,perf26Panel,qaBox,tissueQA,microscopeQA]){
+ if(diag&&diag.parentNode===section)instructor28.append(diag);
+}
+section.append(instructor28);
+
 changeMode("gut");
 }
