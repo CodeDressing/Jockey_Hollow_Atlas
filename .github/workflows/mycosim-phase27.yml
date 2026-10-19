@@ -1,11 +1,6 @@
 name: MycoSim Phase 27 focused browser QA
+# Focused diagnostics run only when explicitly requested; main CI owns push validation.
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'mycosim/anatomy3d.js'
-      - 'tests/mycosim-campaign.spec.mjs'
-      - '.github/workflows/mycosim-phase27.yml'
   workflow_dispatch:
 permissions:
   contents: read
