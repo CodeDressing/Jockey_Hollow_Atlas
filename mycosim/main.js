@@ -603,6 +603,7 @@ try{
   function activateProfile(id){
     const p=PROFILE_BY_ID[id]; if(!p)return;
     currentProfile=p; selected=null; actions.hidden=true;
+    document.dispatchEvent(new CustomEvent("mycosim:family-change",{detail:{id:p.id,label:p.label}}));
     const tvCurriculum=document.getElementById("tv-curriculum");
     if(tvCurriculum){tvCurriculum.hidden=id!=="trametes_versicolor";if(id==="trametes_versicolor")mountTrametesCurriculum(tvCurriculum);}
     info.textContent="Loading morphology model…";
