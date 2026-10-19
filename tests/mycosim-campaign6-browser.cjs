@@ -32,6 +32,17 @@ const BASE='http://127.0.0.1:8765/sandbox.html';
       await page.locator('#g28-stop').click();
       assert.equal(await page.locator('#g28-status').innerText(),'Narration stopped. You can continue the current discovery.');
       assert.equal(errors.length,0,'Uncaught browser exceptions: '+errors.join(' | '));
+      // Regression: custom morphology controls must remain reachable from the spore-lab area.
+      // Start at the Scientific Identification & Spore Lab, which remains visible in Guided mode.
+      const editor=page.locator('.morphology-access [data-edit-morphology]');
+      await editor.click();
+      await page.locator('[data-learning-step="3"]').waitFor({state:'visible'});
+      const region=page.locator('#variantControls [data-variant-group="agaric_stipe_surface_mid"]');
+      await region.waitFor({state:'visible'});
+      assert.ok((await region.locator('button').count())>1,'middle stipe customization options exist');
+      await page.locator('[data-edit-morphology="agaric_gill_attachment"]').first().click();
+      await page.locator('#variantControls [data-variant-group="agaric_gill_attachment"]').waitFor({state:'visible'});
+      console.log('PASS '+viewport.width+'px — morphology editor, middle stipe, gill attachment');
       console.log('PASS '+viewport.width+'px — WebGL, overlay, controls, lesson, narration');
       await page.close();
     }

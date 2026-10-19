@@ -231,6 +231,16 @@ body.mycosim-presenting .workspace-row{grid-template-columns:minmax(0,1fr) minma
 body.mycosim-presenting #mycosim-presenter-prompt{font-size:1.15rem}
 @media(max-width:900px){body.mycosim-presenting .workspace-row{grid-template-columns:1fr}body.mycosim-presenting .learning-path{grid-template-columns:repeat(5,minmax(0,1fr))}body.mycosim-presenting .learning-path-chip{font-size:.8rem}}
 @media(prefers-reduced-motion:reduce){body.mycosim-presenting *,body.mycosim-presenting *::before,body.mycosim-presenting *::after{scroll-behavior:auto!important;transition:none!important}}
+
+/* Morphology restoration: direct access without sacrificing guided lessons. */
+.morphology-access{border:1px solid #7d895e;border-radius:10px;padding:12px;background:#17251e;margin:12px 0}
+.morphology-access strong{display:block;font-size:14px;color:#f0dda9;margin-bottom:5px}
+.morphology-access p{font-size:12px;line-height:1.5;margin:5px 0 10px;color:#d4e1d8}
+.morphology-access button,.morphology-shortcuts button{background:#233a36;color:#f7e8c5;border:1px solid #8c875a;border-radius:7px;min-height:44px;padding:9px 11px;cursor:pointer}
+.morphology-shortcuts{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}
+.morphology-shortcuts button{font-size:12px}
+#variantControls .variant-field{scroll-margin-top:130px}
+#variantControls .variant-field:focus-within{border-left:3px solid #e2c17c;padding-left:8px}
 </style>
 </head>
 <body>
@@ -341,6 +351,13 @@ body.mycosim-presenting #mycosim-presenter-prompt{font-size:1.15rem}
     <div class="step-subhead">Taxon-informed teaching archetype</div>
       <div id="archetypeControls" class="archetype-grid"></div>
       <div id="archetypeInfo" class="phase5-info">Teaching archetypes constrain morphology without asserting taxonomic identity.</div>
+      <div class="morphology-shortcuts" aria-label="Jump to editable fungal structures">
+        <button type="button" data-edit-morphology="agaric_pileus_profile">Pileus / cap</button>
+        <button type="button" data-edit-morphology="agaric_stipe_surface_apex">Stipe: apex</button>
+        <button type="button" data-edit-morphology="agaric_stipe_surface_mid">Stipe: middle</button>
+        <button type="button" data-edit-morphology="agaric_stipe_surface_base">Stipe: base</button>
+        <button type="button" data-edit-morphology="agaric_gill_attachment">Gills / attachment</button>
+      </div>
       <div id="variantControls" class="variant-panel"></div>
     </section>
 
@@ -400,7 +417,12 @@ body.mycosim-presenting #mycosim-presenter-prompt{font-size:1.15rem}
     <p class="copy">Parameterized character states now control pileus form, stipe form, hymenophore architecture, and veil/base structures where biologically appropriate. Non-agaric families use independent body-plan factories rather than inheriting an agaricoid template.</p>
   
     <div id="sciencePanel" class="science-panel">
-      <h3>Scientific Identification & Spore Lab</h3>
+      <div class="morphology-access" aria-label="Restore detailed morphology controls">
+      <strong>Looking for full mushroom customization?</strong>
+      <p>Modify the pileus, stipe apex/middle/base, hymenophore and gill attachment directly on the 3D specimen. The identification form below is a separate scientific observation tool.</p>
+      <button type="button" data-edit-morphology="agaric_pileus_profile">Open full 3D morphology editor ↑</button>
+    </div>
+    <h3>Scientific Identification & Spore Lab</h3>
       <div class="science-note"><strong>Scientific rule:</strong> Observation ≠ interpretation ≠ identification. This tool compares observed characters with generalized morphology profiles only. It never assigns a species and never writes to specimen records.</div>
       <div id="observationForm" class="science-grid"></div>
       <div class="science-actions">

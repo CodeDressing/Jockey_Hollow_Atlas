@@ -701,7 +701,21 @@ try{
     }
   });
 
-  mountLessonNavigation();
+  document.addEventListener("click",event=>{
+    const shortcut=event.target.closest("[data-edit-morphology]");
+    if(!shortcut)return;
+    // Intentionally choose Explore for direct access while leaving Guided mode intact for lessons.
+    setLearnerMode("explore");
+    const model=document.querySelector('#modelGrid [data-model="agaricoid"]');
+    if(model&&!model.classList.contains("active"))model.click();
+    setLearningStep(3);
+    const target=document.querySelector('#variantControls [data-variant-group="'+shortcut.dataset.editMorphology+'"]');
+    const section=target||document.querySelector('[data-learning-step="3"]');
+    section?.scrollIntoView({behavior:window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?"auto":"smooth",block:"start"});
+    const first=target?.querySelector("button:not([disabled])");
+    if(first)first.focus({preventScroll:true});
+  });
+    mountLessonNavigation();
   mountDiscovery();
   mountPresenter();
 
