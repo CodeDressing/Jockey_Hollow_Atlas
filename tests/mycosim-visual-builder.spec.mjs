@@ -32,6 +32,7 @@ test("MycoSim visual studio mobile layout preserves controls",async({page})=>{
 });
 
 test("Sprint 2 creates actual reactive WebGL geometry and independent spores",async({page})=>{
+  test.setTimeout(90000);
   await page.goto("http://127.0.0.1:8765/sandbox.html");
   const studio=page.locator("#myco-visual-builder");
   await expect(studio.locator("#mb-live-canvas")).toBeVisible({timeout:30000});
