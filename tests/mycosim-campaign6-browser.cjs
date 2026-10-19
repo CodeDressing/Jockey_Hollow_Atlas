@@ -11,6 +11,8 @@ const BASE='http://127.0.0.1:8765/sandbox.html';
       await page.goto(BASE,{waitUntil:'domcontentloaded'});
       const el=page.locator('#tv-anatomy3d');
       await el.waitFor({state:'attached',timeout:45000});
+      await page.evaluate(()=>window.MycoSimWorkspace?.activate('anatomy'));
+      await page.waitForTimeout(300);
       await page.locator('#anatomy6-begin').waitFor({state:'visible',timeout:10000});
       assert.equal(await page.locator('#tv-anatomy-canvas').count(),1,'exactly one anatomy canvas');
       assert.equal(await page.locator('#myco-guided-anatomy').count(),1,'guided lesson retained');
