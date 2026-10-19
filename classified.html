@@ -75,6 +75,35 @@
 #research .photo-tile img{aspect-ratio:4/3}
 @media(max-width:980px){.research-shell{grid-template-columns:1fr;gap:15px}.research-nav{position:static;display:flex;align-items:stretch;gap:8px;overflow-x:auto;padding:10px}.research-nav-title,.research-nav-note{display:none}.research-nav button{flex:0 0 auto;width:auto;min-width:140px;white-space:normal}#research{padding:14px!important}}
 @media(max-width:600px){#research .photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.research-nav button{min-width:120px;padding:10px 8px;font-size:12px}#research .photo-archive,#research .effects-evidence{padding:12px}}
+
+/* Gym Juno: image-first scientific exhibit, only displays researcher originals */
+#classifiedPhotoArchive{background:linear-gradient(150deg,#152628 0%,#101c21 70%);border-color:#70817b}
+#classifiedPhotoArchive>h3{font-size:clamp(22px,2.3vw,29px)!important;letter-spacing:-.025em}
+#classifiedPhotoArchive .photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:17px;margin-top:22px}
+#classifiedPhotoArchive .specimen-gallery-tile{display:block;overflow:hidden;padding:0;margin:0;border:1px solid #415a5a;border-radius:12px;background:#0e1c20;text-align:left;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;width:100%;min-height:0}
+#classifiedPhotoArchive .specimen-gallery-tile:hover,#classifiedPhotoArchive .specimen-gallery-tile:focus-visible{transform:translateY(-3px);border-color:#dfbf82;box-shadow:0 15px 28px #0007}
+#classifiedPhotoArchive .specimen-gallery-figure{margin:0;display:block}
+#classifiedPhotoArchive .specimen-gallery-figure img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:0;max-width:none}
+#classifiedPhotoArchive .specimen-gallery-figure figcaption{padding:13px 14px;display:grid;gap:4px}
+#classifiedPhotoArchive .specimen-gallery-figure figcaption strong{font-size:14px;color:#fae5b7}
+#classifiedPhotoArchive .specimen-gallery-figure figcaption span{font-size:12px;color:#a6c6be}
+#classifiedPhotoArchive .specimen-gallery-empty{grid-column:1/-1;border:1px dashed #68807a;border-radius:14px;padding:clamp(24px,4vw,48px);background:radial-gradient(ellipse at 85% 0%,#304237,#122025 65%);min-height:200px;display:flex;align-items:flex-start;flex-direction:column;justify-content:center}
+#classifiedPhotoArchive .specimen-gallery-empty span{font-size:11px;letter-spacing:.16em;color:#e9c883;font-weight:800}
+#classifiedPhotoArchive .specimen-gallery-empty h4{font-size:clamp(19px,2.5vw,27px);color:#f5e2bc;margin:9px 0 4px;line-height:1.25}
+#classifiedPhotoArchive .specimen-gallery-empty p{max-width:680px;font-size:14px;color:#c1d4d0}
+#classifiedPhotoArchive .specimen-gallery-empty button{background:#735f37;color:#fff3d5;font-size:15px;padding:12px 18px}
+#classifiedPhotoArchive .specimen-lightbox{border:1px solid #ad975f;background:#061115;padding:0;margin-top:22px;border-radius:15px;overflow:hidden;box-shadow:0 24px 70px #0009}
+#classifiedPhotoArchive .specimen-lightbox-top{display:flex;justify-content:space-between;align-items:center;background:#122024;padding:7px 15px}
+#classifiedPhotoArchive .specimen-lightbox-top span{font-size:11px;letter-spacing:.13em;font-weight:800;color:#e8cb92}
+#classifiedPhotoArchive .specimen-lightbox-close{background:transparent;border:1px solid #58706b;font-size:23px;min-width:40px}
+#classifiedPhotoArchive .specimen-lightbox-image{display:block;width:100%;max-width:100%;max-height:76vh;object-fit:contain;margin:0 auto;background:#050b0d}
+#classifiedPhotoArchive .specimen-lightbox-footer{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+#classifiedPhotoArchive .specimen-lightbox-footer strong{font-size:18px;color:#f3ddaf}
+#classifiedPhotoArchive .specimen-lightbox-footer p{margin:3px 0 0;font-size:12px}
+#classifiedPhotoArchive .specimen-lightbox-controls{display:flex;gap:8px;flex-wrap:wrap}
+#classifiedPhotoArchive .photo-toolbar{padding:12px;border:1px solid #314a4c;border-radius:10px;background:#0d1b1e}
+#classifiedPhotoArchive [data-photo-status]{font-size:13px;color:#d6c18b;font-weight:650}
+@media(max-width:600px){#classifiedPhotoArchive .photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}#classifiedPhotoArchive .specimen-gallery-figure figcaption{padding:9px}#classifiedPhotoArchive .specimen-lightbox-footer{padding:10px}}
 </style>
 <header><b id="classifiedName">MYCOSIM · CLASSIFIED SPECIMEN</b><a href="sandbox.html">Return to MycoSim</a></header>
 <main><div id="specimenStage" style="position:relative;min-width:0"><canvas id="view" aria-label="Protected interactive 3D specimen viewer"></canvas><div id="anatomyTooltip" hidden role="status"></div></div><aside><h2>Interactive mushroom anatomy</h2><p>Restricted morphology reconstruction for research. Not a diagnostic specimen.</p><button id="top">Cap view</button><button id="under">Gill view</button><button id="reset">Reset view</button><button id="gills">Toggle gills</button><button id="log">Toggle log</button><section id="anatomyInspector" aria-label="Cursor anatomy inspector"><h2>Anatomical cursor tracker</h2><p id="anatomyState" aria-live="polite">No anatomical selection</p><h3 id="anatomyTitle">Move your cursor over a specimen structure</h3><p id="anatomyPronunciation"></p><p id="anatomyDescription">Hover over cap, gills, stipe or veil to identify anatomy.</p><p id="anatomyNotes"></p><div class="tracker-actions"><button type="button" id="anatomyClear">Reset selection</button><button type="button" id="anatomyLabels" aria-pressed="true">Toggle hover labels</button><button type="button" id="anatomySpeak">Pronounce / Read</button></div><p class="anatomy-disclaimer">Schematic anatomical labels depend on 3D mesh geometry; they are not laboratory identification evidence.</p></section><h2>CLASSIFIED FIELD RECONSTRUCTION</h2><button id="fieldMode">Field-colony 3D (40 photos)</button><button id="specimenMode">Isolated specimens</button><h3>Isolate one specimen by age</h3><div id="ageControls" role="group" aria-label="Specimen developmental stage"><button data-age="juvenile">Juvenile / button</button><button data-age="young">Young convex</button><button data-age="mature">Mature</button><button data-age="expanded">Expanded / aging</button></div><p id="modeNote">Select a reconstruction mode after unlocking.</p><p>Drag to rotate, wheel to zoom. Key features: robust stems, ochre caps, rust-colored gills, annular zones and decaying hardwood habitat.</p><p><b>Research only.</b> Psilocybin reports vary by collection and taxonomic identification; no concentration or safe exposure can be inferred from this model.</p></aside></main>
@@ -153,7 +182,7 @@
 </section><section id="classifiedPhotoArchive" aria-label="Classified photograph library" class="photo-archive">
 <h3>Gym Juno — Classified original photograph gallery (71 images)</h3>
 <p><strong>71 original photographs recorded:</strong> 60 field/anatomy photographs (IMG_1576–1635) and 11 microscopy PNGs. <strong>Important:</strong> the photos are NOT automatically uploaded from ChatGPT to the live static site. To view the originals here without publishing them to the public repository, download the combined 71-photo ZIP supplied in the chat and import it once in this browser. It stays on this device only.</p>
-<label for="classifiedPhotoInput"><strong>Load all 71 original photos — select the combined uncompressed ZIP</strong></label>
+<label for="classifiedPhotoInput"><strong>Load the 71 original photographs — select the combined ZIP file</strong></label>
 <input id="classifiedPhotoInput" data-photo-input type="file" accept=".zip,image/jpeg,image/png,image/webp" multiple>
 <div class="photo-toolbar"><label>Find photo <input data-photo-search type="search" placeholder="IMG_1600 or gills"></label><label>Study group <select data-photo-filter><option value="">All photographs</option><option>Field colony / habitat</option><option>Cap / gill comparison</option><option>Gills / veil / stipe</option><option>Microscopy / spore studies</option><option>Unassigned</option></select></label><button data-photo-clear type="button">Clear local archive</button></div>
 <p data-photo-status aria-live="polite">Gallery initializing. If no photographs appear, import the 71-photo ZIP from our chat into this browser; no images are stored on the website.</p>
