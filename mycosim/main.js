@@ -581,6 +581,68 @@ function renderObservationForm(){
   }).join("");
 }
 
+
+const LIVE_OBSERVATION_VISUAL_FIELDS=new Set(["cap_morphology","stipe_morphology","hymenophore_type","substrate","spore_shape","ornamentation","germ_pore","guttules","basidia_asci","clamp_connections","hyphal_system"]);
+function renderObservationVisualStatus(text,success=true){
+  const element=$("#observationVisualStatus");
+  if(element){element.textContent=text;element.dataset.visualized=success?"yes":"no";}
+}
+function applyObservationVisualization(field,value){
+  if(!LIVE_OBSERVATION_VISUAL_FIELDS.has(field))return;
+  if(!value||value==="unknown"||value==="not_examined"||value==="inconclusive"){
+    renderObservationVisualStatus("No visual state selected for "+fieldLabel(field)+". Choose a defined characteristic to preview.",false);
+    return;
+  }
+  const familyByCap={bracket:"polyporoid",hoof:"fomitoid",cup:"cup",lobed:"jelly",branched:"coral",enclosed:"puffball",resupinate:"crust"};
+  const capMap={plane:"flat",funnel:"infundibuliform",hemispherical:"convex",umbonate:"umbonate",convex:"convex",depressed:"depressed",campanulate:"campanulate",conical:"conical"};
+  const stipeMap={equal:"equal",taper_up:"tapering",taper_down:"clavate",clavate:"clavate",bulbous:"bulbous_base",marginate_bulb:"bulbous_base",rooting:"rooting",eccentric:"eccentric",lateral:"eccentric"};
+  const hymFamily={pores:"boletoid",tubes:"boletoid",teeth:"hydnoid",folds:"cantharelloid",smooth:"cup",pitted_hymenium:"morel",enclosed_gleba:"puffball"};
+  const gillValues={free_gills:"free_gills",adnexed:"adnexed",adnate:"adnate",sinuate:"sinuate",decurrent:"decurrent"};
+  let family=null,variants={},note="";
+  if(field==="cap_morphology"){
+    family=familyByCap[value]||(capMap[value]?"agaricoid":null);
+    if(capMap[value])variants.agaric_pileus_profile=capMap[value];
+  }else if(field==="stipe_morphology"){
+    family=stipeMap[value]?"agaricoid":null;
+    if(stipeMap[value])variants.agaric_stipe_form=stipeMap[value];
+    if(value==="hollow"){family="agaricoid";variants.agaric_stipe_context="hollow";}
+  }else if(field==="hymenophore_type"){
+    family=hymFamily[value]||(gillValues[value]?"agaricoid":null);
+    if(gillValues[value])variants.agaric_gill_attachment=gillValues[value];
+  }
+  if(family&&PROFILE_BY_ID[family]){
+    try{
+      const result=window.MycoSimMorphologyBridge?.apply({family,variants});
+      if(result?.ok){
+        renderObservationVisualStatus(fieldLabel(field)+": "+humanizeOption(value)+" — applied to the interactive 3D teaching model. Scientific evidence and provenance were not changed.");
+        // Bring the actual specimen into view rather than leaving learners staring at a distant form.
+        window.MycoSimMorphologyBridge.focus();
+        return;
+      }
+      note=result?.rejected?.join(", ")||"Renderer still initializing";
+    }catch(error){note=String(error.message||error);}
+  }
+  if(field==="spore_shape"||field==="substrate"){
+    const select=document.querySelector('#myco-visual-builder [data-mb-trait="'+(field==="spore_shape"?"spore":"substrate")+'"]');
+    const normalized=field==="spore_shape"?({subglobose:"globose",broadly_ellipsoid:"ellipsoid",amygdaliform:"ellipsoid",cylindrical:"ellipsoid",allantoid:"fusiform"}[value]||value):({dead_wood:"wood"}[value]||value);
+    if(select&&[...select.options].some(x=>x.value===normalized)){
+      select.value=normalized;select.dispatchEvent(new Event("change",{bubbles:true}));
+      renderObservationVisualStatus(fieldLabel(field)+": "+humanizeOption(value)+" — updated the separate educational "+(field==="spore_shape"?"spore":"substrate")+" visualization. This is schematic, not a verified specimen.");
+      document.querySelector("#mb-real3d")?.scrollIntoView({behavior:"smooth",block:"center"});
+      return;
+    }
+  }
+  renderObservationVisualStatus(fieldLabel(field)+": "+humanizeOption(value)+" — "+(note||"no validated geometric representation is available for this trait")+"; recorded selection is not presented as a verified 3D feature.",false);
+}
+function mountObservationVisualBridge(){
+  const root=$("#observationForm");if(!root)return;
+  root.addEventListener("change",event=>{
+    const select=event.target.closest("select[data-obs-value]");
+    if(!select)return;
+    applyObservationVisualization(select.dataset.obsValue,select.value);
+  });
+}
+
 function collectObservationForm(){
   for(const f of OBSERVATION_FIELDS){
     const valueEl=document.querySelector(`[data-obs-value="${f.id}"]`);
