@@ -63,7 +63,7 @@ if(zoomRow6)advanced6.append(zoomRow6);
 if(infoControls6)advanced6.append(infoControls6);
 const heading6=section.querySelector(".anatomy-grid");
 heading6.parentNode.insertBefore(advanced6,heading6);
-const begin6=()=>{init();if(started){intro6.hidden=true;status.textContent="3D ready — select a structure or continue the guided discovery above.";}};
+const begin6=()=>{init();if(started){intro6.hidden=true;lesson28Started=true;showLesson28(lesson28Index,true);status.textContent="3D ready — select a structure or continue the guided discovery above.";}};
 intro6.querySelector("#anatomy6-begin").addEventListener("click",begin6);
 const canvas=section.querySelector("canvas"),info=section.querySelector("#tv-anatomy-detail"),name=section.querySelector("#tv-anatomy-name"),status=section.querySelector("#tv-anatomy-status");
 const modes={gut:[
