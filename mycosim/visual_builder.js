@@ -19,13 +19,24 @@ if (mountPoint && !document.getElementById("myco-visual-builder")) {
     #myco-visual-builder svg{width:100%;max-height:270px;display:block}
     #myco-visual-builder .mb-note{font-size:13px;line-height:1.5;color:#c8d8d5}
     #myco-visual-builder .mb-action{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    #myco-visual-builder .mb-controls>label{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+    #myco-visual-builder .mb-trait-group{border:1px solid #395e57;border-radius:12px;padding:11px;background:#10272a}
+    #myco-visual-builder .mb-trait-group h4{color:#f1dda9;font-size:13px;margin:0 0 9px}
+    #myco-visual-builder .mb-trait-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:7px}
+    #myco-visual-builder .mb-trait-option{text-align:left;display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:center;background:#192c31;min-height:86px!important;padding:8px!important}
+    #myco-visual-builder .mb-trait-option svg{width:82px;height:43px;max-height:none}
+    #myco-visual-builder .mb-trait-option span{font-size:11px;text-align:center;line-height:1.25}
+    #myco-visual-builder .mb-trait-option[aria-pressed=true]{background:#655227!important;border:2px solid #e9c582!important}
+    #myco-visual-builder .mb-trait-option:focus-visible{outline:3px solid #f6d597;outline-offset:2px}
+    #myco-visual-builder .mb-pending{color:#ffdf96;border-left:3px solid #d9b878;padding:7px 10px;background:#18231d;font-size:12px}
+    #myco-visual-builder #mb-apply{font-weight:800;background:#af8e4c;border-color:#e8c77a;color:#111d1b}
     #myco-visual-builder [hidden]{display:none!important}
     @media(max-width:690px){#myco-visual-builder .mb-layout{grid-template-columns:1fr}}
   `;
   document.head.append(style);
   host.innerHTML = `
     <h3>Build / Explore Your Mushroom</h3>
-    <p class="mb-note">Choose traits to see a teaching illustration change. Learn their meaning, send supported characters to the existing 3D engine, or invent a custom specimen. Not an identification or edibility assessment.</p>
+    <p class="mb-note">Choose visual traits, then press Apply to Mushroom to transform the 3D model. Explore combinations, learn anatomy, and export creative specimens. Not an identification or edibility assessment.</p>
     <div class="mb-tabs" role="group" aria-label="Mushroom studio mode">
       <button type="button" data-mb-mode="learn" aria-pressed="true">Learn</button>
       <button type="button" data-mb-mode="build" aria-pressed="false">Build</button>
@@ -40,7 +51,7 @@ if (mountPoint && !document.getElementById("myco-visual-builder")) {
         <label>Fertile surface<select data-mb-trait="surface"><option value="gills">Gills</option><option value="pores">Pores</option><option value="teeth">Teeth</option><option value="smooth">Smooth</option></select></label>
         <label>Spore shape (micro diagram)<select data-mb-trait="spore"><option value="ellipsoid">Ellipsoid</option><option value="globose">Globose</option><option value="fusiform">Fusiform</option></select></label>
         <label>Growth substrate<select data-mb-trait="substrate"><option value="soil">Soil</option><option value="wood">Decaying wood</option><option value="living_tree">Living tree</option></select></label>
-        <div class="mb-action"><button type="button" id="mb-apply">Apply supported traits to 3D</button><button type="button" id="mb-save">Export custom specimen</button><button type="button" id="mb-reset">Reset</button></div>
+        <p class="mb-pending" id="mb-pending" role="status">Choose visual features, then press Apply to Mushroom.</p><div class="mb-action"><button type="button" id="mb-apply">Apply to Mushroom →</button><button type="button" id="mb-save">Export custom specimen</button><button type="button" id="mb-reset">Reset</button></div>
       </div>
       <div class="mb-preview">
         <svg id="mb-drawing" viewBox="0 0 360 270" role="img" aria-label="Mushroom morphology diagram, updated by chosen traits"></svg>
@@ -75,11 +86,77 @@ if (mountPoint && !document.getElementById("myco-visual-builder")) {
     const focus=state.mode==="identify"?"Identify mode: compare the shape you see; this custom illustration is not a real specimen.":state.mode==="build"?"Build mode: make your own fictional teaching specimen.":"Learn mode: each trait has a definition and visual example.";
     host.querySelector("#mb-explanation").textContent=focus+" "+terms[state.form]+" "+terms[state.cap]+" "+terms[state.surface]+" "+terms[state.stipe]+" "+terms[state.attachment]+" "+terms[state.spore]+" "+terms[state.substrate];
   }
+  // Visual selection stage: accessible diagram tiles instead of dropdown-first controls.
+  // Original select elements remain as the single committed state for engine compatibility.
+  const desired={...state};
+  const traitNames={form:"Mushroom body plan",cap:"Pileus shape",stipe:"Stipe shape",attachment:"Gill attachment",surface:"Hymenophore",spore:"Spore morphology",substrate:"Growth substrate"};
+  const pictograms={
+    agaric:"mushroom",bracket:"shelf",cup:"cup",convex:"dome",flat:"flat",conical:"cone",depressed:"dip",
+    equal:"stalk",bulbous:"bulb",tapered:"taper",adnate:"gills",free:"free",decurrent:"decurrent",
+    gills:"gills",pores:"pores",teeth:"teeth",smooth:"flat",ellipsoid:"oval",globose:"round",fusiform:"spindle",
+    soil:"ground",wood:"log",living_tree:"tree"
+  };
+  function iconFor(value){
+    const k=pictograms[value]||"oval";
+    const shapes={
+      mushroom:'<path d="M8 27 Q15 5 40 7 Q66 5 73 27Z"/><path d="M34 27 L31 56 Q41 62 49 56 L46 27Z"/>',
+      shelf:'<path d="M8 30 Q30 8 74 25 Q68 39 8 39Z"/><path d="M14 40H70"/>',
+      cup:'<path d="M8 15 Q16 52 41 53 Q65 52 73 15 Q41 27 8 15Z"/>',
+      dome:'<path d="M7 46 Q13 9 40 10 Q67 9 75 46Z"/>',
+      flat:'<path d="M7 35 Q41 29 75 35 L75 41 L7 41Z"/>',
+      cone:'<path d="M10 48L41 8L72 48Z"/>',
+      dip:'<path d="M8 47 Q18 9 41 34 Q60 10 73 47Z"/>',
+      stalk:'<path d="M31 6L31 55L51 55L51 6Z"/>',
+      bulb:'<path d="M33 6L33 37Q12 59 41 59 Q71 59 49 37L49 6Z"/>',
+      taper:'<path d="M37 6L28 56L54 56L45 6Z"/>',
+      gills:'<path d="M9 13H73M15 13L20 52M27 13L29 52M40 13V52M53 13L51 52M65 13L61 52"/>',
+      free:'<path d="M8 12H74M17 12L21 52M28 12L31 48M54 12L50 48M66 12L62 52M38 35V58M44 35V58"/>',
+      decurrent:'<path d="M9 11H73M15 11Q22 44 34 46L34 59M67 11Q60 44 48 46L48 59M40 31V59"/>',
+      pores:'<circle cx="22" cy="20" r="7"/><circle cx="43" cy="20" r="7"/><circle cx="64" cy="20" r="7"/><circle cx="32" cy="41" r="7"/><circle cx="54" cy="41" r="7"/>',
+      teeth:'<path d="M7 14H75M15 14L15 51L22 14M32 14L32 56L39 14M49 14L49 52L56 14M65 14L65 48L72 14"/>',
+      oval:'<ellipse cx="41" cy="32" rx="26" ry="17"/>',round:'<circle cx="41" cy="31" r="19"/>',
+      spindle:'<path d="M8 32 Q41 4 74 32Q41 60 8 32Z"/>',
+      ground:'<path d="M8 44Q22 39 38 44T74 44M13 51H69"/>',
+      log:'<rect x="10" y="22" width="60" height="23" rx="9"/><ellipse cx="17" cy="33" rx="6" ry="10"/>',
+      tree:'<path d="M38 56V25M38 35L22 23M38 33L56 17"/><circle cx="42" cy="14" r="12"/>'
+    };
+    return '<svg viewBox="0 0 82 66" aria-hidden="true" fill="none" stroke="#ecd39c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">'+shapes[k]+'</svg>';
+  }
+  const controls=host.querySelector(".mb-controls");
+  for(const select of host.querySelectorAll("[data-mb-trait]")){
+    const group=select.dataset.mbTrait;
+    const section=document.createElement("section");section.className="mb-trait-group";section.dataset.mbChoices=group;
+    const title=document.createElement("h4");title.textContent=traitNames[group];section.append(title);
+    const choices=document.createElement("div");choices.className="mb-trait-grid";choices.setAttribute("role","group");choices.setAttribute("aria-label",traitNames[group]);
+    for(const option of select.options){
+      const button=document.createElement("button");button.type="button";button.className="mb-trait-option";
+      button.dataset.mbChoice=group;button.dataset.mbValue=option.value;
+      button.setAttribute("aria-pressed",String(option.value===desired[group]));
+      button.innerHTML=iconFor(option.value)+"<span>"+safe(option.textContent)+"</span>";
+      button.addEventListener("click",()=>{
+        desired[group]=option.value;
+        section.querySelectorAll("[data-mb-choice]").forEach(el=>el.setAttribute("aria-pressed",String(el===button)));
+        host.querySelector("#mb-pending").textContent="Pending choice: "+traitNames[group]+" — "+option.textContent+". Select more features or press Apply to Mushroom.";
+      });
+      choices.append(button);
+    }
+    section.append(choices);
+    controls.insertBefore(section,select.parentElement);
+  }
+  function applyDesired(){
+    for(const select of host.querySelectorAll("[data-mb-trait]")){
+      const value=desired[select.dataset.mbTrait];
+      if(value!==select.value){select.value=value;select.dispatchEvent(new Event("change",{bubbles:true}));}
+    }
+    host.querySelector("#mb-pending").textContent="Applied to mushroom. Choose another combination whenever you wish.";
+  }
+  // Capture phase commits before the legacy engine bridge and 3D change handler process a click.
+  host.addEventListener("click",e=>{if(e.target.closest("#mb-apply"))applyDesired();},true);
   host.addEventListener("change",e=>{const key=e.target.dataset.mbTrait;if(key&&Object.prototype.hasOwnProperty.call(state,key)){state[key]=e.target.value;draw();}});
   host.addEventListener("click",e=>{
     const mode=e.target.closest("[data-mb-mode]");
     if(mode){state.mode=mode.dataset.mbMode;host.querySelectorAll("[data-mb-mode]").forEach(b=>b.setAttribute("aria-pressed",String(b===mode)));draw();return;}
-    if(e.target.id==="mb-reset"){for(const [k,v] of Object.entries({form:"agaric",cap:"convex",surface:"gills",spore:"ellipsoid",substrate:"soil"})){state[k]=v;host.querySelector('[data-mb-trait="'+k+'"]').value=v;}draw();}
+    if(e.target.id==="mb-reset"){for(const [k,v] of Object.entries({form:"agaric",cap:"convex",stipe:"equal",attachment:"adnate",surface:"gills",spore:"ellipsoid",substrate:"soil"})){desired[k]=v;state[k]=v;const select=host.querySelector('[data-mb-trait="'+k+'"]');select.value=v;select.dispatchEvent(new Event("change",{bubbles:true}));host.querySelectorAll('[data-mb-choice="'+k+'"]').forEach(el=>el.setAttribute("aria-pressed",String(el.dataset.mbValue===v)));}host.querySelector("#mb-pending").textContent="Reset applied to mushroom.";draw();}
     if(e.target.id==="mb-read" && "speechSynthesis" in window){speechSynthesis.cancel();const utter=new SpeechSynthesisUtterance(host.querySelector("#mb-explanation").textContent);utter.rate=.88;speechSynthesis.speak(utter);}
     if(e.target.id==="mb-save"){const payload={schema:"mycosim-custom-visual-v1",created_at:new Date().toISOString(),classification:"creative_educational_not_identified",traits:{...state}};const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}));a.download="mycosim-custom-specimen.json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}
     if(e.target.id==="mb-apply"){
