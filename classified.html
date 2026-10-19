@@ -42,72 +42,6 @@
 .effects-evidence summary{cursor:pointer;color:#f0d8a5;font-weight:650}
 .effects-evidence a{color:#b6dfdf;display:inline-block;padding:5px 0}.effects-bottom{border-left:3px solid #dfab64;padding:10px;background:#24241d}
 @media(max-width:600px){.effects-evidence{padding:12px}.effects-evidence table{font-size:11px}}
-
-/* MycoSim classified research workspaces — non-destructive layout pass */
-#research{max-width:1540px!important;margin:0 auto!important;padding:clamp(14px,2.2vw,32px)!important;box-sizing:border-box;background:#0b1518!important;color:#e7ece7;font-size:15px;line-height:1.65}
-#research>h2{font-size:clamp(21px,2.2vw,31px);line-height:1.25;letter-spacing:-.025em;color:#f4e0b2;margin:5px 0 8px}
-.research-intro{color:#afc4c0;font-size:14px;margin:0 0 23px}
-.research-shell{display:grid;grid-template-columns:230px minmax(0,1fr);align-items:start;gap:24px}
-.research-nav{position:sticky;top:12px;border:1px solid #37545a;border-radius:12px;padding:14px;background:#111f23;display:grid;gap:8px}
-.research-nav-title{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:#94b8b8;margin:0 0 5px;font-weight:800}
-.research-nav button{margin:0;text-align:left;border:1px solid transparent;background:transparent;color:#d6e6e0;padding:12px 11px;font-size:14px;font-weight:600;line-height:1.3;cursor:pointer;width:100%;border-radius:8px}
-.research-nav button:hover{background:#22383c;border-color:#42666a}
-.research-nav button[aria-selected=true]{background:#2d3d37;border-color:#bea36c;color:#ffe5af}
-.research-nav-note{font-size:12px;color:#a9bbb7;border-top:1px solid #34494a;padding-top:12px;margin-top:7px;line-height:1.5}
-.research-content{min-width:0}
-.research-workspace[hidden]{display:none!important}
-.research-workspace{min-width:0;animation:research-enter .14s ease-out}
-@keyframes research-enter{from{opacity:.65}to{opacity:1}}
-.research-workspace>h3{font-size:clamp(19px,1.8vw,25px);color:#f1d59c;margin:0 0 7px}
-.research-workspace>.workspace-description{color:#b8c9c4;margin:0 0 16px;font-size:14px}
-.research-workspace>.effects-evidence,.research-workspace>.photo-archive,.research-workspace>.mechanism-intro,.research-workspace>.mechanism-module,.research-workspace>#gymnopilin-evidence{margin:0 0 16px}
-#research .photo-archive,#research .effects-evidence,#research .mechanism-intro,#research .mechanism-module{padding:clamp(16px,2vw,25px);border-radius:13px}
-#research .photo-archive h3,#research .mechanism-intro h3,#research .effects-evidence h3{font-size:clamp(17px,1.65vw,22px);line-height:1.35;margin:0 0 13px}
-#research p{line-height:1.65}
-#research table{display:block;max-width:100%;overflow-x:auto}
-#research th,#research td{font-size:clamp(12px,1vw,14px);line-height:1.5}
-#research details{border:1px solid #3f5e60;border-radius:9px;padding:13px;margin:9px 0;background:#111f22}
-#research details summary{cursor:pointer;font-weight:650;color:#f0d59b}
-#research button,#research input,#research select{font-size:14px;max-width:100%}
-#research button{min-height:36px}
-#research button:focus-visible,#research a:focus-visible{outline:3px solid #e6bc75;outline-offset:2px}
-#research .photo-grid{grid-template-columns:repeat(auto-fill,minmax(185px,1fr))}
-#research .photo-tile img{aspect-ratio:4/3}
-@media(max-width:980px){.research-shell{grid-template-columns:1fr;gap:15px}.research-nav{position:static;display:flex;align-items:stretch;gap:8px;overflow-x:auto;padding:10px}.research-nav-title,.research-nav-note{display:none}.research-nav button{flex:0 0 auto;width:auto;min-width:140px;white-space:normal}#research{padding:14px!important}}
-@media(max-width:600px){#research .photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.research-nav button{min-width:120px;padding:10px 8px;font-size:12px}#research .photo-archive,#research .effects-evidence{padding:12px}}
-
-/* Gym Juno: image-first scientific exhibit, only displays researcher originals */
-#classifiedPhotoArchive{background:linear-gradient(150deg,#152628 0%,#101c21 70%);border-color:#70817b}
-#classifiedPhotoArchive>h3{font-size:clamp(22px,2.3vw,29px)!important;letter-spacing:-.025em}
-#classifiedPhotoArchive .photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:17px;margin-top:22px}
-#classifiedPhotoArchive .specimen-gallery-tile{display:block;overflow:hidden;padding:0;margin:0;border:1px solid #415a5a;border-radius:12px;background:#0e1c20;text-align:left;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;width:100%;min-height:0}
-#classifiedPhotoArchive .specimen-gallery-tile:hover,#classifiedPhotoArchive .specimen-gallery-tile:focus-visible{transform:translateY(-3px);border-color:#dfbf82;box-shadow:0 15px 28px #0007}
-#classifiedPhotoArchive .specimen-gallery-figure{margin:0;display:block}
-#classifiedPhotoArchive .specimen-gallery-figure img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:0;max-width:none}
-#classifiedPhotoArchive .specimen-gallery-figure figcaption{padding:13px 14px;display:grid;gap:4px}
-#classifiedPhotoArchive .specimen-gallery-figure figcaption strong{font-size:14px;color:#fae5b7}
-#classifiedPhotoArchive .specimen-gallery-figure figcaption span{font-size:12px;color:#a6c6be}
-#classifiedPhotoArchive .specimen-gallery-empty{grid-column:1/-1;border:1px dashed #68807a;border-radius:14px;padding:clamp(24px,4vw,48px);background:radial-gradient(ellipse at 85% 0%,#304237,#122025 65%);min-height:200px;display:flex;align-items:flex-start;flex-direction:column;justify-content:center}
-#classifiedPhotoArchive .specimen-gallery-empty span{font-size:11px;letter-spacing:.16em;color:#e9c883;font-weight:800}
-#classifiedPhotoArchive .specimen-gallery-empty h4{font-size:clamp(19px,2.5vw,27px);color:#f5e2bc;margin:9px 0 4px;line-height:1.25}
-#classifiedPhotoArchive .specimen-gallery-empty p{max-width:680px;font-size:14px;color:#c1d4d0}
-#classifiedPhotoArchive .specimen-gallery-empty button{background:#735f37;color:#fff3d5;font-size:15px;padding:12px 18px}
-#classifiedPhotoArchive .specimen-lightbox{border:1px solid #ad975f;background:#061115;padding:0;margin-top:22px;border-radius:15px;overflow:hidden;box-shadow:0 24px 70px #0009}
-#classifiedPhotoArchive .specimen-lightbox-top{display:flex;justify-content:space-between;align-items:center;background:#122024;padding:7px 15px}
-#classifiedPhotoArchive .specimen-lightbox-top span{font-size:11px;letter-spacing:.13em;font-weight:800;color:#e8cb92}
-#classifiedPhotoArchive .specimen-lightbox-close{background:transparent;border:1px solid #58706b;font-size:23px;min-width:40px}
-#classifiedPhotoArchive .specimen-lightbox-image{display:block;width:100%;max-width:100%;max-height:76vh;object-fit:contain;margin:0 auto;background:#050b0d}
-#classifiedPhotoArchive .specimen-lightbox-footer{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-#classifiedPhotoArchive .specimen-lightbox-footer strong{font-size:18px;color:#f3ddaf}
-#classifiedPhotoArchive .specimen-lightbox-footer p{margin:3px 0 0;font-size:12px}
-#classifiedPhotoArchive .specimen-lightbox-controls{display:flex;gap:8px;flex-wrap:wrap}
-#classifiedPhotoArchive .photo-toolbar{padding:12px;border:1px solid #314a4c;border-radius:10px;background:#0d1b1e}
-#classifiedPhotoArchive [data-photo-status]{font-size:13px;color:#d6c18b;font-weight:650}
-@media(max-width:600px){#classifiedPhotoArchive .photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}#classifiedPhotoArchive .specimen-gallery-figure figcaption{padding:9px}#classifiedPhotoArchive .specimen-lightbox-footer{padding:10px}}
-
-.research-archive-advanced{background:#0c181b;border:1px solid #455c5e;border-radius:12px;padding:14px;margin:20px 0}
-.research-archive-advanced>summary{font-weight:700;font-size:14px;color:#e5cf9e;padding:7px;cursor:pointer}
-.research-archive-advanced[open]>summary{margin-bottom:15px}
 </style>
 <header><b id="classifiedName">MYCOSIM · CLASSIFIED SPECIMEN</b><a href="sandbox.html">Return to MycoSim</a></header>
 <main><div id="specimenStage" style="position:relative;min-width:0"><canvas id="view" aria-label="Protected interactive 3D specimen viewer"></canvas><div id="anatomyTooltip" hidden role="status"></div></div><aside><h2>Interactive mushroom anatomy</h2><p>Restricted morphology reconstruction for research. Not a diagnostic specimen.</p><button id="top">Cap view</button><button id="under">Gill view</button><button id="reset">Reset view</button><button id="gills">Toggle gills</button><button id="log">Toggle log</button><section id="anatomyInspector" aria-label="Cursor anatomy inspector"><h2>Anatomical cursor tracker</h2><p id="anatomyState" aria-live="polite">No anatomical selection</p><h3 id="anatomyTitle">Move your cursor over a specimen structure</h3><p id="anatomyPronunciation"></p><p id="anatomyDescription">Hover over cap, gills, stipe or veil to identify anatomy.</p><p id="anatomyNotes"></p><div class="tracker-actions"><button type="button" id="anatomyClear">Reset selection</button><button type="button" id="anatomyLabels" aria-pressed="true">Toggle hover labels</button><button type="button" id="anatomySpeak">Pronounce / Read</button></div><p class="anatomy-disclaimer">Schematic anatomical labels depend on 3D mesh geometry; they are not laboratory identification evidence.</p></section><h2>CLASSIFIED FIELD RECONSTRUCTION</h2><button id="fieldMode">Field-colony 3D (40 photos)</button><button id="specimenMode">Isolated specimens</button><h3>Isolate one specimen by age</h3><div id="ageControls" role="group" aria-label="Specimen developmental stage"><button data-age="juvenile">Juvenile / button</button><button data-age="young">Young convex</button><button data-age="mature">Mature</button><button data-age="expanded">Expanded / aging</button></div><p id="modeNote">Select a reconstruction mode after unlocking.</p><p>Drag to rotate, wheel to zoom. Key features: robust stems, ochre caps, rust-colored gills, annular zones and decaying hardwood habitat.</p><p><b>Research only.</b> Psilocybin reports vary by collection and taxonomic identification; no concentration or safe exposure can be inferred from this model.</p></aside></main>
@@ -186,7 +120,7 @@
 </section><section id="classifiedPhotoArchive" aria-label="Classified photograph library" class="photo-archive">
 <h3>Gym Juno — Classified original photograph gallery (71 images)</h3>
 <p><strong>71 original photographs recorded:</strong> 60 field/anatomy photographs (IMG_1576–1635) and 11 microscopy PNGs. <strong>Important:</strong> the photos are NOT automatically uploaded from ChatGPT to the live static site. To view the originals here without publishing them to the public repository, download the combined 71-photo ZIP supplied in the chat and import it once in this browser. It stays on this device only.</p>
-<label for="classifiedPhotoInput"><strong>Load the 71 original photographs — select the combined ZIP file</strong></label>
+<label for="classifiedPhotoInput"><strong>Load all 71 original photos — select the combined uncompressed ZIP</strong></label>
 <input id="classifiedPhotoInput" data-photo-input type="file" accept=".zip,image/jpeg,image/png,image/webp" multiple>
 <div class="photo-toolbar"><label>Find photo <input data-photo-search type="search" placeholder="IMG_1600 or gills"></label><label>Study group <select data-photo-filter><option value="">All photographs</option><option>Field colony / habitat</option><option>Cap / gill comparison</option><option>Gills / veil / stipe</option><option>Microscopy / spore studies</option><option>Unassigned</option></select></label><button data-photo-clear type="button">Clear local archive</button></div>
 <p data-photo-status aria-live="polite">Gallery initializing. If no photographs appear, import the 71-photo ZIP from our chat into this browser; no images are stored on the website.</p>
@@ -318,79 +252,6 @@ for(const button of document.querySelectorAll("[data-age]"))button.onclick=()=>m
 mode("colony");
 function render(){requestAnimationFrame(render);orbit.update();renderer.render(scene,camera)}render()}
 document.querySelector("#unlock").onsubmit=async e=>{e.preventDefault();const inp=document.querySelector("#pass");try{let model=await unlock(inp.value.trim().toUpperCase());inp.value="";document.querySelector("#gate").hidden=true;document.querySelector("#classifiedName").textContent="MYCOSIM · Gymnopilus junonius · historical G. spectabilis";document.querySelector("#research").hidden=false;import("./mycosim/gym_juno_encrypted_gallery.js").then(m=>m.mountEncryptedGymJuno(document.getElementById("gymJunoEncrypted"))).catch(error=>console.error("Encrypted photo module unavailable",error));import("./mycosim/gym_juno_cloud_archive.js").then(m=>m.mountGymJunoCloudArchive(document.getElementById("gymJunoCloud"))).catch(error=>console.error("Cloud archive unavailable",error));import("./mycosim/classified_photo_gallery.js").then(m=>m.setupClassifiedPhotoGallery(document.getElementById("classifiedPhotoArchive"))).catch(error=>{console.error("Photo gallery unavailable",error);document.querySelector("[data-photo-status]").textContent="Local photo gallery could not initialize";});document.title="MycoSim · Gymnopilus junonius";scene3d(model)}catch(_){inp.value="";document.querySelector("#status").textContent="Passcode incorrect or encrypted data unavailable."}};
-
-
-function setupResearchWorkspace(){
- const root=document.getElementById("research");
- if(!root||root.dataset.workspaceReady==="yes")return;
- const labels=[
-  ["evidence","01 · Human Effects & Evidence","Clinical trials, direct chemistry studies, and attributed experiences"],
-  ["specimen","02 · Specimen & Microscopy","Morphometrics, spore micrographs, specimen verification"],
-  ["photos","03 · Photo Archives","Encrypted images, private storage, and original reference gallery"],
-  ["molecular","04 · Molecular Laboratory","Interactive pathways, receptor data, research protocols"]
- ];
- const title=root.querySelector(":scope > h2");
- const desc=document.createElement("p");desc.className="research-intro";
- desc.textContent="Four focused workspaces · select a section to study. Original modules and records remain preserved.";
- title.insertAdjacentElement("afterend",desc);
- const shell=document.createElement("div");shell.className="research-shell";
- const nav=document.createElement("nav");nav.className="research-nav";nav.setAttribute("aria-label","Classified research navigation");
- const kicker=document.createElement("p");kicker.className="research-nav-title";kicker.textContent="Research divisions";nav.append(kicker);
- const note=document.createElement("p");note.className="research-nav-note";note.textContent="Research-only evidence. Morphology and reports do not establish specimen identity or safety.";
- const content=document.createElement("div");content.className="research-content";
- const panels=new Map(),tabs=new Map();
- function select(id,shouldFocus){
-  for(const [name,panel] of panels){const active=name===id;panel.hidden=!active;tabs.get(name).setAttribute("aria-selected",String(active));tabs.get(name).tabIndex=active?0:-1}
-  if(shouldFocus){panels.get(id).focus({preventScroll:true});root.scrollIntoView({behavior:"smooth",block:"start"})}
- }
- for(const [id,label,description] of labels){
-  const button=document.createElement("button");button.type="button";button.textContent=label;button.setAttribute("role","tab");button.setAttribute("aria-controls","researchPanel-"+id);button.id="researchTab-"+id;button.addEventListener("click",()=>select(id,true));
-  nav.append(button);tabs.set(id,button);
-  const panel=document.createElement("section");panel.className="research-workspace";panel.id="researchPanel-"+id;panel.setAttribute("role","tabpanel");panel.setAttribute("aria-labelledby",button.id);panel.tabIndex=-1;
-  const heading=document.createElement("h3");heading.textContent=label.slice(5);panel.append(heading);
-  const intro=document.createElement("p");intro.className="workspace-description";intro.textContent=description;panel.append(intro);
-  content.append(panel);panels.set(id,panel);
- }
- nav.append(note);shell.append(nav,content);
- const targets={
-  "effectsEvidence":"evidence",
-  "morphometrics":"specimen",
-  "classifiedMicroscopyArchive":"specimen",
-  "gymJunoEncrypted":"photos",
-  "gymJunoCloud":"photos",
-  "classifiedPhotoArchive":"photos",
-  "mechanismLauncher":"molecular",
-  "mechanismModule":"molecular",
-  "gymnopilin-evidence":"molecular"
- };
- // Move existing element nodes only; their identities, internal content and
- // registered event listeners remain unchanged. Keep later supplementary notes.
- const nodes=Array.from(root.childNodes).filter(n=>n!==title&&n!==desc);
- let current="molecular";
- for(const node of nodes){
-  if(node.nodeType===1&&node.id&&targets[node.id])current=targets[node.id];
-  panels.get(current).append(node);
- }
- const photoPanel=panels.get("photos");
- const mainGallery=document.getElementById("classifiedPhotoArchive");
- photoPanel.insertBefore(mainGallery,photoPanel.children[2]||null);
- const advanced=document.createElement("details");
- advanced.className="research-archive-advanced";
- const advancedSummary=document.createElement("summary");
- advancedSummary.textContent="Advanced archive controls · encrypted deployment and private-cloud status";
- advanced.append(advancedSummary);
- advanced.append(document.getElementById("gymJunoEncrypted"),document.getElementById("gymJunoCloud"));
- photoPanel.append(advanced);
- root.append(shell);root.dataset.workspaceReady="yes";
- select("evidence",false);
- nav.addEventListener("keydown",event=>{
-  if(!["ArrowRight","ArrowLeft","ArrowDown","ArrowUp","Home","End"].includes(event.key))return;
-  event.preventDefault();const ids=labels.map(x=>x[0]);const index=ids.findIndex(id=>tabs.get(id)===document.activeElement);
-  const target=event.key==="Home"?0:event.key==="End"?ids.length-1:(index+(event.key==="ArrowLeft"||event.key==="ArrowUp"?-1:1)+ids.length)%ids.length;
-  tabs.get(ids[target]).focus();select(ids[target],false);
- });
-}
-setupResearchWorkspace();
 
 // Separate receptor lab loads on user request, only after the protected research section is unlocked.
 document.getElementById("openMicroscopyUpload").addEventListener("click",()=>document.getElementById("classifiedPhotoInput").click());
