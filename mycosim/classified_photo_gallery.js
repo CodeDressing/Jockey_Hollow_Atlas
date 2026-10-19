@@ -63,15 +63,56 @@ export async function setupClassifiedPhotoGallery(container){
  const input=container.querySelector("[data-photo-input]"),grid=container.querySelector("[data-photo-grid]"),status=container.querySelector("[data-photo-status]"),search=container.querySelector("[data-photo-search]"),filter=container.querySelector("[data-photo-filter]"),viewer=container.querySelector("[data-photo-viewer]"),clear=container.querySelector("[data-photo-clear]");
  let all=[],previews=[];
  function cleanup(){for(const url of previews)URL.revokeObjectURL(url);previews=[]}
- function showLarge(record){viewer.replaceChildren();const figure=document.createElement("figure");const img=document.createElement("img");const url=URL.createObjectURL(record.blob);previews.push(url);img.src=url;img.alt=record.name+" full photograph";img.style.cssText="max-width:100%;max-height:65vh;object-fit:contain";const cap=document.createElement("figcaption");cap.textContent=record.name+" — "+record.category+" (photograph supplied by the specimen researcher; species ID unverified)";figure.append(img,cap);viewer.append(figure);viewer.hidden=false;viewer.scrollIntoView({behavior:"smooth",block:"nearest"})}
+
+ let activeIndex=-1;
+ function showLarge(record){
+  let index=all.findIndex(x=>x.name===record.name);if(index<0)return;
+  activeIndex=index;
+  viewer.replaceChildren();viewer.classList.add("specimen-lightbox");
+  const top=document.createElement("div");top.className="specimen-lightbox-top";
+  const badge=document.createElement("span");badge.textContent="GYM JUNO • ORIGINAL PHOTOGRAPH";
+  const close=document.createElement("button");close.type="button";close.className="specimen-lightbox-close";close.setAttribute("aria-label","Close specimen photograph");close.textContent="×";
+  close.addEventListener("click",()=>{viewer.hidden=true;activeIndex=-1});
+  top.append(badge,close);
+  const img=document.createElement("img");const url=URL.createObjectURL(record.blob);previews.push(url);img.src=url;img.alt=record.name+" original photographic record";img.className="specimen-lightbox-image";
+  const footer=document.createElement("div");footer.className="specimen-lightbox-footer";
+  const meta=document.createElement("div");const heading=document.createElement("strong");heading.textContent=record.name;const caption=document.createElement("p");caption.textContent=record.category+" · Image "+(index+1)+" of "+all.length+" · Provisional specimen identification";meta.append(heading,caption);
+  const actions=document.createElement("div");actions.className="specimen-lightbox-controls";
+  for(const [label,step] of [["← Previous",-1],["Next →",1]]){
+   const b=document.createElement("button");b.type="button";b.textContent=label;b.addEventListener("click",()=>showLarge(all[(activeIndex+step+all.length)%all.length]));actions.append(b)
+  }
+  footer.append(meta,actions);viewer.append(top,img,footer);viewer.hidden=false;
+  viewer.scrollIntoView({behavior:"smooth",block:"center"});
+ }
+ viewer.setAttribute("tabindex","-1");
+ viewer.addEventListener("keydown",event=>{
+  if(viewer.hidden||activeIndex<0)return;
+  if(event.key==="Escape"){viewer.hidden=true;activeIndex=-1}
+  else if(event.key==="ArrowLeft"){showLarge(all[(activeIndex-1+all.length)%all.length]);event.preventDefault()}
+  else if(event.key==="ArrowRight"){showLarge(all[(activeIndex+1)%all.length]);event.preventDefault()}
+ });
+
  function render(){
   cleanup();grid.replaceChildren();
   const term=search.value.trim().toLowerCase(),cat=filter.value;
   const selected=all.filter(r=>(!term||r.name.toLowerCase().includes(term)||r.category.toLowerCase().includes(term))&&(!cat||r.category===cat));
-  status.textContent=all.length+" of "+expected.length+" specimen images available in this browser · "+selected.length+" shown. Photos are stored on this device only; no upload to the public website.";
-  for(const item of selected){const button=document.createElement("button");button.type="button";button.className="photo-tile";
-    const image=document.createElement("img");const url=URL.createObjectURL(item.blob);previews.push(url);image.src=url;image.loading="lazy";image.alt=item.name+" specimen reference";
-    const text=document.createElement("span");text.textContent=item.name+" · "+item.category;button.append(image,text);button.addEventListener("click",()=>showLarge(item));grid.append(button)}
+  status.textContent=all.length+" original photograph(s) available on this computer · "+selected.length+" currently displayed";
+  if(!all.length){
+    const empty=document.createElement("div");empty.className="specimen-gallery-empty";
+    const kicker=document.createElement("span");kicker.textContent="PHOTO ARCHIVE · AWAITING ORIGINALS";
+    const h=document.createElement("h4");h.textContent="Your Gym Juno photographs are not on this website yet.";
+    const p=document.createElement("p");p.textContent="The research dossier and gallery are deployed, but the 71 original image files are not hosted remotely. You can load the original-photo ZIP here once to view a full specimen collection on this computer.";
+    const button=document.createElement("button");button.type="button";button.textContent="Load original specimen photographs";button.addEventListener("click",()=>input.click());
+    empty.append(kicker,h,p,button);grid.append(empty);return
+  }
+  if(!selected.length){const p=document.createElement("p");p.textContent="No photographs match this filter. Try All photographs.";grid.append(p);return}
+  for(const item of selected){
+    const button=document.createElement("button");button.type="button";button.className="photo-tile specimen-gallery-tile";
+    const figure=document.createElement("figure");figure.className="specimen-gallery-figure";
+    const image=document.createElement("img");const url=URL.createObjectURL(item.blob);previews.push(url);image.src=url;image.loading="lazy";image.alt=item.name+" original specimen photograph";
+    const meta=document.createElement("figcaption");const title=document.createElement("strong");title.textContent=item.name;const sub=document.createElement("span");sub.textContent=item.category;meta.append(title,sub);
+    figure.append(image,meta);button.append(figure);button.addEventListener("click",()=>showLarge(item));grid.append(button);
+  }
  }
  async function refresh(){all=(await listFiles()).sort((a,b)=>a.name.localeCompare(b.name,undefined,{numeric:true}));render()}
  input.addEventListener("change",async()=>{
