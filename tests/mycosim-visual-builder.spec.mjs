@@ -40,6 +40,10 @@ test("Sprint 2 creates actual reactive WebGL geometry and independent spores",as
   await expect(studio.locator("#mb-3d-feedback")).toContainText("teeth");
   const teeth=await page.evaluate(()=>window.MycoSimCreative3D.getState());
   expect(teeth.meshCount).toBeGreaterThan(30);
+  await studio.locator('[data-mb-trait="stipe"]').selectOption("bulbous");
+  await studio.locator('[data-mb-trait="attachment"]').selectOption("decurrent");
+  await expect(studio.locator("#mb-3d-feedback")).toContainText("bulbous");
+  await expect(studio.locator("#mb-3d-feedback")).toContainText("decurrent");
   await studio.locator('[data-mb-trait="spore"]').selectOption("fusiform");
   await expect(studio.locator("#mb-microscopy")).toContainText("fusiform");
   await studio.locator('[data-mb-trait="form"]').selectOption("cup");
