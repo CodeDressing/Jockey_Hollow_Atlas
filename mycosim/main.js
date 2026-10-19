@@ -19,7 +19,7 @@ const eduRead=$("#eduRead"), orientation=$("#orientationLabel"), hoverProbe=$("#
 const qaRun=$("#runRegression"), qaStatus=$("#regressionStatus"), qaResults=$("#regressionResults");
 const archetypeControls=$("#archetypeControls"), archetypeInfo=$("#archetypeInfo"), qualityControls=$("#qualityControls"), phase5Status=$("#phase5Status");
 let selected=null,currentProfile=MORPHOLOGY_PROFILES[0],knowledgeMode="beginner",currentKnowledge=getKnowledge("basidiome");
-let learnerMode="guided",highestLearningStep=1;
+let learnerMode="guided",highestLearningStep=1,currentLearningStep=1;
 let observationRecord=emptyObservationRecord();
 let sporeMeasurements=[];
 let regressionToolsPromise=null;
@@ -59,6 +59,7 @@ function setLearnerMode(mode){
       :"Explore mode keeps every learning layer open so you can move anywhere immediately.";
   }
   updateLearningAccess();
+  updateLessonNavigation();
 }
 
 function updateLearningAccess(){
@@ -81,12 +82,36 @@ function setLearningStep(step,{scroll=false}={}){
   const numeric=Math.max(1,Math.min(5,Number(step)||1));
   if(learnerMode==="guided") highestLearningStep=Math.max(highestLearningStep,numeric);
   const n=String(numeric);
+  currentLearningStep=numeric;
   updateLearningAccess();
   document.querySelectorAll("[data-learning-step]").forEach(el=>el.classList.toggle("active",el.dataset.learningStep===n));
   document.querySelectorAll("[data-jump-step]").forEach(el=>el.classList.toggle("active",el.dataset.jumpStep===n));
   if(scroll){
     document.querySelector('[data-learning-step="'+n+'"]')?.scrollIntoView({behavior:"smooth",block:"start"});
   }
+  updateLessonNavigation();
+}
+
+const MYCOSIM_LESSON_NAMES=["Family","Stage","Morphology","Anatomy","Deeper"];
+function updateLessonNavigation(){
+  const label=$("#mycosim-lesson-progress"),previous=$("#mycosim-lesson-prev"),next=$("#mycosim-lesson-next");
+  if(!label||!previous||!next)return;
+  label.textContent="Lesson "+currentLearningStep+" of 5 · "+MYCOSIM_LESSON_NAMES[currentLearningStep-1]+(learnerMode==="guided"?" · Guided":" · Explore");
+  previous.disabled=currentLearningStep<=1;
+  next.disabled=currentLearningStep>=5 || (learnerMode==="guided" && currentLearningStep>=highestLearningStep);
+  next.textContent=currentLearningStep>=5?"Final lesson reached":"Next lesson →";
+  document.querySelectorAll("[data-jump-step]").forEach(button=>{
+    if(button.classList.contains("active"))button.setAttribute("aria-current","step");
+    else button.removeAttribute("aria-current");
+  });
+}
+function mountLessonNavigation(){
+  const previous=$("#mycosim-lesson-prev"),next=$("#mycosim-lesson-next"),back=$("#mycosim-lesson-return");
+  if(!previous||!next||!back)return;
+  previous.addEventListener("click",()=>setLearningStep(currentLearningStep-1,{scroll:true}));
+  next.addEventListener("click",()=>{if(!next.disabled)setLearningStep(currentLearningStep+1,{scroll:true});});
+  back.addEventListener("click",()=>setLearningStep(currentLearningStep,{scroll:true}));
+  updateLessonNavigation();
 }
 
 function updateMorphologySummary(engine){
@@ -596,6 +621,8 @@ try{
       return;
     }
   });
+
+  mountLessonNavigation();
 
   const grid=$("#modelGrid");
   grid.innerHTML=MORPHOLOGY_PROFILES.map((p,i)=>`<button class="model-pick ${i===0?"active":""}" data-model="${p.id}"><strong>${p.label}</strong><span>${p.description}</span></button>`).join("");
