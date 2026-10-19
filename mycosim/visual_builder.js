@@ -1,4 +1,5 @@
 // MycoSim visual builder: additive, optional, no changes to evidence records.
+import {MORPHOLOGY_VARIANTS} from "./variants.js";
 const mountPoint = document.getElementById("observationForm");
 if (mountPoint && !document.getElementById("myco-visual-builder")) {
   const host = document.createElement("section");
@@ -30,6 +31,15 @@ if (mountPoint && !document.getElementById("myco-visual-builder")) {
     #myco-visual-builder .mb-trait-option:focus-visible{outline:3px solid #f6d597;outline-offset:2px}
     #myco-visual-builder .mb-pending{color:#ffdf96;border-left:3px solid #d9b878;padding:7px 10px;background:#18231d;font-size:12px}
     #myco-visual-builder #mb-apply{font-weight:800;background:#af8e4c;border-color:#e8c77a;color:#111d1b}
+    #myco-visual-builder .mb-anatomy-editor{border:1px solid #65897c;border-radius:12px;padding:12px;background:#0b1b1d;margin:12px 0}
+    #myco-visual-builder .mb-regions{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}
+    #myco-visual-builder .mb-region-editor{max-height:380px;overflow:auto;overscroll-behavior:contain}
+    #myco-visual-builder .mb-advanced-row{margin:10px 0;padding:10px;border:1px solid #37554d;border-radius:8px}
+    #myco-visual-builder .mb-advanced-row h5{margin:0 0 8px;color:#e0d3a9;font-size:12px}
+    #myco-visual-builder .mb-advanced-choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(108px,1fr));gap:6px}
+    #myco-visual-builder .mb-advanced-choices button{font-size:12px;min-height:44px}
+    #myco-visual-builder .mb-advanced-choices [aria-pressed=true]{outline:2px solid #e8cc84}
+
     #myco-visual-builder [hidden]{display:none!important}
     @media(max-width:690px){#myco-visual-builder .mb-layout{grid-template-columns:1fr}}
   `;
@@ -51,7 +61,18 @@ if (mountPoint && !document.getElementById("myco-visual-builder")) {
         <label>Fertile surface<select data-mb-trait="surface"><option value="gills">Gills</option><option value="pores">Pores</option><option value="teeth">Teeth</option><option value="smooth">Smooth</option></select></label>
         <label>Spore shape (micro diagram)<select data-mb-trait="spore"><option value="ellipsoid">Ellipsoid</option><option value="globose">Globose</option><option value="fusiform">Fusiform</option></select></label>
         <label>Growth substrate<select data-mb-trait="substrate"><option value="soil">Soil</option><option value="wood">Decaying wood</option><option value="living_tree">Living tree</option></select></label>
-        <p class="mb-pending" id="mb-pending" role="status">Choose visual features, then press Apply to Mushroom.</p><div class="mb-action"><button type="button" id="mb-apply">Apply to Mushroom →</button><button type="button" id="mb-save">Export custom specimen</button><button type="button" id="mb-reset">Reset</button></div>
+        <p class="mb-pending" id="mb-pending" role="status">Choose visual features, then press Apply to Mushroom.</p><section class="mb-anatomy-editor" aria-labelledby="mb-anatomy-title">
+          <h4 id="mb-anatomy-title">Professional 3D anatomy editor</h4>
+          <p class="mb-note">These settings drive the existing detailed MycoSim engine. Select a region, choose its characteristics, then Apply to Mushroom.</p>
+          <div class="mb-regions" role="group" aria-label="Choose mushroom region">
+            <button type="button" data-mb-region="pileus" aria-pressed="true">Pileus + margin</button>
+            <button type="button" data-mb-region="stipe" aria-pressed="false">Stipe apex / middle / base</button>
+            <button type="button" data-mb-region="hymenophore" aria-pressed="false">Gills + attachment</button>
+            <button type="button" data-mb-region="surface" aria-pressed="false">Surface + age</button>
+          </div>
+          <div id="mb-region-editor" class="mb-region-editor"></div>
+        </section>
+        <div class="mb-action"><button type="button" id="mb-apply">Apply to Mushroom →</button><button type="button" id="mb-save">Export custom specimen</button><button type="button" id="mb-reset">Reset</button></div>
       </div>
       <div class="mb-preview">
         <svg id="mb-drawing" viewBox="0 0 360 270" role="img" aria-label="Mushroom morphology diagram, updated by chosen traits"></svg>
@@ -86,6 +107,47 @@ if (mountPoint && !document.getElementById("myco-visual-builder")) {
     const focus=state.mode==="identify"?"Identify mode: compare the shape you see; this custom illustration is not a real specimen.":state.mode==="build"?"Build mode: make your own fictional teaching specimen.":"Learn mode: each trait has a definition and visual example.";
     host.querySelector("#mb-explanation").textContent=focus+" "+terms[state.form]+" "+terms[state.cap]+" "+terms[state.surface]+" "+terms[state.stipe]+" "+terms[state.attachment]+" "+terms[state.spore]+" "+terms[state.substrate];
   }
+  const advancedGroups={
+    pileus:["agaric_pileus_profile","agaric_pileus_center","agaric_margin"],
+    stipe:["agaric_stipe_position","agaric_stipe_form","agaric_stipe_context","agaric_stipe_surface_apex","agaric_stipe_surface_mid","agaric_stipe_surface_base","agaric_stipe_taper"],
+    hymenophore:["agaric_gill_attachment","agaric_gill_spacing","agaric_gill_thickness","agaric_gill_depth","agaric_lamellulae","agaric_gill_edge"],
+    surface:["agaric_surface_primary","agaric_surface_secondary","agaric_surface_distribution","agaric_surface_age","agaric_surface_moisture"]
+  };
+  const advancedPending={};
+  let activeRegion="pileus";
+  function renderAnatomyEditor(){
+    const editor=host.querySelector("#mb-region-editor");
+    editor.replaceChildren();
+    const source=window.MycoSimMorphologyBridge?.getState()?.variants||{};
+    for(const group of advancedGroups[activeRegion]){
+      const definition=MORPHOLOGY_VARIANTS[group];if(!definition)continue;
+      const row=document.createElement("div");row.className="mb-advanced-row";row.dataset.mbAdvancedGroup=group;
+      const heading=document.createElement("h5");heading.textContent=definition.label;row.append(heading);
+      const options=document.createElement("div");options.className="mb-advanced-choices";options.setAttribute("role","group");options.setAttribute("aria-label",definition.label);
+      for(const [id,label] of definition.options){
+        const button=document.createElement("button");button.type="button";button.dataset.mbAdvanced=group;button.dataset.mbOption=id;
+        button.textContent=label;button.setAttribute("aria-pressed",String((advancedPending[group]||source[group]||definition.options[0][0])===id));
+        button.addEventListener("click",()=>{
+          advancedPending[group]=id;
+          options.querySelectorAll("button").forEach(node=>node.setAttribute("aria-pressed",String(node===button)));
+          host.querySelector("#mb-pending").textContent="Pending: "+definition.label+" — "+label+". Press Apply to Mushroom to update the detailed 3D specimen.";
+        });
+        options.append(button);
+      }
+      row.append(options);editor.append(row);
+    }
+  }
+  host.querySelectorAll("[data-mb-region]").forEach(button=>button.addEventListener("click",()=>{
+    activeRegion=button.dataset.mbRegion;
+    host.querySelectorAll("[data-mb-region]").forEach(node=>node.setAttribute("aria-pressed",String(node===button)));
+    renderAnatomyEditor();
+  }));
+  const originalApply=host.querySelector("#mb-apply");
+  const focus3d=document.createElement("button");focus3d.type="button";focus3d.id="mb-focus-authoritative";focus3d.textContent="View detailed 3D specimen ↑";
+  focus3d.addEventListener("click",()=>window.MycoSimMorphologyBridge?.focus());
+  originalApply.parentElement.append(focus3d);
+  renderAnatomyEditor();
+
   // Visual selection stage: accessible diagram tiles instead of dropdown-first controls.
   // Original select elements remain as the single committed state for engine compatibility.
   const desired={...state};
@@ -156,25 +218,24 @@ if (mountPoint && !document.getElementById("myco-visual-builder")) {
   host.addEventListener("click",e=>{
     const mode=e.target.closest("[data-mb-mode]");
     if(mode){state.mode=mode.dataset.mbMode;host.querySelectorAll("[data-mb-mode]").forEach(b=>b.setAttribute("aria-pressed",String(b===mode)));draw();return;}
-    if(e.target.id==="mb-reset"){for(const [k,v] of Object.entries({form:"agaric",cap:"convex",stipe:"equal",attachment:"adnate",surface:"gills",spore:"ellipsoid",substrate:"soil"})){desired[k]=v;state[k]=v;const select=host.querySelector('[data-mb-trait="'+k+'"]');select.value=v;select.dispatchEvent(new Event("change",{bubbles:true}));host.querySelectorAll('[data-mb-choice="'+k+'"]').forEach(el=>el.setAttribute("aria-pressed",String(el.dataset.mbValue===v)));}host.querySelector("#mb-pending").textContent="Reset applied to mushroom.";draw();}
+    if(e.target.id==="mb-reset"){for(const key of Object.keys(advancedPending))delete advancedPending[key];renderAnatomyEditor();for(const [k,v] of Object.entries({form:"agaric",cap:"convex",stipe:"equal",attachment:"adnate",surface:"gills",spore:"ellipsoid",substrate:"soil"})){desired[k]=v;state[k]=v;const select=host.querySelector('[data-mb-trait="'+k+'"]');select.value=v;select.dispatchEvent(new Event("change",{bubbles:true}));host.querySelectorAll('[data-mb-choice="'+k+'"]').forEach(el=>el.setAttribute("aria-pressed",String(el.dataset.mbValue===v)));}host.querySelector("#mb-pending").textContent="Reset applied to mushroom.";draw();}
     if(e.target.id==="mb-read" && "speechSynthesis" in window){speechSynthesis.cancel();const utter=new SpeechSynthesisUtterance(host.querySelector("#mb-explanation").textContent);utter.rate=.88;speechSynthesis.speak(utter);}
     if(e.target.id==="mb-save"){const payload={schema:"mycosim-custom-visual-v1",created_at:new Date().toISOString(),classification:"creative_educational_not_identified",traits:{...state}};const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}));a.download="mycosim-custom-specimen.json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}
     if(e.target.id==="mb-apply"){
-      const messages=[];
-      // Existing renderer supports user-clickable variants; use its public UI rather than writing engine internals.
       const family=state.form==="bracket"?"polyporoid":state.form==="cup"?"cup":"agaricoid";
-      const familyButton=document.querySelector('#modelGrid [data-model="'+family+'"]');
-      if(familyButton){if(!familyButton.classList.contains("active"))familyButton.click();messages.push("3D family selected: "+family);}
-      else messages.push("3D family not available in this build");
-      const mappings=state.form==="agaric"?[["agaric_pileus_profile",state.cap==="flat"?"flat":state.cap]]:[];
-      if(state.form==="agaric"&&state.surface==="gills")mappings.push(["agaric_gill_attachment","adnate"]);
-      for(const [group,value] of mappings){
-        const button=document.querySelector('#variantControls [data-variant="'+group+'"][data-value="'+value+'"]');
-        if(button){if(button.getAttribute("aria-pressed")!=="true")button.click();messages.push(group+" updated");}
-        else messages.push(group+" remains diagram-only");
-      }
-      if(state.form!=="agaric"||state.surface!=="gills")messages.push("Fertile surface shown schematically; existing 3D mesh is not claimed to be rebuilt");
-      host.querySelector("#mb-3d-status").textContent=messages.join(". ")+".";
+      const mapping=state.form==="agaric"?{
+        agaric_pileus_profile:state.cap,
+        agaric_stipe_form:state.stipe==="bulbous"?"bulbous_base":state.stipe==="tapered"?"tapering":"equal",
+        agaric_gill_attachment:state.attachment==="free"?"free_gills":state.attachment
+      }:{};
+      // Advanced explicit choices take precedence over introductory shape tiles.
+      const variants={...mapping,...advancedPending};
+      const bridge=window.MycoSimMorphologyBridge;
+      const result=bridge?.apply({family,variants});
+      host.querySelector("#mb-3d-status").textContent=result
+        ?"Original scientific engine: "+result.family+". "+result.applied.length+" anatomical characters changed."+(result.rejected.length?" Unsupported: "+result.rejected.join(", "):"")
+        :"Detailed 3D engine has not initialized; creative preview remains available.";
+      renderAnatomyEditor();
     }
   });
   draw();
