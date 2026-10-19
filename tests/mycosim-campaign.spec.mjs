@@ -36,7 +36,8 @@ test("Unified workspace switches once, retains original specimen and mobile layo
   await expect(page.locator('#myco-lab-nav [data-lab="'+key+'"]')).toHaveAttribute("aria-selected","true");
   await expect(page.locator("#trametes-simulator")).toHaveAttribute("data-active-lab",key);
  }
- await expect(page.locator("#tv-canvas")).toBeVisible();
+ await expect(page.locator("#tv-canvas")).toBeHidden();
+ await expect(page.locator("#myco-family-biology")).toBeVisible();
  await page.setViewportSize({width:390,height:844});
  const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
  expect(overflow).toBeLessThanOrEqual(12);
@@ -91,7 +92,8 @@ test("Unified laboratory keyboard tabs and module preservation",async({page})=>{
  await expect(page.locator("#myco-acceptance")).toBeVisible();
  await page.keyboard.press("Home");
  await expect(navigation.locator('[data-lab="specimen"]')).toHaveAttribute("aria-selected","true");
- await expect(page.locator("#tv-canvas")).toBeVisible();
+ await expect(page.locator("#tv-canvas")).toBeHidden();
+ await expect(page.locator("#myco-family-biology")).toBeVisible();
  await expect(page.locator("#stage")).toHaveCount(1);
  await expect(page.locator("#tv-biology")).toHaveCount(1);
  await expect(page.locator("#tv-anatomy3d")).toHaveCount(1);
@@ -535,4 +537,28 @@ test("Phase 27 instancing retains semantic selection and beats Phase 26 scene co
  await expect(lab.locator('[data-part="epithelium"]')).toHaveAttribute("aria-pressed","true");
  await lab.locator('[data-mode="gut"]').click();
  await expect(lab.locator(".anatomy-picker button")).toHaveCount(4);
+});
+
+
+test("Forest specimen routes agaricoid biology and isolates the Turkey Tail log viewer",async({page})=>{
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
+ await page.locator('#myco-lab-nav [data-lab="specimen"]').click();
+ await expect(page.locator("#myco-family-biology")).toBeVisible();
+ await expect(page.locator("#tv-species-only")).toBeHidden();
+ await expect(page.locator("#bio28-taxon option")).toHaveCount(5);
+ await page.locator("#bio28-taxon").selectOption("pleurotus_ostreatus");
+ await expect(page.locator("#bio28-ecology")).toContainText("wood decomposer");
+ await page.locator("#bio28-next").click();
+ await expect(page.locator("#bio28-heading")).toContainText("stage 2/5");
+ await page.locator("#bio28-taxon").selectOption("amanita_muscaria");
+ await expect(page.locator("#bio28-ecology")).toContainText("living trees");
+ await page.locator('#modelGrid [data-model="trametes_versicolor"]').click();
+ await expect(page.locator("#tv-species-only")).toBeVisible();
+ await expect(page.locator("#myco-family-biology")).toBeHidden();
+ await expect(page.locator("#tv-start")).toBeVisible();
+ await page.locator('#modelGrid [data-model="agaricoid"]').click();
+ await expect(page.locator("#tv-species-only")).toBeHidden();
+ await expect(page.locator("#myco-family-biology")).toBeVisible();
+ expect(await page.evaluate(()=>window.MycoSimFamilyBiology.getState().family)).toBe("agaricoid");
 });
