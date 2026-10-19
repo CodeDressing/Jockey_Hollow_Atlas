@@ -19,7 +19,7 @@ const eduRead=$("#eduRead"), orientation=$("#orientationLabel"), hoverProbe=$("#
 const qaRun=$("#runRegression"), qaStatus=$("#regressionStatus"), qaResults=$("#regressionResults");
 const archetypeControls=$("#archetypeControls"), archetypeInfo=$("#archetypeInfo"), qualityControls=$("#qualityControls"), phase5Status=$("#phase5Status");
 let selected=null,currentProfile=MORPHOLOGY_PROFILES[0],knowledgeMode="beginner",currentKnowledge=getKnowledge("basidiome");
-let learnerMode="guided",highestLearningStep=1;
+let learnerMode="guided",highestLearningStep=1,currentLearningStep=1;
 let observationRecord=emptyObservationRecord();
 let sporeMeasurements=[];
 let regressionToolsPromise=null;
@@ -59,6 +59,7 @@ function setLearnerMode(mode){
       :"Explore mode keeps every learning layer open so you can move anywhere immediately.";
   }
   updateLearningAccess();
+  updateLessonNavigation();
 }
 
 function updateLearningAccess(){
@@ -81,12 +82,71 @@ function setLearningStep(step,{scroll=false}={}){
   const numeric=Math.max(1,Math.min(5,Number(step)||1));
   if(learnerMode==="guided") highestLearningStep=Math.max(highestLearningStep,numeric);
   const n=String(numeric);
+  currentLearningStep=numeric;
   updateLearningAccess();
   document.querySelectorAll("[data-learning-step]").forEach(el=>el.classList.toggle("active",el.dataset.learningStep===n));
   document.querySelectorAll("[data-jump-step]").forEach(el=>el.classList.toggle("active",el.dataset.jumpStep===n));
   if(scroll){
     document.querySelector('[data-learning-step="'+n+'"]')?.scrollIntoView({behavior:"smooth",block:"start"});
   }
+  updateLessonNavigation();
+  updatePresenterPrompt();
+}
+
+const MYCOSIM_LESSON_NAMES=["Family","Stage","Morphology","Anatomy","Deeper"];
+function updateLessonNavigation(){
+  const label=$("#mycosim-lesson-progress"),previous=$("#mycosim-lesson-prev"),next=$("#mycosim-lesson-next");
+  if(!label||!previous||!next)return;
+  label.textContent="Lesson "+currentLearningStep+" of 5 · "+MYCOSIM_LESSON_NAMES[currentLearningStep-1]+(learnerMode==="guided"?" · Guided":" · Explore");
+  previous.disabled=currentLearningStep<=1;
+  next.disabled=currentLearningStep>=5 || (learnerMode==="guided" && currentLearningStep>=highestLearningStep);
+  next.textContent=currentLearningStep>=5?"Final lesson reached":"Next lesson →";
+  document.querySelectorAll("[data-jump-step]").forEach(button=>{
+    if(button.classList.contains("active"))button.setAttribute("aria-current","step");
+    else button.removeAttribute("aria-current");
+  });
+}
+function mountLessonNavigation(){
+  const previous=$("#mycosim-lesson-prev"),next=$("#mycosim-lesson-next"),back=$("#mycosim-lesson-return");
+  if(!previous||!next||!back)return;
+  previous.addEventListener("click",()=>setLearningStep(currentLearningStep-1,{scroll:true}));
+  next.addEventListener("click",()=>{if(!next.disabled)setLearningStep(currentLearningStep+1,{scroll:true});});
+  back.addEventListener("click",()=>setLearningStep(currentLearningStep,{scroll:true}));
+  updateLessonNavigation();
+}
+
+
+const MYCOSIM_TEACHING_PROMPTS=[
+  "Ask the audience: what characteristics distinguish the visible fungal body plan from a species identification?",
+  "Compare young, mature, and old forms. Which changes reflect development rather than a new species?",
+  "Observe a single morphological character. What changed, and what remains uncertain?",
+  "Locate one anatomical structure. Explain its role using the linked atlas knowledge.",
+  "Connect macroscopic observations to tissue, microscopy, and spore evidence. What must still be verified?"
+];
+function updatePresenterPrompt(){
+  const el=$("#mycosim-presenter-prompt");
+  if(el)el.textContent="Lesson "+currentLearningStep+" of 5 · "+MYCOSIM_TEACHING_PROMPTS[currentLearningStep-1];
+}
+function mountPresenter(){
+  const toggle=$("#mycosim-present-toggle"),read=$("#mycosim-present-read"),stop=$("#mycosim-present-stop");
+  if(!toggle||!read||!stop)return;
+  function setPresent(on){
+    document.body.classList.toggle("mycosim-presenting",on);
+    toggle.setAttribute("aria-pressed",on?"true":"false");
+    toggle.textContent=on?"Exit classroom mode":"Enable classroom mode";
+    if(!on && "speechSynthesis" in window)speechSynthesis.cancel();
+  }
+  toggle.addEventListener("click",()=>setPresent(!document.body.classList.contains("mycosim-presenting")));
+  read.addEventListener("click",()=>speak($("#mycosim-presenter-prompt")?.textContent||""));
+  stop.addEventListener("click",()=>{if("speechSynthesis" in window)speechSynthesis.cancel();});
+  document.addEventListener("keydown",event=>{
+    if(!document.body.classList.contains("mycosim-presenting"))return;
+    if(event.altKey||event.ctrlKey||event.metaKey||event.target?.closest?.("input, textarea, select, [contenteditable]"))return;
+    if(event.key==="Escape"){setPresent(false);return;}
+    const button=event.key==="ArrowRight"?$("#mycosim-lesson-next"):event.key==="ArrowLeft"?$("#mycosim-lesson-prev"):null;
+    if(button&&!button.disabled){event.preventDefault();button.click();}
+  });
+  updatePresenterPrompt();
 }
 
 function updateMorphologySummary(engine){
@@ -245,6 +305,49 @@ function updateVisibleState(engine){
   const stateText=$("#stageStateText");
   if(stateText) stateText.textContent=`${currentProfile.label} · ${stage}`;
   updateMorphologySummary(engine);
+}
+
+let discoveryIndex=0,discoverySolved=false,discoveryCount=0;
+function discoveryTargets(){
+  return (currentProfile.anatomy||[]).filter(a=>a.id&&a.label);
+}
+function presentDiscovery(){
+  const items=discoveryTargets(),prompt=$("#mycosim-discovery-prompt"),feedback=$("#mycosim-discovery-feedback"),next=$("#mycosim-discovery-next"),progress=$("#mycosim-discovery-progress");
+  if(!prompt||!feedback||!next||!progress)return;
+  const target=items[discoveryIndex%items.length];
+  prompt.textContent=target?"Find: "+target.label+". Select it in the anatomy list or on the 3D model.":"No anatomy structures are authored for this model.";
+  feedback.textContent="Observe first, then select a structure. The feedback explains its function and scientific limits.";
+  progress.textContent=discoveryCount+" structures identified in this model";
+  next.disabled=true;discoverySolved=false;
+}
+function resetDiscovery(){
+  discoveryIndex=0;discoveryCount=0;presentDiscovery();
+}
+function checkDiscovery(id){
+  const items=discoveryTargets();
+  if(!items.length||discoverySolved)return;
+  const target=items[discoveryIndex%items.length];
+  const feedback=$("#mycosim-discovery-feedback"),next=$("#mycosim-discovery-next");
+  if(!feedback||!next)return;
+  if(id!==target.id){
+    feedback.textContent="Not quite. You selected a different structure. Compare its description with the requested "+target.label+" and try again.";
+    return;
+  }
+  const k=getKnowledge(knowledgeForAnatomy(target.id));
+  discoverySolved=true;discoveryCount++;
+  feedback.textContent="Correct: "+target.label+". "+(k?.beginner||target.description||"Observe this structure in the model.")+" "+(k?.identificationBoundary||"A model observation alone does not confirm species identity.");
+  $("#mycosim-discovery-progress").textContent=discoveryCount+" structures identified in this model";
+  next.disabled=items.length<=1;
+}
+function mountDiscovery(){
+  $("#mycosim-discovery-next")?.addEventListener("click",()=>{
+    if(!discoverySolved)return;
+    const items=discoveryTargets();
+    if(items.length<2)return;
+    discoveryIndex=(discoveryIndex+1)%items.length;
+    presentDiscovery();
+  });
+  resetDiscovery();
 }
 
 function renderAnatomy(profile){
@@ -576,6 +679,7 @@ try{
     },
     onSelect:meta=>{
       selected=meta; actions.hidden=false;
+      checkDiscovery(meta.id);
       const selectedKnowledge=getKnowledge(meta.knowledgeId||knowledgeForAnatomy(meta.id));
       info.textContent="Observed structure selected: "+meta.label+" · terminology: "+selectedKnowledge.label+" · identification remains separate";
       renderKnowledge(meta.knowledgeId||knowledgeForAnatomy(meta.id),engine);
@@ -597,6 +701,10 @@ try{
     }
   });
 
+  mountLessonNavigation();
+  mountDiscovery();
+  mountPresenter();
+
   const grid=$("#modelGrid");
   grid.innerHTML=MORPHOLOGY_PROFILES.map((p,i)=>`<button class="model-pick ${i===0?"active":""}" data-model="${p.id}"><strong>${p.label}</strong><span>${p.description}</span></button>`).join("");
 
@@ -615,6 +723,7 @@ try{
     renderVariantControls(p,engine);
     renderStageControls(p,engine);
     renderAnatomy(p);
+    resetDiscovery();
     $("#profileName").textContent=p.label.toUpperCase();
     if(window.MYCOSIM_BOOT_MS && status) status.textContent=`3D engine online · ${p.label} · ${engine.getDevelopmentalStage()?.label||"Mature"} · boot ${window.MYCOSIM_BOOT_MS} ms`;
     renderKnowledge("basidiome",engine,{moveCamera:false});
@@ -679,6 +788,7 @@ try{
     const a=currentProfile.anatomy.find(x=>x.id===row.dataset.anatomy);
     if(!a)return;
     selected=a; actions.hidden=false; info.textContent="Selected from anatomy index: "+a.label+" · "+a.id;
+    checkDiscovery(a.id);
     renderKnowledge(knowledgeForAnatomy(a.id),engine);
     setLearningStep(5);
   });

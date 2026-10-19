@@ -210,6 +210,27 @@ body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
 .phase5-info{white-space:pre-line;margin-top:8px;padding:9px;border:1px solid var(--line);border-radius:8px;background:#0a1113;color:var(--muted);font-size:9px;line-height:1.45}
 .phase5-status{margin-top:8px;color:var(--good);font-size:9px;line-height:1.4}
 @media(max-width:900px){.archetype-grid,.quality-grid{grid-template-columns:1fr}}
+
+/* UX-01 Run 4: classroom readability; scoped to presentation mode. */
+body.mycosim-presenting aside{font-size:1.2rem}
+body.mycosim-presenting .learning-step-head strong{font-size:1.15rem}
+body.mycosim-presenting .learning-step-head small,
+body.mycosim-presenting aside .copy,
+body.mycosim-presenting #structureInfo,
+body.mycosim-presenting #mycosim-discovery-feedback{font-size:1rem;line-height:1.6}
+body.mycosim-presenting .learning-path-chip,
+body.mycosim-presenting #mycosim-lesson-navigation button{font-size:1rem;min-height:44px}
+body.mycosim-presenting .learning-path-chip span{display:inline}
+body.mycosim-presenting .workspace-row{grid-template-columns:minmax(0,1fr) minmax(360px,38%)}
+#mycosim-presenter{margin:12px 0;padding:12px;background:#132526;border:1px solid #739080;border-radius:10px}
+#mycosim-presenter h3{font-size:16px;margin:0 0 7px}
+#mycosim-presenter button{min-height:44px;padding:10px 12px;background:#253c37;border:1px solid #9ba991;border-radius:7px;color:#f4f6ea;cursor:pointer}
+#mycosim-presenter button:focus-visible{outline:3px solid #f0d998;outline-offset:2px}
+#mycosim-presenter .presenter-controls{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+#mycosim-presenter-prompt{line-height:1.55;font-size:13px}
+body.mycosim-presenting #mycosim-presenter-prompt{font-size:1.15rem}
+@media(max-width:900px){body.mycosim-presenting .workspace-row{grid-template-columns:1fr}body.mycosim-presenting .learning-path{grid-template-columns:repeat(5,minmax(0,1fr))}body.mycosim-presenting .learning-path-chip{font-size:.8rem}}
+@media(prefers-reduced-motion:reduce){body.mycosim-presenting *,body.mycosim-presenting *::before,body.mycosim-presenting *::after{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -233,6 +254,20 @@ body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
     <p class="copy">This is an optional mycology simulation and teaching model, not a specimen record and not a species identification. It establishes the interaction architecture for future specimen-derived fungal models.</p>
     <div class="notice">Observation, interpretation, identification, and hypothesis remain separate. MycoSim is isolated from specimen data and does not modify, merge, or infer any atlas specimen records.</div>
 
+    <section id="mycosim-welcome" aria-labelledby="mycosim-welcome-title" style="border:1px solid #637d73;border-radius:12px;background:#10211f;padding:15px;margin:14px 0">
+      <div class="kicker">START HERE · MYCOSIM FIELD CLASSROOM</div>
+      <h2 id="mycosim-welcome-title" style="font-size:19px;margin:8px 0">Explore a mushroom. Learn how to recognize its structures.</h2>
+      <p class="copy" style="font-size:13px">Begin with a generalized mushroom body plan, choose a developmental stage, examine the anatomy, and investigate biological processes. You can follow five guided steps or explore freely.</p>
+      <ol style="font-size:12px;line-height:1.75;padding-left:20px;color:#dce8e2">
+        <li><strong>Observe:</strong> select a fungal body plan and compare its visible features.</li>
+        <li><strong>Investigate:</strong> rotate the 3D model, study age changes, and inspect anatomy.</li>
+        <li><strong>Explain:</strong> distinguish observations from hypotheses and scientific evidence.</li>
+      </ol>
+      <a href="#modelGrid" style="display:inline-block;background:#d9b56d;color:#101719;padding:11px 15px;border-radius:8px;font-weight:750;text-decoration:none;margin:4px 8px 8px 0">Begin guided investigation ↓</a>
+      <a href="./trametes.html" style="display:inline-block;color:#f0dca9;padding:10px 0;margin-right:12px">Turkey Tail hardwood-log laboratory ↗</a>
+      <a href="./classified.html" style="display:inline-block;color:#f0dca9;padding:10px 0">Classified specimen laboratory ↗</a>
+      <p class="copy" style="margin:8px 0 0;font-size:11px">Teaching models are not verified identifications, edibility assessments, or medical advice. The atlas specimen records are not changed by these exercises.</p>
+    </section>
     <div class="learner-mode-switch" role="group" aria-label="Learner mode">
       <button type="button" class="active" data-learner-mode="guided" aria-pressed="true">Guided</button>
       <button type="button" data-learner-mode="explore" aria-pressed="false">Explore</button>
@@ -245,6 +280,27 @@ body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
       <button type="button" class="learning-path-chip" data-jump-step="4"><b>4</b><span>Anatomy</span></button>
       <button type="button" class="learning-path-chip" data-jump-step="5"><b>5</b><span>Deeper</span></button>
     </div>
+
+
+    <section id="mycosim-presenter" aria-labelledby="mycosim-presenter-title">
+      <h3 id="mycosim-presenter-title">Classroom presentation</h3>
+      <p class="copy">Instructor controls for projected lessons. Use the ordinary specimen and lesson controls during the lecture.</p>
+      <div class="presenter-controls">
+        <button type="button" id="mycosim-present-toggle" aria-pressed="false">Enable classroom mode</button>
+        <button type="button" id="mycosim-present-read">Read teaching prompt</button>
+        <button type="button" id="mycosim-present-stop">Stop narration</button>
+      </div>
+      <p id="mycosim-presenter-prompt" role="status" aria-live="polite">Choose a fungal body plan. Ask learners what they can observe without assuming an identification.</p>
+      <p class="copy">Keyboard in classroom mode: left/right arrows navigate available lessons; Escape exits classroom mode. Guided lesson locks still apply. Narration requires a click.</p>
+    </section>
+    <nav id="mycosim-lesson-navigation" aria-label="Guided lesson controls" style="border:1px solid var(--line);border-radius:9px;padding:10px;margin:0 0 13px;background:#0d191b">
+      <p id="mycosim-lesson-progress" role="status" aria-live="polite" style="margin:0 0 9px;font-size:12px;color:#dfe9e5">Lesson 1 of 5 · Family</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button id="mycosim-lesson-prev" type="button" disabled style="padding:9px 12px;border-radius:7px;border:1px solid #61736b;background:#1a2b2b;color:#edf4ef">← Previous</button>
+        <button id="mycosim-lesson-next" type="button" style="padding:9px 12px;border-radius:7px;border:1px solid #a8905f;background:#41351e;color:#f9edcc">Next lesson →</button>
+        <button id="mycosim-lesson-return" type="button" style="padding:9px 12px;border-radius:7px;border:1px solid #61736b;background:#1a2b2b;color:#edf4ef">Return to current lesson</button>
+      </div>
+    </nav>
 
     <section class="learning-step active" data-learning-step="1">
       <div class="learning-step-head"><span>1</span><div><strong>Choose a model family</strong><small>Start with the overall fungal body plan.</small></div></div>
@@ -290,6 +346,13 @@ body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
 
     <section class="learning-step" data-learning-step="4">
       <div class="learning-step-head"><span>4</span><div><strong>Identify anatomy</strong><small>Select a named structure and connect vocabulary to the 3D model.</small></div></div>
+      <section id="mycosim-discovery" aria-labelledby="mycosim-discovery-title" style="padding:12px;margin:0 0 12px;border:1px solid #637d73;border-radius:9px;background:#10201d">
+        <h3 id="mycosim-discovery-title" style="margin:0 0 6px;font-size:15px">Discovery challenge · Find a structure</h3>
+        <p id="mycosim-discovery-prompt" style="font-size:12px;line-height:1.5">Choose a model family to start an anatomy challenge.</p>
+        <p id="mycosim-discovery-progress" style="font-size:11px;color:#d7c28b">0 structures identified</p>
+        <p id="mycosim-discovery-feedback" role="status" aria-live="polite" style="font-size:12px;line-height:1.5">Select the requested structure from the anatomy index or the 3D model. This is a learning exercise, not specimen identification.</p>
+        <button id="mycosim-discovery-next" type="button" disabled style="padding:9px 12px;background:#41351e;color:#f9edcc;border:1px solid #a8905f;border-radius:7px">Next challenge →</button>
+      </section>
       <div id="anatomyList"></div>
     </section>
 
