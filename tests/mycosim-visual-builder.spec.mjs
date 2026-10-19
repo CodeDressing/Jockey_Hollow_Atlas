@@ -67,3 +67,23 @@ test("Sprint 2 creates actual reactive WebGL geometry and independent spores",as
   await expect(studio.locator("#mb-microscopy")).toContainText("ellipsoid");
   expect(await page.locator("#observationForm").count()).toBe(1);
 });
+
+test("Studio advanced choices alter original engine, not evidence records",async({page})=>{
+  test.setTimeout(90000);
+  await page.goto("http://127.0.0.1:8765/sandbox.html");
+  const studio=page.locator("#myco-visual-builder");
+  await expect(studio).toBeVisible({timeout:30000});
+  await expect.poll(()=>page.evaluate(()=>Boolean(window.MycoSimMorphologyBridge)),{timeout:30000}).toBe(true);
+  const before=await page.evaluate(()=>window.MycoSimMorphologyBridge.getState().variants.agaric_stipe_surface_mid);
+  await studio.locator('[data-mb-region="stipe"]').click();
+  await studio.locator('[data-mb-advanced="agaric_stipe_surface_mid"][data-mb-option="reticulate"]').click();
+  expect(await page.evaluate(()=>window.MycoSimMorphologyBridge.getState().variants.agaric_stipe_surface_mid)).toBe(before);
+  await studio.locator("#mb-apply").click();
+  await expect.poll(()=>page.evaluate(()=>window.MycoSimMorphologyBridge.getState().variants.agaric_stipe_surface_mid),{timeout:30000}).toBe("reticulate");
+  await studio.locator('[data-mb-region="hymenophore"]').click();
+  await studio.locator('[data-mb-advanced="agaric_gill_attachment"][data-mb-option="decurrent"]').click();
+  await studio.locator("#mb-apply").click();
+  await expect.poll(()=>page.evaluate(()=>window.MycoSimMorphologyBridge.getState().variants.agaric_gill_attachment),{timeout:30000}).toBe("decurrent");
+  expect(await page.locator("#observationForm").count()).toBe(1);
+  expect(await studio.locator("#mb-region-editor button").count()).toBeGreaterThan(10);
+});
