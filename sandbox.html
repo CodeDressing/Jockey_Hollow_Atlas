@@ -260,6 +260,15 @@ body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
       <button type="button" class="learning-path-chip" data-jump-step="5"><b>5</b><span>Deeper</span></button>
     </div>
 
+    <nav id="mycosim-lesson-navigation" aria-label="Guided lesson controls" style="border:1px solid var(--line);border-radius:9px;padding:10px;margin:0 0 13px;background:#0d191b">
+      <p id="mycosim-lesson-progress" role="status" aria-live="polite" style="margin:0 0 9px;font-size:12px;color:#dfe9e5">Lesson 1 of 5 · Family</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button id="mycosim-lesson-prev" type="button" disabled style="padding:9px 12px;border-radius:7px;border:1px solid #61736b;background:#1a2b2b;color:#edf4ef">← Previous</button>
+        <button id="mycosim-lesson-next" type="button" style="padding:9px 12px;border-radius:7px;border:1px solid #a8905f;background:#41351e;color:#f9edcc">Next lesson →</button>
+        <button id="mycosim-lesson-return" type="button" style="padding:9px 12px;border-radius:7px;border:1px solid #61736b;background:#1a2b2b;color:#edf4ef">Return to current lesson</button>
+      </div>
+    </nav>
+
     <section class="learning-step active" data-learning-step="1">
       <div class="learning-step-head"><span>1</span><div><strong>Choose a model family</strong><small>Start with the overall fungal body plan.</small></div></div>
       <div id="modelGrid" class="model-grid"></div>
