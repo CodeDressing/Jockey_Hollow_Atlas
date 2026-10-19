@@ -33,7 +33,8 @@ const BASE='http://127.0.0.1:8765/sandbox.html';
       assert.equal(await page.locator('#g28-status').innerText(),'Narration stopped. You can continue the current discovery.');
       assert.equal(errors.length,0,'Uncaught browser exceptions: '+errors.join(' | '));
       // Regression: custom morphology controls must remain reachable from the spore-lab area.
-      const editor=page.locator('[data-edit-morphology="agaric_stipe_surface_mid"]').first();
+      // Start at the Scientific Identification & Spore Lab, which remains visible in Guided mode.
+      const editor=page.locator('.morphology-access [data-edit-morphology]');
       await editor.click();
       await page.locator('[data-learning-step="3"]').waitFor({state:'visible'});
       const region=page.locator('#variantControls [data-variant-group="agaric_stipe_surface_mid"]');
