@@ -104,6 +104,10 @@
 #classifiedPhotoArchive .photo-toolbar{padding:12px;border:1px solid #314a4c;border-radius:10px;background:#0d1b1e}
 #classifiedPhotoArchive [data-photo-status]{font-size:13px;color:#d6c18b;font-weight:650}
 @media(max-width:600px){#classifiedPhotoArchive .photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}#classifiedPhotoArchive .specimen-gallery-figure figcaption{padding:9px}#classifiedPhotoArchive .specimen-lightbox-footer{padding:10px}}
+
+.research-archive-advanced{background:#0c181b;border:1px solid #455c5e;border-radius:12px;padding:14px;margin:20px 0}
+.research-archive-advanced>summary{font-weight:700;font-size:14px;color:#e5cf9e;padding:7px;cursor:pointer}
+.research-archive-advanced[open]>summary{margin-bottom:15px}
 </style>
 <header><b id="classifiedName">MYCOSIM · CLASSIFIED SPECIMEN</b><a href="sandbox.html">Return to MycoSim</a></header>
 <main><div id="specimenStage" style="position:relative;min-width:0"><canvas id="view" aria-label="Protected interactive 3D specimen viewer"></canvas><div id="anatomyTooltip" hidden role="status"></div></div><aside><h2>Interactive mushroom anatomy</h2><p>Restricted morphology reconstruction for research. Not a diagnostic specimen.</p><button id="top">Cap view</button><button id="under">Gill view</button><button id="reset">Reset view</button><button id="gills">Toggle gills</button><button id="log">Toggle log</button><section id="anatomyInspector" aria-label="Cursor anatomy inspector"><h2>Anatomical cursor tracker</h2><p id="anatomyState" aria-live="polite">No anatomical selection</p><h3 id="anatomyTitle">Move your cursor over a specimen structure</h3><p id="anatomyPronunciation"></p><p id="anatomyDescription">Hover over cap, gills, stipe or veil to identify anatomy.</p><p id="anatomyNotes"></p><div class="tracker-actions"><button type="button" id="anatomyClear">Reset selection</button><button type="button" id="anatomyLabels" aria-pressed="true">Toggle hover labels</button><button type="button" id="anatomySpeak">Pronounce / Read</button></div><p class="anatomy-disclaimer">Schematic anatomical labels depend on 3D mesh geometry; they are not laboratory identification evidence.</p></section><h2>CLASSIFIED FIELD RECONSTRUCTION</h2><button id="fieldMode">Field-colony 3D (40 photos)</button><button id="specimenMode">Isolated specimens</button><h3>Isolate one specimen by age</h3><div id="ageControls" role="group" aria-label="Specimen developmental stage"><button data-age="juvenile">Juvenile / button</button><button data-age="young">Young convex</button><button data-age="mature">Mature</button><button data-age="expanded">Expanded / aging</button></div><p id="modeNote">Select a reconstruction mode after unlocking.</p><p>Drag to rotate, wheel to zoom. Key features: robust stems, ochre caps, rust-colored gills, annular zones and decaying hardwood habitat.</p><p><b>Research only.</b> Psilocybin reports vary by collection and taxonomic identification; no concentration or safe exposure can be inferred from this model.</p></aside></main>
@@ -367,6 +371,16 @@ function setupResearchWorkspace(){
   if(node.nodeType===1&&node.id&&targets[node.id])current=targets[node.id];
   panels.get(current).append(node);
  }
+ const photoPanel=panels.get("photos");
+ const mainGallery=document.getElementById("classifiedPhotoArchive");
+ photoPanel.insertBefore(mainGallery,photoPanel.children[2]||null);
+ const advanced=document.createElement("details");
+ advanced.className="research-archive-advanced";
+ const advancedSummary=document.createElement("summary");
+ advancedSummary.textContent="Advanced archive controls · encrypted deployment and private-cloud status";
+ advanced.append(advancedSummary);
+ advanced.append(document.getElementById("gymJunoEncrypted"),document.getElementById("gymJunoCloud"));
+ photoPanel.append(advanced);
  root.append(shell);root.dataset.workspaceReady="yes";
  select("evidence",false);
  nav.addEventListener("keydown",event=>{
