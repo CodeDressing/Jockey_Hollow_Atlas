@@ -5,7 +5,7 @@ import {readFileSync} from 'node:fs';
 import {Script} from 'node:vm';
 const read=(p)=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const html=read('sandbox.html');
-const files=['mycosim/digestion_immune.js','mycosim/human_ingestion.js','mycosim/gut_brain.js','mycosim/absorption_circulation18.js','mycosim/neural_interface19.js','mycosim/neurochemistry20.js','mycosim/evidence21.js','mycosim/molecular_process.js','mycosim/immune_signaling17.js','mycosim/campaign.js','mycosim/science_glossary.js','mycosim/release_acceptance.js','mycosim/lab_workspace.js'];
+const files=['mycosim/digestion_immune.js','mycosim/human_ingestion.js','mycosim/gut_brain.js','mycosim/absorption_circulation18.js','mycosim/neural_interface19.js','mycosim/neurochemistry20.js','mycosim/evidence21.js','mycosim/molecular_process.js','mycosim/immune_signaling17.js','mycosim/campaign.js','mycosim/science_glossary.js','mycosim/release_acceptance.js','mycosim/lab_workspace.js','mycosim/family_biology28.js'];
 
 test('MycoSim modules are mounted exactly once and in working order',()=>{
  const scripts=[...html.matchAll(/src="(mycosim\/[^"?]+\.js)\?[^\"]*"/g)].map(x=>x[1]);
@@ -51,7 +51,7 @@ test('Consolidation hides inactive modules without deleting original models',()=
  assert.match(workspace,/element\.hidden=group!==key/);
  assert.match(workspace,/element\.inert=group!==key/);
  assert.match(read('mycosim/anatomy3d.js'),/section\.isConnected&&section\.getClientRects\(\)\.length>0/);
- assert.match(read('mycosim/trametes_sim.js'),/myco-specimen-pane/);
+ assert.match(read('mycosim/trametes_sim.js'),/host\.dataset\.specimenFamily==="trametes_versicolor"/);
 });
 
 test('Production approval is not inferred from smoke tests',()=>{
@@ -288,4 +288,18 @@ test('Phase 27 reuses scene geometry and conserves selection through instanced c
  assert.equal((src.match(/new THREE\.WebGLRenderer\(/g)||[]).length,1);
  assert.equal((src.match(/raf=requestAnimationFrame\(loop\)/g)||[]).length,1);
  assert.match(html,/anatomy3d\.js\?v=phase27-instances-20261018/);
+});
+
+
+test('Family contextual biology shows Turkey Tail only with matching selected profile',()=>{
+ const biology=read('mycosim/family_biology28.js'),main=read('mycosim/main.js'),turkey=read('mycosim/trametes_sim.js');
+ assert.match(main,/mycosim:family-change/);
+ assert.match(biology,/mycosim:family-change/);
+ assert.match(biology,/id==="trametes_versicolor"/);
+ assert.match(biology,/biologyVisible/);
+ for(const id of ['agaricus_bisporus','pleurotus_ostreatus','amanita_muscaria','coprinopsis_cinerea','armillaria_mellea'])assert.ok(biology.includes(id),id);
+ assert.match(html,/id="tv-species-only" hidden/);
+ assert.match(html,/id="myco-family-biology"/);
+ assert.match(turkey,/canvas\.getClientRects\(\)\.length>0/);
+ assert.match(html,/family_biology28\.js\?v=family-context-20261019/);
 });
