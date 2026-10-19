@@ -28,3 +28,26 @@ test("MycoSim visual studio mobile layout preserves controls",async({page})=>{
   await expect(page.locator("#myco-visual-builder")).toBeVisible({timeout:30000});
   await expect(page.locator("#myco-visual-builder #mb-apply")).toBeVisible();
 });
+
+test("Sprint 2 creates actual reactive WebGL geometry and independent spores",async({page})=>{
+  await page.goto("http://127.0.0.1:8765/sandbox.html");
+  const studio=page.locator("#myco-visual-builder");
+  await expect(studio.locator("#mb-live-canvas")).toBeVisible({timeout:30000});
+  await expect.poll(()=>page.evaluate(()=>window.MycoSimCreative3D?.getState()?.meshCount),{timeout:25000}).toBeGreaterThan(10);
+  const before=await page.evaluate(()=>window.MycoSimCreative3D.getState());
+  expect(before.form).toBe("agaric");
+  await studio.locator('[data-mb-trait="surface"]').selectOption("teeth");
+  await expect(studio.locator("#mb-3d-feedback")).toContainText("teeth");
+  const teeth=await page.evaluate(()=>window.MycoSimCreative3D.getState());
+  expect(teeth.meshCount).toBeGreaterThan(30);
+  await studio.locator('[data-mb-trait="spore"]').selectOption("fusiform");
+  await expect(studio.locator("#mb-microscopy")).toContainText("fusiform");
+  await studio.locator('[data-mb-trait="form"]').selectOption("cup");
+  await expect(studio.locator("#mb-3d-feedback")).toContainText("cup");
+  const cup=await page.evaluate(()=>window.MycoSimCreative3D.getState());
+  expect(cup.meshCount).toBeLessThan(teeth.meshCount);
+  await studio.locator("#mb-reset").click();
+  await expect.poll(()=>page.evaluate(()=>window.MycoSimCreative3D?.getState()?.form)).toBe("agaric");
+  await expect(studio.locator("#mb-microscopy")).toContainText("ellipsoid");
+  expect(await page.locator("#observationForm").count()).toBe(1);
+});
