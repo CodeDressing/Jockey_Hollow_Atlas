@@ -335,6 +335,7 @@ test("Phase 22 shared 3D tissue mode retains original controls and geometry life
  for(const name of ["Hepatocytes","Macrophage","Enteric neuron and axon","Synaptic terminals"]){
   await expect(anatomy.locator(".anatomy-picker")).toContainText(name);
  }
+ await page.locator("#anatomy-instructor-tools").evaluate(el=>{el.open=true});
  await anatomy.locator("#anatomy22-run").click();
  await expect(anatomy.locator("#anatomy22-report")).toContainText("Phase 22 browser checks: 17/17 passed",{timeout:30000});
  await expect(anatomy.locator("#tv-anatomy-canvas")).toBeVisible();
@@ -364,6 +365,7 @@ test("Phase 23 microanatomy shares human WebGL renderer and supports keyboard se
  await anatomy.locator('[data-part="dectin23"]').focus();
  await page.keyboard.press("Enter");
  await expect(anatomy.locator('[data-part="dectin23"]')).toHaveAttribute("aria-pressed","true");
+ await page.locator("#anatomy-instructor-tools").evaluate(el=>{el.open=true});
  await anatomy.locator("#anatomy23-run").click();
  const microReport=await anatomy.locator("#anatomy23-report").innerText();
  const microCounts=microReport.match(/Phase 23 browser checks: (\d+)\/(\d+) passed/);
@@ -439,11 +441,13 @@ test("Phase 25 improved anatomy fidelity retains existing rendering engine and v
  await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
  await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
  const anatomy=page.locator("#tv-anatomy3d");
+ await page.locator("#anatomy-instructor-tools").evaluate(el=>{el.open=true});
  await expect(anatomy.locator("#anatomy25-fidelity")).toBeVisible();
  await expect(anatomy.locator("canvas")).toHaveCount(1);
  await anatomy.locator('[data-mode="micro"]').click();
  await anatomy.locator('[data-part="dectin23"]').click();
  await expect(anatomy.locator("#anatomy25-guide")).toContainText("Dectin-1 receptor");
+ await page.locator("#anatomy-instructor-tools").evaluate(el=>{el.open=true});
  await anatomy.locator("#anatomy25-qa").click();
  await expect(anatomy.locator("#anatomy25-report")).toContainText("Phase 25 browser checks: 13/13 passed",{timeout:30000});
  for(const [mode,count] of [["gut",4],["cell",6],["tissue",7],["micro",9]]){
@@ -471,6 +475,7 @@ test("Phase 26 measures visible browser frames and pauses hidden anatomy renderi
  await expect(anatomy.locator("#anatomy26-references a")).toHaveAttribute("href","https://pubmed.ncbi.nlm.nih.gov/21267996/");
  await anatomy.locator('[data-part="synapse23"]').click();
  await expect(anatomy.locator("#anatomy26-references a")).toHaveAttribute("href","https://pubmed.ncbi.nlm.nih.gov/24183019/");
+ await page.locator("#anatomy-instructor-tools").evaluate(el=>{el.open=true});
  await anatomy.locator("#anatomy26-profile").click();
  await expect.poll(async()=>page.evaluate(()=>window.MycoSimPerf26.getSnapshot()?.sampleCount||0),{timeout:45000}).toBe(90);
  const profile=await page.evaluate(()=>window.MycoSimPerf26.getSnapshot());
@@ -520,6 +525,7 @@ test("Phase 27 instancing retains semantic selection and beats Phase 26 scene co
  await lab.locator('[data-action="context"]').click();
  await expect(lab.locator('[data-action="context"]')).toHaveAttribute("aria-pressed","true");
  await lab.locator('[data-action="context"]').click();
+ await page.locator("#anatomy-instructor-tools").evaluate(el=>{el.open=true});
  await lab.locator("#anatomy26-profile").click();
  await expect.poll(async()=>page.evaluate(()=>window.MycoSimPerf26.getSnapshot()?.sampleCount||0),{timeout:60000}).toBe(90);
  const micro=await page.evaluate(()=>window.MycoSimPerf26.getSnapshot());
@@ -561,4 +567,35 @@ test("Forest specimen routes agaricoid biology and isolates the Turkey Tail log 
  await expect(page.locator("#tv-species-only")).toBeHidden();
  await expect(page.locator("#myco-family-biology")).toBeVisible();
  expect(await page.evaluate(()=>window.MycoSimFamilyBiology.getState().family)).toBe("agaricoid");
+});
+
+
+test("Guided anatomy teaches five discoveries with accessible navigation and optional instructor tools",async({page})=>{
+ test.setTimeout(90000);
+ await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
+ await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
+ await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
+ const guide=page.locator("#myco-guided-anatomy");
+ await expect(guide).toBeVisible();
+ await expect(guide.locator("#g28-chapters button")).toHaveCount(5);
+ await expect(guide.locator("#g28-topic")).toContainText("swallowed material");
+ await expect(page.locator("#anatomy-instructor-tools")).not.toHaveAttribute("open","");
+ await expect(guide.locator("#g28-evidence")).toContainText("physiology");
+ await guide.locator("#g28-start").click();
+ await expect(guide.locator("#g28-status")).toContainText("3D is ready",{timeout:30000});
+ expect((await page.evaluate(()=>window.MycoSimGuided28.getState())).started).toBe(true);
+ await guide.locator("#g28-next").click();
+ await expect(guide.locator("#g28-title")).toContainText("intestinal barrier");
+ await expect(page.locator('[data-mode="cell"]')).toHaveAttribute("aria-pressed","true");
+ await guide.locator("#g28-chapters button").nth(3).focus();
+ await page.keyboard.press("Enter");
+ await expect(guide.locator("#g28-title")).toContainText("immune receptor");
+ await expect(page.locator('[data-part="dectin23"]')).toHaveAttribute("aria-pressed","true");
+ await guide.locator("#g28-next").click();
+ await expect(guide.locator("#g28-evidence")).toContainText("neuroscience");
+ await expect(guide.locator("#g28-back")).toBeEnabled();
+ await page.locator("#anatomy-instructor-tools summary").click();
+ await expect(page.locator("#anatomy25-fidelity")).toBeVisible();
+ await expect(page.locator("#anatomy26-profile")).toBeVisible();
+ await expect(guide.locator("#g28-read")).toBeVisible();
 });
