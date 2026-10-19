@@ -1,0 +1,26 @@
+name: MycoSim free browser release gate
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [mycosim-campaign6-human-biology]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser test runtime
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Test MycoSim in real Chromium
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/mycosim-server.log 2>&1 &
+          node tests/mycosim-campaign6-browser.cjs
