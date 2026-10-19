@@ -272,6 +272,49 @@ function updateVisibleState(engine){
   updateMorphologySummary(engine);
 }
 
+let discoveryIndex=0,discoverySolved=false,discoveryCount=0;
+function discoveryTargets(){
+  return (currentProfile.anatomy||[]).filter(a=>a.id&&a.label);
+}
+function presentDiscovery(){
+  const items=discoveryTargets(),prompt=$("#mycosim-discovery-prompt"),feedback=$("#mycosim-discovery-feedback"),next=$("#mycosim-discovery-next"),progress=$("#mycosim-discovery-progress");
+  if(!prompt||!feedback||!next||!progress)return;
+  const target=items[discoveryIndex%items.length];
+  prompt.textContent=target?"Find: "+target.label+". Select it in the anatomy list or on the 3D model.":"No anatomy structures are authored for this model.";
+  feedback.textContent="Observe first, then select a structure. The feedback explains its function and scientific limits.";
+  progress.textContent=discoveryCount+" structures identified in this model";
+  next.disabled=true;discoverySolved=false;
+}
+function resetDiscovery(){
+  discoveryIndex=0;discoveryCount=0;presentDiscovery();
+}
+function checkDiscovery(id){
+  const items=discoveryTargets();
+  if(!items.length||discoverySolved)return;
+  const target=items[discoveryIndex%items.length];
+  const feedback=$("#mycosim-discovery-feedback"),next=$("#mycosim-discovery-next");
+  if(!feedback||!next)return;
+  if(id!==target.id){
+    feedback.textContent="Not quite. You selected a different structure. Compare its description with the requested "+target.label+" and try again.";
+    return;
+  }
+  const k=getKnowledge(knowledgeForAnatomy(target.id));
+  discoverySolved=true;discoveryCount++;
+  feedback.textContent="Correct: "+target.label+". "+(k?.beginner||target.description||"Observe this structure in the model.")+" "+(k?.identificationBoundary||"A model observation alone does not confirm species identity.");
+  $("#mycosim-discovery-progress").textContent=discoveryCount+" structures identified in this model";
+  next.disabled=items.length<=1;
+}
+function mountDiscovery(){
+  $("#mycosim-discovery-next")?.addEventListener("click",()=>{
+    if(!discoverySolved)return;
+    const items=discoveryTargets();
+    if(items.length<2)return;
+    discoveryIndex=(discoveryIndex+1)%items.length;
+    presentDiscovery();
+  });
+  resetDiscovery();
+}
+
 function renderAnatomy(profile){
   anatomyList.innerHTML=(profile.anatomy||[]).map(a=>`<button class="structure anatomy-row" data-anatomy="${a.id}"><strong>${a.label}</strong><span>${a.description}</span><code>${a.id}</code></button>`).join("");
 }
@@ -601,6 +644,7 @@ try{
     },
     onSelect:meta=>{
       selected=meta; actions.hidden=false;
+      checkDiscovery(meta.id);
       const selectedKnowledge=getKnowledge(meta.knowledgeId||knowledgeForAnatomy(meta.id));
       info.textContent="Observed structure selected: "+meta.label+" · terminology: "+selectedKnowledge.label+" · identification remains separate";
       renderKnowledge(meta.knowledgeId||knowledgeForAnatomy(meta.id),engine);
@@ -623,6 +667,7 @@ try{
   });
 
   mountLessonNavigation();
+  mountDiscovery();
 
   const grid=$("#modelGrid");
   grid.innerHTML=MORPHOLOGY_PROFILES.map((p,i)=>`<button class="model-pick ${i===0?"active":""}" data-model="${p.id}"><strong>${p.label}</strong><span>${p.description}</span></button>`).join("");
@@ -642,6 +687,7 @@ try{
     renderVariantControls(p,engine);
     renderStageControls(p,engine);
     renderAnatomy(p);
+    resetDiscovery();
     $("#profileName").textContent=p.label.toUpperCase();
     if(window.MYCOSIM_BOOT_MS && status) status.textContent=`3D engine online · ${p.label} · ${engine.getDevelopmentalStage()?.label||"Mature"} · boot ${window.MYCOSIM_BOOT_MS} ms`;
     renderKnowledge("basidiome",engine,{moveCamera:false});
@@ -706,6 +752,7 @@ try{
     const a=currentProfile.anatomy.find(x=>x.id===row.dataset.anatomy);
     if(!a)return;
     selected=a; actions.hidden=false; info.textContent="Selected from anatomy index: "+a.label+" · "+a.id;
+    checkDiscovery(a.id);
     renderKnowledge(knowledgeForAnatomy(a.id),engine);
     setLearningStep(5);
   });
