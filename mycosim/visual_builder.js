@@ -164,13 +164,13 @@ if (mountPoint && !document.getElementById("myco-visual-builder")) {
       // Existing renderer supports user-clickable variants; use its public UI rather than writing engine internals.
       const family=state.form==="bracket"?"polyporoid":state.form==="cup"?"cup":"agaricoid";
       const familyButton=document.querySelector('#modelGrid [data-model="'+family+'"]');
-      if(familyButton){familyButton.click();messages.push("3D family changed to "+family);}
+      if(familyButton){if(!familyButton.classList.contains("active"))familyButton.click();messages.push("3D family selected: "+family);}
       else messages.push("3D family not available in this build");
       const mappings=state.form==="agaric"?[["agaric_pileus_profile",state.cap==="flat"?"flat":state.cap]]:[];
       if(state.form==="agaric"&&state.surface==="gills")mappings.push(["agaric_gill_attachment","adnate"]);
       for(const [group,value] of mappings){
         const button=document.querySelector('#variantControls [data-variant="'+group+'"][data-value="'+value+'"]');
-        if(button){button.click();messages.push(group+" updated");}
+        if(button){if(button.getAttribute("aria-pressed")!=="true")button.click();messages.push(group+" updated");}
         else messages.push(group+" remains diagram-only");
       }
       if(state.form!=="agaric"||state.surface!=="gills")messages.push("Fertile surface shown schematically; existing 3D mesh is not claimed to be rebuilt");
