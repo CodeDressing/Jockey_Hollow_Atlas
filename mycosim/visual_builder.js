@@ -35,6 +35,8 @@ if (mountPoint && !document.getElementById("myco-visual-builder")) {
       <div class="mb-controls">
         <label>Growth form<select data-mb-trait="form"><option value="agaric">Cap & stalk</option><option value="bracket">Shelf / bracket</option><option value="cup">Cup</option></select></label>
         <label>Cap or fruitbody shape<select data-mb-trait="cap"><option value="convex">Convex</option><option value="flat">Flat / plane</option><option value="conical">Conical</option><option value="depressed">Depressed</option></select></label>
+        <label>Stipe profile<select data-mb-trait="stipe"><option value="equal">Equal / cylindrical</option><option value="bulbous">Bulbous base</option><option value="tapered">Tapered upward</option></select></label>
+        <label>Gill–stipe attachment<select data-mb-trait="attachment"><option value="adnate">Adnate / attached</option><option value="free">Free / detached</option><option value="decurrent">Decurrent / running down stipe</option></select></label>
         <label>Fertile surface<select data-mb-trait="surface"><option value="gills">Gills</option><option value="pores">Pores</option><option value="teeth">Teeth</option><option value="smooth">Smooth</option></select></label>
         <label>Spore shape (micro diagram)<select data-mb-trait="spore"><option value="ellipsoid">Ellipsoid</option><option value="globose">Globose</option><option value="fusiform">Fusiform</option></select></label>
         <label>Growth substrate<select data-mb-trait="substrate"><option value="soil">Soil</option><option value="wood">Decaying wood</option><option value="living_tree">Living tree</option></select></label>
@@ -49,9 +51,10 @@ if (mountPoint && !document.getElementById("myco-visual-builder")) {
     </div>
     <details><summary>Scientific record and provenance (advanced)</summary><p class="mb-note">The original observation and evidence fields remain below. Creative selections are not automatically marked as measured observations.</p></details>
   `;
-  const state = {mode:"learn",form:"agaric",cap:"convex",surface:"gills",spore:"ellipsoid",substrate:"soil"};
+  const state = {mode:"learn",form:"agaric",cap:"convex",surface:"gills",stipe:"equal",attachment:"adnate",spore:"ellipsoid",substrate:"soil"};
   const terms = {
     convex:"Convex (KON-veks): cap curves outward.",flat:"Plane: upper cap is mostly level.",conical:"Conical (KON-ih-kul): cap tapers toward an apex.",depressed:"Depressed: center of cap dips inward.",
+    equal:"Equal stipe: near-uniform diameter.",bulbous:"Bulbous: swollen stipe base.",tapered:"Tapered: narrower at the apex.",adnate:"Adnate gills: broad attachment to stipe.",free:"Free gills: separated from stipe.",decurrent:"Decurrent gills: descend down the upper stipe.",
     gills:"Gills (lamellae): thin, plate-like fertile surfaces.",pores:"Pores: openings of tubes with a fertile lining.",teeth:"Teeth: downward-facing fertile spines.",smooth:"Smooth: fertile surface lacks prominent gills, tubes or teeth.",
     agaric:"Cap and stipe: a stalked mushroom body plan.",bracket:"Bracket: shelf-like body attached laterally, often to wood.",cup:"Cup: bowl-shaped fruitbody, typically without a prominent stalk.",
     ellipsoid:"Ellipsoid spores: elongated ovals.",globose:"Globose spores: roughly spherical.",fusiform:"Fusiform spores: spindle shaped and tapered.",
@@ -70,7 +73,7 @@ if (mountPoint && !document.getElementById("myco-visual-builder")) {
     const spore=state.spore==="globose"?'<circle cx="311" cy="37" r="11"/>':state.spore==="fusiform"?'<path d="M291 37 Q311 18 330 37 Q310 55 291 37Z"/>':'<ellipse cx="311" cy="37" rx="17" ry="10"/>';
     svg.innerHTML='<title>Teaching illustration of a '+safe(state.form)+' with '+safe(state.surface)+'</title>'+support+stem+'<path d="'+body+'" fill="#be9959" stroke="#efcf92" stroke-width="3"/>'+hym+'<g fill="#b4a1b9" stroke="#efdbf3" stroke-width="2">'+spore+'</g><text x="270" y="65" fill="#d8e7e1" font-size="11">Spore detail</text>';
     const focus=state.mode==="identify"?"Identify mode: compare the shape you see; this custom illustration is not a real specimen.":state.mode==="build"?"Build mode: make your own fictional teaching specimen.":"Learn mode: each trait has a definition and visual example.";
-    host.querySelector("#mb-explanation").textContent=focus+" "+terms[state.form]+" "+terms[state.cap]+" "+terms[state.surface]+" "+terms[state.spore]+" "+terms[state.substrate];
+    host.querySelector("#mb-explanation").textContent=focus+" "+terms[state.form]+" "+terms[state.cap]+" "+terms[state.surface]+" "+terms[state.stipe]+" "+terms[state.attachment]+" "+terms[state.spore]+" "+terms[state.substrate];
   }
   host.addEventListener("change",e=>{const key=e.target.dataset.mbTrait;if(key&&Object.prototype.hasOwnProperty.call(state,key)){state[key]=e.target.value;draw();}});
   host.addEventListener("click",e=>{
