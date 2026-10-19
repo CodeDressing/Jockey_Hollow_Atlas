@@ -210,6 +210,27 @@ body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
 .phase5-info{white-space:pre-line;margin-top:8px;padding:9px;border:1px solid var(--line);border-radius:8px;background:#0a1113;color:var(--muted);font-size:9px;line-height:1.45}
 .phase5-status{margin-top:8px;color:var(--good);font-size:9px;line-height:1.4}
 @media(max-width:900px){.archetype-grid,.quality-grid{grid-template-columns:1fr}}
+
+/* UX-01 Run 4: classroom readability; scoped to presentation mode. */
+body.mycosim-presenting aside{font-size:1.2rem}
+body.mycosim-presenting .learning-step-head strong{font-size:1.15rem}
+body.mycosim-presenting .learning-step-head small,
+body.mycosim-presenting aside .copy,
+body.mycosim-presenting #structureInfo,
+body.mycosim-presenting #mycosim-discovery-feedback{font-size:1rem;line-height:1.6}
+body.mycosim-presenting .learning-path-chip,
+body.mycosim-presenting #mycosim-lesson-navigation button{font-size:1rem;min-height:44px}
+body.mycosim-presenting .learning-path-chip span{display:inline}
+body.mycosim-presenting .workspace-row{grid-template-columns:minmax(0,1fr) minmax(360px,38%)}
+#mycosim-presenter{margin:12px 0;padding:12px;background:#132526;border:1px solid #739080;border-radius:10px}
+#mycosim-presenter h3{font-size:16px;margin:0 0 7px}
+#mycosim-presenter button{min-height:44px;padding:10px 12px;background:#253c37;border:1px solid #9ba991;border-radius:7px;color:#f4f6ea;cursor:pointer}
+#mycosim-presenter button:focus-visible{outline:3px solid #f0d998;outline-offset:2px}
+#mycosim-presenter .presenter-controls{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+#mycosim-presenter-prompt{line-height:1.55;font-size:13px}
+body.mycosim-presenting #mycosim-presenter-prompt{font-size:1.15rem}
+@media(max-width:900px){body.mycosim-presenting .workspace-row{grid-template-columns:1fr}body.mycosim-presenting .learning-path{grid-template-columns:repeat(5,minmax(0,1fr))}body.mycosim-presenting .learning-path-chip{font-size:.8rem}}
+@media(prefers-reduced-motion:reduce){body.mycosim-presenting *,body.mycosim-presenting *::before,body.mycosim-presenting *::after{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -260,6 +281,18 @@ body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
       <button type="button" class="learning-path-chip" data-jump-step="5"><b>5</b><span>Deeper</span></button>
     </div>
 
+
+    <section id="mycosim-presenter" aria-labelledby="mycosim-presenter-title">
+      <h3 id="mycosim-presenter-title">Classroom presentation</h3>
+      <p class="copy">Instructor controls for projected lessons. Use the ordinary specimen and lesson controls during the lecture.</p>
+      <div class="presenter-controls">
+        <button type="button" id="mycosim-present-toggle" aria-pressed="false">Enable classroom mode</button>
+        <button type="button" id="mycosim-present-read">Read teaching prompt</button>
+        <button type="button" id="mycosim-present-stop">Stop narration</button>
+      </div>
+      <p id="mycosim-presenter-prompt" role="status" aria-live="polite">Choose a fungal body plan. Ask learners what they can observe without assuming an identification.</p>
+      <p class="copy">Keyboard in classroom mode: left/right arrows navigate available lessons; Escape exits classroom mode. Guided lesson locks still apply. Narration requires a click.</p>
+    </section>
     <nav id="mycosim-lesson-navigation" aria-label="Guided lesson controls" style="border:1px solid var(--line);border-radius:9px;padding:10px;margin:0 0 13px;background:#0d191b">
       <p id="mycosim-lesson-progress" role="status" aria-live="polite" style="margin:0 0 9px;font-size:12px;color:#dfe9e5">Lesson 1 of 5 · Family</p>
       <div style="display:flex;gap:8px;flex-wrap:wrap">
