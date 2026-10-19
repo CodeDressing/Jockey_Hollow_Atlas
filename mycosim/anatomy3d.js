@@ -63,7 +63,7 @@ if(zoomRow6)advanced6.append(zoomRow6);
 if(infoControls6)advanced6.append(infoControls6);
 const heading6=section.querySelector(".anatomy-grid");
 heading6.parentNode.insertBefore(advanced6,heading6);
-const begin6=()=>{init();if(started){intro6.hidden=true;advanced6.open=true;status.textContent="3D ready — select a structure or continue the guided discovery above.";}};
+const begin6=()=>{init();if(started){intro6.hidden=true;status.textContent="3D ready — select a structure or continue the guided discovery above.";}};
 intro6.querySelector("#anatomy6-begin").addEventListener("click",begin6);
 const canvas=section.querySelector("canvas"),info=section.querySelector("#tv-anatomy-detail"),name=section.querySelector("#tv-anatomy-name"),status=section.querySelector("#tv-anatomy-status");
 const modes={gut:[
@@ -298,9 +298,10 @@ function init(){
    }else{dynamics24LastFrame=0;if(perf26.active)perf26.previous=null;}
    raf=requestAnimationFrame(loop);
   };loop();
+  intro6.hidden=true;
   status.textContent="3D ready · "+mode+" model. Click a structure or use the selection controls.";
   section.querySelector('[data-action="start"]').disabled=true;
- }catch(e){status.textContent="3D initialization failed: "+String(e?.message||e);console.error(e);dispose();}
+ }catch(e){intro6.hidden=false;const error6=intro6.querySelector("p");if(error6)error6.textContent="3D initialization failed. Review the error below, or continue the text lesson without WebGL.";status.textContent="3D initialization failed: "+String(e?.message||e);console.error(e);dispose();}
 }
 function pick(event){
  if(!started)return;
