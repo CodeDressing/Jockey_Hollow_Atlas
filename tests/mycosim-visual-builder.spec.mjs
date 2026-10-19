@@ -87,3 +87,25 @@ test("Studio advanced choices alter original engine, not evidence records",async
   expect(await page.locator("#observationForm").count()).toBe(1);
   expect(await studio.locator("#mb-region-editor button").count()).toBeGreaterThan(10);
 });
+
+test("Scientific form immediately drives visual morphology without inventing evidence",async({page})=>{
+  test.setTimeout(90000);
+  await page.goto("http://127.0.0.1:8765/sandbox.html");
+  await expect.poll(()=>page.evaluate(()=>Boolean(window.MycoSimMorphologyBridge)),{timeout:30000}).toBe(true);
+  const form=page.locator("#observationForm");
+  await expect(form.locator('[data-obs-value="cap_morphology"]')).toBeVisible({timeout:30000});
+  await form.locator('[data-obs-value="cap_morphology"]').selectOption("conical");
+  await expect.poll(()=>page.evaluate(()=>window.MycoSimMorphologyBridge.getState().variants.agaric_pileus_profile)).toBe("conical");
+  await expect(page.locator("#observationVisualStatus")).toContainText("applied to the interactive 3D");
+  await expect(form.locator('[data-obs-state="cap_morphology"]')).toHaveValue("not_examined");
+  await expect(form.locator('[data-obs-provenance="cap_morphology"]')).toHaveValue("");
+  await form.locator('[data-obs-value="stipe_morphology"]').selectOption("bulbous");
+  await expect.poll(()=>page.evaluate(()=>window.MycoSimMorphologyBridge.getState().variants.agaric_stipe_form)).toBe("bulbous_base");
+  await form.locator('[data-obs-value="hymenophore_type"]').selectOption("free_gills");
+  await expect.poll(()=>page.evaluate(()=>window.MycoSimMorphologyBridge.getState().variants.agaric_gill_attachment)).toBe("free_gills");
+  await form.locator('[data-obs-value="spore_shape"]').selectOption("fusiform");
+  await expect(page.locator("#mb-microscopy")).toContainText("fusiform");
+  await form.locator('[data-obs-value="ornamentation"]').selectOption("warted");
+  await expect(page.locator("#observationVisualStatus")).toContainText("no validated geometric representation");
+  await expect(form.locator('[data-obs-state="ornamentation"]')).toHaveValue("not_examined");
+});
