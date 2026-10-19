@@ -363,6 +363,7 @@ body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
   </div>
 
   <section id="trametes-simulator" aria-label="Trametes versicolor 3D educational reconstruction" style="grid-column:1/-1;padding:16px;border:1px solid #4b625f;border-radius:12px;background:#101a1b;color:#dce9e4;margin:12px 0">
+    <div id="tv-species-only" hidden aria-label="Turkey Tail hardwood-log reconstruction">
     <div style="display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;align-items:center"><div><div class="kicker">MYCOSIM · SPECIES RECONSTRUCTION · PHASE 8</div><h2 style="margin:5px 0">Trametes versicolor — interactive hardwood log</h2><p class="copy">Procedurally generated 3D educational reconstruction, not a scanned or identified specimen. Distinguishes macroscopic tissues from inferred and magnified structures.</p></div><span class="badge" style="position:static">EDUCATIONAL RECONSTRUCTION</span></div>
     <button id="tv-start" type="button" style="margin:9px 0;padding:10px 14px;font-weight:700">Start Turkey Tail 3D simulation</button>
     <canvas id="tv-canvas" style="display:block;width:100%;height:clamp(260px,44vw,510px);min-height:260px;touch-action:none;border-radius:10px;background:#0b1417" aria-label="Three dimensional interactive Turkey Tail mushrooms growing on hardwood log"></canvas>
@@ -377,6 +378,12 @@ body[data-learner-mode="explore"] .learning-path-chip{opacity:1}
     <div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px"><label for="tv-flow">Educational sequence</label><select id="tv-flow"><option value="life">Fungal life cycle</option><option value="farm">Forest → human consumption</option></select><button type="button" id="tv-prev">← Previous</button><button type="button" id="tv-next">Next →</button></div>
     <p id="tv-steps" class="copy" aria-live="polite"></p><p id="tv-stage" class="copy"></p>
     <details><summary>Source foundations and scientific boundaries</summary><p class="copy">For identification, compare peer-reviewed morphology and microscopy sources; common look-alikes may have different undersides. For cancer and immunology see <a href="https://www.cancer.gov/about-cancer/treatment/cam/hp/mushrooms-pdq" target="_blank" rel="noopener noreferrer">NCI Medicinal Mushrooms PDQ</a>. The Dectin-1–SYK pathway reflects experimentally presented fungal glucans; no clinical effect from ordinary Turkey Tail powder is presumed. Do not use this simulator to certify food safety or species identity.</p></details>
+    </div>
+    <section id="myco-family-biology" aria-label="Selected fungal family biological process laboratory" style="margin:12px 0">
+      <h2 id="myco-family-biology-title" style="margin:7px 0;color:#f1d89d">Agaricoid biological processes</h2>
+      <p id="myco-family-biology-intro" class="copy">Choose an agaricoid mushroom to explore its ecology, development, reproductive biology, and spores. Existing 3D morphology remains above.</p>
+      <div id="myco-family-biology-lesson" role="region" aria-label="Agaricoid biology lesson"></div>
+    </section>
   </section>
 </main>
 
@@ -404,13 +411,15 @@ window.MYCOSIM_BOOT_WATCHDOG=setTimeout(()=>{
 <script type="module" src="mycosim/neural_interface19.js?v=phase19-neural-20261018"></script>
 <script type="module" src="mycosim/evidence21.js?v=phase21-evidence-20261018"></script>
 <script type="module" src="mycosim/release_acceptance.js?v=phase13-finalqa-20261016"></script>
+<script type="module" src="mycosim/family_biology28.js?v=family-context-20261019"></script>
 <script type="module" src="mycosim/lab_workspace.js?v=phase14-accessible-20261016"></script>
 <script type="module">
 const start=document.getElementById("tv-start");
 if(start)start.addEventListener("click",async()=>{
   start.disabled=true;start.textContent="Initializing Turkey Tail scene…";
   try{
-    await import("./mycosim/trametes_sim.js?v=phase14-suspend-20261016");
+    if(document.getElementById("trametes-simulator")?.dataset.specimenFamily!=="trametes_versicolor")throw new Error("Select Trametes versicolor before loading its hardwood-log simulation.");
+    await import("./mycosim/trametes_sim.js?v=family-suspend-20261019");
     start.textContent="3D scene ready";
     start.setAttribute("aria-pressed","true");
   }catch(error){
