@@ -1,6 +1,6 @@
 // MycoSim visual builder: additive, optional, no changes to evidence records.
 import {MORPHOLOGY_VARIANTS} from "./variants.js";
-const mountPoint = document.getElementById("observationForm");
+const mountPoint = document.getElementById("mycosim-creative-studio-status") || document.getElementById("observationForm");
 if (mountPoint && !document.getElementById("myco-visual-builder")) {
   const host = document.createElement("section");
   host.id = "myco-visual-builder";
