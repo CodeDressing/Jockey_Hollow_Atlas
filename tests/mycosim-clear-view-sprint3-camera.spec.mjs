@@ -51,3 +51,32 @@ for(const width of [320,390,768,960,1280,1920]){
     await page.screenshot({path:"test-results/clear-view-s3-r32-"+width+".png",animations:"disabled"});
   });
 }
+
+test("S3 R3.3: five stipe forms remain selectable and preserve observation provenance",async({page})=>{
+  test.setTimeout(90000);
+  await page.goto("http://127.0.0.1:8765/sandbox.html");
+  await expect.poll(()=>page.evaluate(()=>Boolean(window.MycoSimMorphologyBridge?.getState()))).toBe(true);
+  for(const form of ["equal","clavate","bulbous","marginate_bulb","rooting"]){
+    const result=await page.evaluate(form=>window.MycoSimMorphologyBridge.apply({family:"boletoid",variants:{stipe:form}}),form);
+    expect(result.ok,JSON.stringify(result)).toBe(true);
+    await expect.poll(()=>page.evaluate(()=>window.MycoSimMorphologyBridge.getState().variants.stipe)).toBe(form);
+    await expect(page.locator('[data-obs-state="cap_morphology"]')).toHaveValue("not_examined");
+    await expect(page.locator('[data-obs-provenance="cap_morphology"]')).toHaveValue("");
+  }
+  await expect(page.locator("#stage")).toHaveCount(1);
+  await expect(page.locator("#myco-visual-builder")).toHaveCount(0);
+});
+test("S3 R3.3: young mature old boletoid stage depth is distinguishable",async({page})=>{
+  test.setTimeout(90000);
+  await page.goto("http://127.0.0.1:8765/sandbox.html");
+  await expect.poll(()=>page.evaluate(()=>Boolean(window.MycoSimMorphologyBridge?.getState()))).toBe(true);
+  const metrics=[];
+  for(const stage of ["young","mature","old"]){
+    await page.evaluate(stage=>window.MycoSimMorphologyBridge.apply({family:"boletoid",stage}),stage);
+    const state=await page.evaluate(()=>({stage:window.MycoSimMorphologyBridge.getState().stage,tubeScale:window.MycoSimCameraBridge.snapshot().tubeScale}));
+    metrics.push(state);
+  }
+  expect(metrics.map(x=>x.stage)).toEqual(["young","mature","old"]);
+  expect(metrics[0].tubeScale).toBeLessThan(metrics[1].tubeScale);
+  expect(metrics[2].tubeScale).toBeGreaterThan(0);
+});
