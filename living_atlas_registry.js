@@ -33,6 +33,16 @@
     return "unidentified";
   };
   const MODEL_LIFECYCLE=Object.freeze(["unmodeled","provisional_reconstruction","scientifically_reviewed","validated"]);
+  // Run 6: direct visual review of two accession-labelled source images.
+  // This is NOT a taxonomic determination, morphology profile, or model license.
+  const reviewedAN2F3=Object.freeze([
+    {character:"pileus_surface",observation:"Dark cap with dense raised coarse scales visible",evidence:"AN2-F3.JPG",basis:"direct photograph",confidence:"observed"},
+    {character:"stipe",observation:"Distinct short-looking curved stalk visible in photographic perspective",evidence:"AN2-F3.JPG",basis:"direct photograph",confidence:"observed"},
+    {character:"spore_print",observation:"Dark patterned deposit visible on white collection sheet",evidence:"AN2-F3SP.JPG",basis:"direct photograph",confidence:"observed"},
+    {character:"hymenophore",observation:"Attachment and pore/gill structure not established from reviewed images",evidence:null,basis:"unknown",confidence:"unresolved"},
+    {character:"measurements",observation:"Distinct archived measurement repetitions disagree and contain incomplete fields",evidence:"Rutgers_Mycology_Measurements_Master.xlsx",basis:"source record review",confidence:"conflicting"},
+    {character:"species",observation:"No independently reviewed scientific species determination established",evidence:null,basis:"unknown",confidence:"unresolved"}
+  ]);
   const evidenceFor=r=>{
     const photographs=(r.images||[]).filter(i=>i.original||i.thumb).map(i=>Object.freeze({
       type:"photograph",label:i.caption||"Archived accession media",url:i.original||i.thumb
@@ -44,6 +54,7 @@
     return Object.freeze({specimen_id:r.code,photos:photographs,measurements,
       taxonomic_determination:nameFields(r),identification_state:identificationState(r),
       model_lifecycle:"unmodeled",model_profile:null,
+      reviewed_character_matrix:r.code==="AN2-F3"?reviewedAN2F3:[],
       uncertainty:"Images and source measurements are accession-linked; diagnostic traits and accepted taxon require independent review."
     });
   };
@@ -109,6 +120,12 @@
     const evidenceNote=document.createElement("p");
     evidenceNote.textContent="Evidence matrix: "+evidence.photos.length+" archived media references; "+evidence.measurements.length+" measurement records. 3D lifecycle: "+evidence.model_lifecycle+". Anatomical reconstruction not authorized by evidence yet.";
     detail.append(evidenceNote);
+    if(evidence.reviewed_character_matrix.length){
+      const review=document.createElement("details");
+      const sum=document.createElement("summary");sum.textContent="Visual character evidence and unresolved anatomy";review.append(sum);
+      for(const entry of evidence.reviewed_character_matrix){const line=document.createElement("p");line.textContent=entry.character+": "+entry.observation+" — "+entry.basis+(entry.evidence?" ("+entry.evidence+")":"");review.append(line);}
+      detail.append(review);
+    }
     const gallery=document.createElement("details");
     const galleryTitle=document.createElement("summary");galleryTitle.textContent="Original accession photo references ("+evidence.photos.length+")";
     gallery.append(galleryTitle);
