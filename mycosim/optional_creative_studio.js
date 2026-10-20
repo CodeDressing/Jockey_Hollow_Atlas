@@ -11,8 +11,10 @@ button?.addEventListener("click",async()=>{
     const host=document.getElementById("myco-visual-builder");
     if(!host)throw new Error("Creative workshop failed to mount");
     button.hidden=true;
-    status.textContent="Independent creative workshop ready. This is not the authoritative scientific specimen.";
-    (document.getElementById("mycosim-builder-disclosure")||host).scrollIntoView({block:"nearest",behavior:"auto"});
+    status.textContent="Advanced tools are available below in a closed panel. The original scientific 3D specimen remains authoritative.";
+    const disclosure=document.getElementById("mycosim-builder-disclosure");
+    if(disclosure){disclosure.open=false;disclosure.querySelector(":scope > summary")?.focus({preventScroll:true});}
+    (disclosure||host).scrollIntoView({block:"nearest",behavior:"auto"});
   }catch(error){
     status.textContent="Creative workshop could not load: "+String(error?.message||error);
     button.disabled=false;
