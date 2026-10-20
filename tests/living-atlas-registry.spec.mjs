@@ -54,3 +54,12 @@ test("Optional builder stays collapsed while Learn Build Identify remain accessi
   for(const mode of ["learn","build","identify"])
     await expect(page.locator('[data-mb-mode="'+mode+'"]')).toBeVisible();
 });
+
+test("Living Atlas name search cannot fabricate AN2-F3 taxonomic confirmation",async({page})=>{
+  await page.goto("http://127.0.0.1:8765/index.html?specimen=AN2-F3");
+  await expect.poll(()=>page.evaluate(()=>Boolean(window.LivingAtlasRegistry))).toBe(true);
+  const names=await page.evaluate(()=>window.LivingAtlasRegistry.verifiedNames("AN2-F3"));
+  expect(Array.isArray(names)).toBe(true);
+  await expect(page.locator("#living-atlas-detail")).toContainText("identification review required");
+  expect(await page.evaluate(()=>window.LivingAtlasRegistry.modelStatus("AN2-F3"))).toBe("not_modelled");
+});
