@@ -67,3 +67,19 @@ test("Living Atlas name search cannot fabricate AN2-F3 taxonomic confirmation",a
   await expect(page.locator("#living-atlas-detail")).toContainText("identification review required");
   expect(await page.evaluate(()=>window.LivingAtlasRegistry.modelStatus("AN2-F3"))).toBe("not_modelled");
 });
+
+test("AN2-F3 evidence matrix preserves accession and blocks speculative models",async({page})=>{
+  await page.goto("http://127.0.0.1:8765/index.html?specimen=AN2-F3");
+  await page.locator("#enterAtlas").click();
+  const evidence=await page.evaluate(()=>window.LivingAtlasRegistry.evidenceMatrix("AN2 F3"));
+  expect(evidence.specimen_id).toBe("AN2-F3");
+  expect(evidence.photos.length).toBeGreaterThan(0);
+  expect(evidence.measurements.length).toBeGreaterThan(1);
+  expect(evidence.model_profile).toBeNull();
+  expect(evidence.model_lifecycle).toBe("unmodeled");
+  expect(await page.evaluate(()=>window.LivingAtlasRegistry.modelLifecycleOptions)).toEqual(
+    ["unmodeled","provisional_reconstruction","scientifically_reviewed","validated"]);
+  await expect(page.locator("#living-atlas-detail")).toContainText("Evidence matrix");
+  await expect(page.locator("#living-atlas-detail")).toContainText("Original accession photo references");
+  await expect(page.locator("#living-atlas-detail")).toContainText("Anatomical reconstruction not authorized");
+});
