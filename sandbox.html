@@ -368,6 +368,20 @@ body.mycosim-presenting #mycosim-presenter-prompt{font-size:1.15rem}
         <strong id="morphologySummary">Mature Agaricoid</strong>
         <p id="morphologySummaryDetail">Updates live as morphology characters change.</p>
       </div>
+      <section id="mycosim-teaching-guide" aria-label="Scientific learning companion" style="border:1px solid #627d74;border-radius:10px;padding:12px;margin:10px 0;background:#102221">
+        <div class="kicker">LEARN WHAT YOU SEE · CONTEXTUAL SCIENCE</div>
+        <h3 id="mycosim-teaching-title" style="margin:7px 0;font-size:16px">Whole basidiome</h3>
+        <p id="mycosim-teaching-explanation" style="font-size:12px;line-height:1.6;color:#deebe2;margin:6px 0;white-space:pre-line">Select a mushroom structure to learn its anatomy.</p>
+        <p id="mycosim-teaching-source" style="font-size:10px;line-height:1.5;color:#b6c8c0">Educational reconstruction, not a verified identification.</p>
+        <div class="science-actions" aria-label="Learning controls">
+          <button type="button" data-teaching-action="read">Hear explanation</button>
+          <button type="button" data-teaching-action="stop">Stop audio</button>
+          <button type="button" data-teaching-action="beginner">Beginner</button>
+          <button type="button" data-teaching-action="expert">Expert</button>
+          <button type="button" data-teaching-action="anatomy">Explore anatomical relationships</button>
+        </div>
+        <p id="mycosim-teaching-status" role="status" aria-live="polite" style="font-size:11px;color:#c9d9d1;margin:5px 0 0"></p>
+      </section>
       <div id="variantTeachingCard" class="variant-teaching-card" hidden>
       <div class="teach-kicker">What changed</div>
       <h4 id="variantTeachingTitle">Morphology character</h4>
@@ -511,6 +525,7 @@ window.MYCOSIM_BOOT_WATCHDOG=setTimeout(()=>{
 },5000);
 </script>
 <script type="module" src="mycosim/main.js?v=family-context-20261019"></script>
+<script type="module" src="mycosim/teaching_guide.js?v=sprint4-20261019"></script>
 <script type="module" src="mycosim/lab_navigation.js?v=sprint1-navigation-20261019"></script>
 <script type="module" src="mycosim/visual_builder.js?v=visual-studio-20261019"></script>
 <script type="module" src="mycosim/visual_builder_3d.js?v=studio-3d-sprint2-20261019"></script>
