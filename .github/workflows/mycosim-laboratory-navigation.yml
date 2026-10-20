@@ -1,0 +1,32 @@
+name: MycoSim laboratory navigation isolated QA
+on:
+  push:
+    branches: [campaign/mycosim-restoration-sprint1-organization-20261019]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  navigation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate navigation JavaScript
+        run: node --check mycosim/lab_navigation.js
+      - name: Install free Chromium runtime
+        run: |
+          npm install --no-save @playwright/test
+          npx playwright install --with-deps chromium
+      - name: Start static server
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/mycosim-labs.log 2>&1 &
+          for i in $(seq 1 30); do
+            curl -fsS http://127.0.0.1:8765/sandbox.html -o /dev/null && exit 0
+            sleep 1
+          done
+          exit 1
+      - name: Run preservation-first navigation tests
+        run: npx playwright test tests/mycosim-laboratory-navigation.spec.mjs --browser=chromium --workers=1 --reporter=line
