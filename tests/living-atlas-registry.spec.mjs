@@ -30,3 +30,27 @@ test("Living Atlas does not claim species or fabricate 3D models",async({page})=
   await input.fill("zz-no-such-specimen-999");
   await expect(page.locator("#living-atlas-results")).toContainText("No documented match");
 });
+
+test("Living Atlas generic view identifies itself as non-specimen reconstruction",async({page})=>{
+  await page.goto("http://127.0.0.1:8765/index.html?specimen=AN2-F3");
+  await expect(page.locator("#living-atlas-detail a[href*='atlas_reference=AN2-F3']")).toHaveCount(1);
+  await page.locator("#living-atlas-detail a[href*='atlas_reference=AN2-F3']").click();
+  await expect(page).toHaveURL(/sandbox\.html\?atlas_reference=AN2-F3/);
+  await expect(page.locator("#living-atlas-reference-warning")).toContainText("NOT a verified 3D reconstruction");
+  await expect(page.locator("canvas#stage")).toHaveCount(1);
+});
+test("Optional builder stays collapsed while Learn Build Identify remain accessible",async({page})=>{
+  test.setTimeout(90000);
+  await page.goto("http://127.0.0.1:8765/sandbox.html");
+  const archive=page.locator("#mycosim-creative-archive");
+  await archive.locator("summary").click();
+  await page.locator("#mycosim-load-creative-studio").click();
+  const details=page.locator("#mycosim-builder-disclosure");
+  await expect(details).toHaveCount(1);
+  await expect(details).not.toHaveAttribute("open","");
+  await expect(page.locator("#myco-visual-builder")).toBeHidden();
+  await details.locator("summary").click();
+  await expect(details).toHaveAttribute("open","");
+  for(const mode of ["learn","build","identify"])
+    await expect(page.locator('[data-mb-mode="'+mode+'"]')).toBeVisible();
+});
