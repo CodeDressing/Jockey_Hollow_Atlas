@@ -1,0 +1,78 @@
+/* MycoSim Restoration Sprint 2 — visual system only.
+   No visibility overrides of learning steps or species modules. */
+:root{--mx-panel-raised:#142125;--mx-focus:#f4d58d;--mx-divider:#40555a}
+html{scroll-padding-top:82px}
+aside{min-width:0}
+aside h1{font-size:clamp(25px,2vw,32px);line-height:1.17;letter-spacing:-.035em}
+aside h2{font-size:16px;line-height:1.3;letter-spacing:-.012em}
+aside h3{line-height:1.35}
+aside .copy{font-size:13px;line-height:1.65}
+aside :where(button,a,select,input,textarea):focus-visible{
+  outline:2px solid var(--mx-focus);outline-offset:3px
+}
+aside :where(button,a){-webkit-tap-highlight-color:transparent}
+.workspace-row{grid-template-columns:minmax(0,1fr) clamp(340px,31vw,470px)}
+.stage-wrap{box-shadow:inset -1px 0 rgba(143,181,162,.14)}
+#mycosim-laboratory-nav{margin:16px 0 18px;border-color:#638b7c;padding:15px;background:linear-gradient(120deg,#11272a,#101a1f)}
+#mycosim-laboratory-nav .lab-nav-heading{margin-bottom:13px}
+#mycosim-laboratory-nav .lab-nav-heading strong{font-size:17px;letter-spacing:-.015em}
+#mycosim-laboratory-nav .lab-nav-grid{gap:10px}
+#mycosim-laboratory-nav .lab-nav-grid a{min-height:86px;padding:12px 13px;border-radius:10px;position:relative}
+#mycosim-laboratory-nav .lab-nav-grid a strong{font-size:13px;line-height:1.35}
+#mycosim-laboratory-nav .lab-nav-grid a small{font-size:11px;line-height:1.55}
+#mycosim-laboratory-nav .lab-nav-grid a:hover{transform:translateY(-1px)}
+.learner-mode-switch{gap:9px}
+.learner-mode-switch button{min-height:42px;font-size:12px}
+.learning-step{padding:14px;margin-bottom:15px;border-color:#33484d}
+.learning-step-head{margin-bottom:14px;align-items:center}
+.learning-step-head>span{width:31px;height:31px;flex-basis:31px;font-size:12px}
+.learning-step-head strong{font-size:15px;line-height:1.3}
+.learning-step-head small{font-size:11px;line-height:1.5;margin-top:3px}
+.variant-field{background:#0d1719;border:1px solid #2f4346;padding:10px;border-radius:9px}
+.variant-field-head>span{font-size:11px;letter-spacing:.045em;color:#c2d4d3}
+.variant-field-head>strong{font-size:11px}
+.variant-choice{min-height:43px;font-size:11px;padding:10px 11px}
+.variant-choice.active{box-shadow:inset 0 0 0 1px rgba(239,206,132,.14)}
+.variant-teaching-card{padding:13px;border-color:#617a79}
+.variant-teaching-card h4{font-size:15px}
+.variant-teaching-card p{font-size:12px;line-height:1.55}
+#structureInfo{padding:12px;line-height:1.55;font-size:12px}
+#mycosim-welcome{box-shadow:0 6px 22px rgba(0,0,0,.13)}
+#mycosim-lesson-navigation{padding:12px!important}
+#mycosim-lesson-navigation button{min-height:42px}
+#mycosim-presenter{padding:14px}
+#mycosim-presenter-prompt{font-size:13px}
+.science-panel{padding:14px;border-color:#394e52}
+.science-panel h3{font-size:16px}
+.obs-field span{font-size:11px}
+.obs-field input,.obs-field select,.obs-field textarea{font-size:12px;min-height:40px}
+.evidence-row input,.evidence-row select{min-height:37px}
+.science-actions button{min-height:42px;font-size:11px}
+#observationVisualStatus{line-height:1.55}
+#stageStateLine{border-color:#4b605d}
+#mycosim-laboratory-nav .lab-nav-grid a:focus-visible{outline:2px solid var(--mx-focus);outline-offset:3px}
+@media(min-width:1400px){.workspace-row{grid-template-columns:minmax(0,1fr) 440px}aside{padding:22px}}
+@media(max-width:900px){
+  .workspace-row{grid-template-columns:minmax(0,1fr)}
+  .stage-wrap{position:relative;top:auto;height:clamp(300px,49svh,570px);min-height:0}
+  aside{padding:16px}
+  #mycosim-laboratory-nav .lab-nav-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .learning-step{padding:12px}
+  .stage-grid,.stage-compare{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:560px){
+  header{padding:10px 12px}
+  aside{padding:13px}
+  .stage-wrap{height:clamp(260px,43svh,390px)}
+  #mycosim-laboratory-nav{padding:12px}
+  #mycosim-laboratory-nav .lab-nav-grid{grid-template-columns:1fr}
+  #mycosim-laboratory-nav .lab-nav-grid a{min-height:58px;padding:9px 12px;gap:3px}
+  .variant-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .variant-choice{min-height:44px}
+  .stage-grid,.stage-compare{grid-template-columns:1fr}
+  .science-grid{grid-template-columns:1fr}
+  .learning-path-chip{min-height:39px}
+}
+@media(prefers-reduced-motion:reduce){
+  #mycosim-laboratory-nav .lab-nav-grid a{transition:none!important;transform:none!important}
+}
