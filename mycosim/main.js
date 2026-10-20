@@ -796,7 +796,13 @@ try{
       target:engine.controls.target.toArray(),
       profile:engine.currentProfile?.id||null,
       tubeScale:engine.objects.get("tube_layer")?.scale.y??null,
-      poreGeometry:engine.currentProfile?.id==="boletoid"?"planar-pore-openings":null
+      poreGeometry:(()=>{
+        if(engine.currentProfile?.id!=="boletoid")return null;
+        const pore=engine.pickables.find(o=>o.isInstancedMesh&&o.userData?.id==="hymenophore"&&o.geometry?.type==="CircleGeometry");
+        return pore?.geometry?.type||null;
+      })(),
+      poreInstanceCount:engine.pickables.filter(o=>o.isInstancedMesh&&o.userData?.id==="hymenophore"&&o.geometry?.type==="CircleGeometry").reduce((n,o)=>n+o.count,0),
+      baseVisible:engine.objects.get("stipe_base")?.visible??null
     }),
     move:action=>engine.navigateCamera(action)
   });
