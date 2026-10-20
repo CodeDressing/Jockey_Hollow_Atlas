@@ -3315,6 +3315,8 @@ export class MycoSimEngine{
     if(form==="taper_down"){topR*=1.18;bottomR*=.72;}
     if(form==="clavate"){topR*=.82;bottomR*=1.42;}
     if(form==="bulbous"||form==="marginate_bulb"){bottomR*=1.08;}
+    // Rooting stipes taper into the substrate as a single continuous surface.
+    // Their lower process is part of the shaft profile, never a glued-on cone.
     const profile=[new THREE.Vector2(0,-height/2)];
     const steps=scaledSegments(20,this.realismTier,{min:14,max:28});
     for(let i=0;i<=steps;i++){
@@ -3322,6 +3324,10 @@ export class MycoSimEngine{
       let r=THREE.MathUtils.lerp(bottomR,topR,t);
       r*=1+.025*Math.sin(t*Math.PI*4)+.012*Math.sin(t*Math.PI*9);
       if(form==="clavate")r*=1+.22*Math.pow(1-t,2.4);
+      if(form==="rooting"){
+        const rootTransition=THREE.MathUtils.smoothstep(t,0,.31);
+        r*=.065+.935*rootTransition;
+      }
       profile.push(new THREE.Vector2(r,-height/2+t*height));
     }
     profile.push(new THREE.Vector2(0,height/2));
@@ -3354,8 +3360,9 @@ export class MycoSimEngine{
       rim.rotation.x=Math.PI/2;rim.position.set(offsetX,y-h/2+.04,z);rim.userData=bulb.userData;
       this.root.add(rim);this.pickables.push(rim);
     }else if(form==="rooting"){
-      const root=this.register(new THREE.Mesh(new THREE.ConeGeometry(.20,.95,36),MATERIALS.stipe.clone()),"stipe_base","Rooting base","macro","stipe");
-      root.position.set(offsetX,y-h/2-.48,z);root.rotation.x=Math.PI;
+      // The selectable base is the integral lower segment of this same mesh.
+      this.objects.set("stipe_base",st);
+      st.userData.continuousRootingBase=true;
     }else{
       const b=this.register(new THREE.Mesh(new THREE.SphereGeometry(.38,36,22),MATERIALS.stipe.clone()),"stipe_base","Stipe base","macro","stipe");
       b.scale.set(1,.38,1);b.position.set(offsetX,y-h/2-.035,z);
@@ -3367,28 +3374,71 @@ export class MycoSimEngine{
   _addPoreField(radius,y,{tubeDepth=.22,label="Pore surface"}={}){
     const layer=this.register(new THREE.Mesh(new THREE.CylinderGeometry(radius*.96,radius,.12,72),MATERIALS.pore.clone()),"hymenophore",label,"fertile");
     layer.position.y=y;
-    // Pores are *openings* on the tube face, not downward-projecting pegs.
-    // Restrict this visual treatment to boletoids; other pore families stay unchanged.
     const boletoid=this.currentProfile?.id==="boletoid";
-    const poreGeo=boletoid?new THREE.CircleGeometry(.031,12):new THREE.CylinderGeometry(.038,.045,.026,10);
-    const poreMat=MATERIALS.poreDark.clone();
-    const points=[];
-    for(let x=-radius*.88;x<=radius*.88;x+=.115){
-      for(let z=-radius*.88;z<=radius*.88;z+=.105){
-        const jitter=((Math.round((x+z)*1000)%3)-1)*.012;
-        const px=x+jitter,pz=z-jitter*.5;
-        if(Math.hypot(px,pz)<radius*.88)points.push([px,pz]);
+    if(boletoid){
+      const stage=this.developmentalStageId||"mature";
+      // A hexagonally tiled, annular tube-face tessellation: tissue forms one
+      // nearly continuous field, while true polygonal openings reveal the
+      // darker underlying hymenophore. This is illustrative, not microscopy.
+      const spacing=stage==="young"?.073:stage==="old"?.117:.096;
+      const outer=spacing/Math.sqrt(3);
+      const holeRadius=outer*(stage==="young"?.22:stage==="old"?.60:.43);
+      const shape=new THREE.Shape();
+      for(let k=0;k<6;k++){
+        const a=Math.PI/6+k*Math.PI/3;
+        const x=Math.cos(a)*outer,y2=Math.sin(a)*outer;
+        if(k===0)shape.moveTo(x,y2);else shape.lineTo(x,y2);
       }
+      shape.closePath();
+      const hole=new THREE.Path();
+      hole.absarc(0,0,holeRadius,0,Math.PI*2,true);
+      shape.holes.push(hole);
+      const poreGeo=new THREE.ShapeGeometry(shape,1);
+      poreGeo.rotateX(Math.PI/2);
+      poreGeo.userData={model:"connected-boletoid-tube-face-v1",stage,holeRadius,spacing};
+      const points=[];
+      const rowStep=spacing*.8660254;
+      const max=radius*.86;
+      for(let row=-Math.ceil(max/rowStep);row<=Math.ceil(max/rowStep);row++){
+        const z=row*rowStep;
+        for(let col=-Math.ceil(max/spacing);col<=Math.ceil(max/spacing);col++){
+          const x=(col+(Math.abs(row)%2)*.5)*spacing;
+          if(Math.hypot(x,z)<max)points.push([x,z]);
+        }
+      }
+      const faceMat=MATERIALS.pore.clone();
+      faceMat.side=THREE.DoubleSide;
+      const pores=new THREE.InstancedMesh(poreGeo,faceMat,points.length);
+      pores.userData={id:"hymenophore",label,category:"fertile",selectable:true,knowledgeId:"pore_surface",model:"connected-boletoid-tube-face-v1",stage};
+      const dummy=new THREE.Object3D();
+      points.forEach(([x,z],i)=>{
+        dummy.position.set(x,y-.063,z);
+        dummy.updateMatrix();pores.setMatrixAt(i,dummy.matrix);
+      });
+      pores.instanceMatrix.needsUpdate=true;
+      pores.castShadow=false;pores.receiveShadow=true;
+      this.root.add(pores);this.pickables.push(pores);
+    }else{
+      const poreGeo=new THREE.CylinderGeometry(.038,.045,.026,10);
+      const poreMat=MATERIALS.poreDark.clone();
+      const points=[];
+      for(let x=-radius*.88;x<=radius*.88;x+=.115){
+        for(let z=-radius*.88;z<=radius*.88;z+=.105){
+          const jitter=((Math.round((x+z)*1000)%3)-1)*.012;
+          const px=x+jitter,pz=z-jitter*.5;
+          if(Math.hypot(px,pz)<radius*.88)points.push([px,pz]);
+        }
+      }
+      const inst=new THREE.InstancedMesh(poreGeo,poreMat,points.length);
+      inst.userData={id:"hymenophore",label,category:"fertile",selectable:true};
+      const dummy=new THREE.Object3D();
+      points.forEach(([px,pz],i)=>{dummy.position.set(px,y-.071,pz);dummy.updateMatrix();inst.setMatrixAt(i,dummy.matrix);});
+      inst.castShadow=false;inst.receiveShadow=true;this.root.add(inst);this.pickables.push(inst);
+      const variationGroup=new THREE.Group();
+      variationGroup.userData={id:"hymenophore",label,category:"fertile",selectable:true};
+      this._addPoreSurfaceVariation(variationGroup,radius,y);
+      this.root.add(variationGroup);
     }
-    const inst=new THREE.InstancedMesh(poreGeo,poreMat,points.length);
-    inst.userData={id:"hymenophore",label,category:"fertile",selectable:true};
-    const dummy=new THREE.Object3D();
-    points.forEach(([px,pz],i)=>{dummy.position.set(px,y-(boletoid?.065:.071),pz);dummy.rotation.set(boletoid?Math.PI/2:0,0,0);dummy.updateMatrix();inst.setMatrixAt(i,dummy.matrix);});
-    inst.castShadow=false;inst.receiveShadow=true;this.root.add(inst);this.pickables.push(inst);
-    const variationGroup=new THREE.Group();
-    variationGroup.userData={id:"hymenophore",label,category:"fertile",selectable:true};
-    if(!boletoid)this._addPoreSurfaceVariation(variationGroup,radius,y);
-    this.root.add(variationGroup);
     return layer;
   }
 
