@@ -3,13 +3,13 @@ test("Sprint 4 learning companion uses existing scientific text and preserves or
   test.setTimeout(90000);
   await page.goto("http://127.0.0.1:8765/sandbox.html");
   await expect.poll(()=>page.evaluate(()=>Boolean(window.MycoSimMorphologyBridge)),{timeout:30000}).toBe(true);
+  await page.locator('[data-learner-mode="explore"]').click();
   const guide=page.locator("#mycosim-teaching-guide");
   await expect(guide).toBeVisible();
   await expect(page.locator("#stage")).toHaveCount(1);
   await expect(page.locator("#variantControls")).toHaveCount(1);
   await expect(page.locator("#observationForm")).toHaveCount(1);
   await expect(guide.locator("#mycosim-teaching-title")).toContainText("basidiome");
-  await page.locator('[data-learner-mode="explore"]').click();
   await expect(page.locator('[data-learning-step="3"]')).toBeVisible();
   await page.locator('[data-variant="agaric_pileus_profile"][data-value="conical"]').click();
   await expect(page.locator("#variantTeachingTitle")).toHaveText("Conical");
@@ -27,6 +27,7 @@ test("Sprint 4 learning companion uses existing scientific text and preserves or
 test("Sprint 4 companion remains readable on mobile",async({page})=>{
   await page.setViewportSize({width:390,height:844});
   await page.goto("http://127.0.0.1:8765/sandbox.html");
+  await page.locator('[data-learner-mode="explore"]').click();
   await expect(page.locator("#mycosim-teaching-guide")).toBeVisible();
   await expect(page.locator('#mycosim-teaching-guide button[data-teaching-action]')).toHaveCount(5);
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
