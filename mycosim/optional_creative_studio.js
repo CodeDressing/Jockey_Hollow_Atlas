@@ -13,7 +13,7 @@ button?.addEventListener("click",async()=>{
     button.hidden=true;
     status.textContent="Workshop ready. Reopen this optional section when you want its tools.";
     const disclosure=document.getElementById("mycosim-creative-archive");
-    if(disclosure){disclosure.open=false;}
+    if(disclosure){disclosure.open=false;disclosure.querySelector(":scope > summary")?.focus({preventScroll:true});}
     // Do not force scrolling or move the visitor away from the main specimen.
   }catch(error){
     status.textContent="Creative workshop could not load: "+String(error?.message||error);
