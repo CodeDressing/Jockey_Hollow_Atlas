@@ -4,6 +4,7 @@ for(const width of [320,390,768,960,1280,1920]){
     test.setTimeout(90000);
     await page.setViewportSize({width,height:900});
     await page.goto("http://127.0.0.1:8765/index.html?specimen=AN2-F3");
+    await page.locator("#enterAtlas").click();
     await expect.poll(()=>page.evaluate(()=>Boolean(window.LivingAtlasRegistry))).toBe(true);
     expect(await page.evaluate(()=>window.LivingAtlasRegistry.lookup("an2 f3")?.code)).toBe("AN2-F3");
     expect(await page.evaluate(()=>window.LivingAtlasRegistry.modelStatus("AN2-F3"))).toBe("not_modelled");
@@ -21,6 +22,7 @@ for(const width of [320,390,768,960,1280,1920]){
 }
 test("Living Atlas does not claim species or fabricate 3D models",async({page})=>{
   await page.goto("http://127.0.0.1:8765/index.html");
+  await page.locator("#enterAtlas").click();
   await expect.poll(()=>page.evaluate(()=>Boolean(window.LivingAtlasRegistry))).toBe(true);
   const input=page.locator("#living-atlas-query");
   await input.fill("AN2-F3");
@@ -33,6 +35,7 @@ test("Living Atlas does not claim species or fabricate 3D models",async({page})=
 
 test("Living Atlas generic view identifies itself as non-specimen reconstruction",async({page})=>{
   await page.goto("http://127.0.0.1:8765/index.html?specimen=AN2-F3");
+    await page.locator("#enterAtlas").click();
   await expect(page.locator("#living-atlas-detail a[href*='atlas_reference=AN2-F3']")).toHaveCount(1);
   await page.locator("#living-atlas-detail a[href*='atlas_reference=AN2-F3']").click();
   await expect(page).toHaveURL(/sandbox\.html\?atlas_reference=AN2-F3/);
@@ -49,7 +52,7 @@ test("Optional builder stays collapsed while Learn Build Identify remain accessi
   await expect(details).toHaveCount(1);
   await expect(details).not.toHaveAttribute("open","");
   await expect(page.locator("#myco-visual-builder")).toBeHidden();
-  await details.locator("summary").click();
+  await details.locator(":scope > summary").click();
   await expect(details).toHaveAttribute("open","");
   for(const mode of ["learn","build","identify"])
     await expect(page.locator('[data-mb-mode="'+mode+'"]')).toBeVisible();
@@ -57,6 +60,7 @@ test("Optional builder stays collapsed while Learn Build Identify remain accessi
 
 test("Living Atlas name search cannot fabricate AN2-F3 taxonomic confirmation",async({page})=>{
   await page.goto("http://127.0.0.1:8765/index.html?specimen=AN2-F3");
+    await page.locator("#enterAtlas").click();
   await expect.poll(()=>page.evaluate(()=>Boolean(window.LivingAtlasRegistry))).toBe(true);
   const names=await page.evaluate(()=>window.LivingAtlasRegistry.verifiedNames("AN2-F3"));
   expect(Array.isArray(names)).toBe(true);
