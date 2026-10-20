@@ -466,6 +466,12 @@ body.mycosim-presenting #mycosim-presenter-prompt{font-size:1.15rem}
       <div class="science-note"><strong>Scientific rule:</strong> Observation ≠ interpretation ≠ identification. This tool compares observed characters with generalized morphology profiles only. It never assigns a species and never writes to specimen records.</div>
       <p id="observationVisualStatus" role="status" aria-live="polite" style="border-left:3px solid #a88b50;padding:8px 10px;margin:9px 0;background:#142421;color:#f1e4c9;font-size:12px">Choose a cap, stipe or hymenophore trait to see its educational 3D representation immediately. Examination status and provenance remain separate.</p>
       <a href="#stage" id="mycosim-view-authoritative-specimen" style="display:inline-block;padding:8px 11px;margin:4px 0 12px;border:1px solid #739080;border-radius:8px;color:#f1deb0;background:#152927;font-size:12px;text-decoration:none">View original 3D specimen ↑</a>
+      <details id="mycosim-creative-archive" class="mycosim-optional-workshop">
+        <summary>Optional creative workshop (separate from the scientific specimen)</summary>
+        <p class="copy">The original morphology editor above is the primary mushroom simulator. Open this preserved experimental workshop only when you specifically want an independent creative illustration or export. Biological-process simulations remain in their scientific laboratories.</p>
+        <button id="mycosim-load-creative-studio" type="button">Load optional creative workshop</button>
+        <p id="mycosim-creative-studio-status" role="status" aria-live="polite"></p>
+      </details>
       <div id="observationForm" class="science-grid"></div>
       <div class="science-actions">
         <button id="compareCandidates" type="button">Compare morphology profiles</button>
@@ -527,8 +533,7 @@ window.MYCOSIM_BOOT_WATCHDOG=setTimeout(()=>{
 <script type="module" src="mycosim/main.js?v=family-context-20261019"></script>
 <script type="module" src="mycosim/teaching_guide.js?v=sprint4-20261019"></script>
 <script type="module" src="mycosim/lab_navigation.js?v=sprint1-navigation-20261019"></script>
-<script type="module" src="mycosim/visual_builder.js?v=visual-studio-20261019"></script>
-<script type="module" src="mycosim/visual_builder_3d.js?v=studio-3d-sprint2-20261019"></script>
+<script type="module" src="mycosim/optional_creative_studio.js?v=clearview-s2-20261020"></script>
 <script type="module" src="mycosim/digestion_immune.js?v=phase9-svgclick-fix-20261016"></script>
 <script type="module" src="mycosim/anatomy3d.js?v=phase27-instances-20261018"></script>
 <script type="module" src="mycosim/molecular_process.js?v=phase11-v1-20261016"></script>

@@ -25,7 +25,10 @@ for(const viewport of [{width:390,height:844},{width:1280,height:800}]){
       console.log("SPRINT5_OVERFLOW_DIAGNOSTIC",JSON.stringify({viewport:ux.viewportWidth,offenders}));
     }
     expect(ux.bodyWidth).toBeLessThanOrEqual(ux.viewportWidth+2);
-    expect(ux.labCardWidth).toBeGreaterThan(140);
+    // Compact border navigation intentionally fits three cards along the desktop edge.
+    expect(ux.labCardWidth).toBeGreaterThan(90);
+    const labUsability=await page.locator('#mycosim-laboratory-nav .lab-nav-grid a').evaluateAll(nodes=>nodes.map(el=>({height:el.getBoundingClientRect().height,overflow:el.scrollWidth-el.clientWidth})));
+    expect(labUsability.every(card=>card.height>=42&&card.overflow<=2)).toBe(true);
     await expect(page.locator("#modelGrid")).toBeVisible({timeout:30000});
     await page.screenshot({path:"test-results/mycosim-sprint2-"+viewport.width+".png",fullPage:true,animations:"disabled"});
   });

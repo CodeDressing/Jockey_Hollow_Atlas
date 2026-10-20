@@ -567,8 +567,8 @@ export class MycoSimEngine{
     this.scene.fog=this.realismTier.post.fog?new THREE.FogExp2(0x091011,.035):null;
     this.realismLights=configureRealisticLights(this.scene,this.realismTier);
     const ground=new THREE.Mesh(new THREE.CylinderGeometry(2.7,3,.28,scaledSegments(72,this.realismTier,{min:36,max:96})),MATERIALS.wood.clone());
-    ground.position.y=-.72; ground.receiveShadow=true; ground.castShadow=false; this.scene.add(ground);
-    const grid=new THREE.GridHelper(14,28,0x31403a,0x1b2824); grid.position.y=-.55; this.scene.add(grid);
+    ground.position.y=-.72; ground.receiveShadow=true; ground.castShadow=false; this.scene.add(ground); this.inspectionGround=ground;
+    const grid=new THREE.GridHelper(14,28,0x31403a,0x1b2824); grid.position.y=-.55; this.scene.add(grid); this.inspectionGrid=grid;
   }
 
   _bind(){
@@ -916,8 +916,10 @@ export class MycoSimEngine{
       const robust=p.stipe_robustness??1;
       const wear=p.surface_wear??0;
       setScale("pileus",expansion,.72+convex*.55,expansion);
-      setScale("tube_layer",expansion,tubeDepth,expansion);
-      setScale("hymenophore",expansion*poreOpen,1,expansion*poreOpen);
+      // Young basidiomata have a shallow, compact tube layer; older pore
+      // surfaces become exposed without turning pore openings into spines.
+      setScale("tube_layer",expansion,tubeDepth*(sid==="young"?.46:1),expansion);
+      setScale("hymenophore",expansion*poreOpen,sid==="young"?.55:1,expansion*poreOpen);
       setScale("stipe",robust,1,robust);
       setScale("stipe_base",robust,1,robust);
       if(sid==="young"){
@@ -1647,7 +1649,63 @@ export class MycoSimEngine{
     this.exploded=false;this.setSection(false);this.clearKnowledgeProxy?.();this.applyMode();this.frameModel({animate:true});
   }
 
+  navigateCamera(action){
+    const allowed=new Set(["up","down","left","right","forward","back","base","side","underside"]);
+    if(!allowed.has(action))return false;
+    const target=this.controls.target.clone();
+    const offset=this.camera.position.clone().sub(target);
+    const distance=offset.length();
+    if(distance<.001)return false;
+    if(["base","side","underside"].includes(action)){
+      const wholeBox=new THREE.Box3().setFromObject(this.root);
+      if(wholeBox.isEmpty())return false;
+      const wholeCenter=wholeBox.getCenter(new THREE.Vector3());
+      const wholeSize=wholeBox.getSize(new THREE.Vector3());
+      let center=wholeCenter.clone();
+      let direction=offset.clone().normalize();
+      let distanceGoal=Math.max(5.5,wholeSize.length()*1.65);
+      if(action==="base"){
+        const base=this.objects.get("stipe_base")||this.objects.get("stipe");
+        if(!base)return false;
+        const baseBox=new THREE.Box3().setFromObject(base);
+        if(baseBox.isEmpty())return false;
+        const baseCenter=baseBox.getCenter(new THREE.Vector3());
+        const stipe=this.objects.get("stipe");
+        const shaftBox=stipe?new THREE.Box3().setFromObject(stipe):baseBox;
+        // Keep lower shaft and basal silhouette in the field of view.
+        center.set(baseCenter.x,(baseCenter.y+shaftBox.max.y)*.5,baseCenter.z);
+        distanceGoal=Math.max(5.8,shaftBox.getSize(new THREE.Vector3()).length()*2.2);
+        direction.set(.60,.17,1).normalize();
+      }else if(action==="side"){
+        direction.set(1,.10,0).normalize();
+      }else{
+        // Look up toward the fertile underside; not a second camera or canvas.
+        direction.set(.08,-.80,1).normalize();
+      }
+      if(this.inspectionGround)this.inspectionGround.visible=action==="side";
+      if(this.inspectionGrid)this.inspectionGrid.visible=action==="side";
+      distanceGoal=THREE.MathUtils.clamp(distanceGoal,this.controls.minDistance,this.controls.maxDistance);
+      this.fly={start:performance.now(),duration:600,fromPos:this.camera.position.clone(),toPos:center.clone().addScaledVector(direction,distanceGoal),fromTarget:target,toTarget:center};
+      return true;
+    }
+    this.fly=null;
+    if(this.inspectionGround)this.inspectionGround.visible=true;
+    if(this.inspectionGrid)this.inspectionGrid.visible=true;
+    const spherical=new THREE.Spherical().setFromVector3(offset);
+    if(action==="left")spherical.theta-=.16;
+    if(action==="right")spherical.theta+=.16;
+    if(action==="up")spherical.phi=Math.max(.09,spherical.phi-.16);
+    if(action==="down")spherical.phi=Math.min(Math.PI-.09,spherical.phi+.16);
+    if(action==="forward")spherical.radius=THREE.MathUtils.clamp(distance*.82,this.controls.minDistance,this.controls.maxDistance);
+    if(action==="back")spherical.radius=THREE.MathUtils.clamp(distance*1.22,this.controls.minDistance,this.controls.maxDistance);
+    this.camera.position.copy(target).add(new THREE.Vector3().setFromSpherical(spherical));
+    this.controls.update();
+    return true;
+  }
+
   frameModel({animate=false}={}){
+    if(this.inspectionGround)this.inspectionGround.visible=true;
+    if(this.inspectionGrid)this.inspectionGrid.visible=true;
     const box=new THREE.Box3().setFromObject(this.root);
     if(box.isEmpty()) return false;
     const center=box.getCenter(new THREE.Vector3());
@@ -3257,6 +3315,8 @@ export class MycoSimEngine{
     if(form==="taper_down"){topR*=1.18;bottomR*=.72;}
     if(form==="clavate"){topR*=.82;bottomR*=1.42;}
     if(form==="bulbous"||form==="marginate_bulb"){bottomR*=1.08;}
+    // Rooting stipes taper into the substrate as a single continuous surface.
+    // Their lower process is part of the shaft profile, never a glued-on cone.
     const profile=[new THREE.Vector2(0,-height/2)];
     const steps=scaledSegments(20,this.realismTier,{min:14,max:28});
     for(let i=0;i<=steps;i++){
@@ -3264,6 +3324,10 @@ export class MycoSimEngine{
       let r=THREE.MathUtils.lerp(bottomR,topR,t);
       r*=1+.025*Math.sin(t*Math.PI*4)+.012*Math.sin(t*Math.PI*9);
       if(form==="clavate")r*=1+.22*Math.pow(1-t,2.4);
+      if(form==="rooting"){
+        const rootTransition=THREE.MathUtils.smoothstep(t,0,.31);
+        r*=.065+.935*rootTransition;
+      }
       profile.push(new THREE.Vector2(r,-height/2+t*height));
     }
     profile.push(new THREE.Vector2(0,height/2));
@@ -3296,8 +3360,9 @@ export class MycoSimEngine{
       rim.rotation.x=Math.PI/2;rim.position.set(offsetX,y-h/2+.04,z);rim.userData=bulb.userData;
       this.root.add(rim);this.pickables.push(rim);
     }else if(form==="rooting"){
-      const root=this.register(new THREE.Mesh(new THREE.ConeGeometry(.20,.95,36),MATERIALS.stipe.clone()),"stipe_base","Rooting base","macro","stipe");
-      root.position.set(offsetX,y-h/2-.48,z);root.rotation.x=Math.PI;
+      // The selectable base is the integral lower segment of this same mesh.
+      this.objects.set("stipe_base",st);
+      st.userData.continuousRootingBase=true;
     }else{
       const b=this.register(new THREE.Mesh(new THREE.SphereGeometry(.38,36,22),MATERIALS.stipe.clone()),"stipe_base","Stipe base","macro","stipe");
       b.scale.set(1,.38,1);b.position.set(offsetX,y-h/2-.035,z);
@@ -3309,25 +3374,71 @@ export class MycoSimEngine{
   _addPoreField(radius,y,{tubeDepth=.22,label="Pore surface"}={}){
     const layer=this.register(new THREE.Mesh(new THREE.CylinderGeometry(radius*.96,radius,.12,72),MATERIALS.pore.clone()),"hymenophore",label,"fertile");
     layer.position.y=y;
-    const poreGeo=new THREE.CylinderGeometry(.038,.045,.026,10);
-    const poreMat=MATERIALS.poreDark.clone();
-    const points=[];
-    for(let x=-radius*.88;x<=radius*.88;x+=.115){
-      for(let z=-radius*.88;z<=radius*.88;z+=.105){
-        const jitter=((Math.round((x+z)*1000)%3)-1)*.012;
-        const px=x+jitter,pz=z-jitter*.5;
-        if(Math.hypot(px,pz)<radius*.88)points.push([px,pz]);
+    const boletoid=this.currentProfile?.id==="boletoid";
+    if(boletoid){
+      const stage=this.developmentalStageId||"mature";
+      // A hexagonally tiled, annular tube-face tessellation: tissue forms one
+      // nearly continuous field, while true polygonal openings reveal the
+      // darker underlying hymenophore. This is illustrative, not microscopy.
+      const spacing=stage==="young"?.073:stage==="old"?.117:.096;
+      const outer=spacing/Math.sqrt(3);
+      const holeRadius=outer*(stage==="young"?.22:stage==="old"?.60:.43);
+      const shape=new THREE.Shape();
+      for(let k=0;k<6;k++){
+        const a=Math.PI/6+k*Math.PI/3;
+        const x=Math.cos(a)*outer,y2=Math.sin(a)*outer;
+        if(k===0)shape.moveTo(x,y2);else shape.lineTo(x,y2);
       }
+      shape.closePath();
+      const hole=new THREE.Path();
+      hole.absarc(0,0,holeRadius,0,Math.PI*2,true);
+      shape.holes.push(hole);
+      const poreGeo=new THREE.ShapeGeometry(shape,1);
+      poreGeo.rotateX(Math.PI/2);
+      poreGeo.userData={model:"connected-boletoid-tube-face-v1",stage,holeRadius,spacing};
+      const points=[];
+      const rowStep=spacing*.8660254;
+      const max=radius*.86;
+      for(let row=-Math.ceil(max/rowStep);row<=Math.ceil(max/rowStep);row++){
+        const z=row*rowStep;
+        for(let col=-Math.ceil(max/spacing);col<=Math.ceil(max/spacing);col++){
+          const x=(col+(Math.abs(row)%2)*.5)*spacing;
+          if(Math.hypot(x,z)<max)points.push([x,z]);
+        }
+      }
+      const faceMat=MATERIALS.pore.clone();
+      faceMat.side=THREE.DoubleSide;
+      const pores=new THREE.InstancedMesh(poreGeo,faceMat,points.length);
+      pores.userData={id:"hymenophore",label,category:"fertile",selectable:true,knowledgeId:"pore_surface",model:"connected-boletoid-tube-face-v1",stage};
+      const dummy=new THREE.Object3D();
+      points.forEach(([x,z],i)=>{
+        dummy.position.set(x,y-.063,z);
+        dummy.updateMatrix();pores.setMatrixAt(i,dummy.matrix);
+      });
+      pores.instanceMatrix.needsUpdate=true;
+      pores.castShadow=false;pores.receiveShadow=true;
+      this.root.add(pores);this.pickables.push(pores);
+    }else{
+      const poreGeo=new THREE.CylinderGeometry(.038,.045,.026,10);
+      const poreMat=MATERIALS.poreDark.clone();
+      const points=[];
+      for(let x=-radius*.88;x<=radius*.88;x+=.115){
+        for(let z=-radius*.88;z<=radius*.88;z+=.105){
+          const jitter=((Math.round((x+z)*1000)%3)-1)*.012;
+          const px=x+jitter,pz=z-jitter*.5;
+          if(Math.hypot(px,pz)<radius*.88)points.push([px,pz]);
+        }
+      }
+      const inst=new THREE.InstancedMesh(poreGeo,poreMat,points.length);
+      inst.userData={id:"hymenophore",label,category:"fertile",selectable:true};
+      const dummy=new THREE.Object3D();
+      points.forEach(([px,pz],i)=>{dummy.position.set(px,y-.071,pz);dummy.updateMatrix();inst.setMatrixAt(i,dummy.matrix);});
+      inst.castShadow=false;inst.receiveShadow=true;this.root.add(inst);this.pickables.push(inst);
+      const variationGroup=new THREE.Group();
+      variationGroup.userData={id:"hymenophore",label,category:"fertile",selectable:true};
+      this._addPoreSurfaceVariation(variationGroup,radius,y);
+      this.root.add(variationGroup);
     }
-    const inst=new THREE.InstancedMesh(poreGeo,poreMat,points.length);
-    inst.userData={id:"hymenophore",label,category:"fertile",selectable:true};
-    const dummy=new THREE.Object3D();
-    points.forEach(([px,pz],i)=>{dummy.position.set(px,y-.071,pz);dummy.updateMatrix();inst.setMatrixAt(i,dummy.matrix);});
-    inst.castShadow=false;inst.receiveShadow=true;this.root.add(inst);this.pickables.push(inst);
-    const variationGroup=new THREE.Group();
-    variationGroup.userData={id:"hymenophore",label,category:"fertile",selectable:true};
-    this._addPoreSurfaceVariation(variationGroup,radius,y);
-    this.root.add(variationGroup);
     return layer;
   }
 

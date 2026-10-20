@@ -778,6 +778,38 @@ try{
   mountDiscovery();
   mountPresenter();
 
+  // Reuse the single authoritative OrbitControls camera; navigation never writes observations.
+  const cameraPad=document.createElement("nav");
+  cameraPad.id="mycosim-camera-pad";
+  cameraPad.setAttribute("aria-label","3D specimen camera controls");
+  const cameraActions=[["up","↑","Orbit up"],["left","←","Orbit left"],["right","→","Orbit right"],["down","↓","Orbit down"],["forward","+","Move camera closer"],["back","−","Move camera farther"],["base","◎","Focus stipe base"],["side","◧","Side view"],["underside","◉","Underside view"]];
+  cameraPad.innerHTML=cameraActions.map(([name,glyph,label])=>`<button type="button" data-camera-action="${name}" aria-label="${label}" title="${label}">${glyph}</button>`).join("");
+  document.querySelector(".stage-wrap")?.append(cameraPad);
+  cameraPad.addEventListener("click",e=>{
+    const button=e.target.closest("button[data-camera-action]");
+    if(button)engine.navigateCamera(button.dataset.cameraAction);
+  });
+
+  window.MycoSimCameraBridge=Object.freeze({
+    snapshot:()=>({
+      position:engine.camera.position.toArray(),
+      target:engine.controls.target.toArray(),
+      profile:engine.currentProfile?.id||null,
+      tubeScale:engine.objects.get("tube_layer")?.scale.y??null,
+      poreGeometry:(()=>{
+        if(engine.currentProfile?.id!=="boletoid")return null;
+        const pore=engine.pickables.find(o=>o.isInstancedMesh&&o.userData?.id==="hymenophore"&&o.geometry?.userData?.model==="connected-boletoid-tube-face-v1");
+        return pore?.geometry?.type||null;
+      })(),
+      poreStage:engine.pickables.find(o=>o.geometry?.userData?.model==="connected-boletoid-tube-face-v1")?.geometry?.userData?.stage||null,
+      poreHoleRadius:engine.pickables.find(o=>o.geometry?.userData?.model==="connected-boletoid-tube-face-v1")?.geometry?.userData?.holeRadius||null,
+      rootingContinuous:engine.objects.get("stipe")?.userData?.continuousRootingBase===true,
+      poreInstanceCount:engine.pickables.filter(o=>o.isInstancedMesh&&o.userData?.id==="hymenophore"&&o.geometry?.userData?.model==="connected-boletoid-tube-face-v1").reduce((n,o)=>n+o.count,0),
+      baseVisible:engine.objects.get("stipe_base")?.visible??null
+    }),
+    move:action=>engine.navigateCamera(action)
+  });
+
   // Visual Studio → authoritative morphology renderer. No specimen/evidence writes.
   // The existing stage canvas remains owned by MycoSimEngine.
   window.MycoSimMorphologyBridge=Object.freeze({
