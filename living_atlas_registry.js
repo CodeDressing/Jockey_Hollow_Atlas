@@ -23,12 +23,22 @@
     if(!term)return[];
     return records.filter(r=>normalize(r.code).includes(term)||normalize(r.status).includes(term)||names(r).some(n=>normalize(n).includes(term))).slice(0,40);
   };
+  // Review states describe documentary evidence, not a numerical probability.
+  const identificationState=r=>{
+    const ident=Object.entries(r.summary||{}).filter(([k])=>/^(identification status|determination status|taxonomic review)$/i.test(k.trim())).map(([,v])=>String(v).toLowerCase());
+    const explicit=ident.join(" ");
+    if(/conflict|disagree|disputed/.test(explicit))return "conflicting";
+    if(/confirmed|verified|reviewed/.test(explicit))return "confirmed";
+    if(/provisional|tentative|cf\\.|aff\\.|pending/.test(explicit))return "provisional";
+    return "unidentified";
+  };
   // Atlas IDs and archived measurements are evidence for accession existence,
   // not proof of a species. No unreviewed record receives species-level 3D status.
   window.LivingAtlasRegistry=Object.freeze({
     count:records.length,collisions:[...collisions],
     search,lookup:id=>indexed.get(normalize(id))||null,
     modelStatus:()=> "not_modelled",
+    identificationState:id=>identificationState(indexed.get(normalize(id))||{}),
     verifiedNames:id=>nameFields(indexed.get(normalize(id))||{summary:{}}),
     source:"merged-atlas-records"
   });
@@ -74,6 +84,9 @@
     const documented=nameFields(r);
     labels.textContent=documented.length?"Documented identification labels: "+documented.join("; "):"Scientific and common names: unverified / not documented in the accessible registry.";
     detail.append(labels);
+    const confidence=document.createElement("p");
+    confidence.textContent="Identification evidence state: "+identificationState(r)+" (documentary status, not probability).";
+    detail.append(confidence);
     const open=document.createElement("button");
     open.type="button";open.textContent="Open original atlas dossier";
     open.style.cssText="padding:9px;background:#29483c;color:white;border:1px solid #688;border-radius:6px;cursor:pointer";
