@@ -159,3 +159,5 @@ test("Sprint 4 teaching guide uses authored morphology knowledge and preserves e
 // Operation Clear View S1 R1: dedicated six-viewport diagnostic is run through the same CI workflow.
 
 // Operation Clear View R1.2: read-only nested scroll and keyboard audit in existing browser workflow.
+
+// Clear View R1.3: non-production root cause diagnostics.
