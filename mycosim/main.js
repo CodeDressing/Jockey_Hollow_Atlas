@@ -593,10 +593,10 @@ function applyObservationVisualization(field,value){
     renderObservationVisualStatus("No visual state selected for "+fieldLabel(field)+". Choose a defined characteristic to preview.",false);
     return;
   }
-  const familyByCap={bracket:"polyporoid",hoof:"fomitoid",cup:"cup",lobed:"jelly",branched:"coral",enclosed:"puffball",resupinate:"crust"};
+  const familyByCap={bracket:"polyporoid",hoof:"hoof_conk",cup:"cup",lobed:"jelly",branched:"coral",enclosed:"puffball",resupinate:"crust"};
   const capMap={plane:"flat",funnel:"infundibuliform",hemispherical:"convex",umbonate:"umbonate",convex:"convex",depressed:"depressed",campanulate:"campanulate",conical:"conical"};
   const stipeMap={equal:"equal",taper_up:"tapering",taper_down:"clavate",clavate:"clavate",bulbous:"bulbous_base",marginate_bulb:"bulbous_base",rooting:"rooting",eccentric:"eccentric",lateral:"eccentric"};
-  const hymFamily={pores:"boletoid",tubes:"boletoid",teeth:"hydnoid",folds:"cantharelloid",smooth:"cup",pitted_hymenium:"morel",enclosed_gleba:"puffball"};
+  const hymFamily={pores:"boletoid",tubes:"boletoid",teeth:"hydnoid",folds:null,smooth:"cup",pitted_hymenium:"morel",enclosed_gleba:"puffball"};
   const gillValues={free_gills:"free_gills",adnexed:"adnexed",adnate:"adnate",sinuate:"sinuate",decurrent:"decurrent"};
   let family=null,variants={},note="";
   if(field==="cap_morphology"){
@@ -614,9 +614,7 @@ function applyObservationVisualization(field,value){
     try{
       const result=window.MycoSimMorphologyBridge?.apply({family,variants});
       if(result?.ok){
-        renderObservationVisualStatus(fieldLabel(field)+": "+humanizeOption(value)+" — applied to the interactive 3D teaching model. Scientific evidence and provenance were not changed.");
-        // Bring the actual specimen into view rather than leaving learners staring at a distant form.
-        window.MycoSimMorphologyBridge.focus();
+        renderObservationVisualStatus(fieldLabel(field)+": "+humanizeOption(value)+" — 3D teaching model updated. Continue editing here, or use the View 3D specimen link when ready. Examination state and provenance were not changed.");
         return;
       }
       note=result?.rejected?.join(", ")||"Renderer still initializing";
@@ -628,7 +626,6 @@ function applyObservationVisualization(field,value){
     if(select&&[...select.options].some(x=>x.value===normalized)){
       select.value=normalized;select.dispatchEvent(new Event("change",{bubbles:true}));
       renderObservationVisualStatus(fieldLabel(field)+": "+humanizeOption(value)+" — updated the separate educational "+(field==="spore_shape"?"spore":"substrate")+" visualization. This is schematic, not a verified specimen.");
-      document.querySelector("#mb-real3d")?.scrollIntoView({behavior:"smooth",block:"center"});
       return;
     }
   }
@@ -785,7 +782,7 @@ try{
   // The existing stage canvas remains owned by MycoSimEngine.
   window.MycoSimMorphologyBridge=Object.freeze({
     getState:()=>({family:currentProfile.id,stage:engine.getDevelopmentalStage()?.id||"mature",variants:engine.getVariantState(),supported:[...(currentProfile.variantGroups||[])]}),
-    apply:({family="agaricoid",variants={},stage}={})=>{
+    apply:({family="agaricoid",variants={},stage,navigate=false}={})=>{
       if(!PROFILE_BY_ID[family])return {ok:false,error:"Unsupported family"};
       if(currentProfile.id!==family)activateProfile(family);
       const groups=new Set(currentProfile.variantGroups||[]);
@@ -800,7 +797,7 @@ try{
       renderStageControls(currentProfile,engine);
       renderAnatomy(currentProfile);
       updateVisibleState(engine);
-      setLearningStep(3);
+      if(navigate)setLearningStep(3);
       document.dispatchEvent(new CustomEvent("mycosim:studio-applied",{detail:{family,applied,rejected}}));
       return {ok:rejected.length===0,family,applied,rejected};
     },

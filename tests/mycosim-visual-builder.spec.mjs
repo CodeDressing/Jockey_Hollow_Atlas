@@ -96,7 +96,7 @@ test("Scientific form immediately drives visual morphology without inventing evi
   await expect(form.locator('[data-obs-value="cap_morphology"]')).toBeVisible({timeout:30000});
   await form.locator('[data-obs-value="cap_morphology"]').selectOption("conical");
   await expect.poll(()=>page.evaluate(()=>window.MycoSimMorphologyBridge.getState().variants.agaric_pileus_profile)).toBe("conical");
-  await expect(page.locator("#observationVisualStatus")).toContainText("applied to the interactive 3D");
+  await expect(page.locator("#observationVisualStatus")).toContainText("3D teaching model updated");
   await expect(form.locator('[data-obs-state="cap_morphology"]')).toHaveValue("not_examined");
   await expect(form.locator('[data-obs-provenance="cap_morphology"]')).toHaveValue("");
   await form.locator('[data-obs-value="stipe_morphology"]').selectOption("bulbous");
@@ -108,4 +108,32 @@ test("Scientific form immediately drives visual morphology without inventing evi
   await form.locator('[data-obs-value="ornamentation"]').selectOption("warted");
   await expect(page.locator("#observationVisualStatus")).toContainText("no validated geometric representation");
   await expect(form.locator('[data-obs-state="ornamentation"]')).toHaveValue("not_examined");
+});
+
+test("Sprint 3 keeps the laboratory in view while updating authoritative 3D and scientific evidence remains unexamined",async({page})=>{
+  test.setTimeout(90000);
+  await page.setViewportSize({width:390,height:844});
+  await page.goto("http://127.0.0.1:8765/sandbox.html");
+  await expect.poll(()=>page.evaluate(()=>Boolean(window.MycoSimMorphologyBridge)),{timeout:30000}).toBe(true);
+  const select=page.locator('[data-obs-value="cap_morphology"]');
+  await expect(select).toBeVisible({timeout:30000});
+  await select.scrollIntoViewIfNeeded();
+  await page.evaluate(()=>document.querySelector('[data-obs-value="cap_morphology"]').focus());
+  const before=await page.evaluate(()=>({scrollY:window.scrollY,step:document.querySelector(".learning-step.active")?.dataset.learningStep,mode:document.body.dataset.learnerMode}));
+  await select.selectOption("campanulate");
+  await expect.poll(()=>page.evaluate(()=>window.MycoSimMorphologyBridge.getState().variants.agaric_pileus_profile)).toBe("campanulate");
+  await page.waitForTimeout(850);
+  const after=await page.evaluate(()=>({scrollY:window.scrollY,step:document.querySelector(".learning-step.active")?.dataset.learningStep,mode:document.body.dataset.learnerMode}));
+  expect(Math.abs(after.scrollY-before.scrollY)).toBeLessThan(85);
+  expect(after.step).toBe(before.step);
+  expect(after.mode).toBe(before.mode);
+  await expect(page.locator('[data-obs-state="cap_morphology"]')).toHaveValue("not_examined");
+  await expect(page.locator('[data-obs-provenance="cap_morphology"]')).toHaveValue("");
+  await expect(page.locator("#mycosim-view-authoritative-specimen")).toHaveAttribute("href","#stage");
+  await select.selectOption("hoof");
+  await expect.poll(()=>page.evaluate(()=>window.MycoSimMorphologyBridge.getState().family)).toBe("hoof_conk");
+  await select.selectOption("conical");
+  await expect.poll(()=>page.evaluate(()=>window.MycoSimMorphologyBridge.getState().family)).toBe("agaricoid");
+  await page.locator('[data-obs-value="hymenophore_type"]').selectOption("folds");
+  await expect(page.locator("#observationVisualStatus")).toContainText("no validated geometric representation");
 });
