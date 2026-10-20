@@ -71,6 +71,12 @@
     const pending=document.createElement("p");
     pending.textContent="3D specimen modeling awaits verified identification and scientifically reviewed morphology; existing MycoSim teaching archetypes are not presented as this exact specimen.";
     detail.append(pending);
+    const teaching=document.createElement("a");
+    teaching.href="sandbox.html?atlas_reference="+encodeURIComponent(r.code);
+    teaching.textContent="Explore generic 3D morphology (not this specimen)";
+    teaching.setAttribute("aria-label","Open the original MycoSim teaching simulator; this is not a verified model of "+r.code);
+    teaching.style.cssText="display:inline-block;margin-top:9px;padding:10px;color:#f1deb0;border:1px solid #6a8a7d;border-radius:7px";
+    detail.append(teaching);
   }
   function render(){
     list.replaceChildren();detail.replaceChildren();
