@@ -790,6 +790,17 @@ try{
     if(button)engine.navigateCamera(button.dataset.cameraAction);
   });
 
+  window.MycoSimCameraBridge=Object.freeze({
+    snapshot:()=>({
+      position:engine.camera.position.toArray(),
+      target:engine.controls.target.toArray(),
+      profile:engine.currentProfile?.id||null,
+      tubeScale:engine.objects.get("tube_layer")?.scale.y??null,
+      poreGeometry:engine.currentProfile?.id==="boletoid"?"planar-pore-openings":null
+    }),
+    move:action=>engine.navigateCamera(action)
+  });
+
   // Visual Studio → authoritative morphology renderer. No specimen/evidence writes.
   // The existing stage canvas remains owned by MycoSimEngine.
   window.MycoSimMorphologyBridge=Object.freeze({
