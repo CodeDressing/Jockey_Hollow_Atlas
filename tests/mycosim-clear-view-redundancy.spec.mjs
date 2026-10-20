@@ -62,8 +62,8 @@ test("Legacy creative preview opt-in creates exactly one secondary renderer with
   await expect(page.locator("#variantControls")).toHaveCount(1);
   await expect(page.locator("#mycosim-laboratory-nav .lab-nav-grid a")).toHaveCount(6);
   await expect(page.locator('[data-obs-state="cap_morphology"]')).toHaveValue("not_examined");
-  await expect(page.locator("#myco-visual-builder").locator("xpath=../..")).toHaveAttribute("id","mycosim-creative-archive");
-  await expect(page.locator("#mycosim-builder-disclosure")).not.toHaveAttribute("open","");
+  await expect(page.locator("#myco-visual-builder").locator("xpath=..")).toHaveAttribute("id","mycosim-creative-archive");
+  await expect(page.locator("#mycosim-creative-archive")).not.toHaveAttribute("open","");
 });
 
 for(const width of [320,390,768,960,1280,1920]){
@@ -92,7 +92,7 @@ test("Sprint 9: single advanced disclosure supports keyboard with no duplicate d
   await page.keyboard.press("Enter");
   await expect(workshop).toHaveAttribute("open","");
   await page.locator("#mycosim-load-creative-studio").click();
-  const disclosure=page.locator("#mycosim-builder-disclosure");
+  const disclosure=page.locator("#mycosim-creative-archive");
   await expect(disclosure).toHaveCount(1);
   await expect(disclosure).not.toHaveAttribute("open","");
   await expect(page.locator("#myco-visual-builder")).toBeHidden();
@@ -121,7 +121,7 @@ test("Quiet Workshop stays minimized and does not force a scroll jump",async({pa
   await expect(page.locator("#mb-live-canvas")).toHaveCount(0);
   await workshop.locator(":scope > summary").click();
   await page.locator("#mycosim-load-creative-studio").click();
-  const nested=page.locator("#mycosim-builder-disclosure");
+  const nested=page.locator("#mycosim-creative-archive");
   await expect(nested).toHaveCount(1);
   await expect(nested).not.toHaveAttribute("open","");
   await expect(page.locator("#myco-visual-builder")).toBeHidden();
