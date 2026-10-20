@@ -5,9 +5,20 @@ if (mountPoint && !document.getElementById("myco-visual-builder")) {
   const host = document.createElement("section");
   host.id = "myco-visual-builder";
   host.setAttribute("aria-label", "Interactive mushroom learning and creation studio");
-  mountPoint.before(host);
+  const disclosure=document.createElement("details");
+  disclosure.id="mycosim-builder-disclosure";
+  disclosure.className="mycosim-builder-disclosure";
+  const summary=document.createElement("summary");
+  summary.textContent="Custom Mushroom Builder (optional)";
+  summary.setAttribute("aria-label","Expand or collapse Custom Mushroom Builder");
+  disclosure.append(summary,host);
+  mountPoint.before(disclosure);
   const style = document.createElement("style");
   style.textContent = `
+    #mycosim-builder-disclosure{border:1px solid #608279;border-radius:12px;margin:10px 0;background:#0d2022;color:#eaf5ed;min-width:0;max-width:100%}
+    #mycosim-builder-disclosure>summary{cursor:pointer;padding:12px 15px;min-height:44px;color:#f1daa6;font-weight:700;list-style:revert}
+    #mycosim-builder-disclosure>summary:focus-visible{outline:3px solid #f1daa6;outline-offset:3px}
+    #mycosim-builder-disclosure:not([open]) #myco-visual-builder{display:none}
     #myco-visual-builder{border:1px solid #608279;border-radius:16px;margin:16px 0;padding:16px;background:#0d2022;color:#eaf5ed;container-type:inline-size;min-width:0;max-width:100%}
     #myco-visual-builder h3{margin:0 0 7px;color:#f1daa6;font-size:22px}
     #myco-visual-builder .mb-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
