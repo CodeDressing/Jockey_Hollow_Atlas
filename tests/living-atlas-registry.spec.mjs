@@ -83,3 +83,16 @@ test("AN2-F3 evidence matrix preserves accession and blocks speculative models",
   await expect(page.locator("#living-atlas-detail")).toContainText("Original accession photo references");
   await expect(page.locator("#living-atlas-detail")).toContainText("Anatomical reconstruction not authorized");
 });
+
+test("AN2-F3 directly observed characters do not promote unverified reconstruction",async({page})=>{
+ await page.goto("http://127.0.0.1:8765/index.html?specimen=AN2-F3");
+ await page.locator("#enterAtlas").click();
+ const matrix=await page.evaluate(()=>window.LivingAtlasRegistry.evidenceMatrix("AN2-F3"));
+ expect(matrix.reviewed_character_matrix.map(x=>x.character)).toEqual(
+ ["pileus_surface","stipe","spore_print","hymenophore","measurements","species"]);
+ expect(matrix.reviewed_character_matrix.filter(x=>x.confidence==="observed").length).toBe(3);
+ expect(matrix.reviewed_character_matrix.find(x=>x.character==="species").confidence).toBe("unresolved");
+ expect(matrix.model_lifecycle).toBe("unmodeled");
+ expect(matrix.model_profile).toBeNull();
+ await expect(page.locator("#living-atlas-detail")).toContainText("Visual character evidence");
+});
