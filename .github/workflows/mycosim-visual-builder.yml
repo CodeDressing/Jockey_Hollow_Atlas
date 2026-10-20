@@ -1,7 +1,7 @@
 name: MycoSim visual builder feature QA
 on:
   push:
-    branches: [feature/mycosim-visual-mushroom-builder-20261019]
+    branches: [feature/mycosim-visual-mushroom-builder-20261019, feature/specimen-to-3d-atlas-registry-20261020]
   pull_request:
     paths:
       - 'mycosim/visual_builder.js'
