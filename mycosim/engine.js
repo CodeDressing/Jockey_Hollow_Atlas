@@ -568,7 +568,7 @@ export class MycoSimEngine{
     this.realismLights=configureRealisticLights(this.scene,this.realismTier);
     const ground=new THREE.Mesh(new THREE.CylinderGeometry(2.7,3,.28,scaledSegments(72,this.realismTier,{min:36,max:96})),MATERIALS.wood.clone());
     ground.position.y=-.72; ground.receiveShadow=true; ground.castShadow=false; this.scene.add(ground); this.inspectionGround=ground;
-    const grid=new THREE.GridHelper(14,28,0x31403a,0x1b2824); grid.position.y=-.55; this.scene.add(grid);
+    const grid=new THREE.GridHelper(14,28,0x31403a,0x1b2824); grid.position.y=-.55; this.scene.add(grid); this.inspectionGrid=grid;
   }
 
   _bind(){
@@ -1683,12 +1683,14 @@ export class MycoSimEngine{
         direction.set(.08,-.80,1).normalize();
       }
       if(this.inspectionGround)this.inspectionGround.visible=action!=="base";
+      if(this.inspectionGrid)this.inspectionGrid.visible=action!=="base";
       distanceGoal=THREE.MathUtils.clamp(distanceGoal,this.controls.minDistance,this.controls.maxDistance);
       this.fly={start:performance.now(),duration:600,fromPos:this.camera.position.clone(),toPos:center.clone().addScaledVector(direction,distanceGoal),fromTarget:target,toTarget:center};
       return true;
     }
     this.fly=null;
     if(this.inspectionGround)this.inspectionGround.visible=true;
+    if(this.inspectionGrid)this.inspectionGrid.visible=true;
     const spherical=new THREE.Spherical().setFromVector3(offset);
     if(action==="left")spherical.theta-=.16;
     if(action==="right")spherical.theta+=.16;
@@ -1703,6 +1705,7 @@ export class MycoSimEngine{
 
   frameModel({animate=false}={}){
     if(this.inspectionGround)this.inspectionGround.visible=true;
+    if(this.inspectionGrid)this.inspectionGrid.visible=true;
     const box=new THREE.Box3().setFromObject(this.root);
     if(box.isEmpty()) return false;
     const center=box.getCenter(new THREE.Vector3());
