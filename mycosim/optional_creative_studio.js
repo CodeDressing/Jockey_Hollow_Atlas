@@ -12,7 +12,7 @@ button?.addEventListener("click",async()=>{
     if(!host)throw new Error("Creative workshop failed to mount");
     button.hidden=true;
     status.textContent="Independent creative workshop ready. This is not the authoritative scientific specimen.";
-    host.scrollIntoView({block:"nearest",behavior:"auto"});
+    (document.getElementById("mycosim-builder-disclosure")||host).scrollIntoView({block:"nearest",behavior:"auto"});
   }catch(error){
     status.textContent="Creative workshop could not load: "+String(error?.message||error);
     button.disabled=false;
