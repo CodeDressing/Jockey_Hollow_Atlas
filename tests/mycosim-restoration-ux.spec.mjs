@@ -18,6 +18,12 @@ for(const viewport of [{width:390,height:844},{width:1280,height:800}]){
     expect(ux.sheet).toBe(true);
     expect(ux.canvas.width).toBeGreaterThan(180);
     expect(ux.canvas.height).toBeGreaterThan(230);
+    if(ux.bodyWidth>ux.viewportWidth+2){
+      const offenders=await page.evaluate(()=>[...document.querySelectorAll("body *")].map(el=>{
+        const r=el.getBoundingClientRect();return {tag:el.tagName,id:el.id,cls:String(el.className||"").slice(0,70),right:Math.round(r.right),width:Math.round(r.width),scrollWidth:el.scrollWidth};
+      }).filter(o=>o.right>innerWidth+2&&o.width>0).sort((a,b)=>b.right-a.right).slice(0,24));
+      console.log("SPRINT5_OVERFLOW_DIAGNOSTIC",JSON.stringify({viewport:ux.viewportWidth,offenders}));
+    }
     expect(ux.bodyWidth).toBeLessThanOrEqual(ux.viewportWidth+2);
     expect(ux.labCardWidth).toBeGreaterThan(140);
     await expect(page.locator("#modelGrid")).toBeVisible({timeout:30000});
