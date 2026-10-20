@@ -348,6 +348,19 @@ function openGlossaryTerm(key,anchor){
 }
 const $=id=>document.getElementById(id);
 const FULL_DATA_SET_CODES=new Set(['AN2-F3','AN2-F7','AN2-F9','AN2-F25','AN2-F34','AN2-F38','AN2-F41','AN2-F36','AN2-F32','AN2-F17']);
+// Read-only additive bridge: the searchable registry does not mutate source records.
+window.LivingAtlasSource=Object.freeze({
+  snapshot:()=>data.map(record=>({
+    code:String(record.code||""),
+    collection:String(record.collection||""),
+    status:String(record.status||""),
+    summary:{...(record.summary||{})},
+    sourceLine:String(record.sourceLine||""),
+    images:(record.images||[]).map(i=>({caption:String(i.caption||""),thumb:String(i.thumb||""),original:String(i.original||"")})),
+    measurements:(record.measurements||[]).map(m=>({source:String(m.source||""),source_id:String(m.source_id||""),fields:{...(m.fields||{})}}))
+  })),
+  open:code=>setCurrent(String(code||""))
+});
 let current=data[0]?.code||null,filter='',family='ALL',collection='ALL',imageType='ALL',workflow='ALL';
 const esc=s=>String(s??'').replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 const cls=v=>{v=String(v||'').toLowerCase();return v==='yes'?'yes':v==='no'?'no':'partial'};
