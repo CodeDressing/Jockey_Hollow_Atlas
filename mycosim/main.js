@@ -778,6 +778,18 @@ try{
   mountDiscovery();
   mountPresenter();
 
+  // Reuse the single authoritative OrbitControls camera; navigation never writes observations.
+  const cameraPad=document.createElement("nav");
+  cameraPad.id="mycosim-camera-pad";
+  cameraPad.setAttribute("aria-label","3D specimen camera controls");
+  const cameraActions=[["up","↑","Orbit up"],["left","←","Orbit left"],["right","→","Orbit right"],["down","↓","Orbit down"],["forward","+","Move camera closer"],["back","−","Move camera farther"],["base","◎","Focus stipe base"]];
+  cameraPad.innerHTML=cameraActions.map(([name,glyph,label])=>`<button type="button" data-camera-action="${name}" aria-label="${label}" title="${label}">${glyph}</button>`).join("");
+  document.querySelector(".stage-wrap")?.append(cameraPad);
+  cameraPad.addEventListener("click",e=>{
+    const button=e.target.closest("button[data-camera-action]");
+    if(button)engine.navigateCamera(button.dataset.cameraAction);
+  });
+
   // Visual Studio → authoritative morphology renderer. No specimen/evidence writes.
   // The existing stage canvas remains owned by MycoSimEngine.
   window.MycoSimMorphologyBridge=Object.freeze({
