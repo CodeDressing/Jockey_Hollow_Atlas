@@ -155,3 +155,5 @@ test("Sprint 4 teaching guide uses authored morphology knowledge and preserves e
   await expect(page.locator('[data-obs-state="cap_morphology"]')).toHaveValue("not_examined");
   await expect(page.locator("#stage")).toHaveCount(1);
 });
+
+// Operation Clear View S1 R1: dedicated six-viewport diagnostic is run through the same CI workflow.
