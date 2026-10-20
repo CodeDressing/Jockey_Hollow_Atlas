@@ -11,9 +11,9 @@ button?.addEventListener("click",async()=>{
     const host=document.getElementById("myco-visual-builder");
     if(!host)throw new Error("Creative workshop failed to mount");
     button.hidden=true;
-    status.textContent="Advanced tools are available below in a closed panel. The original scientific 3D specimen remains authoritative.";
-    const disclosure=document.getElementById("mycosim-builder-disclosure");
-    if(disclosure){disclosure.open=false;disclosure.querySelector(":scope > summary")?.focus({preventScroll:true});}
+    status.textContent="Workshop ready. Reopen this optional section when you want its tools.";
+    const disclosure=document.getElementById("mycosim-creative-archive");
+    if(disclosure){disclosure.open=false;}
     // Do not force scrolling or move the visitor away from the main specimen.
   }catch(error){
     status.textContent="Creative workshop could not load: "+String(error?.message||error);
