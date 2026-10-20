@@ -81,3 +81,31 @@ test("S3 R3.3: young mature old boletoid stage depth is distinguishable",async({
   expect(metrics[0].tubeScale).toBeLessThan(metrics[1].tubeScale);
   expect(metrics[2].tubeScale).toBeGreaterThan(0);
 });
+
+test("S3 R3.5: five stipe-base visual specimens",async({page})=>{
+  test.setTimeout(120000);
+  await page.setViewportSize({width:1280,height:900});
+  await page.goto("http://127.0.0.1:8765/sandbox.html");
+  await expect.poll(()=>page.evaluate(()=>Boolean(window.MycoSimMorphologyBridge?.getState()))).toBe(true);
+  for(const form of ["equal","clavate","bulbous","marginate_bulb","rooting"]){
+    const result=await page.evaluate(form=>window.MycoSimMorphologyBridge.apply({family:"boletoid",stage:"mature",variants:{stipe:form}}),form);
+    expect(result.ok).toBe(true);
+    await expect(page.locator("#stage")).toHaveCount(1);
+    await page.locator('[data-camera-action="base"]').click();
+    await page.waitForTimeout(700);
+    await page.locator(".stage-wrap").screenshot({path:"test-results/s35-base-"+form+".png",animations:"disabled"});
+  }
+});
+test("S3 R3.5: three boletoid stage visual specimens",async({page})=>{
+  test.setTimeout(120000);
+  await page.setViewportSize({width:1280,height:900});
+  await page.goto("http://127.0.0.1:8765/sandbox.html");
+  await expect.poll(()=>page.evaluate(()=>Boolean(window.MycoSimMorphologyBridge?.getState()))).toBe(true);
+  for(const stage of ["young","mature","old"]){
+    const result=await page.evaluate(stage=>window.MycoSimMorphologyBridge.apply({family:"boletoid",stage}),stage);
+    expect(result.ok).toBe(true);
+    await page.locator('[data-camera-action="underside"]').click();
+    await page.waitForTimeout(700);
+    await page.locator(".stage-wrap").screenshot({path:"test-results/s35-bolete-"+stage+".png",animations:"disabled"});
+  }
+});
