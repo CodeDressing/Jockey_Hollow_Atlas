@@ -1650,24 +1650,41 @@ export class MycoSimEngine{
   }
 
   navigateCamera(action){
-    const allowed=new Set(["up","down","left","right","forward","back","base"]);
+    const allowed=new Set(["up","down","left","right","forward","back","base","side","underside"]);
     if(!allowed.has(action))return false;
     const target=this.controls.target.clone();
     const offset=this.camera.position.clone().sub(target);
     const distance=offset.length();
     if(distance<.001)return false;
-    if(action==="base"){
-      const base=this.objects.get("stipe_base")||this.objects.get("stipe");
-      if(!base)return false;
-      const box=new THREE.Box3().setFromObject(base);
-      if(box.isEmpty())return false;
-      const center=box.getCenter(new THREE.Vector3());
-      // Retain enough context to distinguish bulbous, clavate and rooting bases.
-      // Temporarily conceal the decorative ground plane, which otherwise masks the lower stipe.
-      if(this.inspectionGround)this.inspectionGround.visible=false;
-      const newDistance=THREE.MathUtils.clamp(Math.max(8,box.getSize(new THREE.Vector3()).length()*6),this.controls.minDistance,this.controls.maxDistance);
-      const direction=offset.normalize();
-      this.fly={start:performance.now(),duration:600,fromPos:this.camera.position.clone(),toPos:center.clone().addScaledVector(direction,newDistance),fromTarget:target,toTarget:center};
+    if(["base","side","underside"].includes(action)){
+      const wholeBox=new THREE.Box3().setFromObject(this.root);
+      if(wholeBox.isEmpty())return false;
+      const wholeCenter=wholeBox.getCenter(new THREE.Vector3());
+      const wholeSize=wholeBox.getSize(new THREE.Vector3());
+      let center=wholeCenter.clone();
+      let direction=offset.clone().normalize();
+      let distanceGoal=Math.max(5.5,wholeSize.length()*1.65);
+      if(action==="base"){
+        const base=this.objects.get("stipe_base")||this.objects.get("stipe");
+        if(!base)return false;
+        const baseBox=new THREE.Box3().setFromObject(base);
+        if(baseBox.isEmpty())return false;
+        const baseCenter=baseBox.getCenter(new THREE.Vector3());
+        const stipe=this.objects.get("stipe");
+        const shaftBox=stipe?new THREE.Box3().setFromObject(stipe):baseBox;
+        // Keep lower shaft and basal silhouette in the field of view.
+        center.set(baseCenter.x,(baseCenter.y+shaftBox.max.y)*.5,baseCenter.z);
+        distanceGoal=Math.max(5.8,shaftBox.getSize(new THREE.Vector3()).length()*2.2);
+        direction.set(.60,.17,1).normalize();
+      }else if(action==="side"){
+        direction.set(1,.10,0).normalize();
+      }else{
+        // Look up toward the fertile underside; not a second camera or canvas.
+        direction.set(.08,-.80,1).normalize();
+      }
+      if(this.inspectionGround)this.inspectionGround.visible=action!=="base";
+      distanceGoal=THREE.MathUtils.clamp(distanceGoal,this.controls.minDistance,this.controls.maxDistance);
+      this.fly={start:performance.now(),duration:600,fromPos:this.camera.position.clone(),toPos:center.clone().addScaledVector(direction,distanceGoal),fromTarget:target,toTarget:center};
       return true;
     }
     this.fly=null;
