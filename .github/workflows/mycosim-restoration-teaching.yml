@@ -1,0 +1,32 @@
+name: MycoSim Sprint 4 education QA
+on:
+  push:
+    branches: [campaign/mycosim-restoration-sprint4-education-20261019]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  education:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax verify
+        run: node --check mycosim/teaching_guide.js
+      - name: Install Chromium
+        run: |
+          npm install --no-save @playwright/test
+          npx playwright install --with-deps chromium
+      - name: Serve static files
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/mycosim-sprint4.log 2>&1 &
+          for i in $(seq 1 30); do
+            curl -fsS http://127.0.0.1:8765/sandbox.html -o /dev/null && exit 0
+            sleep 1
+          done
+          exit 1
+      - name: Learning integration on real browser
+        run: npx playwright test tests/mycosim-restoration-teaching.spec.mjs --browser=chromium --workers=1 --reporter=line
