@@ -4,7 +4,13 @@
   if(!source)return;
   const records=source.snapshot();
   const normalize=v=>String(v??"").normalize("NFKC").toLocaleLowerCase("en").replace(/[^a-z0-9]+/g,"");
-  const names=r=>Object.values(r.summary||{}).filter(v=>typeof v==="string"&&!/^(https?:\/\/|data:)/i.test(v)).slice(0,35);
+  // Only explicit taxonomic/name fields qualify as name search; free-form
+  // notes and descriptions are not species determinations.
+  const nameFields=r=>Object.entries(r.summary||{}).filter(([key,value])=>
+    /^(?:scientific(?: name)?|taxon|taxonomic name|common(?: name)?|vernacular name|genus|species|identification|determination)$/i.test(key.trim()) &&
+    typeof value==="string" && !/^(?:https?:\\/\\/|data:)/i.test(value)
+  ).map(([,value])=>value);
+  const names=r=>nameFields(r);
   const indexed=new Map(),collisions=new Set();
   for(const r of records){
     const key=normalize(r.code);
@@ -23,6 +29,7 @@
     count:records.length,collisions:[...collisions],
     search,lookup:id=>indexed.get(normalize(id))||null,
     modelStatus:()=> "not_modelled",
+    verifiedNames:id=>nameFields(indexed.get(normalize(id))||{summary:{}}),
     source:"merged-atlas-records"
   });
   const host=document.createElement("section");
@@ -63,6 +70,10 @@
     const measurement=document.createElement("p");
     measurement.textContent="Measurement records: "+r.measurements.length+" · Source photos: "+r.images.length+". These do not independently establish taxonomy.";
     detail.append(measurement);
+    const labels=document.createElement("p");
+    const documented=nameFields(r);
+    labels.textContent=documented.length?"Documented identification labels: "+documented.join("; "):"Scientific and common names: unverified / not documented in the accessible registry.";
+    detail.append(labels);
     const open=document.createElement("button");
     open.type="button";open.textContent="Open original atlas dossier";
     open.style.cssText="padding:9px;background:#29483c;color:white;border:1px solid #688;border-radius:6px;cursor:pointer";
