@@ -11,8 +11,9 @@ test("S3 R3.2: young boletoid pore openings and stage-dependent tube depth",asyn
   });
   expect(metrics.hasStage).toBe(true);
   expect(metrics.pad).toBe(1);
-  expect(metrics.poreGeometry).toBe("CircleGeometry");
+  expect(metrics.poreGeometry).toBe("ShapeGeometry");
   expect(metrics.poreInstanceCount).toBeGreaterThan(100);
+  expect(metrics.poreStage).toBe("young");
   expect(metrics.tubeScale).toBeLessThan(1);
   await expect(page.locator('[data-obs-state="cap_morphology"]')).toHaveValue("not_examined");
   await expect(page.locator('[data-obs-provenance="cap_morphology"]')).toHaveValue("");
@@ -61,6 +62,7 @@ test("S3 R3.3: five stipe forms remain selectable and preserve observation prove
     const result=await page.evaluate(form=>window.MycoSimMorphologyBridge.apply({family:"boletoid",variants:{stipe:form}}),form);
     expect(result.ok,JSON.stringify(result)).toBe(true);
     await expect.poll(()=>page.evaluate(()=>window.MycoSimMorphologyBridge.getState().variants.stipe)).toBe(form);
+    if(form==="rooting")expect(await page.evaluate(()=>window.MycoSimCameraBridge.snapshot().rootingContinuous)).toBe(true);
     await expect(page.locator('[data-obs-state="cap_morphology"]')).toHaveValue("not_examined");
     await expect(page.locator('[data-obs-provenance="cap_morphology"]')).toHaveValue("");
   }
