@@ -48,7 +48,7 @@ test("Optional builder stays collapsed while Learn Build Identify remain accessi
   const archive=page.locator("#mycosim-creative-archive");
   await archive.locator("summary").click();
   await page.locator("#mycosim-load-creative-studio").click();
-  const details=page.locator("#mycosim-builder-disclosure");
+  const details=page.locator("#mycosim-creative-archive");
   await expect(details).toHaveCount(1);
   await expect(details).not.toHaveAttribute("open","");
   await expect(page.locator("#myco-visual-builder")).toBeHidden();
