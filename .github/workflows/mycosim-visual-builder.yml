@@ -8,6 +8,13 @@ on:
       - 'mycosim/visual_builder_3d.js'
       - 'sandbox.html'
       - 'tests/mycosim-visual-builder.spec.mjs'
+      - 'tests/mycosim-laboratory-navigation.spec.mjs'
+      - 'tests/mycosim-restoration-ux.spec.mjs'
+      - 'tests/mycosim-restoration-teaching.spec.mjs'
+      - 'tests/mycosim-release-preservation.spec.mjs'
+      - 'mycosim/lab_navigation.js'
+      - 'mycosim/teaching_guide.js'
+      - 'mycosim/restoration_ux.css'
   workflow_dispatch:
 permissions:
   contents: read
@@ -24,6 +31,9 @@ jobs:
         run: |
           node --check mycosim/visual_builder.js
           node --check mycosim/visual_builder_3d.js
+          node --check mycosim/lab_navigation.js
+          node --check mycosim/teaching_guide.js
+          node --check mycosim/main.js
       - name: Install Playwright Chromium
         run: |
           npm install --no-save @playwright/test
@@ -37,10 +47,10 @@ jobs:
           done
           exit 1
       - name: Browser regression
-        run: npx playwright test tests/mycosim-visual-builder.spec.mjs --browser=chromium --workers=1 --reporter=line
+        run: npx playwright test tests/mycosim-visual-builder.spec.mjs tests/mycosim-laboratory-navigation.spec.mjs tests/mycosim-restoration-ux.spec.mjs tests/mycosim-restoration-teaching.spec.mjs tests/mycosim-release-preservation.spec.mjs --browser=chromium --workers=1 --reporter=line
       - uses: actions/upload-artifact@v4
-        if: failure()
+        if: always()
         with:
-          name: mycosim-visual-failure
+          name: mycosim-sprint5-release-evidence
           path: test-results/
           if-no-files-found: ignore

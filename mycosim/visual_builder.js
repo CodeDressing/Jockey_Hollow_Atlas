@@ -8,12 +8,14 @@ if (mountPoint && !document.getElementById("myco-visual-builder")) {
   mountPoint.before(host);
   const style = document.createElement("style");
   style.textContent = `
-    #myco-visual-builder{border:1px solid #608279;border-radius:16px;margin:16px 0;padding:16px;background:#0d2022;color:#eaf5ed}
+    #myco-visual-builder{border:1px solid #608279;border-radius:16px;margin:16px 0;padding:16px;background:#0d2022;color:#eaf5ed;container-type:inline-size;min-width:0;max-width:100%}
     #myco-visual-builder h3{margin:0 0 7px;color:#f1daa6;font-size:22px}
     #myco-visual-builder .mb-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
     #myco-visual-builder button,#myco-visual-builder select{border:1px solid #67847c;border-radius:8px;background:#183338;color:#f3f7f2;padding:10px;min-height:42px;cursor:pointer}
     #myco-visual-builder button[aria-pressed=true]{background:#8b6d32;color:#fff;border-color:#f0c67d}
-    #myco-visual-builder .mb-layout{display:grid;grid-template-columns:minmax(220px,1fr) minmax(220px,1fr);gap:14px}
+    #myco-visual-builder .mb-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+    @container (min-width:620px){#myco-visual-builder .mb-layout{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    #myco-visual-builder .mb-layout>*{min-width:0;max-width:100%}
     #myco-visual-builder .mb-controls{display:grid;gap:10px;align-content:start}
     #myco-visual-builder label{display:grid;gap:5px;font-size:13px;color:#d1e6e1}
     #myco-visual-builder .mb-preview{border:1px solid #526e69;border-radius:10px;background:#101c1b;padding:12px}
