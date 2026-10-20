@@ -13,6 +13,7 @@ on:
       - 'tests/mycosim-restoration-teaching.spec.mjs'
       - 'tests/mycosim-release-preservation.spec.mjs'
       - 'tests/mycosim-clear-view-sprint2.spec.mjs'
+      - 'tests/mycosim-clear-view-redundancy.spec.mjs'
       - 'mycosim/optional_creative_studio.js'
       - 'mycosim/lab_navigation.js'
       - 'mycosim/teaching_guide.js'
@@ -49,10 +50,10 @@ jobs:
           done
           exit 1
       - name: Browser regression
-        run: npx playwright test tests/mycosim-clear-view-sprint2.spec.mjs tests/mycosim-laboratory-navigation.spec.mjs tests/mycosim-restoration-ux.spec.mjs tests/mycosim-restoration-teaching.spec.mjs tests/mycosim-release-preservation.spec.mjs --browser=chromium --workers=1 --reporter=line
+        run: npx playwright test tests/mycosim-clear-view-sprint2.spec.mjs tests/mycosim-clear-view-redundancy.spec.mjs tests/mycosim-laboratory-navigation.spec.mjs tests/mycosim-restoration-ux.spec.mjs tests/mycosim-restoration-teaching.spec.mjs tests/mycosim-release-preservation.spec.mjs --browser=chromium --workers=1 --reporter=line
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: mycosim-clear-view-sprint2-unified-specimen-evidence
+          name: mycosim-clear-view-sprint2-final-and-redundancy
           path: test-results/
           if-no-files-found: ignore
