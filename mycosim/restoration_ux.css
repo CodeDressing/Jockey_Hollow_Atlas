@@ -130,3 +130,11 @@ aside :where(button,a){-webkit-tap-highlight-color:transparent}
   #mycosim-laboratory-nav .lab-nav-grid{grid-template-columns:1fr!important}
 }
 /* Avoid hiding scientific inputs or suppressing valid provenance-table scrolling. */
+
+/* Clear View S3 R3.2: stage-local, keyboard-operable camera pad. */
+#mycosim-camera-pad{position:absolute;right:12px;top:70px;z-index:9;display:grid;grid-template-columns:repeat(3,44px);gap:4px;padding:5px;background:rgba(7,17,18,.9);border:1px solid #54766d;border-radius:10px;box-shadow:0 5px 18px #0008}
+#mycosim-camera-pad button{min-width:44px;min-height:44px;border-radius:7px;border:1px solid #648277;background:#213c37;color:#f1e9d3;font-size:20px;cursor:pointer}
+#mycosim-camera-pad button:focus-visible{outline:3px solid #f4d58d;outline-offset:2px}
+#mycosim-camera-pad button:hover{background:#36574d}
+@media(max-width:560px){#mycosim-camera-pad{top:56px;right:5px;grid-template-columns:repeat(3,42px);gap:2px;padding:3px}#mycosim-camera-pad button{min-width:42px;min-height:42px}}
+@media(prefers-reduced-motion:reduce){#mycosim-camera-pad button{transition:none}}
