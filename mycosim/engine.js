@@ -567,7 +567,7 @@ export class MycoSimEngine{
     this.scene.fog=this.realismTier.post.fog?new THREE.FogExp2(0x091011,.035):null;
     this.realismLights=configureRealisticLights(this.scene,this.realismTier);
     const ground=new THREE.Mesh(new THREE.CylinderGeometry(2.7,3,.28,scaledSegments(72,this.realismTier,{min:36,max:96})),MATERIALS.wood.clone());
-    ground.position.y=-.72; ground.receiveShadow=true; ground.castShadow=false; this.scene.add(ground);
+    ground.position.y=-.72; ground.receiveShadow=true; ground.castShadow=false; this.scene.add(ground); this.inspectionGround=ground;
     const grid=new THREE.GridHelper(14,28,0x31403a,0x1b2824); grid.position.y=-.55; this.scene.add(grid);
   }
 
@@ -1662,12 +1662,16 @@ export class MycoSimEngine{
       const box=new THREE.Box3().setFromObject(base);
       if(box.isEmpty())return false;
       const center=box.getCenter(new THREE.Vector3());
-      const newDistance=THREE.MathUtils.clamp(Math.max(3,box.getSize(new THREE.Vector3()).length()*5),this.controls.minDistance,this.controls.maxDistance);
+      // Retain enough context to distinguish bulbous, clavate and rooting bases.
+      // Temporarily conceal the decorative ground plane, which otherwise masks the lower stipe.
+      if(this.inspectionGround)this.inspectionGround.visible=false;
+      const newDistance=THREE.MathUtils.clamp(Math.max(8,box.getSize(new THREE.Vector3()).length()*6),this.controls.minDistance,this.controls.maxDistance);
       const direction=offset.normalize();
       this.fly={start:performance.now(),duration:600,fromPos:this.camera.position.clone(),toPos:center.clone().addScaledVector(direction,newDistance),fromTarget:target,toTarget:center};
       return true;
     }
     this.fly=null;
+    if(this.inspectionGround)this.inspectionGround.visible=true;
     const spherical=new THREE.Spherical().setFromVector3(offset);
     if(action==="left")spherical.theta-=.16;
     if(action==="right")spherical.theta+=.16;
@@ -1681,6 +1685,7 @@ export class MycoSimEngine{
   }
 
   frameModel({animate=false}={}){
+    if(this.inspectionGround)this.inspectionGround.visible=true;
     const box=new THREE.Box3().setFromObject(this.root);
     if(box.isEmpty()) return false;
     const center=box.getCenter(new THREE.Vector3());
