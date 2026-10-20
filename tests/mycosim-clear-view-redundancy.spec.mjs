@@ -62,5 +62,6 @@ test("Legacy creative preview opt-in creates exactly one secondary renderer with
   await expect(page.locator("#variantControls")).toHaveCount(1);
   await expect(page.locator("#mycosim-laboratory-nav .lab-nav-grid a")).toHaveCount(6);
   await expect(page.locator('[data-obs-state="cap_morphology"]')).toHaveValue("not_examined");
-  await expect(page.locator("#myco-visual-builder").locator("xpath=..")).toHaveAttribute("id","mycosim-creative-archive");
+  await expect(page.locator("#myco-visual-builder").locator("xpath=../..")).toHaveAttribute("id","mycosim-creative-archive");
+  await expect(page.locator("#mycosim-builder-disclosure")).not.toHaveAttribute("open","");
 });
