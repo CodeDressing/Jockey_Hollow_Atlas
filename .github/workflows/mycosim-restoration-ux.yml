@@ -1,0 +1,38 @@
+name: MycoSim Sprint 2 visual UX QA
+on:
+  push:
+    branches: [campaign/mycosim-restoration-sprint2-ux-20261019]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  specimen-layout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static navigation syntax
+        run: node --check mycosim/lab_navigation.js
+      - name: Chromium install
+        run: |
+          npm install --no-save @playwright/test
+          npx playwright install --with-deps chromium
+      - name: Start MycoSim local static server
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/mycosim-sprint2.log 2>&1 &
+          for i in $(seq 1 30); do
+            curl -fsS http://127.0.0.1:8765/sandbox.html -o /dev/null && exit 0
+            sleep 1
+          done
+          exit 1
+      - name: Verify layout desktop and mobile
+        run: npx playwright test tests/mycosim-restoration-ux.spec.mjs --browser=chromium --workers=1 --reporter=line
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mycosim-sprint2-viewport-images
+          path: test-results/*.png
+          if-no-files-found: ignore
