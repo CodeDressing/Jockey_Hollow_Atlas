@@ -97,8 +97,8 @@ aside :where(button,a){-webkit-tap-highlight-color:transparent}
   .learning-step,.science-panel,[id^="mycosim-"]{scroll-margin-top:calc(clamp(170px,30svh,270px) + 72px)}
 }
 @media(max-width:560px){
-  .workspace-row>.stage-wrap{height:clamp(160px,28svh,230px)}
-  .learning-step,.science-panel,[id^="mycosim-"]{scroll-margin-top:calc(clamp(160px,28svh,230px) + 72px)}
+  .workspace-row>.stage-wrap{height:clamp(238px,30svh,282px)}
+  .learning-step,.science-panel,[id^="mycosim-"]{scroll-margin-top:calc(clamp(238px,30svh,282px) + 72px)}
   .stage-wrap>.hint{font-size:9px}
 }
 /* Original scientific spore provenance is preserved in its own intentionally scrollable table. */
