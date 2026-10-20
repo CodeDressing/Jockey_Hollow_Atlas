@@ -72,7 +72,7 @@ for(const width of [320,390,768,960,1280,1920]){
    await page.goto("http://127.0.0.1:8765/sandbox.html");
    const advanced=page.locator("#mycosim-creative-archive");
    await expect(advanced).not.toHaveAttribute("open","");
-   await expect(advanced.locator(":scope > summary")).toContainText("Advanced Mushroom Workshop");
+   await expect(advanced.locator(":scope > summary")).toContainText("Beginner Mushroom Workshop");
    await expect(page.locator("#myco-visual-builder")).toHaveCount(0);
    await expect(page.locator("#mb-live-canvas")).toHaveCount(0);
    await expect(page.locator("#stage")).toHaveCount(1);
@@ -109,4 +109,24 @@ test("Sprint 9: single advanced disclosure supports keyboard with no duplicate d
   await expect(page.locator("#myco-visual-builder")).toBeHidden();
   await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2)).toBe(true);
   await page.screenshot({path:"test-results/sprint9-half-screen-640.png",animations:"disabled"});
+});
+
+test("Quiet Workshop stays minimized and does not force a scroll jump",async({page})=>{
+  await page.setViewportSize({width:390,height:850});
+  await page.goto("http://127.0.0.1:8765/sandbox.html");
+  const workshop=page.locator("#mycosim-creative-archive");
+  await expect(workshop).not.toHaveAttribute("open","");
+  await expect(workshop.locator(":scope > summary")).toContainText("Beginner Mushroom Workshop");
+  await expect(page.locator("#myco-visual-builder")).toHaveCount(0);
+  await expect(page.locator("#mb-live-canvas")).toHaveCount(0);
+  await workshop.locator(":scope > summary").click();
+  await page.locator("#mycosim-load-creative-studio").click();
+  const nested=page.locator("#mycosim-builder-disclosure");
+  await expect(nested).toHaveCount(1);
+  await expect(nested).not.toHaveAttribute("open","");
+  await expect(page.locator("#myco-visual-builder")).toBeHidden();
+  await workshop.locator(":scope > summary").click();
+  await expect(workshop).not.toHaveAttribute("open","");
+  await expect(page.locator("#myco-visual-builder")).toBeHidden();
+  await expect(page.locator("#stage")).toHaveCount(1);
 });
