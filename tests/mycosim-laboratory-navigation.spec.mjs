@@ -1,0 +1,24 @@
+import {test,expect} from "@playwright/test";
+test("Six laboratories navigate existing workspaces without altering specimen state",async({page})=>{
+  test.setTimeout(90000);
+  await page.setViewportSize({width:390,height:844});
+  await page.goto("http://127.0.0.1:8765/sandbox.html");
+  const nav=page.locator("#mycosim-laboratory-nav");
+  await expect(nav).toBeVisible({timeout:30000});
+  await expect(nav.locator("a")).toHaveCount(6);
+  await expect(page.locator("#stage")).toHaveCount(1);
+  await expect(page.locator("#variantControls")).toHaveCount(1);
+  await expect(page.locator("#observationForm")).toHaveCount(1);
+  await nav.locator('[data-lab-target="modelGrid"]').click();
+  await expect(page.locator("#modelGrid")).toBeVisible();
+  await nav.locator('[data-lab-target="stageControls"]').click();
+  await expect(page.locator("#stageControls")).toBeVisible();
+  await expect(page.locator('body')).toHaveAttribute("data-learner-mode","explore");
+  await nav.locator('[data-lab-target="sciencePanel"]').click();
+  await expect(page.locator("#sciencePanel")).toBeVisible();
+  await nav.locator('[data-lab-target="sporeRows"]').click();
+  await expect(page.locator("#sporeRows")).toBeVisible();
+  await nav.locator('[data-lab-target="mycosim-presenter"]').click();
+  await expect(page.locator("#mycosim-presenter")).toBeVisible();
+  await expect(nav.locator('a[href="./trametes.html"]')).toHaveCount(1);
+});
