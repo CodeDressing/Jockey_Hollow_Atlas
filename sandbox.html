@@ -566,5 +566,18 @@ if(start)start.addEventListener("click",async()=>{
   }
 },{once:false});
 </script>
+<script>
+(function(){
+  const reference=new URLSearchParams(location.search).get("atlas_reference");
+  if(!reference)return;
+  const notice=document.createElement("aside");
+  notice.id="living-atlas-reference-warning";
+  notice.setAttribute("role","note");
+  notice.style.cssText="padding:10px 14px;background:#1a2b28;color:#f4e0a9;border:2px solid #7c7652;border-radius:9px;margin:12px";
+  notice.textContent="Atlas reference "+reference.slice(0,90)+" — showing generic MycoSim morphology for education ONLY. This is NOT a verified 3D reconstruction of that accession or a species identification.";
+  const header=document.querySelector("header");
+  if(header)header.after(notice);else document.body.prepend(notice);
+})();
+</script>
 </body>
 </html>
