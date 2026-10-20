@@ -11,7 +11,8 @@ test("S3 R3.2: young boletoid pore openings and stage-dependent tube depth",asyn
   });
   expect(metrics.hasStage).toBe(true);
   expect(metrics.pad).toBe(1);
-  expect(metrics.poreGeometry).toBe("planar-pore-openings");
+  expect(metrics.poreGeometry).toBe("CircleGeometry");
+  expect(metrics.poreInstanceCount).toBeGreaterThan(100);
   expect(metrics.tubeScale).toBeLessThan(1);
   await expect(page.locator('[data-obs-state="cap_morphology"]')).toHaveValue("not_examined");
   await expect(page.locator('[data-obs-provenance="cap_morphology"]')).toHaveValue("");
