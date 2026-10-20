@@ -424,6 +424,7 @@ body.mycosim-presenting #mycosim-presenter-prompt{font-size:1.15rem}
     </div>
     <h3>Scientific Identification & Spore Lab</h3>
       <div class="science-note"><strong>Scientific rule:</strong> Observation ≠ interpretation ≠ identification. This tool compares observed characters with generalized morphology profiles only. It never assigns a species and never writes to specimen records.</div>
+      <p id="observationVisualStatus" role="status" aria-live="polite" style="border-left:3px solid #a88b50;padding:8px 10px;margin:9px 0;background:#142421;color:#f1e4c9;font-size:12px">Choose a cap, stipe or hymenophore trait to see its educational 3D representation immediately. Examination status and provenance remain separate.</p>
       <div id="observationForm" class="science-grid"></div>
       <div class="science-actions">
         <button id="compareCandidates" type="button">Compare morphology profiles</button>
@@ -483,6 +484,8 @@ window.MYCOSIM_BOOT_WATCHDOG=setTimeout(()=>{
 },5000);
 </script>
 <script type="module" src="mycosim/main.js?v=family-context-20261019"></script>
+<script type="module" src="mycosim/visual_builder.js?v=visual-studio-20261019"></script>
+<script type="module" src="mycosim/visual_builder_3d.js?v=studio-3d-sprint2-20261019"></script>
 <script type="module" src="mycosim/digestion_immune.js?v=phase9-svgclick-fix-20261016"></script>
 <script type="module" src="mycosim/anatomy3d.js?v=phase27-instances-20261018"></script>
 <script type="module" src="mycosim/molecular_process.js?v=phase11-v1-20261016"></script>
