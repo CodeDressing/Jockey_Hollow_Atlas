@@ -8,7 +8,7 @@
   // notes and descriptions are not species determinations.
   const nameFields=r=>Object.entries(r.summary||{}).filter(([key,value])=>
     /^(?:scientific(?: name)?|taxon|taxonomic name|common(?: name)?|vernacular name|genus|species|identification|determination)$/i.test(key.trim()) &&
-    typeof value==="string" && !/^(?:https?:\\/\\/|data:)/i.test(value)
+    typeof value==="string" && !value.toLowerCase().startsWith("http:") && !value.toLowerCase().startsWith("https:") && !value.toLowerCase().startsWith("data:")
   ).map(([,value])=>value);
   const names=r=>nameFields(r);
   const indexed=new Map(),collisions=new Set();
