@@ -137,3 +137,21 @@ test("Sprint 3 keeps the laboratory in view while updating authoritative 3D and 
   await page.locator('[data-obs-value="hymenophore_type"]').selectOption("folds");
   await expect(page.locator("#observationVisualStatus")).toContainText("no validated geometric representation");
 });
+
+test("Sprint 4 teaching guide uses authored morphology knowledge and preserves evidence",async({page})=>{
+  test.setTimeout(90000);
+  await page.goto("http://127.0.0.1:8765/sandbox.html");
+  await expect.poll(()=>page.evaluate(()=>Boolean(window.MycoSimMorphologyBridge)),{timeout:30000}).toBe(true);
+  await page.locator('[data-learner-mode="explore"]').click();
+  const guide=page.locator("#mycosim-teaching-guide");
+  await expect(guide).toBeVisible({timeout:30000});
+  await page.locator('[data-variant="agaric_pileus_profile"][data-value="conical"]').click();
+  await expect(guide.locator("#mycosim-teaching-title")).toHaveText("Conical");
+  await expect(guide.locator("#mycosim-teaching-explanation")).not.toBeEmpty();
+  await guide.locator('[data-teaching-action="expert"]').click();
+  await expect(page.locator('[data-knowledge-mode="expert"]')).toHaveClass(/active/);
+  await guide.locator('[data-teaching-action="beginner"]').click();
+  await expect(page.locator('[data-knowledge-mode="beginner"]')).toHaveClass(/active/);
+  await expect(page.locator('[data-obs-state="cap_morphology"]')).toHaveValue("not_examined");
+  await expect(page.locator("#stage")).toHaveCount(1);
+});
