@@ -1682,8 +1682,8 @@ export class MycoSimEngine{
         // Look up toward the fertile underside; not a second camera or canvas.
         direction.set(.08,-.80,1).normalize();
       }
-      if(this.inspectionGround)this.inspectionGround.visible=action!=="base";
-      if(this.inspectionGrid)this.inspectionGrid.visible=action!=="base";
+      if(this.inspectionGround)this.inspectionGround.visible=action==="side";
+      if(this.inspectionGrid)this.inspectionGrid.visible=action==="side";
       distanceGoal=THREE.MathUtils.clamp(distanceGoal,this.controls.minDistance,this.controls.maxDistance);
       this.fly={start:performance.now(),duration:600,fromPos:this.camera.position.clone(),toPos:center.clone().addScaledVector(direction,distanceGoal),fromTarget:target,toTarget:center};
       return true;
