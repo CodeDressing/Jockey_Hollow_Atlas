@@ -798,10 +798,13 @@ try{
       tubeScale:engine.objects.get("tube_layer")?.scale.y??null,
       poreGeometry:(()=>{
         if(engine.currentProfile?.id!=="boletoid")return null;
-        const pore=engine.pickables.find(o=>o.isInstancedMesh&&o.userData?.id==="hymenophore"&&o.geometry?.type==="CircleGeometry");
+        const pore=engine.pickables.find(o=>o.isInstancedMesh&&o.userData?.id==="hymenophore"&&o.geometry?.userData?.model==="connected-boletoid-tube-face-v1");
         return pore?.geometry?.type||null;
       })(),
-      poreInstanceCount:engine.pickables.filter(o=>o.isInstancedMesh&&o.userData?.id==="hymenophore"&&o.geometry?.type==="CircleGeometry").reduce((n,o)=>n+o.count,0),
+      poreStage:engine.pickables.find(o=>o.geometry?.userData?.model==="connected-boletoid-tube-face-v1")?.geometry?.userData?.stage||null,
+      poreHoleRadius:engine.pickables.find(o=>o.geometry?.userData?.model==="connected-boletoid-tube-face-v1")?.geometry?.userData?.holeRadius||null,
+      rootingContinuous:engine.objects.get("stipe")?.userData?.continuousRootingBase===true,
+      poreInstanceCount:engine.pickables.filter(o=>o.isInstancedMesh&&o.userData?.id==="hymenophore"&&o.geometry?.userData?.model==="connected-boletoid-tube-face-v1").reduce((n,o)=>n+o.count,0),
       baseVisible:engine.objects.get("stipe_base")?.visible??null
     }),
     move:action=>engine.navigateCamera(action)
