@@ -782,7 +782,7 @@ try{
   const cameraPad=document.createElement("nav");
   cameraPad.id="mycosim-camera-pad";
   cameraPad.setAttribute("aria-label","3D specimen camera controls");
-  const cameraActions=[["up","↑","Orbit up"],["left","←","Orbit left"],["right","→","Orbit right"],["down","↓","Orbit down"],["forward","+","Move camera closer"],["back","−","Move camera farther"],["base","◎","Focus stipe base"]];
+  const cameraActions=[["up","↑","Orbit up"],["left","←","Orbit left"],["right","→","Orbit right"],["down","↓","Orbit down"],["forward","+","Move camera closer"],["back","−","Move camera farther"],["base","◎","Focus stipe base"],["side","◧","Side view"],["underside","◉","Underside view"]];
   cameraPad.innerHTML=cameraActions.map(([name,glyph,label])=>`<button type="button" data-camera-action="${name}" aria-label="${label}" title="${label}">${glyph}</button>`).join("");
   document.querySelector(".stage-wrap")?.append(cameraPad);
   cameraPad.addEventListener("click",e=>{
