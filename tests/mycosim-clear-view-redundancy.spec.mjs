@@ -81,3 +81,32 @@ for(const width of [320,390,768,960,1280,1920]){
    await page.screenshot({path:"test-results/sprint7-default-"+width+".png",animations:"disabled"});
  });
 }
+
+test("Sprint 9: single advanced disclosure supports keyboard with no duplicate default canvas",async({page})=>{
+  await page.setViewportSize({width:640,height:720});
+  await page.goto("http://127.0.0.1:8765/sandbox.html");
+  const workshop=page.locator("#mycosim-creative-archive");
+  const opener=workshop.locator(":scope > summary");
+  await expect(workshop).not.toHaveAttribute("open","");
+  await opener.focus();
+  await page.keyboard.press("Enter");
+  await expect(workshop).toHaveAttribute("open","");
+  await page.locator("#mycosim-load-creative-studio").click();
+  const disclosure=page.locator("#mycosim-builder-disclosure");
+  await expect(disclosure).toHaveCount(1);
+  await expect(disclosure).not.toHaveAttribute("open","");
+  await expect(page.locator("#myco-visual-builder")).toBeHidden();
+  await expect(page.locator("#stage")).toHaveCount(1);
+  await expect(page.locator("#mb-live-canvas")).toHaveCount(1);
+  const summary=disclosure.locator(":scope > summary");
+  await expect(summary).toBeFocused();
+  await page.keyboard.press("Enter");
+  await expect(disclosure).toHaveAttribute("open","");
+  for(const mode of ["learn","build","identify"])await expect(disclosure.locator('[data-mb-mode="'+mode+'"]')).toBeVisible();
+  await summary.focus();
+  await page.keyboard.press("Enter");
+  await expect(disclosure).not.toHaveAttribute("open","");
+  await expect(page.locator("#myco-visual-builder")).toBeHidden();
+  await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2)).toBe(true);
+  await page.screenshot({path:"test-results/sprint9-half-screen-640.png",animations:"disabled"});
+});
