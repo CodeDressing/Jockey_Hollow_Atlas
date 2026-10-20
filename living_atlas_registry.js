@@ -32,12 +32,30 @@
     if(/provisional|tentative|cf\\.|aff\\.|pending/.test(explicit))return "provisional";
     return "unidentified";
   };
+  const MODEL_LIFECYCLE=Object.freeze(["unmodeled","provisional_reconstruction","scientifically_reviewed","validated"]);
+  const evidenceFor=r=>{
+    const photographs=(r.images||[]).filter(i=>i.original||i.thumb).map(i=>Object.freeze({
+      type:"photograph",label:i.caption||"Archived accession media",url:i.original||i.thumb
+    }));
+    const measurements=(r.measurements||[]).map(m=>Object.freeze({
+      type:"measurement",source:m.source||"Unspecified archive",source_id:m.source_id||"Unspecified record",
+      fields:{...m.fields}
+    }));
+    return Object.freeze({specimen_id:r.code,photos:photographs,measurements,
+      taxonomic_determination:nameFields(r),identification_state:identificationState(r),
+      model_lifecycle:"unmodeled",model_profile:null,
+      uncertainty:"Images and source measurements are accession-linked; diagnostic traits and accepted taxon require independent review."
+    });
+  };
   // Atlas IDs and archived measurements are evidence for accession existence,
   // not proof of a species. No unreviewed record receives species-level 3D status.
   window.LivingAtlasRegistry=Object.freeze({
     count:records.length,collisions:[...collisions],
     search,lookup:id=>indexed.get(normalize(id))||null,
     modelStatus:()=> "not_modelled",
+    modelLifecycle:id=>MODEL_LIFECYCLE[0],
+    modelLifecycleOptions:MODEL_LIFECYCLE,
+    evidenceMatrix:id=>{const record=indexed.get(normalize(id));return record?evidenceFor(record):null;},
     identificationState:id=>identificationState(indexed.get(normalize(id))||{}),
     verifiedNames:id=>nameFields(indexed.get(normalize(id))||{summary:{}}),
     source:"merged-atlas-records"
@@ -87,6 +105,20 @@
     const confidence=document.createElement("p");
     confidence.textContent="Identification evidence state: "+identificationState(r)+" (documentary status, not probability).";
     detail.append(confidence);
+    const evidence=evidenceFor(r);
+    const evidenceNote=document.createElement("p");
+    evidenceNote.textContent="Evidence matrix: "+evidence.photos.length+" archived media references; "+evidence.measurements.length+" measurement records. 3D lifecycle: "+evidence.model_lifecycle+". Anatomical reconstruction not authorized by evidence yet.";
+    detail.append(evidenceNote);
+    const gallery=document.createElement("details");
+    const galleryTitle=document.createElement("summary");galleryTitle.textContent="Original accession photo references ("+evidence.photos.length+")";
+    gallery.append(galleryTitle);
+    for(const photo of evidence.photos){
+      const link=document.createElement("a");
+      if(!/^https:\/\/drive\.google\.com\//.test(photo.url))continue;
+      link.href=photo.url;link.target="_blank";link.rel="noopener noreferrer";
+      link.textContent=photo.label;link.style.cssText="display:block;margin:7px 0;color:#f1deb0;overflow-wrap:anywhere";gallery.append(link);
+    }
+    detail.append(gallery);
     const open=document.createElement("button");
     open.type="button";open.textContent="Open original atlas dossier";
     open.style.cssText="padding:9px;background:#29483c;color:white;border:1px solid #688;border-radius:6px;cursor:pointer";
