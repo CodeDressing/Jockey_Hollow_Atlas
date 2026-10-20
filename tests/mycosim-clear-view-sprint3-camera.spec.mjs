@@ -22,7 +22,7 @@ for(const width of [320,390,768,960,1280,1920]){
     test.setTimeout(90000);
     await page.setViewportSize({width,height:900});
     await page.goto("http://127.0.0.1:8765/sandbox.html");
-    await expect.poll(()=>page.locator("#mycosim-camera-pad button").count()).toBe(7);
+    await expect.poll(()=>page.locator("#mycosim-camera-pad button").count()).toBe(9);
     const pad=page.locator("#mycosim-camera-pad");
     const coords=await pad.evaluate(el=>{
       const r=el.getBoundingClientRect();
@@ -42,6 +42,9 @@ for(const width of [320,390,768,960,1280,1920]){
     await page.locator('[data-camera-action="left"]').click();
     await page.locator('[data-camera-action="down"]').click();
     await page.locator('[data-camera-action="base"]').click();
+    await expect.poll(()=>page.evaluate(()=>window.MycoSimCameraBridge.snapshot().target[1])).toBeLessThan(2);
+    await page.locator('[data-camera-action="side"]').click();
+    await page.locator('[data-camera-action="underside"]').click();
     await expect(page.locator("#stage")).toHaveCount(1);
     await expect(page.locator("#myco-visual-builder")).toHaveCount(0);
     expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(2);
