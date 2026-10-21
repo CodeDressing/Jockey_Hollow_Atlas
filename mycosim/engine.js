@@ -3687,7 +3687,9 @@ export class MycoSimEngine{
     const plateThickness={thin:.012,moderate:.022,broad:.034}[thicknessState]||.012;
     // Developmental exposure changes lamella depth, never the world-space
     // height of their attachment to the pileus underside.
-    const exposure=THREE.MathUtils.clamp(this.stageParam("lamella_exposure",1),.20,1);
+    // Preserve a shallow juvenile hymenophore while keeping radial lamellae
+    // discernible from the underside in the teaching model.
+    const exposure=THREE.MathUtils.clamp(this.stageParam("lamella_exposure",1),.44,1);
     const plateDepth=({shallow:.15,moderate:.25,deep:.37}[depthState]||.25)*exposure;
 
     const stipeRadius=.285;
