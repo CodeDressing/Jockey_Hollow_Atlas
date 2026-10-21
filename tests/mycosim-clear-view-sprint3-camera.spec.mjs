@@ -133,7 +133,7 @@ test("GILLFORGE: stage and attachment geometry stays near pileus",async({page})=
       expect(result.geometry.gillScaleY).toBeGreaterThan(.75);
       expect(result.geometry.plateDepth).toBeGreaterThan(.02);
     }
-    for(const view of ["underside","top","left","right"]){
+    for(const view of ["underside","up","side","right"]){
       await page.locator('[data-camera-action="'+view+'"]').click();
       await page.waitForTimeout(150);
       await page.locator(".stage-wrap").screenshot({
