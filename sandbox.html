@@ -636,8 +636,8 @@ if(start)start.addEventListener("click",async()=>{
       next.textContent=n===5?"Journey complete":"Next →";
       chips.forEach((chip,i)=>{chip.title=objectives[i][0]+": "+objectives[i][1];chip.setAttribute("aria-label","Step "+(i+1)+": "+objectives[i][0]);});
     }
-    prev.addEventListener("click",()=>chips[current()-2]?.click());
-    next.addEventListener("click",()=>{const target=chips[current()];if(target&&!next.disabled)target.click();});
+    prev.addEventListener("click",()=>document.getElementById("mycosim-lesson-prev")?.click());
+    next.addEventListener("click",()=>{if(!next.disabled)document.getElementById("mycosim-lesson-next")?.click();});
     const observer=new MutationObserver(render);
     chips.forEach(c=>observer.observe(c,{attributes:true,attributeFilter:["class","disabled","aria-current"]}));
     render();
