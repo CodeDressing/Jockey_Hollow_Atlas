@@ -126,6 +126,9 @@ test("Quiet Workshop stays minimized and does not force a scroll jump",async({pa
   await expect(nested).not.toHaveAttribute("open","");
   await expect(page.locator("#myco-visual-builder")).toBeHidden();
   await workshop.locator(":scope > summary").click();
+  await expect(workshop).toHaveAttribute("open","");
+  for(const mode of ["learn","build","identify"])await expect(workshop.locator('[data-mb-mode="'+mode+'"]')).toBeVisible();
+  await workshop.locator(":scope > summary").click();
   await expect(workshop).not.toHaveAttribute("open","");
   await expect(page.locator("#myco-visual-builder")).toBeHidden();
   await expect(page.locator("#stage")).toHaveCount(1);
