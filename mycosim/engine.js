@@ -1590,7 +1590,7 @@ export class MycoSimEngine{
 
   _applyVisibility(){
     for(const [id,o] of this.objects){
-      o.visible=!this.hidden.has(id) && (!this.isolated || this.isolated===id || o.userData.parentId===this.isolated);
+      o.visible=!o.userData?.nonRenderingSelectionProxy && !this.hidden.has(id) && (!this.isolated || this.isolated===id || o.userData.parentId===this.isolated);
     }
   }
   isolate(id){this.isolated=id;this._applyVisibility();}
