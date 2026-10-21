@@ -866,7 +866,10 @@ export class MycoSimEngine{
       setScale("pileus_underside",Math.max(.88,expansion),capYScale,Math.max(.88,expansion));
       setScale("pileipellis",Math.max(.88,expansion),capYScale,Math.max(.88,expansion));
       setScale("pileus_context",expansion,1-collapse*.06,expansion);
-      setScale("hymenophore",expansion,Math.max(.20,p.lamella_exposure??1),expansion);
+      // Scale the gill group with the pileus, not by exposure about the scene origin.
+      // Scaling the entire assembly to 20% sent juvenile gills down near the ground.
+      // Juvenile exposure is instead applied to local plate depth during construction.
+      setScale("hymenophore",expansion,capYScale,expansion);
       setScale("stipe",1-waterLoss*.055,elong*(1-collapse*.08),1-waterLoss*.055);
       setScale("stipe_base",sid==="young"?.88:sid==="old"?1.04:1,1-collapse*.05,sid==="young"?.88:sid==="old"?1.04:1);
 
@@ -3670,7 +3673,10 @@ export class MycoSimEngine{
     const tierFactor=this.realismTier.id==="interactive"?.86:this.realismTier.id==="high"?1.08:1;
     const fullCount=Math.max(20,Math.round(spacingCount*tierFactor));
     const plateThickness={thin:.012,moderate:.022,broad:.034}[thicknessState]||.012;
-    const plateDepth={shallow:.15,moderate:.25,deep:.37}[depthState]||.25;
+    // Developmental exposure changes lamella depth, never the world-space
+    // height of their attachment to the pileus underside.
+    const exposure=THREE.MathUtils.clamp(this.stageParam("lamella_exposure",1),.20,1);
+    const plateDepth=({shallow:.15,moderate:.25,deep:.37}[depthState]||.25)*exposure;
 
     const stipeRadius=.285;
     const attach=this._agaricGillAttachmentProfile(type);
