@@ -1,3 +1,4 @@
+import * as THREE from "three";
 import {mountTrametesCurriculum} from "./trametes-education.js";
 import {MORPHOLOGY_PROFILES,PROFILE_BY_ID} from "./profiles.js?v=phase7-sprint5-20261003";
 import {MORPHOLOGY_VARIANTS,variantLabel,variantTeaching,puffballSubtype} from "./variants.js?v=phase7-sprint5-20261003";
