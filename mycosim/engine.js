@@ -870,6 +870,12 @@ export class MycoSimEngine{
       // Scaling the entire assembly to 20% sent juvenile gills down near the ground.
       // Juvenile exposure is instead applied to local plate depth during construction.
       setScale("hymenophore",expansion,capYScale,expansion);
+      // Gill instances have absolute scene-space y coordinates whereas pileus
+      // vertices are local to the cap mesh. Align their vertical scaling pivot
+      // to the cap's y-position, not the world origin.
+      const gillAssembly=this.objects.get("hymenophore");
+      const capPivotY=this.objects.get("pileus_underside")?.position.y??2.48;
+      if(gillAssembly)gillAssembly.position.y+=capPivotY*(1-capYScale);
       setScale("stipe",1-waterLoss*.055,elong*(1-collapse*.08),1-waterLoss*.055);
       setScale("stipe_base",sid==="young"?.88:sid==="old"?1.04:1,1-collapse*.05,sid==="young"?.88:sid==="old"?1.04:1);
 
