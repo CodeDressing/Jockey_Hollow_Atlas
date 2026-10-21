@@ -1,9 +1,10 @@
 name: MycoSim visual builder feature QA
 on:
   push:
-    branches: [feature/mycosim-visual-mushroom-builder-20261019, feature/specimen-to-3d-atlas-registry-20261020]
+    branches: [feature/mycosim-visual-mushroom-builder-20261019, feature/specimen-to-3d-atlas-registry-20261020, fix/gillforge-agaricoid-hymenophore-20261021]
   pull_request:
     paths:
+      - 'mycosim/engine.js'
       - 'mycosim/visual_builder.js'
       - 'mycosim/visual_builder_3d.js'
       - 'sandbox.html'
@@ -41,6 +42,7 @@ jobs:
           node --check mycosim/visual_builder_3d.js
           node --check mycosim/lab_navigation.js
           node --check mycosim/teaching_guide.js
+          node --check mycosim/engine.js
           node --check mycosim/main.js
           node --check living_atlas_registry.js
           node --check app.js
