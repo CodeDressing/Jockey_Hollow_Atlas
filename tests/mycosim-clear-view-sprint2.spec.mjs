@@ -18,6 +18,7 @@ test("Clear View S2: one primary 3D renderer on default load and optional worksh
   await expect(page.locator("#stage")).toHaveCount(1);
   await expect(page.locator('[data-obs-state="cap_morphology"]')).toHaveValue("not_examined");
   await expect(page.locator("#myco-visual-builder").locator("xpath=..")).toHaveAttribute("id","mycosim-creative-archive");
+  await expect(page.locator("#mycosim-creative-archive")).not.toHaveAttribute("open","");
 });
 for(const width of [320,390,768,960,1280,1920]){
   test("Clear View S2: primary specimen accessible while editing at "+width+"px",async({page})=>{

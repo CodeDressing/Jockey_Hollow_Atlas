@@ -467,9 +467,9 @@ body.mycosim-presenting #mycosim-presenter-prompt{font-size:1.15rem}
       <p id="observationVisualStatus" role="status" aria-live="polite" style="border-left:3px solid #a88b50;padding:8px 10px;margin:9px 0;background:#142421;color:#f1e4c9;font-size:12px">Choose a cap, stipe or hymenophore trait to see its educational 3D representation immediately. Examination status and provenance remain separate.</p>
       <a href="#stage" id="mycosim-view-authoritative-specimen" style="display:inline-block;padding:8px 11px;margin:4px 0 12px;border:1px solid #739080;border-radius:8px;color:#f1deb0;background:#152927;font-size:12px;text-decoration:none">View original 3D specimen ↑</a>
       <details id="mycosim-creative-archive" class="mycosim-optional-workshop">
-        <summary>Optional creative workshop (separate from the scientific specimen)</summary>
-        <p class="copy">The original morphology editor above is the primary mushroom simulator. Open this preserved experimental workshop only when you specifically want an independent creative illustration or export. Biological-process simulations remain in their scientific laboratories.</p>
-        <button id="mycosim-load-creative-studio" type="button">Load optional creative workshop</button>
+        <summary>Beginner Mushroom Workshop · optional</summary>
+        <p class="copy">Optional creative tools and exports. The original 3D specimen above remains the authoritative scientific simulator.</p>
+        <button id="mycosim-load-creative-studio" type="button">Open advanced tools</button>
         <p id="mycosim-creative-studio-status" role="status" aria-live="polite"></p>
       </details>
       <div id="observationForm" class="science-grid"></div>
@@ -565,6 +565,19 @@ if(start)start.addEventListener("click",async()=>{
     if(info)info.textContent="Unable to initialize 3D scene: "+String(error?.message||error);
   }
 },{once:false});
+</script>
+<script>
+(function(){
+  const reference=new URLSearchParams(location.search).get("atlas_reference");
+  if(!reference)return;
+  const notice=document.createElement("aside");
+  notice.id="living-atlas-reference-warning";
+  notice.setAttribute("role","note");
+  notice.style.cssText="padding:10px 14px;background:#1a2b28;color:#f4e0a9;border:2px solid #7c7652;border-radius:9px;margin:12px";
+  notice.textContent="Atlas reference "+reference.slice(0,90)+" — showing generic MycoSim morphology for education ONLY. This is NOT a verified 3D reconstruction of that accession or a species identification.";
+  const header=document.querySelector("header");
+  if(header)header.after(notice);else document.body.prepend(notice);
+})();
 </script>
 </body>
 </html>

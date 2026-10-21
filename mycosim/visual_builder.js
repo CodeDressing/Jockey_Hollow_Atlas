@@ -5,6 +5,8 @@ if (mountPoint && !document.getElementById("myco-visual-builder")) {
   const host = document.createElement("section");
   host.id = "myco-visual-builder";
   host.setAttribute("aria-label", "Interactive mushroom learning and creation studio");
+  // The existing #mycosim-creative-archive is the ONLY disclosure.
+  // Inserting this builder within it keeps every control inaccessible when closed.
   mountPoint.before(host);
   const style = document.createElement("style");
   style.textContent = `

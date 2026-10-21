@@ -1,7 +1,7 @@
 name: MycoSim visual builder feature QA
 on:
   push:
-    branches: [feature/mycosim-visual-mushroom-builder-20261019]
+    branches: [feature/mycosim-visual-mushroom-builder-20261019, feature/specimen-to-3d-atlas-registry-20261020]
   pull_request:
     paths:
       - 'mycosim/visual_builder.js'
@@ -19,6 +19,10 @@ on:
       - 'mycosim/lab_navigation.js'
       - 'mycosim/teaching_guide.js'
       - 'mycosim/restoration_ux.css'
+      - 'living_atlas_registry.js'
+      - 'tests/living-atlas-registry.spec.mjs'
+      - 'index.html'
+      - 'app.js'
   workflow_dispatch:
 permissions:
   contents: read
@@ -38,6 +42,8 @@ jobs:
           node --check mycosim/lab_navigation.js
           node --check mycosim/teaching_guide.js
           node --check mycosim/main.js
+          node --check living_atlas_registry.js
+          node --check app.js
       - name: Install Playwright Chromium
         run: |
           npm install --no-save @playwright/test
@@ -51,7 +57,7 @@ jobs:
           done
           exit 1
       - name: Browser regression
-        run: npx playwright test tests/mycosim-clear-view-sprint2.spec.mjs tests/mycosim-clear-view-redundancy.spec.mjs tests/mycosim-clear-view-sprint3-camera.spec.mjs tests/mycosim-laboratory-navigation.spec.mjs tests/mycosim-restoration-ux.spec.mjs tests/mycosim-restoration-teaching.spec.mjs tests/mycosim-release-preservation.spec.mjs --browser=chromium --workers=1 --reporter=line
+        run: npx playwright test tests/living-atlas-registry.spec.mjs tests/mycosim-clear-view-sprint2.spec.mjs tests/mycosim-clear-view-redundancy.spec.mjs tests/mycosim-clear-view-sprint3-camera.spec.mjs tests/mycosim-laboratory-navigation.spec.mjs tests/mycosim-restoration-ux.spec.mjs tests/mycosim-restoration-teaching.spec.mjs tests/mycosim-release-preservation.spec.mjs --browser=chromium --workers=1 --reporter=line
       - uses: actions/upload-artifact@v4
         if: always()
         with:
