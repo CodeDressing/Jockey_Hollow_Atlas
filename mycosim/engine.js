@@ -2929,8 +2929,14 @@ export class MycoSimEngine{
       "macro","stipe"
     );
     base.position.set(baseCenter.x,baseY-rootingExtra+.015,baseCenter.z);
+    // The continuous stipe geometry already forms the visible base. A separate
+    // flattened sphere produced an unconnected disk below the juvenile stipe.
+    // Retain this selectable base marker for camera and anatomy interactions,
+    // but do not render the redundant proxy as biological tissue.
     base.scale.set(1,.16,1);
+    base.visible=false;
     base.userData.continuousWithProfile=true;
+    base.userData.nonRenderingSelectionProxy=true;
 
     const context=this.variants.agaric_stipe_context||"solid";
     this._agaricStipeContextVisual(st,context,{height,top,bottom});
