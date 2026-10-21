@@ -111,3 +111,34 @@ test("S3 R3.5: three boletoid stage visual specimens",async({page})=>{
     await page.locator(".stage-wrap").screenshot({path:"test-results/s35-bolete-"+stage+".png",animations:"disabled"});
   }
 });
+
+test("GILLFORGE: stage and attachment geometry stays near pileus",async({page})=>{
+  test.setTimeout(180000);
+  await page.setViewportSize({width:1280,height:900});
+  await page.goto("http://127.0.0.1:8765/sandbox.html");
+  await expect.poll(()=>page.evaluate(()=>Boolean(window.MycoSimMorphologyBridge?.getState())),{timeout:30000}).toBe(true);
+  for(const stage of ["young","mature","old"]){
+    for(const attachment of ["free_gills","adnexed","adnate","sinuate","emarginate","subdecurrent","decurrent","seceding"]){
+      const result=await page.evaluate(({stage,attachment})=>{
+        const applied=window.MycoSimMorphologyBridge.apply({
+          family:"agaricoid",stage,variants:{agaric_gill_attachment:attachment}
+        });
+        return {applied,geometry:window.MycoSimCameraBridge.snapshot().agaricoidGillGeometry};
+      },{stage,attachment});
+      expect(result.applied.ok).toBe(true);
+      expect(result.geometry,stage+" "+attachment).not.toBeNull();
+      expect(result.geometry.attachment).toBe(attachment);
+      expect(result.geometry.lamellae).toBeGreaterThan(10);
+      expect(result.geometry.centerGap).toBeLessThan(1.0);
+      expect(result.geometry.gillScaleY).toBeGreaterThan(.75);
+      expect(result.geometry.plateDepth).toBeGreaterThan(.02);
+    }
+    for(const view of ["underside","top","left","right"]){
+      await page.locator('[data-camera-action="'+view+'"]').click();
+      await page.waitForTimeout(150);
+      await page.locator(".stage-wrap").screenshot({
+        path:"test-results/gillforge-"+stage+"-"+view+".png",animations:"disabled"
+      });
+    }
+  }
+});
