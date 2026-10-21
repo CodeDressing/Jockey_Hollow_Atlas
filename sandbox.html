@@ -242,6 +242,17 @@ body.mycosim-presenting #mycosim-presenter-prompt{font-size:1.15rem}
 #variantControls .variant-field{scroll-margin-top:130px}
 #variantControls .variant-field:focus-within{border-left:3px solid #e2c17c;padding-left:8px}
 </style>
+<style>
+/* CLEAR DECK: keep narrow scientific workspace within viewport without
+   clipping controls; wide science tables retain their own scroll wrappers. */
+@media (max-width:600px){
+  .workspace-row{grid-template-columns:minmax(0,1fr)}
+  .workspace-row > aside{min-width:0;width:100%;max-width:100%;box-sizing:border-box}
+  .workspace-row > aside > *{max-width:100%;box-sizing:border-box}
+  .qa-table-wrap{max-width:100%;overflow-x:auto}
+  #mycosim-quick-search{max-width:100%;box-sizing:border-box}
+}
+</style>
 </head>
 <body>
 <header>
