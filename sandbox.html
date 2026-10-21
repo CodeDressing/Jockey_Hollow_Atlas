@@ -242,6 +242,17 @@ body.mycosim-presenting #mycosim-presenter-prompt{font-size:1.15rem}
 #variantControls .variant-field{scroll-margin-top:130px}
 #variantControls .variant-field:focus-within{border-left:3px solid #e2c17c;padding-left:8px}
 </style>
+<style>
+/* CLEAR DECK: keep narrow scientific workspace within viewport without
+   clipping controls; wide science tables retain their own scroll wrappers. */
+@media (max-width:600px){
+  .workspace-row{grid-template-columns:minmax(0,1fr)}
+  .workspace-row > aside{min-width:0;width:100%;max-width:100%;box-sizing:border-box}
+  .workspace-row > aside > *{max-width:100%;box-sizing:border-box}
+  .qa-table-wrap{max-width:100%;overflow-x:auto}
+  #mycosim-quick-search{max-width:100%;box-sizing:border-box}
+}
+</style>
 </head>
 <body>
 <header>
@@ -249,6 +260,11 @@ body.mycosim-presenting #mycosim-presenter-prompt{font-size:1.15rem}
   <a class="back" href="./">← Back to Atlas</a>
 </header>
 <main>
+  <section id="mycosim-quick-search" role="search" aria-label="Search MycoSim content" style="padding:9px 12px;margin:0 0 10px;border:1px solid #49655c;background:#10221f;border-radius:11px;position:relative;z-index:8">
+    <label for="mycosim-query" style="font-weight:700;font-size:13px;color:#e9dab2">Search specimens, anatomy and lessons</label>
+    <input id="mycosim-query" type="search" autocomplete="off" placeholder="e.g. gills, spores, Turkey Tail, pileus" aria-controls="mycosim-search-results" aria-expanded="false" style="display:block;width:100%;box-sizing:border-box;margin-top:6px;padding:10px;background:#081614;color:#f5efe2;border:1px solid #66857a;border-radius:8px;font-size:14px">
+    <div id="mycosim-search-results" role="status" aria-live="polite" hidden style="padding:6px 0"></div>
+  </section>
   <div class="workspace-row">
   <section class="stage-wrap">
     <canvas id="stage" aria-label="Interactive 3D mushroom sandbox"></canvas>
@@ -484,8 +500,8 @@ window.MYCOSIM_BOOT_WATCHDOG=setTimeout(()=>{
 },5000);
 </script>
 <script type="module" src="mycosim/main.js?v=family-context-20261019"></script>
-<script type="module" src="mycosim/visual_builder.js?v=visual-studio-20261019"></script>
-<script type="module" src="mycosim/visual_builder_3d.js?v=studio-3d-sprint2-20261019"></script>
+
+
 <script type="module" src="mycosim/digestion_immune.js?v=phase9-svgclick-fix-20261016"></script>
 <script type="module" src="mycosim/anatomy3d.js?v=phase27-instances-20261018"></script>
 <script type="module" src="mycosim/molecular_process.js?v=phase11-v1-20261016"></script>
@@ -517,6 +533,53 @@ if(start)start.addEventListener("click",async()=>{
     if(info)info.textContent="Unable to initialize 3D scene: "+String(error?.message||error);
   }
 },{once:false});
+</script>
+<script>
+(() => {
+  const input=document.getElementById("mycosim-query");
+  const results=document.getElementById("mycosim-search-results");
+  const staticEntries=[
+    {label:"Specimen registry · Living Atlas",url:"./index.html",terms:"specimen accession collection atlas identification records"},
+    {label:"Turkey Tail · Trametes versicolor",url:"./trametes.html",terms:"turkey tail trametes hardwood log"},
+    {label:"Classified specimen laboratory",url:"./classified.html",terms:"classified confidential specimen"},
+    {label:"Mushroom body plans",url:"#modelGrid",terms:"agaricoid boletoid polypore mushroom morphology shape"},
+    {label:"Anatomy and morphology controls",url:"#variantControls",terms:"pileus cap gills lamella hymenophore stipe margin attachment anatomy"},
+    {label:"Spore measurements",url:"#sporeRows",terms:"spores spore print microscopy measurement"}
+  ];
+  const norm=s=>String(s||"").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"");
+  const entries=()=>{
+    const seen=new Set(staticEntries.map(e=>e.url));
+    const all=staticEntries.slice();
+    document.querySelectorAll("main h2[id],main h3[id],main section[id] > h2,main section[id] > h3").forEach(h=>{
+      const target=h.id?h: h.closest("section[id]");
+      if(!target)return;
+      const url="#"+target.id;
+      const label=(h.textContent||"").trim().replace(/\s+/g," ").slice(0,95);
+      if(label.length<4||seen.has(url)||target.closest("#mycosim-quick-search"))return;
+      seen.add(url);all.push({label,url,terms:label});
+    });
+    return all;
+  };
+  function render(){
+    const term=norm(input.value).trim();
+    results.replaceChildren();
+    if(!term){results.hidden=true;input.setAttribute("aria-expanded","false");return;}
+    const found=entries().filter(e=>norm(e.label+" "+e.terms).includes(term)).slice(0,9);
+    results.hidden=false;input.setAttribute("aria-expanded","true");
+    if(!found.length){results.textContent="No matching topic. Try a mushroom name or anatomy term.";return;}
+    found.forEach(entry=>{
+      const a=document.createElement("a");a.href=entry.url;a.textContent=entry.label+" →";
+      a.style.cssText="display:block;color:#f6dda0;padding:10px 7px;border-bottom:1px solid #354d48;text-decoration:underline";
+      a.addEventListener("click",()=>{results.hidden=true;input.setAttribute("aria-expanded","false");});
+      results.append(a);
+    });
+  }
+  input.addEventListener("input",render);
+  input.addEventListener("keydown",e=>{
+    if(e.key==="Escape"){input.value="";render();}
+    if(e.key==="Enter"){const first=results.querySelector("a");if(first){e.preventDefault();first.click();}}
+  });
+})();
 </script>
 </body>
 </html>
