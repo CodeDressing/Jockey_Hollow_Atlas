@@ -46,3 +46,29 @@ for(const width of [320,390,768,960,1280,1920]){
     await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2)).toBe(true);
   });
 }
+
+test("GUIDING LIGHT: learning companion follows original navigation without a second simulator",async({page})=>{
+  await page.goto(url);
+  await expect(page.locator("#mycosim-step-companion")).toBeVisible();
+  await expect(page.locator("#mycosim-step-title")).toContainText("Choose a mushroom family");
+  await expect(page.locator("#mycosim-companion-prev")).toBeDisabled();
+  await page.locator('[data-learner-mode="explore"]').click();
+  await page.locator("#mycosim-companion-next").click();
+  await expect(page.locator("#mycosim-step-title")).toContainText("growth stages");
+  await expect(page.locator('[data-jump-step="2"]')).toHaveAttribute("aria-current","step");
+  await page.locator("#mycosim-companion-prev").click();
+  await expect(page.locator("#mycosim-step-title")).toContainText("mushroom family");
+  await expect(page.locator("#stage")).toHaveCount(1);
+  await expect(page.locator("#myco-visual-builder")).toHaveCount(0);
+  await expect(page.locator("#mycosim-query")).toBeVisible();
+});
+for(const width of [320,390,768,960,1280,1920]){
+  test("GUIDING LIGHT: step companion remains usable at "+width,async({page})=>{
+    await page.setViewportSize({width,height:800});
+    await page.goto(url);
+    await expect(page.locator("#mycosim-step-companion")).toBeVisible();
+    await expect(page.locator("#mycosim-companion-next")).toBeVisible();
+    await expect(page.locator("#mycosim-step-count")).toHaveText("STEP 1 OF 5");
+    await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2)).toBe(true);
+  });
+}
