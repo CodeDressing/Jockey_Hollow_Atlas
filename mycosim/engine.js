@@ -866,7 +866,16 @@ export class MycoSimEngine{
       setScale("pileus_underside",Math.max(.88,expansion),capYScale,Math.max(.88,expansion));
       setScale("pileipellis",Math.max(.88,expansion),capYScale,Math.max(.88,expansion));
       setScale("pileus_context",expansion,1-collapse*.06,expansion);
-      setScale("hymenophore",expansion,Math.max(.20,p.lamella_exposure??1),expansion);
+      // Scale the gill group with the pileus, not by exposure about the scene origin.
+      // Scaling the entire assembly to 20% sent juvenile gills down near the ground.
+      // Juvenile exposure is instead applied to local plate depth during construction.
+      setScale("hymenophore",expansion,capYScale,expansion);
+      // Gill instances have absolute scene-space y coordinates whereas pileus
+      // vertices are local to the cap mesh. Align their vertical scaling pivot
+      // to the cap's y-position, not the world origin.
+      const gillAssembly=this.objects.get("hymenophore");
+      const capPivotY=this.objects.get("pileus_underside")?.position.y??2.48;
+      if(gillAssembly)gillAssembly.position.y+=capPivotY*(1-capYScale);
       setScale("stipe",1-waterLoss*.055,elong*(1-collapse*.08),1-waterLoss*.055);
       setScale("stipe_base",sid==="young"?.88:sid==="old"?1.04:1,1-collapse*.05,sid==="young"?.88:sid==="old"?1.04:1);
 
@@ -1581,7 +1590,7 @@ export class MycoSimEngine{
 
   _applyVisibility(){
     for(const [id,o] of this.objects){
-      o.visible=!this.hidden.has(id) && (!this.isolated || this.isolated===id || o.userData.parentId===this.isolated);
+      o.visible=!o.userData?.nonRenderingSelectionProxy && !this.hidden.has(id) && (!this.isolated || this.isolated===id || o.userData.parentId===this.isolated);
     }
   }
   isolate(id){this.isolated=id;this._applyVisibility();}
@@ -2920,8 +2929,14 @@ export class MycoSimEngine{
       "macro","stipe"
     );
     base.position.set(baseCenter.x,baseY-rootingExtra+.015,baseCenter.z);
+    // The continuous stipe geometry already forms the visible base. A separate
+    // flattened sphere produced an unconnected disk below the juvenile stipe.
+    // Retain this selectable base marker for camera and anatomy interactions,
+    // but do not render the redundant proxy as biological tissue.
     base.scale.set(1,.16,1);
+    base.visible=false;
     base.userData.continuousWithProfile=true;
+    base.userData.nonRenderingSelectionProxy=true;
 
     const context=this.variants.agaric_stipe_context||"solid";
     this._agaricStipeContextVisual(st,context,{height,top,bottom});
@@ -3670,7 +3685,12 @@ export class MycoSimEngine{
     const tierFactor=this.realismTier.id==="interactive"?.86:this.realismTier.id==="high"?1.08:1;
     const fullCount=Math.max(20,Math.round(spacingCount*tierFactor));
     const plateThickness={thin:.012,moderate:.022,broad:.034}[thicknessState]||.012;
-    const plateDepth={shallow:.15,moderate:.25,deep:.37}[depthState]||.25;
+    // Developmental exposure changes lamella depth, never the world-space
+    // height of their attachment to the pileus underside.
+    // Preserve a shallow juvenile hymenophore while keeping radial lamellae
+    // discernible from the underside in the teaching model.
+    const exposure=THREE.MathUtils.clamp(this.stageParam("lamella_exposure",1),.44,1);
+    const plateDepth=({shallow:.15,moderate:.25,deep:.37}[depthState]||.25)*exposure;
 
     const stipeRadius=.285;
     const attach=this._agaricGillAttachmentProfile(type);

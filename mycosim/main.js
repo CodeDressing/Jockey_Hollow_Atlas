@@ -1,3 +1,4 @@
+import * as THREE from "three";
 import {mountTrametesCurriculum} from "./trametes-education.js";
 import {MORPHOLOGY_PROFILES,PROFILE_BY_ID} from "./profiles.js?v=phase7-sprint5-20261003";
 import {MORPHOLOGY_VARIANTS,variantLabel,variantTeaching,puffballSubtype} from "./variants.js?v=phase7-sprint5-20261003";
@@ -805,7 +806,30 @@ try{
       poreHoleRadius:engine.pickables.find(o=>o.geometry?.userData?.model==="connected-boletoid-tube-face-v1")?.geometry?.userData?.holeRadius||null,
       rootingContinuous:engine.objects.get("stipe")?.userData?.continuousRootingBase===true,
       poreInstanceCount:engine.pickables.filter(o=>o.isInstancedMesh&&o.userData?.id==="hymenophore"&&o.geometry?.userData?.model==="connected-boletoid-tube-face-v1").reduce((n,o)=>n+o.count,0),
-      baseVisible:engine.objects.get("stipe_base")?.visible??null
+      baseVisible:engine.objects.get("stipe_base")?.visible??null,
+      agaricoidGillGeometry:(()=>{
+        if(engine.currentProfile?.id!=="agaricoid")return null;
+        const cap=engine.objects.get("pileus_underside");
+        const gills=engine.objects.get("hymenophore");
+        const full=gills?.children?.find(n=>n.isInstancedMesh&&n.userData?.structureType==="lamella");
+        if(!cap||!gills||!full)return null;
+        cap.updateWorldMatrix(true,false);
+        gills.updateWorldMatrix(true,true);
+        const capBounds=new THREE.Box3().setFromObject(cap);
+        const gillBounds=new THREE.Box3().setFromObject(gills);
+        return {
+          stage:engine.getDevelopmentalStage()?.id||null,
+          attachment:engine.getVariantState().agaric_gill_attachment,
+          capScaleY:cap.scale.y,
+          gillScaleY:gills.scale.y,
+          capBoundsY:[capBounds.min.y,capBounds.max.y],
+          gillBoundsY:[gillBounds.min.y,gillBounds.max.y],
+          centerGap:Math.abs((capBounds.min.y+capBounds.max.y)/2-(gillBounds.min.y+gillBounds.max.y)/2),
+          plateDepth:full.geometry.userData?.depth??null,
+          lamellae:full.count,
+          veilPresent:Boolean(engine.objects.get("veil_structure"))
+        };
+      })()
     }),
     move:action=>engine.navigateCamera(action)
   });
