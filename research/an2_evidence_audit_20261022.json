@@ -1,0 +1,1445 @@
+{
+  "title": "AN2 research specimen evidence inventory and fieldwork gaps",
+  "created_on": "2026-10-22",
+  "scope": [
+    "AN2-F1",
+    "AN2-F2",
+    "AN2-F3",
+    "AN2-F4",
+    "AN2-F5",
+    "AN2-F6",
+    "AN2-F7",
+    "AN2-F8",
+    "AN2-F13",
+    "AN2-F21",
+    "AN2-F25",
+    "AN2-F31",
+    "AN2-F32",
+    "AN2-F34",
+    "AN2-F36"
+  ],
+  "method": "Indexed GitHub photo metadata and source measurements only. Image contents have not been visually examined or taxonomically interpreted. Missing means absent from the inspected metadata sources, not proof the archive lacks it. No species/edibility inference.",
+  "source_files": [
+    "drive_data.js",
+    "supplemental_media.js",
+    "measurements_data.js"
+  ],
+  "records": [
+    {
+      "code": "AN2-F1",
+      "review_status": "metadata_only_not_image_reviewed",
+      "photo_counts": {
+        "Wild / field context": 5,
+        "Source macro / specimen": 2,
+        "Spore print / preparation": 0,
+        "Microscopy": 0
+      },
+      "photographs": [
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F1V6.HEIC",
+          "source_relpath": "AN2 2026/AN2-F1V6",
+          "drive_view": "https://drive.google.com/file/d/1B5RxZmsVoKB5sKa171JQ8qtjXyKzRrTS/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F1V5.HEIC",
+          "source_relpath": "AN2 2026/AN2-F1V5",
+          "drive_view": "https://drive.google.com/file/d/1zIS81bPJaArflrHbjvuL4mEr103-LYry/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F1V3.HEIC",
+          "source_relpath": "AN2 2026/AN2-F1V3",
+          "drive_view": "https://drive.google.com/file/d/1eCvcLZHYUS9hqgh0V870Ip8p8mlspJna/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F1V2.HEIC",
+          "source_relpath": "AN2 2026/AN2-F1V2",
+          "drive_view": "https://drive.google.com/file/d/1zP9UrpSFrs-esMKxA-SCdN4bpjQTsiVf/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F1.HEIC",
+          "source_relpath": "AN2 2026/AN2-F1",
+          "drive_view": "https://drive.google.com/file/d/1aBdIz1Vd_Q45PWMdlpemBfvhkAk1WlRG/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F1.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F1.JPG",
+          "drive_view": "https://drive.google.com/file/d/1f6-n7J8CeSXz_8JvNVT16_xO1SzkjUlz/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F1V2.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F1V2.JPG",
+          "drive_view": "https://drive.google.com/file/d/1aoCvQW_H6lGXfH0UTe1tmhbXN50xjFdE/view"
+        }
+      ],
+      "existing_measurements": [
+        {
+          "source": "Rutgers_Mycology_Measurements_Master.xlsx",
+          "source_id": "AN2 F1",
+          "kind": "structured_measurement",
+          "fields": {
+            "cap_diameter_cm": "4.6",
+            "stem_top_diameter_cm": "1.1",
+            "stem_middle_diameter_cm": "1.1",
+            "stem_base_diameter_cm": "1.1",
+            "stem_height_cm": "3.9",
+            "notes": "Stem diameter 1.1 cm throughout"
+          }
+        }
+      ],
+      "next_actions": [
+        "Photo category missing from indexed sources: Spore print / preparation",
+        "Photo category missing from indexed sources: Microscopy",
+        "Microscopic spore dimensions and sample count need verified measurement"
+      ],
+      "identification_status": "not_assessed",
+      "measurement_verification": "source_transcription_only"
+    },
+    {
+      "code": "AN2-F2",
+      "review_status": "metadata_only_not_image_reviewed",
+      "photo_counts": {
+        "Wild / field context": 0,
+        "Source macro / specimen": 7,
+        "Spore print / preparation": 0,
+        "Microscopy": 0
+      },
+      "photographs": [
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F2V6.HEIC",
+          "source_relpath": "AN2 2026/AN2-F2V6",
+          "drive_view": "https://drive.google.com/file/d/1NIhboK01Lm2q5ogGSVhCOIWRwYmPK-5v/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F2V5.HEIC",
+          "source_relpath": "AN2 2026/AN2-F2V5",
+          "drive_view": "https://drive.google.com/file/d/1PdTwnbqTH3jR6PC4pemLybuS--YwxQTK/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F2V4.HEIC",
+          "source_relpath": "AN2 2026/AN2-F2V4",
+          "drive_view": "https://drive.google.com/file/d/1HT2i2nUMiu-nSuTt1WRujZ3Ire5IaaTW/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F2V3.HEIC",
+          "source_relpath": "AN2 2026/AN2-F2V3",
+          "drive_view": "https://drive.google.com/file/d/1DrJNrzuDTn0gGG5DDSefjZ0Cigf8r1Pt/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F2.HEIC",
+          "source_relpath": "AN2 2026/AN2-F2",
+          "drive_view": "https://drive.google.com/file/d/1Y6u6OeQHtW6TmPG39pl3YNXuTxCH7mxx/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F2.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F2.JPG",
+          "drive_view": "https://drive.google.com/file/d/12E4JWRMu6-q2C-gXXXsK0XnQUZDS6nUV/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F2V2.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F2V2.JPG",
+          "drive_view": "https://drive.google.com/file/d/1xr4VtyGh1lE2xjv1uMJQWpYP0XkppfCu/view"
+        }
+      ],
+      "existing_measurements": [],
+      "next_actions": [
+        "Measurement needed: cap_diameter_cm",
+        "Measurement needed: stem_top_diameter_cm",
+        "Measurement needed: stem_middle_diameter_cm",
+        "Measurement needed: stem_base_diameter_cm",
+        "Measurement needed: stem_height_cm",
+        "Photo category missing from indexed sources: Wild / field context",
+        "Photo category missing from indexed sources: Spore print / preparation",
+        "Photo category missing from indexed sources: Microscopy",
+        "Microscopic spore dimensions and sample count need verified measurement"
+      ],
+      "identification_status": "not_assessed",
+      "measurement_verification": "source_transcription_only"
+    },
+    {
+      "code": "AN2-F3",
+      "review_status": "metadata_only_not_image_reviewed",
+      "photo_counts": {
+        "Wild / field context": 2,
+        "Source macro / specimen": 1,
+        "Spore print / preparation": 4,
+        "Microscopy": 11
+      },
+      "photographs": [
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F3V2W.HEIC",
+          "source_relpath": "AN2 2026/AN2-F3V2W",
+          "drive_view": "https://drive.google.com/file/d/1xTJsp9YNhCCpzMBpr4QpqrzTsQ_7an7d/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F3.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F3.JPG",
+          "drive_view": "https://drive.google.com/file/d/1js47xRNUCBrHYUPbEMKggkW5mHe-16by/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "AN2-F3SP.JPG",
+          "source_relpath": "AN2 lab additions/AN2-F3SP.JPG",
+          "drive_view": "https://drive.google.com/file/d/1tn5jp5MpHcr7mzh8JKJeQoBu0MSCAJxB/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F3 SPM (1).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (1).png",
+          "drive_view": "https://drive.google.com/file/d/1R6WWjnVbQyAUprd3PCn6q-gOwYdawFDp/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F3 SPM (2).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (2).png",
+          "drive_view": "https://drive.google.com/file/d/1s4wPAN8jiZzPzgFVzzddxkp3FhErqkxt/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F3 SPM (3).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (3).png",
+          "drive_view": "https://drive.google.com/file/d/1JvDyRWlXXzGqTsWtG_qQt8MZXo8475XH/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F3 SPM (4).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (4).png",
+          "drive_view": "https://drive.google.com/file/d/1cesuFBh0f9X9wB4Pqijd1R8P79VALYA8/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F3 SPM (5).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (5).png",
+          "drive_view": "https://drive.google.com/file/d/1ZI8qg-CL4rD-CdmHZmfGFGpADGMa2rdD/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F3 SPM (6).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (6).png",
+          "drive_view": "https://drive.google.com/file/d/1qeNWMs5Rb8wXUe1SzIujRz5Thui4SyYg/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F3 SPM (7).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (7).png",
+          "drive_view": "https://drive.google.com/file/d/1WlBZ54Ae987lHVElwkn7DUrqbKWxGSEy/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F3 SPM (8).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (8).png",
+          "drive_view": "https://drive.google.com/file/d/1HZa4I1ITezr86gkwTdQiwzF9Q7-4zSi0/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F3 SPM (9).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (9).png",
+          "drive_view": "https://drive.google.com/file/d/175byrKze6sNReBJnjnslFtTttoS9aAXd/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F3 SPM (10).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (10).png",
+          "drive_view": "https://drive.google.com/file/d/1QVGr4eTRw1Pym0-1HlUA3SEvduVg_SUv/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F3 SPM (11).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F3/AN2-F3 SPM (11).png",
+          "drive_view": "https://drive.google.com/file/d/1_CAm-LJHOlJhnLXigHUlaSomtPT2DMsC/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F3 field hymenophore underside 2026-10-03.jpg",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F3/AN2-F3 field hymenophore underside 2026-10-03.jpg",
+          "drive_view": "https://drive.google.com/file/d/1ZXuG2rSJ6UuQ-uk42sHiLSvIPlk9C58K/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "AN2-F3 spore print geometric pore pattern 01.jpg",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F3/AN2-F3 spore print geometric pore pattern 01.jpg",
+          "drive_view": "https://drive.google.com/file/d/1jzbDehu20akGMDFjFGHwOxqHyNqF_Fc6/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "AN2-F3 spore print geometric pore pattern 02.jpg",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F3/AN2-F3 spore print geometric pore pattern 02.jpg",
+          "drive_view": "https://drive.google.com/file/d/1GhUJNnQj9YsNbtW5L3RAhun0mjvlOrzp/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "AN2-F3 spore extraction slide black deposit.jpg",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F3/AN2-F3 spore extraction slide black deposit.jpg",
+          "drive_view": "https://drive.google.com/file/d/18UAnn0K8jnwTX12j3JyiP1UPGZHZxtgd/view"
+        }
+      ],
+      "existing_measurements": [
+        {
+          "source": "Rutgers_Mycology_Measurements_Master.xlsx",
+          "source_id": "AN2 F3 - Rep 1",
+          "kind": "structured_measurement",
+          "fields": {
+            "cap_diameter_cm": "9.5",
+            "stem_top_diameter_cm": "1",
+            "stem_middle_diameter_cm": "0.5",
+            "stem_base_diameter_cm": "0.6",
+            "stem_height_cm": "1.2",
+            "notes": "An additional 5.6 cm value was dictated after the standard five-field sequence; preserved as extra pending field confirmation."
+          }
+        },
+        {
+          "source": "Rutgers_Mycology_Measurements_Master.xlsx",
+          "source_id": "AN2 F3 - Rep 2",
+          "kind": "structured_measurement",
+          "fields": {
+            "cap_diameter_cm": "4.1",
+            "stem_top_diameter_cm": "0.6",
+            "stem_middle_diameter_cm": "0.6",
+            "stem_base_diameter_cm": "0.45",
+            "notes": "Later dictation. An additional 0.2 cm value was stated immediately after cap diameter but its field was not identified; height not stated."
+          }
+        },
+        {
+          "source": "AN2-F3 microscopy annotations — user-supplied calibrated fields, 2026-10-03",
+          "source_id": "AN2-F3 microscopy validated linear dataset",
+          "kind": "microscopy_measurement_summary",
+          "fields": {
+            "microscopy_measurement_count": "42 fully legible linear annotations",
+            "microscopy_range_um": "3.94–8.35",
+            "microscopy_mean_um": "6.06",
+            "microscopy_median_um": "6.03",
+            "microscopy_sample_sd_um": "1.03",
+            "measured_fields": "SPM (1): n=3; SPM (4): n=16; SPM (10): n=13; SPM (11): n=10",
+            "measurement_values_um": "5.59, 6.40, 7.85; 6.27, 8.35, 6.47, 7.42, 5.95, 5.48, 5.56, 5.19, 5.27, 7.14, 5.55, 7.40, 6.19, 5.76, 7.20, 6.46; 4.75, 5.46, 4.12, 5.39, 5.12, 5.43, 6.39, 4.27, 4.34, 5.70, 5.18, 6.89, 3.94; 6.52, 6.11, 6.34, 6.91, 5.81, 6.86, 6.96, 5.91, 7.58, 7.06",
+            "q_ratio": "Not calculated — annotations are not paired length × width measurements",
+            "notes": "One partially cropped measurement annotation in SPM (11) was excluded rather than inferred. Statistics use only fully legible on-image values."
+          }
+        },
+        {
+          "source": "AN2-F3 spore-print, extraction, and microscopy observations supplied 2026-10-03",
+          "source_id": "AN2-F3 spore morphology and print observations 2026-10-03",
+          "kind": "spore_morphology_observation",
+          "fields": {
+            "spore_deposit_color": "Black to very dark brown-black macroscopically",
+            "spore_print_pattern": "Dense organized geometric deposit reproducing the poroid hymenophore footprint",
+            "dominant_spore_shape": "Globose to subglobose",
+            "additional_spore_shape": "Broadly ellipsoid forms present",
+            "minority_projection": "Occasional crescentic to lunate profiles in projection",
+            "spore_wall_thickness_approx_um": "0.25",
+            "spore_wall_thickness_provenance": "User-reported laboratory microscopy observation; not independently re-measured from archived screenshots",
+            "interpretation_boundary": "Print geometry, pigmentation, spore shape, and wall observation are preserved as morphology/laboratory evidence and do not independently establish species identity"
+          }
+        }
+      ],
+      "next_actions": [],
+      "identification_status": "not_assessed",
+      "measurement_verification": "source_transcription_only"
+    },
+    {
+      "code": "AN2-F4",
+      "review_status": "metadata_only_not_image_reviewed",
+      "photo_counts": {
+        "Wild / field context": 0,
+        "Source macro / specimen": 3,
+        "Spore print / preparation": 0,
+        "Microscopy": 0
+      },
+      "photographs": [
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F4.HEIC",
+          "source_relpath": "AN2 2026/AN2-F4",
+          "drive_view": "https://drive.google.com/file/d/1_2tZiP2L1ngVnAXt-HCffEO1-bJf89hv/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F4.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F4.JPG",
+          "drive_view": "https://drive.google.com/file/d/1W1yTOEWIpoT38jXIrQCHRu8MaQXsex56/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F4V2.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F4V2.JPG",
+          "drive_view": "https://drive.google.com/file/d/1ALI9YAGVUmES5HaosuA_TDij2Obr1b8l/view"
+        }
+      ],
+      "existing_measurements": [],
+      "next_actions": [
+        "Measurement needed: cap_diameter_cm",
+        "Measurement needed: stem_top_diameter_cm",
+        "Measurement needed: stem_middle_diameter_cm",
+        "Measurement needed: stem_base_diameter_cm",
+        "Measurement needed: stem_height_cm",
+        "Photo category missing from indexed sources: Wild / field context",
+        "Photo category missing from indexed sources: Spore print / preparation",
+        "Photo category missing from indexed sources: Microscopy",
+        "Microscopic spore dimensions and sample count need verified measurement"
+      ],
+      "identification_status": "not_assessed",
+      "measurement_verification": "source_transcription_only"
+    },
+    {
+      "code": "AN2-F5",
+      "review_status": "metadata_only_not_image_reviewed",
+      "photo_counts": {
+        "Wild / field context": 6,
+        "Source macro / specimen": 2,
+        "Spore print / preparation": 0,
+        "Microscopy": 0
+      },
+      "photographs": [
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F5WV6.HEIC",
+          "source_relpath": "AN2 2026/AN2-F5WV6",
+          "drive_view": "https://drive.google.com/file/d/1C02plTHnGPxOFMvDjOj18YAQsE3M-21G/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F5WV5.HEIC",
+          "source_relpath": "AN2 2026/AN2-F5WV5",
+          "drive_view": "https://drive.google.com/file/d/1gE3pzQcI6AOZFS93nrbn8JMnAlz424PE/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F5WV4.HEIC",
+          "source_relpath": "AN2 2026/AN2-F5WV4",
+          "drive_view": "https://drive.google.com/file/d/1HXbH32Gv7wujNCiOOtBhSAzbtRU7QuAr/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F5WV3.HEIC",
+          "source_relpath": "AN2 2026/AN2-F5WV3",
+          "drive_view": "https://drive.google.com/file/d/1NVch1BwWjywGAn-8okuhqauIEcek8SSy/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F5WV2.HEIC",
+          "source_relpath": "AN2 2026/AN2-F5WV2",
+          "drive_view": "https://drive.google.com/file/d/13FVMeSXhBIFEaC31TLyHUpUAJoFlKfmZ/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F5WV1.HEIC",
+          "source_relpath": "AN2 2026/AN2-F5WV1",
+          "drive_view": "https://drive.google.com/file/d/1aWwDPqwVO3_Krs6fhM-EdjuYr3vWKMSc/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F5.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F5.JPG",
+          "drive_view": "https://drive.google.com/file/d/1DPHkwtounbGF1PMeBvSZjCWr0XopSSV9/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F5V2.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F5V2.JPG",
+          "drive_view": "https://drive.google.com/file/d/1Bpa2Fzgs4IWTolAGqD7GErU9lWG-Lear/view"
+        }
+      ],
+      "existing_measurements": [
+        {
+          "source": "Rutgers_Mycology_Measurements_Master.xlsx",
+          "source_id": "AN2 F5",
+          "kind": "structured_measurement",
+          "fields": {
+            "cap_diameter_cm": "9.6",
+            "stem_top_diameter_cm": "1.1",
+            "stem_middle_diameter_cm": "1",
+            "stem_base_diameter_cm": "1.2",
+            "stem_height_cm": "8.8"
+          }
+        }
+      ],
+      "next_actions": [
+        "Photo category missing from indexed sources: Spore print / preparation",
+        "Photo category missing from indexed sources: Microscopy",
+        "Microscopic spore dimensions and sample count need verified measurement"
+      ],
+      "identification_status": "not_assessed",
+      "measurement_verification": "source_transcription_only"
+    },
+    {
+      "code": "AN2-F6",
+      "review_status": "metadata_only_not_image_reviewed",
+      "photo_counts": {
+        "Wild / field context": 0,
+        "Source macro / specimen": 8,
+        "Spore print / preparation": 1,
+        "Microscopy": 0
+      },
+      "photographs": [
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F6V6.HEIC",
+          "source_relpath": "AN2 2026/AN2-F6V6",
+          "drive_view": "https://drive.google.com/file/d/1KchkeiArpc5ekne6ILP5d-h-buKdNufI/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F6V5.HEIC",
+          "source_relpath": "AN2 2026/AN2-F6V5",
+          "drive_view": "https://drive.google.com/file/d/1G0D4tpqRJzR05RNAh9I_oVrcdpfAp9MC/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F6V4.HEIC",
+          "source_relpath": "AN2 2026/AN2-F6V4",
+          "drive_view": "https://drive.google.com/file/d/1f8qFLr7mn7GBuBr1HkGulDOhO_1bGqFS/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F6V3.HEIC",
+          "source_relpath": "AN2 2026/AN2-F6V3",
+          "drive_view": "https://drive.google.com/file/d/1hLRjFbeH5qtqbo94KVfX5sHh-w_dyX8w/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F6V2.HEIC",
+          "source_relpath": "AN2 2026/AN2-F6V2",
+          "drive_view": "https://drive.google.com/file/d/1FEJYuLmGh-E3t0b6Nm5M5rTLJY73725P/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F6V1.HEIC",
+          "source_relpath": "AN2 2026/AN2-F6V1",
+          "drive_view": "https://drive.google.com/file/d/1Uzw8capGc1I4dijkGM5W_T3y3Tk5Lg9d/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F6.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F6.JPG",
+          "drive_view": "https://drive.google.com/file/d/17Mfq83caaha1C1xqUqsp8qfp1vG8PKKx/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F6V2.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F6V2.JPG",
+          "drive_view": "https://drive.google.com/file/d/1ADkgP0Hb95WaM7JDhRbhei3hQh6lWicV/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "AN2-F6SP.JPG",
+          "source_relpath": "AN2 lab additions/AN2-F6SP.JPG",
+          "drive_view": "https://drive.google.com/file/d/1qN99QPdNFLd84kkw29sdssdvSYyEX1lt/view"
+        }
+      ],
+      "existing_measurements": [],
+      "next_actions": [
+        "Measurement needed: cap_diameter_cm",
+        "Measurement needed: stem_top_diameter_cm",
+        "Measurement needed: stem_middle_diameter_cm",
+        "Measurement needed: stem_base_diameter_cm",
+        "Measurement needed: stem_height_cm",
+        "Photo category missing from indexed sources: Wild / field context",
+        "Photo category missing from indexed sources: Microscopy",
+        "Microscopic spore dimensions and sample count need verified measurement"
+      ],
+      "identification_status": "not_assessed",
+      "measurement_verification": "source_transcription_only"
+    },
+    {
+      "code": "AN2-F7",
+      "review_status": "metadata_only_not_image_reviewed",
+      "photo_counts": {
+        "Wild / field context": 2,
+        "Source macro / specimen": 3,
+        "Spore print / preparation": 4,
+        "Microscopy": 11
+      },
+      "photographs": [
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F7WV2.HEIC",
+          "source_relpath": "AN2 2026/AN2-F7WV2",
+          "drive_view": "https://drive.google.com/file/d/1gICT3Z8zDJng9oY36nwkg-KmwY2D--il/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F7WV1.HEIC",
+          "source_relpath": "AN2 2026/AN2-F7WV1",
+          "drive_view": "https://drive.google.com/file/d/1v51IFzpwZKdnLKUB60KwoMV4-RyDVbLw/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F7.HEIC",
+          "source_relpath": "AN2 2026/AN2-F7",
+          "drive_view": "https://drive.google.com/file/d/1kyVMYcp3CiemAhnqqBv-aaOm3SPQfH3l/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F7.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F7.JPG",
+          "drive_view": "https://drive.google.com/file/d/1IaEiwNEOSva_J1S6z1zQZtFm6JAVDyBn/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F7V2.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F7V2.JPG",
+          "drive_view": "https://drive.google.com/file/d/1bVKXop7SeKbpEzy-KWIAYIjXkUEvHJvt/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F7 SPM (1).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (1).png",
+          "drive_view": "https://drive.google.com/file/d/1fTOu4VmnIxtmGmA_LAphcmp3E50fQxMl/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F7 SPM (2).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (2).png",
+          "drive_view": "https://drive.google.com/file/d/11OMyflPNisDvlfiKBu7IK2KR1uKl1jug/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F7 SPM (3).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (3).png",
+          "drive_view": "https://drive.google.com/file/d/1uEJTgt7_7IYxTBjxQK6f5G1fuQOwPrWJ/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F7 SPM (4).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (4).png",
+          "drive_view": "https://drive.google.com/file/d/1R268pfZVeE7u6fW_yQcIrfOuAIvMVtj3/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F7 SPM (5).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (5).png",
+          "drive_view": "https://drive.google.com/file/d/1ivmbvrNPSv9VoW_FVNWnpwVJZYiqIlh2/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F7 SPM (6).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (6).png",
+          "drive_view": "https://drive.google.com/file/d/1yf73PCHSh1EXQW2jF_jKLEPaGVeIfRI9/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F7 SPM (7).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (7).png",
+          "drive_view": "https://drive.google.com/file/d/1CijRzF7SshFSEMbEGjAHzXEC1zq1zvRM/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F7 SPM (8).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (8).png",
+          "drive_view": "https://drive.google.com/file/d/1BzQxWBbjXwXwMCJe3uYHXM9rL_XAu5UI/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F7 SPM (9).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (9).png",
+          "drive_view": "https://drive.google.com/file/d/1mrZlNr-W9Fz4T8ynKDtRTMBaSVmxDco7/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F7 SPM (10).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (10).png",
+          "drive_view": "https://drive.google.com/file/d/1uscV3uJAPj1oPEwNamajV9ZvEzJ6p0hw/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F7 SPM (11).png",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F7/AN2-F7 SPM (11).png",
+          "drive_view": "https://drive.google.com/file/d/1Y21EhbdJumQZiB8sdUJAZPBh2ZR_-aCt/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "AN2-F7 prep macro 1.jpg",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F7/AN2-F7 prep macro 1.jpg",
+          "drive_view": "https://drive.google.com/file/d/1CxtKblkOPYLYFJBz1k3ZExntHrgBH08l/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "AN2-F7 prep macro 2.jpg",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F7/AN2-F7 prep macro 2.jpg",
+          "drive_view": "https://drive.google.com/file/d/1586vw71M1jjNw7QNtjMOtyb7LaDyxv4E/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "AN2-F7 prep macro 3.jpg",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F7/AN2-F7 prep macro 3.jpg",
+          "drive_view": "https://drive.google.com/file/d/15O7pJ2z2YECVfLbiI3-f8I6b55b9q3OF/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "AN2-F7 prep microscope stage.jpg",
+          "source_relpath": "Jockey_Hollow_Atlas/AN2-F7/AN2-F7 prep microscope stage.jpg",
+          "drive_view": "https://drive.google.com/file/d/1MtYLXhv184Ab0pek4q3vOkmtnz4mvVFa/view"
+        }
+      ],
+      "existing_measurements": [
+        {
+          "source": "Rutgers_Mycology_Measurements_Master.xlsx",
+          "source_id": "AN2 F7",
+          "kind": "structured_measurement",
+          "fields": {
+            "cap_diameter_cm": "5.1",
+            "stem_top_diameter_cm": "1.9",
+            "stem_middle_diameter_cm": "1.5",
+            "stem_base_diameter_cm": "1",
+            "notes": "Height not stated"
+          }
+        }
+      ],
+      "next_actions": [
+        "Measurement needed: stem_height_cm",
+        "Microscopic spore dimensions and sample count need verified measurement"
+      ],
+      "identification_status": "not_assessed",
+      "measurement_verification": "source_transcription_only"
+    },
+    {
+      "code": "AN2-F8",
+      "review_status": "metadata_only_not_image_reviewed",
+      "photo_counts": {
+        "Wild / field context": 0,
+        "Source macro / specimen": 10,
+        "Spore print / preparation": 1,
+        "Microscopy": 0
+      },
+      "photographs": [
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F8V9.HEIC",
+          "source_relpath": "AN2 2026/AN2-F8V9",
+          "drive_view": "https://drive.google.com/file/d/1cAq7XUgEgz5bYlBbIRdIPivnzHMim1la/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F8V8.HEIC",
+          "source_relpath": "AN2 2026/AN2-F8V8",
+          "drive_view": "https://drive.google.com/file/d/19YCY2WwSapncVPPncpk5wU7f_ab3TbH9/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F8V7.HEIC",
+          "source_relpath": "AN2 2026/AN2-F8V7",
+          "drive_view": "https://drive.google.com/file/d/1fA2NlGO6M67YQZxAeyVqE2P9nEofgUOd/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F8V5.HEIC",
+          "source_relpath": "AN2 2026/AN2-F8V5",
+          "drive_view": "https://drive.google.com/file/d/1k9S90Q-ZnCdmSa991dMv_PjUxAJKG_WZ/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F8V4.HEIC",
+          "source_relpath": "AN2 2026/AN2-F8V4",
+          "drive_view": "https://drive.google.com/file/d/1KYN5Qn3pQMxx60fLdsj8iOPaU4uhm4_p/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F8V3.HEIC",
+          "source_relpath": "AN2 2026/AN2-F8V3",
+          "drive_view": "https://drive.google.com/file/d/1f4kFqekr5juLniG8eOCWB-_Y5MC8N_mi/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F8V2.HEIC",
+          "source_relpath": "AN2 2026/AN2-F8V2",
+          "drive_view": "https://drive.google.com/file/d/1jdHsq07fiM6E1uenQGOAjKJdQlkYSD5y/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F8V1.HEIC",
+          "source_relpath": "AN2 2026/AN2-F8V1",
+          "drive_view": "https://drive.google.com/file/d/1-9Y-1PdyXPQFeW5d5vUAhIKhRIKMvSEk/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F8.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F8.JPG",
+          "drive_view": "https://drive.google.com/file/d/1Qqg7KNVKbNUG7oLL_p53HPalaa5vceYc/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F8V2.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F8V2.JPG",
+          "drive_view": "https://drive.google.com/file/d/1kV3ZCbw1Ct0uKEPJnERNMCGrU10LvCQg/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "AN2-F8SP.JPG",
+          "source_relpath": "AN2 lab additions/AN2-F8SP.JPG",
+          "drive_view": "https://drive.google.com/file/d/16ynn2bPt3Yup07dZBOLr43CnbRxUTypP/view"
+        }
+      ],
+      "existing_measurements": [],
+      "next_actions": [
+        "Measurement needed: cap_diameter_cm",
+        "Measurement needed: stem_top_diameter_cm",
+        "Measurement needed: stem_middle_diameter_cm",
+        "Measurement needed: stem_base_diameter_cm",
+        "Measurement needed: stem_height_cm",
+        "Photo category missing from indexed sources: Wild / field context",
+        "Photo category missing from indexed sources: Microscopy",
+        "Microscopic spore dimensions and sample count need verified measurement"
+      ],
+      "identification_status": "not_assessed",
+      "measurement_verification": "source_transcription_only"
+    },
+    {
+      "code": "AN2-F13",
+      "review_status": "metadata_only_not_image_reviewed",
+      "photo_counts": {
+        "Wild / field context": 0,
+        "Source macro / specimen": 3,
+        "Spore print / preparation": 1,
+        "Microscopy": 0
+      },
+      "photographs": [
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F13-LABEL.JPG",
+          "source_relpath": "AN2 verified lab views/AN2-F13-LABEL.JPG",
+          "drive_view": "https://drive.google.com/file/d/15Ip4yxROlMZI1bIzRrqhuhcUWuYTYtGA/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F13V2.JPG",
+          "source_relpath": "AN2 verified lab views/AN2-F13V2.JPG",
+          "drive_view": "https://drive.google.com/file/d/1oUzziduVSXC19GGH4HXo0hzICU1DRNTQ/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F13V3.JPG",
+          "source_relpath": "AN2 verified lab views/AN2-F13V3.JPG",
+          "drive_view": "https://drive.google.com/file/d/17A9TeQj-JejrLNCvBrbHN9nFpJ1ReV_S/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "AN2-F13.JPG",
+          "source_relpath": "AN2 lab additions/AN2-F13.JPG",
+          "drive_view": "https://drive.google.com/file/d/17bYluAWMThymL9eQ1eyHeDrVcLcTQveM/view"
+        }
+      ],
+      "existing_measurements": [
+        {
+          "source": "Rutgers_Mycology_Measurements_Master.xlsx",
+          "source_id": "AN2 F13",
+          "kind": "structured_measurement",
+          "fields": {
+            "cap_diameter_cm": "6.5",
+            "notes": "No visible stipe"
+          }
+        }
+      ],
+      "next_actions": [
+        "Measurement needed: stem_top_diameter_cm",
+        "Measurement needed: stem_middle_diameter_cm",
+        "Measurement needed: stem_base_diameter_cm",
+        "Measurement needed: stem_height_cm",
+        "Photo category missing from indexed sources: Wild / field context",
+        "Photo category missing from indexed sources: Microscopy",
+        "Microscopic spore dimensions and sample count need verified measurement"
+      ],
+      "identification_status": "not_assessed",
+      "measurement_verification": "source_transcription_only"
+    },
+    {
+      "code": "AN2-F21",
+      "review_status": "metadata_only_not_image_reviewed",
+      "photo_counts": {
+        "Wild / field context": 0,
+        "Source macro / specimen": 2,
+        "Spore print / preparation": 1,
+        "Microscopy": 0
+      },
+      "photographs": [
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F21.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F21.JPG",
+          "drive_view": "https://drive.google.com/file/d/13jTaYWZEdjSA6knsWS1rucmx50Fnjz4u/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F21V2.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F21V2.JPG",
+          "drive_view": "https://drive.google.com/file/d/18TGjfw67tRTY5462QCps84NkoKqGh8MU/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "AN2-F21 SPOREPRINT.JPG",
+          "source_relpath": "AN2 lab additions/AN2-F21 SPOREPRINT.JPG",
+          "drive_view": "https://drive.google.com/file/d/1-HhIR9lO7mCkWz7hHwoDMv_V0yVnZ0v3/view"
+        }
+      ],
+      "existing_measurements": [],
+      "next_actions": [
+        "Measurement needed: cap_diameter_cm",
+        "Measurement needed: stem_top_diameter_cm",
+        "Measurement needed: stem_middle_diameter_cm",
+        "Measurement needed: stem_base_diameter_cm",
+        "Measurement needed: stem_height_cm",
+        "Photo category missing from indexed sources: Wild / field context",
+        "Photo category missing from indexed sources: Microscopy",
+        "Microscopic spore dimensions and sample count need verified measurement"
+      ],
+      "identification_status": "not_assessed",
+      "measurement_verification": "source_transcription_only"
+    },
+    {
+      "code": "AN2-F25",
+      "review_status": "metadata_only_not_image_reviewed",
+      "photo_counts": {
+        "Wild / field context": 2,
+        "Source macro / specimen": 6,
+        "Spore print / preparation": 2,
+        "Microscopy": 7
+      },
+      "photographs": [
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F25.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F25.JPG",
+          "drive_view": "https://drive.google.com/file/d/1a9C_thysm1imcCtnBQzYxJN1U0p3-bfi/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F25V2.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F25V2.JPG",
+          "drive_view": "https://drive.google.com/file/d/1iOKsZgmuFvKNObzMcgXLRxG5t9Ss8s5V/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F25V3.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F25V3.JPG",
+          "drive_view": "https://drive.google.com/file/d/167sACExBXqztTwnJ-E1mraYuExvsnMZO/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F25V4.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F25V4.JPG",
+          "drive_view": "https://drive.google.com/file/d/1OSXs2S_MGUC5YiEnw5ULZyUCvlu3SrPL/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F25 SPMV1.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV1.png",
+          "drive_view": "https://drive.google.com/file/d/1b-j1Lv1GzMfJqJd3boGg3OgC6MoYJh3u/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F25 SPMV2.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV2.png",
+          "drive_view": "https://drive.google.com/file/d/1Nc4Nn36605NhMoMr_ACKpYIojhDYcjJj/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F25 SPMV3.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV3.png",
+          "drive_view": "https://drive.google.com/file/d/1eOqJOi4Sq1DDcz2xydGeRF3gsxkXm9pD/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F25 SPMV4.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV4.png",
+          "drive_view": "https://drive.google.com/file/d/1jB52S-PsdjYNoYla87ZfXugPpQFNFb8q/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F25 SPMV5.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV5.png",
+          "drive_view": "https://drive.google.com/file/d/1K35DlKEjfBhkLSmTJIn8WX3U0QjBogMZ/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F25 SPMV6.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV6.png",
+          "drive_view": "https://drive.google.com/file/d/1ANOXo_OO5pq8wHU44dSSFfbieXVenihA/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F25 SPMV7.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV7.png",
+          "drive_view": "https://drive.google.com/file/d/1LJ2xKTIKRw9kyXpvB2UAjyKafe548Ntw/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "AN2-25SP.JPG",
+          "source_relpath": "AN2 lab additions/AN2-25SP.JPG",
+          "drive_view": "https://drive.google.com/file/d/1f-qbDOoqwQe8qaOWY1IRCj4fEzs7loXx/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "AN2-F25SP.JPG",
+          "source_relpath": "AN2 lab additions/AN2-F25SP.JPG",
+          "drive_view": "https://drive.google.com/file/d/16x_mrY3-geK1LqGvQBEAAUODHen_j4VU/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "IMG_6121.jpg",
+          "source_relpath": "AN2 wild additions/IMG_6121.jpg",
+          "drive_view": "https://drive.google.com/file/d/16beYprEoK2yN8boQNmG4hh7qWLIqsQXU/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "IMG_6123.jpg",
+          "source_relpath": "AN2 wild additions/IMG_6123.jpg",
+          "drive_view": "https://drive.google.com/file/d/1xDLMzJF-lLWamkGilypbADxbuZjTBW_u/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "IMG_6124.jpg",
+          "source_relpath": "AN2 wild additions/IMG_6124.jpg",
+          "drive_view": "https://drive.google.com/file/d/11mv8Gd6WSYIq2xgPHiDd9_kzhitg64fc/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "IMG_6125.jpg",
+          "source_relpath": "AN2 wild additions/IMG_6125.jpg",
+          "drive_view": "https://drive.google.com/file/d/1oUCN_wtWLri1Jah_hDgv-a4ZJOnM2j00/view"
+        }
+      ],
+      "existing_measurements": [],
+      "next_actions": [
+        "Measurement needed: cap_diameter_cm",
+        "Measurement needed: stem_top_diameter_cm",
+        "Measurement needed: stem_middle_diameter_cm",
+        "Measurement needed: stem_base_diameter_cm",
+        "Measurement needed: stem_height_cm",
+        "Microscopic spore dimensions and sample count need verified measurement"
+      ],
+      "identification_status": "not_assessed",
+      "measurement_verification": "source_transcription_only"
+    },
+    {
+      "code": "AN2-F31",
+      "review_status": "metadata_only_not_image_reviewed",
+      "photo_counts": {
+        "Wild / field context": 0,
+        "Source macro / specimen": 2,
+        "Spore print / preparation": 2,
+        "Microscopy": 0
+      },
+      "photographs": [
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F31.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F31.JPG",
+          "drive_view": "https://drive.google.com/file/d/1ZDOocbSLUkLZmEqVnkQhNAcT5GTWV2d9/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F31V2.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F31V2.JPG",
+          "drive_view": "https://drive.google.com/file/d/10DCEtw-NwEIVtmVjkOU4TyxZonNPkBQU/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "AN2-F31SP.JPG",
+          "source_relpath": "AN2 lab additions/AN2-F31SP.JPG",
+          "drive_view": "https://drive.google.com/file/d/1sloxtCSJtqR_7dZgRU74aAeFSQlmKa7d/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "AN2-F31SPV2.JPG",
+          "source_relpath": "AN2 lab additions/AN2-F31SPV2.JPG",
+          "drive_view": "https://drive.google.com/file/d/1aTTWus3ca4Fu6EEiVUsDOLySiEcfPMnd/view"
+        }
+      ],
+      "existing_measurements": [],
+      "next_actions": [
+        "Measurement needed: cap_diameter_cm",
+        "Measurement needed: stem_top_diameter_cm",
+        "Measurement needed: stem_middle_diameter_cm",
+        "Measurement needed: stem_base_diameter_cm",
+        "Measurement needed: stem_height_cm",
+        "Photo category missing from indexed sources: Wild / field context",
+        "Photo category missing from indexed sources: Microscopy",
+        "Microscopic spore dimensions and sample count need verified measurement"
+      ],
+      "identification_status": "not_assessed",
+      "measurement_verification": "source_transcription_only"
+    },
+    {
+      "code": "AN2-F32",
+      "review_status": "metadata_only_not_image_reviewed",
+      "photo_counts": {
+        "Wild / field context": 6,
+        "Source macro / specimen": 3,
+        "Spore print / preparation": 1,
+        "Microscopy": 7
+      },
+      "photographs": [
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F32.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F32.JPG",
+          "drive_view": "https://drive.google.com/file/d/13tuYLpIp7mQ5SHxzxPALcv6IP61hJM5l/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F32V2.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F32V2.JPG",
+          "drive_view": "https://drive.google.com/file/d/172ZdfVqvePBt3jprDpbtu6HORUbMCsE5/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F32V3.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F32V3.JPG",
+          "drive_view": "https://drive.google.com/file/d/1mUlu2J-H5yYSo6xXZSWLc_lQbV2pCiQf/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "AN2-F32SP.JPG",
+          "source_relpath": "AN2 lab additions/AN2-F32SP.JPG",
+          "drive_view": "https://drive.google.com/file/d/1mJjbwtA44gPVKMiTL1U-7yIyZHL32ijT/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN3-F32 SPM (1).png",
+          "source_relpath": "AN2 lab additions/AN3-F32 SPM (1).png",
+          "drive_view": "https://drive.google.com/file/d/17b0HlxBC8-NBoqP-LNgitkdpVyzjVIRw/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN3-F32 SPM (2).png",
+          "source_relpath": "AN2 lab additions/AN3-F32 SPM (2).png",
+          "drive_view": "https://drive.google.com/file/d/1nA6tBcdkaoi3s2reOlgJ7P-YEc-Y8hgZ/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN3-F32 SPM (3).png",
+          "source_relpath": "AN2 lab additions/AN3-F32 SPM (3).png",
+          "drive_view": "https://drive.google.com/file/d/1FMpZPQmY23gWs4gFsUwHb5DFA2jAxfoO/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN3-F32 SPM (4).png",
+          "source_relpath": "AN2 lab additions/AN3-F32 SPM (4).png",
+          "drive_view": "https://drive.google.com/file/d/1vOS_1QfkJGZMrzF-59WPzWN-cBC4HKaZ/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN3-F32 SPM (5).png",
+          "source_relpath": "AN2 lab additions/AN3-F32 SPM (5).png",
+          "drive_view": "https://drive.google.com/file/d/1OcoKYnNQUgHHgyfaqrk3wz_Ca-HgHFkw/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN3-F32 SPM (6).png",
+          "source_relpath": "AN2 lab additions/AN3-F32 SPM (6).png",
+          "drive_view": "https://drive.google.com/file/d/1itx4jtKuUbLC_3qe90qFUBmolLDik40X/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN3-F32 SPM (7).png",
+          "source_relpath": "AN2 lab additions/AN3-F32 SPM (7).png",
+          "drive_view": "https://drive.google.com/file/d/1_lzUqPDJoZe46qL-bY5f1xBcIq7IlA1P/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F32 field (1).jpg",
+          "source_relpath": "AN2-F34/AN2-F34 field (1).jpg",
+          "drive_view": "https://drive.google.com/file/d/1-bqJUEDUFXBG7A8-rl7b5wAtDCpmdwdX/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F32 field (2).jpg",
+          "source_relpath": "AN2-F34/AN2-F34 field (2).jpg",
+          "drive_view": "https://drive.google.com/file/d/1_cN0zrzIsqQTCQ6WSZvWSYQ-3jotjoBN/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F32 field (3).jpg",
+          "source_relpath": "AN2-F34/AN2-F34 field (3).jpg",
+          "drive_view": "https://drive.google.com/file/d/1IY40SDxGxPJuprs9l39yu9DsDS3yor8m/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F32 field (4).jpg",
+          "source_relpath": "AN2-F34/AN2-F34 field (4).jpg",
+          "drive_view": "https://drive.google.com/file/d/19BlUW31SA6kNaiWqNFe9X_7hQqKYqDcX/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F32 field (5).jpg",
+          "source_relpath": "AN2-F34/AN2-F34 field (5).jpg",
+          "drive_view": "https://drive.google.com/file/d/1uEAuBPXDV1FzMBtNW0OVNlKnKWuMDnVJ/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F32 field (6).jpg",
+          "source_relpath": "AN2-F34/AN2-F34 field (6).jpg",
+          "drive_view": "https://drive.google.com/file/d/105GKaiOArtwaSLlmYa6sve0In1l7tGzY/view"
+        }
+      ],
+      "existing_measurements": [],
+      "next_actions": [
+        "Measurement needed: cap_diameter_cm",
+        "Measurement needed: stem_top_diameter_cm",
+        "Measurement needed: stem_middle_diameter_cm",
+        "Measurement needed: stem_base_diameter_cm",
+        "Measurement needed: stem_height_cm",
+        "Microscopic spore dimensions and sample count need verified measurement"
+      ],
+      "identification_status": "not_assessed",
+      "measurement_verification": "source_transcription_only"
+    },
+    {
+      "code": "AN2-F34",
+      "review_status": "metadata_only_not_image_reviewed",
+      "photo_counts": {
+        "Wild / field context": 3,
+        "Source macro / specimen": 2,
+        "Spore print / preparation": 3,
+        "Microscopy": 5
+      },
+      "photographs": [
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F34.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F34.JPG",
+          "drive_view": "https://drive.google.com/file/d/1_rPh5uAefNWjGR0al7TwYMOxF93hcrXD/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F34V2.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F34V2.JPG",
+          "drive_view": "https://drive.google.com/file/d/1WZxr3LHFuwrprt_dQVHjPY70y1Tdx8OD/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "IMG_2026-09-24-09-15-25-442.jpg",
+          "source_relpath": "Rutgers_MycoScope/AN2-F34/IMG_2026-09-24-09-15-25-442.jpg",
+          "drive_view": "https://drive.google.com/file/d/1haplMvTMozjTc60AIYV0omBzbVkAczjH/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "IMG_2026-09-24-09-15-20-482.jpg",
+          "source_relpath": "Rutgers_MycoScope/AN2-F34/IMG_2026-09-24-09-15-20-482.jpg",
+          "drive_view": "https://drive.google.com/file/d/1Yj0NVaBeLlx-W45CPSH-6-5qvS3Iq5G7/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F34 SPMV1.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F34/AN2-F34 SPMV1.png",
+          "drive_view": "https://drive.google.com/file/d/1HFjrUrh2-17M41NbonZCQBCFCKkI6tP5/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F34 SPMV2.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F34/AN2-F34 SPMV2.png",
+          "drive_view": "https://drive.google.com/file/d/1pK2BCEf7y7vfhMTUBOcXuC978jjh_vt3/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F34 SPMV3.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F34/AN2-F34 SPMV3.png",
+          "drive_view": "https://drive.google.com/file/d/1pCgETwxhu4G5PCVaGWl-0BJzZoC0-lya/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F34 SPMV4.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F34/AN2-F34 SPMV4.png",
+          "drive_view": "https://drive.google.com/file/d/1fqX4xsd3Sswn38liUyaWfezGtPmMecHS/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F34 SPMV5.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F34/AN2-F34 SPMV5.png",
+          "drive_view": "https://drive.google.com/file/d/1eZnI3bf3sWC-gJ0nJRREXfixwJnUcuRx/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "AN2-F34SP.JPG",
+          "source_relpath": "AN2 lab additions/AN2-F34SP.JPG",
+          "drive_view": "https://drive.google.com/file/d/1qQ-Ta4K4rAyUURRrxEqelDWi1sQptMQh/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "IMG_6152.jpg",
+          "source_relpath": "AN2 wild additions/IMG_6152.jpg",
+          "drive_view": "https://drive.google.com/file/d/13FQZ4rPGlZedyiQ88zYmm5xUcGgOvFEr/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "IMG_6153.jpg",
+          "source_relpath": "AN2 wild additions/IMG_6153.jpg",
+          "drive_view": "https://drive.google.com/file/d/1V__CLZ2FVR_6oHJlQMa6VIRWU9c2NqTw/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "IMG_6154.jpg",
+          "source_relpath": "AN2 wild additions/IMG_6154.jpg",
+          "drive_view": "https://drive.google.com/file/d/1O9DkJTauERBEgqwFN6SCulq-jpcuh8Fm/view"
+        }
+      ],
+      "existing_measurements": [],
+      "next_actions": [
+        "Measurement needed: cap_diameter_cm",
+        "Measurement needed: stem_top_diameter_cm",
+        "Measurement needed: stem_middle_diameter_cm",
+        "Measurement needed: stem_base_diameter_cm",
+        "Measurement needed: stem_height_cm",
+        "Microscopic spore dimensions and sample count need verified measurement"
+      ],
+      "identification_status": "not_assessed",
+      "measurement_verification": "source_transcription_only"
+    },
+    {
+      "code": "AN2-F36",
+      "review_status": "metadata_only_not_image_reviewed",
+      "photo_counts": {
+        "Wild / field context": 6,
+        "Source macro / specimen": 2,
+        "Spore print / preparation": 3,
+        "Microscopy": 9
+      },
+      "photographs": [
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F36.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F36.JPG",
+          "drive_view": "https://drive.google.com/file/d/1k4PPgw8oBhHzx_msm3J-ar1CyZ5CUj84/view"
+        },
+        {
+          "category": "Source macro / specimen",
+          "filename": "AN2-F36V2.JPG",
+          "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F36V2.JPG",
+          "drive_view": "https://drive.google.com/file/d/1m2JRGkUjsz3guexow-W_hGGgWaDfqlSg/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "IMG_2026-09-25-13-57-23-196.jpg",
+          "source_relpath": "Rutgers_MycoScope/AN2-F36/IMG_2026-09-25-13-57-23-196.jpg",
+          "drive_view": "https://drive.google.com/file/d/1eyK5XFZFD8bzwpiai5vZXokepunUCkb7/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "IMG_2026-09-25-13-57-18-789.jpg",
+          "source_relpath": "Rutgers_MycoScope/AN2-F36/IMG_2026-09-25-13-57-18-789.jpg",
+          "drive_view": "https://drive.google.com/file/d/1-7xFBmPzzYqDZ7caP-dOXYd-pCnjKfS-/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F36 failure v1.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F36/AN2-F36 failure v1.png",
+          "drive_view": "https://drive.google.com/file/d/1C2RWRrq2YyGziXXw8XeqSeGamNV8gH9N/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F36 failure v2.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F36/AN2-F36 failure v2.png",
+          "drive_view": "https://drive.google.com/file/d/1S4L-9ebo9z4spwbikBEqJ7alnLXaLzVh/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F36 failure v3.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F36/AN2-F36 failure v3.png",
+          "drive_view": "https://drive.google.com/file/d/10k_ls0gUawdmVH86IbLGl-5lQxDBpNzd/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F36 failure v4.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F36/AN2-F36 failure v4.png",
+          "drive_view": "https://drive.google.com/file/d/1V8c4m3S28eS8v4jGRusB10nonIwd_yC3/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F36 failure v5.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F36/AN2-F36 failure v5.png",
+          "drive_view": "https://drive.google.com/file/d/1TLSVS0Aj4LDtvVmTQcfxJeugGj4lUlCU/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F36 failure v6.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F36/AN2-F36 failure v6.png",
+          "drive_view": "https://drive.google.com/file/d/1GC7mhSEi2cU-GpW9PO80PyMsQ1Q07CQk/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F36 failure v7.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F36/AN2-F36 failure v7.png",
+          "drive_view": "https://drive.google.com/file/d/19Sa8AUHtCwvl9Q4u7SsCfbuQsJxCLT8Y/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F36 failure v8.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F36/AN2-F36 failure v8.png",
+          "drive_view": "https://drive.google.com/file/d/1zfz0p7w32O_LJpOHtL35_-zCRisvlla-/view"
+        },
+        {
+          "category": "Microscopy",
+          "filename": "AN2-F36 failure v9.png",
+          "source_relpath": "Rutgers_MycoScope/AN2-F36/AN2-F36 failure v9.png",
+          "drive_view": "https://drive.google.com/file/d/1AaNJGlNtaI5RXOPSuM-i5mBPN51dJa40/view"
+        },
+        {
+          "category": "Spore print / preparation",
+          "filename": "AN2-F36SP.JPG",
+          "source_relpath": "AN2 lab additions/AN2-F36SP.JPG",
+          "drive_view": "https://drive.google.com/file/d/1sXTbMZGP0dW4p71ck72fjFPI--Nu96Ze/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F36 field (1).jpg",
+          "source_relpath": "AN2-F36/AN2-F36 field (1).jpg",
+          "drive_view": "https://drive.google.com/file/d/1ykNYsCbkMPt6rOwa2Au1iWq-qZKPo8Bw/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F36 field (2).jpg",
+          "source_relpath": "AN2-F36/AN2-F36 field (2).jpg",
+          "drive_view": "https://drive.google.com/file/d/1ridZG9Dkxjnp3JbwZyt9A2PUMws-y-Pz/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F36 field (3).jpg",
+          "source_relpath": "AN2-F36/AN2-F36 field (3).jpg",
+          "drive_view": "https://drive.google.com/file/d/1KqOAHJaEBFVFDOGKWby9CEv86JM0duem/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F36 field (4).jpg",
+          "source_relpath": "AN2-F36/AN2-F36 field (4).jpg",
+          "drive_view": "https://drive.google.com/file/d/1UeZwOM-phmOpF5MB_RV9dEJHFAQsX-kz/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F36 field (5).jpg",
+          "source_relpath": "AN2-F36/AN2-F36 field (5).jpg",
+          "drive_view": "https://drive.google.com/file/d/1bmlZSHEZo0gOu_nhdCtQwa5jUyELIphy/view"
+        },
+        {
+          "category": "Wild / field context",
+          "filename": "AN2-F36 field (6).jpg",
+          "source_relpath": "AN2-F36/AN2-F36 field (6).jpg",
+          "drive_view": "https://drive.google.com/file/d/1BpV40uZfTh-2pqPUuZRDhNcOMqIJxUW4/view"
+        }
+      ],
+      "existing_measurements": [],
+      "next_actions": [
+        "Measurement needed: cap_diameter_cm",
+        "Measurement needed: stem_top_diameter_cm",
+        "Measurement needed: stem_middle_diameter_cm",
+        "Measurement needed: stem_base_diameter_cm",
+        "Measurement needed: stem_height_cm",
+        "Microscopic spore dimensions and sample count need verified measurement"
+      ],
+      "identification_status": "not_assessed",
+      "measurement_verification": "source_transcription_only"
+    }
+  ]
+}
