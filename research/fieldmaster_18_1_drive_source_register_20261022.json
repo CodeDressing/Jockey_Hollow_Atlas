@@ -1,0 +1,101 @@
+{
+  "phase": "18.1 Google Drive evidence recovery",
+  "review_date": "2026-10-22",
+  "status": "discovery_pass_complete; 477 identity reconciliation unresolved",
+  "notice": "Counts below are document claims or regex-matched IDs only. Do not sum across overlapping masters. Non-standard IDs may not match. Missing evidence is not proof that a file does not exist.",
+  "documents": [
+    {
+      "title": "Active consolidated master",
+      "id": "11rV-I3DClTs3L6_YjVqAZOXzpEVJkGNdyq31oFOpW5o",
+      "claimed_count": 422,
+      "matched_ids": 421,
+      "source_url": "https://docs.google.com/document/d/11rV-I3DClTs3L6_YjVqAZOXzpEVJkGNdyq31oFOpW5o/edit"
+    },
+    {
+      "title": "AA Master Total",
+      "id": "1OHR-O8YvU7Y_kFnuipCi1w5g18XBJFDLMTQWV9g5O18",
+      "claimed_count": 389,
+      "matched_ids": 388,
+      "source_url": "https://docs.google.com/document/d/1OHR-O8YvU7Y_kFnuipCi1w5g18XBJFDLMTQWV9g5O18/edit"
+    },
+    {
+      "title": "AA Master Copy",
+      "id": "11jtN6J6BxaO3v5O7lKegpD4QbOADFQP_stgmbP-iG7c",
+      "claimed_count": 389,
+      "matched_ids": 388,
+      "source_url": "https://docs.google.com/document/d/11jtN6J6BxaO3v5O7lKegpD4QbOADFQP_stgmbP-iG7c/edit"
+    },
+    {
+      "title": "CN/FN/AN/BN Master",
+      "id": "1eqqFjhUJzCyJ1FOPtOn0FF91d682CvPxjBwboBQtGQw",
+      "claimed_count": null,
+      "matched_ids": 110,
+      "source_url": "https://docs.google.com/document/d/1eqqFjhUJzCyJ1FOPtOn0FF91d682CvPxjBwboBQtGQw/edit"
+    },
+    {
+      "title": "BN collection master",
+      "id": "1UttIDF8iALJDv5LLtRav_CjAC4_T-o4-OL20TdhcRx4",
+      "claimed_count": null,
+      "matched_ids": 130,
+      "source_url": "https://docs.google.com/document/d/1UttIDF8iALJDv5LLtRav_CjAC4_T-o4-OL20TdhcRx4/edit"
+    },
+    {
+      "title": "EN3 charts",
+      "id": "1CZRfh5NcgQ1bHNf-BFMqDsvSoq7UDh8ZVnb2H4y2PGo",
+      "claimed_count": null,
+      "matched_ids": 31,
+      "source_url": "https://docs.google.com/document/d/1CZRfh5NcgQ1bHNf-BFMqDsvSoq7UDh8ZVnb2H4y2PGo/edit"
+    },
+    {
+      "title": "AA extras",
+      "id": "1ApqMDwjb56ri13nPAogxTEfDB5j40bJp2VbNufIrJRE",
+      "claimed_count": null,
+      "matched_ids": 0,
+      "source_url": "https://docs.google.com/document/d/1ApqMDwjb56ri13nPAogxTEfDB5j40bJp2VbNufIrJRE/edit"
+    },
+    {
+      "title": "Measurement master XLSX",
+      "id": "1IuU5vBK5rVO6R6PxKBC2NtjEG-kE3uV2",
+      "claimed_count": null,
+      "matched_ids": null,
+      "source_url": "https://docs.google.com/spreadsheets/d/1IuU5vBK5rVO6R6PxKBC2NtjEG-kE3uV2/edit"
+    }
+  ],
+  "photo_folders": [
+    {
+      "title": "AN2 2026",
+      "id": "1y_AO-pF5QDZYIe_kxZ5ZZocfFr8isPw6",
+      "url": "https://drive.google.com/drive/folders/1y_AO-pF5QDZYIe_kxZ5ZZocfFr8isPw6"
+    },
+    {
+      "title": "BN5 2026",
+      "id": "1nG-oRHPuMhAI_qUmxaajxJcrFpTtvlcg",
+      "url": "https://drive.google.com/drive/folders/1nG-oRHPuMhAI_qUmxaajxJcrFpTtvlcg"
+    },
+    {
+      "title": "CN3 2026",
+      "id": "13_CsXIveDDl3aP9pg9kPQ-1dN8l60s0i",
+      "url": "https://drive.google.com/drive/folders/13_CsXIveDDl3aP9pg9kPQ-1dN8l60s0i"
+    },
+    {
+      "title": "CN2 2026",
+      "id": "1m2h4aRGHgtoqVw_I6WWO-OPi1xhwiu1U",
+      "url": "https://drive.google.com/drive/folders/1m2h4aRGHgtoqVw_I6WWO-OPi1xhwiu1U"
+    },
+    {
+      "title": "JN1 2026",
+      "id": "1XX53PXl-arVSPc2cR5Co6jglX4Cc4Zvw",
+      "url": "https://drive.google.com/drive/folders/1XX53PXl-arVSPc2cR5Co6jglX4Cc4Zvw"
+    }
+  ],
+  "open_reconciliation": [
+    "477 requested vs 422 source master: 55 unverified additions or count mismatch",
+    "Active master 422 claimed vs 421 recognized standardized codes: investigate missing or nonstandard identifier",
+    "AA master 389 claimed vs 388 matching IDs: investigate numbering",
+    "Different Rutgers masters overlap: compare normalized IDs and source dates, retaining conflicts",
+    "Index additional photograph folders and images; do not treat filename alone as morphological observation",
+    "Review source date, photo quality, and measurements during phases 18.2-18.5"
+  ],
+  "next_phase": "18.2 measurement restoration; 18.3 actual photographic anatomy review",
+  "production_write": false
+}
