@@ -84,7 +84,9 @@ test("FIVE PILLARS: five descriptive accessible learning stages",async({page})=>
   await expect(page.locator("#stage")).toHaveCount(1);
   await expect(page.locator("#mycosim-query")).toBeVisible();
   await expect(page.locator("#myco-visual-builder")).toHaveCount(0);
+  await expect(page.locator("#modelGrid [data-model]").first()).toBeVisible({timeout:30000});
   await page.locator('[data-learner-mode="explore"]').click();
+  await expect(nav.locator('[data-jump-step="4"]')).toBeEnabled();
   await nav.locator('[data-jump-step="4"]').click();
   await expect(page.locator("#mycosim-step-count")).toHaveText("STEP 4 OF 5");
   await expect(nav.locator('[data-jump-step="4"]')).toHaveAttribute("aria-current","step");
