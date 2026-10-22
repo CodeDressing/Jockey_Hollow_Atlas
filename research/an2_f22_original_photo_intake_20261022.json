@@ -1,0 +1,84 @@
+{
+  "specimen_id": "AN2-F22",
+  "record_type": "original_photographic_evidence_intake",
+  "date_recorded": "2026-10-22",
+  "workflow": "DEOF",
+  "status": "metadata_committed_original_jpeg_bytes_NOT_uploaded_to_repository",
+  "source": "User-supplied original specimen photographs in Rutgers extension conversation",
+  "attribution": {
+    "collection": "Rutgers research team (user-reported)",
+    "photographer": "unverified",
+    "publication_rights": "unverified"
+  },
+  "photos": [
+    {
+      "filename": "IMG_6086.jpg",
+      "sha256": "44aa2cbef78359490e459f57c996fca477d02b573ce0a6ede430394fb60d0337",
+      "bytes": 217172,
+      "px": [
+        775,
+        1033
+      ],
+      "view": "pileus dorsal and stipe",
+      "caption": "Original handheld photograph showing small brown pileus and slender pale stipe against labeled aluminum foil"
+    },
+    {
+      "filename": "IMG_6087.jpg",
+      "sha256": "0cedb1fa137f0a5d7a0c19a0203e8fe4b4e9d71332295e303ca9a50eab9ff6f3",
+      "bytes": 143958,
+      "px": [
+        775,
+        1033
+      ],
+      "view": "oblique hymenophore and stipe",
+      "caption": "Original handheld oblique underside photograph of pale lamellae and slender pale stipe"
+    },
+    {
+      "filename": "IMG_6089.jpg",
+      "sha256": "b7a66c915864ed8b07c62baa57b0534105d2f80d5f643d2ccf2abdfe99423b34",
+      "bytes": 236733,
+      "px": [
+        775,
+        1033
+      ],
+      "view": "hymenophore underside",
+      "caption": "Original handheld underside photograph showing relatively spaced pale lamellae and shorter intervening lamellae"
+    }
+  ],
+  "image_category": "specimen_field_photograph_ex_situ_handheld; not in-situ habitat",
+  "morphology": {
+    "pileus": "Small brown pileus; somewhat uneven margin; surface and full shape insufficient for certain finer characterization",
+    "hymenophore": "Lamellate; pale/tan relatively spaced gills with some shorter lamellae; exact attachment unresolved",
+    "stipe": "Very slender, pale, approximately central; base not visible",
+    "annulus": "Not observed in supplied photographs; absence not established",
+    "volva": "Not observable; stipe base not shown"
+  },
+  "spore_print": {
+    "status": "unavailable",
+    "note": "User reports unable to obtain a spore-print sample; do not infer spore color"
+  },
+  "microscopy": {
+    "status": "not_performed"
+  },
+  "identification": {
+    "status": "unconfirmed",
+    "taxon": null,
+    "edibility": null
+  },
+  "measurements": {
+    "status": "not_added; scale and measured values unavailable"
+  },
+  "navigation": {
+    "user_report": "Search resolves AN2-F22 but specimen sidebar list omits it",
+    "root_cause": "not_verified",
+    "fix_status": "pending source-code diagnosis and browser regression"
+  },
+  "pending": [
+    "Transfer exact original JPEG bytes to repository/Atlas storage; verify SHA-256 checksums after upload",
+    "Bind those file URLs to existing AN2-F22 record (not a new accession)",
+    "Inspect search and sidebar registry data loaders and fix discrepancy with tests",
+    "Verify photographer/rights attribution before public sharing",
+    "Run actual navigation and image rendering tests"
+  ],
+  "data_integrity": "Do not overwrite original research source data or populate unverified fields"
+}
