@@ -1,7 +1,7 @@
 name: MycoSim visual builder feature QA
 on:
   push:
-    branches: [feature/mycosim-visual-mushroom-builder-20261019, feature/guiding-light-learning-ux-20261021]
+    branches: [feature/mycosim-visual-mushroom-builder-20261019, feature/guiding-light-learning-ux-20261021, feature/five-pillars-learning-20261021]
   pull_request:
     paths:
       - 'mycosim/visual_builder.js'
