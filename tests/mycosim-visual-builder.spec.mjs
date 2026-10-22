@@ -72,3 +72,32 @@ for(const width of [320,390,768,960,1280,1920]){
     await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2)).toBe(true);
   });
 }
+
+test("FIVE PILLARS: five descriptive accessible learning stages",async({page})=>{
+  await page.goto(url);
+  const nav=page.getByRole("navigation",{name:"MycoSim learning path"});
+  await expect(nav).toBeVisible();
+  await expect(nav.locator("[data-jump-step]")).toHaveCount(5);
+  for(const name of ["Body plan","Age & form","Surface & traits","Structures","Evidence"]){
+    await expect(nav).toContainText(name);
+  }
+  await expect(page.locator("#stage")).toHaveCount(1);
+  await expect(page.locator("#mycosim-query")).toBeVisible();
+  await expect(page.locator("#myco-visual-builder")).toHaveCount(0);
+  await page.locator('[data-learner-mode="explore"]').click();
+  await nav.locator('[data-jump-step="4"]').click();
+  await expect(page.locator("#mycosim-step-count")).toHaveText("STEP 4 OF 5");
+  await expect(nav.locator('[data-jump-step="4"]')).toHaveAttribute("aria-current","step");
+  await page.locator("#mycosim-companion-prev").click();
+  await expect(page.locator("#mycosim-step-count")).toHaveText("STEP 3 OF 5");
+});
+for(const width of [320,390,768,960,1280,1920]){
+  test("FIVE PILLARS: five steps fit viewport "+width,async({page})=>{
+    await page.setViewportSize({width,height:800});
+    await page.goto(url);
+    const nav=page.getByRole("navigation",{name:"MycoSim learning path"});
+    await expect(nav.locator("[data-jump-step]")).toHaveCount(5);
+    await expect.poll(()=>nav.evaluate(el=>el.scrollWidth<=el.clientWidth+2)).toBe(true);
+    await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2)).toBe(true);
+  });
+}
