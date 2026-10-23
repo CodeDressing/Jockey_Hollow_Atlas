@@ -1,0 +1,43 @@
+name: Rutgers AN2-F12 laboratory-photo acceptance
+on:
+  push:
+    branches:
+      - feature/an2-f12-lab-prep-20261023
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  lab-prep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check five original image Git hashes
+        run: |
+          test "$(git hash-object 'assets/an2-f12/lab-prep/AN2-F12 spore print (7).JPG')" = b67956e3d7818c8f6f1664f5d751bf76d3d017a2
+          test "$(git hash-object 'assets/an2-f12/lab-prep/AN2-F12 spore print (23).JPG')" = 383f5fee3f5df5de11c179cd4a52ba958dc197c2
+          test "$(git hash-object 'assets/an2-f12/lab-prep/AN2-F12 spore print (25).JPG')" = 2a67e750b0c7ce8a4ad35632c088af8bef40ab82
+          test "$(git hash-object 'assets/an2-f12/lab-prep/AN2-F12 spore print (26).JPG')" = e3c98ee06af9f3b6819902ef64f5bf4bd9062646
+          test "$(git hash-object 'assets/an2-f12/lab-prep/AN2-F12 spore print (27).JPG')" = 9eb31fb9947f7f5e2ccf3cff88d9f89596e64bbd
+      - name: Check JS syntax
+        run: |
+          node --check app.js
+          node --check research/an2_f12_enrichment.js
+          node --check tests/an2-f12-lab-prep-browser.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Start isolated local Atlas server
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/an2-f12-lab.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8765/index.html -o /dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - name: Chromium lab gallery regression
+        run: node tests/an2-f12-lab-prep-browser.cjs

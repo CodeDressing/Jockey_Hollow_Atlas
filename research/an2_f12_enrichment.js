@@ -4,12 +4,19 @@
 window.SPECIMEN_ENRICHMENTS=window.SPECIMEN_ENRICHMENTS||{};
 window.SPECIMEN_ENRICHMENTS["AN2-F12"]={
   images:[
+    {category:"Lab preparation / microscopy setup",filename:"AN2-F12 spore print (7).JPG",original:"assets/an2-f12/lab-prep/AN2-F12 spore print (7).JPG",thumb:"assets/an2-f12/lab-prep/AN2-F12 spore print (7).JPG",caption:"AN2-F12 original laboratory preparation photograph: foil-covered area and glass slide; material not interpretable as confirmed spores."},
+    {category:"Lab preparation / microscopy setup",filename:"AN2-F12 spore print (23).JPG",original:"assets/an2-f12/lab-prep/AN2-F12 spore print (23).JPG",thumb:"assets/an2-f12/lab-prep/AN2-F12 spore print (23).JPG",caption:"AN2-F12 original laboratory overview: accession-labelled slide on aluminum foil. This is preparation context, not microscopic evidence."},
+    {category:"Lab preparation / microscopy setup",filename:"AN2-F12 spore print (25).JPG",original:"assets/an2-f12/lab-prep/AN2-F12 spore print (25).JPG",thumb:"assets/an2-f12/lab-prep/AN2-F12 spore print (25).JPG",caption:"AN2-F12 original closer view: labelled slide on foil with a small amount of pale particulate material visible; composition and spore identity unconfirmed."},
+    {category:"Lab preparation / microscopy setup",filename:"AN2-F12 spore print (26).JPG",original:"assets/an2-f12/lab-prep/AN2-F12 spore print (26).JPG",thumb:"assets/an2-f12/lab-prep/AN2-F12 spore print (26).JPG",caption:"AN2-F12 original laboratory preparation overview: transparent labelled slide and foil, with sparse undetermined particulate material."},
+    {category:"Lab preparation / microscopy setup",filename:"AN2-F12 spore print (27).JPG",original:"assets/an2-f12/lab-prep/AN2-F12 spore print (27).JPG",thumb:"assets/an2-f12/lab-prep/AN2-F12 spore print (27).JPG",caption:"AN2-F12 original oblique slide-preparation view: labelled slide resting on aluminum foil; specimen origin of visible particles not confirmed."},
     {category:"Wild / field context",filename:"IMG_6021.jpg",original:"assets/an2-f12/IMG_6021.jpg",thumb:"assets/an2-f12/IMG_6021.jpg",caption:"AN2-F12 field collection context: pale beige cap beside labelled foil and forest leaf litter/wood. The mushroom is positioned for documentation, not confirmed growing in place; original Rutgers-associated photograph, photographer and rights unverified."},
     {category:"Source macro / specimen",filename:"IMG_6022.jpg",original:"assets/an2-f12/IMG_6022.jpg",thumb:"assets/an2-f12/IMG_6022.jpg",caption:"AN2-F12 collected specimen underside: pale broad, moderately spaced lamellae, shorter lamellae and thin pale central stipe; exact attachment not yet determined."},
     {category:"Source macro / specimen",filename:"IMG_6023.jpg",original:"assets/an2-f12/IMG_6023.jpg",thumb:"assets/an2-f12/IMG_6023.jpg",caption:"AN2-F12 oblique side view: slender pale stipe, thin pileus and pale lamellae; handheld against labelled foil in field setting."},
     {category:"Source macro / specimen",filename:"IMG_6024.jpg",original:"assets/an2-f12/IMG_6024.jpg",thumb:"assets/an2-f12/IMG_6024.jpg",caption:"AN2-F12 close underside view of cream/tan lamellae and shorter intervening gills; gill attachment is not confidently classifiable from this photograph."}
   ],
   summary:{
+    "2026-10-23 laboratory preparation intake":"Five original photographs document AN2-F12 foil-covered laboratory slide preparation. A labelled transparent slide appears in multiple views. Pale particulate material is visible in close-ups but not verified as spores or a diagnostic spore print. These photographs do not establish undisturbed in-situ habitat. Microscopy photographs are pending, and identification remains unconfirmed.",
+    "Preparation vs microscopic evidence":"Laboratory setup is photographed; no new photomicrograph, spore morphology, spore dimensions or definitive spore-print color is established in this intake.",
     "2026-10-23 photographic evidence":"Four unchanged original Rutgers-associated specimen photographs provided by user (IMG_6021–IMG_6024.jpg). IMG_6021 provides field collection context; the others are handheld underside/side specimen images. Not all photographs show the mushroom growing in situ. Photographer, date of image capture and publication rights unverified.",
     "Pileus — photograph observation":"Pale buff/beige to light brown cap, approximately rounded in dorsal view, somewhat depressed or darker near the center; margins appear thin, and exact diameter cannot be measured from photographs alone.",
     "Lamellae — photograph observation":"Cream to pale beige lamellae, moderate spacing with shorter lamellae (lamellulae); actual attachment to stipe remains uncertain.",
@@ -20,7 +27,11 @@ window.SPECIMEN_ENRICHMENTS["AN2-F12"]={
     "Photo attribution":"Rutgers team affiliation user-reported; photographer and publication permissions not independently verified."
   },
   completeness:[
-    ["AN2-F12 original photo set (4 files)","Yes — archived on draft branch"],
+    ["Lab preparation / microscopy setup photographs","Yes — 5 original photos, distinct gallery"],
+    ["Verified in-situ growth photographs","Not verified by these photographs"],
+    ["Microscopy photographs provided in current intake","No — pending later upload"],
+    ["Spore-print deposit confirmed from current intake","No — material unverified"],
+    ["AN2-F12 original photo set (4 files)","Yes — archived; original field photographs preserved"],
     ["Photo views: field context and macro","Yes — 1 collection-context, 3 specimen close-ups"],
     ["Spore print established from new photo set","No — not documented in this intake"],
     ["New microscopy from this intake","No — not documented"],
