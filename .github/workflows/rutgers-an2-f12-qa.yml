@@ -1,0 +1,43 @@
+name: Rutgers AN2-F12 photograph acceptance
+on:
+  push:
+    branches:
+      - feature/rutgers-an2-f12-photos-20261023
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  an2-f12-chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify exact original Git blob identities
+        shell: bash
+        run: |
+          test "$(git hash-object assets/an2-f12/IMG_6021.jpg)" = "6576ee804614728e8d456ec130e7aa50aa1983ca"
+          test "$(git hash-object assets/an2-f12/IMG_6022.jpg)" = "d085e981a66ae3b5ccbfc8e7dfd7344ed413dc4b"
+          test "$(git hash-object assets/an2-f12/IMG_6023.jpg)" = "30a9c087764ea9eddcf77d68f8f7f5f67c11cac8"
+          test "$(git hash-object assets/an2-f12/IMG_6024.jpg)" = "1fd31d7789835904401f4116b2e1a4753197698e"
+      - name: Check JavaScript syntax
+        run: |
+          node --check app.js
+          node --check research/an2_f12_enrichment.js
+          node --check tests/an2-f12-browser.cjs
+      - name: Install free Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Start isolated Atlas server
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/an2-f12-http.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8765/index.html -o /dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - name: Chromium accession, gallery, zoom, and field-data acceptance
+        run: node tests/an2-f12-browser.cjs
