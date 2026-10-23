@@ -2,7 +2,7 @@ name: Rutgers AN2-F12 photograph acceptance
 on:
   push:
     branches:
-      - feature/rutgers-an2-f12-photos-20261023
+      - feature/an2-f12-main-release-20261023
   workflow_dispatch:
 permissions:
   contents: read
