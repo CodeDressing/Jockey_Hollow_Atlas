@@ -113,6 +113,14 @@ function applySpecimenEnrichments(){
     if(e.status) target.status=e.status;
     if(e.sourceLine) target.sourceLine=e.sourceLine;
     if(e.summary) target.summary={...(target.summary||{}),...e.summary};
+    // Attach only explicitly accession-linked photograph evidence; preserve existing images.
+    if(Array.isArray(e.images)){
+      target.images=target.images||[];
+      for(const photo of e.images){
+        if(!photo.original || !photo.filename)continue;
+        if(!target.images.some(im=>im.original===photo.original))target.images.push({...photo});
+      }
+    }
     if(e.completeness){
       const merged=new Map([...(target.completeness||[]),...e.completeness].map(([k,v])=>[k,v]));
       target.completeness=[...merged.entries()];
