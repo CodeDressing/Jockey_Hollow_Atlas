@@ -270,6 +270,18 @@ body.mycosim-presenting #mycosim-presenter-prompt{font-size:1.15rem}
 @media(max-width:460px){.guided-companion{padding:10px}.learning-path{gap:3px;padding:4px}.learning-path-chip{font-size:9px;padding:6px 2px}.learning-path-chip b{display:none}.guided-companion-actions button{flex:1}}
 @media(prefers-reduced-motion:reduce){.learning-path-chip,.guided-companion button{transition:none!important}}
 </style>
+<style>
+/* FIVE PILLARS: more legible information hierarchy without another simulator */
+.learning-path{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;max-width:100%;box-sizing:border-box}
+.learning-path-chip{display:flex;flex-direction:column;justify-content:center;gap:3px;min-height:56px;padding:7px 3px;font-size:11px;line-height:1.25;text-align:center;white-space:normal}
+.learning-path-chip b{flex:none;font-size:10px}.learning-path-chip small{display:block;font-size:9px;line-height:1.2;color:#b9c9c1;font-weight:400}
+.learning-path-chip.active small{color:#edcf8b}
+.guided-companion{scroll-margin-top:135px}
+.guided-companion-title{gap:6px 10px}
+.learning-path-chip:focus-visible,.guided-companion button:focus-visible{outline:3px solid #eac77b;outline-offset:2px}
+@media(max-width:440px){.learning-path{gap:3px;padding:4px;top:64px}.learning-path-chip{min-height:48px;font-size:10px;padding:5px 2px}.learning-path-chip b{display:none}.learning-path-chip small{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.learning-step{scroll-behavior:auto!important}}
+</style>
 </head>
 <body>
 <header>
@@ -316,13 +328,13 @@ body.mycosim-presenting #mycosim-presenter-prompt{font-size:1.15rem}
       <button type="button" data-learner-mode="explore" aria-pressed="false">Explore</button>
     </div>
     <p id="learnerModeNote" class="learner-mode-note">Guided mode reveals the learning path progressively as you make choices.</p>
-    <div class="learning-path" aria-label="MycoSim learning path">
-      <button type="button" class="learning-path-chip active" data-jump-step="1"><b>1</b><span>Family</span></button>
-      <button type="button" class="learning-path-chip" data-jump-step="2"><b>2</b><span>Stage</span></button>
-      <button type="button" class="learning-path-chip" data-jump-step="3"><b>3</b><span>Morphology</span></button>
-      <button type="button" class="learning-path-chip" data-jump-step="4"><b>4</b><span>Anatomy</span></button>
-      <button type="button" class="learning-path-chip" data-jump-step="5"><b>5</b><span>Deeper</span></button>
-    </div>
+    <nav class="learning-path" aria-label="MycoSim learning path" role="navigation">
+      <button type="button" class="learning-path-chip active" data-jump-step="1"><b>1</b><span>Family</span><small>Body plan</small></button>
+      <button type="button" class="learning-path-chip" data-jump-step="2"><b>2</b><span>Growth</span><small>Age & form</small></button>
+      <button type="button" class="learning-path-chip" data-jump-step="3"><b>3</b><span>Morphology</span><small>Surface & traits</small></button>
+      <button type="button" class="learning-path-chip" data-jump-step="4"><b>4</b><span>Anatomy</span><small>Structures</small></button>
+      <button type="button" class="learning-path-chip" data-jump-step="5"><b>5</b><span>Deeper</span><small>Evidence</small></button>
+    </nav>
     <section id="mycosim-step-companion" aria-label="Current learning objective" class="guided-companion">
       <div class="guided-companion-title"><span id="mycosim-step-count">STEP 1 OF 5</span><strong id="mycosim-step-title">Choose a mushroom family</strong></div>
       <p id="mycosim-step-description">Compare body plans to learn which visible structures distinguish major fungal forms. This is not a species identification.</p>
