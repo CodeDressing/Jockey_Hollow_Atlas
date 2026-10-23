@@ -20,6 +20,8 @@ const names=['IMG_6021.jpg','IMG_6022.jpg','IMG_6023.jpg','IMG_6024.jpg'];
       for (const name of names) {
         const img=page.locator('#main .image-card img[src="assets/an2-f12/'+name+'"]');
         assert.equal(await img.count(),1,name+' present exactly once in dossier');
+        await img.scrollIntoViewIfNeeded();
+        await img.evaluate(el=>el.decode());
         const state=await img.evaluate(el=>({complete:el.complete,width:el.naturalWidth,height:el.naturalHeight}));
         assert(state.complete&&state.width>0&&state.height>0,name+' must load and decode');
       }
