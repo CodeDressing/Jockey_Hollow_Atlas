@@ -30,8 +30,8 @@
       "number": 3,
       "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (3).png",
       "drive_original_url": "https://drive.google.com/file/d/1auNfz9mhDlrUDNkJj62Y9IHjE1apLt4M/view",
-      "github_binary_archived": false,
-      "repo_path": null,
+      "github_binary_archived": true,
+      "repo_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (3).png",
       "annotated_readings_um": [],
       "measurement_identity": "unverified object length, not confirmed spore measurement"
     },
@@ -39,8 +39,8 @@
       "number": 4,
       "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (4).png",
       "drive_original_url": "https://drive.google.com/file/d/1mwggKqbdSkisCzIenZuGDgp9K5_Xl71T/view",
-      "github_binary_archived": false,
-      "repo_path": null,
+      "github_binary_archived": true,
+      "repo_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (4).png",
       "annotated_readings_um": [
         8.56,
         7.72,
@@ -54,8 +54,8 @@
       "number": 5,
       "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (5).png",
       "drive_original_url": "https://drive.google.com/file/d/1ccdNdyjWpDBepJOhoYYzqgVuxqQTRCVS/view",
-      "github_binary_archived": false,
-      "repo_path": null,
+      "github_binary_archived": true,
+      "repo_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (5).png",
       "annotated_readings_um": [],
       "measurement_identity": "unverified object length, not confirmed spore measurement"
     },
@@ -98,8 +98,8 @@
       "number": 9,
       "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (9).png",
       "drive_original_url": "https://drive.google.com/file/d/1ODMU_2WilD9ewR323LbY_YDFv67MmGq8/view",
-      "github_binary_archived": false,
-      "repo_path": null,
+      "github_binary_archived": true,
+      "repo_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (9).png",
       "annotated_readings_um": [
         8.46
       ],
@@ -127,8 +127,8 @@
       "number": 12,
       "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (12).png",
       "drive_original_url": "https://drive.google.com/file/d/1et6w5aNo1Z7hnne9N0Vf-4W9z-P3LTpv/view",
-      "github_binary_archived": false,
-      "repo_path": null,
+      "github_binary_archived": true,
+      "repo_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (12).png",
       "annotated_readings_um": [],
       "measurement_identity": "unverified object length, not confirmed spore measurement"
     },
@@ -156,8 +156,8 @@
     }
   ],
   "pending": [
-    "Archive GitHub binaries for images 3, 4, 5, 9 and 12; Google Drive originals are retained",
     "Validate instrument calibration, measured axes and biological identity of measured objects",
     "Obtain independent basidiospore measurements before a size distribution or species determination"
-  ]
+  ],
+  "archive_status": "All fourteen exact original PNG binaries stored in isolated GitHub feature branch; not published to production."
 }
