@@ -1,0 +1,18 @@
+/* Adjustable MycoScope workbench rail; loaded after legacy responsive rules. */
+.app.sidebar-ready{--sidebar-width:310px;grid-template-columns:var(--sidebar-width) minmax(0,1fr)!important;position:relative}
+.app.sidebar-ready .sidebar{min-width:0!important;position:relative;overflow-x:hidden!important}
+.sidebar-toolbar{display:flex;justify-content:flex-end;margin:0 0 10px;position:sticky;top:0;z-index:20;background:#101517;padding:3px 0}
+.sidebar-toggle{border:1px solid #44545b;border-radius:7px;background:#172126;color:#eef2f2;padding:7px 9px;min-width:36px;min-height:36px;cursor:pointer}
+.sidebar-toggle:focus-visible,.sidebar-resize:focus-visible{outline:2px solid #b2e2cb;outline-offset:2px}
+.sidebar-resize{position:absolute;top:0;bottom:0;left:calc(var(--sidebar-width) - 6px);width:12px;z-index:60;cursor:col-resize;background:transparent;touch-action:none}
+.sidebar-resize::after{content:"";position:absolute;top:0;bottom:0;left:5px;width:2px;background:transparent}
+.sidebar-resize:hover::after,.sidebar-resize:focus-visible::after,.sidebar-resize.is-dragging::after{background:#b2e2cb}
+.app.sidebar-ready.is-collapsed{--sidebar-width:48px!important}
+.app.sidebar-ready.is-collapsed .sidebar{padding:10px 5px!important}
+.app.sidebar-ready.is-collapsed .sidebar>:not(.sidebar-toolbar){display:none!important}
+.app.sidebar-ready.is-collapsed .sidebar-toolbar{justify-content:center}
+.app.sidebar-ready.is-collapsed .sidebar-toggle{padding:7px;min-width:34px}
+.app.sidebar-ready.is-collapsed .sidebar-resize{display:none}
+.app.sidebar-ready .content{min-width:0!important}
+@media(max-width:680px){.app.sidebar-ready{grid-template-columns:var(--sidebar-width) minmax(0,1fr)!important}}
+@media(prefers-reduced-motion:no-preference){.app.sidebar-ready:not(.is-resizing){transition:grid-template-columns 150ms ease}}
