@@ -16,3 +16,6 @@
 .app.sidebar-ready .content{min-width:0!important}
 @media(max-width:680px){.app.sidebar-ready{grid-template-columns:var(--sidebar-width) minmax(0,1fr)!important}}
 @media(prefers-reduced-motion:no-preference){.app.sidebar-ready:not(.is-resizing){transition:grid-template-columns 150ms ease}}
+
+/* Collection-wide first-person field provenance, without conflating it with determinations. */
+.researcher-provenance{font-size:11px;line-height:1.45;color:#d5dfdc;border-left:3px solid #80bfa2;margin:10px 0 14px;padding:7px 9px;background:rgba(128,191,162,.06)}
