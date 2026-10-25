@@ -1,0 +1,37 @@
+name: DEO26 specimen provenance and sidebar browser acceptance
+on:
+  push:
+    branches:
+      - feature/deo26-field-provenance-20261025
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript syntax
+        run: |
+          node --check app.js
+          node --check sidebar-controls.js
+          node --check research/an2_f12_enrichment.js
+          node --check tests/deo26-provenance-sidebar-browser.cjs
+      - name: Install free Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Local test server
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/deo26-http.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8765/index.html -o /dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - name: Browser QA - evidence, gallery, sidebar
+        run: node tests/deo26-provenance-sidebar-browser.cjs
