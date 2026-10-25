@@ -1,0 +1,163 @@
+{
+  "specimen_id": "AN2-F12",
+  "source": "User-supplied microscopy screenshots; original filenames retained",
+  "date_recorded": "2026-10-24",
+  "scientific_status": "preliminary unclassified microstructures; species identification unconfirmed",
+  "measurements_warning": "Displayed lengths are instrument annotations on uncertain objects. Duplicated source fields and lack of verified length/width axes prevent valid basidiospore descriptive statistics.",
+  "photos": [
+    {
+      "number": 1,
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (1).png",
+      "drive_original_url": "https://drive.google.com/file/d/1-4xKYtAEQ3WYqPezZ8hc63349exqFUQ1/view",
+      "github_binary_archived": true,
+      "repo_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (1).png",
+      "annotated_readings_um": [],
+      "measurement_identity": "unverified object length, not confirmed spore measurement"
+    },
+    {
+      "number": 2,
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (2).png",
+      "drive_original_url": "https://drive.google.com/file/d/1C88m2iprUuE0SQCtRTWGE_GliNdg6i1D/view",
+      "github_binary_archived": true,
+      "repo_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (2).png",
+      "annotated_readings_um": [
+        7.05,
+        7.51
+      ],
+      "measurement_identity": "unverified object length, not confirmed spore measurement"
+    },
+    {
+      "number": 3,
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (3).png",
+      "drive_original_url": "https://drive.google.com/file/d/1auNfz9mhDlrUDNkJj62Y9IHjE1apLt4M/view",
+      "github_binary_archived": true,
+      "repo_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (3).png",
+      "annotated_readings_um": [],
+      "measurement_identity": "unverified object length, not confirmed spore measurement"
+    },
+    {
+      "number": 4,
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (4).png",
+      "drive_original_url": "https://drive.google.com/file/d/1mwggKqbdSkisCzIenZuGDgp9K5_Xl71T/view",
+      "github_binary_archived": true,
+      "repo_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (4).png",
+      "annotated_readings_um": [
+        8.56,
+        7.72,
+        9.47,
+        6.4,
+        5.8
+      ],
+      "measurement_identity": "unverified object length, not confirmed spore measurement"
+    },
+    {
+      "number": 5,
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (5).png",
+      "drive_original_url": "https://drive.google.com/file/d/1ccdNdyjWpDBepJOhoYYzqgVuxqQTRCVS/view",
+      "github_binary_archived": true,
+      "repo_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (5).png",
+      "annotated_readings_um": [],
+      "measurement_identity": "unverified object length, not confirmed spore measurement"
+    },
+    {
+      "number": 6,
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (6).png",
+      "drive_original_url": "https://drive.google.com/file/d/1ClF8OOH-XLB5yTTdk8-UE93mFfCMAUSC/view",
+      "github_binary_archived": true,
+      "repo_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (6).png",
+      "annotated_readings_um": [
+        8.3,
+        7.95,
+        11.47
+      ],
+      "measurement_identity": "unverified object length, not confirmed spore measurement"
+    },
+    {
+      "number": 7,
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (7).png",
+      "drive_original_url": "https://drive.google.com/file/d/1bKPrpJlEmFLLxFTpxhz2eVvSkwKrGOVU/view",
+      "github_binary_archived": true,
+      "repo_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (7).png",
+      "annotated_readings_um": [],
+      "measurement_identity": "unverified object length, not confirmed spore measurement"
+    },
+    {
+      "number": 8,
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (8).png",
+      "drive_original_url": "https://drive.google.com/file/d/1wi9buPhIPQf3TEUGNw4UpZTidc7VGKp-/view",
+      "github_binary_archived": true,
+      "repo_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (8).png",
+      "annotated_readings_um": [
+        11.47,
+        5.35,
+        7.1
+      ],
+      "measurement_identity": "unverified object length, not confirmed spore measurement"
+    },
+    {
+      "number": 9,
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (9).png",
+      "drive_original_url": "https://drive.google.com/file/d/1ODMU_2WilD9ewR323LbY_YDFv67MmGq8/view",
+      "github_binary_archived": true,
+      "repo_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (9).png",
+      "annotated_readings_um": [
+        8.46
+      ],
+      "measurement_identity": "unverified object length, not confirmed spore measurement"
+    },
+    {
+      "number": 10,
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (10).png",
+      "drive_original_url": "https://drive.google.com/file/d/1VBms0E8Et2GFW72Mhq6NO5720XHqNxmQ/view",
+      "github_binary_archived": true,
+      "repo_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (10).png",
+      "annotated_readings_um": [],
+      "measurement_identity": "unverified object length, not confirmed spore measurement"
+    },
+    {
+      "number": 11,
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (11).png",
+      "drive_original_url": "https://drive.google.com/file/d/1b_Q0weeQ3t2wLLWkJKSCG1JK14ybgmJP/view",
+      "github_binary_archived": true,
+      "repo_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (11).png",
+      "annotated_readings_um": [],
+      "measurement_identity": "unverified object length, not confirmed spore measurement"
+    },
+    {
+      "number": 12,
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (12).png",
+      "drive_original_url": "https://drive.google.com/file/d/1et6w5aNo1Z7hnne9N0Vf-4W9z-P3LTpv/view",
+      "github_binary_archived": true,
+      "repo_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (12).png",
+      "annotated_readings_um": [],
+      "measurement_identity": "unverified object length, not confirmed spore measurement"
+    },
+    {
+      "number": 13,
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (13).png",
+      "drive_original_url": "https://drive.google.com/file/d/1VOxgMOWJw_yWh_DJ4kve52lBNqscNiJl/view",
+      "github_binary_archived": true,
+      "repo_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (13).png",
+      "annotated_readings_um": [
+        9.23,
+        9.99,
+        6.98
+      ],
+      "measurement_identity": "unverified object length, not confirmed spore measurement"
+    },
+    {
+      "number": 14,
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (14).png",
+      "drive_original_url": "https://drive.google.com/file/d/1-pH_rWPbtgrXSQYKKiDKcmpytayFbTX5/view",
+      "github_binary_archived": true,
+      "repo_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (14).png",
+      "annotated_readings_um": [],
+      "measurement_identity": "unverified object length, not confirmed spore measurement"
+    }
+  ],
+  "pending": [
+    "Validate instrument calibration, measured axes and biological identity of measured objects",
+    "Obtain independent basidiospore measurements before a size distribution or species determination"
+  ],
+  "archive_status": "All fourteen exact original PNG binaries stored in isolated GitHub feature branch; not published to production."
+}
