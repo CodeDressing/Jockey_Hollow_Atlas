@@ -12,7 +12,7 @@ assert.deepEqual([audit.reconciliation.active_master_claimed,audit.reconciliatio
 assert.equal(audit.reconciliation.verified_biological_specimen_count,null);
 assert.deepEqual(audit.reconciliation.nonactive_unverified_candidates,['AN3-F6','AN3-F9']);
 const f12=fs.readFileSync('research/an2_f12_enrichment.js','utf8');
-const microscopy=[...new Set([...f12.matchAll(/original:"(assets\\/an2-f12\\/microscopy\\/[^"]+)"/g)].map(x=>x[1]))];
+const microscopy=[...new Set(f12.split('\n').filter(line=>line.includes('assets/an2-f12/microscopy/')).map(line=>line.match(/original:"([^"]+)"/)?.[1]).filter(Boolean))];
 assert.equal(microscopy.length,14,'Exactly 14 referenced microscopy PNG originals');
 assert(f12.includes('basidiospores unverified'),'No false spore identification');
 console.log('PASS Rutgers R.1 source-level claims, accession locator, 14 microscopy references');
