@@ -1,0 +1,18 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const app=fs.readFileSync('app.js','utf8');
+const html=fs.readFileSync('index.html','utf8');
+const audit=JSON.parse(fs.readFileSync('research/rutgers_r1_integrity_audit_20261029.json','utf8'));
+assert(html.includes('id="jumpSelected"'),'Accessible locator exists');
+assert(app.includes("locator.onclick=()=>"),'Locator handler exists');
+assert(app.includes("family=collection=workflow='ALL'"),'Filtered-out selection recovery clears filters');
+assert(app.includes('data-code=')&&app.includes('esc(s.code)'),'Accession uses explicit record code');
+assert(!app.includes("FULL_DATA_SET_CODES.add('AN2-F22')"),'Curated membership must not change');
+assert.deepEqual([audit.reconciliation.active_master_claimed,audit.reconciliation.active_standardized_ids,audit.reconciliation.cross_source_candidate_id_strings,audit.reconciliation.target_requested],[422,421,423,477]);
+assert.equal(audit.reconciliation.verified_biological_specimen_count,null);
+assert.deepEqual(audit.reconciliation.nonactive_unverified_candidates,['AN3-F6','AN3-F9']);
+const f12=fs.readFileSync('research/an2_f12_enrichment.js','utf8');
+const microscopy=[...new Set(f12.split('\n').filter(line=>line.includes('assets/an2-f12/microscopy/')).map(line=>line.match(/original:"([^"]+)"/)?.[1]).filter(Boolean))];
+assert.equal(microscopy.length,14,'Exactly 14 referenced microscopy PNG originals');
+assert(f12.includes('basidiospores unverified'),'No false spore identification');
+console.log('PASS Rutgers R.1 source-level claims, accession locator, 14 microscopy references');

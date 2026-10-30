@@ -1,0 +1,15 @@
+const {chromium}=require('playwright');const assert=require('node:assert/strict');
+(async()=>{const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+try{for(const width of [390,1280]){const page=await browser.newPage({viewport:{width,height:900}});
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto('http://127.0.0.1:8765/index.html',{waitUntil:'domcontentloaded',timeout:30000});
+const gate=page.locator('#enterAtlas');if(await gate.isVisible())await gate.click();
+await page.locator('#search').fill('AN2-F12');
+const btn=page.locator('#specList .spec-btn[data-code="AN2-F12"]');await btn.waitFor({timeout:15000});await btn.click();
+await page.locator('#search').fill('NOT_A_RUTGERS_SPECIMEN');
+await page.locator('#jumpSelected').click();
+assert.equal(await page.locator('#search').inputValue(),'','Locator clears conflicting search');
+assert.equal(await page.locator('#specList .spec-btn[data-code="AN2-F12"]').count(),1,'Prior selected accession restored to full list');
+const selected=page.locator('#specList .spec-btn[data-code="AN2-F12"]');assert.equal(await selected.evaluate(el=>document.activeElement===el),true,'Locator moves keyboard focus to matching accession');
+assert.deepEqual(errors,[],'No uncaught JS runtime failures');
+console.log('PASS locator chromium '+width);await page.close();}}finally{await browser.close()}})().catch(e=>{console.error(e);process.exitCode=1});
