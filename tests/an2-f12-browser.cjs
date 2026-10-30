@@ -29,7 +29,7 @@ const names=['IMG_6021.jpg','IMG_6022.jpg','IMG_6023.jpg','IMG_6024.jpg'];
       assert.equal(await page.locator('#main .section h2').filter({hasText:'Source macro / specimen'}).count(),1,'specimen group preserved');
       assert((await page.locator('#main').innerText()).includes('7 cm'),'independent cap measurement visible');
       assert((await page.locator('#main').innerText()).includes('8 cm'),'independent stipe measurement visible');
-      assert((await page.locator('#main').innerText()).includes('Identification and edibility are unconfirmed'),'identification caveat visible');
+      assert(/(?:Identification and edibility are unconfirmed|Species determination and edibility remain unconfirmed)/i.test(await page.locator('#main').innerText()),'current scientific determination caveat visible');
       const first=page.locator('#main .image-card .image-wrap[data-file="assets/an2-f12/IMG_6021.jpg"]');
       await first.click();
       assert(await page.locator('#viewer').evaluate(el=>el.classList.contains('open')),'full image viewer opens');
