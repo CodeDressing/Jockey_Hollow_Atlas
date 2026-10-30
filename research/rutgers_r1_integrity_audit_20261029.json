@@ -1,0 +1,83 @@
+{
+  "sprint": "Rutgers R.1",
+  "date": "2026-10-29",
+  "scope": "Research-only review, no specimen invention or production publication",
+  "repository": "CodeDressing/Jockey_Hollow_Atlas",
+  "baseline_main_commit": "b72f832e4cd2bffdfae21f5b294d0fd489377b62",
+  "fieldmaster_branch": "feature/fieldmaster-477-evidence-20261022",
+  "fieldmaster_draft_pr": 19,
+  "canonical_matrix_source": "research/fieldmaster_deo_2_1_canonical_reconciliation_20261023.json",
+  "source_hierarchy": [
+    "Original accession-labelled field sheets and voucher evidence, when independently retrieved and verified",
+    "Active Rutgers 422-claimed master as working index: 421 standardized identifiers extracted in preceding reconciliation",
+    "Historical AA, CN/FN, BN, EN masters preserved as overlapping, potentially contradictory sources",
+    "Measurement workbook and original photo/microscopy accessions as supporting evidence, not independent taxonomic proof"
+  ],
+  "reconciliation": {
+    "active_master_claimed": 422,
+    "active_standardized_ids": 421,
+    "cross_source_candidate_id_strings": 423,
+    "nonactive_unverified_candidates": [
+      "AN3-F6",
+      "AN3-F9"
+    ],
+    "target_requested": 477,
+    "unverified_difference_to_target": 54,
+    "verified_biological_specimen_count": null,
+    "limitations": "477 is a research target/researcher statement, not independently reconciled accession inventory. Do not infer 54 missing biological specimens. Earlier regex union of 424 included suspicious EN1-F1920 and is not a confirmed additional accession."
+  },
+  "specimens": {
+    "AN2-F10": {
+      "finding": "Specimen-level linkage and photo field state not established by this metadata/code audit",
+      "status": "needs-original-binary-and-record-crosswalk"
+    },
+    "AN2-F12": {
+      "finding": "main references 14 original microscope PNG images in research/an2_f12_enrichment.js, along with conservative microscopic observations and 4 original field JPEG references; verify binary originals and rights separately",
+      "status": "references-confirmed-binary-integrity-not-fully-reverified",
+      "microscopy_original_png_reference_count": 14
+    },
+    "AN2-F22": {
+      "finding": "PR #20 contains conservative morphology/side-list locator but remains unmerged draft; original three JPEGs were reported missing from repository in draft PR body",
+      "status": "not-release-ready"
+    }
+  },
+  "conflicts": [
+    "422 claimed master versus 421 standardized IDs",
+    "477 target versus 423 cross-source candidate ID strings",
+    "AN3-F6 and AN3-F9 require original vouchers",
+    "EN1-F1920 potentially malformed ID: do not treat as accession",
+    "Historical chart overlap and revisions may duplicate specimens",
+    "AN2-F22 photo transfer and authorship/publication permission unconfirmed"
+  ],
+  "qa_requirements": [
+    "Verify 421/423/477 are presented distinctly",
+    "Never publish master as 477 verified specimens",
+    "Keep specimen gallery intact",
+    "Correct filtered sidebar navigation without changing curated membership",
+    "Check photos by exact original binary and accession before release"
+  ],
+  "untouched": [
+    "Original Rutgers Drive documents",
+    "Historic source data",
+    "Existing photographs and media binaries",
+    "Production main branch"
+  ],
+  "references": [
+    {
+      "label": "Active Master 422-claimed",
+      "url": "https://docs.google.com/document/d/11rV-I3DClTs3L6_YjVqAZOXzpEVJkGNdyq31oFOpW5o/edit"
+    },
+    {
+      "label": "Fieldmaster reconciliation draft",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/pull/19"
+    },
+    {
+      "label": "AN2-F12 draft research PR",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/pull/21"
+    },
+    {
+      "label": "AN2-F22 draft intake PR",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/pull/20"
+    }
+  ]
+}
