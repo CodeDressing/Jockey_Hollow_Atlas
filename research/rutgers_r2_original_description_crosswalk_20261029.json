@@ -1,0 +1,165 @@
+{
+  "sprint": "Rutgers R.2 Original Description Recovery",
+  "created_utc": "2026-10-30",
+  "status": "read-only cross-source recovery; unresolved missing accession narratives",
+  "scope": "Three priority accessions; no biological specimen additions; no master overwrites",
+  "base_commit": "3734fcb9474e37db4cea928adf0273cc2fcd90e1",
+  "source_register": [
+    {
+      "title": "Rutgers active 422-claimed consolidated master",
+      "url": "https://docs.google.com/document/d/11rV-I3DClTs3L6_YjVqAZOXzpEVJkGNdyq31oFOpW5o/edit",
+      "kind": "document",
+      "detail": "Fetched readable text; contains 18 AN2 standardized IDs, none AN2-F10/F12/F22"
+    },
+    {
+      "title": "Rutgers 403-record Revision 2",
+      "url": "https://docs.google.com/document/d/1-YxtUoVopWpSt_nTTey2KsC7_aCOHpMI4yasky4_k-E/edit",
+      "kind": "document",
+      "detail": "Fetched readable text; 14 AN2 standardized IDs, none of the three focus accessions"
+    },
+    {
+      "title": "AN2 updated 396-record earlier copy",
+      "url": "https://docs.google.com/document/d/1m7XrwcLp7j9a7ys3YzeXyJqNvUyEKX_-y_tQ_0Gr3IQ/edit",
+      "kind": "document",
+      "detail": "Fetched readable text; 7 standardized AN2 IDs, none of the three focus accessions"
+    },
+    {
+      "title": "Rutgers AA historical master",
+      "url": "https://docs.google.com/document/d/1OHR-O8YvU7Y_kFnuipCi1w5g18XBJFDLMTQWV9g5O18/edit",
+      "kind": "document",
+      "detail": "Fetched text; no standardized AN2 accessions detected"
+    },
+    {
+      "title": "Rutgers measurements workbook",
+      "url": "https://docs.google.com/spreadsheets/d/1IuU5vBK5rVO6R6PxKBC2NtjEG-kE3uV2/edit",
+      "kind": "spreadsheet",
+      "detail": "Fetched CSV-like text from workbook, including AN2 F10 and AN2 F12, not AN2 F22"
+    },
+    {
+      "title": "R.1 FIELDMASTER cross-source candidate matrix",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/blob/feature/fieldmaster-477-evidence-20261022/research/fieldmaster_deo_2_1_canonical_reconciliation_20261023.json",
+      "kind": "prior_reconciliation",
+      "detail": "423 normalized identifier strings; not proof of 423 authenticated specimens"
+    },
+    {
+      "title": "Existing AN2-F12 Atlas enrichment",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/blob/main/research/an2_f12_enrichment.js",
+      "kind": "prior_evidence",
+      "detail": "Photo-based interpretation, researcher observations, and provisional microscope artifacts kept separate"
+    },
+    {
+      "title": "AN2-F22 unmerged source intake",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/pull/20",
+      "kind": "draft_unpublished",
+      "detail": "Photo-based observations; three JPEGs not verified archived; no spore print or microscopy"
+    }
+  ],
+  "source_hierarchy": [
+    "Original accession-labelled collection sheets and measurements when fetched",
+    "Source-specific historical descriptions as independent conflicting testimony",
+    "Consolidated master as working index rather than authoritative evidence of an accession absent from its text",
+    "Researcher firsthand statements separately labelled and dated",
+    "Photo/microscopy interpretations separately labelled; identities unverified"
+  ],
+  "specimens": {
+    "AN2-F10": {
+      "master_presence": {
+        "active_422": false,
+        "revision_403": false,
+        "an2_updated_396": false,
+        "aa_389": false
+      },
+      "direct_source_transcription": {
+        "source": "Rutgers_Mycology_Measurements_Master.xlsx",
+        "source_id": "AN2 F10",
+        "cap_diameter_cm": 5,
+        "stem_top_diameter_cm": 1.1,
+        "stem_middle_diameter_cm": 1.1,
+        "stem_base_diameter_cm": 1.1,
+        "stem_height_cm": 3.2,
+        "notes": "Stem diameter 1.1 cm throughout"
+      },
+      "interpretation": "No original qualitative pileus, gill, color, substrate, or spore description recovered from inspected primary master texts. Measurements alone do not determine species.",
+      "photo_provenance": "Specimen-specific photo-to-accession identity not independently checked in this sprint",
+      "missing": [
+        "Original qualitative collection narrative",
+        "Exact voucher/image attribution",
+        "Spore-print and microscopic evidence",
+        "Original source confirmation that workbook ID is same physical accession as Atlas"
+      ],
+      "confidence": "structured measurement transcription; accession linkage requires source voucher verification"
+    },
+    "AN2-F12": {
+      "master_presence": {
+        "active_422": false,
+        "revision_403": false,
+        "an2_updated_396": false,
+        "aa_389": false
+      },
+      "direct_source_transcription": {
+        "source": "Rutgers_Mycology_Measurements_Master.xlsx",
+        "source_id": "AN2 F12",
+        "cap_diameter_cm": 7,
+        "stem_top_diameter_cm": 1.5,
+        "stem_middle_diameter_cm": 1.1,
+        "stem_base_diameter_cm": 1,
+        "stem_height_cm": 8,
+        "unassigned_extra_cm": 9.5,
+        "notes": "An additional 9.5 cm value was dictated after the standard five-field sequence; preserved here as an extra measurement pending field confirmation."
+      },
+      "researcher_reported": {
+        "spore_print_color": "beige",
+        "stipe_surface": "smooth",
+        "observed_by": "researcher",
+        "note": "Statements documented 2026-10-25 in isolated Atlas enrichment; method/date of original print not independently verified"
+      },
+      "photo_based_summary": "Four field photographs, five lab preparation photos and fourteen microscopy images linked to existing Atlas accession. Refractile objects in micrographs are not independently verified as mature basidiospores; no species conclusion.",
+      "missing": [
+        "Original indexed description in consolidated masters",
+        "Independent validation of researcher-reported spore print",
+        "Independent object identification and calibration",
+        "Photographer and publication rights confirmation"
+      ],
+      "confidence": "workbook measurements and separately labelled observations, not verified taxonomic determination"
+    },
+    "AN2-F22": {
+      "master_presence": {
+        "active_422": false,
+        "revision_403": false,
+        "an2_updated_396": false,
+        "aa_389": false
+      },
+      "direct_source_transcription": null,
+      "draft_photo_observations": {
+        "source": "Unmerged PR #20 research/an2_f22_enrichment.js",
+        "pileus": "Brown relatively small uneven-margin cap; shape and dimensions unverified",
+        "hymenophore": "Lamellate pale/tan apparently moderately distant gills, attachment unverified",
+        "stipe": "Slender pale apparently central; base incompletely documented",
+        "spore_print": "Collection unsuccessful / unavailable",
+        "microscopy": "Not performed",
+        "identification": "Unconfirmed"
+      },
+      "photo_provenance": "IMG_6086.jpg, IMG_6087.jpg, IMG_6089.jpg were cited in an unmerged draft, but archival binary verification and rights remain pending",
+      "missing": [
+        "Original qualifying description in inspected Rutgers masters",
+        "Measurement workbook row for AN2 F22",
+        "Three original JPEG binaries linked and hash-verified in repository",
+        "Voucher and photography provenance"
+      ],
+      "confidence": "draft photograph-based inference only, not validated primary transcription"
+    }
+  },
+  "conflicts_and_open_questions": [
+    "Source master title reports 422 entries but earlier FIELDMASTER only extracted 421 standardized IDs",
+    "477 research target is not an independently reconciled unique accession inventory",
+    "All three focus IDs occur in supplementary work or measurement/draft evidence but not in the three inspected original consolidated AN2 master indices",
+    "AN2-F12 researcher statement of beige print must not be converted to a verified microscopy identification",
+    "AN2-F22 images and raw source transcriptions still unavailable for scientific release",
+    "Historical full documents can be truncated by provider text export; absence claims apply to fetched readable portions, not an exhaustive archival absence"
+  ],
+  "non_actions": [
+    "No alteration to taxonomic fields, original photos, historical spreadsheets or indexed master",
+    "No R.2 scientific claims published",
+    "No production merge or deployment"
+  ]
+}
