@@ -6,7 +6,7 @@ await page.goto('http://127.0.0.1:8765/index.html',{waitUntil:'domcontentloaded'
 const gate=page.locator('#enterAtlas');if(await gate.isVisible())await gate.click();
 await page.locator('#search').fill('AN2-F12');
 const btn=page.locator('#specList .spec-btn[data-code="AN2-F12"]');await btn.waitFor({timeout:15000});await btn.click();
-await page.locator('#search').fill('AN2-F22');
+await page.locator('#search').fill('NOT_A_RUTGERS_SPECIMEN');
 await page.locator('#jumpSelected').click();
 assert.equal(await page.locator('#search').inputValue(),'','Locator clears conflicting search');
 assert.equal(await page.locator('#specList .spec-btn[data-code="AN2-F12"]').count(),1,'Prior selected accession restored to full list');
