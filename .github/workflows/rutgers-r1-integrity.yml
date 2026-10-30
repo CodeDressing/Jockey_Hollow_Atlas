@@ -1,0 +1,39 @@
+name: Rutgers R.1 specimen evidence and locator audit
+on:
+  push:
+    branches:
+      - feature/rutgers-r1-registry-integrity-20261029
+  pull_request:
+    paths:
+      - index.html
+      - app.js
+      - research/rutgers_r1_integrity_audit_20261029.json
+      - tests/rutgers-r1-integrity.cjs
+      - tests/rutgers-r1-browser.cjs
+permissions:
+  contents: read
+jobs:
+  research-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript syntax and research invariant assertions
+        run: |
+          node --check app.js
+          node --check tests/rutgers-r1-integrity.cjs
+          node --check tests/rutgers-r1-browser.cjs
+          node tests/rutgers-r1-integrity.cjs
+      - name: Install Chromium using free GitHub Actions runner
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Run isolated Atlas browser regressions
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/rutgers-r1-http.log 2>&1 &
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8765/index.html >/dev/null && break; sleep 1; done
+          node tests/rutgers-r1-browser.cjs
+          node tests/an2-f12-browser.cjs
