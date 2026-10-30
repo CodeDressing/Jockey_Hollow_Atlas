@@ -1,0 +1,36 @@
+name: Rutgers R.2 source description recovery QA
+on:
+  push:
+    branches:
+      - feature/rutgers-r2-description-recovery-20261029
+  pull_request:
+    paths:
+      - research/rutgers_r2_original_description_crosswalk_20261029.json
+      - tests/rutgers-r2-description-crosswalk.cjs
+permissions:
+  contents: read
+jobs:
+  provenance-and-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate scientific evidence and JavaScript
+        run: |
+          node --check app.js
+          node --check tests/rutgers-r2-description-crosswalk.cjs
+          node tests/rutgers-r1-integrity.cjs
+          node tests/rutgers-r2-description-crosswalk.cjs
+      - name: Install free Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Verify specimen navigation, originals and microscopy uncertainty
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/rutgers-r2-http.log 2>&1 &
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8765/index.html >/dev/null && break; sleep 1; done
+          node tests/rutgers-r1-browser.cjs
+          node tests/an2-f12-browser.cjs
