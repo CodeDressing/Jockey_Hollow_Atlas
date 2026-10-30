@@ -414,6 +414,27 @@ function renderList(){
   $('mSpec').innerHTML=rows.map(s=>`<option value="${esc(s.code)}" ${s.code===current?'selected':''}>${esc(s.code)} — ${(s.images||[]).length} images${(s.movies||[]).length?` · ${(s.movies||[]).length} movies`:''}</option>`).join('');
   const archiveCount=Math.max(0,data.length-masterCount);
   $('resultCount').textContent=`${rows.length} of ${data.length} records · ${masterCount} master + ${archiveCount} Drive archive`;
+  // A selected accession can be outside active filters without being absent from the archive.
+  const locator=$('jumpSelected');
+  if(locator){
+    const present=Boolean(current&&data.some(s=>s.code===current));
+    const visible=present&&rows.some(s=>s.code===current);
+    locator.disabled=!present;
+    locator.textContent=present?(visible?'Locate '+current+' in complete list':current+' is outside current filters — locate in complete list'):'No specimen selected';
+    locator.onclick=()=>{
+      if(!present)return;
+      if(!visible){
+        family=collection=workflow='ALL';
+        filter='';
+        $('search').value='';
+        $('mSearch').value='';
+        fillFilters();
+        renderList();
+      }
+      const item=[...$('specList').querySelectorAll('.spec-btn')].find(b=>b.dataset.code===current);
+      if(item){item.scrollIntoView({block:'center',behavior:'auto'});item.focus({preventScroll:true});}
+    };
+  }
   renderFullSetList();
 }
 function setCurrent(code){
