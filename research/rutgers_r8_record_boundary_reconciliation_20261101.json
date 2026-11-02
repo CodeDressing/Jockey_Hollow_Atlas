@@ -1,0 +1,218 @@
+{
+  "schema": "rutgers-fieldmaster-record-boundaries-r8-v1",
+  "review_date": "2026-11-01",
+  "baseline": "e31122646187e9ed081ba1624c16dd8946886d7e",
+  "status": "document-boundary-discrepancy-explained; biological voucher identity remains unverified",
+  "method": "Line-anchored accession heading review of the exact fetched active master and Revision 2 text; counted canonical strict headings separately from decorated standalone chart headings, and compared against immutable FIELDMASTER PR19 candidate matrix.",
+  "sources": [
+    {
+      "id": "ACTIVE",
+      "url": "https://docs.google.com/document/d/11rV-I3DClTs3L6_YjVqAZOXzpEVJkGNdyq31oFOpW5o/edit",
+      "label": "Master Revision 3, stated 422",
+      "retrieved_text_lines": 13237,
+      "strict_accession_heading_count": 418,
+      "decorated_standalone_chart_headings": 4,
+      "chart_heading_total": 422
+    },
+    {
+      "id": "REV403",
+      "url": "https://docs.google.com/document/d/1-YxtUoVopWpSt_nTTey2KsC7_aCOHpMI4yasky4_k-E/edit",
+      "label": "Master Revision 2, stated 403",
+      "retrieved_text_lines": 12540,
+      "strict_accession_heading_count": 400,
+      "decorated_standalone_chart_headings": 3,
+      "chart_heading_total": 403
+    },
+    {
+      "id": "FIELDMASTER",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/blob/feature/fieldmaster-477-evidence-20261022/research/fieldmaster_deo_2_1_canonical_reconciliation_20261023.json",
+      "label": "PR19 canonical 423 candidate strings; 421 marked active"
+    },
+    {
+      "id": "R7",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/pull/40",
+      "label": "Earlier count-scope conflict matrix and unverified voucher holds"
+    },
+    {
+      "id": "MEASURE",
+      "url": "https://drive.google.com/file/d/1IuU5vBK5rVO6R6PxKBC2NtjEG-kE3uV2/view",
+      "label": "Supplementary accession-labelled measurements for AN2 F10 and F12"
+    },
+    {
+      "id": "SHA256",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/actions/runs/41378677617",
+      "label": "26 media originals independently SHA256 matched"
+    }
+  ],
+  "record_boundaries": [
+    {
+      "id": "R8-01",
+      "prefix": "BN5",
+      "source": "ACTIVE",
+      "status": "resolved_chart_heading_count_not_specimen_identity",
+      "finding": "The active master states 55 BN5 charts; strict unadorned heading matcher finds 51, with four additional decorated or annotated standalone chart headings.",
+      "headings": [
+        {
+          "line": 4415,
+          "raw": "BN5-F8(A)",
+          "normalized": "BN5-F8",
+          "evidence_type": "separately headed variant"
+        },
+        {
+          "line": 4446,
+          "raw": "BN5-F8(B) ( Not tricholomopsis plantyphylla)",
+          "normalized": "BN5-F8",
+          "evidence_type": "separately headed variant; taxonomic parenthetical not a validated identification"
+        },
+        {
+          "line": 4500,
+          "raw": "BN5-F8(C)",
+          "normalized": "BN5-F8",
+          "evidence_type": "separately headed variant"
+        },
+        {
+          "line": 5033,
+          "raw": "BN5-F25 ( laccaria ohiensis singer)",
+          "normalized": "BN5-F25",
+          "evidence_type": "one chart heading with parenthetical; annotation not taxonomic verification"
+        }
+      ],
+      "excluded_subheadings": [
+        {
+          "lines": [
+            4478,
+            4481,
+            4484,
+            4487
+          ],
+          "raw_prefix": "BN5-F8(B) microscopy image",
+          "reason": "microscopy-image annotations are not additional specimen charts"
+        },
+        {
+          "line": 5061,
+          "raw_prefix": "BN5-F25 MICROSCOPY IMAGE PLATE",
+          "reason": "plate label is not new accession"
+        }
+      ],
+      "count_equation": "51 strict BN5 headings + 4 decorated headings = 55 chart headings",
+      "warning": "Three F8 variants can be tracked as separate chart entries, not automatically three distinct biological vouchers"
+    },
+    {
+      "id": "R8-02",
+      "prefix": "EN1",
+      "source": "ACTIVE",
+      "status": "resolved_parser_false_positive",
+      "finding": "Active master explicitly shows 22 standalone EN1 accession headings and no standalone EN1-F1; legacy PR19 ACTIVE index includes EN1-F1.",
+      "source_evidence": {
+        "section_heading": "EN1  |  22 specimens",
+        "first_real_heading": {
+          "line": 8847,
+          "raw": "EN1-F3"
+        },
+        "later_heading": {
+          "line": 9001,
+          "raw": "EN1-F11"
+        },
+        "last_heading": {
+          "line": 9494,
+          "raw": "EN1-F30"
+        },
+        "standalone_EN1_F1_occurrences": 0,
+        "strict_EN1_heading_count": 22
+      },
+      "likely_cause": "non-boundary matching of EN1-F1 as prefix of EN1-F11, EN1-F12, etc; source code not fully provenance-traced, so label as probable mechanism",
+      "action": "Do not delete historical matrix; mark EN1-F1 as unsupported active-master identifier pending earliest original field record"
+    },
+    {
+      "id": "R8-03",
+      "prefix": "ALL",
+      "source": "ACTIVE",
+      "status": "resolved_document_count_only",
+      "finding": "Strict standalone accession headings total 418 across all prefixes; four BN5 decorated chart headings total 422. This independently reconciles master-stated 422 as chart count.",
+      "equation": "418 + 4 = 422",
+      "caveat": "Count is about document chart sections, not validated unique biological specimens"
+    },
+    {
+      "id": "R8-04",
+      "prefix": "ALL",
+      "source": "REV403",
+      "status": "resolved_document_count_only",
+      "finding": "Revision 2 has 400 strictly unadorned chart headings plus three BN5 decorated F8(A/B/C) headings. That reproduces the claimed 403 chart count.",
+      "evidence": [
+        {
+          "line": 4303,
+          "raw": "BN5-F8(A)"
+        },
+        {
+          "line": 4334,
+          "raw": "BN5-F8(B)"
+        },
+        {
+          "line": 4366,
+          "raw": "BN5-F8(C)"
+        }
+      ],
+      "equation": "400 + 3 = 403"
+    },
+    {
+      "id": "R8-05",
+      "prefix": "FIELDMASTER",
+      "source": "FIELDMASTER",
+      "status": "resolved_explanation_legacy_count",
+      "finding": "Legacy active normalized count 421 is consistent with 418 strictly headed records, normalization of BN5-F8 and BN5-F25 into two codes, plus an unsupported EN1-F1 parser candidate.",
+      "equation": "418 + 2 normalized decorated IDs + 1 unsupported EN1-F1 candidate = 421",
+      "caveat": "Arithmetic explanation of the legacy index; does not approve a rewrite without cross-source review"
+    },
+    {
+      "id": "R8-06",
+      "prefix": "FIELDMASTER",
+      "source": "FIELDMASTER",
+      "status": "pending_cross_source_reconciliation",
+      "finding": "The 423 cross-source candidate register includes AN3-F6 and AN3-F9 outside active; the 477 target remains unsupported as biological specimen inventory.",
+      "reconciled_scope": {
+        "legacy_active_ids": 421,
+        "legacy_cross_source_candidates": 423,
+        "unverified_target": 477
+      },
+      "action": "Preserve existing register and quarantine suspect EN1-F1 instead of inventing replacement accession"
+    }
+  ],
+  "focus_accessions": [
+    {
+      "id": "AN2-F10",
+      "source_support": "Supplementary measurement workbook only",
+      "in_active_standalone_heading": false,
+      "physical_voucher_authenticated": false,
+      "photo_bytes_verified": 0
+    },
+    {
+      "id": "AN2-F12",
+      "source_support": "Supplementary measurement row and existing laboratory/field imagery",
+      "in_active_standalone_heading": false,
+      "physical_voucher_authenticated": false,
+      "photo_bytes_verified": 23
+    },
+    {
+      "id": "AN2-F22",
+      "source_support": "Original image media on isolated PR20 branch and owner-supplied intake",
+      "in_active_standalone_heading": false,
+      "physical_voucher_authenticated": false,
+      "photo_bytes_verified": 3
+    }
+  ],
+  "source_safety": {
+    "originals_modified": false,
+    "historical_423_register_modified": false,
+    "biological_specimens_added": 0,
+    "original_sha256_verified_files_preserved": 26,
+    "public_release_authorized": false,
+    "merge_deploy_authorized": false,
+    "photographer_rights": "unverified"
+  },
+  "remaining": [
+    "Independently check source algorithm that generated historical EN1-F1 token",
+    "Compare all historical master versions and original specimen notebooks before any candidate-matrix amendment",
+    "Original biological voucher and observer labels for F8 variants, AN3-F6 and AN3-F9",
+    "AN2-F10/F12/F22 collection provenance and photographer permissions"
+  ]
+}
