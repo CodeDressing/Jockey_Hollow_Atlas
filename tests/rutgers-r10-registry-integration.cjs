@@ -25,7 +25,7 @@ const r4=JSON.parse(fs.readFileSync('research/rutgers_r4_verified_originals_sha2
 assert.equal(r4.records.length,26);
 const corrupted=structuredClone(ledger);corrupted.sources[0].entries[0].kind='fabricated_chart';
 assert.throws(()=>reconcile(corrupted,legacy),/ledger\/parser disagreement/);
-const altered=structuredClone(legacy);altered.records.push({...legacy.records[0]});
+const altered=structuredClone(legacy);altered.records.push({...legacy.records[0],canonical_candidate_id:'ZZ9-F999',present_in_active:true});
 assert.throws(()=>reconcile(ledger,altered),/Unanticipated historical matrix counts|Unexpected source chart count/);
 const fp=crypto.createHash('sha256').update(fs.readFileSync('research/rutgers_r9_source_heading_ledger_20261101.json')).digest('hex');
 console.log('PASS R10 reproducible reconciliation, corruption/replay guards and reversible no-write snapshot, ledger sha256 '+fp);
