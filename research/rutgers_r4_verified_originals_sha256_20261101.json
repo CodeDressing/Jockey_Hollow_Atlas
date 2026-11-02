@@ -1,0 +1,311 @@
+{
+  "schema": "rutgers-originals-sha256-v1",
+  "date": "2026-11-01",
+  "research_only": true,
+  "source": "Original complete binary files downloaded from authenticated Rutgers Google Drive folders and hashed locally with hashlib.sha256; Git blob object IDs also calculated over retrieved Drive bytes using Git blob header and SHA1.",
+  "baseline": "d4b3b17be0d9f1c7f3563ada85c7406ac6ea9c47",
+  "evidence_label": "Full byte source SHA256 computed; independently verified repository SHA256 pending CI execution",
+  "requirement": "GitHub Actions must hash repository-stored bytes with SHA256, compare to each drive_sha256, and verify Git blob IDs; no image copying or gallery changes.",
+  "counts": {
+    "AN2_F12": 23,
+    "AN2_F22": 3,
+    "AN2_F10": 0
+  },
+  "records": [
+    {
+      "accession": "AN2-F12",
+      "category": "microscopy",
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (1).png",
+      "repository_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (1).png",
+      "drive_id": "1-4xKYtAEQ3WYqPezZ8hc63349exqFUQ1",
+      "bytes": 1615625,
+      "drive_sha256": "5946db4d4e7ea4f8b19a0dda02eac17a56f4d0bad1feea1f031817edfe05ab49",
+      "drive_calculated_git_blob_sha1": "5de9564ee40173a1d86c50fb0fb36ffca4c69c16",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "microscopy",
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (2).png",
+      "repository_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (2).png",
+      "drive_id": "1C88m2iprUuE0SQCtRTWGE_GliNdg6i1D",
+      "bytes": 1580435,
+      "drive_sha256": "1158dbae4bed6146b24255d200e0f8081cbae0c42c397d565b25998ca71862dc",
+      "drive_calculated_git_blob_sha1": "6633d0b22f098fcde28eefc6674a0ece1207bb68",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "microscopy",
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (3).png",
+      "repository_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (3).png",
+      "drive_id": "1auNfz9mhDlrUDNkJj62Y9IHjE1apLt4M",
+      "bytes": 1285801,
+      "drive_sha256": "68c628e2a67a156e95874084bc16bfdc2dd356e7fba3d07371669ea8ad9800aa",
+      "drive_calculated_git_blob_sha1": "e5b2a8564acb15d4cc0c52c0eb6c0a7c0b507c13",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "microscopy",
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (4).png",
+      "repository_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (4).png",
+      "drive_id": "1mwggKqbdSkisCzIenZuGDgp9K5_Xl71T",
+      "bytes": 1479584,
+      "drive_sha256": "d962cd321dccf82450507c70cb9c2f61840337ab7359d0c1001a0b24ad8b3f06",
+      "drive_calculated_git_blob_sha1": "97a6b4863ac68a979ce0aa5adecfb7395acdb026",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "microscopy",
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (5).png",
+      "repository_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (5).png",
+      "drive_id": "1ccdNdyjWpDBepJOhoYYzqgVuxqQTRCVS",
+      "bytes": 1777213,
+      "drive_sha256": "3ef78c3520f0493fc5ddae9740d0c94c791f9395e1a8966934c4ef0bc8148cc9",
+      "drive_calculated_git_blob_sha1": "6506e392232fedf53ac1ddcf58c9081d7cb79d59",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "microscopy",
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (6).png",
+      "repository_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (6).png",
+      "drive_id": "1ClF8OOH-XLB5yTTdk8-UE93mFfCMAUSC",
+      "bytes": 1676484,
+      "drive_sha256": "8d470d42c5d234da961815f7046fabbe987c51b611efc51b8b95ce9082315447",
+      "drive_calculated_git_blob_sha1": "cc935ad8a55efb67430f23644900683b3b43c7f8",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "microscopy",
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (7).png",
+      "repository_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (7).png",
+      "drive_id": "1bKPrpJlEmFLLxFTpxhz2eVvSkwKrGOVU",
+      "bytes": 1679556,
+      "drive_sha256": "1fe20c3a25bf580688ff9e8e4974b1c22750c3c5d8fa4272aea72a1de50da923",
+      "drive_calculated_git_blob_sha1": "8dc0a13f2baabea4adff156c8c337bacbf16b014",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "microscopy",
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (8).png",
+      "repository_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (8).png",
+      "drive_id": "1wi9buPhIPQf3TEUGNw4UpZTidc7VGKp-",
+      "bytes": 1659468,
+      "drive_sha256": "11b9785851459caac319f1f8fc68f5e8268ff044018db59fa7f4feed36001d9a",
+      "drive_calculated_git_blob_sha1": "6be7233fa202903ba66a18c6c5f9eec3bbb4bd59",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "microscopy",
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (9).png",
+      "repository_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (9).png",
+      "drive_id": "1ODMU_2WilD9ewR323LbY_YDFv67MmGq8",
+      "bytes": 1507576,
+      "drive_sha256": "ed6831a564a64986c1456ed253c2f17ec88220bf03f447abc8259cab540aa139",
+      "drive_calculated_git_blob_sha1": "2b00fb9a96a79f08ed515fd0bf9a5765f1c2c6c5",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "microscopy",
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (10).png",
+      "repository_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (10).png",
+      "drive_id": "1VBms0E8Et2GFW72Mhq6NO5720XHqNxmQ",
+      "bytes": 1714039,
+      "drive_sha256": "cf2c278455cd597b626c8b51c16dfd38ad95caf2ed82e2f6b6ee41fd250ffaca",
+      "drive_calculated_git_blob_sha1": "11aa37aa64388da2f9b1511064ea98d91316d300",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "microscopy",
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (11).png",
+      "repository_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (11).png",
+      "drive_id": "1b_Q0weeQ3t2wLLWkJKSCG1JK14ybgmJP",
+      "bytes": 1906749,
+      "drive_sha256": "c7bd506e7a39f3a0c27c28c3bb6dfcc1fa5670c01e8d6139f192cb7c8b6823eb",
+      "drive_calculated_git_blob_sha1": "a426478c47389b91f60bc6999ce5c45e63e525da",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "microscopy",
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (12).png",
+      "repository_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (12).png",
+      "drive_id": "1et6w5aNo1Z7hnne9N0Vf-4W9z-P3LTpv",
+      "bytes": 1635724,
+      "drive_sha256": "61958b773e7dad696c2b4f1eb9870804dbf53f1a5cc77552a265fc2a6539547e",
+      "drive_calculated_git_blob_sha1": "30e498bbef58499ac7fae04b2ce0d27006bcc7a9",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "microscopy",
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (13).png",
+      "repository_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (13).png",
+      "drive_id": "1VOxgMOWJw_yWh_DJ4kve52lBNqscNiJl",
+      "bytes": 1825352,
+      "drive_sha256": "3c75ca63f4ebdda1eae05c856c8ed24903fb43b53469c2b61d35239c5028afd6",
+      "drive_calculated_git_blob_sha1": "3826c56170ec7bd76d71b45fcb7a7ffda77faccc",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "microscopy",
+      "filename": "AN2-F12 SPORE PRINT MICROSCOPE  (14).png",
+      "repository_path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (14).png",
+      "drive_id": "1-pH_rWPbtgrXSQYKKiDKcmpytayFbTX5",
+      "bytes": 1846323,
+      "drive_sha256": "771472f1aa6c220a97f7c798bc2c7ea7ca530d8d33d4d4ef90f93f5c0d2a3c60",
+      "drive_calculated_git_blob_sha1": "6181bb30ed59fefa737a3ae13a0617fe23210ee2",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "lab_preparation",
+      "filename": "AN2-F12 spore print (7).JPG",
+      "repository_path": "assets/an2-f12/lab-prep/AN2-F12 spore print (7).JPG",
+      "drive_id": "1g8YzZg7iOQb34-rscWsSxGakG9hfQuh0",
+      "bytes": 424764,
+      "drive_sha256": "732fca8e329940cd0e26c11390e41691742949146e0ab5433197a656e5e05ce3",
+      "drive_calculated_git_blob_sha1": "b67956e3d7818c8f6f1664f5d751bf76d3d017a2",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "lab_preparation",
+      "filename": "AN2-F12 spore print (23).JPG",
+      "repository_path": "assets/an2-f12/lab-prep/AN2-F12 spore print (23).JPG",
+      "drive_id": "1o1elEMoUWQNypuF5otpe54QYcBxTUtGH",
+      "bytes": 492690,
+      "drive_sha256": "623e706757e1b6a51e28dee4e604968029046b56881bf62df39050c0c34cea35",
+      "drive_calculated_git_blob_sha1": "383f5fee3f5df5de11c179cd4a52ba958dc197c2",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "lab_preparation",
+      "filename": "AN2-F12 spore print (25).JPG",
+      "repository_path": "assets/an2-f12/lab-prep/AN2-F12 spore print (25).JPG",
+      "drive_id": "13ttvh6eJ01G3nABGbvox0ck8u6VTNwW2",
+      "bytes": 485756,
+      "drive_sha256": "7b650e26b3affc48ffc21bf5de83e1e2faf513860f1845ed4e5ee1c297634c38",
+      "drive_calculated_git_blob_sha1": "2a67e750b0c7ce8a4ad35632c088af8bef40ab82",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "lab_preparation",
+      "filename": "AN2-F12 spore print (26).JPG",
+      "repository_path": "assets/an2-f12/lab-prep/AN2-F12 spore print (26).JPG",
+      "drive_id": "1LbhYJUCA8EfIwFvFNshBg3fhnKHSLWo2",
+      "bytes": 477310,
+      "drive_sha256": "d2854cd1051609432aaa825d057d948cc6dff76d291b373ba708c079e830669c",
+      "drive_calculated_git_blob_sha1": "e3c98ee06af9f3b6819902ef64f5bf4bd9062646",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "lab_preparation",
+      "filename": "AN2-F12 spore print (27).JPG",
+      "repository_path": "assets/an2-f12/lab-prep/AN2-F12 spore print (27).JPG",
+      "drive_id": "1DmT0eygCc5YdBOQUxwe4mQOT-jrmInf-",
+      "bytes": 488414,
+      "drive_sha256": "60490154734a78e72033e13be4aff1c249c55b3005d4a17be5ab867cf19c6a26",
+      "drive_calculated_git_blob_sha1": "9eb31fb9947f7f5e2ccf3cff88d9f89596e64bbd",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "field_macro",
+      "filename": "IMG_6021.jpg",
+      "repository_path": "assets/an2-f12/IMG_6021.jpg",
+      "drive_id": "1GtpZMxCVdVUl6Un3AOy49qTeidaEz07H",
+      "bytes": 362678,
+      "drive_sha256": "df13ba06b5e23e7f649b17393ef3643b013b598d2ada3a82eac4cf9a2369e16a",
+      "drive_calculated_git_blob_sha1": "6576ee804614728e8d456ec130e7aa50aa1983ca",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "field_macro",
+      "filename": "IMG_6022.jpg",
+      "repository_path": "assets/an2-f12/IMG_6022.jpg",
+      "drive_id": "1YHeQyppBzTqY9jbS9RequsIb1LTbr5jl",
+      "bytes": 231546,
+      "drive_sha256": "e7cd697f870b87c515bfd5a0187fa3861c640a207281d019f6f3ab8ea6b1d8d7",
+      "drive_calculated_git_blob_sha1": "d085e981a66ae3b5ccbfc8e7dfd7344ed413dc4b",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "field_macro",
+      "filename": "IMG_6023.jpg",
+      "repository_path": "assets/an2-f12/IMG_6023.jpg",
+      "drive_id": "1xRzYI0lF8xwHIKk3gkrMgD4elgersYRN",
+      "bytes": 233607,
+      "drive_sha256": "f73223886088355458d6becb4987f711abc30ead711dc050f2320485d920fb5b",
+      "drive_calculated_git_blob_sha1": "30a9c087764ea9eddcf77d68f8f7f5f67c11cac8",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F12",
+      "category": "field_macro",
+      "filename": "IMG_6024.jpg",
+      "repository_path": "assets/an2-f12/IMG_6024.jpg",
+      "drive_id": "1U9uRzlXNNIY5lpcXRUc-QvZHO3mpAs2u",
+      "bytes": 175122,
+      "drive_sha256": "43cbdd1e01a019fb145dac21a143c16f0c57b6d32cc4df166c50eec86bd8050e",
+      "drive_calculated_git_blob_sha1": "1fd31d7789835904401f4116b2e1a4753197698e",
+      "git_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101"
+    },
+    {
+      "accession": "AN2-F22",
+      "category": "user_supplied_macro",
+      "filename": "IMG_6086.jpg",
+      "repository_path": "assets/an2-f22/IMG_6086.jpg",
+      "drive_id": "1tRMLLjtvif7vf-ash9jWQ3naVVUpW9KJ",
+      "bytes": 217172,
+      "drive_sha256": "44aa2cbef78359490e459f57c996fca477d02b573ce0a6ede430394fb60d0337",
+      "drive_calculated_git_blob_sha1": "05bcc1493480fb24d70c61e4cc699e728dc108d3",
+      "git_branch": "feature/an2-f22-deof-photo-intake-20261022"
+    },
+    {
+      "accession": "AN2-F22",
+      "category": "user_supplied_macro",
+      "filename": "IMG_6087.jpg",
+      "repository_path": "assets/an2-f22/IMG_6087.jpg",
+      "drive_id": "1OyXJtjfMGTDQ9-wpScacl9sUt33Ln93H",
+      "bytes": 143958,
+      "drive_sha256": "0cedb1fa137f0a5d7a0c19a0203e8fe4b4e9d71332295e303ca9a50eab9ff6f3",
+      "drive_calculated_git_blob_sha1": "5cd69c97498558ace41e42ff9c76807500883204",
+      "git_branch": "feature/an2-f22-deof-photo-intake-20261022"
+    },
+    {
+      "accession": "AN2-F22",
+      "category": "user_supplied_macro",
+      "filename": "IMG_6089.jpg",
+      "repository_path": "assets/an2-f22/IMG_6089.jpg",
+      "drive_id": "1RQCU27RnvXQkZjaXXeVbx_f-_z_PCUci",
+      "bytes": 236733,
+      "drive_sha256": "b7a66c915864ed8b07c62baa57b0534105d2f80d5f643d2ccf2abdfe99423b34",
+      "drive_calculated_git_blob_sha1": "2f96d3c07a25e9f02c88520ac07c6609ab163c6a",
+      "git_branch": "feature/an2-f22-deof-photo-intake-20261022"
+    }
+  ],
+  "voucher_provenance": "Unverified at specimen-field-voucher level; image hash matching is not voucher authentication.",
+  "rights": "Photographer and publication rights unverified; public release not authorized by this manifest.",
+  "scientific_limitations": [
+    "Species identifications remain unconfirmed",
+    "Microscopic particles are not confirmed mature basidiospores",
+    "AN2-F10 has no confirmed matching original image",
+    "AN2-F22 image binaries exist in isolated PR20 but not R2/main; no public linkage"
+  ],
+  "no_production_merge": true
+}
