@@ -1,0 +1,5026 @@
+{
+  "schema": "rutgers-r9-source-boundary-ledger-v1",
+  "source_date": "2026-11-01",
+  "sources": [
+    {
+      "source": "ACTIVE",
+      "url": "https://docs.google.com/document/d/11rV-I3DClTs3L6_YjVqAZOXzpEVJkGNdyq31oFOpW5o/edit",
+      "source_accession_lines": 427,
+      "strict": 418,
+      "decorated": 4,
+      "excluded": 5,
+      "unclassified": 0,
+      "charts": 422,
+      "normalized_unique": 420,
+      "entries": [
+        {
+          "line": 51,
+          "raw": "AN2-F1",
+          "accession": "AN2-F1",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 80,
+          "raw": "AN2-F2",
+          "accession": "AN2-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 109,
+          "raw": "AN2-F3",
+          "accession": "AN2-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 138,
+          "raw": "AN2-F4",
+          "accession": "AN2-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 167,
+          "raw": "AN2-F5",
+          "accession": "AN2-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 196,
+          "raw": "AN2-F6",
+          "accession": "AN2-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 225,
+          "raw": "AN2-F7",
+          "accession": "AN2-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 254,
+          "raw": "AN2-F8",
+          "accession": "AN2-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 283,
+          "raw": "AN2-F13",
+          "accession": "AN2-F13",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 312,
+          "raw": "AN2-F21",
+          "accession": "AN2-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 342,
+          "raw": "AN2-F25",
+          "accession": "AN2-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 372,
+          "raw": "AN2-F31",
+          "accession": "AN2-F31",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 402,
+          "raw": "AN2-F32",
+          "accession": "AN2-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 431,
+          "raw": "AN2-F34",
+          "accession": "AN2-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 460,
+          "raw": "AN2-F36",
+          "accession": "AN2-F36",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 489,
+          "raw": "AN2-F38",
+          "accession": "AN2-F38",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 516,
+          "raw": "AN2-F40",
+          "accession": "AN2-F40",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 545,
+          "raw": "AN2-F41",
+          "accession": "AN2-F41",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 575,
+          "raw": "AN3-F2",
+          "accession": "AN3-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 605,
+          "raw": "AN3-F4",
+          "accession": "AN3-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 635,
+          "raw": "AN3-F7",
+          "accession": "AN3-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 666,
+          "raw": "AN3-F8",
+          "accession": "AN3-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 697,
+          "raw": "AN3-F11",
+          "accession": "AN3-F11",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 727,
+          "raw": "AN3-F12",
+          "accession": "AN3-F12",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 758,
+          "raw": "AN3-F13",
+          "accession": "AN3-F13",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 789,
+          "raw": "AN3-F14",
+          "accession": "AN3-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 819,
+          "raw": "AN3-F16",
+          "accession": "AN3-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 850,
+          "raw": "AN3-F17",
+          "accession": "AN3-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 880,
+          "raw": "AN3-F18",
+          "accession": "AN3-F18",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 910,
+          "raw": "AN3-F19",
+          "accession": "AN3-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 941,
+          "raw": "AN3-F20",
+          "accession": "AN3-F20",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 972,
+          "raw": "AN3-F21",
+          "accession": "AN3-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1002,
+          "raw": "AN3-F22",
+          "accession": "AN3-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1032,
+          "raw": "AN3-F24",
+          "accession": "AN3-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1063,
+          "raw": "AN3-F25",
+          "accession": "AN3-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1093,
+          "raw": "AN3-F26",
+          "accession": "AN3-F26",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1123,
+          "raw": "AN3-F28",
+          "accession": "AN3-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1154,
+          "raw": "AN3-F29",
+          "accession": "AN3-F29",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1185,
+          "raw": "AN3-F31",
+          "accession": "AN3-F31",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1216,
+          "raw": "AN3-F32",
+          "accession": "AN3-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1246,
+          "raw": "AN3-F33",
+          "accession": "AN3-F33",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1277,
+          "raw": "AN3-F34",
+          "accession": "AN3-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1308,
+          "raw": "AN3-F36",
+          "accession": "AN3-F36",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1339,
+          "raw": "AN3-F37",
+          "accession": "AN3-F37",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1370,
+          "raw": "AN3-F38",
+          "accession": "AN3-F38",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1401,
+          "raw": "AN3-F39",
+          "accession": "AN3-F39",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1432,
+          "raw": "AN3-F40",
+          "accession": "AN3-F40",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1463,
+          "raw": "AN3-F41",
+          "accession": "AN3-F41",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1494,
+          "raw": "AN3-F42",
+          "accession": "AN3-F42",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1531,
+          "raw": "BN1-F1",
+          "accession": "BN1-F1",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1562,
+          "raw": "BN1-F2",
+          "accession": "BN1-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1593,
+          "raw": "BN1-F3",
+          "accession": "BN1-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1623,
+          "raw": "BN1-F4",
+          "accession": "BN1-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1653,
+          "raw": "BN1-F5",
+          "accession": "BN1-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1685,
+          "raw": "BN1-F6",
+          "accession": "BN1-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1716,
+          "raw": "BN1-F7",
+          "accession": "BN1-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1746,
+          "raw": "BN1-F8",
+          "accession": "BN1-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1777,
+          "raw": "BN1-F9",
+          "accession": "BN1-F9",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1807,
+          "raw": "BN1-F10",
+          "accession": "BN1-F10",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1838,
+          "raw": "BN1-F11",
+          "accession": "BN1-F11",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1869,
+          "raw": "BN1-F12",
+          "accession": "BN1-F12",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1900,
+          "raw": "BN1-F13",
+          "accession": "BN1-F13",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1930,
+          "raw": "BN1-F14",
+          "accession": "BN1-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1961,
+          "raw": "BN1-F15",
+          "accession": "BN1-F15",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1992,
+          "raw": "BN1-F16",
+          "accession": "BN1-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2023,
+          "raw": "BN1-F17",
+          "accession": "BN1-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2054,
+          "raw": "BN1-F18",
+          "accession": "BN1-F18",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2084,
+          "raw": "BN1-F19",
+          "accession": "BN1-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2115,
+          "raw": "BN1-F20",
+          "accession": "BN1-F20",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2145,
+          "raw": "BN1-F21",
+          "accession": "BN1-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2176,
+          "raw": "BN1-F22",
+          "accession": "BN1-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2207,
+          "raw": "BN1-F23",
+          "accession": "BN1-F23",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2238,
+          "raw": "BN1-F24",
+          "accession": "BN1-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2269,
+          "raw": "BN1-F25",
+          "accession": "BN1-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2299,
+          "raw": "BN1-F26",
+          "accession": "BN1-F26",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2329,
+          "raw": "BN1-F27",
+          "accession": "BN1-F27",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2360,
+          "raw": "BN1-F28",
+          "accession": "BN1-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2390,
+          "raw": "BN1-F29",
+          "accession": "BN1-F29",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2421,
+          "raw": "BN1-F30",
+          "accession": "BN1-F30",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2452,
+          "raw": "BN1-F31",
+          "accession": "BN1-F31",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2483,
+          "raw": "BN1-F32",
+          "accession": "BN1-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2514,
+          "raw": "BN1-F33",
+          "accession": "BN1-F33",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2545,
+          "raw": "BN1-F34",
+          "accession": "BN1-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2576,
+          "raw": "BN1-F35",
+          "accession": "BN1-F35",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2607,
+          "raw": "BN1-F36",
+          "accession": "BN1-F36",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2637,
+          "raw": "BN1-F37",
+          "accession": "BN1-F37",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2667,
+          "raw": "BN1-F38",
+          "accession": "BN1-F38",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2698,
+          "raw": "BN1-F39",
+          "accession": "BN1-F39",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2729,
+          "raw": "BN1-F40",
+          "accession": "BN1-F40",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2760,
+          "raw": "BN1-F41",
+          "accession": "BN1-F41",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2791,
+          "raw": "BN1-F42",
+          "accession": "BN1-F42",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2822,
+          "raw": "BN1-F43",
+          "accession": "BN1-F43",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2853,
+          "raw": "BN1-F44",
+          "accession": "BN1-F44",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2883,
+          "raw": "BN1-F45",
+          "accession": "BN1-F45",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2914,
+          "raw": "BN1-F46",
+          "accession": "BN1-F46",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2945,
+          "raw": "BN1-F47",
+          "accession": "BN1-F47",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2975,
+          "raw": "BN1-F48",
+          "accession": "BN1-F48",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3006,
+          "raw": "BN2-F1",
+          "accession": "BN2-F1",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3037,
+          "raw": "BN2-F2",
+          "accession": "BN2-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3068,
+          "raw": "BN2-F3",
+          "accession": "BN2-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3099,
+          "raw": "BN2-F4",
+          "accession": "BN2-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3130,
+          "raw": "BN2-F5",
+          "accession": "BN2-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3161,
+          "raw": "BN2-F6",
+          "accession": "BN2-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3191,
+          "raw": "BN2-F7",
+          "accession": "BN2-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3222,
+          "raw": "BN2-F8",
+          "accession": "BN2-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3253,
+          "raw": "BN2-F9",
+          "accession": "BN2-F9",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3284,
+          "raw": "BN2-F10",
+          "accession": "BN2-F10",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3315,
+          "raw": "BN2-F11",
+          "accession": "BN2-F11",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3347,
+          "raw": "BN2-F12",
+          "accession": "BN2-F12",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3377,
+          "raw": "BN2-F13",
+          "accession": "BN2-F13",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3408,
+          "raw": "BN2-F14",
+          "accession": "BN2-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3439,
+          "raw": "BN2-F15",
+          "accession": "BN2-F15",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3470,
+          "raw": "BN2-F16",
+          "accession": "BN2-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3500,
+          "raw": "BN2-F17",
+          "accession": "BN2-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3532,
+          "raw": "BN4-F1",
+          "accession": "BN4-F1",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3563,
+          "raw": "BN4-F2",
+          "accession": "BN4-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3594,
+          "raw": "BN4-F3",
+          "accession": "BN4-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3625,
+          "raw": "BN4-F4",
+          "accession": "BN4-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3656,
+          "raw": "BN4-F5",
+          "accession": "BN4-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3687,
+          "raw": "BN4-F6",
+          "accession": "BN4-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3718,
+          "raw": "BN4-F8",
+          "accession": "BN4-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3749,
+          "raw": "BN4-F9",
+          "accession": "BN4-F9",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3780,
+          "raw": "BN4-F10",
+          "accession": "BN4-F10",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3811,
+          "raw": "BN4-F11",
+          "accession": "BN4-F11",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3842,
+          "raw": "BN4-F12",
+          "accession": "BN4-F12",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3873,
+          "raw": "BN4-F13",
+          "accession": "BN4-F13",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3905,
+          "raw": "BN4-F14",
+          "accession": "BN4-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3936,
+          "raw": "BN4-F15",
+          "accession": "BN4-F15",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3967,
+          "raw": "BN4-F16",
+          "accession": "BN4-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3998,
+          "raw": "BN4-F17",
+          "accession": "BN4-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4029,
+          "raw": "BN4-F18",
+          "accession": "BN4-F18",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4060,
+          "raw": "BN4-F19",
+          "accession": "BN4-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4091,
+          "raw": "BN4-F20",
+          "accession": "BN4-F20",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4122,
+          "raw": "BN4-F21",
+          "accession": "BN4-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4153,
+          "raw": "BN4-F22",
+          "accession": "BN4-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4184,
+          "raw": "BN4-F25",
+          "accession": "BN4-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4216,
+          "raw": "BN5-F1",
+          "accession": "BN5-F1",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4247,
+          "raw": "BN5-F2",
+          "accession": "BN5-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4278,
+          "raw": "BN5-F3",
+          "accession": "BN5-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4309,
+          "raw": "BN5-F4",
+          "accession": "BN5-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4340,
+          "raw": "BN5-F5",
+          "accession": "BN5-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4371,
+          "raw": "BN5-F7",
+          "accession": "BN5-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4415,
+          "raw": "BN5-F8(A)",
+          "accession": "BN5-F8",
+          "kind": "decorated_chart"
+        },
+        {
+          "line": 4446,
+          "raw": "BN5-F8(B) ( Not tricholomopsis plantyphylla)",
+          "accession": "BN5-F8",
+          "kind": "decorated_chart"
+        },
+        {
+          "line": 4478,
+          "raw": "BN5-F8(B) microscopy image 1",
+          "accession": "BN5-F8",
+          "kind": "microscopy_subheading"
+        },
+        {
+          "line": 4481,
+          "raw": "BN5-F8(B) microscopy image 2",
+          "accession": "BN5-F8",
+          "kind": "microscopy_subheading"
+        },
+        {
+          "line": 4484,
+          "raw": "BN5-F8(B) microscopy image 3",
+          "accession": "BN5-F8",
+          "kind": "microscopy_subheading"
+        },
+        {
+          "line": 4487,
+          "raw": "BN5-F8(B) microscopy image 4",
+          "accession": "BN5-F8",
+          "kind": "microscopy_subheading"
+        },
+        {
+          "line": 4500,
+          "raw": "BN5-F8(C)",
+          "accession": "BN5-F8",
+          "kind": "decorated_chart"
+        },
+        {
+          "line": 4531,
+          "raw": "BN5-F9",
+          "accession": "BN5-F9",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4562,
+          "raw": "BN5-F11",
+          "accession": "BN5-F11",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4593,
+          "raw": "BN5-F12",
+          "accession": "BN5-F12",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4624,
+          "raw": "BN5-F13",
+          "accession": "BN5-F13",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4654,
+          "raw": "BN5-F14",
+          "accession": "BN5-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4685,
+          "raw": "BN5-F15",
+          "accession": "BN5-F15",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4716,
+          "raw": "BN5-F16",
+          "accession": "BN5-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4747,
+          "raw": "BN5-F17",
+          "accession": "BN5-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4777,
+          "raw": "BN5-F18",
+          "accession": "BN5-F18",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4808,
+          "raw": "BN5-F19",
+          "accession": "BN5-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4839,
+          "raw": "BN5-F20",
+          "accession": "BN5-F20",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4870,
+          "raw": "BN5-F21",
+          "accession": "BN5-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4900,
+          "raw": "BN5-F22",
+          "accession": "BN5-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4973,
+          "raw": "BN5-F23",
+          "accession": "BN5-F23",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5003,
+          "raw": "BN5-F24",
+          "accession": "BN5-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5033,
+          "raw": "BN5-F25 ( laccaria ohiensis singer)",
+          "accession": "BN5-F25",
+          "kind": "decorated_chart"
+        },
+        {
+          "line": 5061,
+          "raw": "BN5-F25 MICROSCOPY IMAGE PLATE — SPMV1–SPMV3",
+          "accession": "BN5-F25",
+          "kind": "microscopy_subheading"
+        },
+        {
+          "line": 5098,
+          "raw": "BN5-F26",
+          "accession": "BN5-F26",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5159,
+          "raw": "BN5-F27",
+          "accession": "BN5-F27",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5189,
+          "raw": "BN5-F28",
+          "accession": "BN5-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5220,
+          "raw": "BN5-F29",
+          "accession": "BN5-F29",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5251,
+          "raw": "BN5-F30",
+          "accession": "BN5-F30",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5282,
+          "raw": "BN5-F31",
+          "accession": "BN5-F31",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5312,
+          "raw": "BN5-F32",
+          "accession": "BN5-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5343,
+          "raw": "BN5-F33",
+          "accession": "BN5-F33",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5374,
+          "raw": "BN5-F34",
+          "accession": "BN5-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5404,
+          "raw": "BN5-F35",
+          "accession": "BN5-F35",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5434,
+          "raw": "BN5-F36",
+          "accession": "BN5-F36",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5464,
+          "raw": "BN5-F37",
+          "accession": "BN5-F37",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5495,
+          "raw": "BN5-F39",
+          "accession": "BN5-F39",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5525,
+          "raw": "BN5-F40",
+          "accession": "BN5-F40",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5556,
+          "raw": "BN5-F41",
+          "accession": "BN5-F41",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5587,
+          "raw": "BN5-F42",
+          "accession": "BN5-F42",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5617,
+          "raw": "BN5-F43",
+          "accession": "BN5-F43",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5648,
+          "raw": "BN5-F44",
+          "accession": "BN5-F44",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5679,
+          "raw": "BN5-F45",
+          "accession": "BN5-F45",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5709,
+          "raw": "BN5-F46",
+          "accession": "BN5-F46",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5740,
+          "raw": "BN5-F47",
+          "accession": "BN5-F47",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5770,
+          "raw": "BN5-F48",
+          "accession": "BN5-F48",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5800,
+          "raw": "BN5-F49",
+          "accession": "BN5-F49",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5831,
+          "raw": "BN5-F50",
+          "accession": "BN5-F50",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5862,
+          "raw": "BN5-F51",
+          "accession": "BN5-F51",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5897,
+          "raw": "BN5-F52",
+          "accession": "BN5-F52",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5928,
+          "raw": "BN5-F53",
+          "accession": "BN5-F53",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5958,
+          "raw": "BN5-F54",
+          "accession": "BN5-F54",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5989,
+          "raw": "BN5-F55",
+          "accession": "BN5-F55",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6019,
+          "raw": "BN5-F56",
+          "accession": "BN5-F56",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6080,
+          "raw": "BN6-F1",
+          "accession": "BN6-F1",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6110,
+          "raw": "BN6-F2",
+          "accession": "BN6-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6143,
+          "raw": "BN6-F3",
+          "accession": "BN6-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6173,
+          "raw": "BN6-F5",
+          "accession": "BN6-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6206,
+          "raw": "BN6-F6",
+          "accession": "BN6-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6236,
+          "raw": "BN6-F7",
+          "accession": "BN6-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6267,
+          "raw": "BN6-F8",
+          "accession": "BN6-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6298,
+          "raw": "BN6-F9",
+          "accession": "BN6-F9",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6329,
+          "raw": "BN6-F10",
+          "accession": "BN6-F10",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6360,
+          "raw": "BN6-F11",
+          "accession": "BN6-F11",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6390,
+          "raw": "BN6-F12",
+          "accession": "BN6-F12",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6421,
+          "raw": "BN6-F13",
+          "accession": "BN6-F13",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6451,
+          "raw": "BN6-F14",
+          "accession": "BN6-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6482,
+          "raw": "BN6-F15",
+          "accession": "BN6-F15",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6513,
+          "raw": "BN6-F16",
+          "accession": "BN6-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6544,
+          "raw": "BN6-F17",
+          "accession": "BN6-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6574,
+          "raw": "BN6-F18",
+          "accession": "BN6-F18",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6605,
+          "raw": "BN6-F19",
+          "accession": "BN6-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6636,
+          "raw": "BN6-F20",
+          "accession": "BN6-F20",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6666,
+          "raw": "BN6-F21",
+          "accession": "BN6-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6697,
+          "raw": "BN6-F22",
+          "accession": "BN6-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6728,
+          "raw": "BN6-F23",
+          "accession": "BN6-F23",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6758,
+          "raw": "BN6-F24",
+          "accession": "BN6-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6789,
+          "raw": "BN6-F25",
+          "accession": "BN6-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6820,
+          "raw": "BN6-F26",
+          "accession": "BN6-F26",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6851,
+          "raw": "BN6-F28",
+          "accession": "BN6-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6882,
+          "raw": "BN6-F29",
+          "accession": "BN6-F29",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6913,
+          "raw": "BN6-F30",
+          "accession": "BN6-F30",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6944,
+          "raw": "BN6-F31",
+          "accession": "BN6-F31",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6974,
+          "raw": "BN6-F32",
+          "accession": "BN6-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7005,
+          "raw": "BN6-F33",
+          "accession": "BN6-F33",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7036,
+          "raw": "BN6-F34",
+          "accession": "BN6-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7067,
+          "raw": "BN6-F35",
+          "accession": "BN6-F35",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7098,
+          "raw": "BN6-F40",
+          "accession": "BN6-F40",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7128,
+          "raw": "BN6-F41",
+          "accession": "BN6-F41",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7166,
+          "raw": "CN1-F1",
+          "accession": "CN1-F1",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7196,
+          "raw": "CN1-F2",
+          "accession": "CN1-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7226,
+          "raw": "CN1-F3",
+          "accession": "CN1-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7256,
+          "raw": "CN1-F4",
+          "accession": "CN1-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7286,
+          "raw": "CN1-F5",
+          "accession": "CN1-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7316,
+          "raw": "CN1-F6",
+          "accession": "CN1-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7346,
+          "raw": "CN1-F7",
+          "accession": "CN1-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7376,
+          "raw": "CN1-F8",
+          "accession": "CN1-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7406,
+          "raw": "CN1-F9",
+          "accession": "CN1-F9",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7436,
+          "raw": "CN1-F12",
+          "accession": "CN1-F12",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7466,
+          "raw": "CN1-F13",
+          "accession": "CN1-F13",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7496,
+          "raw": "CN1-F14",
+          "accession": "CN1-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7526,
+          "raw": "CN1-F15",
+          "accession": "CN1-F15",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7556,
+          "raw": "CN1-F16",
+          "accession": "CN1-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7586,
+          "raw": "CN1-F17",
+          "accession": "CN1-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7616,
+          "raw": "CN1-F19",
+          "accession": "CN1-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7646,
+          "raw": "CN1-F21",
+          "accession": "CN1-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7676,
+          "raw": "CN1-F22",
+          "accession": "CN1-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7706,
+          "raw": "CN1-F23",
+          "accession": "CN1-F23",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7736,
+          "raw": "CN1-F24",
+          "accession": "CN1-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7766,
+          "raw": "CN1-F26",
+          "accession": "CN1-F26",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7796,
+          "raw": "CN1-F27",
+          "accession": "CN1-F27",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7826,
+          "raw": "CN1-F28",
+          "accession": "CN1-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7856,
+          "raw": "CN1-F29",
+          "accession": "CN1-F29",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7886,
+          "raw": "CN1-F31",
+          "accession": "CN1-F31",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7916,
+          "raw": "CN1-F32",
+          "accession": "CN1-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7946,
+          "raw": "CN1-F33",
+          "accession": "CN1-F33",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7976,
+          "raw": "CN1-F34",
+          "accession": "CN1-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8006,
+          "raw": "CN1-F35",
+          "accession": "CN1-F35",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8036,
+          "raw": "CN1-F37",
+          "accession": "CN1-F37",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8066,
+          "raw": "CN1-F38",
+          "accession": "CN1-F38",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8096,
+          "raw": "CN1-F39",
+          "accession": "CN1-F39",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8126,
+          "raw": "CN1-F40",
+          "accession": "CN1-F40",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8157,
+          "raw": "CN2-F5",
+          "accession": "CN2-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8190,
+          "raw": "CN2-F7",
+          "accession": "CN2-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8223,
+          "raw": "CN2-F9",
+          "accession": "CN2-F9",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8254,
+          "raw": "CN2-F10",
+          "accession": "CN2-F10",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8287,
+          "raw": "CN2-F14",
+          "accession": "CN2-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8320,
+          "raw": "CN2-F16",
+          "accession": "CN2-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8351,
+          "raw": "CN2-F17",
+          "accession": "CN2-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8384,
+          "raw": "CN2-F19",
+          "accession": "CN2-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8417,
+          "raw": "CN2-F20",
+          "accession": "CN2-F20",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8450,
+          "raw": "CN2-F21",
+          "accession": "CN2-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8482,
+          "raw": "CN2-F22",
+          "accession": "CN2-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8513,
+          "raw": "CN2-F23",
+          "accession": "CN2-F23",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8546,
+          "raw": "CN2-F26",
+          "accession": "CN2-F26",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8579,
+          "raw": "CN2-F28",
+          "accession": "CN2-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8612,
+          "raw": "CN2-F29",
+          "accession": "CN2-F29",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8645,
+          "raw": "CN2-F30",
+          "accession": "CN2-F30",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8678,
+          "raw": "CN2-F32",
+          "accession": "CN2-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8712,
+          "raw": "CN4-F8",
+          "accession": "CN4-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8744,
+          "raw": "CN6-F6",
+          "accession": "CN6-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8778,
+          "raw": "CN000-F1",
+          "accession": "CN000-F1",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8809,
+          "raw": "CN000-F2",
+          "accession": "CN000-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8847,
+          "raw": "EN1-F3",
+          "accession": "EN1-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8878,
+          "raw": "EN1-F4",
+          "accession": "EN1-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8908,
+          "raw": "EN1-F6",
+          "accession": "EN1-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8939,
+          "raw": "EN1-F7",
+          "accession": "EN1-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8970,
+          "raw": "EN1-F8",
+          "accession": "EN1-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9001,
+          "raw": "EN1-F11",
+          "accession": "EN1-F11",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9032,
+          "raw": "EN1-F12",
+          "accession": "EN1-F12",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9062,
+          "raw": "EN1-F14",
+          "accession": "EN1-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9093,
+          "raw": "EN1-F16",
+          "accession": "EN1-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9124,
+          "raw": "EN1-F17",
+          "accession": "EN1-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9154,
+          "raw": "EN1-F18",
+          "accession": "EN1-F18",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9185,
+          "raw": "EN1-F19",
+          "accession": "EN1-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9216,
+          "raw": "EN1-F20",
+          "accession": "EN1-F20",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9246,
+          "raw": "EN1-F22",
+          "accession": "EN1-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9277,
+          "raw": "EN1-F23",
+          "accession": "EN1-F23",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9308,
+          "raw": "EN1-F24",
+          "accession": "EN1-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9339,
+          "raw": "EN1-F25",
+          "accession": "EN1-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9370,
+          "raw": "EN1-F26",
+          "accession": "EN1-F26",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9401,
+          "raw": "EN1-F27",
+          "accession": "EN1-F27",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9432,
+          "raw": "EN1-F28",
+          "accession": "EN1-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9463,
+          "raw": "EN1-F29",
+          "accession": "EN1-F29",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9494,
+          "raw": "EN1-F30",
+          "accession": "EN1-F30",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9525,
+          "raw": "EN3-F2",
+          "accession": "EN3-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9555,
+          "raw": "EN3-F3",
+          "accession": "EN3-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9585,
+          "raw": "EN3-F4",
+          "accession": "EN3-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9616,
+          "raw": "EN3-F5",
+          "accession": "EN3-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9647,
+          "raw": "EN3-F6",
+          "accession": "EN3-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9678,
+          "raw": "EN3-F7",
+          "accession": "EN3-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9709,
+          "raw": "EN3-F8",
+          "accession": "EN3-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9740,
+          "raw": "EN3-F9",
+          "accession": "EN3-F9",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9771,
+          "raw": "EN3-F10",
+          "accession": "EN3-F10",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9802,
+          "raw": "EN3-F11",
+          "accession": "EN3-F11",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9833,
+          "raw": "EN3-F13",
+          "accession": "EN3-F13",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9864,
+          "raw": "EN3-F14",
+          "accession": "EN3-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9894,
+          "raw": "EN3-F15",
+          "accession": "EN3-F15",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9925,
+          "raw": "EN3-F16",
+          "accession": "EN3-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9955,
+          "raw": "EN3-F17",
+          "accession": "EN3-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9986,
+          "raw": "EN3-F18",
+          "accession": "EN3-F18",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10016,
+          "raw": "EN3-F19",
+          "accession": "EN3-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10046,
+          "raw": "EN3-F20",
+          "accession": "EN3-F20",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10076,
+          "raw": "EN3-F21",
+          "accession": "EN3-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10106,
+          "raw": "EN3-F22",
+          "accession": "EN3-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10136,
+          "raw": "EN3-F23",
+          "accession": "EN3-F23",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10167,
+          "raw": "EN3-F24",
+          "accession": "EN3-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10197,
+          "raw": "EN3-F25",
+          "accession": "EN3-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10227,
+          "raw": "EN3-F26",
+          "accession": "EN3-F26",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10258,
+          "raw": "EN3-F27",
+          "accession": "EN3-F27",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10288,
+          "raw": "EN3-F28",
+          "accession": "EN3-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10318,
+          "raw": "EN3-F31",
+          "accession": "EN3-F31",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10348,
+          "raw": "EN3-F32",
+          "accession": "EN3-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10379,
+          "raw": "EN3-F33",
+          "accession": "EN3-F33",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10410,
+          "raw": "EN3-F34",
+          "accession": "EN3-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10440,
+          "raw": "EN3-F35",
+          "accession": "EN3-F35",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10470,
+          "raw": "EN3-F36",
+          "accession": "EN3-F36",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10507,
+          "raw": "FN-F4",
+          "accession": "FN-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10538,
+          "raw": "FN-F6",
+          "accession": "FN-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10568,
+          "raw": "FN-F22",
+          "accession": "FN-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10599,
+          "raw": "FN-F24",
+          "accession": "FN-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10629,
+          "raw": "FN-F27",
+          "accession": "FN-F27",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10659,
+          "raw": "FN-F30",
+          "accession": "FN-F30",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10690,
+          "raw": "FN-F32",
+          "accession": "FN-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10721,
+          "raw": "FN-F34",
+          "accession": "FN-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10752,
+          "raw": "FN-F35",
+          "accession": "FN-F35",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10783,
+          "raw": "FN-F38",
+          "accession": "FN-F38",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10814,
+          "raw": "FN-F39",
+          "accession": "FN-F39",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10852,
+          "raw": "IS-F18",
+          "accession": "IS-F18",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10883,
+          "raw": "IS-F23",
+          "accession": "IS-F23",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10914,
+          "raw": "IS-F24",
+          "accession": "IS-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10945,
+          "raw": "IS-F25",
+          "accession": "IS-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10976,
+          "raw": "IS-F26",
+          "accession": "IS-F26",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11007,
+          "raw": "IS-F27",
+          "accession": "IS-F27",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11038,
+          "raw": "IS-F28",
+          "accession": "IS-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11069,
+          "raw": "IS-F29",
+          "accession": "IS-F29",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11100,
+          "raw": "IS-F30",
+          "accession": "IS-F30",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11131,
+          "raw": "IS-F31",
+          "accession": "IS-F31",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11162,
+          "raw": "IS-F32",
+          "accession": "IS-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11193,
+          "raw": "IS-F33",
+          "accession": "IS-F33",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11224,
+          "raw": "IS-F34",
+          "accession": "IS-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11255,
+          "raw": "IS-F35",
+          "accession": "IS-F35",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11286,
+          "raw": "IS-F36",
+          "accession": "IS-F36",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11317,
+          "raw": "IS-F37",
+          "accession": "IS-F37",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11348,
+          "raw": "IS-F38",
+          "accession": "IS-F38",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11379,
+          "raw": "IS-F39",
+          "accession": "IS-F39",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11410,
+          "raw": "IS-F40",
+          "accession": "IS-F40",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11441,
+          "raw": "IS-F41",
+          "accession": "IS-F41",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11472,
+          "raw": "IS-F42",
+          "accession": "IS-F42",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11503,
+          "raw": "IS-F43",
+          "accession": "IS-F43",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11534,
+          "raw": "IS-F44",
+          "accession": "IS-F44",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11565,
+          "raw": "IS-F45",
+          "accession": "IS-F45",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11596,
+          "raw": "IS-F46",
+          "accession": "IS-F46",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11627,
+          "raw": "IS-F47",
+          "accession": "IS-F47",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11658,
+          "raw": "IS-F48",
+          "accession": "IS-F48",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11689,
+          "raw": "IS-F49",
+          "accession": "IS-F49",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11724,
+          "raw": "JN1-F1",
+          "accession": "JN1-F1",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11753,
+          "raw": "JN1-F4",
+          "accession": "JN1-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11782,
+          "raw": "JN1-F6",
+          "accession": "JN1-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11811,
+          "raw": "JN1-F8",
+          "accession": "JN1-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11840,
+          "raw": "JN1-F9",
+          "accession": "JN1-F9",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11869,
+          "raw": "JN1-F10",
+          "accession": "JN1-F10",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11898,
+          "raw": "JN1-F11",
+          "accession": "JN1-F11",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11927,
+          "raw": "JN1-F14",
+          "accession": "JN1-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11956,
+          "raw": "JN1-F16",
+          "accession": "JN1-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11985,
+          "raw": "JN1-F22",
+          "accession": "JN1-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12014,
+          "raw": "JN1-F23",
+          "accession": "JN1-F23",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12044,
+          "raw": "JN1-F24",
+          "accession": "JN1-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12073,
+          "raw": "JN1-F25",
+          "accession": "JN1-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12102,
+          "raw": "JN1-F27",
+          "accession": "JN1-F27",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12131,
+          "raw": "JN1-F32",
+          "accession": "JN1-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12161,
+          "raw": "JN2-F1",
+          "accession": "JN2-F1",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12192,
+          "raw": "JN2-F3",
+          "accession": "JN2-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12242,
+          "raw": "JN2-F4",
+          "accession": "JN2-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12273,
+          "raw": "JN2-F5",
+          "accession": "JN2-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12303,
+          "raw": "JN2-F6",
+          "accession": "JN2-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12334,
+          "raw": "JN2-F8",
+          "accession": "JN2-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12365,
+          "raw": "JN2-F9",
+          "accession": "JN2-F9",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12395,
+          "raw": "JN2-F10",
+          "accession": "JN2-F10",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12426,
+          "raw": "JN2-F11",
+          "accession": "JN2-F11",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12457,
+          "raw": "JN2-F12",
+          "accession": "JN2-F12",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12488,
+          "raw": "JN2-F13",
+          "accession": "JN2-F13",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12519,
+          "raw": "JN2-F15",
+          "accession": "JN2-F15",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12550,
+          "raw": "JN2-F16",
+          "accession": "JN2-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12581,
+          "raw": "JN2-F17",
+          "accession": "JN2-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12613,
+          "raw": "JN2-F19",
+          "accession": "JN2-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12644,
+          "raw": "JN2-F20",
+          "accession": "JN2-F20",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12675,
+          "raw": "JN2-F21",
+          "accession": "JN2-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12706,
+          "raw": "JN2-F23",
+          "accession": "JN2-F23",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12737,
+          "raw": "JN2-F24",
+          "accession": "JN2-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12768,
+          "raw": "JN2-F25",
+          "accession": "JN2-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12799,
+          "raw": "JN2-F27",
+          "accession": "JN2-F27",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12830,
+          "raw": "JN2-F28",
+          "accession": "JN2-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12861,
+          "raw": "JN2-F29",
+          "accession": "JN2-F29",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12892,
+          "raw": "JN2-F30",
+          "accession": "JN2-F30",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12923,
+          "raw": "JN2-F31",
+          "accession": "JN2-F31",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12954,
+          "raw": "JN2-F32",
+          "accession": "JN2-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12985,
+          "raw": "JN2-F33",
+          "accession": "JN2-F33",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 13016,
+          "raw": "JN2-F34",
+          "accession": "JN2-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 13047,
+          "raw": "JN2-F35",
+          "accession": "JN2-F35",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 13078,
+          "raw": "JN2-F36",
+          "accession": "JN2-F36",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 13109,
+          "raw": "JN2-F37",
+          "accession": "JN2-F37",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 13140,
+          "raw": "JN2-F38",
+          "accession": "JN2-F38",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 13171,
+          "raw": "JN2-F39",
+          "accession": "JN2-F39",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 13203,
+          "raw": "JN5-F6",
+          "accession": "JN5-F6",
+          "kind": "strict_chart"
+        }
+      ]
+    },
+    {
+      "source": "REV403",
+      "url": "https://docs.google.com/document/d/1-YxtUoVopWpSt_nTTey2KsC7_aCOHpMI4yasky4_k-E/edit",
+      "source_accession_lines": 403,
+      "strict": 400,
+      "decorated": 3,
+      "excluded": 0,
+      "unclassified": 0,
+      "charts": 403,
+      "normalized_unique": 401,
+      "entries": [
+        {
+          "line": 53,
+          "raw": "AN2-F1",
+          "accession": "AN2-F1",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 82,
+          "raw": "AN2-F2",
+          "accession": "AN2-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 111,
+          "raw": "AN2-F3",
+          "accession": "AN2-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 140,
+          "raw": "AN2-F4",
+          "accession": "AN2-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 169,
+          "raw": "AN2-F5",
+          "accession": "AN2-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 198,
+          "raw": "AN2-F7",
+          "accession": "AN2-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 227,
+          "raw": "AN2-F21",
+          "accession": "AN2-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 257,
+          "raw": "AN2-F25",
+          "accession": "AN2-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 287,
+          "raw": "AN2-F31",
+          "accession": "AN2-F31",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 317,
+          "raw": "AN2-F32",
+          "accession": "AN2-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 346,
+          "raw": "AN2-F34",
+          "accession": "AN2-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 375,
+          "raw": "AN2-F36",
+          "accession": "AN2-F36",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 404,
+          "raw": "AN2-F38",
+          "accession": "AN2-F38",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 433,
+          "raw": "AN2-F41",
+          "accession": "AN2-F41",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 463,
+          "raw": "AN3-F2",
+          "accession": "AN3-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 493,
+          "raw": "AN3-F4",
+          "accession": "AN3-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 523,
+          "raw": "AN3-F7",
+          "accession": "AN3-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 554,
+          "raw": "AN3-F8",
+          "accession": "AN3-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 585,
+          "raw": "AN3-F11",
+          "accession": "AN3-F11",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 615,
+          "raw": "AN3-F12",
+          "accession": "AN3-F12",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 646,
+          "raw": "AN3-F13",
+          "accession": "AN3-F13",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 677,
+          "raw": "AN3-F14",
+          "accession": "AN3-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 707,
+          "raw": "AN3-F16",
+          "accession": "AN3-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 738,
+          "raw": "AN3-F17",
+          "accession": "AN3-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 768,
+          "raw": "AN3-F18",
+          "accession": "AN3-F18",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 798,
+          "raw": "AN3-F19",
+          "accession": "AN3-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 829,
+          "raw": "AN3-F20",
+          "accession": "AN3-F20",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 860,
+          "raw": "AN3-F21",
+          "accession": "AN3-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 890,
+          "raw": "AN3-F22",
+          "accession": "AN3-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 920,
+          "raw": "AN3-F24",
+          "accession": "AN3-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 951,
+          "raw": "AN3-F25",
+          "accession": "AN3-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 981,
+          "raw": "AN3-F26",
+          "accession": "AN3-F26",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1011,
+          "raw": "AN3-F28",
+          "accession": "AN3-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1042,
+          "raw": "AN3-F29",
+          "accession": "AN3-F29",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1073,
+          "raw": "AN3-F31",
+          "accession": "AN3-F31",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1104,
+          "raw": "AN3-F32",
+          "accession": "AN3-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1134,
+          "raw": "AN3-F33",
+          "accession": "AN3-F33",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1165,
+          "raw": "AN3-F34",
+          "accession": "AN3-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1196,
+          "raw": "AN3-F36",
+          "accession": "AN3-F36",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1227,
+          "raw": "AN3-F37",
+          "accession": "AN3-F37",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1258,
+          "raw": "AN3-F38",
+          "accession": "AN3-F38",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1289,
+          "raw": "AN3-F39",
+          "accession": "AN3-F39",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1320,
+          "raw": "AN3-F40",
+          "accession": "AN3-F40",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1351,
+          "raw": "AN3-F41",
+          "accession": "AN3-F41",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1382,
+          "raw": "AN3-F42",
+          "accession": "AN3-F42",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1419,
+          "raw": "BN1-F1",
+          "accession": "BN1-F1",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1450,
+          "raw": "BN1-F2",
+          "accession": "BN1-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1481,
+          "raw": "BN1-F3",
+          "accession": "BN1-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1511,
+          "raw": "BN1-F4",
+          "accession": "BN1-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1541,
+          "raw": "BN1-F5",
+          "accession": "BN1-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1573,
+          "raw": "BN1-F6",
+          "accession": "BN1-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1604,
+          "raw": "BN1-F7",
+          "accession": "BN1-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1634,
+          "raw": "BN1-F8",
+          "accession": "BN1-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1665,
+          "raw": "BN1-F9",
+          "accession": "BN1-F9",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1695,
+          "raw": "BN1-F10",
+          "accession": "BN1-F10",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1726,
+          "raw": "BN1-F11",
+          "accession": "BN1-F11",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1757,
+          "raw": "BN1-F12",
+          "accession": "BN1-F12",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1788,
+          "raw": "BN1-F13",
+          "accession": "BN1-F13",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1818,
+          "raw": "BN1-F14",
+          "accession": "BN1-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1849,
+          "raw": "BN1-F15",
+          "accession": "BN1-F15",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1880,
+          "raw": "BN1-F16",
+          "accession": "BN1-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1911,
+          "raw": "BN1-F17",
+          "accession": "BN1-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1942,
+          "raw": "BN1-F18",
+          "accession": "BN1-F18",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 1972,
+          "raw": "BN1-F19",
+          "accession": "BN1-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2003,
+          "raw": "BN1-F20",
+          "accession": "BN1-F20",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2033,
+          "raw": "BN1-F21",
+          "accession": "BN1-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2064,
+          "raw": "BN1-F22",
+          "accession": "BN1-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2095,
+          "raw": "BN1-F23",
+          "accession": "BN1-F23",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2126,
+          "raw": "BN1-F24",
+          "accession": "BN1-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2157,
+          "raw": "BN1-F25",
+          "accession": "BN1-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2187,
+          "raw": "BN1-F26",
+          "accession": "BN1-F26",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2217,
+          "raw": "BN1-F27",
+          "accession": "BN1-F27",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2248,
+          "raw": "BN1-F28",
+          "accession": "BN1-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2278,
+          "raw": "BN1-F29",
+          "accession": "BN1-F29",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2309,
+          "raw": "BN1-F30",
+          "accession": "BN1-F30",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2340,
+          "raw": "BN1-F31",
+          "accession": "BN1-F31",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2371,
+          "raw": "BN1-F32",
+          "accession": "BN1-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2402,
+          "raw": "BN1-F33",
+          "accession": "BN1-F33",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2433,
+          "raw": "BN1-F34",
+          "accession": "BN1-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2464,
+          "raw": "BN1-F35",
+          "accession": "BN1-F35",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2495,
+          "raw": "BN1-F36",
+          "accession": "BN1-F36",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2525,
+          "raw": "BN1-F37",
+          "accession": "BN1-F37",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2555,
+          "raw": "BN1-F38",
+          "accession": "BN1-F38",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2586,
+          "raw": "BN1-F39",
+          "accession": "BN1-F39",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2617,
+          "raw": "BN1-F40",
+          "accession": "BN1-F40",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2648,
+          "raw": "BN1-F41",
+          "accession": "BN1-F41",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2679,
+          "raw": "BN1-F42",
+          "accession": "BN1-F42",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2710,
+          "raw": "BN1-F43",
+          "accession": "BN1-F43",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2741,
+          "raw": "BN1-F44",
+          "accession": "BN1-F44",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2771,
+          "raw": "BN1-F45",
+          "accession": "BN1-F45",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2802,
+          "raw": "BN1-F46",
+          "accession": "BN1-F46",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2833,
+          "raw": "BN1-F47",
+          "accession": "BN1-F47",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2863,
+          "raw": "BN1-F48",
+          "accession": "BN1-F48",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2894,
+          "raw": "BN2-F1",
+          "accession": "BN2-F1",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2925,
+          "raw": "BN2-F2",
+          "accession": "BN2-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2956,
+          "raw": "BN2-F3",
+          "accession": "BN2-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 2987,
+          "raw": "BN2-F4",
+          "accession": "BN2-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3018,
+          "raw": "BN2-F5",
+          "accession": "BN2-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3049,
+          "raw": "BN2-F6",
+          "accession": "BN2-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3079,
+          "raw": "BN2-F7",
+          "accession": "BN2-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3110,
+          "raw": "BN2-F8",
+          "accession": "BN2-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3141,
+          "raw": "BN2-F9",
+          "accession": "BN2-F9",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3172,
+          "raw": "BN2-F10",
+          "accession": "BN2-F10",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3203,
+          "raw": "BN2-F11",
+          "accession": "BN2-F11",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3235,
+          "raw": "BN2-F12",
+          "accession": "BN2-F12",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3265,
+          "raw": "BN2-F13",
+          "accession": "BN2-F13",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3296,
+          "raw": "BN2-F14",
+          "accession": "BN2-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3327,
+          "raw": "BN2-F15",
+          "accession": "BN2-F15",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3358,
+          "raw": "BN2-F16",
+          "accession": "BN2-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3388,
+          "raw": "BN2-F17",
+          "accession": "BN2-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3420,
+          "raw": "BN4-F1",
+          "accession": "BN4-F1",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3451,
+          "raw": "BN4-F2",
+          "accession": "BN4-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3482,
+          "raw": "BN4-F3",
+          "accession": "BN4-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3513,
+          "raw": "BN4-F4",
+          "accession": "BN4-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3544,
+          "raw": "BN4-F5",
+          "accession": "BN4-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3575,
+          "raw": "BN4-F6",
+          "accession": "BN4-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3606,
+          "raw": "BN4-F8",
+          "accession": "BN4-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3637,
+          "raw": "BN4-F9",
+          "accession": "BN4-F9",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3668,
+          "raw": "BN4-F10",
+          "accession": "BN4-F10",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3699,
+          "raw": "BN4-F11",
+          "accession": "BN4-F11",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3730,
+          "raw": "BN4-F12",
+          "accession": "BN4-F12",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3761,
+          "raw": "BN4-F13",
+          "accession": "BN4-F13",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3793,
+          "raw": "BN4-F14",
+          "accession": "BN4-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3824,
+          "raw": "BN4-F15",
+          "accession": "BN4-F15",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3855,
+          "raw": "BN4-F16",
+          "accession": "BN4-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3886,
+          "raw": "BN4-F17",
+          "accession": "BN4-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3917,
+          "raw": "BN4-F18",
+          "accession": "BN4-F18",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3948,
+          "raw": "BN4-F19",
+          "accession": "BN4-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 3979,
+          "raw": "BN4-F20",
+          "accession": "BN4-F20",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4010,
+          "raw": "BN4-F21",
+          "accession": "BN4-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4041,
+          "raw": "BN4-F22",
+          "accession": "BN4-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4072,
+          "raw": "BN4-F25",
+          "accession": "BN4-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4104,
+          "raw": "BN5-F1",
+          "accession": "BN5-F1",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4135,
+          "raw": "BN5-F2",
+          "accession": "BN5-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4166,
+          "raw": "BN5-F3",
+          "accession": "BN5-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4197,
+          "raw": "BN5-F4",
+          "accession": "BN5-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4228,
+          "raw": "BN5-F5",
+          "accession": "BN5-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4259,
+          "raw": "BN5-F7",
+          "accession": "BN5-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4303,
+          "raw": "BN5-F8(A)",
+          "accession": "BN5-F8",
+          "kind": "decorated_chart"
+        },
+        {
+          "line": 4334,
+          "raw": "BN5-F8(B)",
+          "accession": "BN5-F8",
+          "kind": "decorated_chart"
+        },
+        {
+          "line": 4366,
+          "raw": "BN5-F8(C)",
+          "accession": "BN5-F8",
+          "kind": "decorated_chart"
+        },
+        {
+          "line": 4397,
+          "raw": "BN5-F9",
+          "accession": "BN5-F9",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4428,
+          "raw": "BN5-F11",
+          "accession": "BN5-F11",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4459,
+          "raw": "BN5-F12",
+          "accession": "BN5-F12",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4490,
+          "raw": "BN5-F13",
+          "accession": "BN5-F13",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4520,
+          "raw": "BN5-F14",
+          "accession": "BN5-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4551,
+          "raw": "BN5-F15",
+          "accession": "BN5-F15",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4582,
+          "raw": "BN5-F16",
+          "accession": "BN5-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4613,
+          "raw": "BN5-F17",
+          "accession": "BN5-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4643,
+          "raw": "BN5-F18",
+          "accession": "BN5-F18",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4674,
+          "raw": "BN5-F19",
+          "accession": "BN5-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4705,
+          "raw": "BN5-F20",
+          "accession": "BN5-F20",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4736,
+          "raw": "BN5-F21",
+          "accession": "BN5-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4766,
+          "raw": "BN5-F22",
+          "accession": "BN5-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4797,
+          "raw": "BN5-F23",
+          "accession": "BN5-F23",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4827,
+          "raw": "BN5-F24",
+          "accession": "BN5-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4857,
+          "raw": "BN5-F25",
+          "accession": "BN5-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4888,
+          "raw": "BN5-F26",
+          "accession": "BN5-F26",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4918,
+          "raw": "BN5-F27",
+          "accession": "BN5-F27",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4948,
+          "raw": "BN5-F28",
+          "accession": "BN5-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 4979,
+          "raw": "BN5-F29",
+          "accession": "BN5-F29",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5010,
+          "raw": "BN5-F30",
+          "accession": "BN5-F30",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5041,
+          "raw": "BN5-F31",
+          "accession": "BN5-F31",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5071,
+          "raw": "BN5-F32",
+          "accession": "BN5-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5102,
+          "raw": "BN5-F33",
+          "accession": "BN5-F33",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5133,
+          "raw": "BN5-F34",
+          "accession": "BN5-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5163,
+          "raw": "BN5-F35",
+          "accession": "BN5-F35",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5193,
+          "raw": "BN5-F36",
+          "accession": "BN5-F36",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5223,
+          "raw": "BN5-F37",
+          "accession": "BN5-F37",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5254,
+          "raw": "BN5-F39",
+          "accession": "BN5-F39",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5284,
+          "raw": "BN5-F40",
+          "accession": "BN5-F40",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5315,
+          "raw": "BN5-F41",
+          "accession": "BN5-F41",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5346,
+          "raw": "BN5-F42",
+          "accession": "BN5-F42",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5376,
+          "raw": "BN5-F43",
+          "accession": "BN5-F43",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5407,
+          "raw": "BN5-F44",
+          "accession": "BN5-F44",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5438,
+          "raw": "BN5-F45",
+          "accession": "BN5-F45",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5468,
+          "raw": "BN5-F46",
+          "accession": "BN5-F46",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5499,
+          "raw": "BN5-F47",
+          "accession": "BN5-F47",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5529,
+          "raw": "BN5-F48",
+          "accession": "BN5-F48",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5559,
+          "raw": "BN5-F49",
+          "accession": "BN5-F49",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5590,
+          "raw": "BN5-F50",
+          "accession": "BN5-F50",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5621,
+          "raw": "BN5-F51",
+          "accession": "BN5-F51",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5656,
+          "raw": "BN5-F52",
+          "accession": "BN5-F52",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5687,
+          "raw": "BN5-F53",
+          "accession": "BN5-F53",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5717,
+          "raw": "BN5-F54",
+          "accession": "BN5-F54",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5748,
+          "raw": "BN5-F55",
+          "accession": "BN5-F55",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5778,
+          "raw": "BN5-F56",
+          "accession": "BN5-F56",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5839,
+          "raw": "BN6-F1",
+          "accession": "BN6-F1",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5869,
+          "raw": "BN6-F2",
+          "accession": "BN6-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5902,
+          "raw": "BN6-F3",
+          "accession": "BN6-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5932,
+          "raw": "BN6-F5",
+          "accession": "BN6-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5965,
+          "raw": "BN6-F6",
+          "accession": "BN6-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 5995,
+          "raw": "BN6-F7",
+          "accession": "BN6-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6026,
+          "raw": "BN6-F8",
+          "accession": "BN6-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6057,
+          "raw": "BN6-F9",
+          "accession": "BN6-F9",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6088,
+          "raw": "BN6-F10",
+          "accession": "BN6-F10",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6119,
+          "raw": "BN6-F11",
+          "accession": "BN6-F11",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6149,
+          "raw": "BN6-F12",
+          "accession": "BN6-F12",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6180,
+          "raw": "BN6-F13",
+          "accession": "BN6-F13",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6210,
+          "raw": "BN6-F14",
+          "accession": "BN6-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6241,
+          "raw": "BN6-F15",
+          "accession": "BN6-F15",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6272,
+          "raw": "BN6-F16",
+          "accession": "BN6-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6303,
+          "raw": "BN6-F17",
+          "accession": "BN6-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6333,
+          "raw": "BN6-F18",
+          "accession": "BN6-F18",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6364,
+          "raw": "BN6-F19",
+          "accession": "BN6-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6395,
+          "raw": "BN6-F20",
+          "accession": "BN6-F20",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6425,
+          "raw": "BN6-F21",
+          "accession": "BN6-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6456,
+          "raw": "BN6-F22",
+          "accession": "BN6-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6487,
+          "raw": "BN6-F23",
+          "accession": "BN6-F23",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6517,
+          "raw": "BN6-F24",
+          "accession": "BN6-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6548,
+          "raw": "BN6-F25",
+          "accession": "BN6-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6579,
+          "raw": "BN6-F26",
+          "accession": "BN6-F26",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6610,
+          "raw": "BN6-F28",
+          "accession": "BN6-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6641,
+          "raw": "BN6-F29",
+          "accession": "BN6-F29",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6672,
+          "raw": "BN6-F30",
+          "accession": "BN6-F30",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6703,
+          "raw": "BN6-F31",
+          "accession": "BN6-F31",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6733,
+          "raw": "BN6-F32",
+          "accession": "BN6-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6764,
+          "raw": "BN6-F33",
+          "accession": "BN6-F33",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6795,
+          "raw": "BN6-F34",
+          "accession": "BN6-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6826,
+          "raw": "BN6-F35",
+          "accession": "BN6-F35",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6857,
+          "raw": "BN6-F40",
+          "accession": "BN6-F40",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6887,
+          "raw": "BN6-F41",
+          "accession": "BN6-F41",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6925,
+          "raw": "CN1-F1",
+          "accession": "CN1-F1",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6955,
+          "raw": "CN1-F2",
+          "accession": "CN1-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 6985,
+          "raw": "CN1-F3",
+          "accession": "CN1-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7015,
+          "raw": "CN1-F4",
+          "accession": "CN1-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7045,
+          "raw": "CN1-F5",
+          "accession": "CN1-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7075,
+          "raw": "CN1-F6",
+          "accession": "CN1-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7105,
+          "raw": "CN1-F7",
+          "accession": "CN1-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7135,
+          "raw": "CN1-F8",
+          "accession": "CN1-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7165,
+          "raw": "CN1-F9",
+          "accession": "CN1-F9",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7195,
+          "raw": "CN1-F12",
+          "accession": "CN1-F12",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7225,
+          "raw": "CN1-F13",
+          "accession": "CN1-F13",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7255,
+          "raw": "CN1-F14",
+          "accession": "CN1-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7285,
+          "raw": "CN1-F15",
+          "accession": "CN1-F15",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7315,
+          "raw": "CN1-F16",
+          "accession": "CN1-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7345,
+          "raw": "CN1-F17",
+          "accession": "CN1-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7375,
+          "raw": "CN1-F19",
+          "accession": "CN1-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7405,
+          "raw": "CN1-F21",
+          "accession": "CN1-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7435,
+          "raw": "CN1-F22",
+          "accession": "CN1-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7465,
+          "raw": "CN1-F23",
+          "accession": "CN1-F23",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7495,
+          "raw": "CN1-F24",
+          "accession": "CN1-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7525,
+          "raw": "CN1-F26",
+          "accession": "CN1-F26",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7555,
+          "raw": "CN1-F27",
+          "accession": "CN1-F27",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7585,
+          "raw": "CN1-F28",
+          "accession": "CN1-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7615,
+          "raw": "CN1-F29",
+          "accession": "CN1-F29",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7645,
+          "raw": "CN1-F31",
+          "accession": "CN1-F31",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7675,
+          "raw": "CN1-F32",
+          "accession": "CN1-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7705,
+          "raw": "CN1-F33",
+          "accession": "CN1-F33",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7735,
+          "raw": "CN1-F34",
+          "accession": "CN1-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7765,
+          "raw": "CN1-F35",
+          "accession": "CN1-F35",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7795,
+          "raw": "CN1-F37",
+          "accession": "CN1-F37",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7825,
+          "raw": "CN1-F38",
+          "accession": "CN1-F38",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7855,
+          "raw": "CN1-F39",
+          "accession": "CN1-F39",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7885,
+          "raw": "CN1-F40",
+          "accession": "CN1-F40",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7916,
+          "raw": "CN2-F5",
+          "accession": "CN2-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7949,
+          "raw": "CN2-F7",
+          "accession": "CN2-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 7982,
+          "raw": "CN2-F9",
+          "accession": "CN2-F9",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8013,
+          "raw": "CN2-F10",
+          "accession": "CN2-F10",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8046,
+          "raw": "CN2-F14",
+          "accession": "CN2-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8079,
+          "raw": "CN2-F16",
+          "accession": "CN2-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8110,
+          "raw": "CN2-F17",
+          "accession": "CN2-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8143,
+          "raw": "CN2-F19",
+          "accession": "CN2-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8176,
+          "raw": "CN2-F20",
+          "accession": "CN2-F20",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8209,
+          "raw": "CN2-F21",
+          "accession": "CN2-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8241,
+          "raw": "CN2-F22",
+          "accession": "CN2-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8272,
+          "raw": "CN2-F23",
+          "accession": "CN2-F23",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8305,
+          "raw": "CN2-F26",
+          "accession": "CN2-F26",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8338,
+          "raw": "CN2-F28",
+          "accession": "CN2-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8371,
+          "raw": "CN2-F29",
+          "accession": "CN2-F29",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8404,
+          "raw": "CN2-F30",
+          "accession": "CN2-F30",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8437,
+          "raw": "CN2-F32",
+          "accession": "CN2-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8471,
+          "raw": "CN4-F8",
+          "accession": "CN4-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8503,
+          "raw": "CN6-F6",
+          "accession": "CN6-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8537,
+          "raw": "CN000-F1",
+          "accession": "CN000-F1",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8568,
+          "raw": "CN000-F2",
+          "accession": "CN000-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8606,
+          "raw": "EN1-F3",
+          "accession": "EN1-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8637,
+          "raw": "EN1-F4",
+          "accession": "EN1-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8667,
+          "raw": "EN1-F6",
+          "accession": "EN1-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8698,
+          "raw": "EN1-F7",
+          "accession": "EN1-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8729,
+          "raw": "EN1-F8",
+          "accession": "EN1-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8760,
+          "raw": "EN1-F11",
+          "accession": "EN1-F11",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8791,
+          "raw": "EN1-F12",
+          "accession": "EN1-F12",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8821,
+          "raw": "EN1-F14",
+          "accession": "EN1-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8852,
+          "raw": "EN1-F16",
+          "accession": "EN1-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8883,
+          "raw": "EN1-F17",
+          "accession": "EN1-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8913,
+          "raw": "EN1-F18",
+          "accession": "EN1-F18",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8944,
+          "raw": "EN1-F19",
+          "accession": "EN1-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 8975,
+          "raw": "EN1-F20",
+          "accession": "EN1-F20",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9005,
+          "raw": "EN1-F22",
+          "accession": "EN1-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9036,
+          "raw": "EN1-F23",
+          "accession": "EN1-F23",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9067,
+          "raw": "EN1-F24",
+          "accession": "EN1-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9098,
+          "raw": "EN1-F25",
+          "accession": "EN1-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9129,
+          "raw": "EN1-F26",
+          "accession": "EN1-F26",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9160,
+          "raw": "EN1-F27",
+          "accession": "EN1-F27",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9191,
+          "raw": "EN1-F28",
+          "accession": "EN1-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9222,
+          "raw": "EN1-F29",
+          "accession": "EN1-F29",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9253,
+          "raw": "EN1-F30",
+          "accession": "EN1-F30",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9284,
+          "raw": "EN3-F2",
+          "accession": "EN3-F2",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9314,
+          "raw": "EN3-F3",
+          "accession": "EN3-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9344,
+          "raw": "EN3-F4",
+          "accession": "EN3-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9375,
+          "raw": "EN3-F5",
+          "accession": "EN3-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9406,
+          "raw": "EN3-F6",
+          "accession": "EN3-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9437,
+          "raw": "EN3-F7",
+          "accession": "EN3-F7",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9468,
+          "raw": "EN3-F8",
+          "accession": "EN3-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9499,
+          "raw": "EN3-F9",
+          "accession": "EN3-F9",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9530,
+          "raw": "EN3-F10",
+          "accession": "EN3-F10",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9561,
+          "raw": "EN3-F11",
+          "accession": "EN3-F11",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9592,
+          "raw": "EN3-F13",
+          "accession": "EN3-F13",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9623,
+          "raw": "EN3-F14",
+          "accession": "EN3-F14",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9653,
+          "raw": "EN3-F15",
+          "accession": "EN3-F15",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9684,
+          "raw": "EN3-F16",
+          "accession": "EN3-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9714,
+          "raw": "EN3-F17",
+          "accession": "EN3-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9745,
+          "raw": "EN3-F18",
+          "accession": "EN3-F18",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9775,
+          "raw": "EN3-F19",
+          "accession": "EN3-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9805,
+          "raw": "EN3-F20",
+          "accession": "EN3-F20",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9835,
+          "raw": "EN3-F21",
+          "accession": "EN3-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9865,
+          "raw": "EN3-F22",
+          "accession": "EN3-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9895,
+          "raw": "EN3-F23",
+          "accession": "EN3-F23",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9926,
+          "raw": "EN3-F24",
+          "accession": "EN3-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9956,
+          "raw": "EN3-F25",
+          "accession": "EN3-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 9986,
+          "raw": "EN3-F26",
+          "accession": "EN3-F26",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10017,
+          "raw": "EN3-F27",
+          "accession": "EN3-F27",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10047,
+          "raw": "EN3-F28",
+          "accession": "EN3-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10077,
+          "raw": "EN3-F31",
+          "accession": "EN3-F31",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10107,
+          "raw": "EN3-F32",
+          "accession": "EN3-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10138,
+          "raw": "EN3-F33",
+          "accession": "EN3-F33",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10169,
+          "raw": "EN3-F34",
+          "accession": "EN3-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10199,
+          "raw": "EN3-F35",
+          "accession": "EN3-F35",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10229,
+          "raw": "EN3-F36",
+          "accession": "EN3-F36",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10266,
+          "raw": "FN-F4",
+          "accession": "FN-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10297,
+          "raw": "FN-F6",
+          "accession": "FN-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10327,
+          "raw": "FN-F22",
+          "accession": "FN-F22",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10358,
+          "raw": "FN-F24",
+          "accession": "FN-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10388,
+          "raw": "FN-F27",
+          "accession": "FN-F27",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10418,
+          "raw": "FN-F30",
+          "accession": "FN-F30",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10449,
+          "raw": "FN-F32",
+          "accession": "FN-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10480,
+          "raw": "FN-F34",
+          "accession": "FN-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10511,
+          "raw": "FN-F35",
+          "accession": "FN-F35",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10542,
+          "raw": "FN-F38",
+          "accession": "FN-F38",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10573,
+          "raw": "FN-F39",
+          "accession": "FN-F39",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10611,
+          "raw": "IS-F18",
+          "accession": "IS-F18",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10642,
+          "raw": "IS-F23",
+          "accession": "IS-F23",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10673,
+          "raw": "IS-F24",
+          "accession": "IS-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10704,
+          "raw": "IS-F25",
+          "accession": "IS-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10735,
+          "raw": "IS-F26",
+          "accession": "IS-F26",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10766,
+          "raw": "IS-F27",
+          "accession": "IS-F27",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10797,
+          "raw": "IS-F28",
+          "accession": "IS-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10828,
+          "raw": "IS-F29",
+          "accession": "IS-F29",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10859,
+          "raw": "IS-F30",
+          "accession": "IS-F30",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10890,
+          "raw": "IS-F31",
+          "accession": "IS-F31",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10921,
+          "raw": "IS-F32",
+          "accession": "IS-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10952,
+          "raw": "IS-F33",
+          "accession": "IS-F33",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 10983,
+          "raw": "IS-F34",
+          "accession": "IS-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11014,
+          "raw": "IS-F35",
+          "accession": "IS-F35",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11045,
+          "raw": "IS-F36",
+          "accession": "IS-F36",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11076,
+          "raw": "IS-F37",
+          "accession": "IS-F37",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11107,
+          "raw": "IS-F38",
+          "accession": "IS-F38",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11138,
+          "raw": "IS-F39",
+          "accession": "IS-F39",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11169,
+          "raw": "IS-F40",
+          "accession": "IS-F40",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11200,
+          "raw": "IS-F41",
+          "accession": "IS-F41",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11231,
+          "raw": "IS-F42",
+          "accession": "IS-F42",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11262,
+          "raw": "IS-F43",
+          "accession": "IS-F43",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11293,
+          "raw": "IS-F44",
+          "accession": "IS-F44",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11324,
+          "raw": "IS-F45",
+          "accession": "IS-F45",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11355,
+          "raw": "IS-F46",
+          "accession": "IS-F46",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11386,
+          "raw": "IS-F47",
+          "accession": "IS-F47",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11417,
+          "raw": "IS-F48",
+          "accession": "IS-F48",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11448,
+          "raw": "IS-F49",
+          "accession": "IS-F49",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11483,
+          "raw": "JN2-F1",
+          "accession": "JN2-F1",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11514,
+          "raw": "JN2-F3",
+          "accession": "JN2-F3",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11545,
+          "raw": "JN2-F4",
+          "accession": "JN2-F4",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11576,
+          "raw": "JN2-F5",
+          "accession": "JN2-F5",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11606,
+          "raw": "JN2-F6",
+          "accession": "JN2-F6",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11637,
+          "raw": "JN2-F8",
+          "accession": "JN2-F8",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11668,
+          "raw": "JN2-F9",
+          "accession": "JN2-F9",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11698,
+          "raw": "JN2-F10",
+          "accession": "JN2-F10",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11729,
+          "raw": "JN2-F11",
+          "accession": "JN2-F11",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11760,
+          "raw": "JN2-F12",
+          "accession": "JN2-F12",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11791,
+          "raw": "JN2-F13",
+          "accession": "JN2-F13",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11822,
+          "raw": "JN2-F15",
+          "accession": "JN2-F15",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11853,
+          "raw": "JN2-F16",
+          "accession": "JN2-F16",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11884,
+          "raw": "JN2-F17",
+          "accession": "JN2-F17",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11916,
+          "raw": "JN2-F19",
+          "accession": "JN2-F19",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11947,
+          "raw": "JN2-F20",
+          "accession": "JN2-F20",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 11978,
+          "raw": "JN2-F21",
+          "accession": "JN2-F21",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12009,
+          "raw": "JN2-F23",
+          "accession": "JN2-F23",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12040,
+          "raw": "JN2-F24",
+          "accession": "JN2-F24",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12071,
+          "raw": "JN2-F25",
+          "accession": "JN2-F25",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12102,
+          "raw": "JN2-F27",
+          "accession": "JN2-F27",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12133,
+          "raw": "JN2-F28",
+          "accession": "JN2-F28",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12164,
+          "raw": "JN2-F29",
+          "accession": "JN2-F29",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12195,
+          "raw": "JN2-F30",
+          "accession": "JN2-F30",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12226,
+          "raw": "JN2-F31",
+          "accession": "JN2-F31",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12257,
+          "raw": "JN2-F32",
+          "accession": "JN2-F32",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12288,
+          "raw": "JN2-F33",
+          "accession": "JN2-F33",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12319,
+          "raw": "JN2-F34",
+          "accession": "JN2-F34",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12350,
+          "raw": "JN2-F35",
+          "accession": "JN2-F35",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12381,
+          "raw": "JN2-F36",
+          "accession": "JN2-F36",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12412,
+          "raw": "JN2-F37",
+          "accession": "JN2-F37",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12443,
+          "raw": "JN2-F38",
+          "accession": "JN2-F38",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12474,
+          "raw": "JN2-F39",
+          "accession": "JN2-F39",
+          "kind": "strict_chart"
+        },
+        {
+          "line": 12506,
+          "raw": "JN5-F6",
+          "accession": "JN5-F6",
+          "kind": "strict_chart"
+        }
+      ]
+    }
+  ],
+  "legacy_comparison": {
+    "legacy_active_ids": 421,
+    "active_unique_normalized": 420,
+    "legacy_not_active_chart": [
+      "EN1-F1"
+    ],
+    "active_chart_not_legacy": []
+  },
+  "limitations": [
+    "This ledger is a document heading extraction, not physical biological specimen census",
+    "Source text is supplied by authenticated Google Drive fetch",
+    "The legacy extraction implementation was not found in accessible checked-in repository searches",
+    "Historical FIELDMASTER PR19 source and 423 candidates were not changed"
+  ]
+}
