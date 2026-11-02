@@ -1,0 +1,122 @@
+{
+  "sprint": "Rutgers R.3",
+  "date": "2026-11-01",
+  "basis": "R.2 research-only draft commit 5f507cadd0aa9912ab043085101604345f3ace38",
+  "evidence_classes": [
+    "drive_original_folder_listing",
+    "git_original_blob_sha1",
+    "historical_manifest_sha256_not_revalidated",
+    "unverified_voucher_and_publication_rights"
+  ],
+  "specimens": {
+    "AN2-F10": {
+      "source_image_matches": 0,
+      "status": "No exact accession-labelled original located in targeted Drive search; no media added",
+      "photo_provenance": "not established",
+      "voucher_status": "unverified"
+    },
+    "AN2-F12": {
+      "drive_folder_counts": {
+        "microscopy": 14,
+        "lab_preparation": 5,
+        "field_originals": 4
+      },
+      "same_filename_git_blob_presence": {
+        "microscopy": 14,
+        "lab_preparation": 5,
+        "field_originals": 4
+      },
+      "microscopy_filenames": [
+        "AN2-F12 SPORE PRINT MICROSCOPE  (1).png",
+        "AN2-F12 SPORE PRINT MICROSCOPE  (2).png",
+        "AN2-F12 SPORE PRINT MICROSCOPE  (3).png",
+        "AN2-F12 SPORE PRINT MICROSCOPE  (4).png",
+        "AN2-F12 SPORE PRINT MICROSCOPE  (5).png",
+        "AN2-F12 SPORE PRINT MICROSCOPE  (6).png",
+        "AN2-F12 SPORE PRINT MICROSCOPE  (7).png",
+        "AN2-F12 SPORE PRINT MICROSCOPE  (8).png",
+        "AN2-F12 SPORE PRINT MICROSCOPE  (9).png",
+        "AN2-F12 SPORE PRINT MICROSCOPE  (10).png",
+        "AN2-F12 SPORE PRINT MICROSCOPE  (11).png",
+        "AN2-F12 SPORE PRINT MICROSCOPE  (12).png",
+        "AN2-F12 SPORE PRINT MICROSCOPE  (13).png",
+        "AN2-F12 SPORE PRINT MICROSCOPE  (14).png"
+      ],
+      "lab_preparation_filenames": [
+        "AN2-F12 spore print (7).JPG",
+        "AN2-F12 spore print (23).JPG",
+        "AN2-F12 spore print (25).JPG",
+        "AN2-F12 spore print (26).JPG",
+        "AN2-F12 spore print (27).JPG"
+      ],
+      "field_filenames": [
+        "IMG_6021.jpg",
+        "IMG_6022.jpg",
+        "IMG_6023.jpg",
+        "IMG_6024.jpg"
+      ],
+      "drive_folders": [
+        "https://drive.google.com/drive/folders/1KjjkNno2rI3a_bBN3LTADwNAsw_ZrUeP",
+        "https://drive.google.com/drive/folders/1hYBH9H_LNIVzVSkSSyKNolgWk-uvYsHH",
+        "https://drive.google.com/drive/folders/1nBdlbj_wi-4pI9LZgvWx5gq5lBYwYxpJ"
+      ],
+      "git_reference": "5f507cadd0aa9912ab043085101604345f3ace38",
+      "git_paths": [
+        "assets/an2-f12/microscopy/",
+        "assets/an2-f12/lab-prep/",
+        "assets/an2-f12/"
+      ],
+      "git_field_blob_sha1": [
+        "6576ee804614728e8d456ec130e7aa50aa1983ca",
+        "d085e981a66ae3b5ccbfc8e7dfd7344ed413dc4b",
+        "30a9c087764ea9eddcf77d68f8f7f5f67c11cac8",
+        "1fd31d7789835904401f4116b2e1a4753197698e"
+      ],
+      "source_byte_identity": "Not established: Drive SHA-256 and Git binary hash not directly compared",
+      "voucher": "unverified",
+      "taxonomy": "unconfirmed"
+    },
+    "AN2-F22": {
+      "drive_files": [
+        "IMG_6086.jpg",
+        "IMG_6087.jpg",
+        "IMG_6089.jpg"
+      ],
+      "drive_folder": "https://drive.google.com/drive/folders/1_P-WCGWGhXkTWfcd-pb8PRxuLa8bJ5KJ",
+      "drive_byte_sizes": [
+        217172,
+        143958,
+        236733
+      ],
+      "historical_manifest_sha256_unrevalidated": [
+        "44aa2cbef78359490e459f57c996fca477d02b573ce0a6ede430394fb60d0337",
+        "0cedb1fa137f0a5d7a0c19a0203e8fe4b4e9d71332295e303ca9a50eab9ff6f3",
+        "b7a66c915864ed8b07c62baa57b0534105d2f80d5f643d2ccf2abdfe99423b34"
+      ],
+      "git_blob_sha1_in_existing_draft_pr20": [
+        "05bcc1493480fb24d70c61e4cc699e728dc108d3",
+        "5cd69c97498558ace41e42ff9c76807500883204",
+        "2f96d3c07a25e9f02c88520ac07c6609ab163c6a"
+      ],
+      "git_branch": "feature/an2-f22-deof-photo-intake-20261022",
+      "git_main_or_r2_presence": false,
+      "source_byte_identity": "Not established: Git blob hashes cannot be compared to historical SHA-256 without recomputing same digest",
+      "photo_provenance": "User-associated accession in isolated draft only",
+      "voucher": "unverified",
+      "photographer_and_publication_rights": "unverified",
+      "taxonomy": "unconfirmed"
+    }
+  },
+  "conflicts": [
+    "AN2-F22 binaries exist on isolated PR20 branch despite its outdated description stating they were missing",
+    "All accessible F12 Drive filenames match existing Atlas filenames; not a cryptographic original-byte verification",
+    "AN2-F10 lacks accession-labelled media in targeted search",
+    "Original voucher association and photographer/publication permissions remain unresolved"
+  ],
+  "changes_to_originals": 0,
+  "restrictions": [
+    "Do not merge or deploy",
+    "Do not create media links for F22 into public Atlas without source/rights review",
+    "Do not infer spore identity or species from microscopy"
+  ]
+}
