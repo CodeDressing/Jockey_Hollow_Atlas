@@ -1,0 +1,15 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const crypto=require('node:crypto');
+const x=JSON.parse(fs.readFileSync('research/rutgers_r3_media_voucher_crosswalk_20261101.json','utf8'));
+const f12=x.specimens['AN2-F12'];const f22=x.specimens['AN2-F22'];const f10=x.specimens['AN2-F10'];
+assert.equal(f12.microscopy_filenames.length,14);assert.equal(f12.lab_preparation_filenames.length,5);assert.equal(f12.field_filenames.length,4);
+assert.equal(f22.drive_files.length,3);assert.equal(f10.source_image_matches,0);assert.equal(f22.git_main_or_r2_presence,false);
+assert.equal(x.changes_to_originals,0);assert.match(f12.source_byte_identity,/Not established/);assert.match(f22.source_byte_identity,/Not established/);
+const enrich=fs.readFileSync('research/an2_f12_enrichment.js','utf8');
+const validate=(dir,files)=>{for(const name of files){const p=dir+name;assert(fs.existsSync(p),'Missing checked-in evidence '+p);assert(enrich.includes(name),'Absent enrichment link '+name);const bytes=fs.readFileSync(p);assert(bytes.length>0,'Empty original '+name)}};
+validate('assets/an2-f12/microscopy/',f12.microscopy_filenames);validate('assets/an2-f12/lab-prep/',f12.lab_preparation_filenames);validate('assets/an2-f12/',f12.field_filenames);
+const shaBlob=b=>crypto.createHash('sha1').update(Buffer.from('blob '+b.length+'\\0')).update(b).digest('hex');
+for(let i=0;i<f12.field_filenames.length;i++)assert.equal(shaBlob(fs.readFileSync('assets/an2-f12/'+f12.field_filenames[i])),f12.git_field_blob_sha1[i],'Changed original Git blob');
+for(const name of f22.drive_files)assert(!fs.existsSync('assets/an2-f22/'+name),'F22 should remain isolated from R3 and production');
+console.log('PASS R.3 media inventory, original F12 Git identities, conservative F22 staging and source boundary');
