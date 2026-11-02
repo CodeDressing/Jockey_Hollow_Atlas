@@ -3,7 +3,7 @@ const x=JSON.parse(fs.readFileSync('research/rutgers_r6_field_voucher_traceabili
 const r4=JSON.parse(fs.readFileSync('research/rutgers_r4_verified_originals_sha256_20261101.json','utf8'));
 const r5=JSON.parse(fs.readFileSync('research/rutgers_r5_voucher_authentication_matrix_20261101.json','utf8'));
 assert.deepEqual(x.accessions.map(a=>a.id),['AN2-F10','AN2-F12','AN2-F22']);
-assert.equal(x.sources.length,10);
+assert.equal(x.sources.length,11);
 assert.equal(r4.records.length,26);
 assert.equal(x.accessions.reduce((s,a)=>s+a.photo_file_sha256_verified,0),26);
 for(const a of x.accessions){
