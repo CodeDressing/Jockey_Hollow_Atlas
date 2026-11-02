@@ -1,0 +1,62 @@
+{
+  "schema": "rutgers-r9-parser-validation-report-v1",
+  "date": "2026-11-01",
+  "baseline": "8335f5b4aa94f7cdb6273170b9496a60f92e08c5",
+  "findings": [
+    {
+      "id": "R9-001",
+      "status": "verified_source_heading_counts",
+      "detail": "Active source 418 strict standalone accession chart headings + 4 decorated standalone chart headings = 422 document charts; Revision 2 400 + 3 = 403.",
+      "source": "research/rutgers_r9_source_heading_ledger_20261101.json"
+    },
+    {
+      "id": "R9-002",
+      "status": "verified_normalization",
+      "detail": "Active 422 chart headings normalize to 420 distinct accession strings because BN5-F8(A/B/C) share accession BN5-F8. The historical 421 active candidate strings differ only by unsupported EN1-F1.",
+      "source": "research/rutgers_r9_source_heading_ledger_20261101.json"
+    },
+    {
+      "id": "R9-003",
+      "status": "unverified_legacy_parser_mechanism",
+      "detail": "EN1-F1 is present in FIELDMASTER PR19 421-active candidates, but no standalone EN1-F1 heading exists in fetched active text. Substring or prefix extraction may explain it, but exact historical extractor source was not found by repository code search.",
+      "source": "research/fieldmaster_deo_2_1_canonical_reconciliation_20261023.json"
+    },
+    {
+      "id": "R9-004",
+      "status": "verified_subheading_exclusion",
+      "detail": "Active document has four BN5-F8(B) microscopy image labels and one BN5-F25 microscopy plate label. These must not become independent chart headings.",
+      "source": "research/rutgers_r9_source_heading_ledger_20261101.json"
+    },
+    {
+      "id": "R9-005",
+      "status": "unresolved_vouchers",
+      "detail": "BN5-F8 variants are separately headed chart sections, not authenticated separate physical vouchers. AN2-F10/F12/F22 provenance remains bounded by R6. 477 remains an unverified target.",
+      "source": "research/rutgers_r8_record_boundary_reconciliation_20261101.json"
+    }
+  ],
+  "reconciliation": {
+    "active_charts": 422,
+    "active_distinct_normalized": 420,
+    "legacy_active_candidates": 421,
+    "legacy_false_positive_candidate": "EN1-F1",
+    "historical_charts": 403,
+    "historical_normalized": 401,
+    "fieldmaster_union_unchanged": 423,
+    "target_unverified": 477,
+    "verified_independent_physical_vouchers": null
+  },
+  "safeguards": {
+    "existing_original_photos_modified": false,
+    "media_sha256_records_preserved": 26,
+    "fieldmaster_pr19_historical_candidate_matrix_modified": false,
+    "taxonomic_claims_promoted": false,
+    "public_release_authorized": false,
+    "merge_authorized": false
+  },
+  "source_links": [
+    "https://docs.google.com/document/d/11rV-I3DClTs3L6_YjVqAZOXzpEVJkGNdyq31oFOpW5o/edit",
+    "https://docs.google.com/document/d/1-YxtUoVopWpSt_nTTey2KsC7_aCOHpMI4yasky4_k-E/edit",
+    "https://github.com/CodeDressing/Jockey_Hollow_Atlas/pull/19",
+    "https://github.com/CodeDressing/Jockey_Hollow_Atlas/pull/41"
+  ]
+}
