@@ -1,0 +1,37 @@
+name: Rutgers R.3 media voucher crosswalk QA
+on:
+  push:
+    branches:
+      - feature/rutgers-r3-voucher-media-crosswalk-20261101
+  pull_request:
+    paths:
+      - research/rutgers_r3_media_voucher_crosswalk_20261101.json
+      - tests/rutgers-r3-media-crosswalk.cjs
+permissions:
+  contents: read
+jobs:
+  research-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify research media and specimen boundaries
+        run: |
+          node --check app.js
+          node --check tests/rutgers-r3-media-crosswalk.cjs
+          node tests/rutgers-r1-integrity.cjs
+          node tests/rutgers-r2-description-crosswalk.cjs
+          node tests/rutgers-r3-media-crosswalk.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Atlas gallery sidebar and microscopy browser acceptance
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/rutgers-r3-http.log 2>&1 &
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8765/index.html >/dev/null && break; sleep 1; done
+          node tests/rutgers-r1-browser.cjs
+          node tests/an2-f12-browser.cjs
