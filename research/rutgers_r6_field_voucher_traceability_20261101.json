@@ -1,0 +1,249 @@
+{
+  "schema": "rutgers-r6-field-voucher-traceability-v1",
+  "date": "2026-11-01",
+  "baseline_commit": "db2c049a3e1c0c73adf87ca020d0367b85457625",
+  "purpose": "Do not conflate original file identity with physical voucher identity, collector attribution, custody, or publication permission",
+  "sources": [
+    {
+      "id": "measurements",
+      "kind": "original_measurement_transcription",
+      "url": "https://docs.google.com/spreadsheets/d/1IuU5vBK5rVO6R6PxKBC2NtjEG-kE3uV2/edit",
+      "coverage": "AN2 F10 and AN2 F12 accession-labelled rows; no F22 row found in fetched content"
+    },
+    {
+      "id": "master422",
+      "kind": "consolidated_secondary_index",
+      "url": "https://docs.google.com/document/d/11rV-I3DClTs3L6_YjVqAZOXzpEVJkGNdyq31oFOpW5o/edit",
+      "coverage": "Neither AN2-F10, AN2-F12 nor AN2-F22 appears in retrieved standardized accession text"
+    },
+    {
+      "id": "journal_jul30",
+      "kind": "contemporaneous_contextual_journal",
+      "url": "https://docs.google.com/document/d/10fl52W9ldZK0Pgu4DR8uTBug3dKXyjhwe_BgiaBAmR0/edit",
+      "coverage": "General intake, no exact focus accession strings"
+    },
+    {
+      "id": "journal_jul31",
+      "kind": "contemporaneous_contextual_journal",
+      "url": "https://docs.google.com/document/d/1o9wSJysdOpy8cVmtS3d0gT9dI0SVPLF9fgkii8E70bs/edit",
+      "coverage": "General Rutgers specimen and spore print handling; no exact focus accession strings"
+    },
+    {
+      "id": "journal_aug1",
+      "kind": "contemporaneous_contextual_journal",
+      "url": "https://docs.google.com/document/d/1dh040tzc53NyLSIPWlsiy06Ojk0uVDPYZ9cNh8B2C3w/edit",
+      "coverage": "General specimen photography, no exact focus accession strings"
+    },
+    {
+      "id": "journal_aug2",
+      "kind": "contemporaneous_contextual_journal",
+      "url": "https://docs.google.com/document/d/1A-BGQ8T9crvAAa5FYO_Ul9kfWGHjEs5hM-VMLK_rFIs/edit",
+      "coverage": "General Rutgers completion and documentation, no exact focus accession strings"
+    },
+    {
+      "id": "journal_lab",
+      "kind": "contextual_lab_journal",
+      "url": "https://docs.google.com/document/d/1BBZUfp18Zcxg8hL54wJHB6X25H_Z-i8A1mLmd_LkxME/edit",
+      "coverage": "Microscopy preparation context, no exact focus accession strings"
+    },
+    {
+      "id": "f12_photos",
+      "kind": "authenticated_binary_files",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/actions/runs/41378677617",
+      "coverage": "23 AN2-F12 files and 3 AN2-F22 originals match SHA256 across Drive and Git; no physical voucher authentication"
+    },
+    {
+      "id": "f12_intake",
+      "kind": "curated_observation_and_researcher_report",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/blob/db2c049a3e1c0c73adf87ca020d0367b85457625/research/an2_f12_enrichment.js",
+      "coverage": "Beige spore print owner-reported; preparation slide labelled in image descriptions; original microscope structure identity uncertain"
+    },
+    {
+      "id": "f22_intake",
+      "kind": "unmerged_research_intake",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/pull/20",
+      "coverage": "Three handheld views, no completed spore print, microscopy not performed, label/voucher chain unverified"
+    },
+    {
+      "id": "f22_photos",
+      "kind": "authenticated_original_binary_evidence",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/actions/runs/41378677617",
+      "coverage": "Three AN2-F22 JPEGs SHA-256 matched against isolated PR20 originals; this verifies bytes, not physical specimen or voucher identity"
+    }
+  ],
+  "reporting_rule": "Dates of journal writing, photo upload, recollection and original collection must not be assumed equal",
+  "accessions": [
+    {
+      "id": "AN2-F10",
+      "evidence": [
+        {
+          "source": "measurements",
+          "class": "accession_labelled_measurement",
+          "source_text": "AN2 F10,5,1.1,1.1,1.1,3.2,Stem diameter 1.1 cm throughout",
+          "assessment": "directly transcribed structured row; accession text present but biological voucher unconfirmed",
+          "observation_date": null
+        },
+        {
+          "source": "master422",
+          "class": "negative_lookup",
+          "assessment": "No matching standardized AN2-F10 string in fetched text; absence not proof never accessioned"
+        },
+        {
+          "source": "journal_jul30",
+          "class": "context_only",
+          "assessment": "No AN2-F10 accession mention; no identity assignment"
+        }
+      ],
+      "photo_file_sha256_verified": 0,
+      "primary_field_record_authenticated": false,
+      "physical_container_label_authenticated": false,
+      "collector_identity": null,
+      "observer_identity": null,
+      "collection_date": null,
+      "collection_site": null,
+      "lab_preparation": "not_documented",
+      "spore_print": "not_documented",
+      "microscopy": "not_documented",
+      "voucher_chain": "unresolved",
+      "rights": "unverified",
+      "publication_gate": "HOLD"
+    },
+    {
+      "id": "AN2-F12",
+      "evidence": [
+        {
+          "source": "measurements",
+          "class": "accession_labelled_measurement",
+          "source_text": "AN2 F12,7,1.5,1.1,1,8",
+          "assessment": "source-recorded measurements, extra 9.5 cm dictation remains unassigned",
+          "observation_date": null
+        },
+        {
+          "source": "f12_photos",
+          "class": "cryptographic_media",
+          "assessment": "23/23 original file bytes independently matched by SHA256; filename/folder association only, not proof of biological voucher identity"
+        },
+        {
+          "source": "f12_intake",
+          "class": "owner_report",
+          "source_text": "Spore print beige; stipe surface smooth",
+          "assessment": "firsthand recollection documented 2026-10-25; actual collection and original observation dates unknown"
+        },
+        {
+          "source": "f12_intake",
+          "class": "photograph_interpretation",
+          "assessment": "Labelled slide in laboratory-preparation imagery described; exact label content and physical accession chain not independently authenticated"
+        },
+        {
+          "source": "journal_aug1",
+          "class": "context_only",
+          "assessment": "General specimen imaging journal; no AN2-F12 accession reference"
+        }
+      ],
+      "photo_file_sha256_verified": 23,
+      "primary_field_record_authenticated": false,
+      "physical_container_label_authenticated": false,
+      "collector_identity": null,
+      "observer_identity": null,
+      "collection_date": null,
+      "collection_site": null,
+      "lab_preparation": "five_original_sha256_verified_preparation_photographs",
+      "spore_print": "owner_reported_beige_unverified_independently",
+      "microscopy": "fourteen_original_files_sha256_verified_objects_not_confirmed_basidiospores",
+      "voucher_chain": "unresolved",
+      "rights": "unverified",
+      "publication_gate": "HOLD_NEW_PUBLICATION"
+    },
+    {
+      "id": "AN2-F22",
+      "evidence": [
+        {
+          "source": "f22_photos",
+          "class": "cryptographic_media",
+          "assessment": "3/3 original files match Git isolated PR #20 by SHA256; physical voucher identity not proven"
+        },
+        {
+          "source": "f22_intake",
+          "class": "researcher_assigned_photographs",
+          "assessment": "Handheld ex-situ user-associated images IMG_6086.jpg, IMG_6087.jpg, IMG_6089.jpg; provenance and photographer unknown"
+        },
+        {
+          "source": "f22_intake",
+          "class": "owner_report",
+          "source_text": "spore-print sample could not be obtained",
+          "assessment": "spore print unavailable; no negative taxonomic inference"
+        },
+        {
+          "source": "f22_intake",
+          "class": "lab_status",
+          "assessment": "Microscopy not performed, no actual spore dimensions"
+        },
+        {
+          "source": "master422",
+          "class": "negative_lookup",
+          "assessment": "No matching standardized AN2-F22 string in fetched text"
+        }
+      ],
+      "photo_file_sha256_verified": 3,
+      "primary_field_record_authenticated": false,
+      "physical_container_label_authenticated": false,
+      "collector_identity": null,
+      "observer_identity": null,
+      "collection_date": null,
+      "collection_site": null,
+      "lab_preparation": "not_documented",
+      "spore_print": "unavailable_user_report",
+      "microscopy": "not_performed_per_intake",
+      "voucher_chain": "unresolved",
+      "rights": "unverified",
+      "publication_gate": "HOLD"
+    }
+  ],
+  "issues": [
+    {
+      "kind": "independent_voucher_chain",
+      "impact": "all three",
+      "status": "open",
+      "needed": "Dated primary collection notebook, accession/container label and custody chronology"
+    },
+    {
+      "kind": "collector_observer_attribution",
+      "impact": "all three",
+      "status": "open",
+      "needed": "Contemporaneous named collector and observer records"
+    },
+    {
+      "kind": "AN2_F10_originals",
+      "impact": "AN2-F10",
+      "status": "open",
+      "needed": "Unambiguous accession-labelled original image or voucher"
+    },
+    {
+      "kind": "AN2_F12_microscopy",
+      "impact": "AN2-F12",
+      "status": "open",
+      "needed": "Validated slide provenance, calibrated measurements and mature basidiospore classification"
+    },
+    {
+      "kind": "AN2_F22_original_intake",
+      "impact": "AN2-F22",
+      "status": "open",
+      "needed": "Independent original label/collection journal; publication rights"
+    },
+    {
+      "kind": "photo_rights",
+      "impact": "all three",
+      "status": "open",
+      "needed": "Verified photographer identity and publication/license authorization"
+    }
+  ],
+  "release_checklist": {
+    "all_26_existing_originals_preserved": true,
+    "media_sha256_source_manifest": "research/rutgers_r4_verified_originals_sha256_20261101.json",
+    "no_invented_accession": true,
+    "no_taxonomic_determination": true,
+    "new_publication_authorized": false,
+    "production_merge_authorized": false
+  },
+  "limitations": "Search is bounded by accessible Drive documents, exact accession strings and already verified source files; archival records outside access are not ruled out."
+}
