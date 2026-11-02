@@ -63,6 +63,12 @@
       "kind": "unmerged_research_intake",
       "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/pull/20",
       "coverage": "Three handheld views, no completed spore print, microscopy not performed, label/voucher chain unverified"
+    },
+    {
+      "id": "f22_photos",
+      "kind": "authenticated_original_binary_evidence",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/actions/runs/41378677617",
+      "coverage": "Three AN2-F22 JPEGs SHA-256 matched against isolated PR20 originals; this verifies bytes, not physical specimen or voucher identity"
     }
   ],
   "reporting_rule": "Dates of journal writing, photo upload, recollection and original collection must not be assumed equal",
