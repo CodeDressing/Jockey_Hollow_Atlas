@@ -1,0 +1,198 @@
+{
+  "schema": "rutgers-fieldmaster-r7-conflict-matrix-v1",
+  "date": "2026-11-01",
+  "base_commit": "4cd040b08ed5aa1514cde673917551d924157fab",
+  "research_only": true,
+  "references": [
+    {
+      "id": "fieldmaster",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/blob/feature/fieldmaster-477-evidence-20261022/research/fieldmaster_deo_2_1_canonical_reconciliation_20261023.json",
+      "kind": "candidate_identifier_matrix",
+      "note": "423 candidate strings; not independently confirmed biological vouchers"
+    },
+    {
+      "id": "master422",
+      "url": "https://docs.google.com/document/d/11rV-I3DClTs3L6_YjVqAZOXzpEVJkGNdyq31oFOpW5o/edit",
+      "kind": "active_consolidated_master",
+      "note": "Title claims 422, 421 IDs extracted; no physical specimens inferred from discrepancy"
+    },
+    {
+      "id": "measurement_workbook",
+      "url": "https://drive.google.com/file/d/1IuU5vBK5rVO6R6PxKBC2NtjEG-kE3uV2/view",
+      "kind": "structured_measurement_source",
+      "note": "Original transcribed AN2 F10 and AN2 F12 rows"
+    },
+    {
+      "id": "r4_sha256",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/actions/runs/41378677617",
+      "kind": "original_media_verification",
+      "note": "26/26 SHA256 from Drive source originals match repository binaries"
+    },
+    {
+      "id": "r6_trace",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/blob/4cd040b08ed5aa1514cde673917551d924157fab/research/rutgers_r6_field_voucher_traceability_20261101.json",
+      "kind": "voucher_chain_provenance",
+      "note": "Three accessions; no authenticated physical voucher"
+    },
+    {
+      "id": "f22_intake",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/pull/20",
+      "kind": "isolated_draft_media_intake",
+      "note": "3 original images present on isolated branch; publication not authorized"
+    }
+  ],
+  "counts": {
+    "active_master_claimed_records": 422,
+    "active_extracted_standard_ids": 421,
+    "source_union_candidates": 423,
+    "target_unverified": 477,
+    "verified_unique_biological_specimens": null,
+    "candidate_id_gap_to_target": 54,
+    "source_union_outside_active": [
+      "AN3-F6",
+      "AN3-F9"
+    ],
+    "count_statement": "The difference between 477 and 423 is not proof of 54 missing specimens."
+  },
+  "conflicts": [
+    {
+      "id": "R7-C01",
+      "topic": "422 vs 421",
+      "status": "contradicted",
+      "evidence": [
+        "fieldmaster",
+        "master422"
+      ],
+      "finding": "Active master claim and standardized string extraction disagree by one; neither proven wrong without original chart/index reconciliation",
+      "resolution_gate": "Audit nonstandard IDs, duplicate charts, numbering and headers in primary source"
+    },
+    {
+      "id": "R7-C02",
+      "topic": "423 candidates vs 421 active IDs",
+      "status": "resolved_identifier_scope",
+      "evidence": [
+        "fieldmaster"
+      ],
+      "finding": "The two candidate strings external to the active extracted set are AN3-F6 and AN3-F9; neither is authenticated as a distinct biological specimen",
+      "resolution_gate": "Compare original field vouchers and earliest collected records for both candidates"
+    },
+    {
+      "id": "R7-C03",
+      "topic": "477 research target",
+      "status": "unsupported",
+      "evidence": [
+        "fieldmaster"
+      ],
+      "finding": "No verified 477-accession roster; target only, not unique specimen inventory",
+      "resolution_gate": "Primary field log or physical specimen census"
+    },
+    {
+      "id": "R7-C04",
+      "topic": "Source overlap/duplicate records",
+      "status": "pending",
+      "evidence": [
+        "fieldmaster",
+        "master422"
+      ],
+      "finding": "Source documents and historical revisions overlap; summing their records would double count candidates",
+      "resolution_gate": "Record-level chart comparison including aliases and transcriptions"
+    },
+    {
+      "id": "R7-C05",
+      "topic": "AN2-F10 supplementary accession",
+      "status": "pending",
+      "evidence": [
+        "measurement_workbook",
+        "r6_trace",
+        "master422"
+      ],
+      "finding": "AN2 F10 structured measurement row exists; no accession label or authenticated photo-to-physical-voucher chain established; absent as exact standardized master ID",
+      "resolution_gate": "Original field photograph, physical voucher label and collection log"
+    },
+    {
+      "id": "R7-C06",
+      "topic": "AN2-F12 supplementary accession",
+      "status": "resolved_file_identity_pending_voucher",
+      "evidence": [
+        "measurement_workbook",
+        "r4_sha256",
+        "r6_trace",
+        "master422"
+      ],
+      "finding": "23 original files are byte-identical to their Git copies; supplementary measurements documented. No independent source proves photo subject to physical voucher association",
+      "resolution_gate": "Original field notebook, specimen container label, dated custody, photographer permission"
+    },
+    {
+      "id": "R7-C07",
+      "topic": "AN2-F12 spore print/microscopy interpretation",
+      "status": "pending",
+      "evidence": [
+        "r6_trace"
+      ],
+      "finding": "Beige spore print and smooth stipe are researcher-reported; 14 microscope PNGs do not establish that measured objects were mature basidiospores",
+      "resolution_gate": "Original observation log, slide linkage, microscopy validation/calibration"
+    },
+    {
+      "id": "R7-C08",
+      "topic": "AN2-F22 supplementary photo accession",
+      "status": "resolved_file_identity_pending_voucher",
+      "evidence": [
+        "r4_sha256",
+        "f22_intake",
+        "r6_trace",
+        "master422"
+      ],
+      "finding": "Three original JPEGs byte-match isolated PR #20; no independent physical voucher association or published provenance. Spore print unavailable, microscopy not performed",
+      "resolution_gate": "Collection notes and label, author/rights confirmation; retain draft isolation"
+    },
+    {
+      "id": "R7-C09",
+      "topic": "Photographer and publishing rights",
+      "status": "pending",
+      "evidence": [
+        "r6_trace",
+        "f22_intake"
+      ],
+      "finding": "Image possession and SHA256 integrity are not rights clearance",
+      "resolution_gate": "Original photographer identification and permission"
+    },
+    {
+      "id": "R7-C10",
+      "topic": "EN1-F1920 malformed identifier hypothesis",
+      "status": "pending",
+      "evidence": [
+        "fieldmaster"
+      ],
+      "finding": "Older broad regex output reportedly suggested EN1-F1920; absent as authenticated candidate in current 423-ID canonical matrix",
+      "resolution_gate": "Inspect primary label and historical transcription before treating as one or more accessions"
+    }
+  ],
+  "releases": {
+    "new_specimens_authorized": false,
+    "new_taxonomic_identifications_authorized": false,
+    "new_media_publication_authorized": false,
+    "merge_or_deployment_authorized": false,
+    "provenance_status": "research_only",
+    "original_binary_count_preserved": 26
+  },
+  "status_dictionary": {
+    "resolved_identifier_scope": "Definition/scope of identifier difference reconciled; does not authenticate vouchers",
+    "resolved_file_identity_pending_voucher": "Media identity proven, biological accession not yet proven",
+    "contradicted": "Sources or source claim/index extraction disagree",
+    "unsupported": "No accessible primary evidence sufficient to substantiate claim",
+    "pending": "Unresolved pending original corroboration"
+  },
+  "next_required_originals": [
+    "Complete physical voucher roster and dated collection log",
+    "Primary specimen labels for AN2-F10 AN2-F12 AN2-F22",
+    "Collector observer and original site/date attribution",
+    "Source record for AN3-F6 and AN3-F9",
+    "Photographer identity and publication authorization"
+  ],
+  "preserved_sources": [
+    "FIELDMASTER PR19 candidate matrix",
+    "R1-R6 research JSON files",
+    "26 original image bytes and SHA256 verification",
+    "All current specimen data and existing UI"
+  ]
+}
