@@ -1,0 +1,252 @@
+{
+  "schema": "rutgers_voucher_authentication_r5_v1",
+  "review_date": "2026-11-01",
+  "baseline_commit": "276ad7ba6ec9bf6b3fa811cc4a22a658e5ab48fa",
+  "scope": "research_only_no_production_change",
+  "source_register": [
+    {
+      "id": "measurement_workbook",
+      "type": "original_source_transcription",
+      "url": "https://docs.google.com/spreadsheets/d/1IuU5vBK5rVO6R6PxKBC2NtjEG-kE3uV2/edit",
+      "details": "Rows labelled AN2 F10 and AN2 F12; no AN2 F22 found in fetched content"
+    },
+    {
+      "id": "active_master",
+      "type": "historical_consolidated_index",
+      "url": "https://docs.google.com/document/d/11rV-I3DClTs3L6_YjVqAZOXzpEVJkGNdyq31oFOpW5o/edit",
+      "details": "Fetched master does not contain standardized accession strings for three focus records"
+    },
+    {
+      "id": "research_journal",
+      "type": "contextual_lab_journal",
+      "url": "https://docs.google.com/document/d/1A-BGQ8T9crvAAa5FYO_Ul9kfWGHjEs5hM-VMLK_rFIs/edit",
+      "details": "No matching accession text found in fetched journal; absence not proof of absence elsewhere"
+    },
+    {
+      "id": "r4_crypto",
+      "type": "original_binary_verification",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/actions/runs/41378677617",
+      "details": "26/26 original files SHA-256 verified against Git binaries: F12 23, F22 3"
+    },
+    {
+      "id": "f12_enrichment",
+      "type": "derived_field_observation_and_user_report",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/blob/276ad7ba6ec9bf6b3fa811cc4a22a658e5ab48fa/research/an2_f12_enrichment.js",
+      "details": "User-reported beige print and smooth stipe; annotated microscope objects unresolved"
+    },
+    {
+      "id": "f22_draft",
+      "type": "unmerged_user_photo_intake",
+      "url": "https://github.com/CodeDressing/Jockey_Hollow_Atlas/pull/20",
+      "details": "Three handheld JPEGs; spore print unavailable, microscopy not performed; unmerged"
+    }
+  ],
+  "evidence_rules": {
+    "cryptographic_identity": "Proves downloaded file matches repository bytes, not photographic subject identity or biological voucher authenticity",
+    "physical_voucher": "Requires specimen-to-container accession label and custody/field documentation, independently reviewed",
+    "field_attribution": "Distinguish source-file accession labels, user assertions, photograph content and independent contemporary notes",
+    "microscopy": "Image of candidate particles does not establish mature basidiospore identity or calibrated spore statistics",
+    "spore_print": "User-reported color is provenance-labelled; no species or edibility inference",
+    "publication": "Photographer identity, permission and any access restrictions must be established separately"
+  },
+  "accessions": [
+    {
+      "id": "AN2-F10",
+      "source_measurements": {
+        "status": "documented_source_transcription",
+        "source_id": "measurement_workbook",
+        "source_row_label": "AN2 F10",
+        "cap_cm": 5,
+        "stipe_diameters_cm": [
+          1.1,
+          1.1,
+          1.1
+        ],
+        "stipe_height_cm": 3.2
+      },
+      "photographs": {
+        "matched_originals": 0,
+        "sha256_verified": 0,
+        "association": "unresolved"
+      },
+      "field_voucher": {
+        "status": "not_authenticated",
+        "independent_label": "not_recovered",
+        "physical_chain": "not_recovered"
+      },
+      "collector": {
+        "name": null,
+        "status": "unverified"
+      },
+      "observer": {
+        "name": null,
+        "status": "unverified"
+      },
+      "lab_preparation": {
+        "status": "not_documented"
+      },
+      "spore_print": {
+        "status": "not_documented"
+      },
+      "microscopy": {
+        "status": "not_documented"
+      },
+      "rights": {
+        "photographer": null,
+        "publication_permission": "unverified"
+      },
+      "scientific_determination": "unconfirmed",
+      "release_gate": "hold",
+      "blockers": [
+        "Original accession-labelled source image not found",
+        "Field voucher / container label unverified",
+        "Collector and observer attribution unverified",
+        "Rights and permission unresolved"
+      ]
+    },
+    {
+      "id": "AN2-F12",
+      "source_measurements": {
+        "status": "documented_source_transcription",
+        "source_id": "measurement_workbook",
+        "source_row_label": "AN2 F12",
+        "cap_cm": 7,
+        "stipe_diameters_cm": [
+          1.5,
+          1.1,
+          1
+        ],
+        "stipe_height_cm": 8,
+        "unassigned_extra_cm": 9.5
+      },
+      "photographs": {
+        "matched_originals": 23,
+        "sha256_verified": 23,
+        "categories": {
+          "microscopy": 14,
+          "lab_preparation": 5,
+          "field_macro": 4
+        },
+        "association": "folder_and_prior_research_accession_assignment_verified_at_file_level_only"
+      },
+      "field_voucher": {
+        "status": "not_authenticated",
+        "independent_label": "lab slide label visible per earlier field account, independent physical specimen custody unverified",
+        "physical_chain": "not_recovered"
+      },
+      "collector": {
+        "name": null,
+        "status": "researcher_claimed_personal_collection_but_not_independently_attributed"
+      },
+      "observer": {
+        "name": null,
+        "status": "user_reported_firsthand_observation"
+      },
+      "lab_preparation": {
+        "status": "five_verified_original_photographs",
+        "interpretation": "Preparation context, not independently diagnostic spore evidence"
+      },
+      "spore_print": {
+        "status": "user_reported",
+        "color": "beige",
+        "method": "unverified",
+        "date_of_original_observation": "unverified"
+      },
+      "microscopy": {
+        "status": "14_verified_original_files",
+        "confirmed_mature_basidiospores": false,
+        "validated_spore_measurements": false,
+        "notes": "Instrument annotations on unclassified structures cannot establish a taxon"
+      },
+      "rights": {
+        "photographer": null,
+        "publication_permission": "unverified"
+      },
+      "scientific_determination": "unconfirmed",
+      "release_gate": "hold_for_new_publication",
+      "blockers": [
+        "Independent accession-to-physical-voucher chain absent",
+        "No verified observer/collector attribution",
+        "Rights not established",
+        "Microscopic object classification unresolved"
+      ]
+    },
+    {
+      "id": "AN2-F22",
+      "source_measurements": {
+        "status": "not_found_in_accessible_workbook"
+      },
+      "photographs": {
+        "matched_originals": 3,
+        "sha256_verified": 3,
+        "category": "handheld_ex_situ",
+        "repository_branch": "feature/an2-f22-deof-photo-intake-20261022",
+        "association": "user_assigned_accession_with_matching_original_bytes; independent voucher link unresolved"
+      },
+      "field_voucher": {
+        "status": "not_authenticated",
+        "independent_label": "photo-associated accession reported, physical field voucher not verified",
+        "physical_chain": "not_recovered"
+      },
+      "collector": {
+        "name": null,
+        "status": "unverified"
+      },
+      "observer": {
+        "name": null,
+        "status": "unverified"
+      },
+      "lab_preparation": {
+        "status": "not_documented"
+      },
+      "spore_print": {
+        "status": "unavailable_user_report"
+      },
+      "microscopy": {
+        "status": "not_performed_per_draft_intake",
+        "validated_spore_measurements": false
+      },
+      "rights": {
+        "photographer": null,
+        "publication_permission": "unverified"
+      },
+      "scientific_determination": "unconfirmed",
+      "release_gate": "hold",
+      "blockers": [
+        "Primary field voucher and collector not independently established",
+        "Source photo attribution/rights unknown",
+        "No original measurement row recovered",
+        "Unmerged imagery only"
+      ]
+    }
+  ],
+  "publication_readiness": {
+    "gate_ids": [
+      "cryptographic_media_integrity",
+      "accession_to_voucher",
+      "field_provenance",
+      "observer_attribution",
+      "photographer_rights",
+      "taxonomic_claim_safety",
+      "release_authorization"
+    ],
+    "approved_for_new_publication": [],
+    "notes": "R.4 confirms bytes for F12 and F22 only. R.5 does not authorize any new public images, claims or accession additions."
+  },
+  "unresolved_research": [
+    "Original field notebook or collection log cross-reference for F10/F12/F22",
+    "Physical specimen voucher labels and storage history",
+    "Contemporaneous collection dates, sites and observer identity",
+    "Authorship/licensing authorization for each image set",
+    "Species determination and independent microscopy for F12, absence of microscopy for F22",
+    "Original photographic evidence for F10"
+  ],
+  "preserved": [
+    "R.4 SHA-256 manifest",
+    "Original photo binaries",
+    "Existing Atlas specimen records",
+    "FIELDMASTER candidate matrix",
+    "Production main"
+  ],
+  "no_merge_or_deploy": true
+}
