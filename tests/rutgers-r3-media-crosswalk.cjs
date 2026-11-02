@@ -9,7 +9,7 @@ assert.equal(x.changes_to_originals,0);assert.match(f12.source_byte_identity,/No
 const enrich=fs.readFileSync('research/an2_f12_enrichment.js','utf8');
 const validate=(dir,files)=>{for(const name of files){const p=dir+name;assert(fs.existsSync(p),'Missing checked-in evidence '+p);assert(enrich.includes(name),'Absent enrichment link '+name);const bytes=fs.readFileSync(p);assert(bytes.length>0,'Empty original '+name)}};
 validate('assets/an2-f12/microscopy/',f12.microscopy_filenames);validate('assets/an2-f12/lab-prep/',f12.lab_preparation_filenames);validate('assets/an2-f12/',f12.field_filenames);
-const shaBlob=b=>crypto.createHash('sha1').update(Buffer.from('blob '+b.length+'\\0')).update(b).digest('hex');
+const shaBlob=b=>crypto.createHash('sha1').update(Buffer.from('blob '+b.length+String.fromCharCode(0))).update(b).digest('hex');
 for(let i=0;i<f12.field_filenames.length;i++)assert.equal(shaBlob(fs.readFileSync('assets/an2-f12/'+f12.field_filenames[i])),f12.git_field_blob_sha1[i],'Changed original Git blob');
 for(const name of f22.drive_files)assert(!fs.existsSync('assets/an2-f22/'+name),'F22 should remain isolated from R3 and production');
 console.log('PASS R.3 media inventory, original F12 Git identities, conservative F22 staging and source boundary');
