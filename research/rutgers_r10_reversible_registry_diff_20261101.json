@@ -1,0 +1,57 @@
+{
+  "schema": "rutgers-r10-canonical-registry-diff-v1",
+  "date": "2026-11-01",
+  "research_only": true,
+  "baseline_commit": "7a7b649d4598c5e96267be524c20eccfa5f3ee65",
+  "source_paths": {
+    "parser": "research/tools/rutgers_accession_boundary_parser.cjs",
+    "source_heading_ledger": "research/rutgers_r9_source_heading_ledger_20261101.json",
+    "immutable_candidate_matrix": "feature/fieldmaster-477-evidence-20261022:research/fieldmaster_deo_2_1_canonical_reconciliation_20261023.json",
+    "reproducible_reconciliation": "research/tools/rutgers_r10_registry_reconcile.cjs"
+  },
+  "before": {
+    "legacy_active_candidate_tokens": 421,
+    "legacy_all_candidate_tokens": 423,
+    "claimed_active_master_charts": 422
+  },
+  "after": {
+    "verified_active_master_chart_headings": 422,
+    "normalized_active_id_strings": 420,
+    "verified_revision2_chart_headings": 403,
+    "normalized_revision2_id_strings": 401,
+    "verified_distinct_biological_vouchers": null
+  },
+  "differences": {
+    "unsupported_legacy_active_token": "EN1-F1",
+    "candidates_outside_active": [
+      "AN3-F6",
+      "AN3-F9"
+    ],
+    "chart_variants": [
+      "BN5-F8(A)",
+      "BN5-F8(B)",
+      "BN5-F8(C)"
+    ],
+    "excluded_microscopy_subheading_count": 5
+  },
+  "reversal": {
+    "strategy": "Remove only new R10 artifacts or discard isolated R10 branch; legacy FIELDMASTER matrix and source files are not altered",
+    "historical_records_changed": 0
+  },
+  "gates": {
+    "original_sha256_media_count": 26,
+    "media_modified": false,
+    "taxonomic_reclassification": false,
+    "physical_voucher_claims_added": 0,
+    "unverified_research_target": 477,
+    "publication_authorized": false,
+    "merge_authorized": false,
+    "deployment_authorized": false
+  },
+  "limitations": [
+    "Exact legacy extractor for EN1-F1 still not recovered",
+    "Chart variant count is not biological specimen count",
+    "Unverified vouchers/photographer rights for AN2-F10/F12/F22",
+    "Candidate target 477 is a research aspiration, not established inventory"
+  ]
+}
