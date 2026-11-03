@@ -1,0 +1,192 @@
+{
+  "schema": "rutgers-r18-voucher-rights-authentication-v1",
+  "review_local_date": "2026-11-02",
+  "baseline": {
+    "pr": 50,
+    "sha": "b0594c258443700c60307d910f63ea2156f384fd",
+    "ci_run": 41576382346,
+    "ci_conclusion": "success"
+  },
+  "scope": "access-controlled archival search and research evidence gate; no external release or rights assertion",
+  "source_register": [
+    {
+      "id": "R17",
+      "type": "prior authenticated image crosswalk",
+      "path": "research/rutgers_r17_photo_voucher_crosswalk_20261102.json",
+      "result": "Three distinct accession-marked JPEGs across five Drive objects; labels pictured near fungal material, without voucher custody or rights authentication."
+    },
+    {
+      "id": "active_atlas",
+      "type": "derived consolidated specimen charts, not physical custody primary record",
+      "url": "https://docs.google.com/document/d/11rV-I3DClTs3L6_YjVqAZOXzpEVJkGNdyq31oFOpW5o/edit",
+      "result": "Readable content and historical context reviewed, but no independently signed target original collection or rights record established."
+    },
+    {
+      "id": "revision_403",
+      "type": "historical compiled atlas, not signed original field log",
+      "url": "https://docs.google.com/document/d/1-YxtUoVopWpSt_nTTey2KsC7_aCOHpMI4yasky4_k-E/edit",
+      "result": "Historical descriptions remain secondary/derived; do not infer named collector or dated voucher."
+    },
+    {
+      "id": "revision_396",
+      "type": "historical compiled atlas, not original physical label",
+      "url": "https://docs.google.com/document/d/1m7XrwcLp7j9a7ys3YzeXyJqNvUyEKX_-y_tQ_0Gr3IQ/edit",
+      "result": "Legacy source hierarchy considered; no primary custody or permission promoted."
+    },
+    {
+      "id": "measurement_workbook",
+      "type": "accession-labelled measurements only",
+      "url": "https://docs.google.com/spreadsheets/d/1IuU5vBK5rVO6R6PxKBC2NtjEG-kE3uV2/edit",
+      "result": "Inherited F10/F12 measurement evidence; no authenticated F22 source measurement, collector, capture date or rights."
+    },
+    {
+      "id": "mycoscope_folder",
+      "type": "restricted archive, previously authenticated photographic accession association",
+      "url": "https://drive.google.com/drive/folders/13AOKWCXJtfPZD8LXt84KwC9CAjThYm6M",
+      "result": "Five JPEG Drive object identities, 3 distinct source SHA256; no EXIF capture-time/photographer evidence."
+    },
+    {
+      "id": "drive_targeted_search",
+      "type": "search metadata and candidate source review",
+      "search_terms": [
+        "AN2 F10",
+        "AN2 F12",
+        "AN2 F22",
+        "voucher custody",
+        "collection notebook",
+        "photo release",
+        "photography consent",
+        "Rutgers specimen label"
+      ],
+      "result": "No independently signed collection/custody/rights evidence was established from returned accessible records; generic charts, study and operational documents are not authorizations.",
+      "search_exhaustive": false
+    },
+    {
+      "id": "gmail_targeted_search",
+      "type": "private correspondence search",
+      "search_terms": [
+        "\"AN2-F10\"",
+        "\"AN2-F12\"",
+        "\"AN2-F22\"",
+        "\"Rutgers\" \"photo\" \"permission\"",
+        "\"Rutgers\" \"voucher\""
+      ],
+      "result": "No matching accession-named or explicit photo-permission messages; voucher search returned automated GitHub workflow failures, not original attestations.",
+      "search_exhaustive": false
+    }
+  ],
+  "accession_gates": [
+    {
+      "id": "AN2-F10",
+      "inherited_media": 0,
+      "archival_new_image_sha256": "cdc8989204a734b8e2487bccd90fcc97e52c82ebbb48c5b4121a0ec9b8a04020",
+      "photographic_foil_accession_visible": true,
+      "collection_date": null,
+      "field_notebook": null,
+      "physical_voucher_label_authenticated": false,
+      "physical_voucher_custody": null,
+      "collector": null,
+      "observer": null,
+      "photographer": null,
+      "explicit_image_use_permission": null,
+      "physical_biological_identity_crossmatch": "unverified",
+      "release": "HOLD"
+    },
+    {
+      "id": "AN2-F12",
+      "inherited_media": 23,
+      "archival_new_image_sha256": "7adc8bea4bd235509b57aee775dfb95acff7dde04976ce8ae2030cdeb9e986de",
+      "photographic_foil_accession_visible": true,
+      "collection_date": null,
+      "field_notebook": null,
+      "physical_voucher_label_authenticated": false,
+      "physical_voucher_custody": null,
+      "collector": null,
+      "observer": null,
+      "photographer": null,
+      "explicit_image_use_permission": null,
+      "physical_biological_identity_crossmatch": "unverified",
+      "microscopy": "mature basidiospore and calibration not independently validated",
+      "release": "HOLD"
+    },
+    {
+      "id": "AN2-F22",
+      "inherited_media": 3,
+      "archival_new_image_sha256": "3b7cfa2738cec222cd15ad15928c9b45f538634cb37e1102f2defe0dbd045c5f",
+      "photographic_foil_accession_visible": true,
+      "collection_date": null,
+      "field_notebook": null,
+      "physical_voucher_label_authenticated": false,
+      "physical_voucher_custody": null,
+      "collector": null,
+      "observer": null,
+      "photographer": null,
+      "explicit_image_use_permission": null,
+      "physical_biological_identity_crossmatch": "unverified",
+      "microscopy": "not performed per inherited record",
+      "release": "HOLD"
+    }
+  ],
+  "provenance_authentication_requirements": [
+    {
+      "gate": "contemporaneous source and collection date",
+      "minimum_evidence": "Dated field notebook or specimen accession book with original target ID, documented creator and reliable source custody",
+      "status": "HOLD"
+    },
+    {
+      "gate": "physical specimen and custody",
+      "minimum_evidence": "Physical voucher/container inspection with original target ID and custody/storage handoff trace",
+      "status": "HOLD"
+    },
+    {
+      "gate": "collector and observer",
+      "minimum_evidence": "Signed original journal/attestation or independent institutional roster directly linked to each target accession",
+      "status": "HOLD"
+    },
+    {
+      "gate": "photographic authorship",
+      "minimum_evidence": "Original camera/RAW provenance or verified named author attestation linked to exact original file hash",
+      "status": "HOLD"
+    },
+    {
+      "gate": "image distribution authorization",
+      "minimum_evidence": "Specific written licence/permission from verified rights holder for intended research/public distribution; Drive access is not permission",
+      "status": "HOLD"
+    },
+    {
+      "gate": "same voucher across image sets",
+      "minimum_evidence": "Independent crossmatch of material and physical labels to earlier accession and 26-file records",
+      "status": "HOLD"
+    }
+  ],
+  "preservation": {
+    "active_charts": 422,
+    "normalized_active_accessions": 420,
+    "legacy_active_tokens": 421,
+    "cross_source_candidates": 423,
+    "historical_477_verified": false,
+    "authentic_biological_specimen_count": null,
+    "bn5_f8_variants": [
+      "BN5-F8(A)",
+      "BN5-F8(B)",
+      "BN5-F8(C)"
+    ],
+    "en1_f1_authenticated": false,
+    "original_media_files_unchanged": 26,
+    "recovered_archival_content_hashes": 3,
+    "recovered_drive_objects": 5,
+    "archival_photos_added_to_repo": 0
+  },
+  "decision": {
+    "new_primary_voucher_chains_authenticated": 0,
+    "new_photo_licences_authenticated": 0,
+    "new_verified_collector_attributions": 0,
+    "new_species_determinations": 0,
+    "publication": "HOLD",
+    "merge": false,
+    "deploy": false,
+    "paid_services": false,
+    "unrelated_changes": false
+  },
+  "limitations": "Bounded accessible Google Drive and Gmail searches cannot demonstrate universal absence. General record mentions of Rutgers, voucher, photo, consent and permission cannot authenticate a specific target accession; image metadata lacks attribution/date. R18 research CI tests committed assertions and inherited media; does not automatically fetch new restricted Drive JPEGs or validate independent physical custody."
+}
