@@ -1,0 +1,187 @@
+{
+  "schema": "rutgers-r20-archival-view-reconciliation-v1",
+  "date": "2026-11-03",
+  "baseline": {
+    "pr": 52,
+    "commit": "b29cc9c85443720cf18a78aeb5b40e0dadd32b31",
+    "ci_run": 41581187126,
+    "ci_conclusion": "success"
+  },
+  "source": {
+    "folder": "MycoScope Verified Lab Views 2026-09-20",
+    "folder_id": "13AOKWCXJtfPZD8LXt84KwC9CAjThYm6M",
+    "url": "https://drive.google.com/drive/folders/13AOKWCXJtfPZD8LXt84KwC9CAjThYm6M",
+    "access": "private authenticated Drive, not publication authorization"
+  },
+  "methods": {
+    "new_v2": "Five individual raw Drive objects fetched. First F10V2 and F12V2 copies saved separately before fetching second copies. SHA-256 each full byte stream, cmp byte comparisons both exit 0. Independent file inspection of JPEG dimensions/EXIF: 2048x1536, zero EXIF tags.",
+    "prior_standard": "Previous R16/R17 three accession-labelled images preserved as inherited hashes and Drive IDs; not independently re-downloaded in R20.",
+    "manifest": "Retrieved R4 26-record source SHA256 manifest from exact R19 baseline commit; computed equality across 6 archival source values versus 26 manifest values; 0 equal."
+  },
+  "archive": [
+    {
+      "accession": "AN2-F10",
+      "view": "V1",
+      "filename": "AN2-F10.JPG",
+      "drive_ids": [
+        "1GrMhvJurTnTxXEDmL5oXagvEFVBeBOVt",
+        "18Lg9UKaJfyIx0cARoV-sJ-cvVjaTi8Ip"
+      ],
+      "bytes": 679513,
+      "sha256": "cdc8989204a734b8e2487bccd90fcc97e52c82ebbb48c5b4121a0ec9b8a04020",
+      "independent_pair_sha256": "inherited_R17_verified",
+      "manifest_sha256_match": false
+    },
+    {
+      "accession": "AN2-F10",
+      "view": "V2",
+      "filename": "AN2-F10V2.JPG",
+      "drive_ids": [
+        "1HmZt5KJSQqyZwvdkYDicQPfOA2mKrvLG",
+        "1NIriLqG2R1NJe08riUAx0CCNQCjmxJg7"
+      ],
+      "bytes": 733310,
+      "sha256": "bb70da35418aed4d826cdebe277644a16fc2e15ff6e4917468c889648c1e9ede",
+      "independent_pair_sha256": "verified_r20",
+      "byte_comparison_exit": 0,
+      "jpeg_px": [
+        2048,
+        1536
+      ],
+      "exif_tags": 0,
+      "manifest_sha256_match": false
+    },
+    {
+      "accession": "AN2-F12",
+      "view": "V1",
+      "filename": "AN2-F12.JPG",
+      "drive_ids": [
+        "1FMKVoK7muxRwk_VNIm2vfwAMRfNOsWhP",
+        "1pvj__bOepg6qCLeYMgipEuwAxxgEyMPW"
+      ],
+      "bytes": 601014,
+      "sha256": "7adc8bea4bd235509b57aee775dfb95acff7dde04976ce8ae2030cdeb9e986de",
+      "independent_pair_sha256": "inherited_R17_verified",
+      "manifest_sha256_match": false
+    },
+    {
+      "accession": "AN2-F12",
+      "view": "V2",
+      "filename": "AN2-F12V2.JPG",
+      "drive_ids": [
+        "1M7r6Cf8M5PeeIp1PtJ-_I9X_vUW49-IC",
+        "11AfRr9nZzoGa-LiRPUq5g-8oLlAFr0nA"
+      ],
+      "bytes": 603024,
+      "sha256": "336c949adea8f5f4a84017cb13b0cbb47df6116149afe6b23819120a0ee59375",
+      "independent_pair_sha256": "verified_r20",
+      "byte_comparison_exit": 0,
+      "jpeg_px": [
+        2048,
+        1536
+      ],
+      "exif_tags": 0,
+      "manifest_sha256_match": false
+    },
+    {
+      "accession": "AN2-F22",
+      "view": "V1",
+      "filename": "AN2-F22.JPG",
+      "drive_ids": [
+        "1l19SrqZiIbJF_hwWrr4iEvNoc2jylwnE"
+      ],
+      "bytes": 558736,
+      "sha256": "3b7cfa2738cec222cd15ad15928c9b45f538634cb37e1102f2defe0dbd045c5f",
+      "independent_pair_sha256": "not_applicable_single_object",
+      "manifest_sha256_match": false
+    },
+    {
+      "accession": "AN2-F22",
+      "view": "V2",
+      "filename": "AN2-F22V2.JPG",
+      "drive_ids": [
+        "1hmBLksN4okFnZW9Nh9bz3VVQBnkjvKav"
+      ],
+      "bytes": 567849,
+      "sha256": "febd02f4e47e44b640e2e9dab3ff72a6e887ebf558791145c1b1d05dfe2fbcd7",
+      "independent_pair_sha256": "not_applicable_single_object",
+      "jpeg_px": [
+        2048,
+        1536
+      ],
+      "exif_tags": 0,
+      "manifest_sha256_match": false
+    }
+  ],
+  "reconciliation": {
+    "drive_object_ids": 10,
+    "unique_archival_sha256": 6,
+    "distinct_archival_views_per_accession": 2,
+    "recovered_v2_pairs_verified": 2,
+    "prior_original_media_manifest_count": 26,
+    "prior_original_manifest_unique_hashes": 26,
+    "archival_shas_matching_prior_manifest": 0,
+    "media_added_to_repo": 0,
+    "prior_original_files_modified": 0,
+    "biological_specimens_inferred_from_images": null
+  },
+  "primary_evidence": {
+    "collection_notebook": "not authenticated",
+    "original_physical_label": "not authenticated; foil in photographs is an image-level association only",
+    "collector": null,
+    "observer": null,
+    "collection_date": null,
+    "physical_custody_chain": null,
+    "photographer": null,
+    "permission_for_publication": null,
+    "same_voucher_as_existing_26": "not established",
+    "taxonomy": "unresolved",
+    "spore_data": "no new determination"
+  },
+  "search": {
+    "system": "authenticated Google Drive",
+    "queries": [
+      "AN2 specimen notebook",
+      "AN2 F10 collector",
+      "AN2 F12 voucher",
+      "AN2 F22 custody",
+      "Rutgers photo permission",
+      "Rutgers specimen labels"
+    ],
+    "result": "No primary accession-specific physical-voucher or rights record authenticated; search returns historic compiled charts and general lab guidance, or no matches. Search is bounded, not exhaustive."
+  },
+  "preservation": {
+    "active_chart_sections": 422,
+    "normalized_active_ids": 420,
+    "historical_active_tokens": 421,
+    "cross_source_candidate_tokens": 423,
+    "historical_477_verified": false,
+    "bn5_f8_chart_variants": [
+      "BN5-F8(A)",
+      "BN5-F8(B)",
+      "BN5-F8(C)"
+    ],
+    "en1_f1_active_voucher_authenticated": false,
+    "original_media_sha256_files": 26,
+    "archival_distinct_sha256": 6
+  },
+  "gates": {
+    "new_primary_vouchers_authenticated": 0,
+    "collector_observer_attributions": 0,
+    "photo_rights_licenses": 0,
+    "new_species_determinations": 0,
+    "physical_voucher": "HOLD",
+    "collection_chronology": "HOLD",
+    "image_rights": "HOLD",
+    "public_release": "HOLD",
+    "merge": false,
+    "deploy": false,
+    "paid_services": false
+  },
+  "limitations": [
+    "SHA-256 inequality rules out byte-identical files; it does not rule out different images of a single physical specimen.",
+    "Hashing Drive V2 objects was performed during R20 analysis; CI tests versioned digest associations and existing 26 repo media, not live private Drive fetches.",
+    "Existing original 26 images remain untouched; R20 creates only research audit material.",
+    "No signed field notebook, dated collection label, physical custody trail or written photograph publication licence was verified."
+  ]
+}
