@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: '22'
       - name: Fetch isolated AN2-F22 original-media branch without modifying production
@@ -31,7 +31,7 @@ jobs:
           node tests/rutgers-r4-sha256.cjs
       - name: Install free Chromium
         run: |
-          npm install --no-save playwright@1.56.1
+          npm ci --ignore-scripts --no-audit --no-fund
           npx playwright install --with-deps chromium
       - name: Verify accession navigation and photo evidence
         run: |
