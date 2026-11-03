@@ -1,0 +1,168 @@
+{
+  "schema": "rutgers-r13-research-release-gates-v1",
+  "review_date": "2026-11-02",
+  "repository": "CodeDressing/Jockey_Hollow_Atlas",
+  "baseline_commit": "c8d85c4968bbe3025cad30d4616d6f7bf5b55bdb",
+  "purpose": "Research acceptance is not scientific voucher authentication or publication permission",
+  "research_counts": {
+    "active_charts": 422,
+    "active_normalized_strings": 420,
+    "legacy_active_tokens": 421,
+    "candidate_strings": 423,
+    "target_unverified": 477,
+    "verified_unique_biological_specimens": null
+  },
+  "interpretive_constraints": {
+    "chart_variants": [
+      "BN5-F8(A)",
+      "BN5-F8(B)",
+      "BN5-F8(C)"
+    ],
+    "unsupported_legacy_token": "EN1-F1",
+    "microscopy_subheadings_excluded": 5,
+    "no_unverified_species_claims": true
+  },
+  "stack": {
+    "base_main": "b72f832e4cd2bffdfae21f5b294d0fd489377b62",
+    "research_pr_numbers": [
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45
+    ],
+    "latest_verified_head": "c8d85c4968bbe3025cad30d4616d6f7bf5b55bdb",
+    "all_research_prs_are_drafts": true,
+    "merged": false,
+    "production_deployed": false
+  },
+  "evidence": {
+    "source_registry": "research/rutgers_r9_source_heading_ledger_20261101.json",
+    "cross_source_candidates": "feature/fieldmaster-477-evidence-20261022:research/fieldmaster_deo_2_1_canonical_reconciliation_20261023.json",
+    "original_media_sha256_manifest": "research/rutgers_r4_verified_originals_sha256_20261101.json",
+    "authenticated_file_count": 26,
+    "independent_sha256_verified": true,
+    "attribution_and_rights_verified": false
+  },
+  "acceptance_gates": [
+    {
+      "id": "G1",
+      "area": "Read-only canonical registry parser",
+      "status": "RESEARCH_ACCEPT",
+      "basis": "R9 tests: active 422 charts / 420 normalized strings; historical 403 charts / 401 normalized strings"
+    },
+    {
+      "id": "G2",
+      "area": "Reversible registry comparison",
+      "status": "RESEARCH_ACCEPT",
+      "basis": "R10 no-write deterministic diff and corruption tests"
+    },
+    {
+      "id": "G3",
+      "area": "Cryptographic original media integrity",
+      "status": "RESEARCH_ACCEPT",
+      "basis": "R4 fresh SHA256 Drive-to-Git verification for 23 F12 and 3 F22 files"
+    },
+    {
+      "id": "G4",
+      "area": "Branch ancestry and change scope",
+      "status": "RESEARCH_ACCEPT",
+      "basis": "R11 verifies 10 earlier PRs and no original-media path changes"
+    },
+    {
+      "id": "G5",
+      "area": "CI supply-chain safeguards",
+      "status": "RESEARCH_ACCEPT",
+      "basis": "R12 uses pinned checkout/setup-node and SHA512-locked npm ci, source-restricted credentials"
+    },
+    {
+      "id": "G6",
+      "area": "Independent biological voucher custody",
+      "status": "HOLD",
+      "basis": "Physical voucher labels, collector, custody chain not demonstrated for F10/F12/F22"
+    },
+    {
+      "id": "G7",
+      "area": "Image publication rights",
+      "status": "HOLD",
+      "basis": "Photographer attribution and written image rights not authenticated"
+    },
+    {
+      "id": "G8",
+      "area": "Taxonomic and microscopy interpretation",
+      "status": "HOLD",
+      "basis": "Spore structures and taxonomy cannot be advanced without validated objective and voucher evidence"
+    },
+    {
+      "id": "G9",
+      "area": "477 target and legacy ID reconstruction",
+      "status": "HOLD",
+      "basis": "477 not independently reconciled; exact historic extractor behind EN1-F1 still unlocated"
+    },
+    {
+      "id": "G10",
+      "area": "Release authorization",
+      "status": "HOLD",
+      "basis": "All work isolated in stacked draft PRs; no merge or production deploy authorized"
+    }
+  ],
+  "priority_specimens": [
+    {
+      "id": "AN2-F10",
+      "sha256_verified_originals": 0,
+      "primary_measurement_source": true,
+      "physical_voucher_authenticated": false,
+      "collector_attributed": false,
+      "photo_publication_rights": false,
+      "release": "HOLD"
+    },
+    {
+      "id": "AN2-F12",
+      "sha256_verified_originals": 23,
+      "primary_measurement_source": true,
+      "physical_voucher_authenticated": false,
+      "collector_attributed": false,
+      "photo_publication_rights": false,
+      "spore_print": "researcher-reported beige; method/identity unverified",
+      "microscopy": "14 originals, unconfirmed objects",
+      "release": "HOLD_FOR_NEW_PUBLICATION"
+    },
+    {
+      "id": "AN2-F22",
+      "sha256_verified_originals": 3,
+      "primary_measurement_source": false,
+      "physical_voucher_authenticated": false,
+      "collector_attributed": false,
+      "photo_publication_rights": false,
+      "spore_print": "unavailable",
+      "microscopy": "not performed",
+      "release": "HOLD"
+    }
+  ],
+  "final_decision": {
+    "research_code_acceptance": "PASS subject to R13 CI",
+    "scientific_primary_voucher_authentication": "NOT ESTABLISHED",
+    "new_publication": "HOLD",
+    "merge": "NOT AUTHORIZED",
+    "production_deployment": "NOT AUTHORIZED"
+  },
+  "rollback": {
+    "scope": "New R13 report, test, workflow and isolated draft branch only",
+    "original_assets_unchanged": true,
+    "no_historic_master_changes": true
+  },
+  "remaining_actions": [
+    "Obtain primary accession/container labels and collection notebooks",
+    "Obtain named collector/observer, date and location field provenance",
+    "Authenticate photographer permissions",
+    "Validate spores and microscopy with voucher labels and calibration",
+    "Independently review historical extraction source and 477 specimen target"
+  ]
+}

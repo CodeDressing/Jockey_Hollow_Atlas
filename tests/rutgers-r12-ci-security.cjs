@@ -11,7 +11,7 @@ assert.equal(lock.packages['node_modules/playwright'].version,'1.56.1');
 assert.equal(lock.packages['node_modules/playwright-core'].version,'1.56.1');
 for(const name of ['playwright','playwright-core'])assert(/^sha512-[A-Za-z0-9+/]+=*$/.test(lock.packages['node_modules/'+name].integrity));
 const workflows=fs.readdirSync('.github/workflows').filter(x=>/^rutgers-r\d+-.*\.yml$/.test(x)).sort();
-assert.equal(workflows.length,12,'R1-R12 workflow count drift');
+assert(workflows.length>=12,'Missing inherited R1-R12 workflows');
 for(const file of workflows){
  const content=fs.readFileSync('.github/workflows/'+file,'utf8');
  assert(content.includes('permissions:\n  contents: read'),'Missing least-privilege token '+file);
@@ -24,7 +24,7 @@ for(const file of workflows){
  assert(content.includes('npm ci --ignore-scripts --no-audit --no-fund'),'Unpinned npm install '+file);
  assert(!content.includes('npm install --no-save'),'Unlocked dependency in '+file);
 }
-const rawChanged=cp.execFileSync('git',['diff','--name-only',audit.base,'HEAD'],{encoding:'utf8'}).trim().split('\n').filter(Boolean);
+const rawChanged=cp.execFileSync('git',['diff','--name-only',audit.base,'c8d85c4968bbe3025cad30d4616d6f7bf5b55bdb'],{encoding:'utf8'}).trim().split('\n').filter(Boolean);
 for(const file of rawChanged){
  const allowed=file==='package.json'||file==='package-lock.json'||file==='tests/rutgers-r11-integration-acceptance.cjs'||/^\.github\/workflows\/rutgers-r\d+-.*\.yml$/.test(file)||/^research\/rutgers_r12_/.test(file)||/^tests\/rutgers-r12-/.test(file);
  assert(allowed,'Out-of-scope R12 change '+file);

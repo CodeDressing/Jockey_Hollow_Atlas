@@ -1,0 +1,28 @@
+'use strict';
+const assert=require('node:assert/strict');const fs=require('node:fs');const cp=require('node:child_process');
+const r=JSON.parse(fs.readFileSync('research/rutgers_r13_research_release_gate_review_20261102.json','utf8'));
+const r12=JSON.parse(fs.readFileSync('research/rutgers_r12_ci_security_audit_20261102.json','utf8'));
+const r11=JSON.parse(fs.readFileSync('research/rutgers_r11_integration_acceptance_20261102.json','utf8'));
+const media=JSON.parse(fs.readFileSync('research/rutgers_r4_verified_originals_sha256_20261101.json','utf8'));
+const ledger=JSON.parse(fs.readFileSync('research/rutgers_r9_source_heading_ledger_20261101.json','utf8'));
+assert.deepEqual([r.research_counts.active_charts,r.research_counts.active_normalized_strings,r.research_counts.legacy_active_tokens,r.research_counts.candidate_strings,r.research_counts.target_unverified],[422,420,421,423,477]);
+assert.equal(r.research_counts.verified_unique_biological_specimens,null);
+assert.deepEqual(r.interpretive_constraints.chart_variants,['BN5-F8(A)','BN5-F8(B)','BN5-F8(C)']);
+assert.equal(r.interpretive_constraints.unsupported_legacy_token,'EN1-F1');
+assert.equal(r.interpretive_constraints.microscopy_subheadings_excluded,5);
+assert.equal(media.records.length,26);
+assert.deepEqual(ledger.sources.map(x=>[x.charts,x.normalized_unique]),[[422,420],[403,401]]);
+assert.equal(r.priority_specimens.reduce((sum,s)=>sum+s.sha256_verified_originals,0),26);
+for(const s of r.priority_specimens){assert.equal(s.physical_voucher_authenticated,false);assert.equal(s.photo_publication_rights,false);assert.equal(s.collector_attributed,false);assert(s.release.startsWith('HOLD'));}
+assert.equal(r.acceptance_gates.length,10);
+assert.equal(r.acceptance_gates.filter(x=>x.status==='RESEARCH_ACCEPT').length,5);
+assert.equal(r.acceptance_gates.filter(x=>x.status==='HOLD').length,5);
+assert.equal(r.final_decision.new_publication,'HOLD');
+assert.equal(r.final_decision.merge,'NOT AUTHORIZED');
+assert.equal(r.final_decision.production_deployment,'NOT AUTHORIZED');
+assert.equal(r12.gates.production_release,'HOLD');
+assert.equal(r11.pr_chain.length,10);
+const files=cp.execFileSync('git',['diff','--name-only',r.baseline_commit,'HEAD'],{encoding:'utf8'}).trim().split('\n').filter(Boolean);
+for(const name of files)assert(/^research\/rutgers_r13_/.test(name)||/^tests\/rutgers-r13-/.test(name)||name==='tests/rutgers-r12-ci-security.cjs'||name==='.github/workflows/rutgers-r13-release-gates.yml','R13 scope unexpected '+name);
+assert(!files.some(name=>name.startsWith('assets/')));
+console.log('PASS R13 release matrix: 5 research accepted, 5 scientific/publication holds, 26 original hashes, '+files.length+' scoped files');
