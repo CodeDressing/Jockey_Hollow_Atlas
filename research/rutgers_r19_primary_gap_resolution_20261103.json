@@ -1,0 +1,142 @@
+{
+  "schema": "rutgers-r19-primary-evidence-gap-v1",
+  "review_date": "2026-11-03",
+  "baseline": {
+    "pr": 51,
+    "commit": "3e54414dda227641660fdc5502322d05e2c06a18",
+    "ci": 41579097753
+  },
+  "source": {
+    "folder_id": "13AOKWCXJtfPZD8LXt84KwC9CAjThYm6M",
+    "folder_url": "https://drive.google.com/drive/folders/13AOKWCXJtfPZD8LXt84KwC9CAjThYm6M",
+    "folder_title": "MycoScope Verified Lab Views 2026-09-20",
+    "scope": "Authenticated restricted Drive folder of 114 entries; not an institutional specimen custody ledger."
+  },
+  "new_evidence": [
+    {
+      "accession": "AN2-F10",
+      "filename": "AN2-F10V2.JPG",
+      "drive_object_ids": [
+        "1HmZt5KJSQqyZwvdkYDicQPfOA2mKrvLG",
+        "1NIriLqG2R1NJe08riUAx0CCNQCjmxJg7"
+      ],
+      "bytes_each": 733310,
+      "local_sha256": "bb70da35418aed4d826cdebe277644a16fc2e15ff6e4917468c889648c1e9ede",
+      "size": [
+        2048,
+        1536
+      ],
+      "exif_tags": 0,
+      "visual_observation": "Porous underside and stipe positioned near handwritten AN2 F10 foil marking. Species not determined.",
+      "duplicate_content_sha256_independently_confirmed": false
+    },
+    {
+      "accession": "AN2-F12",
+      "filename": "AN2-F12V2.JPG",
+      "drive_object_ids": [
+        "1M7r6Cf8M5PeeIp1PtJ-_I9X_vUW49-IC",
+        "11AfRr9nZzoGa-LiRPUq5g-8oLlAFr0nA"
+      ],
+      "bytes_each": 603024,
+      "local_sha256": "336c949adea8f5f4a84017cb13b0cbb47df6116149afe6b23819120a0ee59375",
+      "size": [
+        2048,
+        1536
+      ],
+      "exif_tags": 0,
+      "visual_observation": "Pale gilled underside with attached stem fragment near handwritten AN2 F12 foil marking; yellow fragment separately visible.",
+      "duplicate_content_sha256_independently_confirmed": false
+    },
+    {
+      "accession": "AN2-F22",
+      "filename": "AN2-F22V2.JPG",
+      "drive_object_ids": [
+        "1hmBLksN4okFnZW9Nh9bz3VVQBnkjvKav"
+      ],
+      "bytes_each": 567849,
+      "local_sha256": "febd02f4e47e44b640e2e9dab3ff72a6e887ebf558791145c1b1d05dfe2fbcd7",
+      "size": [
+        2048,
+        1536
+      ],
+      "exif_tags": 0,
+      "visual_observation": "Small gilled underside with long thin stem beside handwritten AN2 F22 foil marking.",
+      "duplicate_content_sha256_independently_confirmed": null
+    }
+  ],
+  "prior_archival_hashes": {
+    "AN2-F10": "cdc8989204a734b8e2487bccd90fcc97e52c82ebbb48c5b4121a0ec9b8a04020",
+    "AN2-F12": "7adc8bea4bd235509b57aee775dfb95acff7dde04976ce8ae2030cdeb9e986de",
+    "AN2-F22": "3b7cfa2738cec222cd15ad15928c9b45f538634cb37e1102f2defe0dbd045c5f"
+  },
+  "primary_evidence_assessment": {
+    "photographic_accession_mark_and_morphology": "associated, limited visual observation only",
+    "physical_specimen_label_authentication": "unverified",
+    "original_dated_field_notebook": "not recovered",
+    "collection_date": null,
+    "collector": null,
+    "observer": null,
+    "custody_chain": null,
+    "original_photographer": null,
+    "written_publication_permission": null,
+    "species": null,
+    "same_voucher_as_previous_photos": "not independently established",
+    "scope": "New source photo files cannot authenticate physical custody or rights; derived charts and upload dates insufficient."
+  },
+  "bounded_searches": [
+    {
+      "system": "Google Drive",
+      "targets": [
+        "AN2 2026 nested 114-file photo archive",
+        "prior active master and 396/403 chart revisions",
+        "target accession rights and custody"
+      ],
+      "result": "V2 candidate views found, no authenticated physical custody ledger or rights document"
+    },
+    {
+      "system": "Gmail",
+      "inherited_from": "R18",
+      "result": "No verified signed collection/rights correspondence linked to exact accession; no new Gmail attestation authenticated R19"
+    }
+  ],
+  "preserve": {
+    "chart_sections": 422,
+    "normalized_accessions": 420,
+    "legacy_tokens": 421,
+    "cross_source_candidates": 423,
+    "unverified_target_477": true,
+    "original_sha256_media_count": 26,
+    "existing_originals_unchanged": true,
+    "prior_archival_distinct_hashes": 3,
+    "new_v2_distinct_hashes": 3,
+    "archival_images_added_to_repo": 0,
+    "bn5_variants": [
+      "BN5-F8(A)",
+      "BN5-F8(B)",
+      "BN5-F8(C)"
+    ],
+    "en1_f1_authenticated": false
+  },
+  "disposition": {
+    "new_vouchers_authenticated": 0,
+    "new_licenses_authenticated": 0,
+    "collector_identifications": 0,
+    "release": "HOLD",
+    "publication": "HOLD",
+    "merge": false,
+    "deploy": false,
+    "paid_services": false
+  },
+  "limitations": [
+    "The three newly hashed V2 byte streams are stored in restricted Drive, not in the Git repository. R19 CI checks manifest assertions and 26 inherited assets but does not re-download V2 Drive objects.",
+    "Two V2 Drive file pairs have equal file sizes, but independent duplicate byte-equality of both objects was not established in this versioned matrix.",
+    "Missing EXIF fields do not imply lack of original camera files elsewhere.",
+    "An accession written on foil near material does not establish a specific physical voucher, continuity of custody or license."
+  ],
+  "next_primary_sources_needed": [
+    "Dated original AN2 specimen accession notebook pages",
+    "Signed/photographed physical container label with storage and transfer history",
+    "Named collector/observer testimony tied to specific voucher and original documentation",
+    "Proven photographer identity and written permission for specified use of exact file hashes"
+  ]
+}
