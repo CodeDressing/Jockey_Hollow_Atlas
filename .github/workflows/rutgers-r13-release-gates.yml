@@ -1,0 +1,57 @@
+name: Rutgers R.13 evidence release gate research acceptance
+on:
+  push:
+    branches:
+      - feature/rutgers-r13-release-gate-review-20261102
+  pull_request:
+    paths:
+      - research/rutgers_r13_research_release_gate_review_20261102.json
+      - tests/rutgers-r13-release-gates.cjs
+      - .github/workflows/rutgers-r13-release-gates.yml
+permissions:
+  contents: read
+jobs:
+  research-gate-and-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Install locked research test dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Read original evidence from isolated research branches
+        run: |
+          git fetch --no-tags origin feature/an2-f22-deof-photo-intake-20261022
+          git fetch --no-tags origin feature/fieldmaster-477-evidence-20261022
+          git show origin/feature/fieldmaster-477-evidence-20261022:research/fieldmaster_deo_2_1_canonical_reconciliation_20261023.json > /tmp/rutgers-r13-fieldmaster-legacy.json
+      - name: Verify security source integrity research and scientific holds
+        run: |
+          node --check app.js
+          node --check tests/rutgers-r13-release-gates.cjs
+          node tests/rutgers-r1-integrity.cjs
+          node tests/rutgers-r2-description-crosswalk.cjs
+          node tests/rutgers-r3-media-crosswalk.cjs
+          node tests/rutgers-r4-sha256.cjs
+          node tests/rutgers-r5-voucher-matrix.cjs
+          node tests/rutgers-r6-voucher-traceability.cjs
+          node tests/rutgers-r7-fieldmaster-conflicts.cjs
+          node tests/rutgers-r8-record-boundaries.cjs
+          node tests/rutgers-r9-parser.cjs
+          node tests/rutgers-r10-registry-integration.cjs /tmp/rutgers-r13-fieldmaster-legacy.json
+          node tests/rutgers-r11-integration-acceptance.cjs
+          node tests/rutgers-r12-ci-security.cjs
+          node tests/rutgers-r13-release-gates.cjs
+      - name: Install browser matching locked Playwright
+        run: npx --no-install playwright install --with-deps chromium
+      - name: Verify accession navigation and AN2-F12 gallery
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/rutgers-r13-http.log 2>&1 &
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8765/index.html >/dev/null && break; sleep 1; done
+          node tests/rutgers-r1-browser.cjs
+          node tests/an2-f12-browser.cjs
