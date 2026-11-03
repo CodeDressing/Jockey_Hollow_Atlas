@@ -1,0 +1,12 @@
+{
+  "name": "rutgers-atlas-research-ci",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Research-only deterministic browser test dependencies; no runtime build",
+  "scripts": {
+    "test:research": "node tests/rutgers-r11-integration-acceptance.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.56.1"
+  }
+}
