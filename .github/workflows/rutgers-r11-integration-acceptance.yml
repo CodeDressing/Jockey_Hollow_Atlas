@@ -1,0 +1,55 @@
+name: Rutgers R.11 independent integration acceptance
+on:
+  push:
+    branches:
+      - feature/rutgers-r11-integration-acceptance-20261102
+  pull_request:
+    paths:
+      - research/rutgers_r11_integration_acceptance_20261102.json
+      - tests/rutgers-r11-integration-acceptance.cjs
+permissions:
+  contents: read
+jobs:
+  acceptance-and-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch source evidence in read-only mode
+        run: |
+          git fetch --no-tags origin feature/an2-f22-deof-photo-intake-20261022
+          git fetch --no-tags origin feature/fieldmaster-477-evidence-20261022
+          git show origin/feature/fieldmaster-477-evidence-20261022:research/fieldmaster_deo_2_1_canonical_reconciliation_20261023.json > /tmp/rutgers-r11-fieldmaster-legacy.json
+      - name: Revalidate R1-R10 original media and scientific assertions
+        run: |
+          node --check app.js
+          node --check research/tools/rutgers_accession_boundary_parser.cjs
+          node --check research/tools/rutgers_r10_registry_reconcile.cjs
+          node --check tests/rutgers-r11-integration-acceptance.cjs
+          node tests/rutgers-r1-integrity.cjs
+          node tests/rutgers-r2-description-crosswalk.cjs
+          node tests/rutgers-r3-media-crosswalk.cjs
+          node tests/rutgers-r4-sha256.cjs
+          node tests/rutgers-r5-voucher-matrix.cjs
+          node tests/rutgers-r6-voucher-traceability.cjs
+          node tests/rutgers-r7-fieldmaster-conflicts.cjs
+          node tests/rutgers-r8-record-boundaries.cjs
+          node tests/rutgers-r9-parser.cjs
+          node tests/rutgers-r10-registry-integration.cjs /tmp/rutgers-r11-fieldmaster-legacy.json
+      - name: Audit stacked PR ancestry and zero-media-change scope
+        run: node tests/rutgers-r11-integration-acceptance.cjs
+      - name: Install Chromium for existing browser regressions
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Browser test selected accession and AN2-F12 original gallery
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/rutgers-r11-http.log 2>&1 &
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8765/index.html >/dev/null && break; sleep 1; done
+          node tests/rutgers-r1-browser.cjs
+          node tests/an2-f12-browser.cjs
