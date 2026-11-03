@@ -1,0 +1,274 @@
+{
+  "schema": "rutgers-r22-primary-evidence-intake-v1",
+  "date": "2026-11-03",
+  "repository": "CodeDressing/Jockey_Hollow_Atlas",
+  "baseline": {
+    "pr": 54,
+    "sha": "98f0a97ffb03871fb3d845347b676edd1d4234cf",
+    "ci": 41583744540,
+    "ci_conclusion": "success"
+  },
+  "bounded_lead_review": {
+    "source": "https://drive.google.com/drive/folders/13AOKWCXJtfPZD8LXt84KwC9CAjThYm6M",
+    "method": "Re-list the specific 114-entry MycoScope archive only, reconcile the ten previously recorded exact source IDs and look for independently named notebook, physical voucher, custody, release or licence materials relevant to AN2-F10/F12/F22; do not expand to a broad search.",
+    "entries_observed": 114,
+    "previously_verified_photo_objects_present": 10,
+    "new_primary_documents_authenticated": 0,
+    "conclusion": "No new accession-specific notebook/label/custody/rights document authenticated in the inspected restricted folder. Search is bounded; absence elsewhere is not established."
+  },
+  "intake_policy": {
+    "default": "HOLD",
+    "allowed_states": [
+      "HOLD",
+      "QUARANTINED",
+      "SOURCE_VERIFIED",
+      "REVIEWED",
+      "RELEASE_AUTHORIZED"
+    ],
+    "untrusted_evidence_behavior": "Quarantine novel bytes and metadata; capture provenance; do not overwrite or merge with originals; do not turn filenames or photos into collection dates, physical specimen IDs, licenses, or taxonomic claims.",
+    "sha256_requirement": "Full original bytes hashed and matched to separately provided source identifier, binary metadata and reviewer record.",
+    "permission_requirement": "Release requires a separately verified rights-holder licence scoped to exact image(s), explicit authorized reviewer and separate publication decision. GitHub CI and Drive access are not permission.",
+    "gate_independence": "Voucher, taxonomic, image rights and publication authorization are independent reviews.",
+    "new_records_without_evidence": "Keep absent fields null and statuses HOLD; never invent a positive attestation."
+  },
+  "evidence_types": [
+    {
+      "type": "original_field_notebook",
+      "required": [
+        "original_source_locator",
+        "dated_page_or_capture",
+        "accession_visible",
+        "creator_attribution_basis",
+        "source_custody_history"
+      ],
+      "approval": "primary_collection_event_review"
+    },
+    {
+      "type": "physical_voucher_and_label",
+      "required": [
+        "physical_container_identifier",
+        "original_label_photo_or_inspection",
+        "custodian",
+        "storage_location",
+        "transfer_chain",
+        "accession_crosscheck"
+      ],
+      "approval": "physical_voucher_authentication"
+    },
+    {
+      "type": "collector_observer_attestation",
+      "required": [
+        "verified_attestor_identity",
+        "direct_observation_scope",
+        "linked_accession",
+        "statement_date",
+        "attestation_source",
+        "independent_reviewer"
+      ],
+      "approval": "identity_review"
+    },
+    {
+      "type": "photographic_creator_evidence",
+      "required": [
+        "rights_claimant_identity",
+        "creator_basis",
+        "exact_image_sha256",
+        "camera_original_or_signed_attestation",
+        "independent_reviewer"
+      ],
+      "approval": "photo_authorship_review"
+    },
+    {
+      "type": "explicit_publication_permission",
+      "required": [
+        "verified_rights_holder",
+        "grantor_authority",
+        "exact_image_sha256_or_defined_set",
+        "permitted_audiences",
+        "permitted_channels",
+        "permitted_modifications",
+        "effective_date",
+        "revocation_terms",
+        "written_signed_license",
+        "independent_reviewer"
+      ],
+      "approval": "publication_rights_review"
+    }
+  ],
+  "accessions": [
+    {
+      "id": "AN2-F10",
+      "original_field_notebook": null,
+      "physical_voucher_label": null,
+      "physical_custody_chain": null,
+      "collector": null,
+      "observer": null,
+      "original_collection_datetime": null,
+      "verified_photographic_creator": null,
+      "written_image_permission": null,
+      "independent_reviewer": null,
+      "evidence_submissions": [],
+      "voucher_authentication": "HOLD",
+      "image_rights": "HOLD",
+      "taxonomic_review": "HOLD",
+      "publication": "HOLD",
+      "no_new_physical_specimens_asserted": true
+    },
+    {
+      "id": "AN2-F12",
+      "original_field_notebook": null,
+      "physical_voucher_label": null,
+      "physical_custody_chain": null,
+      "collector": null,
+      "observer": null,
+      "original_collection_datetime": null,
+      "verified_photographic_creator": null,
+      "written_image_permission": null,
+      "independent_reviewer": null,
+      "evidence_submissions": [],
+      "voucher_authentication": "HOLD",
+      "image_rights": "HOLD",
+      "taxonomic_review": "HOLD",
+      "publication": "HOLD",
+      "no_new_physical_specimens_asserted": true
+    },
+    {
+      "id": "AN2-F22",
+      "original_field_notebook": null,
+      "physical_voucher_label": null,
+      "physical_custody_chain": null,
+      "collector": null,
+      "observer": null,
+      "original_collection_datetime": null,
+      "verified_photographic_creator": null,
+      "written_image_permission": null,
+      "independent_reviewer": null,
+      "evidence_submissions": [],
+      "voucher_authentication": "HOLD",
+      "image_rights": "HOLD",
+      "taxonomic_review": "HOLD",
+      "publication": "HOLD",
+      "no_new_physical_specimens_asserted": true
+    }
+  ],
+  "archive_views": [
+    {
+      "accession": "AN2-F10",
+      "view": "V1",
+      "drive_ids": [
+        "1GrMhvJurTnTxXEDmL5oXagvEFVBeBOVt",
+        "18Lg9UKaJfyIx0cARoV-sJ-cvVjaTi8Ip"
+      ],
+      "sha256": "cdc8989204a734b8e2487bccd90fcc97e52c82ebbb48c5b4121a0ec9b8a04020",
+      "record_status": "EXISTING_HASH_ASSOCIATION_ONLY",
+      "voucher_chain_proven": false,
+      "rights_cleared": false,
+      "public_gallery_allowed": false
+    },
+    {
+      "accession": "AN2-F10",
+      "view": "V2",
+      "drive_ids": [
+        "1HmZt5KJSQqyZwvdkYDicQPfOA2mKrvLG",
+        "1NIriLqG2R1NJe08riUAx0CCNQCjmxJg7"
+      ],
+      "sha256": "bb70da35418aed4d826cdebe277644a16fc2e15ff6e4917468c889648c1e9ede",
+      "record_status": "EXISTING_HASH_ASSOCIATION_ONLY",
+      "voucher_chain_proven": false,
+      "rights_cleared": false,
+      "public_gallery_allowed": false
+    },
+    {
+      "accession": "AN2-F12",
+      "view": "V1",
+      "drive_ids": [
+        "1FMKVoK7muxRwk_VNIm2vfwAMRfNOsWhP",
+        "1pvj__bOepg6qCLeYMgipEuwAxxgEyMPW"
+      ],
+      "sha256": "7adc8bea4bd235509b57aee775dfb95acff7dde04976ce8ae2030cdeb9e986de",
+      "record_status": "EXISTING_HASH_ASSOCIATION_ONLY",
+      "voucher_chain_proven": false,
+      "rights_cleared": false,
+      "public_gallery_allowed": false
+    },
+    {
+      "accession": "AN2-F12",
+      "view": "V2",
+      "drive_ids": [
+        "1M7r6Cf8M5PeeIp1PtJ-_I9X_vUW49-IC",
+        "11AfRr9nZzoGa-LiRPUq5g-8oLlAFr0nA"
+      ],
+      "sha256": "336c949adea8f5f4a84017cb13b0cbb47df6116149afe6b23819120a0ee59375",
+      "record_status": "EXISTING_HASH_ASSOCIATION_ONLY",
+      "voucher_chain_proven": false,
+      "rights_cleared": false,
+      "public_gallery_allowed": false
+    },
+    {
+      "accession": "AN2-F22",
+      "view": "V1",
+      "drive_ids": [
+        "1l19SrqZiIbJF_hwWrr4iEvNoc2jylwnE"
+      ],
+      "sha256": "3b7cfa2738cec222cd15ad15928c9b45f538634cb37e1102f2defe0dbd045c5f",
+      "record_status": "EXISTING_HASH_ASSOCIATION_ONLY",
+      "voucher_chain_proven": false,
+      "rights_cleared": false,
+      "public_gallery_allowed": false
+    },
+    {
+      "accession": "AN2-F22",
+      "view": "V2",
+      "drive_ids": [
+        "1hmBLksN4okFnZW9Nh9bz3VVQBnkjvKav"
+      ],
+      "sha256": "febd02f4e47e44b640e2e9dab3ff72a6e887ebf558791145c1b1d05dfe2fbcd7",
+      "record_status": "EXISTING_HASH_ASSOCIATION_ONLY",
+      "voucher_chain_proven": false,
+      "rights_cleared": false,
+      "public_gallery_allowed": false
+    }
+  ],
+  "preservation": {
+    "prior_original_sha256_files": 26,
+    "archival_distinct_sha256": 6,
+    "archival_drive_file_objects": 10,
+    "active_chart_sections": 422,
+    "normalized_active_accessions": 420,
+    "legacy_active_tokens": 421,
+    "cross_source_candidates": 423,
+    "historical_477_verified": false,
+    "en1_f1_independent_active_voucher": false,
+    "bn5_f8_variants": [
+      "BN5-F8(A)",
+      "BN5-F8(B)",
+      "BN5-F8(C)"
+    ],
+    "original_media_modifications": 0,
+    "new_published_images": 0,
+    "new_species_identifications": 0
+  },
+  "outstanding_primary_evidence": [
+    "Access to dated, original handwritten or contemporaneous electronic field notes, source authenticated and accession-specific",
+    "Photographs or authenticated inspection of physical specimen container labels with storage and transfer documentation",
+    "Collector and observer first-hand signed attestations tied to accession codes and chronology",
+    "Creator and actual rights holder documented with original image proof or verifiable signed attestation",
+    "Written image-specific permitted-use licenses and independent review, followed by explicit publication authorization"
+  ],
+  "disposition": {
+    "research_audit": "COMPLETED",
+    "primary_voucher_chains_closed": 0,
+    "verified_rights_grants": 0,
+    "publication": "HOLD",
+    "production_merge": false,
+    "production_deployment": false,
+    "paid_services": false,
+    "unrelated_repo_changes": false
+  },
+  "limitations": [
+    "The connected archive preview does not grant access to physical specimens or original privately held notebooks.",
+    "R22 tests the JSON intake contract and inherited media only, not hypothetical future files or third-party rights claims.",
+    "New-source absence is a bounded search outcome; not evidence that such sources do not exist.",
+    "This research draft PR is not authorization to publish, merge or deploy."
+  ]
+}

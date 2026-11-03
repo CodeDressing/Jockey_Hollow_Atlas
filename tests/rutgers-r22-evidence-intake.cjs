@@ -1,0 +1,54 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const cp=require('node:child_process');
+const x=JSON.parse(fs.readFileSync('research/rutgers_r22_primary_evidence_intake_20261103.json','utf8'));
+const prev=JSON.parse(fs.readFileSync('research/rutgers_r21_primary_voucher_release_authority_20261103.json','utf8'));
+const original=JSON.parse(fs.readFileSync('research/rutgers_r4_verified_originals_sha256_20261101.json','utf8'));
+assert.equal(x.schema,'rutgers-r22-primary-evidence-intake-v1');
+assert.equal(x.baseline.sha,'98f0a97ffb03871fb3d845347b676edd1d4234cf');
+assert.equal(x.baseline.ci_conclusion,'success');
+assert.deepEqual([x.preservation.active_chart_sections,x.preservation.normalized_active_accessions,x.preservation.legacy_active_tokens,x.preservation.cross_source_candidates],[422,420,421,423]);
+assert.equal(x.preservation.historical_477_verified,false);
+assert.equal(x.preservation.en1_f1_independent_active_voucher,false);
+assert.deepEqual(x.preservation.bn5_f8_variants,['BN5-F8(A)','BN5-F8(B)','BN5-F8(C)']);
+assert.equal(original.records.length,26);
+assert.equal(x.preservation.prior_original_sha256_files,26);
+assert.equal(x.preservation.archival_distinct_sha256,6);
+assert.equal(x.preservation.archival_drive_file_objects,10);
+assert.equal(x.preservation.original_media_modifications,0);
+assert.equal(x.preservation.new_published_images,0);
+assert.equal(x.preservation.new_species_identifications,0);
+assert.equal(x.bounded_lead_review.previously_verified_photo_objects_present,10);
+assert.equal(x.bounded_lead_review.new_primary_documents_authenticated,0);
+assert.equal(x.archive_views.length,6);
+assert.deepEqual(x.archive_views.map(y=>y.sha256),prev.six_archival_views.map(y=>y.sha256));
+assert.deepEqual(x.archive_views.map(y=>y.drive_ids),prev.six_archival_views.map(y=>y.ids));
+assert.equal(new Set(x.archive_views.map(y=>y.sha256)).size,6);
+assert.equal(new Set(x.archive_views.flatMap(y=>y.drive_ids)).size,10);
+for (const view of x.archive_views) {
+ assert.match(view.sha256,/^[0-9a-f]{64}$/);
+ assert.equal(view.record_status,'EXISTING_HASH_ASSOCIATION_ONLY');
+ assert.equal(view.voucher_chain_proven,false);
+ assert.equal(view.rights_cleared,false);
+ assert.equal(view.public_gallery_allowed,false);
+}
+assert.deepEqual(x.accessions.map(y=>y.id),['AN2-F10','AN2-F12','AN2-F22']);
+for(const specimen of x.accessions) {
+ for(const key of ['original_field_notebook','physical_voucher_label','physical_custody_chain','collector','observer','original_collection_datetime','verified_photographic_creator','written_image_permission','independent_reviewer']) assert.equal(specimen[key],null);
+ assert.deepEqual(specimen.evidence_submissions,[]);
+ for(const key of ['voucher_authentication','image_rights','taxonomic_review','publication'])assert.equal(specimen[key],'HOLD');
+ assert.equal(specimen.no_new_physical_specimens_asserted,true);
+}
+assert.equal(x.evidence_types.length,5);
+for(const item of x.evidence_types) assert(item.required.length>=5);
+assert.equal(x.intake_policy.default,'HOLD');
+assert.equal(x.disposition.research_audit,'COMPLETED');
+assert.equal(x.disposition.primary_voucher_chains_closed,0);
+assert.equal(x.disposition.verified_rights_grants,0);
+assert.equal(x.disposition.publication,'HOLD');
+for(const key of ['production_merge','production_deployment','paid_services','unrelated_repo_changes'])assert.equal(x.disposition[key],false);
+const changed=cp.execFileSync('git',['diff','--name-only',x.baseline.sha,'HEAD'],{encoding:'utf8'}).trim().split('\n').filter(Boolean);
+for (const f of changed) assert(/^research\/rutgers_r22_/.test(f)||/^tests\/rutgers-r22-/.test(f)||f==='.github/workflows/rutgers-r22-evidence-intake.yml','out-of-scope file '+f);
+assert(!changed.some(f=>f.startsWith('assets/')));
+console.log('PASS R22: bounded evidence intake, six views/ten IDs, 26 original media and all scientific/publication holds');
