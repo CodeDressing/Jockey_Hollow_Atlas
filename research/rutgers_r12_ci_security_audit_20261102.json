@@ -1,0 +1,58 @@
+{
+  "schema": "rutgers-r12-research-ci-security-20261102",
+  "scope": "CodeDressing/Jockey_Hollow_Atlas exclusively",
+  "base": "6850ab3c920a4264334af1876529eff8df407d19",
+  "ci_controls": {
+    "workflows": 11,
+    "checkout_pin": {
+      "version": "v7.0.1",
+      "sha": "3d3c42e5aac5ba805825da76410c181273ba90b1"
+    },
+    "setup_node_pin": {
+      "version": "v7.0.0",
+      "sha": "820762786026740c76f36085b0efc47a31fe5020"
+    },
+    "test_package": "playwright",
+    "package_version": "1.56.1",
+    "dependency_install": "npm ci --ignore-scripts --no-audit --no-fund",
+    "lockfile_version": 3,
+    "registry_package_sha512": "verified against public package-lock records; CI npm ci must pass integrity verification",
+    "workflow_access": "contents: read",
+    "deployment_actions": "not permitted",
+    "secrets_in_workflows": "not permitted",
+    "untrusted_pull_request_target": "not permitted"
+  },
+  "invariants": {
+    "active_chart_sections": 422,
+    "normalized_active_ids": 420,
+    "legacy_active_tokens": 421,
+    "cross_source_candidates": 423,
+    "unverified_target": 477,
+    "verified_unique_vouchers": null,
+    "original_media_sha256_checks": 26,
+    "original_images_modified": false,
+    "source_register_untouched": true
+  },
+  "scope_change_allowlist": [
+    ".github/workflows/rutgers-r*.yml",
+    "package.json",
+    "package-lock.json",
+    "research/rutgers_r12_*",
+    "tests/rutgers-r12-*"
+  ],
+  "rollback": "Draft-only new branch: close PR and delete this branch; no original media or production source files changed.",
+  "gates": {
+    "source_security_assertions": "CI pending",
+    "npm_integrity_install": "CI pending",
+    "scientific_tests": "CI pending",
+    "chromium_tests": "CI pending",
+    "production_release": "HOLD",
+    "new_publication": "HOLD"
+  },
+  "limitations": [
+    "No actual voucher/photographer-rights authentication added",
+    "Immutable Actions pins reduce tag-movement risk but cannot alone guarantee dependency supply-chain safety",
+    "Chromium download follows upstream browser distribution; browser revision is tied to the pinned Playwright release",
+    "Historical R1-R10 workflows were hardcoded to previous branch names for push events and remain read-only verification references"
+  ]
+}
