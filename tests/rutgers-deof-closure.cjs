@@ -1,0 +1,70 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const cp=require('node:child_process');
+const x=JSON.parse(fs.readFileSync('research/rutgers_deof_campaign_closure_20261103.json','utf8'));
+const r13=JSON.parse(fs.readFileSync('research/rutgers_r13_research_release_gate_review_20261102.json','utf8'));
+const r20=JSON.parse(fs.readFileSync('research/rutgers_r20_archival_view_reconciliation_20261103.json','utf8'));
+const r22=JSON.parse(fs.readFileSync('research/rutgers_r22_primary_evidence_intake_20261103.json','utf8'));
+const originals=JSON.parse(fs.readFileSync('research/rutgers_r4_verified_originals_sha256_20261101.json','utf8'));
+assert.equal(x.schema,'rutgers-deof-research-campaign-closure-v1');
+assert.equal(x.baseline.head_sha,'b6a4d9dc48b188505add37e7b47d53c2d7b61b06');
+assert.equal(x.baseline.ci_conclusion,'success');
+assert.deepEqual([x.reconciliation.active_chart_sections,x.reconciliation.normalized_active_accessions,x.reconciliation.historical_active_tokens,x.reconciliation.cross_source_candidate_strings],[422,420,421,423]);
+assert.equal(x.reconciliation.target_477_verified,false);
+assert.equal(x.reconciliation.verified_unique_biological_vouchers,null);
+assert.equal(x.reconciliation.en1_f1_independently_verified,false);
+assert.deepEqual(x.reconciliation.bn5_f8_variants,['BN5-F8(A)','BN5-F8(B)','BN5-F8(C)']);
+assert.equal(originals.records.length,26);
+assert.equal(x.reconciliation.original_media_count,26);
+assert.deepEqual(x.reconciliation.original_media_by_accession,{'AN2-F10':0,'AN2-F12':23,'AN2-F22':3});
+assert.equal(x.reconciliation.original_media_modified_for_closure,0);
+assert.equal(x.archival_views.length,6);
+assert.equal(new Set(x.archival_views.map(a=>a.sha256)).size,6);
+assert.equal(new Set(x.archival_views.flatMap(a=>a.drive_ids)).size,10);
+assert.equal(x.reconciliation.archival_drive_ids,10);
+assert.equal(x.reconciliation.archive_sha256_matches_in_original_manifest,0);
+const originalDigests=new Set(originals.records.map(r=>r.drive_sha256));
+for(let i=0;i<x.archival_views.length;i++){
+ const a=x.archival_views[i],prior=r20.archive[i];
+ assert.equal(a.accession,prior.accession);
+ assert.equal(a.view,prior.view);
+ assert.deepEqual(a.drive_ids,prior.drive_ids);
+ assert.equal(a.sha256,prior.sha256);
+ assert(!originalDigests.has(a.sha256));
+ assert.equal(a.physical_voucher_verified,false);
+ assert.equal(a.photographic_permission_verified,false);
+}
+assert.equal(x.historic_sprint_acceptance.length,10);
+assert.deepEqual(x.historic_sprint_acceptance.map(a=>a.sprint),['R13','R14','R15','R16','R17','R18','R19','R20','R21','R22']);
+assert.deepEqual(x.historic_sprint_acceptance.map(a=>a.pr),[46,47,48,49,50,51,52,53,54,55]);
+for(const a of x.historic_sprint_acceptance){
+ assert.match(a.head_sha,/^[a-f0-9]{40}$/);
+ assert(Number.isInteger(a.run_id)&&a.run_id>0);
+ assert.equal(a.pr_state,'open_draft_unmerged');
+ assert.equal(a.run_state,'completed');
+ assert.equal(a.run_conclusion,'success');
+}
+assert.equal(r13.research_counts.target_unverified,477);
+assert.equal(r13.final_decision.new_publication,'HOLD');
+assert.equal(r22.disposition.publication,'HOLD');
+assert.equal(x.specimen_gates.length,3);
+assert.deepEqual(x.specimen_gates.map(s=>s.accession),['AN2-F10','AN2-F12','AN2-F22']);
+for(const s of x.specimen_gates){
+ for(const k of ['original_dated_notebook','collection_date','collector','observer','physical_custody','photographer','written_photo_permission'])assert.equal(s[k],null,s.accession+':'+k);
+ assert.equal(s.physical_voucher,'HOLD');
+ assert.equal(s.publication,'HOLD');
+ assert.equal(s.taxonomy,'unconfirmed');
+}
+assert.deepEqual(x.final_release_gates.map(g=>g.gate),['G1-G5','G6','G7','G8','G9','G10']);
+assert.equal(x.final_release_gates[0].state,'RESEARCH_ACCEPT');
+for(const g of x.final_release_gates.slice(1))assert.equal(g.state,'HOLD');
+assert.equal(x.closure_decision.research_campaign,'CLOSED_WITH_SCIENTIFIC_HOLDS');
+assert.equal(x.closure_decision.voucher_authentication,'NOT_ESTABLISHED');
+assert.equal(x.closure_decision.image_publication_authority,'NOT_ESTABLISHED');
+assert.equal(x.closure_decision.publication,'HOLD');
+for(const k of ['merge','production_deployment','paid_services','external_repository_changes'])assert.equal(x.closure_decision[k],false);
+const files=cp.execFileSync('git',['diff','--name-only',x.baseline.head_sha,'HEAD'],{encoding:'utf8'}).trim().split('\n').filter(Boolean);
+for(const f of files)assert(/^research\/rutgers_deof_/.test(f)||/^tests\/rutgers-deof-/.test(f)||f==='.github/workflows/rutgers-deof-closure.yml','Out-of-scope DEOF change: '+f);
+assert(!files.some(f=>f.startsWith('assets/')));
+console.log('PASS Rutgers DEOF: ten sprint checkpoints, six archival SHA256 values, ten Drive object IDs, 26 originals and all release holds');
