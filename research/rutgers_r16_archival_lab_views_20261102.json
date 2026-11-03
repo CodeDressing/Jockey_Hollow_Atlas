@@ -1,0 +1,144 @@
+{
+  "schema": "rutgers-r16-targeted-archival-evidence-v1",
+  "review_date": "2026-11-02",
+  "baseline_commit": "24209e81a254a2ce6b15981f3fa22c6a6124d9a0",
+  "baseline_pr": 48,
+  "discovery": {
+    "folder": "MycoScope Verified Lab Views 2026-09-20",
+    "url": "https://drive.google.com/drive/folders/13AOKWCXJtfPZD8LXt84KwC9CAjThYm6M",
+    "parent_folder": "AN2 2026",
+    "parent_url": "https://drive.google.com/drive/folders/1y_AO-pF5QDZYIe_kxZ5ZZocfFr8isPw6",
+    "parent_listed_items": 232,
+    "lab_folder_listed_items": 114,
+    "folder_listing_complete_at_requested_top_k": true,
+    "classification": "access-controlled Drive file inventory, original collection provenance unverified",
+    "note": "R15 inspected only a truncated 100-entry preview of the parent and missed this nested lab folder; R16 full parent listing and nested folder review yielded five accession-named JPEG Drive objects."
+  },
+  "observations": {
+    "visual_method": "Direct review of retrieved complete JPG bytes, no OCR or generated substitute",
+    "label_text_recovered": [
+      "AN2 F10",
+      "AN2 F12",
+      "AN2 F22"
+    ],
+    "classification": "photographic label-and-material co-occurrence, not physical specimen custody or independent authentication",
+    "collection_date": null,
+    "collector": null,
+    "observer": null,
+    "photographer": null,
+    "publication_rights": null,
+    "taxonomy": null
+  },
+  "candidate_files": [
+    {
+      "accession": "AN2-F10",
+      "drive_id": "1GrMhvJurTnTxXEDmL5oXagvEFVBeBOVt",
+      "filename": "AN2-F10.JPG",
+      "bytes": 679513,
+      "drive_created_utc": "2026-09-20T05:52:00.306Z",
+      "sha256": "cdc8989204a734b8e2487bccd90fcc97e52c82ebbb48c5b4121a0ec9b8a04020",
+      "label_visible": "AN2 F10",
+      "scope": "photographed foil plus fungal material",
+      "repo_binary_match": "not_assessed",
+      "publication_permission": "unverified"
+    },
+    {
+      "accession": "AN2-F10",
+      "drive_id": "18Lg9UKaJfyIx0cARoV-sJ-cvVjaTi8Ip",
+      "filename": "AN2-F10.JPG",
+      "bytes": 679513,
+      "drive_created_utc": "2026-09-20T05:50:00.643Z",
+      "sha256": "cdc8989204a734b8e2487bccd90fcc97e52c82ebbb48c5b4121a0ec9b8a04020",
+      "label_visible": "AN2 F10",
+      "scope": "duplicate-content candidate of other AN2-F10 Drive file",
+      "repo_binary_match": "not_assessed",
+      "publication_permission": "unverified"
+    },
+    {
+      "accession": "AN2-F12",
+      "drive_id": "1FMKVoK7muxRwk_VNIm2vfwAMRfNOsWhP",
+      "filename": "AN2-F12.JPG",
+      "bytes": 601014,
+      "drive_created_utc": "2026-09-20T05:52:21.367Z",
+      "sha256": "7adc8bea4bd235509b57aee775dfb95acff7dde04976ce8ae2030cdeb9e986de",
+      "label_visible": "AN2 F12",
+      "scope": "photographed foil plus fungal material",
+      "repo_binary_match": "not_assessed",
+      "publication_permission": "unverified"
+    },
+    {
+      "accession": "AN2-F12",
+      "drive_id": "1pvj__bOepg6qCLeYMgipEuwAxxgEyMPW",
+      "filename": "AN2-F12.JPG",
+      "bytes": 601014,
+      "drive_created_utc": "2026-09-20T05:50:32.592Z",
+      "sha256": "7adc8bea4bd235509b57aee775dfb95acff7dde04976ce8ae2030cdeb9e986de",
+      "label_visible": "AN2 F12",
+      "scope": "duplicate-content candidate of other AN2-F12 Drive file",
+      "repo_binary_match": "not_assessed",
+      "publication_permission": "unverified"
+    },
+    {
+      "accession": "AN2-F22",
+      "drive_id": "1l19SrqZiIbJF_hwWrr4iEvNoc2jylwnE",
+      "filename": "AN2-F22.JPG",
+      "bytes": 558736,
+      "drive_created_utc": "2026-09-20T06:27:32.114Z",
+      "sha256": "3b7cfa2738cec222cd15ad15928c9b45f538634cb37e1102f2defe0dbd045c5f",
+      "label_visible": "AN2 F22",
+      "scope": "photographed foil plus small fungal material",
+      "repo_binary_match": "not_assessed",
+      "publication_permission": "unverified"
+    }
+  ],
+  "recovered": {
+    "drive_objects": 5,
+    "distinct_sha256_content": 3,
+    "accessions_with_new_photo_label_evidence": 3,
+    "an2_f10_newly_located_drive_images": 2,
+    "authentic_physical_voucher_chains": 0,
+    "new_named_collector_attributions": 0,
+    "new_permissions": 0,
+    "new_species_identifications": 0
+  },
+  "preserve": {
+    "active_charts": 422,
+    "normalized_active": 420,
+    "legacy_active": 421,
+    "historical_candidates": 423,
+    "unverified_target": 477,
+    "bn5_variants": [
+      "BN5-F8(A)",
+      "BN5-F8(B)",
+      "BN5-F8(C)"
+    ],
+    "en1_f1": "not independently verified as active voucher",
+    "inherited_original_media_sha256_verified": 26,
+    "inherited_f12_media": 23,
+    "inherited_f22_media": 3,
+    "inherited_f10_media": 0,
+    "existing_media_changed": 0
+  },
+  "scientific_limitations": [
+    "A photographed foil label showing a code near material is not independently verified specimen custody or a dated original field label.",
+    "Drive upload timestamps and folder naming do not establish photographic capture, collection date, or collector/observer.",
+    "Newly identified candidate JPEGs have local source SHA-256 digests but have not been committed to Git or cross-compared with the 26 existing manifest records.",
+    "Two pairs of separately listed Drive file objects have identical SHA-256 within each accession; distinct Google Drive IDs are not five independent biological specimens.",
+    "Physical specimen identification, sampling chronology, photographer authorship and publication rights remain unresolved.",
+    "F12 microscopic particles remain unclassified; F22 no performed microscopy per earlier record; no new species conclusions."
+  ],
+  "required_next": [
+    "Locate contemporaneous signed and dated AN2 collection notebook and specimen/container transfer record.",
+    "Independently verify physical storage voucher label and custody for each code.",
+    "Authenticate named collector/observer and original photographic creator plus explicit use permission.",
+    "Only after authorization and independent review consider proposing these three novel binary images for inclusion in the restricted research media manifest."
+  ],
+  "release": {
+    "scientific_voucher_authentication": "HOLD",
+    "new_media_publication": "HOLD",
+    "merge": false,
+    "production_deployment": false,
+    "paid_services": false,
+    "original_media_changes": false
+  }
+}
