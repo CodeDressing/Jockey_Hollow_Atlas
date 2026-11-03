@@ -1,0 +1,35 @@
+'use strict';
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const cp = require('node:child_process');
+const r15=JSON.parse(fs.readFileSync('research/rutgers_r15_voucher_chain_closure_20261102.json','utf8'));
+const r14=JSON.parse(fs.readFileSync('research/rutgers_r14_primary_voucher_evidence_20261102.json','utf8'));
+const manifest=JSON.parse(fs.readFileSync('research/rutgers_r4_verified_originals_sha256_20261101.json','utf8'));
+assert.equal(r15.schema,'rutgers-r15-voucher-chain-closure-v1');
+assert.equal(r15.baseline_commit,'6622ee8175b28d9b0f736d4d1f0c4a42a485e898');
+assert.deepEqual([r15.reconciliation.active_chart_sections,r15.reconciliation.normalized_active_accession_strings,r15.reconciliation.legacy_active_tokens,r15.reconciliation.historical_candidates,r15.reconciliation.unverified_target],[422,420,421,423,477]);
+assert.equal(r15.reconciliation.unique_biological_vouchers_verified,null);
+assert.deepEqual(r15.reconciliation.bn5_f8_variants,['BN5-F8(A)','BN5-F8(B)','BN5-F8(C)']);
+assert.equal(r15.media.inherited_sha256_matched_files,26);
+assert.equal(manifest.records.length,26);
+assert.equal(r15.media.originals_modified_by_r15,0);
+assert.equal(r15.media.new_media_associations,0);
+assert.deepEqual(r15.evidence_matrix.map(x=>x.accession),['AN2-F10','AN2-F12','AN2-F22']);
+assert.deepEqual(r15.evidence_matrix.map(x=>x.original_media_previously_hash_verified),[0,23,3]);
+assert.deepEqual(r14.accessions.map(x=>x.prior_sha256_verified_media),[0,23,3]);
+for (const x of r15.evidence_matrix){
+  for(const key of ['collection_date','field_notebook','physical_label','collector','observer','physical_voucher_custody','photographer','rights_authorization']) assert.equal(x[key],null,x.accession+':'+key);
+  assert.equal(x.primary_chain_closed,false);
+  assert.equal(x.new_authentication,'none');
+  assert.equal(x.publication,'HOLD');
+}
+assert.equal(r15.sources_reviewed.find(x=>x.id==='an2_2026_folder').listing_complete,false);
+for(const gate of r15.closure_gates)assert.equal(gate.state,'HOLD');
+assert.equal(r15.restrictions.research_only,true);
+assert.equal(r15.restrictions.draft_pr_only,true);
+for(const key of ['merge','deploy','public_publication','paid_services','external_repositories_modified'])assert.equal(r15.restrictions[key],false);
+const changed=cp.execFileSync('git',['diff','--name-only',r15.baseline_commit,'HEAD'],{encoding:'utf8'}).trim().split('\n').filter(Boolean);
+assert(changed.length>=2);
+for(const f of changed)assert(/^research\/rutgers_r15_/.test(f)||/^tests\/rutgers-r15-/.test(f)||f==='.github/workflows/rutgers-r15-voucher-chain.yml','out-of-scope '+f);
+assert(!changed.some(x=>x.startsWith('assets/')));
+console.log('PASS R15 voucher closure: source scope and three unresolved chains; 26 manifest originals; no publication or media changes; '+changed.length+' changed paths');

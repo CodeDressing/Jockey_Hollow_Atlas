@@ -1,0 +1,185 @@
+{
+  "schema": "rutgers-r15-voucher-chain-closure-v1",
+  "review_date": "2026-11-02",
+  "baseline_commit": "6622ee8175b28d9b0f736d4d1f0c4a42a485e898",
+  "baseline_pr": 47,
+  "evidence_standard": "Primary accession-labelled contemporary record, independent physical label or explicit signed provenance and rights evidence required to advance any named attribution or release.",
+  "sources_reviewed": [
+    {
+      "id": "r14_matrix",
+      "class": "inherited research audit",
+      "path": "research/rutgers_r14_primary_voucher_evidence_20261102.json",
+      "result": "Accession-specific holds and measurement/media inventory carried forward, not independent physical authentication."
+    },
+    {
+      "id": "journal_20260730",
+      "class": "lab journal contextual",
+      "url": "https://docs.google.com/document/d/10fl52W9ldZK0Pgu4DR8uTBug3dKXyjhwe_BgiaBAmR0/edit",
+      "exact_focus_accession_found": false,
+      "result": "General lab intake and specimen label/photographic documentation; no independently linking target accession."
+    },
+    {
+      "id": "journal_20260731",
+      "class": "lab journal contextual",
+      "url": "https://docs.google.com/document/d/1o9wSJysdOpy8cVmtS3d0gT9dI0SVPLF9fgkii8E70bs/edit",
+      "exact_focus_accession_found": false,
+      "result": "Specimen label handling and documentation recommendations, but no target physical-voucher custody or source collector."
+    },
+    {
+      "id": "journal_20260801",
+      "class": "lab journal contextual",
+      "url": "https://docs.google.com/document/d/1dh040tzc53NyLSIPWlsiy06Ojk0uVDPYZ9cNh8B2C3w/edit",
+      "exact_focus_accession_found": false,
+      "result": "General imaging and observation practices, not accession-specific first-hand signed documentation."
+    },
+    {
+      "id": "journal_20260802",
+      "class": "lab journal contextual",
+      "url": "https://docs.google.com/document/d/1A-BGQ8T9crvAAa5FYO_Ul9kfWGHjEs5hM-VMLK_rFIs/edit",
+      "exact_focus_accession_found": false,
+      "result": "Photographic records focus CN1 specimens; not proof of an AN2 target voucher."
+    },
+    {
+      "id": "an2_2026_folder",
+      "class": "Drive archive directory preview",
+      "url": "https://drive.google.com/drive/folders/1y_AO-pF5QDZYIe_kxZ5ZZocfFr8isPw6",
+      "result": "First 100 visible direct children inspected; none had exact target accession in their visible filenames. Directory is truncated; no claim about remaining contents.",
+      "listing_complete": false
+    },
+    {
+      "id": "generic_100_day_journal",
+      "class": "unfilled teaching worksheet",
+      "url": "https://docs.google.com/document/d/1zed8iOie3kinVNuXTx1mbMkPkYdH50KqQWmX4WgaenQ/edit",
+      "result": "Species-study template, not independently signed AN2 accession notebook."
+    },
+    {
+      "id": "supplementary_atlas_extras",
+      "class": "secondary supplemental photo narratives",
+      "url": "https://docs.google.com/document/d/1ApqMDwjb56ri13nPAogxTEfDB5j40bJp2VbNufIrJRE/edit",
+      "result": "Explicitly retains unrelated unmatched, unvouchered material as context; does not authenticate target specimen records."
+    }
+  ],
+  "evidence_matrix": [
+    {
+      "accession": "AN2-F10",
+      "inherited_measurement_index": 68,
+      "original_media_previously_hash_verified": 0,
+      "collection_date": null,
+      "field_notebook": null,
+      "physical_label": null,
+      "collector": null,
+      "observer": null,
+      "physical_voucher_custody": null,
+      "photographer": null,
+      "rights_authorization": null,
+      "primary_chain_closed": false,
+      "new_authentication": "none",
+      "publication": "HOLD"
+    },
+    {
+      "accession": "AN2-F12",
+      "inherited_measurement_index": 78,
+      "original_media_previously_hash_verified": 23,
+      "collection_date": null,
+      "field_notebook": null,
+      "physical_label": null,
+      "collector": null,
+      "observer": null,
+      "physical_voucher_custody": null,
+      "photographer": null,
+      "rights_authorization": null,
+      "primary_chain_closed": false,
+      "new_authentication": "none",
+      "microscopy": "objects unclassified; no validated spore measurements",
+      "publication": "HOLD"
+    },
+    {
+      "accession": "AN2-F22",
+      "inherited_measurement_index": null,
+      "original_media_previously_hash_verified": 3,
+      "collection_date": null,
+      "field_notebook": null,
+      "physical_label": null,
+      "collector": null,
+      "observer": null,
+      "physical_voucher_custody": null,
+      "photographer": null,
+      "rights_authorization": null,
+      "primary_chain_closed": false,
+      "new_authentication": "none",
+      "spore_print": "unavailable per previous intake",
+      "microscopy": "not performed per previous intake",
+      "publication": "HOLD"
+    }
+  ],
+  "reconciliation": {
+    "active_chart_sections": 422,
+    "normalized_active_accession_strings": 420,
+    "legacy_active_tokens": 421,
+    "historical_candidates": 423,
+    "unverified_target": 477,
+    "unique_biological_vouchers_verified": null,
+    "bn5_f8_variants": [
+      "BN5-F8(A)",
+      "BN5-F8(B)",
+      "BN5-F8(C)"
+    ],
+    "en1_f1": "Workbook row exists; unsupported as separately authenticated active-master accession."
+  },
+  "media": {
+    "inherited_sha256_matched_files": 26,
+    "an2_f12": 23,
+    "an2_f22": 3,
+    "an2_f10": 0,
+    "originals_modified_by_r15": 0,
+    "new_media_associations": 0
+  },
+  "closure_gates": [
+    {
+      "name": "original dated accession-specific field notes",
+      "state": "HOLD"
+    },
+    {
+      "name": "photo or inspection of physical accession label",
+      "state": "HOLD"
+    },
+    {
+      "name": "named verified collector and observer",
+      "state": "HOLD"
+    },
+    {
+      "name": "complete custody transfers or storage records",
+      "state": "HOLD"
+    },
+    {
+      "name": "named photographer and explicit usage authorization",
+      "state": "HOLD"
+    },
+    {
+      "name": "validated taxonomic and microscopic interpretation",
+      "state": "HOLD"
+    },
+    {
+      "name": "new publication and production release",
+      "state": "HOLD"
+    }
+  ],
+  "outstanding_evidence_requests": [
+    "Find contemporaneous accession-labelled original field notebook leaves for AN2-F10, AN2-F12 and AN2-F22; include source custody and observation date distinct from upload date.",
+    "Photograph or inspect each physical voucher/container and label; reconcile label accession with original dated specimen notes and storage location.",
+    "Obtain collector/observer original signatures or verified institutional records, including transfers of possession.",
+    "Obtain photographer identity and scope-specific written permission/licence before new public image use.",
+    "Recover original AN2-F10 image and AN2-F22 field measurement entry if they exist; never infer from adjacent files.",
+    "Validate AN2-F12 microscope calibration, preparation and mature spore identity before making microscopic species claims."
+  ],
+  "restrictions": {
+    "research_only": true,
+    "draft_pr_only": true,
+    "merge": false,
+    "deploy": false,
+    "public_publication": false,
+    "paid_services": false,
+    "external_repositories_modified": false
+  },
+  "interpretation": "No new independently authenticated accession-level voucher chain, original signed collection date, named author or image licence was recovered in the accessible bounded search. This is a research gate HOLD, not confirmation such evidence does not exist elsewhere."
+}
