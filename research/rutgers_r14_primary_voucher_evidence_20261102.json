@@ -1,0 +1,168 @@
+{
+  "schema": "rutgers-r14-primary-voucher-evidence-v1",
+  "review_date": "2026-11-02",
+  "repository": "CodeDressing/Jockey_Hollow_Atlas",
+  "baseline_commit": "ca877b85014d832281cf793993a6c085d3ea38c3",
+  "scope": "research-only; no publication or specimen assertions",
+  "sources": [
+    {
+      "id": "measurement_workbook",
+      "type": "accession-labelled measurement transcription",
+      "url": "https://docs.google.com/spreadsheets/d/1IuU5vBK5rVO6R6PxKBC2NtjEG-kE3uV2/edit",
+      "verified_in_r14": true,
+      "notes": "Live fetched workbook has AN2 F10 row 68, AN2 F12 row 78, EN1 F1 row 54; no AN2 F22 row. Workbook does not contain authenticated collector, collection date or custody chain."
+    },
+    {
+      "id": "f12_microscopy_folder",
+      "type": "file inventory",
+      "url": "https://drive.google.com/drive/folders/1KjjkNno2rI3a_bBN3LTADwNAsw_ZrUeP",
+      "verified_in_r14": true,
+      "notes": "14 accession-named PNG files listed; upload timestamps are not collection dates, authorship or voucher documentation."
+    },
+    {
+      "id": "f22_transfer_folder",
+      "type": "file inventory",
+      "url": "https://drive.google.com/drive/folders/1_P-WCGWGhXkTWfcd-pb8PRxuLa8bJ5KJ",
+      "verified_in_r14": true,
+      "notes": "IMG_6086.jpg, IMG_6087.jpg and IMG_6089.jpg listed; filenames and upload times do not establish the photographer or physical voucher."
+    },
+    {
+      "id": "generic_chart_template",
+      "type": "blank methodology template",
+      "url": "https://docs.google.com/document/d/1G5dpK_jIrPaR6hm1taxhSCJj3aveIA2vbzjx1Z_011g/edit",
+      "verified_in_r14": true,
+      "notes": "Contains blank collector, time, voucher and photography fields, not completed primary entries for target accessions."
+    },
+    {
+      "id": "r4_hash_manifest",
+      "type": "inherited cryptographic manifest",
+      "path": "research/rutgers_r4_verified_originals_sha256_20261101.json",
+      "verified_in_r14": "metadata_readback_only",
+      "notes": "Prior CI verified 26 originals. R14 did not independently rehash the binary files before writing this matrix."
+    },
+    {
+      "id": "r6_voucher_traceability",
+      "type": "inherited prior source assessment",
+      "path": "research/rutgers_r6_field_voucher_traceability_20261101.json",
+      "verified_in_r14": "readback",
+      "notes": "Prior targeted journals lacked matching accession strings; absence is bounded, not universal."
+    }
+  ],
+  "counts": {
+    "active_charts": 422,
+    "normalized_active_accessions": 420,
+    "legacy_active_tokens": 421,
+    "cross_source_candidates": 423,
+    "target_477_verified": false,
+    "prior_authenticated_original_media": 26,
+    "original_media_changed_in_r14": 0
+  },
+  "accessions": [
+    {
+      "id": "AN2-F10",
+      "measurement": {
+        "source": "measurement_workbook",
+        "source_row_index": 68,
+        "source_label": "AN2 F10",
+        "cap_cm": 5,
+        "stipe_diameters_cm": [
+          1.1,
+          1.1,
+          1.1
+        ],
+        "stipe_height_cm": 3.2
+      },
+      "prior_sha256_verified_media": 0,
+      "field_notebook": "not_recovered",
+      "specimen_label": "not_authenticated",
+      "collection_date": null,
+      "collector": null,
+      "observer": null,
+      "voucher_custody": "unverified",
+      "photographer": null,
+      "publication_permission": "unverified",
+      "release": "HOLD"
+    },
+    {
+      "id": "AN2-F12",
+      "measurement": {
+        "source": "measurement_workbook",
+        "source_row_index": 78,
+        "source_label": "AN2 F12",
+        "cap_cm": 7,
+        "stipe_diameters_cm": [
+          1.5,
+          1.1,
+          1
+        ],
+        "stipe_height_cm": 8,
+        "unassigned_extra_cm": 9.5
+      },
+      "prior_sha256_verified_media": 23,
+      "media_groups": {
+        "microscopy": 14,
+        "lab_preparation": 5,
+        "field_macro": 4
+      },
+      "field_notebook": "not_recovered",
+      "specimen_label": "not_authenticated",
+      "collection_date": null,
+      "collector": null,
+      "observer": null,
+      "voucher_custody": "unverified",
+      "photographer": null,
+      "publication_permission": "unverified",
+      "spore_print": "researcher-reported beige; not independently verified",
+      "microscopy": "objects unclassified; no validated mature basidiospore measurements",
+      "release": "HOLD_FOR_NEW_PUBLICATION"
+    },
+    {
+      "id": "AN2-F22",
+      "measurement": null,
+      "prior_sha256_verified_media": 3,
+      "media_filenames": [
+        "IMG_6086.jpg",
+        "IMG_6087.jpg",
+        "IMG_6089.jpg"
+      ],
+      "field_notebook": "not_recovered",
+      "specimen_label": "not_authenticated",
+      "collection_date": null,
+      "collector": null,
+      "observer": null,
+      "voucher_custody": "unverified",
+      "photographer": null,
+      "publication_permission": "unverified",
+      "spore_print": "unavailable per prior intake",
+      "microscopy": "not performed per prior intake",
+      "release": "HOLD"
+    }
+  ],
+  "special_reconciliation": {
+    "bn5_f8_variants": [
+      "BN5-F8(A)",
+      "BN5-F8(B)",
+      "BN5-F8(C)"
+    ],
+    "en1_f1": "Workbook contains row labelled EN1 F1, but active master accession support remains unverified; do not promote an independent voucher",
+    "target_477": "unverified historical research target"
+  },
+  "disposition": {
+    "new_primary_voucher_authentications": 0,
+    "new_collector_attributions": 0,
+    "new_photo_rights": 0,
+    "new_species_determinations": 0,
+    "release": "HOLD",
+    "merge": false,
+    "deploy": false,
+    "public_publish": false
+  },
+  "blockers": [
+    "Obtain dated original accession-labelled field notebooks and physical collection labels for F10/F12/F22",
+    "Verify independent collector/observer identities and chronology and chain of custody",
+    "Obtain specific photographer attribution and documented publication permissions",
+    "Obtain original F10 photographs if they exist and verified F22 primary field row",
+    "Validate F12 microscopy slide/object calibration and species interpretation before claims"
+  ],
+  "limitations": "Drive search and previously analyzed journals cannot establish absence from all Rutgers archives. Original complete master not re-audited as primary physical voucher evidence. Existing binary integrity claims are inherited from successful R13 CI, not new R14 hash execution."
+}
