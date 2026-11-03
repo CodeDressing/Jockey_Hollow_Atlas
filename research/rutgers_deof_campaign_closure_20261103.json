@@ -1,0 +1,324 @@
+{
+  "schema": "rutgers-deof-research-campaign-closure-v1",
+  "review_date": "2026-11-03",
+  "repository": "CodeDressing/Jockey_Hollow_Atlas",
+  "baseline": {
+    "draft_pr": 55,
+    "head_sha": "b6a4d9dc48b188505add37e7b47d53c2d7b61b06",
+    "ci_run": 41584421861,
+    "ci_conclusion": "success"
+  },
+  "purpose": "Research engineering closure and documented evidence-controlled handoff, NOT biological voucher authentication, image-rights clearance, approval to merge, deployment or publication.",
+  "verification_scope": {
+    "github": "Independently fetched draft PR #46 through #55 and commit-bound Actions runs for R13-R22; all are open/draft/unmerged, and listed ten acceptance runs completed with success.",
+    "sha256": "Inherited manifest of 26 original repository media files, checked by repeated successful scientific SHA-256 regressions; exact original contents will be rechecked by closure CI.",
+    "archive": "Six SHA-256 digests across ten known Drive objects compared to the 26 original manifest entries by R20; no byte-identical overlap. Closure CI validates stored crosswalk, not live private Drive files.",
+    "browser": "Inherited Chromium specimen/sidebar/AN2-F12 gallery acceptance passed at R22 and will be rerun in closure CI.",
+    "limits": "Physical specimen inspection, author identity, rights-holder attestation, written permission and official publication approval cannot be proved by GitHub CI."
+  },
+  "historic_sprint_acceptance": [
+    {
+      "sprint": "R13",
+      "pr": 46,
+      "head_sha": "ca877b85014d832281cf793993a6c085d3ea38c3",
+      "run_id": 41571980666,
+      "pr_state": "open_draft_unmerged",
+      "run_state": "completed",
+      "run_conclusion": "success"
+    },
+    {
+      "sprint": "R14",
+      "pr": 47,
+      "head_sha": "6622ee8175b28d9b0f736d4d1f0c4a42a485e898",
+      "run_id": 41573643318,
+      "pr_state": "open_draft_unmerged",
+      "run_state": "completed",
+      "run_conclusion": "success"
+    },
+    {
+      "sprint": "R15",
+      "pr": 48,
+      "head_sha": "24209e81a254a2ce6b15981f3fa22c6a6124d9a0",
+      "run_id": 41574148232,
+      "pr_state": "open_draft_unmerged",
+      "run_state": "completed",
+      "run_conclusion": "success"
+    },
+    {
+      "sprint": "R16",
+      "pr": 49,
+      "head_sha": "4b14e748d9b7293e344c19a1e01aa2ce2c10639f",
+      "run_id": 41574640303,
+      "pr_state": "open_draft_unmerged",
+      "run_state": "completed",
+      "run_conclusion": "success"
+    },
+    {
+      "sprint": "R17",
+      "pr": 50,
+      "head_sha": "b0594c258443700c60307d910f63ea2156f384fd",
+      "run_id": 41576382346,
+      "pr_state": "open_draft_unmerged",
+      "run_state": "completed",
+      "run_conclusion": "success"
+    },
+    {
+      "sprint": "R18",
+      "pr": 51,
+      "head_sha": "3e54414dda227641660fdc5502322d05e2c06a18",
+      "run_id": 41579097753,
+      "pr_state": "open_draft_unmerged",
+      "run_state": "completed",
+      "run_conclusion": "success"
+    },
+    {
+      "sprint": "R19",
+      "pr": 52,
+      "head_sha": "b29cc9c85443720cf18a78aeb5b40e0dadd32b31",
+      "run_id": 41581187126,
+      "pr_state": "open_draft_unmerged",
+      "run_state": "completed",
+      "run_conclusion": "success"
+    },
+    {
+      "sprint": "R20",
+      "pr": 53,
+      "head_sha": "f7823d51d7c74c45690370b2da46b658eaa61cee",
+      "run_id": 41581588040,
+      "pr_state": "open_draft_unmerged",
+      "run_state": "completed",
+      "run_conclusion": "success"
+    },
+    {
+      "sprint": "R21",
+      "pr": 54,
+      "head_sha": "98f0a97ffb03871fb3d845347b676edd1d4234cf",
+      "run_id": 41583744540,
+      "pr_state": "open_draft_unmerged",
+      "run_state": "completed",
+      "run_conclusion": "success"
+    },
+    {
+      "sprint": "R22",
+      "pr": 55,
+      "head_sha": "b6a4d9dc48b188505add37e7b47d53c2d7b61b06",
+      "run_id": 41584421861,
+      "pr_state": "open_draft_unmerged",
+      "run_state": "completed",
+      "run_conclusion": "success"
+    }
+  ],
+  "archival_views": [
+    {
+      "accession": "AN2-F10",
+      "view": "V1",
+      "drive_ids": [
+        "1GrMhvJurTnTxXEDmL5oXagvEFVBeBOVt",
+        "18Lg9UKaJfyIx0cARoV-sJ-cvVjaTi8Ip"
+      ],
+      "sha256": "cdc8989204a734b8e2487bccd90fcc97e52c82ebbb48c5b4121a0ec9b8a04020",
+      "source_class": "restricted_archival_photo_only",
+      "physical_voucher_verified": false,
+      "photographic_permission_verified": false
+    },
+    {
+      "accession": "AN2-F10",
+      "view": "V2",
+      "drive_ids": [
+        "1HmZt5KJSQqyZwvdkYDicQPfOA2mKrvLG",
+        "1NIriLqG2R1NJe08riUAx0CCNQCjmxJg7"
+      ],
+      "sha256": "bb70da35418aed4d826cdebe277644a16fc2e15ff6e4917468c889648c1e9ede",
+      "source_class": "restricted_archival_photo_only",
+      "physical_voucher_verified": false,
+      "photographic_permission_verified": false
+    },
+    {
+      "accession": "AN2-F12",
+      "view": "V1",
+      "drive_ids": [
+        "1FMKVoK7muxRwk_VNIm2vfwAMRfNOsWhP",
+        "1pvj__bOepg6qCLeYMgipEuwAxxgEyMPW"
+      ],
+      "sha256": "7adc8bea4bd235509b57aee775dfb95acff7dde04976ce8ae2030cdeb9e986de",
+      "source_class": "restricted_archival_photo_only",
+      "physical_voucher_verified": false,
+      "photographic_permission_verified": false
+    },
+    {
+      "accession": "AN2-F12",
+      "view": "V2",
+      "drive_ids": [
+        "1M7r6Cf8M5PeeIp1PtJ-_I9X_vUW49-IC",
+        "11AfRr9nZzoGa-LiRPUq5g-8oLlAFr0nA"
+      ],
+      "sha256": "336c949adea8f5f4a84017cb13b0cbb47df6116149afe6b23819120a0ee59375",
+      "source_class": "restricted_archival_photo_only",
+      "physical_voucher_verified": false,
+      "photographic_permission_verified": false
+    },
+    {
+      "accession": "AN2-F22",
+      "view": "V1",
+      "drive_ids": [
+        "1l19SrqZiIbJF_hwWrr4iEvNoc2jylwnE"
+      ],
+      "sha256": "3b7cfa2738cec222cd15ad15928c9b45f538634cb37e1102f2defe0dbd045c5f",
+      "source_class": "restricted_archival_photo_only",
+      "physical_voucher_verified": false,
+      "photographic_permission_verified": false
+    },
+    {
+      "accession": "AN2-F22",
+      "view": "V2",
+      "drive_ids": [
+        "1hmBLksN4okFnZW9Nh9bz3VVQBnkjvKav"
+      ],
+      "sha256": "febd02f4e47e44b640e2e9dab3ff72a6e887ebf558791145c1b1d05dfe2fbcd7",
+      "source_class": "restricted_archival_photo_only",
+      "physical_voucher_verified": false,
+      "photographic_permission_verified": false
+    }
+  ],
+  "reconciliation": {
+    "active_chart_sections": 422,
+    "normalized_active_accessions": 420,
+    "historical_active_tokens": 421,
+    "cross_source_candidate_strings": 423,
+    "target_477_verified": false,
+    "verified_unique_biological_vouchers": null,
+    "bn5_f8_variants": [
+      "BN5-F8(A)",
+      "BN5-F8(B)",
+      "BN5-F8(C)"
+    ],
+    "en1_f1_independently_verified": false,
+    "original_media_count": 26,
+    "original_media_by_accession": {
+      "AN2-F10": 0,
+      "AN2-F12": 23,
+      "AN2-F22": 3
+    },
+    "distinct_archival_hashes": 6,
+    "archival_drive_ids": 10,
+    "archive_sha256_matches_in_original_manifest": 0,
+    "original_media_modified_for_closure": 0
+  },
+  "specimen_gates": [
+    {
+      "accession": "AN2-F10",
+      "measurement_inherited": true,
+      "physical_voucher": "HOLD",
+      "original_dated_notebook": null,
+      "collection_date": null,
+      "collector": null,
+      "observer": null,
+      "physical_custody": null,
+      "photographer": null,
+      "written_photo_permission": null,
+      "microscopy": "not authenticated",
+      "taxonomy": "unconfirmed",
+      "publication": "HOLD"
+    },
+    {
+      "accession": "AN2-F12",
+      "measurement_inherited": true,
+      "physical_voucher": "HOLD",
+      "original_dated_notebook": null,
+      "collection_date": null,
+      "collector": null,
+      "observer": null,
+      "physical_custody": null,
+      "photographer": null,
+      "written_photo_permission": null,
+      "microscopy": "14 inherited microscopy images, unclassified structures and no independently validated mature-spore calibration",
+      "taxonomy": "unconfirmed",
+      "publication": "HOLD"
+    },
+    {
+      "accession": "AN2-F22",
+      "measurement_inherited": false,
+      "physical_voucher": "HOLD",
+      "original_dated_notebook": null,
+      "collection_date": null,
+      "collector": null,
+      "observer": null,
+      "physical_custody": null,
+      "photographer": null,
+      "written_photo_permission": null,
+      "microscopy": "not performed according to inherited intake",
+      "taxonomy": "unconfirmed",
+      "publication": "HOLD"
+    }
+  ],
+  "final_release_gates": [
+    {
+      "gate": "G1-G5",
+      "topic": "Research parser, source reconciliation, media integrity, scoped ancestry, CI hardening",
+      "state": "RESEARCH_ACCEPT",
+      "evidence": "R13 evidence gate and successful inherited CI through R22"
+    },
+    {
+      "gate": "G6",
+      "topic": "Original biological voucher, physical label, collection chronology, collector and custody",
+      "state": "HOLD",
+      "missing": "Independently authenticated contemporaneous accession-specific notebooks and physical labels with custody trail"
+    },
+    {
+      "gate": "G7",
+      "topic": "Photographer identity and explicit publication license",
+      "state": "HOLD",
+      "missing": "Verified creator/rightsholder and written scoped permission for each image"
+    },
+    {
+      "gate": "G8",
+      "topic": "Microscopy and species-level scientific interpretation",
+      "state": "HOLD",
+      "missing": "Authenticated vouchers, validated microscopy calibration and independent scientific review"
+    },
+    {
+      "gate": "G9",
+      "topic": "Historical 477 target and anomalous legacy token",
+      "state": "HOLD",
+      "missing": "Authentic source supporting 477 and EN1-F1 active accession promotion"
+    },
+    {
+      "gate": "G10",
+      "topic": "Merge, production deployment, public publishing",
+      "state": "HOLD",
+      "missing": "Independent release authorization after evidence and rights review"
+    }
+  ],
+  "evidence_intake_reference": "research/rutgers_r22_primary_evidence_intake_20261103.json",
+  "source_register": [
+    "research/rutgers_r13_research_release_gate_review_20261102.json",
+    "research/rutgers_r4_verified_originals_sha256_20261101.json",
+    "research/rutgers_r20_archival_view_reconciliation_20261103.json",
+    "research/rutgers_r21_primary_voucher_release_authority_20261103.json",
+    "research/rutgers_r22_primary_evidence_intake_20261103.json"
+  ],
+  "closure_decision": {
+    "research_code_and_ci": "PASS_PENDING_CLOSURE_WORKFLOW",
+    "research_campaign": "CLOSED_WITH_SCIENTIFIC_HOLDS",
+    "voucher_authentication": "NOT_ESTABLISHED",
+    "image_publication_authority": "NOT_ESTABLISHED",
+    "publication": "HOLD",
+    "merge": false,
+    "production_deployment": false,
+    "paid_services": false,
+    "external_repository_changes": false
+  },
+  "reopen_only_on": [
+    "New independently authenticated original accession-specific field/voucher/custody evidence",
+    "New validated collector or observer attribution linked to original specimen",
+    "Verified creator/rightsholder and image-specific written permissions",
+    "Independent taxonomic/microscopy review and explicit authorized publication decision"
+  ],
+  "limitations": [
+    "The research campaign closure does not certify any biological specimen, species, image license or public release.",
+    "All PRs in the R13-R22 stack are research drafts and remain unmerged.",
+    "The six restricted Drive archival images are source references; no original binaries are newly committed for campaign closure.",
+    "R13-R22 CI success is historic run status, not independent new biological evidence.",
+    "Original 26-file integrity is verified by inherited SHA-256 tests rather than assuming file paths from an archival record."
+  ]
+}
