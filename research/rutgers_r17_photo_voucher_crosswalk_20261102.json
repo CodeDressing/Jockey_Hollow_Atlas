@@ -1,0 +1,155 @@
+{
+  "schema": "rutgers-r17-archival-photo-voucher-crosswalk-v1",
+  "review_date": "2026-11-02",
+  "repository": "CodeDressing/Jockey_Hollow_Atlas",
+  "baseline_commit": "4b14e748d9b7293e344c19a1e01aa2ce2c10639f",
+  "baseline_pr": 49,
+  "investigation_method": "Authenticated Google Drive raw-file retrieval of five archival JPEG objects; local SHA-256 of full bytes; Pillow JPEG EXIF/dimension extraction; visual inspection of displayed images; targeted accessible Drive record/title and permissions-document search.",
+  "source_archive": {
+    "folder": "MycoScope Verified Lab Views 2026-09-20",
+    "folder_id": "13AOKWCXJtfPZD8LXt84KwC9CAjThYm6M",
+    "url": "https://drive.google.com/drive/folders/13AOKWCXJtfPZD8LXt84KwC9CAjThYm6M",
+    "access": "authenticated non-public Drive; no sharing or publication authorization inferred"
+  },
+  "binary_checks": [
+    {
+      "accession": "AN2-F10",
+      "ids": [
+        "1GrMhvJurTnTxXEDmL5oXagvEFVBeBOVt",
+        "18Lg9UKaJfyIx0cARoV-sJ-cvVjaTi8Ip"
+      ],
+      "filenames": [
+        "AN2-F10.JPG",
+        "AN2-F10.JPG"
+      ],
+      "bytes_each": 679513,
+      "sha256_each": "cdc8989204a734b8e2487bccd90fcc97e52c82ebbb48c5b4121a0ec9b8a04020",
+      "independent_duplicate_retrieval_and_hash_match": true,
+      "metadata": {
+        "format": "JPEG",
+        "pixel_width": 2048,
+        "pixel_height": 1536,
+        "exif_tag_count": 0,
+        "jfif_present": true,
+        "icc_profile_present": true,
+        "camera": null,
+        "original_capture_datetime": null,
+        "gps": null
+      },
+      "image_observation": "Handwritten AN2 F10 on foil next to a large, brown, cracked/textured fungal body on pale sheet; not enough information to establish collection site or taxon.",
+      "association_level": "visible_accession_marking_near_material_only"
+    },
+    {
+      "accession": "AN2-F12",
+      "ids": [
+        "1FMKVoK7muxRwk_VNIm2vfwAMRfNOsWhP",
+        "1pvj__bOepg6qCLeYMgipEuwAxxgEyMPW"
+      ],
+      "filenames": [
+        "AN2-F12.JPG",
+        "AN2-F12.JPG"
+      ],
+      "bytes_each": 601014,
+      "sha256_each": "7adc8bea4bd235509b57aee775dfb95acff7dde04976ce8ae2030cdeb9e986de",
+      "independent_duplicate_retrieval_and_hash_match": true,
+      "metadata": {
+        "format": "JPEG",
+        "pixel_width": 2048,
+        "pixel_height": 1536,
+        "exif_tag_count": 0,
+        "jfif_present": true,
+        "icc_profile_present": true,
+        "camera": null,
+        "original_capture_datetime": null,
+        "gps": null
+      },
+      "image_observation": "Handwritten AN2 F12 on foil next to a small brown cap with attached slender stem, and separate yellow material partly visible; no proven match to previous 23 originals.",
+      "association_level": "visible_accession_marking_near_material_only"
+    },
+    {
+      "accession": "AN2-F22",
+      "ids": [
+        "1l19SrqZiIbJF_hwWrr4iEvNoc2jylwnE"
+      ],
+      "filenames": [
+        "AN2-F22.JPG"
+      ],
+      "bytes_each": 558736,
+      "sha256_each": "3b7cfa2738cec222cd15ad15928c9b45f538634cb37e1102f2defe0dbd045c5f",
+      "independent_duplicate_retrieval_and_hash_match": null,
+      "metadata": {
+        "format": "JPEG",
+        "pixel_width": 2048,
+        "pixel_height": 1536,
+        "exif_tag_count": 0,
+        "jfif_present": true,
+        "icc_profile_present": true,
+        "camera": null,
+        "original_capture_datetime": null,
+        "gps": null
+      },
+      "image_observation": "Handwritten AN2 F22 on foil near a small dark fungal structure on a long thin stem; no confirmed match to three original handheld JPEGs.",
+      "association_level": "visible_accession_marking_near_material_only"
+    }
+  ],
+  "comparison": {
+    "accession_foil_label_association": "supported at photographic level for each accession",
+    "same_biological_voucher_as_existing_atlas_record": "not_verified",
+    "contemporaneous_original_collection_label": "not_authenticated",
+    "independent_physical_voucher": "not_authenticated",
+    "original_photo_rights": "not_verified",
+    "independent_jpeg_sha256_results": 3,
+    "drive_file_objects": 5,
+    "duplicate_pair_count": 2,
+    "originals_added_to_repository": 0
+  },
+  "search": {
+    "accession_specific_drive_title_search": [
+      "AN2-F10",
+      "AN2-F12",
+      "AN2-F22"
+    ],
+    "rights_search": [
+      "Rutgers permission",
+      "photograph authorization"
+    ],
+    "result": "No specific signed photographic license or original accession-labelled physical specimen custody document located in inspected search results. Search results include general Rutgers charts and documentation, but may omit content and inaccessible records.",
+    "limitation": "Not a universal archive search or a legal determination of rights."
+  },
+  "preserved": {
+    "active_charts": 422,
+    "normalized_accession_strings": 420,
+    "legacy_candidate_tokens": 421,
+    "cross_source_candidates": 423,
+    "target_477_confirmed": false,
+    "bn5_f8_variants": [
+      "BN5-F8(A)",
+      "BN5-F8(B)",
+      "BN5-F8(C)"
+    ],
+    "en1_f1_independently_authenticated": false,
+    "prior_original_media_count": 26,
+    "f12_prior_media": 23,
+    "f22_prior_media": 3,
+    "f10_prior_media": 0,
+    "original_media_paths_modified": false
+  },
+  "gates": {
+    "physical_voucher_chain": "HOLD",
+    "collection_date": "HOLD",
+    "collector_observer": "HOLD",
+    "image_authorship_and_rights": "HOLD",
+    "taxonomic_and_microscopy": "HOLD",
+    "new_publication": "HOLD",
+    "merge": false,
+    "deploy": false
+  },
+  "unresolved_requests": [
+    "Contemporaneous collection notebook and dated AN2 accession records",
+    "Original physical specimen and container labels with storage location and chain-of-custody documentation",
+    "Independent named collector and observer evidence",
+    "Authentic capture-time provenance such as original camera file, separately verified photographer statement, and usage license",
+    "Direct physical and morphological crossmatch to the existing 26-file records; do not assume identical voucher from label alone"
+  ],
+  "constraints": "No images added or published; locally checked novel source images not integrated into CI binary manifest. CI validates report and inherited original assets, not fresh external Drive bytes."
+}
