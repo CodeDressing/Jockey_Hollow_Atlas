@@ -33,6 +33,7 @@ assert.equal(report.source_provenance.research_target_unverified,477);
 assert.equal(report.source_provenance.physical_authenticated_voucher_count,null);
 assert.equal(report.source_provenance.legacy_unsupported_id,'EN1-F1');
 assert.deepEqual(report.source_provenance.bn5_chart_variants,['BN5-F8(A)','BN5-F8(B)','BN5-F8(C)']);
-// Audit the immutable R11 checkpoint, not future stacked research-hardening commits.\nconst r11Paths=git('diff','--name-only',chain.at(-1).head_sha,'6850ab3c920a4264334af1876529eff8df407d19').split('\n').filter(Boolean);
+// Audit the immutable R11 checkpoint, not future stacked research-hardening commits.
+const r11Paths=git('diff','--name-only',chain.at(-1).head_sha,'6850ab3c920a4264334af1876529eff8df407d19').split('\n').filter(Boolean);
 for(const path of r11Paths)assert(path.startsWith('research/rutgers_r11_')||path.startsWith('tests/rutgers-r11-')||path==='.github/workflows/rutgers-r11-integration-acceptance.yml','R11 touched out-of-scope: '+path);
 console.log('PASS R11 PR ancestry '+chain.length+', change allowlist '+changed.length+', rollback-safe new files '+r11Paths.length+', 26 original media, provenance publication HOLD');
