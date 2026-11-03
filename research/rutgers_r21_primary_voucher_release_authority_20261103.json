@@ -1,0 +1,212 @@
+{
+  "schema": "rutgers-r21-primary-voucher-release-authority-v1",
+  "review_date": "2026-11-03",
+  "repository": "CodeDressing/Jockey_Hollow_Atlas",
+  "baseline": {
+    "draft_pr": 53,
+    "commit": "f7823d51d7c74c45690370b2da46b658eaa61cee",
+    "ci_run": 41581588040,
+    "ci_conclusion": "success"
+  },
+  "assessment_scope": "Bounded authenticated primary-record and photo-rights review. No unsupported voucher authentication or grant of publication rights.",
+  "reviewed_sources": [
+    {
+      "kind": "inherited six-view archival digest and object-ID crosswalk",
+      "path": "research/rutgers_r20_archival_view_reconciliation_20261103.json",
+      "finding": "Six distinct archival JPG content digests across ten Drive objects; no exact byte match among the original 26 media. Identity of physical voucher, collector, photographer, and publication rights not determined."
+    },
+    {
+      "kind": "authenticated restricted Drive archive",
+      "url": "https://drive.google.com/drive/folders/13AOKWCXJtfPZD8LXt84KwC9CAjThYm6M",
+      "finding": "Accession handwritten on foil beside material supports photographic association only; no independent physical voucher documentation or rights authorization."
+    },
+    {
+      "kind": "active derived master",
+      "url": "https://docs.google.com/document/d/11rV-I3DClTs3L6_YjVqAZOXzpEVJkGNdyq31oFOpW5o/edit",
+      "finding": "Compiled chart-level record; not a substitute for original dated notebook, specimen custody certificate or photo licence."
+    },
+    {
+      "kind": "historical derived master",
+      "url": "https://docs.google.com/document/d/1-YxtUoVopWpSt_nTTey2KsC7_aCOHpMI4yasky4_k-E/edit",
+      "finding": "Historical chart source, not independently verified original accession-specific collector/physical voucher chain."
+    },
+    {
+      "kind": "Drive targeted search",
+      "queries": [
+        "AN2-F10 notebook",
+        "AN2-F12 notebook",
+        "AN2-F22 notebook",
+        "AN2 field collection log",
+        "AN2 specimen custody",
+        "Rutgers mycology photography release",
+        "AN2 collector"
+      ],
+      "finding": "Search results contain historical charts but no specific signed physical voucher ledger or photo permissions authenticated; absence from results is not proof such records do not exist."
+    },
+    {
+      "kind": "Gmail targeted search",
+      "queries": [
+        "\"AN2 F10\"",
+        "\"AN2 F12\"",
+        "\"AN2 F22\"",
+        "\"AN2\" \"permission\"",
+        "\"Rutgers\" \"photographer\"",
+        "\"Rutgers\" \"release\" \"images\""
+      ],
+      "finding": "No accession-specific signed attestations/permissions found. Two broad photographer hits were unrelated LinkedIn network invitations, not image-authorship evidence."
+    }
+  ],
+  "six_archival_views": [
+    {
+      "id": "AN2-F10",
+      "view": "V1",
+      "ids": [
+        "1GrMhvJurTnTxXEDmL5oXagvEFVBeBOVt",
+        "18Lg9UKaJfyIx0cARoV-sJ-cvVjaTi8Ip"
+      ],
+      "sha256": "cdc8989204a734b8e2487bccd90fcc97e52c82ebbb48c5b4121a0ec9b8a04020"
+    },
+    {
+      "id": "AN2-F10",
+      "view": "V2",
+      "ids": [
+        "1HmZt5KJSQqyZwvdkYDicQPfOA2mKrvLG",
+        "1NIriLqG2R1NJe08riUAx0CCNQCjmxJg7"
+      ],
+      "sha256": "bb70da35418aed4d826cdebe277644a16fc2e15ff6e4917468c889648c1e9ede"
+    },
+    {
+      "id": "AN2-F12",
+      "view": "V1",
+      "ids": [
+        "1FMKVoK7muxRwk_VNIm2vfwAMRfNOsWhP",
+        "1pvj__bOepg6qCLeYMgipEuwAxxgEyMPW"
+      ],
+      "sha256": "7adc8bea4bd235509b57aee775dfb95acff7dde04976ce8ae2030cdeb9e986de"
+    },
+    {
+      "id": "AN2-F12",
+      "view": "V2",
+      "ids": [
+        "1M7r6Cf8M5PeeIp1PtJ-_I9X_vUW49-IC",
+        "11AfRr9nZzoGa-LiRPUq5g-8oLlAFr0nA"
+      ],
+      "sha256": "336c949adea8f5f4a84017cb13b0cbb47df6116149afe6b23819120a0ee59375"
+    },
+    {
+      "id": "AN2-F22",
+      "view": "V1",
+      "ids": [
+        "1l19SrqZiIbJF_hwWrr4iEvNoc2jylwnE"
+      ],
+      "sha256": "3b7cfa2738cec222cd15ad15928c9b45f538634cb37e1102f2defe0dbd045c5f"
+    },
+    {
+      "id": "AN2-F22",
+      "view": "V2",
+      "ids": [
+        "1hmBLksN4okFnZW9Nh9bz3VVQBnkjvKav"
+      ],
+      "sha256": "febd02f4e47e44b640e2e9dab3ff72a6e887ebf558791145c1b1d05dfe2fbcd7"
+    }
+  ],
+  "accession_gates": [
+    {
+      "accession": "AN2-F10",
+      "original_notebook": null,
+      "dated_original_collection_event": null,
+      "collector": null,
+      "observer": null,
+      "physical_voucher_label": null,
+      "physical_custody_chain": null,
+      "photographer": null,
+      "photographic_license": null,
+      "same_physical_voucher_as_prior_records": "not_verified",
+      "taxonomic_assertion": "unconfirmed",
+      "voucher_authentication": "HOLD",
+      "image_publication": "HOLD"
+    },
+    {
+      "accession": "AN2-F12",
+      "original_notebook": null,
+      "dated_original_collection_event": null,
+      "collector": null,
+      "observer": null,
+      "physical_voucher_label": null,
+      "physical_custody_chain": null,
+      "photographer": null,
+      "photographic_license": null,
+      "same_physical_voucher_as_prior_records": "not_verified",
+      "taxonomic_assertion": "unconfirmed",
+      "voucher_authentication": "HOLD",
+      "image_publication": "HOLD"
+    },
+    {
+      "accession": "AN2-F22",
+      "original_notebook": null,
+      "dated_original_collection_event": null,
+      "collector": null,
+      "observer": null,
+      "physical_voucher_label": null,
+      "physical_custody_chain": null,
+      "photographer": null,
+      "photographic_license": null,
+      "same_physical_voucher_as_prior_records": "not_verified",
+      "taxonomic_assertion": "unconfirmed",
+      "voucher_authentication": "HOLD",
+      "image_publication": "HOLD"
+    }
+  ],
+  "release_authority": {
+    "decision": "HOLD",
+    "scientific_reviewer_signoff": "not_documented",
+    "physical_voucher_custody_authentication": "not_documented",
+    "rights_holder_identification": "not_documented",
+    "explicit_scope_of_image_license": "not_documented",
+    "independent_publication_approval": "not_documented",
+    "technical_ci_success_is_publication_authority": false,
+    "draft_pr_or_drive_access_is_image_license": false,
+    "new_authentications": 0,
+    "new_grants_of_rights": 0
+  },
+  "preservation": {
+    "original_sha256_authenticated_media": 26,
+    "archival_distinct_sha256_views": 6,
+    "archival_drive_object_ids": 10,
+    "active_chart_sections": 422,
+    "normalized_active_accession_strings": 420,
+    "legacy_active_tokens": 421,
+    "cross_source_candidates": 423,
+    "historical_target_477_verified": false,
+    "en1_f1_authenticated": false,
+    "bn5_f8_variants": [
+      "BN5-F8(A)",
+      "BN5-F8(B)",
+      "BN5-F8(C)"
+    ],
+    "media_paths_modified": 0,
+    "archival_images_added_to_repo": 0
+  },
+  "primary_document_requests": [
+    "Original signed/datable field notebook pages with AN2-F10/F12/F22 accession numbers and evidence of provenance of the notebook itself",
+    "Physical specimen/container label photographs plus complete storage and custody record, observed independently",
+    "Accession-specific collector/observer evidence from first-hand record or verified attribution",
+    "Photographer identity evidence tied to each exact image, ideally original raw/camera files and independent creator attestation",
+    "Rights-holder verified written license explicitly identifying permitted distribution, platform, scope and image(s)",
+    "Reviewer's explicit evidence-based decision on voucher and taxonomy, followed by separately authorized publication approval"
+  ],
+  "scope_limits": [
+    "Drive/Gmail search is bounded and may not contain physical Rutgers accession records; no physical inspection performed.",
+    "R21 CI may verify inherited repo media and manifest assertions but cannot establish third-party authorship or source custody.",
+    "No public images added, no permissions presumed from filenames, access or successful CI."
+  ],
+  "restrictions": {
+    "research_only": true,
+    "draft_only": true,
+    "merge": false,
+    "deployment": false,
+    "publication": false,
+    "paid_services": false,
+    "other_repository_changes": false
+  }
+}
