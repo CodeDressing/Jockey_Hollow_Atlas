@@ -1,0 +1,13 @@
+/* Shared GitHub profile link for the entrance, Atlas and MycoSim. */
+.codedressing-link{display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:6px 8px;border:1px solid #40564e;border-radius:8px;background:#101d18;color:#bce7c9;font:700 12px/1.2 system-ui,sans-serif;text-decoration:none;white-space:nowrap;width:fit-content;flex-shrink:0}
+.codedressing-link svg{flex-shrink:0}
+.codedressing-link:hover{background:#1c3026;border-color:#91c6a2;color:#e1f9e8}
+.codedressing-link:focus-visible{outline:2px solid #bce7c9;outline-offset:3px}
+.entry-panel>.codedressing-link{margin:0 0 18px}
+.sidebar>.codedressing-link{margin-bottom:10px}
+.app .sidebar-toolbar{justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap}
+.app.is-collapsed .sidebar-toolbar{flex-direction:column;gap:8px}
+.app.is-collapsed .sidebar-toolbar .codedressing-link{padding:6px;min-width:34px;justify-content:center}
+.app.is-collapsed .sidebar-toolbar .codedressing-link span{display:none}
+.codedressing-sim-brand{display:flex;align-items:center;gap:16px;min-width:0}
+@media(max-width:560px){.codedressing-sim-brand{flex-direction:column;align-items:flex-start;gap:6px}.codedressing-sim-brand .brand{max-width:none}}

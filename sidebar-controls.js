@@ -12,6 +12,8 @@
   let collapsed=!!saved.collapsed;
   const toolbar=document.createElement('div');toolbar.className='sidebar-toolbar';
   const toggle=document.createElement('button');toggle.type='button';toggle.className='sidebar-toggle';
+  const githubLink=sidebar.querySelector('.codedressing-link');
+  if(githubLink)toolbar.appendChild(githubLink);
   toolbar.appendChild(toggle);sidebar.prepend(toolbar);
   const handle=document.createElement('div');handle.className='sidebar-resize';handle.tabIndex=0;
   handle.setAttribute('role','separator');handle.setAttribute('aria-label','Resize MycoScope sidebar');
