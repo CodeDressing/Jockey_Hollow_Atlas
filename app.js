@@ -356,7 +356,8 @@ function openGlossaryTerm(key,anchor){
 }
 const $=id=>document.getElementById(id);
 const FULL_DATA_SET_CODES=new Set(['AN2-F3','AN2-F7','AN2-F9','AN2-F12','AN2-F25','AN2-F34','AN2-F38','AN2-F41','AN2-F36','AN2-F32','AN2-F17']);
-let current=data[0]?.code||null,filter='',family='ALL',collection='ALL',imageType='ALL',workflow='ALL';
+const linkedAccession=decodeURIComponent(window.location.hash.slice(1)).trim().toUpperCase();
+let current=data.find(s=>String(s.code||'').toUpperCase()===linkedAccession)?.code||data[0]?.code||null,filter='',family='ALL',collection='ALL',imageType='ALL',workflow='ALL';
 const esc=s=>String(s??'').replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 const cls=v=>{v=String(v||'').toLowerCase();return v==='yes'?'yes':v==='no'?'no':'partial'};
 const families=[...new Set(data.map(x=>x.family).filter(Boolean))];
@@ -419,6 +420,7 @@ function renderList(){
 function setCurrent(code){
   if(!data.some(x=>x.code===code))return;
   current=code;
+  if(window.location.hash.slice(1)!==encodeURIComponent(code))window.history.replaceState(null,'','#'+encodeURIComponent(code));
   renderList();
   renderSpec();
 
@@ -523,9 +525,16 @@ $('main').onclick=e=>{
 function syncSearch(v){
   filter=String(v||'').toLowerCase();$('search').value=v;$('mSearch').value=v;
   const rows=filtered();
-  if(rows.length&&!rows.some(x=>x.code===current)){current=rows[0].code;renderSpec()}
+  const exact=rows.find(x=>String(x.code||'').toLowerCase()===filter.trim());
+  if(exact){current=exact.code;renderSpec();}
+  else if(rows.length&&!rows.some(x=>x.code===current)){current=rows[0].code;renderSpec();}
   renderList();
 }
+window.addEventListener('hashchange',()=>{
+  const requested=decodeURIComponent(window.location.hash.slice(1)).trim().toUpperCase();
+  const record=data.find(s=>String(s.code||'').toUpperCase()===requested);
+  if(record){filter='';family='ALL';collection='ALL';workflow='ALL';imageType='ALL';fillFilters();$('imageFilter').value='ALL';$('mImage').value='ALL';$('search').value='';$('mSearch').value='';setCurrent(record.code);}
+});
 ['familyFilter','mFamily'].forEach(id=>$(id).onchange=e=>{
   family=e.target.value;$('familyFilter').value=family;$('mFamily').value=family;
   const rows=filtered();if(rows[0]&&!rows.some(x=>x.code===current))current=rows[0].code;
