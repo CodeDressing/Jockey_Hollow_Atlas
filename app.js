@@ -363,7 +363,25 @@ const cls=v=>{v=String(v||'').toLowerCase();return v==='yes'?'yes':v==='no'?'no'
 const families=[...new Set(data.map(x=>x.family).filter(Boolean))];
 const collections=[...new Set(data.map(x=>x.collection).filter(Boolean))];
 
-function fullDataSetState(s){return FULL_DATA_SET_CODES.has(String(s.code||'').toUpperCase())?'FULL':'OTHER'}
+// Data coverage is not an identification, voucher, or image-rights clearance.
+const SCIENTIFIC_HOLD_CODES=new Set(['AN2-F10','AN2-F12','AN2-F22']);
+function evidenceCategories(s){return new Set((s.images||[]).map(im=>im.category).filter(Boolean));}
+function fullDataSetState(s){
+  if(FULL_DATA_SET_CODES.has(String(s.code||'').toUpperCase()))return 'FULL';
+  const cats=evidenceCategories(s);
+  const count=(s.images||[]).length;
+  if((cats.size>=2&&count>=2)||(count>=3&&cats.size>=1))return 'PARTIAL';
+  return 'OTHER';
+}
+function evidenceStateLabel(s){
+  if(fullDataSetState(s)==='FULL')return 'Curated full data set — identification not implied';
+  if(fullDataSetState(s)==='PARTIAL')return 'Partial data set — evidence available';
+  return 'Limited record — more evidence needed';
+}
+function scientificHold(s){return SCIENTIFIC_HOLD_CODES.has(String(s.code||'').toUpperCase());}
+function partialDataSets(){
+  return data.filter(s=>fullDataSetState(s)==='PARTIAL').sort((a,b)=>a.code.localeCompare(b.code,undefined,{numeric:true}));
+}
 function fullDataSets(){
   return data
     .filter(s=>FULL_DATA_SET_CODES.has(String(s.code||'').toUpperCase()))
@@ -394,7 +412,7 @@ function fillFilters(){
     $(id).value=collection;
   }
   for(const id of ['workflowFilter','mWorkflow']){
-    $(id).innerHTML='<option value="ALL">All record states</option><option value="FULL">Full data sets</option><option value="OTHER">Other / in progress</option>';
+    $(id).innerHTML='<option value="ALL">All record states</option><option value="FULL">Curated full data sets</option><option value="PARTIAL">Partial / evidence available</option><option value="OTHER">Limited / in progress</option>';
     $(id).value=workflow;
   }
 }
@@ -408,6 +426,15 @@ function renderFullSetList(){
     host.querySelectorAll('.fullset-btn').forEach(b=>b.onclick=()=>setCurrent(b.dataset.code));
   }
 }
+function renderPartialSetList(){
+  const rows=partialDataSets();
+  const html=rows.map(s=>`<button class="fullset-btn partialset-btn ${s.code===current?'active':''}" data-code="${esc(s.code)}"><span><strong>${esc(s.code)}</strong><small>${(s.images||[]).length} source images · ${evidenceCategories(s).size} categories</small></span><b>VIEW</b></button>`).join('');
+  for(const id of ['partialSetList','mobilePartialSetList']){
+    const host=$(id);if(!host)continue;
+    host.innerHTML=html||'<span class="hint">No partial data sets match the evidence threshold.</span>';
+    host.querySelectorAll('.partialset-btn').forEach(b=>b.onclick=()=>setCurrent(b.dataset.code));
+  }
+}
 function renderList(){
   const rows=filtered();
   $('specList').innerHTML=rows.map(s=>`<button class="spec-btn ${s.code===current?'active':''}" data-code="${esc(s.code)}"><strong>${esc(s.code)}</strong><small>${esc(s.collection)} · ${(s.images||[]).length} images${(s.movies||[]).length?` · ${(s.movies||[]).length} movies`:''}</small></button>`).join('');
@@ -416,6 +443,7 @@ function renderList(){
   const archiveCount=Math.max(0,data.length-masterCount);
   $('resultCount').textContent=`${rows.length} of ${data.length} records · ${masterCount} master + ${archiveCount} Drive archive`;
   renderFullSetList();
+  renderPartialSetList();
 }
 function setCurrent(code){
   if(!data.some(x=>x.code===code))return;
@@ -498,9 +526,11 @@ function renderSpec(){
   const galleries=Object.entries(groups).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map(im=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-caption="${esc(im.caption)}" data-name="${esc(im.filename)}"><img loading="lazy" src="${esc(im.thumb)}" alt="${esc(im.caption)}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${esc(im.caption)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}</div></article>`).join('')}</div></section>`).join('');
   const movieRows=(s.movies||[]).filter(m=>imageType==='ALL'||imageType==='Movie / video');
   const movieGallery=movieRows.length?`<section class="section"><h2>Movie / video <span>${movieRows.length}</span></h2><div class="gallery">${movieRows.map(m=>`<article class="image-card movie-card"><div class="movie-wrap">${m.preview?`<iframe src="${esc(m.preview)}" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>`:`<img src="${esc(m.poster)}" alt="${esc(m.caption)}">`}</div><div class="caption"><strong>${esc(m.caption)}</strong><code>${esc(m.sourceFilename||m.filename)}</code>${m.durationSeconds?`<small class="drive-source">Duration: ${Math.round(m.durationSeconds)} seconds</small>`:''}${m.note?`<small class="drive-source">${esc(m.note)}</small>`:''}${m.driveView?`<a class="movie-link" href="${esc(m.driveView)}" target="_blank" rel="noopener">Open movie in Drive</a>`:''}</div></article>`).join('')}</div></section>`:'';
-  const fullBadge=FULL_DATA_SET_CODES.has(String(s.code||'').toUpperCase())?'<span class="fullset-badge">FULL DATA SET</span>':'';
+  const recordState=fullDataSetState(s);
+  const fullBadge=recordState==='FULL'?'<span class="fullset-badge">CURATED FULL DATA SET</span>':recordState==='PARTIAL'?'<span class="fullset-badge partial-badge">PARTIAL DATA SET</span>':'<span class="fullset-badge limited-badge">LIMITED RECORD</span>';
+  const evidenceBanner=`<div class="evidence-state-note">${esc(evidenceStateLabel(s))}. This describes documented media coverage only; it does not confirm identification, successful microscopy, voucher custody, or publication rights.${scientificHold(s)?' <strong>Scientific publication hold: retain all existing source and release-authority restrictions.</strong>':''}</div>`;
   const eyebrow=s.archiveIndex?`MASTER RECORD ${s.archiveIndex} / ${masterCount}`:'DRIVE ARCHIVE';
-  $('main').innerHTML=`<div class="spec-head"><div><div class="eyebrow">${eyebrow} ${fullBadge}</div><h1>${esc(s.code)}</h1><div class="record-status readable-section"><p class="status">${glossaryText(s.status)}</p>${sectionReadButton("Read overview")}</div></div><div class="navBtns"><button onclick="nav(-1)">← Previous</button><button onclick="nav(1)">Next →</button></div></div><div class="hero"><div class="summary-grid">${sum}</div><aside class="card readable-section"><div class="section-read-head"><h3>Data completeness</h3>${sectionReadButton("Read section")}</div><div class="matrix"><div>Wild + lab pairing</div><div class="${pairClass}">${pairStatus}</div>${mat}</div>${s.sourceLine?`<div class="sourceLine readable-section"><div class="section-read-head"><strong>Source / provenance</strong>${sectionReadButton("Read section")}</div><p>${glossaryText(s.sourceLine)}</p></div>`:''}</aside></div>${renderMeasurements(s)}${galleries||''}${movieGallery||''}${(!galleries&&!movieGallery)?'<div class="empty">No media match the selected filter.</div>':''}`;
+  $('main').innerHTML=`<div class="spec-head"><div><div class="eyebrow">${eyebrow} ${fullBadge}</div><h1>${esc(s.code)}</h1><div class="record-status readable-section"><p class="status">${glossaryText(s.status)}</p>${sectionReadButton("Read overview")}</div>${evidenceBanner}</div><div class="navBtns"><button onclick="nav(-1)">← Previous</button><button onclick="nav(1)">Next →</button></div></div><div class="hero"><div class="summary-grid">${sum}</div><aside class="card readable-section"><div class="section-read-head"><h3>Data completeness</h3>${sectionReadButton("Read section")}</div><div class="matrix"><div>Wild + lab pairing</div><div class="${pairClass}">${pairStatus}</div>${mat}</div>${s.sourceLine?`<div class="sourceLine readable-section"><div class="section-read-head"><strong>Source / provenance</strong>${sectionReadButton("Read section")}</div><p>${glossaryText(s.sourceLine)}</p></div>`:''}</aside></div>${renderMeasurements(s)}${galleries||''}${movieGallery||''}${(!galleries&&!movieGallery)?'<div class="empty">No media match the selected filter.</div>':''}`;
   $('recordCount').textContent=`${(s.images||[]).length} source images${(s.movies||[]).length?` · ${(s.movies||[]).length} movies`:''} · ${esc(s.collection)} · ${esc(s.family)}`;
   document.querySelectorAll('.image-wrap').forEach(el=>el.onclick=()=>openViewer(el.dataset.file,el.dataset.caption,el.dataset.name));
 }
