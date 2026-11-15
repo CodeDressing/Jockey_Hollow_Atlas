@@ -10,9 +10,11 @@
     "researcher_followup": "Researcher reports apparent failure to recover actual spores; material appeared spore-like but may be plant or other organic matter. Constituents unidentified; no basidiospores confidently verified.",
     "spore_recovery_outcome": "No confidently identified basidiospores recovered (negative/unconfirmed microscopy outcome).",
     "material_identity": "Unidentified particulate/organic material; plant matter hypothesis unverified.",
-    "scientific_caveat": "Failed recovery does not establish specimen produced no spores."
+    "scientific_caveat": "Failed recovery does not establish specimen produced no spores.",
+    "macroscopic_morphology": "Photos show tan-buff cap with darker central region; pale crowded gills; slender pale stipe with localized pinkish-brown discoloration; leaf litter and woody debris visible. No calibrated cap/stipe measurements, diagnostic spore characters, or independent species confirmation.",
+    "field_provenance": "Eight images supplied by researcher as Rutgers team JN1-F11; captions and exact collector/date/permissions require primary record confirmation."
   },
-  "archive_status": "seven original PNGs received and SHA-256 recorded, but binary files NOT yet committed to GitHub and NOT live",
+  "archive_status": "18 originals received in chat (8 field, 7 microscopy, 3 preparation), recorded by filename and SHA-256; user-supplied binary image files NOT yet committed to repository, NOT integrated to gallery and NOT live",
   "expected_asset_dir": "assets/jn1-f11/microscopy/",
   "originals": [
     {
@@ -68,6 +70,64 @@
       "sha256": "5e90393e0ead2a99bbc7e16ed1ed57a8c9dfe787b15629b4fe40f222262088a7"
     }
   ],
-  "total_originals": 10,
-  "additional_note": "Three preparation/foil documentation JPG originals uploaded 2026-11-15; do not imply actual spores recovered; all original binaries pending repository upload and public gallery integration."
+  "total_originals": 18,
+  "additional_note": "Three preparation/foil documentation JPG originals uploaded 2026-11-15; do not imply actual spores recovered; all original binaries pending repository upload and public gallery integration.",
+  "field_originals": [
+    {
+      "filename": "IMG_5769.jpg",
+      "size_bytes": 407453,
+      "sha256": "6b46fd9b0d4705b0816ae3437cd8d8538ac3dd749c1c4ce4692e5f75ca84655a",
+      "specimen_association": "JN1-F11 (researcher upload; labelled foil photographed)",
+      "planned_path": "assets/jn1-f11/field/IMG_5769.jpg"
+    },
+    {
+      "filename": "IMG_5770.jpg",
+      "size_bytes": 540115,
+      "sha256": "ff4499678fafaaeed3ecfde6a495e3d160d4786e31bf5052f7316ec7a60cc1f1",
+      "specimen_association": "JN1-F11 (researcher upload; labelled foil photographed)",
+      "planned_path": "assets/jn1-f11/field/IMG_5770.jpg"
+    },
+    {
+      "filename": "IMG_5771.jpg",
+      "size_bytes": 255529,
+      "sha256": "758aa7f166544d438afe49163aacd5c621f6468454e290bbe590e201a8ad4a74",
+      "specimen_association": "JN1-F11 (researcher upload; labelled foil photographed)",
+      "planned_path": "assets/jn1-f11/field/IMG_5771.jpg"
+    },
+    {
+      "filename": "IMG_5772.jpg",
+      "size_bytes": 426681,
+      "sha256": "edaf7f2c7e2e254949bd55ebe897f986ac8aadcceae3a107f0398714b5feceb4",
+      "specimen_association": "JN1-F11 (researcher upload; labelled foil photographed)",
+      "planned_path": "assets/jn1-f11/field/IMG_5772.jpg"
+    },
+    {
+      "filename": "IMG_5773.jpg",
+      "size_bytes": 225199,
+      "sha256": "37e518120afbbf16a669c3b6bb6cfe08be2327f1ddde6a001f835eabb6a2bd22",
+      "specimen_association": "JN1-F11 (researcher upload; labelled foil photographed)",
+      "planned_path": "assets/jn1-f11/field/IMG_5773.jpg"
+    },
+    {
+      "filename": "IMG_5774.jpg",
+      "size_bytes": 163383,
+      "sha256": "7c87f8ee340e7cea269ef988196321c6b15c903de0668ef59453f4f0270ee182",
+      "specimen_association": "JN1-F11 (researcher upload; labelled foil photographed)",
+      "planned_path": "assets/jn1-f11/field/IMG_5774.jpg"
+    },
+    {
+      "filename": "IMG_5775.jpg",
+      "size_bytes": 269403,
+      "sha256": "eab8d605ba1195729021def535dcbba96bcf5ac3c47edf6bd799bc1408f56c1b",
+      "specimen_association": "JN1-F11 (researcher upload; labelled foil photographed)",
+      "planned_path": "assets/jn1-f11/field/IMG_5775.jpg"
+    },
+    {
+      "filename": "IMG_5776.jpg",
+      "size_bytes": 255441,
+      "sha256": "02fa1b1b373ecff783df20bbdd32c6bef790540b871fdc81767d61b763cb506e",
+      "specimen_association": "JN1-F11 (researcher upload; labelled foil photographed)",
+      "planned_path": "assets/jn1-f11/field/IMG_5776.jpg"
+    }
+  ]
 }
