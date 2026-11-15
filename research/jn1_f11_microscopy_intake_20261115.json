@@ -6,7 +6,11 @@
     "spore_print_color": "cream to pale tan (researcher description)",
     "distribution": "no clearly defined pattern (researcher description)",
     "microscopy": "granular aggregates and scattered small refractile objects visible; no independently confirmed isolated basidiospore, spore metrics, or species identification",
-    "calibration": "not provided"
+    "calibration": "not provided",
+    "researcher_followup": "Researcher reports apparent failure to recover actual spores; material appeared spore-like but may be plant or other organic matter. Constituents unidentified; no basidiospores confidently verified.",
+    "spore_recovery_outcome": "No confidently identified basidiospores recovered (negative/unconfirmed microscopy outcome).",
+    "material_identity": "Unidentified particulate/organic material; plant matter hypothesis unverified.",
+    "scientific_caveat": "Failed recovery does not establish specimen produced no spores."
   },
   "archive_status": "seven original PNGs received and SHA-256 recorded, but binary files NOT yet committed to GitHub and NOT live",
   "expected_asset_dir": "assets/jn1-f11/microscopy/",
