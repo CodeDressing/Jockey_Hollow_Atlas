@@ -9,7 +9,7 @@ const assert=require('node:assert/strict');
       const errors=[];
       page.on('pageerror',error=>errors.push(error.message));
       await page.goto('http://127.0.0.1:8765/index.html#JN1-F11',{waitUntil:'domcontentloaded'});
-      await page.locator('#specList .spec-btn').first().waitFor();
+      await page.locator('#specList .spec-btn').first().waitFor({state:'attached'});
       assert.ok(await page.locator('#partialSetList .partialset-btn').count()>0,'partial specimen list must be populated');
       assert.ok(await page.locator('#mobilePartialSetList .partialset-btn').count()>0,'mobile partial list must be populated');
       await page.locator('#workflowFilter').selectOption('PARTIAL');
