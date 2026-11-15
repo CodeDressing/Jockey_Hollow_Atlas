@@ -50,5 +50,24 @@
       "size_bytes": 1366782,
       "sha256": "28270d14c6ade4d80c01bf782e41c176fde3d1b5fbf9dcd55690294f0afee308"
     }
-  ]
+  ],
+  "additional_preparation_originals": [
+    {
+      "filename": "JN1-F11 V1 .JPG",
+      "size_bytes": 521163,
+      "sha256": "2ec21cb3daa75be47f04e3d6353ad44bbdd580887e1d0c50c9aeb8c894aef108"
+    },
+    {
+      "filename": "JN1-F11 V2.JPG",
+      "size_bytes": 515752,
+      "sha256": "1bf529e987dfe91f7ecc120f3583251b6dce7be4eb2e1959388b15b949c5102a"
+    },
+    {
+      "filename": "JN1-F11 V3.JPG",
+      "size_bytes": 528194,
+      "sha256": "5e90393e0ead2a99bbc7e16ed1ed57a8c9dfe787b15629b4fe40f222262088a7"
+    }
+  ],
+  "total_originals": 10,
+  "additional_note": "Three preparation/foil documentation JPG originals uploaded 2026-11-15; do not imply actual spores recovered; all original binaries pending repository upload and public gallery integration."
 }
