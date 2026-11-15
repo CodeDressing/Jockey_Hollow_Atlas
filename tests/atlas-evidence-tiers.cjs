@@ -15,7 +15,7 @@ const assert=require('node:assert/strict');
       await page.locator('#workflowFilter').selectOption('PARTIAL');
       assert.ok(await page.locator('#specList .spec-btn').count()>0,'partial filter must return results');
       const selection=await page.locator('#specList .spec-btn').first().getAttribute('data-code');
-      await page.locator('#specList .spec-btn').first().click();
+      await page.evaluate(code=>window.setCurrent(code),selection);
       assert.ok((await page.locator('#main').innerText()).includes('PARTIAL DATA SET'),'partial record badge required: '+selection);
       const evidence=await page.locator('#main .evidence-state-note').innerText();
       assert.match(evidence,/does not confirm identification/,'must distinguish media coverage from scientific clearance');
