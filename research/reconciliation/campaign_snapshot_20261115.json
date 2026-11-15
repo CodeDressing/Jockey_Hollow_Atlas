@@ -1,0 +1,672 @@
+{
+  "snapshotDate": "2026-11-15",
+  "repository": "CodeDressing/Jockey_Hollow_Atlas",
+  "baselineMain": "e7e91707c1126c17c28171d7b6f78d3fc930788f",
+  "proposedIntegrationBranch": "integration/campaign-merge-reconciliation-20261115",
+  "policy": {
+    "sourceOriginalsPreserved": true,
+    "neverInventSpecies": true,
+    "failedSporeAttemptNotProofOfSterility": true,
+    "imageRightsNotImpliedByPresence": true,
+    "partialMeansMediaCoverageNotTaxonomicCompletion": true,
+    "releaseHolds": [
+      "AN2-F10",
+      "AN2-F12",
+      "AN2-F22",
+      "Rutgers G6-G10"
+    ],
+    "noBulkMerge": true
+  },
+  "counts": {
+    "branches": 64,
+    "openDraftPRs": 43,
+    "openPRs": 43
+  },
+  "branches": [
+    {
+      "name": "audit/an2-specimen-evidence-20261022",
+      "sha": "06320001d84f2d406fd5a8e72d3f825e7aee1707"
+    },
+    {
+      "name": "audit/operation-clear-view-s1-r1-20261020",
+      "sha": "67d50ddad99f286401318c55bd8ba71aef32286a"
+    },
+    {
+      "name": "audit/operation-clear-view-s1-r2-20261020",
+      "sha": "6c2e75094255b2c2d585ac0170655d540eb8764a"
+    },
+    {
+      "name": "audit/operation-clear-view-s1-r3-20261020",
+      "sha": "8c7325738b345624a781987419523fe3dbf38e9a"
+    },
+    {
+      "name": "campaign/mycosim-restoration-sprint1-organization-20261019",
+      "sha": "7f4169fce27aa1ecd3dae01b082f2a71ad7affb6"
+    },
+    {
+      "name": "campaign/mycosim-restoration-sprint2-ux-20261019",
+      "sha": "f5fcaaafc595047b82330df451aa524110ed3cc8"
+    },
+    {
+      "name": "campaign/mycosim-restoration-sprint3-functional-20261019",
+      "sha": "2593435a33da68fd2768e3fe9505bbdda470e19b"
+    },
+    {
+      "name": "campaign/mycosim-restoration-sprint4-education-20261019",
+      "sha": "113ab32c2998dcf8774a5bcd07d5bcfdf9e00fb6"
+    },
+    {
+      "name": "campaign/mycosim-restoration-sprint5-release-gate-20261020",
+      "sha": "17484db62243abc5b5d36ba6a2b573659d257948"
+    },
+    {
+      "name": "feature/an2-f10-full-dataset-navigation-20261028",
+      "sha": "d585f94851d693f0da247875c81e07ed16e4e3a5"
+    },
+    {
+      "name": "feature/an2-f10-microscopy-gallery-ready-20261028",
+      "sha": "f8066f284276bf0f4d89c5ae9689b8401341d33c"
+    },
+    {
+      "name": "feature/an2-f10-original-microscopy-20261028",
+      "sha": "c8585c1617aa7d24bdb730aa0d40255a3ab71d23"
+    },
+    {
+      "name": "feature/an2-f12-full-data-set-20261028",
+      "sha": "62dacf34c15758af92f831df3865c662571b64e7"
+    },
+    {
+      "name": "feature/an2-f12-lab-prep-20261023",
+      "sha": "0c063db317b061d21e269f75cea049a52a1d1a43"
+    },
+    {
+      "name": "feature/an2-f12-main-release-20261023",
+      "sha": "0ada458ee0999a81dbe4002e0cc904d862732405"
+    },
+    {
+      "name": "feature/an2-f12-microscopy-20261024",
+      "sha": "2e2de3fbc81a7bc3a1697c5ea0e152f28887baa9"
+    },
+    {
+      "name": "feature/an2-f12-microscopy-final-20261024",
+      "sha": "d97d02cf44ff119750b9c23c873bf0b8b505418a"
+    },
+    {
+      "name": "feature/an2-f18-gallery-binaries-20261029",
+      "sha": "44c4a463cf3ada5d1750b5d4c91d8028e1129fd6"
+    },
+    {
+      "name": "feature/an2-f18-unsuccessful-spore-isolation-20261029",
+      "sha": "7f821e7571579f5d4cc9cc92f292429bbdc5481e"
+    },
+    {
+      "name": "feature/an2-f22-deof-photo-intake-20261022",
+      "sha": "a3374861286c66d246fe1a0488eec734dc860478"
+    },
+    {
+      "name": "feature/clear-view-sprint2-unified-specimen-20261020",
+      "sha": "763634160d45bd77134701315650be59f19e3bba"
+    },
+    {
+      "name": "feature/deo26-field-provenance-20261025",
+      "sha": "c03f5a8db48017345d137eb1b06a69308424fced"
+    },
+    {
+      "name": "feature/fieldmaster-477-evidence-20261022",
+      "sha": "9616bb1a4e7bbe335744c0c2b83b9acbdf362a02"
+    },
+    {
+      "name": "feature/five-pillars-learning-20261021",
+      "sha": "095c4e99471fdf62904362812ef35d4875d03797"
+    },
+    {
+      "name": "feature/guiding-light-learning-ux-20261021",
+      "sha": "64b90f5f67178a34ff810dddd6f6971f74a2aba9"
+    },
+    {
+      "name": "feature/mycoscope-adjustable-sidebar-20261025",
+      "sha": "80d9b4ba7ae31301d222021824386ff7e87ae15e"
+    },
+    {
+      "name": "feature/mycosim-visual-mushroom-builder-20261019",
+      "sha": "02ae96544817579c6ad3e3a9652c057821d969d6"
+    },
+    {
+      "name": "feature/rutgers-an2-f12-photos-20261023",
+      "sha": "0bda3a25a69a4492df2359b5c58989f7720dfee2"
+    },
+    {
+      "name": "feature/rutgers-deof-research-campaign-closure-20261103",
+      "sha": "f892ff296ccb85b1cc106c90d0da5e3968596898"
+    },
+    {
+      "name": "feature/rutgers-r1-registry-integrity-20261029",
+      "sha": "3734fcb9474e37db4cea928adf0273cc2fcd90e1"
+    },
+    {
+      "name": "feature/rutgers-r2-description-recovery-20261029",
+      "sha": "5f507cadd0aa9912ab043085101604345f3ace38"
+    },
+    {
+      "name": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "sha": "d4b3b17be0d9f1c7f3563ada85c7406ac6ea9c47"
+    },
+    {
+      "name": "feature/rutgers-r4-cryptographic-original-verification-20261101",
+      "sha": "276ad7ba6ec9bf6b3fa811cc4a22a658e5ab48fa"
+    },
+    {
+      "name": "feature/rutgers-r5-voucher-provenance-20261101",
+      "sha": "db2c049a3e1c0c73adf87ca020d0367b85457625"
+    },
+    {
+      "name": "feature/rutgers-r6-field-voucher-traceability-20261101",
+      "sha": "4cd040b08ed5aa1514cde673917551d924157fab"
+    },
+    {
+      "name": "feature/rutgers-r7-evidence-conflict-resolution-20261101",
+      "sha": "e31122646187e9ed081ba1624c16dd8946886d7e"
+    },
+    {
+      "name": "feature/rutgers-r8-master-boundary-reconciliation-20261101",
+      "sha": "8335f5b4aa94f7cdb6273170b9496a60f92e08c5"
+    },
+    {
+      "name": "feature/rutgers-r9-canonical-parser-validation-20261101",
+      "sha": "7a7b649d4598c5e96267be524c20eccfa5f3ee65"
+    },
+    {
+      "name": "feature/rutgers-r10-registry-integration-20261101",
+      "sha": "83ba4dc9fcc6825f9d3f501551b2d3a8c5eac223"
+    },
+    {
+      "name": "feature/rutgers-r11-integration-acceptance-20261102",
+      "sha": "6850ab3c920a4264334af1876529eff8df407d19"
+    },
+    {
+      "name": "feature/rutgers-r12-ci-security-hardening-20261102",
+      "sha": "c8d85c4968bbe3025cad30d4616d6f7bf5b55bdb"
+    },
+    {
+      "name": "feature/rutgers-r13-release-gate-review-20261102",
+      "sha": "ca877b85014d832281cf793993a6c085d3ea38c3"
+    },
+    {
+      "name": "feature/rutgers-r14-primary-voucher-recovery-20261102",
+      "sha": "6622ee8175b28d9b0f736d4d1f0c4a42a485e898"
+    },
+    {
+      "name": "feature/rutgers-r15-voucher-chain-closure-20261102",
+      "sha": "24209e81a254a2ce6b15981f3fa22c6a6124d9a0"
+    },
+    {
+      "name": "feature/rutgers-r16-targeted-archive-evidence-20261102",
+      "sha": "4b14e748d9b7293e344c19a1e01aa2ce2c10639f"
+    },
+    {
+      "name": "feature/rutgers-r17-photo-voucher-crosswalk-20261102",
+      "sha": "b0594c258443700c60307d910f63ea2156f384fd"
+    },
+    {
+      "name": "feature/rutgers-r18-voucher-rights-authentication-20261102",
+      "sha": "3e54414dda227641660fdc5502322d05e2c06a18"
+    },
+    {
+      "name": "feature/rutgers-r19-primary-gap-resolution-20261103",
+      "sha": "b29cc9c85443720cf18a78aeb5b40e0dadd32b31"
+    },
+    {
+      "name": "feature/rutgers-r20-archive-view-reconciliation-20261103",
+      "sha": "f7823d51d7c74c45690370b2da46b658eaa61cee"
+    },
+    {
+      "name": "feature/rutgers-r21-primary-voucher-release-authority-20261103",
+      "sha": "98f0a97ffb03871fb3d845347b676edd1d4234cf"
+    },
+    {
+      "name": "feature/rutgers-r22-primary-evidence-intake-20261103",
+      "sha": "b6a4d9dc48b188505add37e7b47d53c2d7b61b06"
+    },
+    {
+      "name": "feature/specimen-to-3d-atlas-registry-20261020",
+      "sha": "2faf6e7bf733585c532fa2c761e610868d080a93"
+    },
+    {
+      "name": "fix/gillforge-agaricoid-hymenophore-20261021",
+      "sha": "ac75f924792ce740f7444b7e9d965d2cbe2b5746"
+    },
+    {
+      "name": "fix-morphology-controls-discoverability",
+      "sha": "7abf695ef874701c21f9c2ea5f6b03df44bf9c29"
+    },
+    {
+      "name": "fungal-systems-sandbox",
+      "sha": "41ce0fea9bdaaf2ea7a87731dca02e5336e42b3b"
+    },
+    {
+      "name": "hotfix/clear-deck-search-20261021",
+      "sha": "86b92ba20db0342e93d5328820857a522b87b5f4"
+    },
+    {
+      "name": "integration/campaign-merge-reconciliation-20261115",
+      "sha": "493fde84a8f76dbd6c2b778b630abf587e613875"
+    },
+    {
+      "name": "integration/partial-evidence-sets-20261115",
+      "sha": "49384aabb47a2b74e2b59a95c43ba6b2acd0506f"
+    },
+    {
+      "name": "main",
+      "sha": "e7e91707c1126c17c28171d7b6f78d3fc930788f"
+    },
+    {
+      "name": "mycosim-campaign6-human-biology",
+      "sha": "e501d963fe2105fb0cc157222dd06846fd959e96"
+    },
+    {
+      "name": "research/an3-f3-spore-print-failure-20261115",
+      "sha": "e19251510699190515aff1f8c3265f4775c6bd4a"
+    },
+    {
+      "name": "research/bn5-sporeprint-evidence-intake-20261115",
+      "sha": "922100bf00e935401b4f16117ffc612d6800f8f7"
+    },
+    {
+      "name": "research/jn1-f11-microscopy-intake-20261115",
+      "sha": "08bd8011b0ff9a62009b49c69909ec17d8604205"
+    },
+    {
+      "name": "ux01-run1-visitor-orientation",
+      "sha": "73090486aebdbe07b385403aa8ca5f7e792b4202"
+    }
+  ],
+  "pullRequests": [
+    {
+      "number": 59,
+      "title": "BN5-F22 / F25 / F8(B): seven photographic originals intake",
+      "head": "research/bn5-sporeprint-evidence-intake-20261115",
+      "headSha": "922100bf00e935401b4f16117ffc612d6800f8f7",
+      "base": "main",
+      "draft": true,
+      "reconciliation": "HOLD: original binary/photo gallery prerequisites"
+    },
+    {
+      "number": 57,
+      "title": "Research: record AN3-F3 failed spore print (reported)",
+      "head": "research/an3-f3-spore-print-failure-20261115",
+      "headSha": "e19251510699190515aff1f8c3265f4775c6bd4a",
+      "base": "main",
+      "draft": true,
+      "reconciliation": "Already incorporated exactly (AN3-F3 research note; close after verification)"
+    },
+    {
+      "number": 56,
+      "title": "Rutgers DEOF — research campaign closure with scientific publication holds",
+      "head": "feature/rutgers-deof-research-campaign-closure-20261103",
+      "headSha": "f892ff296ccb85b1cc106c90d0da5e3968596898",
+      "base": "feature/rutgers-r22-primary-evidence-intake-20261103",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 55,
+      "title": "Rutgers R.22 — accession-specific primary evidence intake and authentication gate",
+      "head": "feature/rutgers-r22-primary-evidence-intake-20261103",
+      "headSha": "b6a4d9dc48b188505add37e7b47d53c2d7b61b06",
+      "base": "feature/rutgers-r21-primary-voucher-release-authority-20261103",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 54,
+      "title": "Rutgers R.21 — primary voucher and image release-authority evidence review",
+      "head": "feature/rutgers-r21-primary-voucher-release-authority-20261103",
+      "headSha": "98f0a97ffb03871fb3d845347b676edd1d4234cf",
+      "base": "feature/rutgers-r20-archive-view-reconciliation-20261103",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 53,
+      "title": "Rutgers R.20 — archival V2 duplicate hashes and six-view/26-original reconciliation",
+      "head": "feature/rutgers-r20-archive-view-reconciliation-20261103",
+      "headSha": "f7823d51d7c74c45690370b2da46b658eaa61cee",
+      "base": "feature/rutgers-r19-primary-gap-resolution-20261103",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 52,
+      "title": "Rutgers R.19 — additional accession-labelled V2 archival evidence and voucher gaps",
+      "head": "feature/rutgers-r19-primary-gap-resolution-20261103",
+      "headSha": "b29cc9c85443720cf18a78aeb5b40e0dadd32b31",
+      "base": "feature/rutgers-r18-voucher-rights-authentication-20261102",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 51,
+      "title": "Rutgers R.18 — physical voucher custody and photographic rights evidence audit",
+      "head": "feature/rutgers-r18-voucher-rights-authentication-20261102",
+      "headSha": "3e54414dda227641660fdc5502322d05e2c06a18",
+      "base": "feature/rutgers-r17-photo-voucher-crosswalk-20261102",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 50,
+      "title": "Rutgers R.17 — archived photograph-to-voucher crosswalk and EXIF review",
+      "head": "feature/rutgers-r17-photo-voucher-crosswalk-20261102",
+      "headSha": "b0594c258443700c60307d910f63ea2156f384fd",
+      "base": "feature/rutgers-r16-targeted-archive-evidence-20261102",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 49,
+      "title": "Rutgers R.16 — archival accession-labelled lab photo recovery (research hold)",
+      "head": "feature/rutgers-r16-targeted-archive-evidence-20261102",
+      "headSha": "4b14e748d9b7293e344c19a1e01aa2ce2c10639f",
+      "base": "feature/rutgers-r15-voucher-chain-closure-20261102",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 48,
+      "title": "Rutgers R.15 — voucher chain closure audit and source-grounded provenance holds",
+      "head": "feature/rutgers-r15-voucher-chain-closure-20261102",
+      "headSha": "24209e81a254a2ce6b15981f3fa22c6a6124d9a0",
+      "base": "feature/rutgers-r14-primary-voucher-recovery-20261102",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 47,
+      "title": "Rutgers R.14 — primary voucher evidence recovery and unresolved provenance matrix",
+      "head": "feature/rutgers-r14-primary-voucher-recovery-20261102",
+      "headSha": "6622ee8175b28d9b0f736d4d1f0c4a42a485e898",
+      "base": "feature/rutgers-r13-release-gate-review-20261102",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 46,
+      "title": "Rutgers R.13 — independent research acceptance and scientific release-gate matrix",
+      "head": "feature/rutgers-r13-release-gate-review-20261102",
+      "headSha": "ca877b85014d832281cf793993a6c085d3ea38c3",
+      "base": "feature/rutgers-r12-ci-security-hardening-20261102",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 45,
+      "title": "Rutgers R.12 — immutable CI actions, locked Playwright, least-privilege acceptance",
+      "head": "feature/rutgers-r12-ci-security-hardening-20261102",
+      "headSha": "c8d85c4968bbe3025cad30d4616d6f7bf5b55bdb",
+      "base": "feature/rutgers-r11-integration-acceptance-20261102",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 44,
+      "title": "Rutgers R.11 — independent research integration acceptance and release blockers",
+      "head": "feature/rutgers-r11-integration-acceptance-20261102",
+      "headSha": "6850ab3c920a4264334af1876529eff8df407d19",
+      "base": "feature/rutgers-r10-registry-integration-20261101",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 43,
+      "title": "Rutgers R.10 — read-only canonical registry integration and reversible reconciliation",
+      "head": "feature/rutgers-r10-registry-integration-20261101",
+      "headSha": "83ba4dc9fcc6825f9d3f501551b2d3a8c5eac223",
+      "base": "feature/rutgers-r9-canonical-parser-validation-20261101",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 42,
+      "title": "Rutgers R.9 — source-grounded accession boundary parser and legacy ID reconciliation",
+      "head": "feature/rutgers-r9-canonical-parser-validation-20261101",
+      "headSha": "7a7b649d4598c5e96267be524c20eccfa5f3ee65",
+      "base": "feature/rutgers-r8-master-boundary-reconciliation-20261101",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 41,
+      "title": "Rutgers R.8 — reconcile master record boundaries and historical parser mismatch",
+      "head": "feature/rutgers-r8-master-boundary-reconciliation-20261101",
+      "headSha": "8335f5b4aa94f7cdb6273170b9496a60f92e08c5",
+      "base": "feature/rutgers-r7-evidence-conflict-resolution-20261101",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 40,
+      "title": "Rutgers R.7 — FIELDMASTER count and voucher evidence conflict resolution",
+      "head": "feature/rutgers-r7-evidence-conflict-resolution-20261101",
+      "headSha": "e31122646187e9ed081ba1624c16dd8946886d7e",
+      "base": "feature/rutgers-r6-field-voucher-traceability-20261101",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 39,
+      "title": "Rutgers R.6 — primary field evidence and voucher traceability matrix",
+      "head": "feature/rutgers-r6-field-voucher-traceability-20261101",
+      "headSha": "4cd040b08ed5aa1514cde673917551d924157fab",
+      "base": "feature/rutgers-r5-voucher-provenance-20261101",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 38,
+      "title": "Rutgers R.5 — voucher provenance matrix and scientific publication holds",
+      "head": "feature/rutgers-r5-voucher-provenance-20261101",
+      "headSha": "db2c049a3e1c0c73adf87ca020d0367b85457625",
+      "base": "feature/rutgers-r4-cryptographic-original-verification-20261101",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 37,
+      "title": "Rutgers R.4 — independently verify 26 original media files by SHA-256",
+      "head": "feature/rutgers-r4-cryptographic-original-verification-20261101",
+      "headSha": "276ad7ba6ec9bf6b3fa811cc4a22a658e5ab48fa",
+      "base": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 36,
+      "title": "Rutgers R.3 — original media and voucher provenance reconciliation",
+      "head": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "headSha": "d4b3b17be0d9f1c7f3563ada85c7406ac6ea9c47",
+      "base": "feature/rutgers-r2-description-recovery-20261029",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 35,
+      "title": "Rutgers R.2 — Original description recovery and evidence-separated AN2 crosswalk",
+      "head": "feature/rutgers-r2-description-recovery-20261029",
+      "headSha": "5f507cadd0aa9912ab043085101604345f3ace38",
+      "base": "feature/rutgers-r1-registry-integrity-20261029",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 34,
+      "title": "Rutgers R.1 — specimen evidence integrity and selected-accession locator",
+      "head": "feature/rutgers-r1-registry-integrity-20261029",
+      "headSha": "3734fcb9474e37db4cea928adf0273cc2fcd90e1",
+      "base": "main",
+      "draft": true,
+      "reconciliation": "HOLD: stacked Rutgers research and G6-G10 scientific release gates"
+    },
+    {
+      "number": 33,
+      "title": "AN2-F18: link six original microscopy files (binary transfer required)",
+      "head": "feature/an2-f18-gallery-binaries-20261029",
+      "headSha": "44c4a463cf3ada5d1750b5d4c91d8028e1129fd6",
+      "base": "main",
+      "draft": true,
+      "reconciliation": "HOLD: original binary/photo gallery prerequisites"
+    },
+    {
+      "number": 30,
+      "title": "AN2-F10 — microscopy gallery and Full Data Sets (awaiting 14 original PNG binaries)",
+      "head": "feature/an2-f10-microscopy-gallery-ready-20261028",
+      "headSha": "f8066f284276bf0f4d89c5ae9689b8401341d33c",
+      "base": "main",
+      "draft": true,
+      "reconciliation": "HOLD: original binary/photo gallery prerequisites"
+    },
+    {
+      "number": 21,
+      "title": "Rutgers AN2-F12 — original field-photo intake and source-grounded morphology",
+      "head": "feature/rutgers-an2-f12-photos-20261023",
+      "headSha": "0bda3a25a69a4492df2359b5c58989f7720dfee2",
+      "base": "feature/fieldmaster-477-evidence-20261022",
+      "draft": true,
+      "reconciliation": "HOLD: voucher / specimen-provenance review and dependent fieldmaster"
+    },
+    {
+      "number": 20,
+      "title": "AN2-F22 DEOF: original-photo provenance intake (remaining linkage pending)",
+      "head": "feature/an2-f22-deof-photo-intake-20261022",
+      "headSha": "a3374861286c66d246fe1a0488eec734dc860478",
+      "base": "feature/fieldmaster-477-evidence-20261022",
+      "draft": true,
+      "reconciliation": "HOLD: voucher / specimen-provenance review and dependent fieldmaster"
+    },
+    {
+      "number": 19,
+      "title": "FIELDMASTER: specimen provenance and measurement-gap baseline",
+      "head": "feature/fieldmaster-477-evidence-20261022",
+      "headSha": "9616bb1a4e7bbe335744c0c2b83b9acbdf362a02",
+      "base": "main",
+      "draft": true,
+      "reconciliation": "HOLD: voucher / specimen-provenance review and dependent fieldmaster"
+    },
+    {
+      "number": 18,
+      "title": "AN2 evidence audit — photos, measurements and fieldwork gaps (15 specimens)",
+      "head": "audit/an2-specimen-evidence-20261022",
+      "headSha": "06320001d84f2d406fd5a8e72d3f825e7aee1707",
+      "base": "main",
+      "draft": true,
+      "reconciliation": "Dated metadata-only evidence (archive safely in this integration)"
+    },
+    {
+      "number": 17,
+      "title": "FIVE PILLARS Sprint 18 — readable educational stage navigation",
+      "head": "feature/five-pillars-learning-20261021",
+      "headSha": "095c4e99471fdf62904362812ef35d4875d03797",
+      "base": "main",
+      "draft": true,
+      "reconciliation": "HOLD: failed historical QA needs current CI"
+    },
+    {
+      "number": 14,
+      "title": "GILLFORGE: Keep juvenile agaricoid gills attached to pileus during stage scaling",
+      "head": "fix/gillforge-agaricoid-hymenophore-20261021",
+      "headSha": "ac75f924792ce740f7444b7e9d965d2cbe2b5746",
+      "base": "feature/specimen-to-3d-atlas-registry-20261020",
+      "draft": true,
+      "reconciliation": "HOLD: stacked legacy MycoSim and 3D/UI reconciling"
+    },
+    {
+      "number": 13,
+      "title": "Draft: Living Atlas specimen registry and opt-in compact builder",
+      "head": "feature/specimen-to-3d-atlas-registry-20261020",
+      "headSha": "2faf6e7bf733585c532fa2c761e610868d080a93",
+      "base": "feature/clear-view-sprint2-unified-specimen-20261020",
+      "draft": true,
+      "reconciliation": "HOLD: stacked legacy MycoSim and 3D/UI reconciling"
+    },
+    {
+      "number": 12,
+      "title": "Operation Clear View Sprint 2 — one primary specimen, opt-in legacy studio and compact canvas",
+      "head": "feature/clear-view-sprint2-unified-specimen-20261020",
+      "headSha": "763634160d45bd77134701315650be59f19e3bba",
+      "base": "audit/operation-clear-view-s1-r3-20261020",
+      "draft": true,
+      "reconciliation": "HOLD: stacked legacy MycoSim and 3D/UI reconciling"
+    },
+    {
+      "number": 11,
+      "title": "Operation Clear View Run 1.3 — exact scroll/overflow root causes",
+      "head": "audit/operation-clear-view-s1-r3-20261020",
+      "headSha": "8c7325738b345624a781987419523fe3dbf38e9a",
+      "base": "audit/operation-clear-view-s1-r2-20261020",
+      "draft": true,
+      "reconciliation": "HOLD: stacked legacy MycoSim and 3D/UI reconciling"
+    },
+    {
+      "number": 10,
+      "title": "Operation Clear View S1 R1.2 — scroll/focus isolation audit",
+      "head": "audit/operation-clear-view-s1-r2-20261020",
+      "headSha": "6c2e75094255b2c2d585ac0170655d540eb8764a",
+      "base": "audit/operation-clear-view-s1-r1-20261020",
+      "draft": true,
+      "reconciliation": "HOLD: stacked legacy MycoSim and 3D/UI reconciling"
+    },
+    {
+      "number": 9,
+      "title": "Operation Clear View S1 R1 — read-only six-viewport usability audit",
+      "head": "audit/operation-clear-view-s1-r1-20261020",
+      "headSha": "67d50ddad99f286401318c55bd8ba71aef32286a",
+      "base": "campaign/mycosim-restoration-sprint5-release-gate-20261020",
+      "draft": true,
+      "reconciliation": "HOLD: stacked legacy MycoSim and 3D/UI reconciling"
+    },
+    {
+      "number": 8,
+      "title": "MycoSim Sprint 5 — complete restoration release acceptance gate",
+      "head": "campaign/mycosim-restoration-sprint5-release-gate-20261020",
+      "headSha": "17484db62243abc5b5d36ba6a2b573659d257948",
+      "base": "campaign/mycosim-restoration-sprint4-education-20261019",
+      "draft": true,
+      "reconciliation": "HOLD: stacked legacy MycoSim and 3D/UI reconciling"
+    },
+    {
+      "number": 7,
+      "title": "MycoSim Sprint 4 — context-aware teaching and evidence-safe narration",
+      "head": "campaign/mycosim-restoration-sprint4-education-20261019",
+      "headSha": "113ab32c2998dcf8774a5bcd07d5bcfdf9e00fb6",
+      "base": "campaign/mycosim-restoration-sprint3-functional-20261019",
+      "draft": true,
+      "reconciliation": "HOLD: stacked legacy MycoSim and 3D/UI reconciling"
+    },
+    {
+      "number": 6,
+      "title": "MycoSim Sprint 3 — controlled 3D integration without navigation hijack",
+      "head": "campaign/mycosim-restoration-sprint3-functional-20261019",
+      "headSha": "2593435a33da68fd2768e3fe9505bbdda470e19b",
+      "base": "campaign/mycosim-restoration-sprint2-ux-20261019",
+      "draft": true,
+      "reconciliation": "HOLD: stacked legacy MycoSim and 3D/UI reconciling"
+    },
+    {
+      "number": 5,
+      "title": "MycoSim Sprint 2 — specimen-first responsive visual refinement",
+      "head": "campaign/mycosim-restoration-sprint2-ux-20261019",
+      "headSha": "f5fcaaafc595047b82330df451aa524110ed3cc8",
+      "base": "campaign/mycosim-restoration-sprint1-organization-20261019",
+      "draft": true,
+      "reconciliation": "HOLD: stacked legacy MycoSim and 3D/UI reconciling"
+    },
+    {
+      "number": 4,
+      "title": "MycoSim Sprint 1: organize access to six existing laboratories",
+      "head": "campaign/mycosim-restoration-sprint1-organization-20261019",
+      "headSha": "7f4169fce27aa1ecd3dae01b082f2a71ad7affb6",
+      "base": "main",
+      "draft": true,
+      "reconciliation": "HOLD: stacked legacy MycoSim and 3D/UI reconciling"
+    }
+  ]
+}
