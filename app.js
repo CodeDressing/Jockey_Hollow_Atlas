@@ -373,9 +373,21 @@ function fullDataSetState(s){
   if((cats.size>=2&&count>=2)||(count>=3&&cats.size>=1))return 'PARTIAL';
   return 'OTHER';
 }
+function evidenceCoverage(s){
+  const groups=new Map();
+  for(const im of s.images||[]){
+    const category=String(im.category||'Uncategorized');
+    groups.set(category,(groups.get(category)||0)+1);
+  }
+  const has=(c)=>groups.has(c);
+  const documented=[has('Wild / field context'),has('Source macro / specimen'),has('Spore print / preparation'),has('Microscopy')].filter(Boolean).length;
+  const measurements=(s.measurements||[]).length;
+  const extensive=documented>=3&&((s.images||[]).length>=6);
+  return {groups,documented,measurements,extensive,photoCount:(s.images||[]).length};
+}
 function evidenceStateLabel(s){
   if(fullDataSetState(s)==='FULL')return 'Curated full data set — identification not implied';
-  if(fullDataSetState(s)==='PARTIAL')return 'Partial data set — evidence available';
+  if(fullDataSetState(s)==='PARTIAL')return evidenceCoverage(s).extensive?'Extensive documentation — scientific review still in progress':'Partial data set — evidence available';
   return 'Limited record — more evidence needed';
 }
 function scientificHold(s){return SCIENTIFIC_HOLD_CODES.has(String(s.code||'').toUpperCase());}
@@ -528,7 +540,16 @@ function renderSpec(){
   const movieGallery=movieRows.length?`<section class="section"><h2>Movie / video <span>${movieRows.length}</span></h2><div class="gallery">${movieRows.map(m=>`<article class="image-card movie-card"><div class="movie-wrap">${m.preview?`<iframe src="${esc(m.preview)}" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>`:`<img src="${esc(m.poster)}" alt="${esc(m.caption)}">`}</div><div class="caption"><strong>${esc(m.caption)}</strong><code>${esc(m.sourceFilename||m.filename)}</code>${m.durationSeconds?`<small class="drive-source">Duration: ${Math.round(m.durationSeconds)} seconds</small>`:''}${m.note?`<small class="drive-source">${esc(m.note)}</small>`:''}${m.driveView?`<a class="movie-link" href="${esc(m.driveView)}" target="_blank" rel="noopener">Open movie in Drive</a>`:''}</div></article>`).join('')}</div></section>`:'';
   const recordState=fullDataSetState(s);
   const fullBadge=recordState==='FULL'?'<span class="fullset-badge">CURATED FULL DATA SET</span>':recordState==='PARTIAL'?'<span class="fullset-badge partial-badge">PARTIAL DATA SET</span>':'<span class="fullset-badge limited-badge">LIMITED RECORD</span>';
-  const evidenceBanner=`<div class="evidence-state-note">${esc(evidenceStateLabel(s))}. This describes documented media coverage only; it does not confirm identification, successful microscopy, voucher custody, or publication rights.${scientificHold(s)?' <strong>Scientific publication hold: retain all existing source and release-authority restrictions.</strong>':''}</div>`;
+  const coverage=evidenceCoverage(s);
+  const coverageRows=[
+    ['Field photographs',coverage.groups.get('Wild / field context')||0],
+    ['Specimen / laboratory photographs',coverage.groups.get('Source macro / specimen')||0],
+    ['Spore-print / preparation photographs',coverage.groups.get('Spore print / preparation')||0],
+    ['Microscopy photographs',coverage.groups.get('Microscopy')||0],
+    ['Linked measurement records',coverage.measurements]
+  ];
+  const coverageHtml=coverageRows.map(([name,count])=>`<div><span>${esc(name)}</span><strong>${count}</strong></div>`).join('');
+  const evidenceBanner=`<div class="evidence-state-note"><strong>${esc(evidenceStateLabel(s))}</strong><p>Documentation coverage is separate from identification, microscopic interpretation, specimen custody, and image publication rights.</p><div class="evidence-coverage" aria-label="Evidence source counts">${coverageHtml}</div><p><strong>Microscopy:</strong> ${coverage.groups.has('Microscopy')?'Images recorded; consult the accession-specific interpretation for validated spore findings.':'No microscopy photographs linked in this view.'} <strong>Identification:</strong> Not established by this coverage label. <strong>Publication rights:</strong> Not established by image presence.</p>${scientificHold(s)?'<p><strong>Scientific publication HOLD:</strong> Existing accession-specific voucher, custody and image-rights requirements remain unresolved.</p>':''}</div>`;
   const eyebrow=s.archiveIndex?`MASTER RECORD ${s.archiveIndex} / ${masterCount}`:'DRIVE ARCHIVE';
   $('main').innerHTML=`<div class="spec-head"><div><div class="eyebrow">${eyebrow} ${fullBadge}</div><h1>${esc(s.code)}</h1><div class="record-status readable-section"><p class="status">${glossaryText(s.status)}</p>${sectionReadButton("Read overview")}</div>${evidenceBanner}</div><div class="navBtns"><button onclick="nav(-1)">← Previous</button><button onclick="nav(1)">Next →</button></div></div><div class="hero"><div class="summary-grid">${sum}</div><aside class="card readable-section"><div class="section-read-head"><h3>Data completeness</h3>${sectionReadButton("Read section")}</div><div class="matrix"><div>Wild + lab pairing</div><div class="${pairClass}">${pairStatus}</div>${mat}</div>${s.sourceLine?`<div class="sourceLine readable-section"><div class="section-read-head"><strong>Source / provenance</strong>${sectionReadButton("Read section")}</div><p>${glossaryText(s.sourceLine)}</p></div>`:''}</aside></div>${renderMeasurements(s)}${galleries||''}${movieGallery||''}${(!galleries&&!movieGallery)?'<div class="empty">No media match the selected filter.</div>':''}`;
   $('recordCount').textContent=`${(s.images||[]).length} source images${(s.movies||[]).length?` · ${(s.movies||[]).length} movies`:''} · ${esc(s.collection)} · ${esc(s.family)}`;
