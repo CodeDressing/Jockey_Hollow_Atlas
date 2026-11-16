@@ -1,0 +1,58 @@
+{
+  "record": "CULT-CHET-LM-01",
+  "title": "Chet's Lion's Mane",
+  "record_type": "Cultivated Lion's Mane customer microscope investigation",
+  "image_intake_status": "Seven originals supplied by researcher; PNG binaries not in GitHub yet",
+  "scientific_note": "Image optical features are described provisionally; basidiospores and active discharge not confirmed",
+  "files": [
+    {
+      "filename": "Lion s mane body (1).png",
+      "bytes": 1345749,
+      "sha256": "da775edf640f22deff8d644edbb9c238e21f8c5f5dc935b0712ce0c8f7736cf3",
+      "category": "Microscopy — fruiting body",
+      "planned_relative_path": "assets/chet-lions-mane-20261116/Lion s mane body (1).png"
+    },
+    {
+      "filename": "Lion s mane body (2).png",
+      "bytes": 1183051,
+      "sha256": "cf4c09ad46b9ea85ac895e1ea0b387096c5fce95724e480f3c079b0a71e40304",
+      "category": "Microscopy — fruiting body",
+      "planned_relative_path": "assets/chet-lions-mane-20261116/Lion s mane body (2).png"
+    },
+    {
+      "filename": "Lion s mane body (3).png",
+      "bytes": 1349044,
+      "sha256": "aff2de235a34010d7dfaf3998a85735d2051a7ee7d8ea06db716fcb9f067204e",
+      "category": "Microscopy — fruiting body",
+      "planned_relative_path": "assets/chet-lions-mane-20261116/Lion s mane body (3).png"
+    },
+    {
+      "filename": "Lions mane hidnoid (1).png",
+      "bytes": 1480712,
+      "sha256": "f0a0c35f34aaa923b75fa50cbef2fa6a3bf0712c2b42f8d8c257f890f8a138ed",
+      "category": "Microscopy — hydnoid tissue",
+      "planned_relative_path": "assets/chet-lions-mane-20261116/Lions mane hidnoid (1).png"
+    },
+    {
+      "filename": "Lions mane hidnoid (2).png",
+      "bytes": 1481198,
+      "sha256": "278424962a8bad38f7ef65fbd66218e0342c1a9e9b393f6bdba8a744d2bcac57",
+      "category": "Microscopy — hydnoid tissue",
+      "planned_relative_path": "assets/chet-lions-mane-20261116/Lions mane hidnoid (2).png"
+    },
+    {
+      "filename": "Lions mane hidnoid (3).png",
+      "bytes": 1510654,
+      "sha256": "6d8817427c1a74974326e674fe17c5a7dad00a9baeb3cc86d6c19e32dc55fe7b",
+      "category": "Microscopy — hydnoid tissue",
+      "planned_relative_path": "assets/chet-lions-mane-20261116/Lions mane hidnoid (3).png"
+    },
+    {
+      "filename": "Lions mane hidnoid (4).png",
+      "bytes": 1497322,
+      "sha256": "27d6e3979c03a6560caa9e79d8ba41262f1c68b953ee63d90fd93457209eb3c5",
+      "category": "Microscopy — hydnoid tissue",
+      "planned_relative_path": "assets/chet-lions-mane-20261116/Lions mane hidnoid (4).png"
+    }
+  ]
+}
