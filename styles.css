@@ -389,3 +389,10 @@
 .evidence-state-note{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:12px;line-height:1.5}
 .evidence-state-note strong{color:var(--warn)}
 .mobile-fullset-panel:has(#mobilePartialSetList) .mobile-fullset-list{max-height:190px;overflow:auto}
+
+/* Evidence source coverage — descriptive, never a species or release certification. */
+.evidence-state-note p{margin:8px 0;line-height:1.5}
+.evidence-coverage{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:7px;margin:9px 0}
+.evidence-coverage>div{display:flex;justify-content:space-between;gap:10px;align-items:center;border:1px solid var(--line);border-radius:6px;padding:7px 9px}
+.evidence-coverage span{color:var(--muted)}
+.evidence-coverage strong{font-variant-numeric:tabular-nums;color:var(--text)}
