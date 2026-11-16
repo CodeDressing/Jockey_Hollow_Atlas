@@ -24,8 +24,8 @@ for(const item of photos){
   assert.ok(fs.statSync(file).size>100,'empty or invalid original: '+rel);
 }
 const app=fs.readFileSync(path.join(root,'app.js'),'utf8');
-assert.match(app,/AN2-F10','scientific hold reference must be retained');
-assert.match(app,/AN2-F12','scientific hold reference must be retained');
-assert.match(app,/AN2-F22','scientific hold reference must be retained');
+assert.match(app,/AN2-F10/,'scientific hold reference must be retained');
+assert.match(app,/AN2-F12/,'scientific hold reference must be retained');
+assert.match(app,/AN2-F22/,'scientific hold reference must be retained');
 assert.match(app,/FULL_DATA_SET_CODES/,'curated set must be preserved');
 console.log('PASS 15 linked JN1-F11 binary assets, accession, uniqueness, preservation guards');
