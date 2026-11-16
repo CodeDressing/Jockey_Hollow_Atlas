@@ -28,3 +28,4 @@ jobs:
           node tests/atlas-media-integrity.cjs
           node tests/chet-lions-mane-search.cjs
           node tests/jn2-f3-full-dataset.cjs
+          node tests/specimen-recovery-20261116.cjs
