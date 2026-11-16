@@ -1,0 +1,71 @@
+{
+  "sprint": "FIELDMASTER 2.1",
+  "date": "2026-10-22",
+  "target": 477,
+  "active_master_claim": 422,
+  "active_standard_ids": 421,
+  "across_nine_fetched_sources_normalized_id_strings": 424,
+  "unconfirmed_extras": [
+    {
+      "id": "AN3-F9",
+      "status": "candidate_in_secondary_master_requires_specimen_validation"
+    },
+    {
+      "id": "AN3-F6",
+      "status": "candidate_in_secondary_master_requires_specimen_validation"
+    },
+    {
+      "id": "EN1-F1920",
+      "status": "possible_concatenation_or_transcription_error_do_not_create_specimen"
+    }
+  ],
+  "verified_additions_to_active_master": 0,
+  "unresolved_target_gap": "477 target not substantiated by available distinct specimen evidence",
+  "sources": [
+    {
+      "name": "ACTIVE",
+      "regex_matched_unique_ids": 421
+    },
+    {
+      "name": "AA",
+      "regex_matched_unique_ids": 388
+    },
+    {
+      "name": "CN_FN",
+      "regex_matched_unique_ids": 112
+    },
+    {
+      "name": "BN",
+      "regex_matched_unique_ids": 132
+    },
+    {
+      "name": "EN",
+      "regex_matched_unique_ids": 32
+    },
+    {
+      "name": "BN6",
+      "regex_matched_unique_ids": 28
+    },
+    {
+      "name": "CN",
+      "regex_matched_unique_ids": 42
+    },
+    {
+      "name": "AN2_396",
+      "regex_matched_unique_ids": 395
+    },
+    {
+      "name": "IS_BN",
+      "regex_matched_unique_ids": 49
+    }
+  ],
+  "source_read_failure": "Older AA Master Total fetch failed; retry required",
+  "rules": [
+    "Current active master is the working baseline, not an automatic scientific authority over original collection notes",
+    "Do not promote candidate IDs based only on text mentions",
+    "Resolve apparent EN1-F1920 merge artifact against original handwritten or photographed labels",
+    "Do not sum counts from overlapping revisions",
+    "Preserve contradictory evidence in provenance before field updates"
+  ],
+  "phase_status": "partial_validation; full 477 canonical reconciliation incomplete"
+}
