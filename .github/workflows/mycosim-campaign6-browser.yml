@@ -9,7 +9,7 @@ permissions:
   contents: read
 jobs:
   browser:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
@@ -25,3 +25,4 @@ jobs:
           python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/mycosim-server.log 2>&1 &
           node tests/mycosim-campaign6-browser.cjs
           node tests/atlas-evidence-tiers.cjs
+          node tests/atlas-media-integrity.cjs
