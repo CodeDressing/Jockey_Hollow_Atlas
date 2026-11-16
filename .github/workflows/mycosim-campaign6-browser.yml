@@ -27,3 +27,4 @@ jobs:
           node tests/atlas-evidence-tiers.cjs
           node tests/atlas-media-integrity.cjs
           node tests/chet-lions-mane-search.cjs
+          node tests/jn2-f3-full-dataset.cjs
