@@ -26,3 +26,4 @@ jobs:
           node tests/mycosim-campaign6-browser.cjs
           node tests/atlas-evidence-tiers.cjs
           node tests/atlas-media-integrity.cjs
+          node tests/chet-lions-mane-search.cjs
