@@ -3,6 +3,13 @@ import {test, expect} from "@playwright/test";
 test.use({screenshot:"only-on-failure"});
 
 const pageUrl="http://127.0.0.1:8765/sandbox.html";
+// QC-001 — Historical mode tests must follow the current guided/advanced UI.
+async function openAdvancedAnatomy(page){
+ const begin=page.locator('#anatomy6-begin');
+ if(await begin.isVisible())await begin.click();
+ const details=page.locator('#tv-anatomy3d .anatomy-controls6');
+ if(!await details.evaluate(el=>el.open))await details.locator('summary').click();
+}
 test("Phases 9-12 browser campaign passes in consolidated workspace",async({page})=>{
  test.setTimeout(120000);
  const errors=[];
@@ -328,6 +335,7 @@ test("Phase 22 shared 3D tissue mode retains original controls and geometry life
  await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
  await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
  await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
+ await openAdvancedAnatomy(page);
  const anatomy=page.locator("#tv-anatomy3d");
  await expect(anatomy).toBeVisible();
  await expect(anatomy.locator("canvas")).toHaveCount(1);
@@ -355,6 +363,7 @@ test("Phase 23 microanatomy shares human WebGL renderer and supports keyboard se
  await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
  await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
  await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
+ await openAdvancedAnatomy(page);
  const anatomy=page.locator("#tv-anatomy3d");
  await anatomy.locator('[data-mode="micro"]').click();
  await expect(anatomy.locator('[data-mode="micro"]')).toHaveAttribute("aria-pressed","true");
@@ -388,6 +397,7 @@ test("Phase 24 molecular motion, scientific caveats and preserved scene controls
  await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
  await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
  await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
+ await openAdvancedAnatomy(page);
  const anatomy=page.locator("#tv-anatomy3d"),lab=anatomy.locator("#myco-dynamics24");
  await expect(lab).toBeVisible();
  await expect(anatomy.locator("canvas")).toHaveCount(1);
@@ -442,6 +452,7 @@ test("Phase 25 improved anatomy fidelity retains existing rendering engine and v
  await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
  await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
  await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
+ await openAdvancedAnatomy(page);
  const anatomy=page.locator("#tv-anatomy3d");
  await page.locator("#anatomy-instructor-tools").evaluate(el=>{el.open=true});
  await expect(anatomy.locator("#anatomy25-fidelity")).toBeVisible();
@@ -469,6 +480,7 @@ test("Phase 26 measures visible browser frames and pauses hidden anatomy renderi
  await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
  await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
  await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
+ await openAdvancedAnatomy(page);
  const anatomy=page.locator("#tv-anatomy3d");
  await anatomy.locator('[data-mode="micro"]').click();
  await anatomy.locator('[data-part="tight23"]').click();
@@ -502,6 +514,7 @@ test("Phase 27 instancing retains semantic selection and beats Phase 26 scene co
  await page.goto(pageUrl,{waitUntil:"domcontentloaded"});
  await expect(page.locator("#myco-lab-nav")).toBeVisible({timeout:45000});
  await page.locator('#myco-lab-nav [data-lab="anatomy"]').click();
+ await openAdvancedAnatomy(page);
  const lab=page.locator("#tv-anatomy3d");
  await lab.locator('[data-mode="micro"]').click();
  await lab.locator('[data-part="bilayer"]').click();

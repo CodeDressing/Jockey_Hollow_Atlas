@@ -1,0 +1,272 @@
+{
+  "originals": [
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (1).png",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "5946db4d4e7ea4f8b19a0dda02eac17a56f4d0bad1feea1f031817edfe05ab49",
+      "research_branch_sha256": "5946db4d4e7ea4f8b19a0dda02eac17a56f4d0bad1feea1f031817edfe05ab49",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (2).png",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "1158dbae4bed6146b24255d200e0f8081cbae0c42c397d565b25998ca71862dc",
+      "research_branch_sha256": "1158dbae4bed6146b24255d200e0f8081cbae0c42c397d565b25998ca71862dc",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (3).png",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "68c628e2a67a156e95874084bc16bfdc2dd356e7fba3d07371669ea8ad9800aa",
+      "research_branch_sha256": "68c628e2a67a156e95874084bc16bfdc2dd356e7fba3d07371669ea8ad9800aa",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (4).png",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "d962cd321dccf82450507c70cb9c2f61840337ab7359d0c1001a0b24ad8b3f06",
+      "research_branch_sha256": "d962cd321dccf82450507c70cb9c2f61840337ab7359d0c1001a0b24ad8b3f06",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (5).png",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "3ef78c3520f0493fc5ddae9740d0c94c791f9395e1a8966934c4ef0bc8148cc9",
+      "research_branch_sha256": "3ef78c3520f0493fc5ddae9740d0c94c791f9395e1a8966934c4ef0bc8148cc9",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (6).png",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "8d470d42c5d234da961815f7046fabbe987c51b611efc51b8b95ce9082315447",
+      "research_branch_sha256": "8d470d42c5d234da961815f7046fabbe987c51b611efc51b8b95ce9082315447",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (7).png",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "1fe20c3a25bf580688ff9e8e4974b1c22750c3c5d8fa4272aea72a1de50da923",
+      "research_branch_sha256": "1fe20c3a25bf580688ff9e8e4974b1c22750c3c5d8fa4272aea72a1de50da923",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (8).png",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "11b9785851459caac319f1f8fc68f5e8268ff044018db59fa7f4feed36001d9a",
+      "research_branch_sha256": "11b9785851459caac319f1f8fc68f5e8268ff044018db59fa7f4feed36001d9a",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (9).png",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "ed6831a564a64986c1456ed253c2f17ec88220bf03f447abc8259cab540aa139",
+      "research_branch_sha256": "ed6831a564a64986c1456ed253c2f17ec88220bf03f447abc8259cab540aa139",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (10).png",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "cf2c278455cd597b626c8b51c16dfd38ad95caf2ed82e2f6b6ee41fd250ffaca",
+      "research_branch_sha256": "cf2c278455cd597b626c8b51c16dfd38ad95caf2ed82e2f6b6ee41fd250ffaca",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (11).png",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "c7bd506e7a39f3a0c27c28c3bb6dfcc1fa5670c01e8d6139f192cb7c8b6823eb",
+      "research_branch_sha256": "c7bd506e7a39f3a0c27c28c3bb6dfcc1fa5670c01e8d6139f192cb7c8b6823eb",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (12).png",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "61958b773e7dad696c2b4f1eb9870804dbf53f1a5cc77552a265fc2a6539547e",
+      "research_branch_sha256": "61958b773e7dad696c2b4f1eb9870804dbf53f1a5cc77552a265fc2a6539547e",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (13).png",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "3c75ca63f4ebdda1eae05c856c8ed24903fb43b53469c2b61d35239c5028afd6",
+      "research_branch_sha256": "3c75ca63f4ebdda1eae05c856c8ed24903fb43b53469c2b61d35239c5028afd6",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (14).png",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "771472f1aa6c220a97f7c798bc2c7ea7ca530d8d33d4d4ef90f93f5c0d2a3c60",
+      "research_branch_sha256": "771472f1aa6c220a97f7c798bc2c7ea7ca530d8d33d4d4ef90f93f5c0d2a3c60",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/lab-prep/AN2-F12 spore print (7).JPG",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "732fca8e329940cd0e26c11390e41691742949146e0ab5433197a656e5e05ce3",
+      "research_branch_sha256": "732fca8e329940cd0e26c11390e41691742949146e0ab5433197a656e5e05ce3",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/lab-prep/AN2-F12 spore print (23).JPG",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "623e706757e1b6a51e28dee4e604968029046b56881bf62df39050c0c34cea35",
+      "research_branch_sha256": "623e706757e1b6a51e28dee4e604968029046b56881bf62df39050c0c34cea35",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/lab-prep/AN2-F12 spore print (25).JPG",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "7b650e26b3affc48ffc21bf5de83e1e2faf513860f1845ed4e5ee1c297634c38",
+      "research_branch_sha256": "7b650e26b3affc48ffc21bf5de83e1e2faf513860f1845ed4e5ee1c297634c38",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/lab-prep/AN2-F12 spore print (26).JPG",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "d2854cd1051609432aaa825d057d948cc6dff76d291b373ba708c079e830669c",
+      "research_branch_sha256": "d2854cd1051609432aaa825d057d948cc6dff76d291b373ba708c079e830669c",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/lab-prep/AN2-F12 spore print (27).JPG",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "60490154734a78e72033e13be4aff1c249c55b3005d4a17be5ab867cf19c6a26",
+      "research_branch_sha256": "60490154734a78e72033e13be4aff1c249c55b3005d4a17be5ab867cf19c6a26",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/IMG_6021.jpg",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "df13ba06b5e23e7f649b17393ef3643b013b598d2ada3a82eac4cf9a2369e16a",
+      "research_branch_sha256": "df13ba06b5e23e7f649b17393ef3643b013b598d2ada3a82eac4cf9a2369e16a",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/IMG_6022.jpg",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "e7cd697f870b87c515bfd5a0187fa3861c640a207281d019f6f3ab8ea6b1d8d7",
+      "research_branch_sha256": "e7cd697f870b87c515bfd5a0187fa3861c640a207281d019f6f3ab8ea6b1d8d7",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/IMG_6023.jpg",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "f73223886088355458d6becb4987f711abc30ead711dc050f2320485d920fb5b",
+      "research_branch_sha256": "f73223886088355458d6becb4987f711abc30ead711dc050f2320485d920fb5b",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F12",
+      "path": "assets/an2-f12/IMG_6024.jpg",
+      "source_branch": "feature/rutgers-r3-voucher-media-crosswalk-20261101",
+      "expected_sha256": "43cbdd1e01a019fb145dac21a143c16f0c57b6d32cc4df166c50eec86bd8050e",
+      "research_branch_sha256": "43cbdd1e01a019fb145dac21a143c16f0c57b6d32cc4df166c50eec86bd8050e",
+      "research_branch_integrity": "PASS",
+      "present_on_main": true,
+      "main_integrity": "PASS"
+    },
+    {
+      "accession": "AN2-F22",
+      "path": "assets/an2-f22/IMG_6086.jpg",
+      "source_branch": "feature/an2-f22-deof-photo-intake-20261022",
+      "expected_sha256": "44aa2cbef78359490e459f57c996fca477d02b573ce0a6ede430394fb60d0337",
+      "research_branch_sha256": "44aa2cbef78359490e459f57c996fca477d02b573ce0a6ede430394fb60d0337",
+      "research_branch_integrity": "PASS",
+      "present_on_main": false,
+      "main_integrity": "BLOCKED: retained in source research branch, publication rights unresolved"
+    },
+    {
+      "accession": "AN2-F22",
+      "path": "assets/an2-f22/IMG_6087.jpg",
+      "source_branch": "feature/an2-f22-deof-photo-intake-20261022",
+      "expected_sha256": "0cedb1fa137f0a5d7a0c19a0203e8fe4b4e9d71332295e303ca9a50eab9ff6f3",
+      "research_branch_sha256": "0cedb1fa137f0a5d7a0c19a0203e8fe4b4e9d71332295e303ca9a50eab9ff6f3",
+      "research_branch_integrity": "PASS",
+      "present_on_main": false,
+      "main_integrity": "BLOCKED: retained in source research branch, publication rights unresolved"
+    },
+    {
+      "accession": "AN2-F22",
+      "path": "assets/an2-f22/IMG_6089.jpg",
+      "source_branch": "feature/an2-f22-deof-photo-intake-20261022",
+      "expected_sha256": "b7a66c915864ed8b07c62baa57b0534105d2f80d5f643d2ccf2abdfe99423b34",
+      "research_branch_sha256": "b7a66c915864ed8b07c62baa57b0534105d2f80d5f643d2ccf2abdfe99423b34",
+      "research_branch_integrity": "PASS",
+      "present_on_main": false,
+      "main_integrity": "BLOCKED: retained in source research branch, publication rights unresolved"
+    }
+  ],
+  "summary": {
+    "originals_checked": 26,
+    "source_branch_sha256_pass": 26,
+    "main_sha256_pass": 23,
+    "not_on_main": 3,
+    "archive_private_bytes_retrieved_now": false,
+    "rights": "BLOCKED"
+  }
+}

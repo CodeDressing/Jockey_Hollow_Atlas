@@ -33,7 +33,9 @@ function check(id,pass,evidence){result.checks.push({id,status:pass?'PASS':'FAIL
    const census=await page.evaluate(()=>{
     const rows=[];
     for(const s of data){
-     setCurrent(s.code);
+     // Render census without generating hundreds of browser history mutations.
+     // Individual navigation, hash handling and keyboard actions are tested below.
+     current=s.code;renderSpec();
      const host=document.getElementById('main');
      rows.push({code:s.code,state:fullDataSetState(s),images:(s.images||[]).length,
       title:host.querySelector('h1')?.textContent,
@@ -56,15 +58,19 @@ function check(id,pass,evidence){result.checks.push({id,status:pass?'PASS':'FAIL
    const wrap=page.locator('#main .image-wrap[data-file^="assets/"]').first();
    await wrap.scrollIntoViewIfNeeded();
    await page.waitForFunction(()=>{const i=document.querySelector('#main .image-wrap[data-file^="assets/"] img');return i?.complete&&i.naturalWidth>0;});
-   await wrap.click();
+   await wrap.focus();await page.keyboard.press('Enter');
    await page.waitForFunction(()=>document.getElementById('viewerImg').naturalWidth>0);
    check(name+'/viewer-decode',true,await page.locator('#viewerImg').evaluate(i=>({width:i.naturalWidth,height:i.naturalHeight})));
    check(name+'/viewer-dialog',await page.locator('#viewer').getAttribute('role')==='dialog',{});
+   check(name+'/viewer-focus',await page.locator('#closeViewer').evaluate(el=>el===document.activeElement),{});
+   await page.keyboard.press('Tab');
+   check(name+'/viewer-focus-cycle',await page.locator('#zoomOut').evaluate(el=>el===document.activeElement),{});
    const before=await page.locator('#viewerImg').evaluate(i=>i.style.transform);
    await page.locator('#zoomIn').click();
    check(name+'/zoom-control',before!==await page.locator('#viewerImg').evaluate(i=>i.style.transform),{});
    result.checks.push({id:name+'/physical-pinch',status:'NOT TESTED',evidence:'No physical device or trusted multitouch evidence available.'});
-   await page.locator('#closeViewer').click();
+   await page.keyboard.press('Escape');
+   check(name+'/viewer-return-focus',await wrap.evaluate(el=>el===document.activeElement),{});
    const injection=await page.evaluate(()=>{
     const s=data.find(s=>s.code==='JN2-F3'),old=s.status;
     s.status='<img id="qc-injection" src=x onerror="window.qcInjection=1">';renderSpec();

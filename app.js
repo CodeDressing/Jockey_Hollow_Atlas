@@ -572,6 +572,12 @@ function renderSpec(){
   $('recordCount').textContent=`${(s.images||[]).length} source images${(s.movies||[]).length?` · ${(s.movies||[]).length} movies`:''} · ${esc(displayLabel(s.collection))} · ${esc(s.family)}`;
   document.querySelectorAll('.image-wrap').forEach(el=>{
     el.onclick=()=>openViewer(el.dataset.file,el.dataset.caption,el.dataset.name);
+    el.setAttribute('role','button');
+    el.tabIndex=0;
+    el.setAttribute('aria-label','Inspect '+(el.dataset.caption||el.dataset.name||'photograph'));
+    el.onkeydown=e=>{
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}
+    };
     const thumbnail=el.querySelector('img');
     if(!thumbnail)return;
     thumbnail.onerror=()=>{
@@ -654,12 +660,18 @@ $('mSearch').oninput=e=>syncSearch(e.target.value);
 $('mSpec').onchange=e=>setCurrent(e.target.value);
 
 let scale=1,tx=0,ty=0,active=new Map(),pinchDist=0,pinchScale=1;
+let viewerReturnFocus=null,viewerPriorOverflow='';
 const viewer=$('viewer'),img=$('viewerImg'),stage=$('viewerStage');
 function apply(){img.style.transform=`translate(calc(-50% + ${tx}px),calc(-50% + ${ty}px)) scale(${scale})`}
 function clamp(v){return Math.max(.05,Math.min(20,v))}
 function fit(){tx=ty=0;requestAnimationFrame(()=>{if(!img.naturalWidth)return;scale=Math.min(stage.clientWidth/img.naturalWidth,stage.clientHeight/img.naturalHeight,.98);apply()})}
 function openViewer(src,cap,name){
+  if(!viewer.classList.contains('open')){
+    viewerReturnFocus=document.activeElement;
+    viewerPriorOverflow=document.body.style.overflow;
+  }
   $('viewerCap').textContent=cap;$('viewerName').textContent=name;
+  img.alt=cap||name||'Specimen photograph';
   const localOriginal=!/^https?:\/\//i.test(src);
   $('openOriginal').hidden=!localOriginal;
   $('openOriginal').onclick=localOriginal?()=>window.open(src,'_blank','noopener'):null;
@@ -668,8 +680,15 @@ function openViewer(src,cap,name){
     $('viewerName').textContent=name+' · Image could not load. Try Original.';
   };
   img.src=src;viewer.classList.add('open');document.body.style.overflow='hidden';
+  $('closeViewer').focus();
 }
-function closeViewer(){viewer.classList.remove('open');img.src='';$('openOriginal').hidden=false;active.clear();document.body.style.overflow=''}
+function closeViewer(){
+  if(!viewer.classList.contains('open'))return;
+  viewer.classList.remove('open');img.src='';$('openOriginal').hidden=false;active.clear();
+  document.body.style.overflow=viewerPriorOverflow;
+  if(viewerReturnFocus?.isConnected)viewerReturnFocus.focus({preventScroll:true});
+  viewerReturnFocus=null;
+}
 $('closeViewer').onclick=closeViewer;$('fit').onclick=fit;$('oneToOne').onclick=()=>{scale=1;tx=ty=0;apply()};
 $('zoomIn').onclick=()=>{scale=clamp(scale*1.25);apply()};$('zoomOut').onclick=()=>{scale=clamp(scale/1.25);apply()};
 stage.onwheel=e=>{e.preventDefault();scale=clamp(scale*(e.deltaY<0?1.12:.89));apply()};
@@ -677,7 +696,16 @@ stage.ondblclick=fit;
 stage.onpointerdown=e=>{stage.setPointerCapture?.(e.pointerId);active.set(e.pointerId,{x:e.clientX,y:e.clientY});if(active.size===2){const p=[...active.values()];pinchDist=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y);pinchScale=scale}};
 stage.onpointermove=e=>{if(!active.has(e.pointerId))return;const old=active.get(e.pointerId);active.set(e.pointerId,{x:e.clientX,y:e.clientY});if(active.size===2){const p=[...active.values()];const d=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y);if(pinchDist)scale=clamp(pinchScale*d/pinchDist)}else{tx+=e.clientX-old.x;ty+=e.clientY-old.y}apply()};
 const end=e=>active.delete(e.pointerId);stage.onpointerup=end;stage.onpointercancel=end;
-window.onkeydown=e=>{if(e.key==='Escape')closeViewer()};
+window.onkeydown=e=>{
+  if(!viewer.classList.contains('open'))return;
+  if(e.key==='Escape'){e.preventDefault();closeViewer();return;}
+  if(e.key==='Tab'){
+    const controls=[...viewer.querySelectorAll('button')].filter(el=>!el.hidden&&!el.disabled);
+    const first=controls[0],last=controls[controls.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+  }
+};
 window.onresize=()=>viewer.classList.contains('open')&&fit();
 
 fillFilters();renderList();renderSpec();

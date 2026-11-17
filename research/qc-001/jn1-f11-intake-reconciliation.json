@@ -1,0 +1,265 @@
+[
+  {
+    "group": "originals",
+    "filename": "JN1-F11 (1).png",
+    "intake_sha256": "5ded20203368168e75879c2c6fee89d0bcc31256e8ceca2b4bb748dcc3a34f14",
+    "exact_original_on_main": null,
+    "same_name_assets": [
+      {
+        "path": "assets/JN1-F11 (1).png",
+        "bytes": 1486271,
+        "sha256": "09e5a2b1b2d41b62d2f8a631842120637aa8f8f08a29626f1e536899c7ed60c5",
+        "width": 1083,
+        "height": 809,
+        "format": "PNG",
+        "decode": "PASS",
+        "http_status": 200,
+        "mime": "image/png",
+        "http_bytes": 1486271,
+        "cache_control": "public, max-age=0, s-maxage=300",
+        "http_sha256": "09e5a2b1b2d41b62d2f8a631842120637aa8f8f08a29626f1e536899c7ed60c5",
+        "http_identity": "PASS",
+        "http_seconds": 3.753
+      }
+    ],
+    "status": "BLOCKED"
+  },
+  {
+    "group": "originals",
+    "filename": "JN1-F11 (2).png",
+    "intake_sha256": "1cffcb07d4f2676b9c08b38a222ecd3d3cd4800b8a1f526ca52a3af64e41b412",
+    "exact_original_on_main": null,
+    "same_name_assets": [
+      {
+        "path": "assets/JN1-F11 (2).png",
+        "bytes": 1830327,
+        "sha256": "ab3c51f7de77f5ac5a47ef956b31cd6986f6a991bc5a36a29020cd90dcc40c06",
+        "width": 1092,
+        "height": 822,
+        "format": "PNG",
+        "decode": "PASS",
+        "http_status": 200,
+        "mime": "image/png",
+        "http_bytes": 1830327,
+        "cache_control": "public, max-age=0, s-maxage=300",
+        "http_sha256": "ab3c51f7de77f5ac5a47ef956b31cd6986f6a991bc5a36a29020cd90dcc40c06",
+        "http_identity": "PASS",
+        "http_seconds": 2.639
+      }
+    ],
+    "status": "BLOCKED"
+  },
+  {
+    "group": "originals",
+    "filename": "JN1-F11 (3).png",
+    "intake_sha256": "fbbc8b875b2eb33f96d9b6083be5985cd4dc8d8d9fb7ecb6fbd511c7d8ea351c",
+    "exact_original_on_main": null,
+    "same_name_assets": [
+      {
+        "path": "assets/JN1-F11 (3).png",
+        "bytes": 1312901,
+        "sha256": "520e37b554b2c0887589446f2a5bddffd6f9dcabc4a5d7cc56f96e7902dde6d3",
+        "width": 1083,
+        "height": 818,
+        "format": "PNG",
+        "decode": "PASS",
+        "http_status": 200,
+        "mime": "image/png",
+        "http_bytes": 1312901,
+        "cache_control": "public, max-age=0, s-maxage=300",
+        "http_sha256": "520e37b554b2c0887589446f2a5bddffd6f9dcabc4a5d7cc56f96e7902dde6d3",
+        "http_identity": "PASS",
+        "http_seconds": 2.496
+      }
+    ],
+    "status": "BLOCKED"
+  },
+  {
+    "group": "originals",
+    "filename": "JN1-F11 (4).png",
+    "intake_sha256": "bb7dfb0b44ff6a33064d92b8920051a074bc5b06186eedf4b64ae920f76e1410",
+    "exact_original_on_main": null,
+    "same_name_assets": [
+      {
+        "path": "assets/JN1-F11 (4).png",
+        "bytes": 1551930,
+        "sha256": "ee9207ba537df8f58b1c4ac6b4ab39ce54955e352b90406954d0d72abc0a97d5",
+        "width": 1081,
+        "height": 791,
+        "format": "PNG",
+        "decode": "PASS",
+        "http_status": 200,
+        "mime": "image/png",
+        "http_bytes": 1551930,
+        "cache_control": "public, max-age=0, s-maxage=300",
+        "http_sha256": "ee9207ba537df8f58b1c4ac6b4ab39ce54955e352b90406954d0d72abc0a97d5",
+        "http_identity": "PASS",
+        "http_seconds": 2.565
+      }
+    ],
+    "status": "BLOCKED"
+  },
+  {
+    "group": "originals",
+    "filename": "JN1-F11 (5).png",
+    "intake_sha256": "167c2d494a189aa02510280bea70ede939938390de832664e76b1365ea833491",
+    "exact_original_on_main": null,
+    "same_name_assets": [
+      {
+        "path": "assets/JN1-F11 (5).png",
+        "bytes": 1569951,
+        "sha256": "ab7cc0808e2af4f8c1f76373997018196ac35ccdc36ebbea5261377f909b8839",
+        "width": 1081,
+        "height": 804,
+        "format": "PNG",
+        "decode": "PASS",
+        "http_status": 200,
+        "mime": "image/png",
+        "http_bytes": 1569951,
+        "cache_control": "public, max-age=0, s-maxage=300",
+        "http_sha256": "ab7cc0808e2af4f8c1f76373997018196ac35ccdc36ebbea5261377f909b8839",
+        "http_identity": "PASS",
+        "http_seconds": 2.453
+      }
+    ],
+    "status": "BLOCKED"
+  },
+  {
+    "group": "originals",
+    "filename": "JN1-F11 (6).png",
+    "intake_sha256": "f35eb6a2b86ae044260cca3af4ab06b9f6656bcf2b5ef2164c4741213f4f87d9",
+    "exact_original_on_main": null,
+    "same_name_assets": [
+      {
+        "path": "assets/JN1-F11 (6).png",
+        "bytes": 1457273,
+        "sha256": "077dfd867196173e8963a656935e4ba82be7bd2ea901266a37e0f61abf2d7810",
+        "width": 1094,
+        "height": 798,
+        "format": "PNG",
+        "decode": "PASS",
+        "http_status": 200,
+        "mime": "image/png",
+        "http_bytes": 1457273,
+        "cache_control": "public, max-age=0, s-maxage=300",
+        "http_sha256": "077dfd867196173e8963a656935e4ba82be7bd2ea901266a37e0f61abf2d7810",
+        "http_identity": "PASS",
+        "http_seconds": 2.477
+      }
+    ],
+    "status": "BLOCKED"
+  },
+  {
+    "group": "originals",
+    "filename": "JN1-F11 (7).png",
+    "intake_sha256": "28270d14c6ade4d80c01bf782e41c176fde3d1b5fbf9dcd55690294f0afee308",
+    "exact_original_on_main": null,
+    "same_name_assets": [
+      {
+        "path": "assets/JN1-F11 (7).png",
+        "bytes": 1152199,
+        "sha256": "344e9b0ee80af8c6d6f3c9c76ec336f1d4e3bd89646256d555a147f9a310abdf",
+        "width": 1058,
+        "height": 800,
+        "format": "PNG",
+        "decode": "PASS",
+        "http_status": 200,
+        "mime": "image/png",
+        "http_bytes": 1152199,
+        "cache_control": "public, max-age=0, s-maxage=300",
+        "http_sha256": "344e9b0ee80af8c6d6f3c9c76ec336f1d4e3bd89646256d555a147f9a310abdf",
+        "http_identity": "PASS",
+        "http_seconds": 2.517
+      }
+    ],
+    "status": "BLOCKED"
+  },
+  {
+    "group": "field_originals",
+    "filename": "IMG_5769.jpg",
+    "intake_sha256": "6b46fd9b0d4705b0816ae3437cd8d8538ac3dd749c1c4ce4692e5f75ca84655a",
+    "exact_original_on_main": "assets/JN1-F11  (9)feild .jpg",
+    "same_name_assets": [],
+    "status": "PASS"
+  },
+  {
+    "group": "field_originals",
+    "filename": "IMG_5770.jpg",
+    "intake_sha256": "ff4499678fafaaeed3ecfde6a495e3d160d4786e31bf5052f7316ec7a60cc1f1",
+    "exact_original_on_main": "assets/JN1-F11  (10)feild .jpg",
+    "same_name_assets": [],
+    "status": "PASS"
+  },
+  {
+    "group": "field_originals",
+    "filename": "IMG_5771.jpg",
+    "intake_sha256": "758aa7f166544d438afe49163aacd5c621f6468454e290bbe590e201a8ad4a74",
+    "exact_original_on_main": "assets/JN1-F11  (11)feild .jpg",
+    "same_name_assets": [],
+    "status": "PASS"
+  },
+  {
+    "group": "field_originals",
+    "filename": "IMG_5772.jpg",
+    "intake_sha256": "edaf7f2c7e2e254949bd55ebe897f986ac8aadcceae3a107f0398714b5feceb4",
+    "exact_original_on_main": "assets/JN1-F11  (12)feild .jpg",
+    "same_name_assets": [],
+    "status": "PASS"
+  },
+  {
+    "group": "field_originals",
+    "filename": "IMG_5773.jpg",
+    "intake_sha256": "37e518120afbbf16a669c3b6bb6cfe08be2327f1ddde6a001f835eabb6a2bd22",
+    "exact_original_on_main": "assets/JN1-F11  (13)feild .jpg",
+    "same_name_assets": [],
+    "status": "PASS"
+  },
+  {
+    "group": "field_originals",
+    "filename": "IMG_5774.jpg",
+    "intake_sha256": "7c87f8ee340e7cea269ef988196321c6b15c903de0668ef59453f4f0270ee182",
+    "exact_original_on_main": "assets/JN1-F11  (14)feild .jpg",
+    "same_name_assets": [],
+    "status": "PASS"
+  },
+  {
+    "group": "field_originals",
+    "filename": "IMG_5775.jpg",
+    "intake_sha256": "eab8d605ba1195729021def535dcbba96bcf5ac3c47edf6bd799bc1408f56c1b",
+    "exact_original_on_main": "assets/JN1-F11  (15)feild .jpg",
+    "same_name_assets": [],
+    "status": "PASS"
+  },
+  {
+    "group": "field_originals",
+    "filename": "IMG_5776.jpg",
+    "intake_sha256": "02fa1b1b373ecff783df20bbdd32c6bef790540b871fdc81767d61b763cb506e",
+    "exact_original_on_main": "assets/JN1-F11  (8)feild .jpg",
+    "same_name_assets": [],
+    "status": "PASS"
+  },
+  {
+    "group": "additional_preparation_originals",
+    "filename": "JN1-F11 V1 .JPG",
+    "intake_sha256": "2ec21cb3daa75be47f04e3d6353ad44bbdd580887e1d0c50c9aeb8c894aef108",
+    "exact_original_on_main": null,
+    "same_name_assets": [],
+    "status": "BLOCKED"
+  },
+  {
+    "group": "additional_preparation_originals",
+    "filename": "JN1-F11 V2.JPG",
+    "intake_sha256": "1bf529e987dfe91f7ecc120f3583251b6dce7be4eb2e1959388b15b949c5102a",
+    "exact_original_on_main": null,
+    "same_name_assets": [],
+    "status": "BLOCKED"
+  },
+  {
+    "group": "additional_preparation_originals",
+    "filename": "JN1-F11 V3.JPG",
+    "intake_sha256": "5e90393e0ead2a99bbc7e16ed1ed57a8c9dfe787b15629b4fe40f222262088a7",
+    "exact_original_on_main": null,
+    "same_name_assets": [],
+    "status": "BLOCKED"
+  }
+]
