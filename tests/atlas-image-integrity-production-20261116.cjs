@@ -61,7 +61,9 @@ async function checkHttp(url,filepath) {
     const thumbs=page.locator('.image-wrap img');
     assert.ok(await thumbs.count()>0,id+' has images');
     const first=thumbs.first();await first.scrollIntoViewIfNeeded();
-    await page.waitForFunction(()=>{const img=document.querySelector('.image-wrap img');return img&&img.complete&&img.naturalWidth>0;},null,{timeout:20000});
+    console.log('DIAG requesting',name,id,await first.getAttribute('src'));
+    try{await page.waitForFunction(()=>{const img=document.querySelector('.image-wrap img');return img&&img.complete&&img.naturalWidth>0;},null,{timeout:12000});}
+    catch(e){console.error('DIAG preview failed',name,id,await first.evaluate(el=>({src:el.src,complete:el.complete,naturalWidth:el.naturalWidth,loading:el.loading,html:el.parentElement.outerHTML.slice(0,350)})));throw e;}
     assert.ok(await first.evaluate(im=>im.naturalWidth>0),id+' thumbnail decoded');
     if(name.startsWith('WebKit')){
      assert.equal(await page.locator('.sidebar').isVisible(),false,'iPhone sidebar hidden');
