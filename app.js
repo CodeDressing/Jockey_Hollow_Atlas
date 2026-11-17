@@ -535,7 +535,7 @@ function renderSpec(){
   const mat=effectiveCompleteness.map(([k,v])=>`<div>${esc(k)}</div><div class="${cls(v)}">${esc(v)}</div>`).join('');
   const pairStatus=hasWild&&hasLab?'COMPLETE':(!hasWild&&!hasLab?'MISSING WILD + LAB':(!hasWild?'MISSING WILD':'MISSING LAB'));
   const pairClass=hasWild&&hasLab?'yes':'no';
-  const galleries=Object.entries(groups).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map(im=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-caption="${esc(im.caption)}" data-name="${esc(im.filename)}"><img loading="lazy" src="${esc(im.thumb)}" alt="${esc(im.caption)}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${esc(im.caption)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}</div></article>`).join('')}</div></section>`).join('');
+  const galleries=Object.entries(groups).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map((im,i)=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-caption="${esc(im.caption)}" data-name="${esc(im.filename)}"><img loading="${i<2?'eager':'lazy'}" decoding="async" src="${esc(im.thumb)}" alt="${esc(im.caption)}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${esc(im.caption)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}</div></article>`).join('')}</div></section>`).join('');
   const movieRows=(s.movies||[]).filter(m=>imageType==='ALL'||imageType==='Movie / video');
   const movieGallery=movieRows.length?`<section class="section"><h2>Movie / video <span>${movieRows.length}</span></h2><div class="gallery">${movieRows.map(m=>`<article class="image-card movie-card"><div class="movie-wrap">${m.preview?`<iframe src="${esc(m.preview)}" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>`:`<img src="${esc(m.poster)}" alt="${esc(m.caption)}">`}</div><div class="caption"><strong>${esc(m.caption)}</strong><code>${esc(m.sourceFilename||m.filename)}</code>${m.durationSeconds?`<small class="drive-source">Duration: ${Math.round(m.durationSeconds)} seconds</small>`:''}${m.note?`<small class="drive-source">${esc(m.note)}</small>`:''}${m.driveView?`<a class="movie-link" href="${esc(m.driveView)}" target="_blank" rel="noopener">Open movie in Drive</a>`:''}</div></article>`).join('')}</div></section>`:'';
   const recordState=fullDataSetState(s);
@@ -553,7 +553,28 @@ function renderSpec(){
   const eyebrow=s.archiveIndex?`MASTER RECORD ${s.archiveIndex} / ${masterCount}`:'DRIVE ARCHIVE';
   $('main').innerHTML=`<div class="spec-head"><div><div class="eyebrow">${eyebrow} ${fullBadge}</div><h1>${esc(s.code)}</h1><div class="record-status readable-section"><p class="status">${glossaryText(s.status)}</p>${sectionReadButton("Read overview")}</div>${evidenceBanner}</div><div class="navBtns"><button onclick="nav(-1)">← Previous</button><button onclick="nav(1)">Next →</button></div></div><div class="hero"><div class="summary-grid">${sum}</div><aside class="card readable-section"><div class="section-read-head"><h3>Data completeness</h3>${sectionReadButton("Read section")}</div><div class="matrix"><div>Wild + lab pairing</div><div class="${pairClass}">${pairStatus}</div>${mat}</div>${s.sourceLine?`<div class="sourceLine readable-section"><div class="section-read-head"><strong>Source / provenance</strong>${sectionReadButton("Read section")}</div><p>${glossaryText(s.sourceLine)}</p></div>`:''}</aside></div>${renderMeasurements(s)}${galleries||''}${movieGallery||''}${(!galleries&&!movieGallery)?'<div class="empty">No media match the selected filter.</div>':''}`;
   $('recordCount').textContent=`${(s.images||[]).length} source images${(s.movies||[]).length?` · ${(s.movies||[]).length} movies`:''} · ${esc(s.collection)} · ${esc(s.family)}`;
-  document.querySelectorAll('.image-wrap').forEach(el=>el.onclick=()=>openViewer(el.dataset.file,el.dataset.caption,el.dataset.name));
+  document.querySelectorAll('.image-wrap').forEach(el=>{
+    el.onclick=()=>openViewer(el.dataset.file,el.dataset.caption,el.dataset.name);
+    const thumbnail=el.querySelector('img');
+    if(!thumbnail)return;
+    thumbnail.onerror=()=>{
+      const original=el.dataset.file;
+      if(thumbnail.dataset.originalTried!=='1'&&original&&thumbnail.getAttribute('src')!==original){
+        thumbnail.dataset.originalTried='1';
+        thumbnail.src=original;
+        return;
+      }
+      thumbnail.onerror=null;
+      thumbnail.removeAttribute('loading');
+      thumbnail.alt='Photograph unavailable. Tap to open the original image.';
+      thumbnail.style.display='none';
+      const note=document.createElement('span');
+      note.className='image-load-error';
+      note.textContent='Preview unavailable · tap to open original';
+      el.appendChild(note);
+    };
+    if(thumbnail.complete&&thumbnail.naturalWidth===0)thumbnail.onerror();
+  });
 }
 
 $('main').onclick=e=>{
@@ -614,7 +635,11 @@ function clamp(v){return Math.max(.05,Math.min(20,v))}
 function fit(){tx=ty=0;requestAnimationFrame(()=>{if(!img.naturalWidth)return;scale=Math.min(stage.clientWidth/img.naturalWidth,stage.clientHeight/img.naturalHeight,.98);apply()})}
 function openViewer(src,cap,name){
   $('viewerCap').textContent=cap;$('viewerName').textContent=name;$('openOriginal').onclick=()=>window.open(src,'_blank');
-  img.onload=fit;img.src=src;viewer.classList.add('open');document.body.style.overflow='hidden';
+  img.onload=fit;
+  img.onerror=()=>{
+    $('viewerName').textContent=name+' · Image could not load. Try Original.';
+  };
+  img.src=src;viewer.classList.add('open');document.body.style.overflow='hidden';
 }
 function closeViewer(){viewer.classList.remove('open');img.src='';active.clear();document.body.style.overflow=''}
 $('closeViewer').onclick=closeViewer;$('fit').onclick=fit;$('oneToOne').onclick=()=>{scale=1;tx=ty=0;apply()};
