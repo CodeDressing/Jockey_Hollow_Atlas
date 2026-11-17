@@ -25,7 +25,7 @@ function driveCategory(p){
   const n=String(p.filename||'').toUpperCase();
   if(n.includes('SPMV')||n.includes('MICRO')) return 'Microscopy';
   if(n.includes('SPV')||/SP(?:\D|$)/.test(n)) return 'Spore print / preparation';
-  return 'Drive archive / additional photo';
+  return 'Additional research photographs';
 }
 function mergeDrivePhotos(){
   const byCode=new Map(data.map(s=>[String(s.code||'').toUpperCase(),s]));
@@ -368,7 +368,7 @@ const FULL_DATA_SET_CODES=new Set(['JN2-F3','AN2-F3','AN2-F7','AN2-F9','AN2-F12'
 const linkedAccession=decodeURIComponent(window.location.hash.slice(1)).trim().toUpperCase();
 let current=data.find(s=>String(s.code||'').toUpperCase()===linkedAccession)?.code||data[0]?.code||null,filter='',family='ALL',collection='ALL',imageType='ALL',workflow='ALL';
 const esc=s=>String(s??'').replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
-const displayLabel=s=>String(s??'').replace(/Google Drive/gi,'research archive').replace(/Drive-only/gi,'archive-only');
+const displayLabel=s=>String(s??'').replace(/Google Drive/gi,'research archive').replace(/Drive-only/gi,'archive-only').replace(/Drive archive/gi,'research archive');
 const cls=v=>{v=String(v||'').toLowerCase();return v==='yes'?'yes':v==='no'?'no':'partial'};
 const families=[...new Set(data.map(x=>x.family).filter(Boolean))];
 const collections=[...new Set(data.map(x=>x.collection).filter(Boolean))];
@@ -463,7 +463,7 @@ function renderList(){
   document.querySelectorAll('.spec-btn').forEach(b=>b.onclick=()=>setCurrent(b.dataset.code));
   $('mSpec').innerHTML=rows.map(s=>`<option value="${esc(s.code)}" ${s.code===current?'selected':''}>${esc(s.code)} — ${(s.images||[]).length} images${(s.movies||[]).length?` · ${(s.movies||[]).length} movies`:''}</option>`).join('');
   const archiveCount=Math.max(0,data.length-masterCount);
-  $('resultCount').textContent=`${rows.length} of ${data.length} records · ${masterCount} master + ${archiveCount} Drive archive`;
+  $('resultCount').textContent=`${rows.length} of ${data.length} records · ${masterCount} master + ${archiveCount} research archive`;
   renderFullSetList();
   renderPartialSetList();
 }
