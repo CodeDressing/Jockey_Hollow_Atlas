@@ -1,0 +1,94 @@
+{
+  "accession": "JN1-F29",
+  "intake_date": "2026-11-17",
+  "description": "Researcher-supplied microscopy screenshots containing original instrument annotations. Calibration, microscopic identity and spore maturity not independently authenticated.",
+  "source": "Uploader reported personally acquiring microscope images 2026-11-17",
+  "publication_authority": "Uploaded by researcher and explicitly authorized for public Atlas release in conversation; this does not confer rights to other sources",
+  "images": [
+    {
+      "filename": "JN1-F29 SPM (1).png",
+      "sha256": "a7ecef32af109774a02e059731d61f6ce6769e9e7f653e843f9fea6d63934468",
+      "bytes": 1357443
+    },
+    {
+      "filename": "JN1-F29 SPM (2).png",
+      "sha256": "35ce54e26bdc1ee6343ebbf754fb61d96c3b67c19621257da769504a5e4e2b82",
+      "bytes": 1389099
+    },
+    {
+      "filename": "JN1-F29 SPM (3).png",
+      "sha256": "8f0f1970520798afa01487a0a4a2bc80b8dd9c239c08d80c659660dc70c8aa8b",
+      "bytes": 1374145
+    },
+    {
+      "filename": "JN1-F29 SPM (4).png",
+      "sha256": "62258b06b33a2ae4f2625d403324bccf62f43dd3debd1c02213d42fdd4b8b5d2",
+      "bytes": 1338672
+    },
+    {
+      "filename": "JN1-F29 SPM (5).png",
+      "sha256": "c86dae3a855e4c7a0bcdc83ab1760f64f974a53d753aba2be8ed26077a0611f0",
+      "bytes": 1439416
+    },
+    {
+      "filename": "JN1-F29 SPM (6).png",
+      "sha256": "df6077dd20bb319ae94302c5c2df73b6b73455b046af66ae98e4722abc9c89a1",
+      "bytes": 1387378
+    },
+    {
+      "filename": "JN1-F29 SPM (7).png",
+      "sha256": "d520bb3d48719001b366fe49d7b5fb4dfc6361ff1209509b39ce13af04f1fdba",
+      "bytes": 1480739
+    },
+    {
+      "filename": "JN1-F29 SPM (8).png",
+      "sha256": "376cca7cf6f1febbdc0a841ecb258d192b3a1640fffe920838eb0b0c6f87e8df",
+      "bytes": 1425972
+    },
+    {
+      "filename": "JN1-F29 SPM (9).png",
+      "sha256": "7374e1a980e56eadd484d18b5ec7449bd65f8c5e637b364c903f73fbcfe80414",
+      "bytes": 20368
+    },
+    {
+      "filename": "JN1-F29 SPM (10).png",
+      "sha256": "70e34ffc7a3f2ecc364896e9d5634f108d87d4a49242a69aa81f202db401969d",
+      "bytes": 1387641
+    },
+    {
+      "filename": "JN1-F29 SPM (11).png",
+      "sha256": "9d222f7a9d90722dc266eb041c1ed338e1d95068651d549d1c2e7fa17201a641",
+      "bytes": 1445208
+    },
+    {
+      "filename": "JN1-F29 SPM (12).png",
+      "sha256": "300e9e42ab74b4a4938277b4678111efdc307b21574439873413f065b23c9e68",
+      "bytes": 321544
+    },
+    {
+      "filename": "JN1-F29 SPM (13).png",
+      "sha256": "61477c28ab79591c0a3229877b5c38afacd7d3b01c82081bee89569776e6f389",
+      "bytes": 553631
+    },
+    {
+      "filename": "JN1-F29 SPM (14).png",
+      "sha256": "ce84bf1bae5085f50bd0f7b3ec8c87d69b79f973f9569e60cdbb37b4eee34391",
+      "bytes": 549762
+    },
+    {
+      "filename": "JN1-F29 SPM (15).png",
+      "sha256": "2c06fef7cb601ecdabf7ff97f01be8b92c61242f7e54507b88df1a48a08b1e29",
+      "bytes": 1198840
+    },
+    {
+      "filename": "JN1-F29 SPM (16).png",
+      "sha256": "dbc843916b020c9446a11bf5ec73efcbe3bb97459d67e7560b0a18f36ecf80a8",
+      "bytes": 1402327
+    },
+    {
+      "filename": "JN1-F29 SPM (17).png",
+      "sha256": "f4a600ff4aff45235018b2318e25672a9e8d7ca3aa0e118a341006ff51ec4f16",
+      "bytes": 1347380
+    }
+  ]
+}

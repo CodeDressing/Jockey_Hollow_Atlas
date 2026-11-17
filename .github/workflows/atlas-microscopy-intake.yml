@@ -1,0 +1,27 @@
+name: Atlas microscopy intake acceptance
+on:
+  pull_request:
+    paths:
+      - "scripts/ingest_microscopy.py"
+      - "tests/test_microscopy_ingest.py"
+      - ".github/workflows/atlas-microscopy-intake.yml"
+      - "research/jn1-f29/**"
+      - "research/jn1_f29_microscopy_gallery_20261117.js"
+      - "assets/jn1-f29/**"
+      - "index.html"
+      - "tests/test_jn1_f29_originals.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  intake-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run isolated importer acceptance tests
+        run: python -m unittest discover -s tests -p 'test_microscopy_ingest.py' -v
+      - name: Verify original JN1-F29 binaries and gallery integration
+        run: python -m unittest discover -s tests -p 'test_jn1_f29_originals.py' -v
