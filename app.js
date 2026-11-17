@@ -546,7 +546,7 @@ function renderSpec(){
   const mat=effectiveCompleteness.map(([k,v])=>`<div>${esc(k)}</div><div class="${cls(v)}">${esc(v)}</div>`).join('');
   const pairStatus=hasWild&&hasLab?'COMPLETE':(!hasWild&&!hasLab?'MISSING WILD + LAB':(!hasWild?'MISSING WILD':'MISSING LAB'));
   const pairClass=hasWild&&hasLab?'yes':'no';
-  const galleries=Object.entries(groups).sort(([,left],[,right])=>Number(left.every(im=>/^https?:\/\//i.test(im.thumb||im.original||'')))-Number(right.every(im=>/^https?:\/\//i.test(im.thumb||im.original||'')))).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map((im,i)=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-thumb="${esc(im.thumb||im.original)}" data-caption="${esc(im.caption)}" data-name="${esc(im.filename)}"><img loading="${window.matchMedia('(max-width: 680px) and (pointer: coarse)').matches?'eager':(i<2?'eager':'lazy')}" decoding="async" src="${esc((im.original&&!/^https?:\/\//i.test(im.original))?im.original:(im.thumb||im.original))}" alt="${esc(im.caption)}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${esc(im.caption)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}${im.driveView?`<a class="movie-link" href="${esc(im.driveView)}" target="_blank" rel="noopener noreferrer">Open source in Google Drive</a>`:''}</div></article>`).join('')}</div></section>`).join('');
+  const galleries=Object.entries(groups).sort(([,left],[,right])=>Number(left.every(im=>/^https?:\/\//i.test(im.thumb||im.original||'')))-Number(right.every(im=>/^https?:\/\//i.test(im.thumb||im.original||'')))).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map((im,i)=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-thumb="${esc(im.thumb||im.original)}" data-caption="${esc(im.caption)}" data-name="${esc(im.filename)}"><img loading="${i<2?'eager':'lazy'}" decoding="async" src="${esc((im.original&&!/^https?:\/\//i.test(im.original))?im.original:(im.thumb||im.original))}" alt="${esc(im.caption)}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${esc(im.caption)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}${im.driveView?`<a class="movie-link" href="${esc(im.driveView)}" target="_blank" rel="noopener noreferrer">Open source in Google Drive</a>`:''}</div></article>`).join('')}</div></section>`).join('');
   const movieRows=(s.movies||[]).filter(m=>imageType==='ALL'||imageType==='Movie / video');
   const movieGallery=movieRows.length?`<section class="section"><h2>Movie / video <span>${movieRows.length}</span></h2><div class="gallery">${movieRows.map(m=>`<article class="image-card movie-card"><div class="movie-wrap">${m.preview?`<iframe src="${esc(m.preview)}" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>`:`<img src="${esc(m.poster)}" alt="${esc(m.caption)}">`}</div><div class="caption"><strong>${esc(m.caption)}</strong><code>${esc(m.sourceFilename||m.filename)}</code>${m.durationSeconds?`<small class="drive-source">Duration: ${Math.round(m.durationSeconds)} seconds</small>`:''}${m.note?`<small class="drive-source">${esc(m.note)}</small>`:''}${m.driveView?`<a class="movie-link" href="${esc(m.driveView)}" target="_blank" rel="noopener">Open movie in Drive</a>`:''}</div></article>`).join('')}</div></section>`:'';
   const recordState=fullDataSetState(s);
@@ -590,13 +590,8 @@ function renderSpec(){
       note.textContent=/^https?:\/\//i.test(thumbnail.src)?'Google Drive preview unavailable · use source link below':'Original image unavailable';
       el.appendChild(note);
     };
-    // Safari's nested/scrolled galleries have reported blank lazy-loaded previews.
-    // Explicitly request eager decoding of in-viewport thumbnails on coarse phones.
-    // Preserve native lazy-loading on desktop and do not alter source binaries.
-    if(window.matchMedia('(max-width: 680px) and (pointer: coarse)').matches){
-      thumbnail.loading='eager';
-      thumbnail.setAttribute('fetchpriority','high');
-    }
+    // Only the first two images per category are eager; larger original files remain lazy
+    // to avoid overloading iPhone memory and network while scrolling.
     if(thumbnail.complete&&thumbnail.naturalWidth===0)thumbnail.onerror();
   });
 }
