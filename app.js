@@ -102,7 +102,8 @@ function mergeDrivePhotos(){
       caption:p.caption||`Google Drive source — ${p.filename||'additional photograph'}`,
       original,
       thumb:p.thumb||original,
-      driveSource:p.source_relpath||''
+      driveSource:p.source_relpath||'',
+      driveView:p.drive_view||''
     });
   }
 }
@@ -527,6 +528,8 @@ function renderSpec(){
   if(!s)return;
   const groups={};
   (s.images||[]).filter(im=>imageType==='ALL'||im.category===imageType).forEach(im=>(groups[im.category]??=[]).push(im));
+  // Show authenticated Atlas-hosted assets first: Drive thumbnail endpoints can block Safari.
+  for(const items of Object.values(groups))items.sort((a,b)=>Number(/^https?:\/\//i.test(a.thumb||a.original||''))-Number(/^https?:\/\//i.test(b.thumb||b.original||'')));
   const sum=Object.entries(s.summary||{}).map(([k,v])=>`<div class="summary-item readable-section"><div class="section-read-head"><h4>${esc(k)}</h4>${sectionReadButton("Read section")}</div><p>${glossaryText(v)}</p></div>`).join('');
   const cats=new Set((s.images||[]).map(im=>im.category));
   const hasWild=cats.has('Wild / field context');
@@ -543,7 +546,7 @@ function renderSpec(){
   const mat=effectiveCompleteness.map(([k,v])=>`<div>${esc(k)}</div><div class="${cls(v)}">${esc(v)}</div>`).join('');
   const pairStatus=hasWild&&hasLab?'COMPLETE':(!hasWild&&!hasLab?'MISSING WILD + LAB':(!hasWild?'MISSING WILD':'MISSING LAB'));
   const pairClass=hasWild&&hasLab?'yes':'no';
-  const galleries=Object.entries(groups).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map((im,i)=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-caption="${esc(im.caption)}" data-name="${esc(im.filename)}"><img loading="${window.matchMedia('(max-width: 680px) and (pointer: coarse)').matches?'eager':(i<2?'eager':'lazy')}" decoding="async" src="${esc(im.thumb||im.original)}" alt="${esc(im.caption)}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${esc(im.caption)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}</div></article>`).join('')}</div></section>`).join('');
+  const galleries=Object.entries(groups).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map((im,i)=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-caption="${esc(im.caption)}" data-name="${esc(im.filename)}"><img loading="${window.matchMedia('(max-width: 680px) and (pointer: coarse)').matches?'eager':(i<2?'eager':'lazy')}" decoding="async" src="${esc(im.thumb||im.original)}" alt="${esc(im.caption)}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${esc(im.caption)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}${im.driveView?`<a class="movie-link" href="${esc(im.driveView)}" target="_blank" rel="noopener noreferrer">Open source in Google Drive</a>`:''}</div></article>`).join('')}</div></section>`).join('');
   const movieRows=(s.movies||[]).filter(m=>imageType==='ALL'||imageType==='Movie / video');
   const movieGallery=movieRows.length?`<section class="section"><h2>Movie / video <span>${movieRows.length}</span></h2><div class="gallery">${movieRows.map(m=>`<article class="image-card movie-card"><div class="movie-wrap">${m.preview?`<iframe src="${esc(m.preview)}" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>`:`<img src="${esc(m.poster)}" alt="${esc(m.caption)}">`}</div><div class="caption"><strong>${esc(m.caption)}</strong><code>${esc(m.sourceFilename||m.filename)}</code>${m.durationSeconds?`<small class="drive-source">Duration: ${Math.round(m.durationSeconds)} seconds</small>`:''}${m.note?`<small class="drive-source">${esc(m.note)}</small>`:''}${m.driveView?`<a class="movie-link" href="${esc(m.driveView)}" target="_blank" rel="noopener">Open movie in Drive</a>`:''}</div></article>`).join('')}</div></section>`:'';
   const recordState=fullDataSetState(s);
@@ -578,7 +581,7 @@ function renderSpec(){
       thumbnail.style.display='none';
       const note=document.createElement('span');
       note.className='image-load-error';
-      note.textContent='Preview unavailable · tap to open original';
+      note.textContent=/^https?:\/\//i.test(thumbnail.src)?'Google Drive preview unavailable · use source link below':'Preview unavailable · tap to open original';
       el.appendChild(note);
     };
     // Safari's nested/scrolled galleries have reported blank lazy-loaded previews.
