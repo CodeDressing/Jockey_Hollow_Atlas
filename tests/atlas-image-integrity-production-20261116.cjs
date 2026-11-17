@@ -78,7 +78,7 @@ async function checkHttp(url,filepath) {
      const remote=page.locator('.image-wrap img[src*="drive.google.com/thumbnail"]').first();
      assert.ok(await remote.count()>0,'AN2-F12 must preserve separate external Drive evidence');
      await page.waitForFunction(()=>!!document.querySelector('.image-wrap .image-load-error'),null,{timeout:15000});
-     assert.ok(await page.locator('#main a[href*="drive.google.com/file/"]').count()>0,'Private Drive original should have source link, not fake local media');
+     assert.equal(await page.locator('#main a[href*="drive.google.com/"]').count(),0,'Private archive photo must NOT offer a public Drive navigation link');
     }
     if(id==='BN5-F8(B)'){
      const p=page.locator('.image-wrap[data-name="bn5-f8(b)v2.jpg"] img');
