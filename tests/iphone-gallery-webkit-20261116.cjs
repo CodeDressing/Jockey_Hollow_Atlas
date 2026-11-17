@@ -13,6 +13,8 @@ const assert=require('node:assert/strict');
    const errors=[];page.on('pageerror',e=>errors.push(e.message));
    await page.goto('http://127.0.0.1:8765/index.html#JN2-F3',{waitUntil:'domcontentloaded'});
    await page.locator('#specList .spec-btn').first().waitFor({state:'attached'});
+   await page.locator('#skipGame').click();
+   await page.locator('#entryGate.hidden').waitFor({state:'attached'});
    await page.evaluate(()=>window.setCurrent('JN2-F3'));
    const gallery=page.locator('.image-wrap img').first();
    await gallery.scrollIntoViewIfNeeded();
