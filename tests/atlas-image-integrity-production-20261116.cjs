@@ -54,6 +54,8 @@ async function checkHttp(url,filepath) {
   try{
    const ctx=await browser.newContext(opts),page=await ctx.newPage();
    const errors=[];page.on('pageerror',err=>errors.push(err.message));
+   // Simulate private Google Drive thumbnails refused to anonymous mobile Safari.
+   await page.route('https://drive.google.com/thumbnail**',route=>route.abort());
    await page.goto('http://127.0.0.1:8765/index.html',{waitUntil:'domcontentloaded'});
    await page.locator('#enterAtlas').click();
    for(const id of ['JN2-F3','AN2-F12','BN5-F8(B)','JN1-F11']){
@@ -62,6 +64,7 @@ async function checkHttp(url,filepath) {
     assert.ok(await thumbs.count()>0,id+' has images');
     const first=thumbs.first();await first.scrollIntoViewIfNeeded();
     console.log('DIAG requesting',name,id,await first.getAttribute('src'));
+    assert.ok(!/^https?:\/\//.test(await first.getAttribute('src')),'First image must be Atlas-hosted, not a private Drive endpoint');
     try{await page.waitForFunction(()=>{const img=document.querySelector('.image-wrap img');return img&&img.complete&&img.naturalWidth>0;},null,{timeout:12000});}
     catch(e){console.error('DIAG preview failed',name,id,await first.evaluate(el=>({src:el.src,complete:el.complete,naturalWidth:el.naturalWidth,loading:el.loading,html:el.parentElement.outerHTML.slice(0,350)})));throw e;}
     assert.ok(await first.evaluate(im=>im.naturalWidth>0),id+' thumbnail decoded');
@@ -69,6 +72,12 @@ async function checkHttp(url,filepath) {
      assert.equal(await page.locator('.sidebar').isVisible(),false,'iPhone sidebar hidden');
      assert.ok((await page.locator('.gallery').first().boundingBox()).width>300,'iPhone gallery full-width');
      assert.equal(await first.getAttribute('loading'),'eager','iPhone thumbnails must be eager');
+    }
+    if(id==='AN2-F12'){
+     const remote=page.locator('.image-wrap img[src*="drive.google.com/thumbnail"]').first();
+     assert.ok(await remote.count()>0,'AN2-F12 must preserve separate external Drive evidence');
+     await page.waitForFunction(()=>!!document.querySelector('.image-wrap .image-load-error'),null,{timeout:15000});
+     assert.ok(await page.locator('#main a[href*="drive.google.com/file/"]').count()>0,'Private Drive original should have source link, not fake local media');
     }
     if(id==='BN5-F8(B)'){
      const p=page.locator('.image-wrap[data-name="bn5-f8(b)v2.jpg"] img');
