@@ -1,0 +1,64 @@
+{
+  "accession": "JN1-F29",
+  "intake_date": "2026-11-17",
+  "source": "Researcher-supplied originals in Rutgers 17 conversation; same accession explicitly specified by researcher",
+  "permissions": "Uploader requested public display of these five original field photographs; independent third-party photographer rights not established",
+  "limitations": "Image-grounded morphology only; specimen species/edibility, collection metadata and substrate attachment are not independently verified.",
+  "images": [
+    {
+      "filename": "IMG_5915.jpg",
+      "path": "assets/jn1-f29/field/IMG_5915.jpg",
+      "bytes": 193128,
+      "sha256": "85f0fcd0409c9a5358c802e5cd9fcc93f7b4176c26e6f4f304155feb4fd0f862",
+      "git_blob_sha": "1c58aa305dbbf269b7c33077c78a0cd94040444c",
+      "dimensions": [
+        775,
+        1033
+      ]
+    },
+    {
+      "filename": "IMG_5916.jpg",
+      "path": "assets/jn1-f29/field/IMG_5916.jpg",
+      "bytes": 206626,
+      "sha256": "575954edb26f31df5ebe6134baa9ea046b6c91dd7af6a6c8df227e3de68a58c1",
+      "git_blob_sha": "d053c0bdd1f70d48b7c7807cc4fd5b6e7247eb3b",
+      "dimensions": [
+        775,
+        1033
+      ]
+    },
+    {
+      "filename": "IMG_5917.jpg",
+      "path": "assets/jn1-f29/field/IMG_5917.jpg",
+      "bytes": 334566,
+      "sha256": "58a00422f23b9bb37c5a53e8a0ad6d8655ea6689efabaec6b5f06869c3c0256b",
+      "git_blob_sha": "45d852cc84b4d1522ab1d937a9203f53887c66a2",
+      "dimensions": [
+        775,
+        1033
+      ]
+    },
+    {
+      "filename": "IMG_5918.jpg",
+      "path": "assets/jn1-f29/field/IMG_5918.jpg",
+      "bytes": 175912,
+      "sha256": "7851c8a7c5a1309efe3124b489242192ef4dbe41eafd1e5329af8af124ae293c",
+      "git_blob_sha": "532bae6d81c319abd4be5e2eedd113b809e42876",
+      "dimensions": [
+        775,
+        1033
+      ]
+    },
+    {
+      "filename": "IMG_5919.jpg",
+      "path": "assets/jn1-f29/field/IMG_5919.jpg",
+      "bytes": 176867,
+      "sha256": "0223ed298e007e6f744c159fa233aef11495eba9a4a2a6f7236f8a525faf8c51",
+      "git_blob_sha": "b6af4fdef71a219bff9f57b563e61f27c0ac8970",
+      "dimensions": [
+        775,
+        1033
+      ]
+    }
+  ]
+}
