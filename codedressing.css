@@ -1,13 +1,17 @@
-/* Shared GitHub profile link for the entrance, Atlas and MycoSim. */
-.codedressing-link{display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:6px 8px;border:1px solid #40564e;border-radius:8px;background:#101d18;color:#bce7c9;font:700 12px/1.2 system-ui,sans-serif;text-decoration:none;white-space:nowrap;width:fit-content;flex-shrink:0}
-.codedressing-link svg{flex-shrink:0}
-.codedressing-link:hover{background:#1c3026;border-color:#91c6a2;color:#e1f9e8}
-.codedressing-link:focus-visible{outline:2px solid #bce7c9;outline-offset:3px}
-.entry-panel>.codedressing-link{margin:0 0 18px}
-.sidebar>.codedressing-link{margin-bottom:10px}
+/* LEDGER — 01 discreet credit; 02 placement and collapsed sidebar. */
+
+/* SECTION 01 — DISCREET CREDIT */
+.codedressing-link{display:inline-flex;align-items:center;gap:3px;min-height:24px;padding:3px 0;border:0;border-radius:3px;background:transparent;color:#85938b;font:400 8px/1.2 system-ui,sans-serif;text-decoration:none;white-space:nowrap;width:fit-content;flex-shrink:0}
+.codedressing-link svg{width:9px;height:9px;flex-shrink:0}
+.codedressing-link:hover{background:transparent;color:#c3d1c8}
+.codedressing-link:focus-visible{outline:1px solid #bce7c9;outline-offset:2px}
+
+/* SECTION 02 — PLACEMENT AND COLLAPSED SIDEBAR */
+.entry-panel>.codedressing-link{margin:0 0 8px}
+.sidebar>.codedressing-link{margin-bottom:4px}
 .app .sidebar-toolbar{justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap}
 .app.is-collapsed .sidebar-toolbar{flex-direction:column;gap:8px}
-.app.is-collapsed .sidebar-toolbar .codedressing-link{padding:6px;min-width:34px;justify-content:center}
+.app.is-collapsed .sidebar-toolbar .codedressing-link{padding:0;min-width:24px;justify-content:center}
 .app.is-collapsed .sidebar-toolbar .codedressing-link span{display:none}
-.codedressing-sim-brand{display:flex;align-items:center;gap:16px;min-width:0}
-@media(max-width:560px){.codedressing-sim-brand{flex-direction:column;align-items:flex-start;gap:6px}.codedressing-sim-brand .brand{max-width:none}}
+.codedressing-sim-brand{display:flex;align-items:center;gap:8px;min-width:0}
+@media(max-width:560px){.codedressing-sim-brand{flex-direction:column;align-items:flex-start;gap:4px}.codedressing-sim-brand .brand{max-width:none}}
