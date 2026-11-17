@@ -321,7 +321,7 @@ const GLOSSARY=Object.freeze({
 const glossaryPattern=new RegExp("\\b("+Object.keys(GLOSSARY).sort((x,y)=>y.length-x.length).join("|")+")\\b","gi");
 
 function glossaryText(value){
-  const raw=String(value??"");
+  const raw=String(value??"").replace(/Google Drive/gi,'research archive').replace(/Drive-only/gi,'archive-only');
   let out="",last=0;
   raw.replace(glossaryPattern,(match,...args)=>{
     const offset=args[args.length-2];
@@ -368,6 +368,7 @@ const FULL_DATA_SET_CODES=new Set(['JN2-F3','AN2-F3','AN2-F7','AN2-F9','AN2-F12'
 const linkedAccession=decodeURIComponent(window.location.hash.slice(1)).trim().toUpperCase();
 let current=data.find(s=>String(s.code||'').toUpperCase()===linkedAccession)?.code||data[0]?.code||null,filter='',family='ALL',collection='ALL',imageType='ALL',workflow='ALL';
 const esc=s=>String(s??'').replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+const displayLabel=s=>String(s??'').replace(/Google Drive/gi,'research archive').replace(/Drive-only/gi,'archive-only');
 const cls=v=>{v=String(v||'').toLowerCase();return v==='yes'?'yes':v==='no'?'no':'partial'};
 const families=[...new Set(data.map(x=>x.family).filter(Boolean))];
 const collections=[...new Set(data.map(x=>x.collection).filter(Boolean))];
@@ -546,9 +547,9 @@ function renderSpec(){
   const mat=effectiveCompleteness.map(([k,v])=>`<div>${esc(k)}</div><div class="${cls(v)}">${esc(v)}</div>`).join('');
   const pairStatus=hasWild&&hasLab?'COMPLETE':(!hasWild&&!hasLab?'MISSING WILD + LAB':(!hasWild?'MISSING WILD':'MISSING LAB'));
   const pairClass=hasWild&&hasLab?'yes':'no';
-  const galleries=Object.entries(groups).sort(([,left],[,right])=>Number(left.every(im=>/^https?:\/\//i.test(im.thumb||im.original||'')))-Number(right.every(im=>/^https?:\/\//i.test(im.thumb||im.original||'')))).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map((im,i)=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-thumb="${esc(im.thumb||im.original)}" data-caption="${esc(im.caption)}" data-name="${esc(im.filename)}"><img loading="${i<2?'eager':'lazy'}" decoding="async" src="${esc((im.original&&!/^https?:\/\//i.test(im.original))?im.original:(im.thumb||im.original))}" alt="${esc(im.caption)}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${esc(im.caption)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}${im.driveView?`<a class="movie-link" href="${esc(im.driveView)}" target="_blank" rel="noopener noreferrer">Open source in Google Drive</a>`:''}</div></article>`).join('')}</div></section>`).join('');
+  const galleries=Object.entries(groups).sort(([,left],[,right])=>Number(left.every(im=>/^https?:\/\//i.test(im.thumb||im.original||'')))-Number(right.every(im=>/^https?:\/\//i.test(im.thumb||im.original||'')))).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map((im,i)=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-thumb="${esc(im.thumb||im.original)}" data-caption="${esc(displayLabel(im.caption))}" data-name="${esc(im.filename)}"><img loading="${i<2?'eager':'lazy'}" decoding="async" src="${esc((im.original&&!/^https?:\/\//i.test(im.original))?im.original:(im.thumb||im.original))}" alt="${esc(displayLabel(im.caption))}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${esc(im.caption)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}</div></article>`).join('')}</div></section>`).join('');
   const movieRows=(s.movies||[]).filter(m=>imageType==='ALL'||imageType==='Movie / video');
-  const movieGallery=movieRows.length?`<section class="section"><h2>Movie / video <span>${movieRows.length}</span></h2><div class="gallery">${movieRows.map(m=>`<article class="image-card movie-card"><div class="movie-wrap">${m.preview?`<iframe src="${esc(m.preview)}" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>`:`<img src="${esc(m.poster)}" alt="${esc(m.caption)}">`}</div><div class="caption"><strong>${esc(m.caption)}</strong><code>${esc(m.sourceFilename||m.filename)}</code>${m.durationSeconds?`<small class="drive-source">Duration: ${Math.round(m.durationSeconds)} seconds</small>`:''}${m.note?`<small class="drive-source">${esc(m.note)}</small>`:''}${m.driveView?`<a class="movie-link" href="${esc(m.driveView)}" target="_blank" rel="noopener">Open movie in Drive</a>`:''}</div></article>`).join('')}</div></section>`:'';
+  const movieGallery=movieRows.length?`<section class="section"><h2>Movie / video <span>${movieRows.length}</span></h2><div class="gallery">${movieRows.map(m=>`<article class="image-card movie-card"><div class="movie-wrap">${m.preview&&!/^https?:\/\//i.test(m.preview)?`<iframe src="${esc(m.preview)}" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>`:(m.poster&&!/^https?:\/\//i.test(m.poster)?`<img src="${esc(m.poster)}" alt="${esc(m.caption)}">`:`<span class="image-load-error">Video not hosted on this site</span>`)}</div><div class="caption"><strong>${esc(m.caption)}</strong><code>${esc(m.sourceFilename||m.filename)}</code>${m.durationSeconds?`<small class="drive-source">Duration: ${Math.round(m.durationSeconds)} seconds</small>`:''}${m.note?`<small class="drive-source">${esc(m.note)}</small>`:''}</div></article>`).join('')}</div></section>`:'';
   const recordState=fullDataSetState(s);
   const fullBadge=recordState==='FULL'?'<span class="fullset-badge">CURATED FULL DATA SET</span>':recordState==='PARTIAL'?'<span class="fullset-badge partial-badge">PARTIAL DATA SET</span>':'<span class="fullset-badge limited-badge">LIMITED RECORD</span>';
   const coverage=evidenceCoverage(s);
@@ -561,9 +562,9 @@ function renderSpec(){
   ];
   const coverageHtml=coverageRows.map(([name,count])=>`<div><span>${esc(name)}</span><strong>${count}</strong></div>`).join('');
   const evidenceBanner=`<div class="evidence-state-note"><strong>${esc(evidenceStateLabel(s))}</strong><p>Documentation coverage is separate from identification, microscopic interpretation, specimen custody, and image publication rights.</p><div class="evidence-coverage" aria-label="Evidence source counts">${coverageHtml}</div><p><strong>Microscopy:</strong> ${coverage.groups.has('Microscopy')?'Images recorded; consult the accession-specific interpretation for validated spore findings.':'No microscopy photographs linked in this view.'} <strong>Identification:</strong> Not established by this coverage label. <strong>Publication rights:</strong> Not established by image presence.</p>${scientificHold(s)?'<p><strong>Scientific publication HOLD:</strong> Existing accession-specific voucher, custody and image-rights requirements remain unresolved.</p>':''}</div>`;
-  const eyebrow=s.archiveIndex?`MASTER RECORD ${s.archiveIndex} / ${masterCount}`:'DRIVE ARCHIVE';
+  const eyebrow=s.archiveIndex?`MASTER RECORD ${s.archiveIndex} / ${masterCount}`:'RESEARCH ARCHIVE';
   $('main').innerHTML=`<div class="spec-head"><div><div class="eyebrow">${eyebrow} ${fullBadge}</div><h1>${esc(s.code)}</h1><div class="record-status readable-section"><p class="status">${glossaryText(s.status)}</p>${sectionReadButton("Read overview")}</div>${evidenceBanner}</div><div class="navBtns"><button onclick="nav(-1)">← Previous</button><button onclick="nav(1)">Next →</button></div></div><div class="hero"><div class="summary-grid">${sum}</div><aside class="card readable-section"><div class="section-read-head"><h3>Data completeness</h3>${sectionReadButton("Read section")}</div><div class="matrix"><div>Wild + lab pairing</div><div class="${pairClass}">${pairStatus}</div>${mat}</div>${s.sourceLine?`<div class="sourceLine readable-section"><div class="section-read-head"><strong>Source / provenance</strong>${sectionReadButton("Read section")}</div><p>${glossaryText(s.sourceLine)}</p></div>`:''}</aside></div>${renderMeasurements(s)}${galleries||''}${movieGallery||''}${(!galleries&&!movieGallery)?'<div class="empty">No media match the selected filter.</div>':''}`;
-  $('recordCount').textContent=`${(s.images||[]).length} source images${(s.movies||[]).length?` · ${(s.movies||[]).length} movies`:''} · ${esc(s.collection)} · ${esc(s.family)}`;
+  $('recordCount').textContent=`${(s.images||[]).length} source images${(s.movies||[]).length?` · ${(s.movies||[]).length} movies`:''} · ${esc(displayLabel(s.collection))} · ${esc(s.family)}`;
   document.querySelectorAll('.image-wrap').forEach(el=>{
     el.onclick=()=>openViewer(el.dataset.file,el.dataset.caption,el.dataset.name);
     const thumbnail=el.querySelector('img');
@@ -587,7 +588,7 @@ function renderSpec(){
       thumbnail.style.display='none';
       const note=document.createElement('span');
       note.className='image-load-error';
-      note.textContent=/^https?:\/\//i.test(thumbnail.src)?'Google Drive preview unavailable · use source link below':'Original image unavailable';
+      note.textContent=/^https?:\/\//i.test(thumbnail.src)?'Photo unavailable from this archive':'Original image unavailable';
       el.appendChild(note);
     };
     // Only the first two images per category are eager; larger original files remain lazy
@@ -653,14 +654,17 @@ function apply(){img.style.transform=`translate(calc(-50% + ${tx}px),calc(-50% +
 function clamp(v){return Math.max(.05,Math.min(20,v))}
 function fit(){tx=ty=0;requestAnimationFrame(()=>{if(!img.naturalWidth)return;scale=Math.min(stage.clientWidth/img.naturalWidth,stage.clientHeight/img.naturalHeight,.98);apply()})}
 function openViewer(src,cap,name){
-  $('viewerCap').textContent=cap;$('viewerName').textContent=name;$('openOriginal').onclick=()=>window.open(src,'_blank');
+  $('viewerCap').textContent=cap;$('viewerName').textContent=name;
+  const localOriginal=!/^https?:\/\//i.test(src);
+  $('openOriginal').hidden=!localOriginal;
+  $('openOriginal').onclick=localOriginal?()=>window.open(src,'_blank','noopener'):null;
   img.onload=fit;
   img.onerror=()=>{
     $('viewerName').textContent=name+' · Image could not load. Try Original.';
   };
   img.src=src;viewer.classList.add('open');document.body.style.overflow='hidden';
 }
-function closeViewer(){viewer.classList.remove('open');img.src='';active.clear();document.body.style.overflow=''}
+function closeViewer(){viewer.classList.remove('open');img.src='';$('openOriginal').hidden=false;active.clear();document.body.style.overflow=''}
 $('closeViewer').onclick=closeViewer;$('fit').onclick=fit;$('oneToOne').onclick=()=>{scale=1;tx=ty=0;apply()};
 $('zoomIn').onclick=()=>{scale=clamp(scale*1.25);apply()};$('zoomOut').onclick=()=>{scale=clamp(scale/1.25);apply()};
 stage.onwheel=e=>{e.preventDefault();scale=clamp(scale*(e.deltaY<0?1.12:.89));apply()};
