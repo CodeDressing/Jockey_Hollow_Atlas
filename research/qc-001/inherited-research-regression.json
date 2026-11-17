@@ -1,0 +1,84 @@
+{
+  "source_sha": "f892ff296ccb85b1cc106c90d0da5e3968596898",
+  "tests": [
+    {
+      "test": "rutgers-r1-integrity.cjs",
+      "status": "PASS",
+      "exit": 0,
+      "seconds": 0.112
+    },
+    {
+      "test": "rutgers-r2-description-crosswalk.cjs",
+      "status": "PASS",
+      "exit": 0,
+      "seconds": 0.093
+    },
+    {
+      "test": "rutgers-r3-media-crosswalk.cjs",
+      "status": "PASS",
+      "exit": 0,
+      "seconds": 0.212
+    },
+    {
+      "test": "rutgers-r4-sha256.cjs",
+      "status": "PASS",
+      "exit": 0,
+      "seconds": 0.21
+    },
+    {
+      "test": "rutgers-r5-voucher-matrix.cjs",
+      "status": "PASS",
+      "exit": 0,
+      "seconds": 0.054
+    },
+    {
+      "test": "rutgers-r6-voucher-traceability.cjs",
+      "status": "PASS",
+      "exit": 0,
+      "seconds": 0.057
+    },
+    {
+      "test": "rutgers-r7-fieldmaster-conflicts.cjs",
+      "status": "PASS",
+      "exit": 0,
+      "seconds": 0.055
+    },
+    {
+      "test": "rutgers-r8-record-boundaries.cjs",
+      "status": "PASS",
+      "exit": 0,
+      "seconds": 0.057
+    },
+    {
+      "test": "rutgers-r9-parser.cjs",
+      "status": "PASS",
+      "exit": 0,
+      "seconds": 0.055
+    },
+    {
+      "test": "rutgers-r10-registry-integration.cjs",
+      "status": "PASS",
+      "exit": 0,
+      "seconds": 0.073
+    },
+    {
+      "test": "rutgers-r11-integration-acceptance.cjs",
+      "status": "PASS",
+      "exit": 0,
+      "seconds": 0.122
+    },
+    {
+      "test": "rutgers-r12-ci-security.cjs",
+      "status": "PASS",
+      "exit": 0,
+      "seconds": 0.068
+    },
+    {
+      "test": "rutgers-deof-closure.cjs",
+      "status": "PASS",
+      "exit": 0,
+      "seconds": 0.065
+    }
+  ],
+  "browser": "NOT RETESTED on the historical branch in this local environment; current main/candidate browser tests are separate CI evidence."
+}

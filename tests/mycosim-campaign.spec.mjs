@@ -519,7 +519,9 @@ test("Phase 27 instancing retains semantic selection and beats Phase 26 scene co
  await lab.locator('[data-mode="micro"]').click();
  await lab.locator('[data-part="bilayer"]').click();
  await expect(lab.locator('[data-part="bilayer"]')).toHaveAttribute("aria-pressed","true");
- await lab.locator('[data-action="start"]').click();
+ // The current guided start may already have initialized the retained renderer.
+ if(!await page.evaluate(()=>window.MycoSimSelection27.getState().started))
+  await lab.locator('[data-action="start"]').click();
  await expect.poll(async()=>page.evaluate(()=>window.MycoSimSelection27.getState().started)).toBe(true);
  await lab.locator('[data-action="reset"]').click();
  await expect(lab.locator('[data-action="isolate"]')).toHaveAttribute("aria-pressed","false");

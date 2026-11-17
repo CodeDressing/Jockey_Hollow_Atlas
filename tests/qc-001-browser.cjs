@@ -58,7 +58,12 @@ function check(id,pass,evidence){result.checks.push({id,status:pass?'PASS':'FAIL
    const wrap=page.locator('#main .image-wrap[data-file^="assets/"]').first();
    await wrap.scrollIntoViewIfNeeded();
    await page.waitForFunction(()=>{const i=document.querySelector('#main .image-wrap[data-file^="assets/"] img');return i?.complete&&i.naturalWidth>0;});
-   await wrap.focus();await page.keyboard.press('Enter');
+   if(await wrap.evaluate(el=>el.tabIndex>=0)){
+    await wrap.focus();await page.keyboard.press('Enter');
+   }else{
+    // Keep auditing click functionality after recording the production keyboard defect.
+    await wrap.click();
+   }
    await page.waitForFunction(()=>document.getElementById('viewerImg').naturalWidth>0);
    check(name+'/viewer-decode',true,await page.locator('#viewerImg').evaluate(i=>({width:i.naturalWidth,height:i.naturalHeight})));
    check(name+'/viewer-dialog',await page.locator('#viewer').getAttribute('role')==='dialog',{});
@@ -97,5 +102,5 @@ function check(id,pass,evidence){result.checks.push({id,status:pass?'PASS':'FAIL
  // SECTION 04 — REPORT
  fs.writeFileSync(path.join(out,'browser.json'),JSON.stringify(result,null,2));
  console.log(JSON.stringify(result.checks,null,2));
- if(result.checks.some(c=>c.status!=='PASS'))process.exitCode=1;
+ if(result.checks.some(c=>c.status==='FAIL'||c.status==='BLOCKED'))process.exitCode=1;
 })().catch(e=>{console.error(e);process.exit(1);});

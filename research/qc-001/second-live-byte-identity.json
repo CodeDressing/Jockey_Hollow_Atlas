@@ -1,0 +1,121 @@
+[
+  {
+    "file": "assets/originals/JN2-F3SPMV1.png",
+    "repository_bytes": 1698873,
+    "repository_sha256": "6dda4c1cadbc2a51fb2dbe6e0ed1ecb4dc0a55bf94c7bc98958b1c9ac178728c",
+    "http_status": 200,
+    "http_bytes": 1112594,
+    "http_sha256": "bd2db6cc4d1ee5369ff2fd5ead2a2a70fcc1a77fca6041dea0884555e8cd198f",
+    "headers": {
+      "content-type": "image/png",
+      "content-encoding": null,
+      "content-length": "1112594",
+      "cf-polished": "ok, orig_size=1698873",
+      "cache-control": "public, max-age=0, s-maxage=300",
+      "vary": "accept, accept-encoding"
+    },
+    "status": "FAIL"
+  },
+  {
+    "file": "assets/thumbs/JN2-F3SPMV1.jpg",
+    "repository_bytes": 76653,
+    "repository_sha256": "ac3ae7ec2abd8c8aa81e6d54417403fad81e18a8dbaada9cc6e9200d72f16448",
+    "http_status": 200,
+    "http_bytes": 74889,
+    "http_sha256": "af6c602a3ba6dcb01b03ca7dad2866b7d3f83a9bfcdb88101957afe782adaab0",
+    "headers": {
+      "content-type": "image/jpeg",
+      "content-encoding": null,
+      "content-length": "74889",
+      "cf-polished": "ok, orig_size=76653",
+      "cache-control": "public, max-age=0, s-maxage=300",
+      "vary": "accept, accept-encoding"
+    },
+    "status": "FAIL"
+  },
+  {
+    "file": "assets/an2-f12/IMG_6021.jpg",
+    "repository_bytes": 362678,
+    "repository_sha256": "df13ba06b5e23e7f649b17393ef3643b013b598d2ada3a82eac4cf9a2369e16a",
+    "http_status": 200,
+    "http_bytes": 228415,
+    "http_sha256": "09ff314d1f2028005d0d4252dc3f71a3d9ac29fbeddbcebb00bbe1ea6c03c58c",
+    "headers": {
+      "content-type": "image/jpeg",
+      "content-encoding": null,
+      "content-length": "228415",
+      "cf-polished": "ok, orig_size=362678",
+      "cache-control": "public, max-age=0, s-maxage=300",
+      "vary": "accept, accept-encoding"
+    },
+    "status": "FAIL"
+  },
+  {
+    "file": "assets/an2-f12/microscopy/AN2-F12 SPORE PRINT MICROSCOPE  (1).png",
+    "repository_bytes": 1615625,
+    "repository_sha256": "5946db4d4e7ea4f8b19a0dda02eac17a56f4d0bad1feea1f031817edfe05ab49",
+    "http_status": 200,
+    "http_bytes": 932868,
+    "http_sha256": "64ff370410c3c3e8a22f5f2bd130662dec8ced41bc7aa32d52085cb9eaa4102d",
+    "headers": {
+      "content-type": "image/png",
+      "content-encoding": null,
+      "content-length": "932868",
+      "cf-polished": "ok, orig_size=1615625",
+      "cache-control": "public, max-age=0, s-maxage=300",
+      "vary": "accept, accept-encoding"
+    },
+    "status": "FAIL"
+  },
+  {
+    "file": "assets/originals/bn5-f8(b)v2.jpg",
+    "repository_bytes": 27853,
+    "repository_sha256": "e209b4822ab863355a12d4af9c1bcbca8f1b3259192944a0ab92b6c0e997026a",
+    "http_status": 200,
+    "http_bytes": 25567,
+    "http_sha256": "8e01c7abed41af85a11af038e6eeed90fcfecedb65ae5549f67b6e1f0fb6f9af",
+    "headers": {
+      "content-type": "image/jpeg",
+      "content-encoding": null,
+      "content-length": "25567",
+      "cf-polished": "ok, orig_size=27853",
+      "cache-control": "public, max-age=0, s-maxage=300",
+      "vary": "accept, accept-encoding"
+    },
+    "status": "FAIL"
+  },
+  {
+    "file": "assets/JN1-F11  (8)feild .jpg",
+    "repository_bytes": 255441,
+    "repository_sha256": "02fa1b1b373ecff783df20bbdd32c6bef790540b871fdc81767d61b763cb506e",
+    "http_status": 200,
+    "http_bytes": 175653,
+    "http_sha256": "04395a722f27d9dd8136846d9417fb05d5f5bce0eb83b4c97f8a209f4c032f07",
+    "headers": {
+      "content-type": "image/jpeg",
+      "content-encoding": null,
+      "content-length": "175653",
+      "cf-polished": "ok, orig_size=255441",
+      "cache-control": "public, max-age=0, s-maxage=300",
+      "vary": "accept, accept-encoding"
+    },
+    "status": "FAIL"
+  },
+  {
+    "file": "assets/JN1-F11 (1).png",
+    "repository_bytes": 1486271,
+    "repository_sha256": "09e5a2b1b2d41b62d2f8a631842120637aa8f8f08a29626f1e536899c7ed60c5",
+    "http_status": 200,
+    "http_bytes": 1010435,
+    "http_sha256": "347800761d20e77f56755ab6b6de6f1451849d844905760b148fe5c956428a1c",
+    "headers": {
+      "content-type": "image/png",
+      "content-encoding": null,
+      "content-length": "1010435",
+      "cf-polished": "ok, orig_size=1486271",
+      "cache-control": "public, max-age=0, s-maxage=300",
+      "vary": "accept, accept-encoding"
+    },
+    "status": "FAIL"
+  }
+]

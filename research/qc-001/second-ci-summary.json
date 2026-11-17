@@ -1,0 +1,33 @@
+{
+  "head_sha": "14f29c4ba9918e584f153f28bbf83b7a96a4a88e",
+  "pr_merge_checkout_sha": "221765789a3e63e13c02f724cead803d18525a1a",
+  "qc_run": 44036308915,
+  "conclusion": "failure",
+  "release_smoke_run": 44036308919,
+  "release_smoke_conclusion": "success",
+  "specifications": {
+    "pass": 38,
+    "fail": 1,
+    "failure": "Phase 27 tried to click an already-started, disabled Start control after following the guided Start flow."
+  },
+  "standalone": {
+    "pass": 13,
+    "fail": 1,
+    "failure": "Exact public original bytes differ from the repository for all seven Node/CI samples; cf-polished headers observed."
+  },
+  "candidate_profiles": {
+    "engines": [
+      "Chromium 141.0.7390.37 desktop",
+      "Chromium 141.0.7390.37 Pixel 7 emulation",
+      "WebKit 26.0 iPhone 13 emulation"
+    ],
+    "census_per_profile": 478,
+    "checks_pass": 50,
+    "checks_fail": 3,
+    "checks_not_tested": 3,
+    "failures": "Drive image embeds only; keyboard, focus, dialog, decoding, injection checks and layouts pass."
+  },
+  "production_harness_limit": "After recording nonfocusable image tiles, keyboard activation could not open production viewer; final diagnostic will retain keyboard failure and use click to audit remaining viewer features.",
+  "artifact_id": 14307344401,
+  "artifact_sha256": "f96e72bc402a6c8d8bf09b76b342155fd24e471b386f38c660ca46ee919b5a84"
+}
