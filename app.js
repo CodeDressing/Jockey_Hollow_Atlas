@@ -4,6 +4,14 @@ const movieMedia=window.MOVIE_MEDIA||[];
 const measurementData=window.MEASUREMENT_DATA||[];
 const masterCount=masterData.length;
 const data=masterData;
+// Correct exactly one verified absent thumbnail reference. Its original JPG exists
+// at assets/originals/bn5-f8(b)v2.jpg. Do not alter any source media bytes.
+for(const specimen of data){
+  if(String(specimen.code||'').toUpperCase()!=='BN5-F8(B)')continue;
+  for(const photo of specimen.images||[]){
+    if(photo.thumb==='assets/thumbs/bn5-f8(b)v2.jpg'&&photo.original==='assets/originals/bn5-f8(b)v2.jpg')photo.thumb=photo.original;
+  }
+}
 
 function driveCollection(folder){
   const m=String(folder||'').toUpperCase().match(/\b([A-Z]{2}\d+|FN)\b/);
@@ -94,7 +102,8 @@ function mergeDrivePhotos(){
       caption:p.caption||`Google Drive source — ${p.filename||'additional photograph'}`,
       original,
       thumb:p.thumb||original,
-      driveSource:p.source_relpath||''
+      driveSource:p.source_relpath||'',
+      driveView:p.drive_view||''
     });
   }
 }
@@ -519,6 +528,8 @@ function renderSpec(){
   if(!s)return;
   const groups={};
   (s.images||[]).filter(im=>imageType==='ALL'||im.category===imageType).forEach(im=>(groups[im.category]??=[]).push(im));
+  // Show authenticated Atlas-hosted assets first: Drive thumbnail endpoints can block Safari.
+  for(const items of Object.values(groups))items.sort((a,b)=>Number(/^https?:\/\//i.test(a.thumb||a.original||''))-Number(/^https?:\/\//i.test(b.thumb||b.original||'')));
   const sum=Object.entries(s.summary||{}).map(([k,v])=>`<div class="summary-item readable-section"><div class="section-read-head"><h4>${esc(k)}</h4>${sectionReadButton("Read section")}</div><p>${glossaryText(v)}</p></div>`).join('');
   const cats=new Set((s.images||[]).map(im=>im.category));
   const hasWild=cats.has('Wild / field context');
@@ -535,7 +546,7 @@ function renderSpec(){
   const mat=effectiveCompleteness.map(([k,v])=>`<div>${esc(k)}</div><div class="${cls(v)}">${esc(v)}</div>`).join('');
   const pairStatus=hasWild&&hasLab?'COMPLETE':(!hasWild&&!hasLab?'MISSING WILD + LAB':(!hasWild?'MISSING WILD':'MISSING LAB'));
   const pairClass=hasWild&&hasLab?'yes':'no';
-  const galleries=Object.entries(groups).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map((im,i)=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-caption="${esc(im.caption)}" data-name="${esc(im.filename)}"><img loading="${i<2?'eager':'lazy'}" decoding="async" src="${esc(im.thumb)}" alt="${esc(im.caption)}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${esc(im.caption)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}</div></article>`).join('')}</div></section>`).join('');
+  const galleries=Object.entries(groups).sort(([,left],[,right])=>Number(left.every(im=>/^https?:\/\//i.test(im.thumb||im.original||'')))-Number(right.every(im=>/^https?:\/\//i.test(im.thumb||im.original||'')))).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map((im,i)=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-thumb="${esc(im.thumb||im.original)}" data-caption="${esc(im.caption)}" data-name="${esc(im.filename)}"><img loading="${i<2?'eager':'lazy'}" decoding="async" src="${esc((im.original&&!/^https?:\/\//i.test(im.original))?im.original:(im.thumb||im.original))}" alt="${esc(im.caption)}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${esc(im.caption)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}${im.driveView?`<a class="movie-link" href="${esc(im.driveView)}" target="_blank" rel="noopener noreferrer">Open source in Google Drive</a>`:''}</div></article>`).join('')}</div></section>`).join('');
   const movieRows=(s.movies||[]).filter(m=>imageType==='ALL'||imageType==='Movie / video');
   const movieGallery=movieRows.length?`<section class="section"><h2>Movie / video <span>${movieRows.length}</span></h2><div class="gallery">${movieRows.map(m=>`<article class="image-card movie-card"><div class="movie-wrap">${m.preview?`<iframe src="${esc(m.preview)}" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>`:`<img src="${esc(m.poster)}" alt="${esc(m.caption)}">`}</div><div class="caption"><strong>${esc(m.caption)}</strong><code>${esc(m.sourceFilename||m.filename)}</code>${m.durationSeconds?`<small class="drive-source">Duration: ${Math.round(m.durationSeconds)} seconds</small>`:''}${m.note?`<small class="drive-source">${esc(m.note)}</small>`:''}${m.driveView?`<a class="movie-link" href="${esc(m.driveView)}" target="_blank" rel="noopener">Open movie in Drive</a>`:''}</div></article>`).join('')}</div></section>`:'';
   const recordState=fullDataSetState(s);
@@ -559,20 +570,28 @@ function renderSpec(){
     if(!thumbnail)return;
     thumbnail.onerror=()=>{
       const original=el.dataset.file;
-      if(thumbnail.dataset.originalTried!=='1'&&original&&thumbnail.getAttribute('src')!==original){
-        thumbnail.dataset.originalTried='1';
-        thumbnail.src=original;
-        return;
+      const fallback=el.dataset.thumb;
+      if(thumbnail.dataset.fallbackTried!=='1'){
+        thumbnail.dataset.fallbackTried='1';
+        // When an Atlas-hosted original fails, attempt its verified thumbnail.
+        // When a Drive thumbnail fails, automatically attempt its original URL.
+        const candidate=/^https?:\/\//i.test(original)?original:fallback;
+        if(candidate&&thumbnail.getAttribute('src')!==candidate){
+          thumbnail.src=candidate;
+          return;
+        }
       }
       thumbnail.onerror=null;
       thumbnail.removeAttribute('loading');
-      thumbnail.alt='Photograph unavailable. Tap to open the original image.';
+      thumbnail.alt='Original image unavailable from this source.';
       thumbnail.style.display='none';
       const note=document.createElement('span');
       note.className='image-load-error';
-      note.textContent='Preview unavailable · tap to open original';
+      note.textContent=/^https?:\/\//i.test(thumbnail.src)?'Google Drive preview unavailable · use source link below':'Original image unavailable';
       el.appendChild(note);
     };
+    // Only the first two images per category are eager; larger original files remain lazy
+    // to avoid overloading iPhone memory and network while scrolling.
     if(thumbnail.complete&&thumbnail.naturalWidth===0)thumbnail.onerror();
   });
 }

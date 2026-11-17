@@ -30,3 +30,4 @@ jobs:
           node tests/jn2-f3-full-dataset.cjs
           node tests/specimen-recovery-20261116.cjs
           node tests/iphone-gallery-webkit-20261116.cjs
+          node tests/atlas-image-integrity-production-20261116.cjs
