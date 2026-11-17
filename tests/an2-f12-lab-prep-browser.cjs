@@ -25,8 +25,11 @@ const files=['7','23','25','26','27'].map(n=>'AN2-F12 spore print ('+n+').JPG');
    for(const name of ['IMG_6021.jpg','IMG_6022.jpg','IMG_6023.jpg','IMG_6024.jpg'])
     assert.equal(await page.locator('#main .image-card img[src="assets/an2-f12/'+name+'"]').count(),1,'old '+name+' preserved');
    const description=await page.locator('#main').innerText();
-   for(const phrase of ['7 cm','8 cm','Five original photographs','Microscopy photographs are pending','identification remains unconfirmed'])
+   for(const phrase of ['7 cm','8 cm','Five original photographs','17 instrument annotations'])
     assert(description.includes(phrase),'missing descriptive assertion '+phrase);
+   assert.match(description,/not a validated independent basidiospore/i,'microscopy identity remains unvalidated');
+   assert.match(description,/Scientific publication HOLD/,'publication hold preserved');
+   assert.equal(await page.locator('#main .image-card img[src*="/microscopy/"]').count(),14,'all subsequently authenticated microscopy images preserved');
    const filter=page.locator('#imageFilter');await filter.selectOption({label:'Lab preparation / microscopy setup'});
    assert.equal(await page.locator('#main .image-card').count(),5,'lab-only image filter');
    await page.locator('#main .image-wrap[data-file="assets/an2-f12/lab-prep/AN2-F12 spore print (7).JPG"]').click();
@@ -35,7 +38,7 @@ const files=['7','23','25','26','27'].map(n=>'AN2-F12 spore print ('+n+').JPG');
    await page.locator('#closeViewer').click();
    assert(!(await page.locator('#viewer').evaluate(el=>el.classList.contains('open'))),'viewer closes');
    assert.deepEqual(errors,[],'no browser errors');
-   console.log('PASS '+width+'px: accession, five lab images, filter, previous four images, measurements, microscopy pending, viewer');
+   console.log('PASS '+width+'px: five lab images, four field/specimen images, fourteen microscopy images, measurements, scientific holds, viewer');
    await page.close();
   }
  }finally{await browser.close();}

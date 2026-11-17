@@ -1,0 +1,86 @@
+[
+  {
+    "file": "an2-f12-browser.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 3.768
+  },
+  {
+    "file": "an2-f12-lab-prep-browser.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 1.827
+  },
+  {
+    "file": "an2-f12-microscopy-browser.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 2.521
+  },
+  {
+    "file": "atlas-evidence-tiers.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.986
+  },
+  {
+    "file": "atlas-image-integrity-production-20261116.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 19.073
+  },
+  {
+    "file": "atlas-live-byte-identity.cjs",
+    "status": "FAIL",
+    "exit": 1,
+    "seconds": 0.413
+  },
+  {
+    "file": "atlas-media-integrity.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.024
+  },
+  {
+    "file": "chet-lions-mane-search.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.74
+  },
+  {
+    "file": "deo26-provenance-sidebar-browser.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 2.352
+  },
+  {
+    "file": "iphone-gallery-webkit-20261116.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 3.872
+  },
+  {
+    "file": "jn2-f3-full-dataset.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.683
+  },
+  {
+    "file": "mycosim-campaign6-browser.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 14.014
+  },
+  {
+    "file": "public-atlas-no-drive-links-20261117.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 15.624
+  },
+  {
+    "file": "specimen-recovery-20261116.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.825
+  }
+]

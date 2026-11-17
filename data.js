@@ -11447,7 +11447,7 @@ window.ATLAS_DATA = [
         "filename": "bn5-f8(b)v2.jpg",
         "caption": "Source macro / specimen - source image 1",
         "original": "assets/originals/bn5-f8(b)v2.jpg",
-        "thumb": "assets/thumbs/bn5-f8(b)v2.jpg",
+        "thumb": "assets/originals/bn5-f8(b)v2.jpg",
         "masterEmbedded": true
       },
       {

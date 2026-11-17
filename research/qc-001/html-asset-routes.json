@@ -1,0 +1,266 @@
+[
+  {
+    "path": "./",
+    "status": 200,
+    "mime": "text/html",
+    "bytes": 8983
+  },
+  {
+    "path": "./classified.html",
+    "status": 200,
+    "mime": "text/html",
+    "bytes": 50148
+  },
+  {
+    "path": "./trametes.html",
+    "status": 200,
+    "mime": "text/html",
+    "bytes": 15569
+  },
+  {
+    "path": "app.js",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 51928
+  },
+  {
+    "path": "bn1_drive_data.js",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 71877
+  },
+  {
+    "path": "classified.html",
+    "status": 200,
+    "mime": "text/html",
+    "bytes": 50148
+  },
+  {
+    "path": "codedressing.css",
+    "status": 200,
+    "mime": "text/css",
+    "bytes": 1216
+  },
+  {
+    "path": "data.js",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 1855139
+  },
+  {
+    "path": "drive_data.js",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 228729
+  },
+  {
+    "path": "gymnopilus.html",
+    "status": 200,
+    "mime": "text/html",
+    "bytes": 497
+  },
+  {
+    "path": "index.html",
+    "status": 200,
+    "mime": "text/html",
+    "bytes": 8983
+  },
+  {
+    "path": "measurements_data.js",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 64653
+  },
+  {
+    "path": "movie_data.js",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 871
+  },
+  {
+    "path": "mycosim/absorption_circulation18.js?v=phase18-biofate-20261018",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 13885
+  },
+  {
+    "path": "mycosim/anatomy3d.js?v=phase27-instances-20261018",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 73529
+  },
+  {
+    "path": "mycosim/campaign.js?v=phase26-qafix-20261018",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 9335
+  },
+  {
+    "path": "mycosim/digestion_immune.js?v=phase9-svgclick-fix-20261016",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 14359
+  },
+  {
+    "path": "mycosim/evidence21.js?v=phase21-evidence-20261018",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 9738
+  },
+  {
+    "path": "mycosim/family_biology28.js?v=family-context-20261019",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 7742
+  },
+  {
+    "path": "mycosim/gut_brain.js?v=phase16-gutbrain-20261018",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 14506
+  },
+  {
+    "path": "mycosim/human_ingestion.js?v=phase15-ingestion-20261018",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 12875
+  },
+  {
+    "path": "mycosim/immune_signaling17.js?v=phase17-immune-20261018",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 11410
+  },
+  {
+    "path": "mycosim/lab_workspace.js?v=phase14-accessible-20261016",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 8983
+  },
+  {
+    "path": "mycosim/main.js?v=family-context-20261019",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 52477
+  },
+  {
+    "path": "mycosim/molecular_process.js?v=phase11-v1-20261016",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 11738
+  },
+  {
+    "path": "mycosim/neural_interface19.js?v=phase19-neural-20261018",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 12572
+  },
+  {
+    "path": "mycosim/neurochemistry20.js?v=phase20-neuro-20261018",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 12921
+  },
+  {
+    "path": "mycosim/release_acceptance.js?v=phase13-finalqa-20261016",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 6374
+  },
+  {
+    "path": "mycosim/science_glossary.js?v=phase20-neuro-20261018",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 18501
+  },
+  {
+    "path": "research/an2_f10_recovered_intake_20261116.js",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 2483
+  },
+  {
+    "path": "research/an2_f12_enrichment.js",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 16059
+  },
+  {
+    "path": "research/an2_f18_enrichment.js",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 2399
+  },
+  {
+    "path": "research/chet_lions_mane_20261116.js",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 3842
+  },
+  {
+    "path": "research/classified_gym_juno_spore_microscopy_2026-10-18.json",
+    "status": 200,
+    "mime": "application/json",
+    "bytes": 6846
+  },
+  {
+    "path": "research/classified_specimen_morphometrics_2026-10-17.json",
+    "status": 200,
+    "mime": "application/json",
+    "bytes": 2489
+  },
+  {
+    "path": "research/jn1_f11_gallery_20261115.js",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 7417
+  },
+  {
+    "path": "research/jn2_f3_evidence_reconciliation_20261116.js",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 1557
+  },
+  {
+    "path": "safety.html",
+    "status": 200,
+    "mime": "text/html",
+    "bytes": 12285
+  },
+  {
+    "path": "sandbox.html",
+    "status": 200,
+    "mime": "text/html",
+    "bytes": 56733
+  },
+  {
+    "path": "sidebar-controls.css",
+    "status": 200,
+    "mime": "text/css",
+    "bytes": 2092
+  },
+  {
+    "path": "sidebar-controls.js",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 3387
+  },
+  {
+    "path": "styles.css",
+    "status": 200,
+    "mime": "text/css",
+    "bytes": 22841
+  },
+  {
+    "path": "supplemental_media.js",
+    "status": 200,
+    "mime": "application/javascript",
+    "bytes": 153069
+  },
+  {
+    "path": "trametes.html",
+    "status": 200,
+    "mime": "text/html",
+    "bytes": 15569
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "run_id": 44033484347,
+  "tested_head_sha": "6525517576907a65e4a2e139e3e70161895231d6",
+  "conclusion": "failure",
+  "release_smoke_run": 44033484241,
+  "release_smoke_conclusion": "success",
+  "full_specs": {
+    "total": 39,
+    "pass": 33,
+    "fail": 6,
+    "failure_cause": "Mode controls remain inside the collapsed advanced-anatomy disclosure; historical tests did not open the current UI."
+  },
+  "standalone_tests": {
+    "total": 13,
+    "pass": 10,
+    "fail": 3,
+    "failures": [
+      "AN2-F12 caveat exact sentence changed",
+      "Laboratory-prep fixture still expected microscopy pending",
+      "Microscopy fixture still forbade five now SHA-256-authenticated images"
+    ]
+  },
+  "webkit_census": "BLOCKED in first diagnostic by 478 rapid history.replaceState calls; individual inherited WebKit gallery tests passed. Correct census harness without weakening production assertions.",
+  "artifact_id": 14306747402,
+  "artifact_sha256": "eb114fd413f759b5d56d5f4d618cffbc206ac00ac9677bb8c2fe2d96dd3ffa24",
+  "pending_corrections": "Subsequent code CI will be reported in the PR after completion."
+}
