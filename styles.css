@@ -396,3 +396,31 @@
 .evidence-coverage>div{display:flex;justify-content:space-between;gap:10px;align-items:center;border:1px solid var(--line);border-radius:6px;padding:7px 9px}
 .evidence-coverage span{color:var(--muted)}
 .evidence-coverage strong{font-variant-numeric:tabular-nums;color:var(--text)}
+
+/* iPhone Safari hotfix: do not force the desktop split pane on touch phones.
+   Keep existing desktop and fine-pointer layouts unchanged. */
+@media (max-width:680px) and (pointer:coarse){
+  html,body{height:auto !important;min-height:100% !important;overflow-x:hidden !important;overflow-y:auto !important}
+  .app{display:block !important;width:100% !important;height:auto !important;min-height:100dvh !important;grid-template-columns:none !important}
+  .sidebar{display:none !important}
+  .content{display:block !important;width:100% !important;height:auto !important;min-height:100dvh !important;overflow:visible !important}
+  .topbar{position:relative !important;display:block !important;padding:12px 14px !important}
+  .mobileControls{display:grid !important;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}
+  .mobileControls .wide{grid-column:1/-1}
+  .mobileControls input,.mobileControls select{min-width:0}
+  .mobile-fullset-panel{display:block !important;margin:8px 0 !important}
+  .mobile-sandbox{display:inline-block !important}
+  .container{width:100% !important;max-width:100% !important;padding:14px 12px 90px !important}
+  .spec-head{display:block !important}
+  .navBtns{display:flex !important;flex-wrap:wrap;gap:6px;margin-top:10px !important}
+  .hero,.summary-grid,.gallery{display:grid !important;grid-template-columns:minmax(0,1fr) !important}
+  .image-card{min-width:0}
+  .image-wrap{width:100% !important;aspect-ratio:4/3 !important;max-height:none !important}
+  .image-wrap img{width:100% !important;height:100% !important;max-height:none !important;object-fit:contain !important}
+  .viewer{height:100dvh}
+  .viewer-bar{display:flex !important;flex-wrap:wrap;padding:8px !important}
+  .viewer-title{flex:1 0 100%}
+  .toolbtn{font-size:12px;padding:7px 9px !important}
+  .viewer-stage{min-height:0;flex:1;touch-action:none}
+  .viewer-help{font-size:10px}
+}
