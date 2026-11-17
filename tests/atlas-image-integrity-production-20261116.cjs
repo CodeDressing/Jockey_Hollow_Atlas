@@ -36,7 +36,7 @@ async function checkHttp(url,filepath) {
  const recursive=(folder)=>{for(const e of fs.readdirSync(folder,{withFileTypes:true})){const p=path.join(folder,e.name);if(e.isDirectory())recursive(p);else files.add(path.relative(root,p).replace(/\\/g,'/'));}};
  recursive(path.join(root,'assets'));
  const missing=[...new Set(paths)].filter(p=>!files.has(decodeURIComponent(p)));
- assert.deepEqual(missing,['assets/thumbs/bn5-f8(b)v2.jpg'],'Only documented historical master-data thumbnail is missing (corrected at runtime)');
+ assert.deepEqual(missing,[],'All master original and thumbnail references must resolve in the Git tree');
  const originals=paths.filter(p=>p.includes('/originals/'));
  assert.ok(originals.length>500,'must scan entire master reference list');
  for(const filepath of checks){

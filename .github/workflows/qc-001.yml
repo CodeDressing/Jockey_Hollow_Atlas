@@ -1,0 +1,60 @@
+name: QC-001 comprehensive Atlas acceptance
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tests/qc-001*'
+      - '.github/workflows/qc-001.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: qc-001-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Contract and data regression
+        run: node --test tests/mycosim-contracts.test.mjs tests/qc-001-contracts.cjs
+      - name: Install fixed browser test version
+        run: |
+          npm install --no-save @playwright/test@1.56.1
+          npx playwright install --with-deps chromium webkit
+      - name: Start isolated static server
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/qc-001-http.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8765/index.html -o /dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - name: Every inherited standalone browser and media test
+        run: node tests/qc-001-run-inherited.cjs
+      - name: Full inherited MycoSim and visual builder specifications
+        if: always()
+        run: npx playwright test tests/mycosim-campaign.spec.mjs tests/mycosim-visual-builder.spec.mjs --browser=chromium --workers=1 --reporter=line --timeout=90000
+      - name: Candidate desktop Android and iPhone emulation census
+        if: always()
+        run: node tests/qc-001-browser.cjs
+      - name: Production desktop Android and iPhone emulation census
+        if: always()
+        env:
+          QC_BASE_URL: https://jockey-hollow-atlas.onrender.com/
+          QC_OUTPUT: qc-results/production
+        run: node tests/qc-001-browser.cjs
+      - name: Upload exact results even when release gates fail
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qc-001-${{ github.sha }}
+          path: |
+            qc-results/
+            test-results/
+            /tmp/qc-001-http.log
+          retention-days: 14

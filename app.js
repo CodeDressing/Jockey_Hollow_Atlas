@@ -365,7 +365,12 @@ function openGlossaryTerm(key,anchor){
 }
 const $=id=>document.getElementById(id);
 const FULL_DATA_SET_CODES=new Set(['JN2-F3','AN2-F3','AN2-F7','AN2-F9','AN2-F12','AN2-F25','AN2-F34','AN2-F38','AN2-F41','AN2-F36','AN2-F32','AN2-F17']);
-const linkedAccession=decodeURIComponent(window.location.hash.slice(1)).trim().toUpperCase();
+// QC-001: malformed percent escapes must not prevent Atlas startup/navigation.
+function accessionFromHash(hash){
+  try{return decodeURIComponent(String(hash||'').replace(/^#/,'')).trim().toUpperCase();}
+  catch{return '';}
+}
+const linkedAccession=accessionFromHash(window.location.hash);
 let current=data.find(s=>String(s.code||'').toUpperCase()===linkedAccession)?.code||data[0]?.code||null,filter='',family='ALL',collection='ALL',imageType='ALL',workflow='ALL';
 const esc=s=>String(s??'').replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 const displayLabel=s=>String(s??'').replace(/Google Drive/gi,'research archive').replace(/Drive-only/gi,'archive-only').replace(/Drive archive/gi,'research archive');
@@ -623,7 +628,7 @@ function syncSearch(v){
   renderList();
 }
 window.addEventListener('hashchange',()=>{
-  const requested=decodeURIComponent(window.location.hash.slice(1)).trim().toUpperCase();
+  const requested=accessionFromHash(window.location.hash);
   const record=data.find(s=>String(s.code||'').toUpperCase()===requested);
   if(record){filter='';family='ALL';collection='ALL';workflow='ALL';imageType='ALL';fillFilters();$('imageFilter').value='ALL';$('mImage').value='ALL';$('search').value='';$('mSearch').value='';setCurrent(record.code);}
 });
