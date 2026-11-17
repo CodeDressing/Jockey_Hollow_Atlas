@@ -10,6 +10,8 @@ on:
       - "assets/jn1-f29/**"
       - "index.html"
       - "tests/test_jn1_f29_originals.py"
+      - "tests/test_jn1_f29_field.py"
+      - "research/jn1_f29_field_gallery_20261117.js"
   workflow_dispatch:
 permissions:
   contents: read
@@ -25,3 +27,5 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_microscopy_ingest.py' -v
       - name: Verify original JN1-F29 binaries and gallery integration
         run: python -m unittest discover -s tests -p 'test_jn1_f29_originals.py' -v
+      - name: Verify JN1-F29 wild photos and field morphology
+        run: python -m unittest discover -s tests -p 'test_jn1_f29_field.py' -v
