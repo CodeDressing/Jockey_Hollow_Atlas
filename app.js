@@ -4,6 +4,14 @@ const movieMedia=window.MOVIE_MEDIA||[];
 const measurementData=window.MEASUREMENT_DATA||[];
 const masterCount=masterData.length;
 const data=masterData;
+// Correct exactly one verified absent thumbnail reference. Its original JPG exists
+// at assets/originals/bn5-f8(b)v2.jpg. Do not alter any source media bytes.
+for(const specimen of data){
+  if(String(specimen.code||'').toUpperCase()!=='BN5-F8(B)')continue;
+  for(const photo of specimen.images||[]){
+    if(photo.thumb==='assets/thumbs/bn5-f8(b)v2.jpg'&&photo.original==='assets/originals/bn5-f8(b)v2.jpg')photo.thumb=photo.original;
+  }
+}
 
 function driveCollection(folder){
   const m=String(folder||'').toUpperCase().match(/\b([A-Z]{2}\d+|FN)\b/);
