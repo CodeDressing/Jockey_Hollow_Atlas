@@ -1,0 +1,32 @@
+{
+  "accession": "JN1-F26",
+  "image_count": 4,
+  "source": "Researcher supplied original JPEGs on 2026-11-19",
+  "identification": "Unconfirmed",
+  "images": [
+    {
+      "filename": "IMG_5887.jpg",
+      "path": "assets/jn1-f26/field/IMG_5887.jpg",
+      "sha256": "8a91ec9fa0ebad4d37d7aaf445d51f31d5f1d41b9ab04f7e0bebf775a29db422",
+      "bytes": 277145
+    },
+    {
+      "filename": "IMG_5888.jpg",
+      "path": "assets/jn1-f26/field/IMG_5888.jpg",
+      "sha256": "d130c6d1267b66f9878732a3a7523e60d83ac01179e3dc55725bde0c211d2d8a",
+      "bytes": 222499
+    },
+    {
+      "filename": "IMG_5889.jpg",
+      "path": "assets/jn1-f26/field/IMG_5889.jpg",
+      "sha256": "b14e4e8666da8361a4264ecba666ecb1865b374c91be0807e9afa086c40ce877",
+      "bytes": 257195
+    },
+    {
+      "filename": "IMG_5890.jpg",
+      "path": "assets/jn1-f26/field/IMG_5890.jpg",
+      "sha256": "9fbec549cc36f7bfa4e2da502e47f785721f16608fd44de15845313634db3cbe",
+      "bytes": 193871
+    }
+  ]
+}
