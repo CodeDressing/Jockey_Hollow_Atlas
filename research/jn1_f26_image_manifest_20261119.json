@@ -1,0 +1,172 @@
+{
+  "accession": "JN1-F26",
+  "date": "2026-11-19",
+  "images": [
+    {
+      "filename": "JN1-F26 SPM (1).png",
+      "path": "assets/jn1-f26/microscopy/JN1-F26 SPM (1).png",
+      "category": "Microscopy",
+      "bytes": 1480309,
+      "sha256": "616f981777f3261462bd1e3b3ee870f8e7098100b40327ffdbf2c406226ae6c2",
+      "dimensions": [
+        1015,
+        757
+      ]
+    },
+    {
+      "filename": "JN1-F26 SPM (2).png",
+      "path": "assets/jn1-f26/microscopy/JN1-F26 SPM (2).png",
+      "category": "Microscopy",
+      "bytes": 1438040,
+      "sha256": "f8c2ef0824ebd26961582426659c85188961c3fce268f91808f7834a057ed98e",
+      "dimensions": [
+        1021,
+        761
+      ]
+    },
+    {
+      "filename": "JN1-F26 SPM (3).png",
+      "path": "assets/jn1-f26/microscopy/JN1-F26 SPM (3).png",
+      "category": "Microscopy",
+      "bytes": 1407459,
+      "sha256": "5cba9d081c69108ff4b3e1927fb23a98301c40c60943fe74f19ffa31f33a960b",
+      "dimensions": [
+        1019,
+        755
+      ]
+    },
+    {
+      "filename": "JN1-F26 SPM (4).png",
+      "path": "assets/jn1-f26/microscopy/JN1-F26 SPM (4).png",
+      "category": "Microscopy",
+      "bytes": 1655696,
+      "sha256": "5f4f3d225dddb537fb7d77d845b1e6f4768efe1e8d3f1e6cdab7ac67ddce6376",
+      "dimensions": [
+        1016,
+        763
+      ]
+    },
+    {
+      "filename": "JN1-F26 SPM (5).png",
+      "path": "assets/jn1-f26/microscopy/JN1-F26 SPM (5).png",
+      "category": "Microscopy",
+      "bytes": 1481527,
+      "sha256": "b649b920042af0ed32e3320545227df788edce19814d4a05c17c44ade201cf45",
+      "dimensions": [
+        1020,
+        766
+      ]
+    },
+    {
+      "filename": "JN1-F26 SPM (6).png",
+      "path": "assets/jn1-f26/microscopy/JN1-F26 SPM (6).png",
+      "category": "Microscopy",
+      "bytes": 1415571,
+      "sha256": "968b5f173c30feeeefcd9ee437b136fd56f742fe1dfb7b04b3e2f3e79350caa6",
+      "dimensions": [
+        1017,
+        758
+      ]
+    },
+    {
+      "filename": "JN1-F26 SPM (7).png",
+      "path": "assets/jn1-f26/microscopy/JN1-F26 SPM (7).png",
+      "category": "Microscopy",
+      "bytes": 1677073,
+      "sha256": "6bcf5678dc041a0a4fddd728d4cf11d49d48ae39b7e681c2d579cc3a0a2fbf0c",
+      "dimensions": [
+        1023,
+        761
+      ]
+    },
+    {
+      "filename": "JN1-F26 SPM (8).png",
+      "path": "assets/jn1-f26/microscopy/JN1-F26 SPM (8).png",
+      "category": "Microscopy",
+      "bytes": 1623860,
+      "sha256": "69b0bd43b369fec1d659f7f4da89a208cfa4eda97a0f93c03f0a09ec22cd3e94",
+      "dimensions": [
+        1017,
+        761
+      ]
+    },
+    {
+      "filename": "JN1-F26 SPM (9).png",
+      "path": "assets/jn1-f26/microscopy/JN1-F26 SPM (9).png",
+      "category": "Microscopy",
+      "bytes": 1457587,
+      "sha256": "0fe2d8efa3294779763f5e143484ac8b5023aac6994f812d67cf056f44d28e55",
+      "dimensions": [
+        1022,
+        762
+      ]
+    },
+    {
+      "filename": "JN1-F26 SPM (10).png",
+      "path": "assets/jn1-f26/microscopy/JN1-F26 SPM (10).png",
+      "category": "Microscopy",
+      "bytes": 1383548,
+      "sha256": "4196af320f39582d6578035148d4fea25ad54a4a0422c286b8f5bdc543c8b4a5",
+      "dimensions": [
+        1018,
+        754
+      ]
+    },
+    {
+      "filename": "JN1-F26 (1).JPG",
+      "path": "assets/jn1-f26/preparation/JN1-F26 (1).JPG",
+      "category": "Spore print / preparation",
+      "bytes": 421255,
+      "sha256": "2945915fd0ceceb02cedcf6b86d33a296d2dc1f7b65673fb0d43ad00747db8b6",
+      "dimensions": [
+        2048,
+        1536
+      ]
+    },
+    {
+      "filename": "JN1-F26 (2).JPG",
+      "path": "assets/jn1-f26/preparation/JN1-F26 (2).JPG",
+      "category": "Spore print / preparation",
+      "bytes": 424185,
+      "sha256": "aee9909bb3ca62869e1cc6427149b5ff3e5f333a7a32b0b64e6b5869f4e1adb9",
+      "dimensions": [
+        2048,
+        1536
+      ]
+    },
+    {
+      "filename": "JN1-F26 (3).JPG",
+      "path": "assets/jn1-f26/preparation/JN1-F26 (3).JPG",
+      "category": "Spore print / preparation",
+      "bytes": 474102,
+      "sha256": "f802766882da29399914a279cf5c4cc0549defcb9f38f1bf9b2fc5403666c807",
+      "dimensions": [
+        2048,
+        1536
+      ]
+    },
+    {
+      "filename": "JN1-F26 (4).JPG",
+      "path": "assets/jn1-f26/preparation/JN1-F26 (4).JPG",
+      "category": "Spore print / preparation",
+      "bytes": 494930,
+      "sha256": "41f065cda1bc1c4d8f021b07cf3205a20d071c961bdbecc8f8cea79706e9a991",
+      "dimensions": [
+        2048,
+        1536
+      ]
+    },
+    {
+      "filename": "JN1-F26 (5).JPG",
+      "path": "assets/jn1-f26/preparation/JN1-F26 (5).JPG",
+      "category": "Spore print / preparation",
+      "bytes": 425681,
+      "sha256": "a848bdf5ce5a4b39e00ce85b72e77aa4e00d9ce29256adc051f1b7886d95665f",
+      "dimensions": [
+        2048,
+        1536
+      ]
+    }
+  ],
+  "status": "documentation only; identification deferred"
+}
