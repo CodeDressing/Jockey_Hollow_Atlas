@@ -1,0 +1,109 @@
+{
+  "accession": "AN2-F3",
+  "intake_date": "2026-11-19",
+  "source": "researcher-provided microscopy image originals in Rutgers 18 conversation",
+  "taxonomy": "unidentified, no species assignment",
+  "measurement_status": "instrument annotations preserved; calibration, measurement axis classification and wall boundary resolution not independently validated",
+  "observations": "very dark bulk print; brown translucent individual globose to subglobose structures; some clusters; interpretations provisional",
+  "images": [
+    {
+      "filename": "AN2-F3 SPM (1).png",
+      "path": "assets/an2-f3/microscopy/AN2-F3 SPM (1).png",
+      "bytes": 1361487,
+      "sha256": "09e3f92230300177d80b6b87317411340b5c77896c97ed260549a51b3313be90",
+      "dimensions": [
+        1022,
+        763
+      ],
+      "has_measurement_annotations": false
+    },
+    {
+      "filename": "AN2-F3 SPM (2).png",
+      "path": "assets/an2-f3/microscopy/AN2-F3 SPM (2).png",
+      "bytes": 1284618,
+      "sha256": "96e2c4df270270c0e41f8e3673e187b5ce4b868c21638638cc82944b1f8ee98b",
+      "dimensions": [
+        1016,
+        755
+      ],
+      "has_measurement_annotations": true
+    },
+    {
+      "filename": "AN2-F3 SPM (3).png",
+      "path": "assets/an2-f3/microscopy/AN2-F3 SPM (3).png",
+      "bytes": 1293896,
+      "sha256": "149af70a3b25a672c367cbe81616dc82b4a9eeb3c728b60104ae6a37a88f33d4",
+      "dimensions": [
+        1016,
+        757
+      ],
+      "has_measurement_annotations": true
+    },
+    {
+      "filename": "AN2-F3 SPM (4).png",
+      "path": "assets/an2-f3/microscopy/AN2-F3 SPM (4).png",
+      "bytes": 1406496,
+      "sha256": "c94a69f42d6713d9824daa2ffa418d00b1b77d4b74340b5e8527166d7673017c",
+      "dimensions": [
+        1260,
+        810
+      ],
+      "has_measurement_annotations": true
+    },
+    {
+      "filename": "AN2-F3 SPM (5).png",
+      "path": "assets/an2-f3/microscopy/AN2-F3 SPM (5).png",
+      "bytes": 1427921,
+      "sha256": "711adbca778eed1d9d999031f816f68dd586ec4fbab981f9afa9f981724b0c50",
+      "dimensions": [
+        1023,
+        758
+      ],
+      "has_measurement_annotations": false
+    },
+    {
+      "filename": "AN2-F3 SPM (6).png",
+      "path": "assets/an2-f3/microscopy/AN2-F3 SPM (6).png",
+      "bytes": 1570409,
+      "sha256": "d19b2d7a4e8939a0153c12256f72a714e0496715dbd85b853e6cf32a8f6e846d",
+      "dimensions": [
+        1439,
+        811
+      ],
+      "has_measurement_annotations": true
+    },
+    {
+      "filename": "AN2-F3 SPM (7).png",
+      "path": "assets/an2-f3/microscopy/AN2-F3 SPM (7).png",
+      "bytes": 1422176,
+      "sha256": "e158bc04732067eb13c6e9833bc8b3268985decce8971a27900a34f63e89efcf",
+      "dimensions": [
+        1020,
+        771
+      ],
+      "has_measurement_annotations": false
+    },
+    {
+      "filename": "AN2-F3 SPM (8).png",
+      "path": "assets/an2-f3/microscopy/AN2-F3 SPM (8).png",
+      "bytes": 1306064,
+      "sha256": "2d373ab04c600aa7f31a44bbdf23c5df5645f9c57c0fb3b9a02b54993720b9ed",
+      "dimensions": [
+        1089,
+        811
+      ],
+      "has_measurement_annotations": true
+    },
+    {
+      "filename": "AN2-F3 SPM (9).png",
+      "path": "assets/an2-f3/microscopy/AN2-F3 SPM (9).png",
+      "bytes": 1323735,
+      "sha256": "f25f38d41643a4f8825503ce4a45411c32341f220428782f5ff1ef0fd93dd410",
+      "dimensions": [
+        1018,
+        765
+      ],
+      "has_measurement_annotations": true
+    }
+  ]
+}
