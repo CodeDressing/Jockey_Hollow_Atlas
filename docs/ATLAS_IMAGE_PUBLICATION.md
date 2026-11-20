@@ -27,3 +27,24 @@ The inherited checkpoint was GitHub `da27dd5698d34edad3e146ef2cd2731e34ae8839` a
 The Priority release adds 19 AN2-F9 display images and 12 AN2-F34 display images. It matches one AN2-F34 archive entry to an existing gallery card. The [display manifest](../research/atlas_priority_display_manifest_20261120.json) ties the 32 gallery associations to published paths, dimensions and checksums. All 32 source captures matched the private inventory. The 12 microscopy copies preserve decoded pixels and visible annotations. The reviewed captions preserve calibration uncertainty.
 
 The expected result is 883 gallery cards, 1,485 image paths and 405 archive rows, including the two held AN2-F12 originals. The 10 inherited holds and 22 subsequent assignment or evidence holds remain in force. Shared-source references retain their archive records. The private handoff register lists 273 Follow-on associations, of which 259 require new derivatives and 14 reuse public assets. File-specific clearance must be confirmed before any of those associations are released.
+
+## 05 — RUT20WORKEX Follow-on reconciliation
+
+The verified media checkpoint was GitHub `745ee9d4feee2f0bf9a6c2c601ab7e0375f750a7` and Render `dep-dc09c0h42hec73f6hro0`, with production acceptance recorded in [PR #80](https://github.com/CodeDressing/Jockey_Hollow_Atlas/pull/80). The gallery inventory at that commit has 883 cards, 1,485 image paths and 405 archive rows. This reconciliation updates the ledger only. The deployed commit and current acceptance results are recorded on its pull request.
+
+| Archive records | Count | Disposition |
+| --- | ---: | --- |
+| Follow-on candidates requiring new display copies | 259 | The file-level register specifies derivative hashes and destinations. Publication requires an affirmative rights record for each approved file or an explicitly authorized batch listing its files. |
+| Follow-on candidates mapped to existing public images | 14 | The proposed destinations are already in the indicated galleries. AN2-F13 and one AN2-F21 preparation row have a category conflict with their proposed specimen-macro cards. Retain the archive rows pending clearance and evidence for those conflicting associations. |
+| Shared-source records | 100 | The private crosswalk maps 81 to Follow-on candidates and 19 to held records. Retain the source rows and avoid duplicate image binaries. |
+| Active release holds | 32 | Ten inherited holds and 22 assignment or other evidence holds remain active, including the two AN2-F12 originals. |
+
+The 273 Follow-on rows span 72 accessions. The register and private inventory provide attribution leads and checksums. Neither records an affirmative rights grant for these candidates. The next executable batch is the set explicitly cleared by the photographer or rights holder, identified by original filename and accession or by the exact manifest rows. Check the approved files against the staged derivative hashes before integration and preserve all existing scientific holds.
+
+The AN2-F7 gallery contains all eleven expected microscopy views. The AN2-F9 gallery contains seven. Three additional accession-labelled AN2-F9 microscopy PNGs were recovered from connected research files and had no pixel-identical matches among the seven public copies. Check accession provenance, overlapping fields and file-level rights before queueing them for release. The AN2-F10 private archive contains 14 decodable PNGs matching its embedded manifest hashes. The current public research notes describe the intake. The microscopy files remain under the existing voucher, scientific and publication holds. No direct USB inspection was performed.
+
+### Physical-device acceptance
+
+1. Open the live Atlas in a private browser window and search for AN2-F7, AN2-F9 and AN2-F34.
+2. Filter to microscopy, then restore the all-image filter. Check that thumbnails load, captions stay readable, and a full-size view opens and closes correctly.
+3. On Android and iPhone, rotate the screen and test pinch zoom and drag. On Windows Edge, test wheel zoom and drag. Record the device, browser version, accession and any image that fails.
