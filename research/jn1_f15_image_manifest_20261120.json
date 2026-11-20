@@ -1,0 +1,114 @@
+[
+  {
+    "accession": "JN1-F15",
+    "path": "assets/jn1-f15/microscopy/JN1-F15 SPM (1)(1).png",
+    "filename": "JN1-F15 SPM (1)(1).png",
+    "bytes": 1783366,
+    "sha256": "c98133f67c3a97bcf571780dbeea220cb4ab0692fa6ff22e2e19565f2751e9e9",
+    "image_order": 1
+  },
+  {
+    "accession": "JN1-F15",
+    "path": "assets/jn1-f15/microscopy/JN1-F15 SPM (2)(1).png",
+    "filename": "JN1-F15 SPM (2)(1).png",
+    "bytes": 1807582,
+    "sha256": "f89d7a94607d5ae84ae1233a9a9205fb4d275ca2188de6d3154ec7461e8a10b4",
+    "image_order": 2
+  },
+  {
+    "accession": "JN1-F15",
+    "path": "assets/jn1-f15/microscopy/JN1-F15 SPM (3)(1).png",
+    "filename": "JN1-F15 SPM (3)(1).png",
+    "bytes": 1696364,
+    "sha256": "6c7e06244785acb5e787fd70b8cb473a4a7000112af46943bd504e05d3dcfc5f",
+    "image_order": 3
+  },
+  {
+    "accession": "JN1-F15",
+    "path": "assets/jn1-f15/microscopy/JN1-F15 SPM (4)(1).png",
+    "filename": "JN1-F15 SPM (4)(1).png",
+    "bytes": 1797025,
+    "sha256": "4abc10fb08f85336cf69be8f0d4811b1ad46f8f5c9c02a3254f2ed141a6fc622",
+    "image_order": 4
+  },
+  {
+    "accession": "JN1-F15",
+    "path": "assets/jn1-f15/microscopy/JN1-F15 SPM (5)(1).png",
+    "filename": "JN1-F15 SPM (5)(1).png",
+    "bytes": 1532915,
+    "sha256": "d0def5159c4ebdef8a4dfb0dc9c87df9ba4caf88eb89e25d2566e4b5f644d082",
+    "image_order": 5
+  },
+  {
+    "accession": "JN1-F15",
+    "path": "assets/jn1-f15/microscopy/JN1-F15 SPM (6)(1).png",
+    "filename": "JN1-F15 SPM (6)(1).png",
+    "bytes": 1785878,
+    "sha256": "77ba62106682bd7691251f5d5315104ade5d2e7ea57bd1fa103ed71f45733ba0",
+    "image_order": 6
+  },
+  {
+    "accession": "JN1-F15",
+    "path": "assets/jn1-f15/microscopy/JN1-F15 SPM (7)(1).png",
+    "filename": "JN1-F15 SPM (7)(1).png",
+    "bytes": 1913067,
+    "sha256": "40fb2d52a2c19ce084bc2c6a5dce28322646ceb4cc3be3d2e5b47e9cb69bc668",
+    "image_order": 7
+  },
+  {
+    "accession": "JN1-F15",
+    "path": "assets/jn1-f15/microscopy/JN1-F15 SPM (8)(1).png",
+    "filename": "JN1-F15 SPM (8)(1).png",
+    "bytes": 1384961,
+    "sha256": "c5be3dc53df4c2fbe93fe6252432d55600c3c7cb76ed3836063726b7e6452b37",
+    "image_order": 8
+  },
+  {
+    "accession": "JN1-F15",
+    "path": "assets/jn1-f15/microscopy/JN1-F15 SPM (9)(1).png",
+    "filename": "JN1-F15 SPM (9)(1).png",
+    "bytes": 1532925,
+    "sha256": "576af8893c4bed5240f05d3f4d214b7fdbdb3c02218f9ab32077895e2f68143a",
+    "image_order": 9
+  },
+  {
+    "accession": "JN1-F15",
+    "path": "assets/jn1-f15/microscopy/JN1-F15 SPM (10)(1).png",
+    "filename": "JN1-F15 SPM (10)(1).png",
+    "bytes": 1456636,
+    "sha256": "a36e6efbd96ac9c7303aa35bdb688dd85405a1d0161c79b68db83a77895c861e",
+    "image_order": 10
+  },
+  {
+    "accession": "JN1-F15",
+    "path": "assets/jn1-f15/microscopy/JN1-F15 SPM (11)(1).png",
+    "filename": "JN1-F15 SPM (11)(1).png",
+    "bytes": 1363305,
+    "sha256": "3870b0106a12b192d3102c566a5da100684f4d2abc69013c7779e8229241efb5",
+    "image_order": 11
+  },
+  {
+    "accession": "JN1-F15",
+    "path": "assets/jn1-f15/microscopy/JN1-F15 SPM (12)(1).png",
+    "filename": "JN1-F15 SPM (12)(1).png",
+    "bytes": 1784998,
+    "sha256": "99199e6b1093086514b48b120c0b25b005779aed36100f3438660d7ef1fc7533",
+    "image_order": 12
+  },
+  {
+    "accession": "JN1-F15",
+    "path": "assets/jn1-f15/microscopy/JN1-F15 SPM (13)(1).png",
+    "filename": "JN1-F15 SPM (13)(1).png",
+    "bytes": 1538415,
+    "sha256": "0a9261b7f1b920459f6adbecc1f1b7cbc909cf1f176ad7b6ae6230b5ddaf2b54",
+    "image_order": 13
+  },
+  {
+    "accession": "JN1-F15",
+    "path": "assets/jn1-f15/microscopy/JN1-F15 SPM (14)(1).png",
+    "filename": "JN1-F15 SPM (14)(1).png",
+    "bytes": 2032037,
+    "sha256": "71b1459483f971f27008f3bd2b783ee7871c7d116624d42296aac772e046a714",
+    "image_order": 14
+  }
+]
