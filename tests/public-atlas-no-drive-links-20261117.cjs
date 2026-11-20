@@ -89,6 +89,9 @@ const {webkit,chromium,firefox,devices}=require('playwright');
         await page.locator('#closeViewer').click();
       }
     }
+    if(['AN2-F3','AN2-F7','AN2-F32','JN1-F15','JN1-F32'].includes(id)){
+      assert.equal(await page.locator('#main summary').filter({hasText:'Archived photo records'}).count(),0,id);
+    }
     if(id==='AN2-F17'){
       assert.equal(count,26);
       assert.equal(await page.locator('#main summary').filter({hasText:'Archived photo records'}).count(),0);
