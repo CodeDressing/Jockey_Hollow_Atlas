@@ -27,10 +27,10 @@ jobs:
       - name: Install image and browser test dependencies
         run: |
           npm install --no-save playwright@1.56.1 sharp@0.34.5
-          npx playwright install --with-deps chromium webkit
+          npx playwright install --with-deps chromium firefox webkit
       - name: Verify all local gallery bytes and decode pixels
         run: node scripts/verify_atlas_images.cjs --decode
-      - name: Check Atlas galleries in Chromium and WebKit
+      - name: Check Atlas galleries in Chromium, Firefox and WebKit
         run: |
           python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/atlas-http.log 2>&1 &
           for attempt in {1..20}; do

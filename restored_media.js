@@ -32,6 +32,16 @@ const atlasRestoredImages = {
       "path": "assets/an2-f1/specimen/an2-f1v2.webp",
       "caption": "Laboratory view of the green-gray cap surface next to the handwritten AN2-F1 foil label."
     }
+  },
+  "JN1-F16": {
+    "JN1-F16.JPG": {
+      "path": "assets/jn1-f16/specimen/jn1-f16.webp",
+      "caption": "Laboratory macro view of the tan cap surface and pale yellow margin beside the handwritten JN1-F16 foil label."
+    },
+    "JN1-F16V2.JPG": {
+      "path": "assets/jn1-f16/specimen/jn1-f16v2.webp",
+      "caption": "Laboratory underside view of yellowish tissue and attached specimen material beside the JN1-F16 foil label."
+    }
   }
 };
 

@@ -1,11 +1,13 @@
 const assert=require('node:assert/strict');
-const {webkit,chromium,devices}=require('playwright');
+const {webkit,chromium,firefox,devices}=require('playwright');
 (async()=>{
  const origin=process.env.ATLAS_ORIGIN||'http://127.0.0.1:8765/';
  for(const [name,engine,settings] of [
   ['iPhone Safari',webkit,{...devices['iPhone 13'],viewport:{width:402,height:874}}],
   ['Android Chromium',chromium,{...devices['Pixel 7'],viewport:{width:412,height:915}}],
-  ['Desktop Chromium',chromium,{viewport:{width:1280,height:900}}]
+  ['Desktop Chromium',chromium,{viewport:{width:1280,height:900}}],
+  ['Desktop Firefox',firefox,{viewport:{width:1280,height:900}}],
+  ['Desktop WebKit',webkit,{viewport:{width:1280,height:900}}]
  ]){
   const browser=await engine.launch({headless:true});
   try{
@@ -21,7 +23,7 @@ const {webkit,chromium,devices}=require('playwright');
    });
    await page.goto(origin,{waitUntil:'domcontentloaded'});
    await page.locator('#enterAtlas').click();
-   const priorities=['AN2-F1','AN2-F3','AN2-F7','AN2-F12','AN2-F17','AN2-F32','JN1-F15','JN1-F32'];
+   const priorities=['AN2-F1','AN2-F3','AN2-F7','AN2-F12','AN2-F17','AN2-F32','JN1-F15','JN1-F16','JN1-F32'];
    for(const id of [...priorities,'JN2-F3','JN1-F11','BN5-F8(B)']){
     await page.evaluate(code=>window.setCurrent(code),id);
     const cards=page.locator('#main .image-card');
@@ -60,6 +62,32 @@ const {webkit,chromium,devices}=require('playwright');
     }
     if(id==='JN1-F15'){
       assert.equal(await page.locator('#main .image-wrap[data-file^="assets/jn1-f15/microscopy/"]').count(),14);
+    }
+    if(id==='JN1-F16'){
+      const microscopy=page.locator('#main .image-wrap[data-file^="assets/jn1-f16/microscopy/"]');
+      assert.equal(await microscopy.count(),10);
+      assert.equal(await page.locator('#main .image-wrap[data-file^="assets/jn1-f16/specimen/"]').count(),2);
+      assert.equal(await page.locator('#main .image-wrap[data-name="JN1-F16SP.JPG"]').count(),1);
+      assert.equal(await page.locator('#main summary').filter({hasText:'Archived photo records'}).count(),0);
+      assert.match(await page.locator('#main').innerText(),/9–14 µm longitudinally and 3–5 µm transversely/);
+      for(const card of await microscopy.all()){
+        const expected=await card.getAttribute('data-file');
+        await card.scrollIntoViewIfNeeded();
+        if(settings.hasTouch) await card.tap();
+        else await card.click();
+        const viewer=page.locator('#viewerImg');
+        assert.equal(await viewer.getAttribute('src'),expected);
+        assert.ok(await viewer.evaluate(async image=>{await image.decode();return image.naturalWidth>0;}));
+        if(expected.endsWith('(1).png')){
+          await page.locator('#oneToOne').click();
+          const transform=await viewer.evaluate(image=>image.style.transform);
+          await page.locator('#zoomIn').click();
+          assert.notEqual(await viewer.evaluate(image=>image.style.transform),transform);
+          await page.locator('#zoomOut').click();
+          assert.equal(await viewer.evaluate(image=>image.style.transform),transform);
+        }
+        await page.locator('#closeViewer').click();
+      }
     }
     if(id==='JN1-F32'){
       const microscopy=page.locator('#main .image-wrap[data-file^="assets/jn1-f32/microscopy/"]');
