@@ -21,15 +21,25 @@ const {webkit,chromium,devices}=require('playwright');
    });
    await page.goto(origin,{waitUntil:'domcontentloaded'});
    await page.locator('#enterAtlas').click();
-   for(const id of ['AN2-F3','AN2-F12','JN2-F3','JN1-F11','BN5-F8(B)','JN1-F32']){
+   const priorities=['AN2-F1','AN2-F3','AN2-F7','AN2-F12','AN2-F17','AN2-F32','JN1-F15','JN1-F32'];
+   for(const id of [...priorities,'JN2-F3','JN1-F11','BN5-F8(B)']){
     await page.evaluate(code=>window.setCurrent(code),id);
     const cards=page.locator('#main .image-card');
-    assert.ok(await cards.count()>0,id+' images must remain present');
+    const count=await cards.count();
+    assert.ok(count>0 || id==='AN2-F17',id+' images must remain present');
     assert.equal(await page.locator('#main a[href*="drive.google.com"]').count(),0,'No public Drive links in '+id);
     assert.equal(await page.locator('#main iframe[src*="drive.google.com"]').count(),0,'No Drive embeds in '+id);
     assert.ok(!(await page.locator('#main').innerText()).includes('Open source in Google Drive'),'Source button must be absent');
     assert.ok(!(await page.locator('#main').innerText()).includes('Open movie in Drive'),'Movie redirect must be absent');
     const local=page.locator('#main .image-wrap[data-file^="assets/"]');
+    assert.equal(await local.count(),count,id+' assets must be locally hosted');
+    if(priorities.includes(id)){
+      for(const image of await local.locator('img').all()){
+        await image.scrollIntoViewIfNeeded();
+        assert.ok(await image.evaluate(async element=>{await element.decode();return element.naturalWidth>0;}));
+      }
+      console.log(name+' '+id+': '+count+' decoded gallery images');
+    }
     if(await local.count()){
       const first=local.first();await first.scrollIntoViewIfNeeded();
       await page.waitForFunction(()=>{let el=[...document.querySelectorAll('#main .image-wrap[data-file^="assets/"] img')][0];return el&&el.complete&&el.naturalWidth>0;},null,{timeout:15000});
@@ -38,6 +48,19 @@ const {webkit,chromium,devices}=require('playwright');
       await page.locator('#closeViewer').click();
     }
     assert.equal(await page.locator('#main img[src*="drive.google.com"]').count(),0,id);
+    if(id==='AN2-F1'){
+      assert.equal(count,8,'Preserve the original gallery image and display all seven recovered views');
+      assert.equal(await page.locator('#main summary').filter({hasText:'Archived photo records'}).count(),0);
+      const restored=page.locator('#main .image-wrap[data-file^="assets/an2-f1/"]');
+      assert.equal(await restored.count(),7);
+      await restored.last().click();
+      assert.ok(await page.locator('#viewerImg').evaluate(async image=>{await image.decode();return image.naturalWidth>0;}));
+      assert.match(await page.locator('#viewerCap').innerText(),/AN2-F1 label/);
+      await page.locator('#closeViewer').click();
+    }
+    if(id==='JN1-F15'){
+      assert.equal(await page.locator('#main .image-wrap[data-file^="assets/jn1-f15/microscopy/"]').count(),14);
+    }
     if(id==='JN1-F32'){
       const microscopy=page.locator('#main .image-wrap[data-file^="assets/jn1-f32/microscopy/"]');
       assert.equal(await microscopy.count(),12);
