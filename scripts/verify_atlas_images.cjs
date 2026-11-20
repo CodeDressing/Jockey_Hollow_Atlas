@@ -57,10 +57,18 @@ function gallery() {
   const refs = new Set();
   function include(photo) {
     assert.ok(photo.original, 'Published image lacks an original: ' + photo.filename);
+    assert.ok(photo.category?.trim() && photo.caption?.trim(),
+      'Published image lacks a category or caption: ' + photo.filename);
     refs.add(photo.original);
     if (photo.thumb) refs.add(photo.thumb);
   }
   for (const record of records) {
+    const paths = new Set();
+    for (const photo of record.images || []) {
+      const file = decodeURIComponent(photo.original);
+      assert.ok(!paths.has(file), record.code + ' has a duplicate gallery path: ' + file);
+      paths.add(file);
+    }
     for (const photo of record.images || []) include(photo);
     for (const movie of record.movies || []) if (movie.poster) refs.add(movie.poster);
   }
@@ -78,6 +86,12 @@ function gallery() {
   }
   const archived = records.reduce((count, record) => count + (record.archivedPhotos || []).length, 0);
   return {images, records, archived, sourcePaths};
+}
+
+async function decodeImage(bytes, file) {
+  const sharp = require('sharp');
+  const {info} = await sharp(bytes, {failOn: 'error'}).raw().toBuffer({resolveWithObject: true});
+  assert.ok(info.width > 0 && info.height > 0, 'Image has no decoded pixels: ' + file);
 }
 
 // SECTION 02 — Evidence manifests
@@ -120,7 +134,7 @@ function verifyManifests({records, images, sourcePaths}) {
 }
 
 // SECTION 03 — Anonymous HTTP verification
-async function verifyHttp(origin, images, accessOnly) {
+async function verifyHttp(origin, images, accessOnly, decode) {
   const base = new URL(origin);
   assert.ok(['https:', 'http:'].includes(base.protocol) && !base.username && !base.password);
   const queue = [...images.values()];
@@ -137,6 +151,7 @@ async function verifyHttp(origin, images, accessOnly) {
         assert.equal(mime, type);
         const body = Buffer.from(await response.arrayBuffer());
         assert.ok(hasImageSignature(body, type), 'Invalid image signature');
+        if (decode) await decodeImage(body, file);
         if (body.length !== size || sha256(body) !== sha) {
           byteDifferences.push({file, expectedBytes: size, receivedBytes: body.length,
             cdnOptimization: response.headers.get('cf-polished')});
@@ -149,24 +164,33 @@ async function verifyHttp(origin, images, accessOnly) {
   await Promise.all(Array.from({length: 12}, worker));
   console.log(JSON.stringify({origin: base.origin, checked: images.size,
     accessible: images.size - failures.length, exactBytes: images.size - failures.length - byteDifferences.length,
+    decoded: decode ? images.size - failures.length : null,
     byteDifferences: byteDifferences.length, cdnOptimizedDifferences: byteDifferences.filter(row => row.cdnOptimization).length,
     byteDifferenceExamples: byteDifferences.slice(0, 5), failures}, null, 2));
   assert.equal(failures.length, 0, 'Atlas HTTP image access verification failed');
   if (!accessOnly) assert.equal(byteDifferences.length, 0, 'Atlas HTTP image byte verification failed');
 }
 
-(async () => {
+async function main() {
   const args = process.argv.slice(2);
-  const accessOnly = args[0] === '--access-only';
-  if (accessOnly) args.shift();
-  assert.ok(args.length <= 1 && (!accessOnly || args.length === 1),
-    'Usage: node scripts/verify_atlas_images.cjs [--access-only] [http-origin]');
+  const accessOnly = args.includes('--access-only');
+  const decode = args.includes('--decode');
+  const origins = args.filter(arg => arg !== '--access-only' && arg !== '--decode');
+  assert.ok(origins.length <= 1 && (!accessOnly || origins.length === 1),
+    'Usage: node scripts/verify_atlas_images.cjs [--decode] [--access-only] [http-origin]');
   const inventory = gallery();
   const manifests = verifyManifests(inventory);
   console.log(JSON.stringify({records: inventory.records.length, uniqueImagePaths: inventory.images.size,
     archivedPhotoRecords: inventory.archived, ...manifests}));
-  if (args[0]) await verifyHttp(args[0], inventory.images, accessOnly);
-})().catch(error => {
+  if (origins[0]) await verifyHttp(origins[0], inventory.images, accessOnly, decode);
+  else if (decode) {
+    for (const {file} of inventory.images.values()) await decodeImage(fs.readFileSync(path.join(root, file)), file);
+    console.log('Decoded all ' + inventory.images.size + ' local image paths');
+  }
+}
+
+module.exports = {gallery};
+if (require.main === module) main().catch(error => {
   console.error(error);
   process.exitCode = 1;
 });
