@@ -15,6 +15,17 @@ const imageTypes = {
 };
 
 // SECTION 01 — Public gallery inventory
+function hasImageSignature(bytes, type) {
+  const ascii = (start, end) => bytes.toString('ascii', start, end);
+  switch (type) {
+    case 'image/jpeg': return bytes[0] === 0xff && bytes[1] === 0xd8 && bytes[2] === 0xff;
+    case 'image/png': return bytes.subarray(0, 8).equals(Buffer.from('89504e470d0a1a0a', 'hex'));
+    case 'image/gif': return ['GIF87a', 'GIF89a'].includes(ascii(0, 6));
+    case 'image/webp': return ascii(0, 4) === 'RIFF' && ascii(8, 12) === 'WEBP';
+    case 'image/avif': return ascii(4, 8) === 'ftyp' && ['avif', 'avis'].includes(ascii(8, 12));
+  }
+}
+
 function asset(reference) {
   assert.match(reference, /^assets\//, 'Expected an Atlas image path');
   const file = decodeURIComponent(reference);
@@ -23,7 +34,7 @@ function asset(reference) {
   const type = imageTypes[path.extname(file).toLowerCase()];
   assert.ok(type, 'Unsupported public image format: ' + file);
   const bytes = fs.readFileSync(resolved);
-  assert.ok(bytes.length, 'Empty image: ' + file);
+  assert.ok(hasImageSignature(bytes, type), 'Invalid image signature: ' + file);
   return {file, type, size: bytes.length, sha: sha256(bytes)};
 }
 
@@ -109,11 +120,12 @@ function verifyManifests({records, images, sourcePaths}) {
 }
 
 // SECTION 03 — Anonymous HTTP verification
-async function verifyHttp(origin, images) {
+async function verifyHttp(origin, images, accessOnly) {
   const base = new URL(origin);
   assert.ok(['https:', 'http:'].includes(base.protocol) && !base.username && !base.password);
   const queue = [...images.values()];
   const failures = [];
+  const byteDifferences = [];
   async function worker() {
     while (queue.length) {
       const {file, type, size, sha} = queue.pop();
@@ -124,25 +136,36 @@ async function verifyHttp(origin, images) {
         const mime = response.headers.get('content-type')?.split(';')[0];
         assert.equal(mime, type);
         const body = Buffer.from(await response.arrayBuffer());
-        assert.equal(body.length, size);
-        assert.equal(sha256(body), sha);
+        assert.ok(hasImageSignature(body, type), 'Invalid image signature');
+        if (body.length !== size || sha256(body) !== sha) {
+          byteDifferences.push({file, expectedBytes: size, receivedBytes: body.length,
+            cdnOptimization: response.headers.get('cf-polished')});
+        }
       } catch (error) {
         failures.push({file, error: error.message, cause: error.cause?.message});
       }
     }
   }
   await Promise.all(Array.from({length: 12}, worker));
-  console.log(JSON.stringify({origin: base.origin, checked: images.size, passed: images.size - failures.length, failures}, null, 2));
-  assert.equal(failures.length, 0, 'Atlas HTTP image verification failed');
+  console.log(JSON.stringify({origin: base.origin, checked: images.size,
+    accessible: images.size - failures.length, exactBytes: images.size - failures.length - byteDifferences.length,
+    byteDifferences: byteDifferences.length, cdnOptimizedDifferences: byteDifferences.filter(row => row.cdnOptimization).length,
+    byteDifferenceExamples: byteDifferences.slice(0, 5), failures}, null, 2));
+  assert.equal(failures.length, 0, 'Atlas HTTP image access verification failed');
+  if (!accessOnly) assert.equal(byteDifferences.length, 0, 'Atlas HTTP image byte verification failed');
 }
 
 (async () => {
-  assert.ok(process.argv.length <= 3, 'Usage: node scripts/verify_atlas_images.cjs [http-origin]');
+  const args = process.argv.slice(2);
+  const accessOnly = args[0] === '--access-only';
+  if (accessOnly) args.shift();
+  assert.ok(args.length <= 1 && (!accessOnly || args.length === 1),
+    'Usage: node scripts/verify_atlas_images.cjs [--access-only] [http-origin]');
   const inventory = gallery();
   const manifests = verifyManifests(inventory);
   console.log(JSON.stringify({records: inventory.records.length, uniqueImagePaths: inventory.images.size,
     archivedPhotoRecords: inventory.archived, ...manifests}));
-  if (process.argv[2]) await verifyHttp(process.argv[2], inventory.images);
+  if (args[0]) await verifyHttp(args[0], inventory.images, accessOnly);
 })().catch(error => {
   console.error(error);
   process.exitCode = 1;

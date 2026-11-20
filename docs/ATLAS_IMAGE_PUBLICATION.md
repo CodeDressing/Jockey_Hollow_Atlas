@@ -11,7 +11,8 @@
 
 1. Run `node scripts/verify_atlas_images.cjs` from the repository root. It checks all image paths wired to the public gallery, blocks Drive links in loaded media catalogs, and checks the microscopy manifests against asset bytes and the correct accessions.
 2. Serve the root on port 8765 and run `node scripts/verify_atlas_images.cjs http://127.0.0.1:8765/`. Run `node tests/public-atlas-no-drive-links-20261117.cjs` with Playwright Chromium and WebKit installed to check image decoding, the viewer and Drive-free gallery navigation.
-3. Commit and push verified changes to `main`. Confirm that Render made the exact commit live. Run `node scripts/verify_atlas_images.cjs https://jockey-hollow-atlas.onrender.com/` to confirm HTTP 200, image MIME, byte length and SHA-256 for every gallery URL without credentials or redirects. Set `ATLAS_ORIGIN` to the same URL to repeat the browser check on production.
+3. Commit and push verified changes to `main`. Confirm that Render made the exact commit live. Run `node scripts/verify_atlas_images.cjs --access-only https://jockey-hollow-atlas.onrender.com/` to check HTTP 200, image MIME, binary signatures and the absence of redirects or authentication for every gallery URL. Set `ATLAS_ORIGIN` to the same URL to repeat the browser check on production.
+4. For exact-byte verification, run the same HTTP command without `--access-only`. Render's CDN can apply Cloudflare Polish to image responses. The audit reports these byte differences independently of image access. Use a pinned GitHub commit and the accession's SHA-256 manifest to retrieve and verify the exact published original files. A display response with different bytes should be treated as a derivative.
 
 ## 03 — November 20, 2026 legacy baseline
 

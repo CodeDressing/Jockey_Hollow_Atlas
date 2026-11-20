@@ -26,3 +26,5 @@ Record microscope make/model, objective numerical aperture and magnification, im
 ## Publication record
 
 The researcher authorized this named set of 12 captures for the public Atlas. Original capture filenames, image bytes, and overlays are retained. See the [image integrity manifest](microscopy-intake.json) for SHA-256 and byte counts. The source spore-print-attempt record remains in the Atlas.
+
+The [exact PNG originals in GitHub](https://github.com/CodeDressing/Jockey_Hollow_Atlas/tree/4344f499d9d99bbdc530133f16bf110a9fae935d/assets/jn1-f32/microscopy) match the manifest. Render may optimize the gallery responses.
