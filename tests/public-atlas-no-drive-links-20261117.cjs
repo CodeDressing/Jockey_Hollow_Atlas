@@ -1,6 +1,7 @@
 const assert=require('node:assert/strict');
 const {webkit,chromium,devices}=require('playwright');
 (async()=>{
+ const origin=process.env.ATLAS_ORIGIN||'http://127.0.0.1:8765/';
  for(const [name,engine,settings] of [
   ['iPhone Safari',webkit,{...devices['iPhone 13'],viewport:{width:402,height:874}}],
   ['Android Chromium',chromium,{...devices['Pixel 7'],viewport:{width:412,height:915}}],
@@ -13,10 +14,14 @@ const {webkit,chromium,devices}=require('playwright');
    const errors=[];page.on('pageerror',e=>errors.push(e.message));
    // Private Drive photographs may be unavailable to public visitors. Never
    // depend on their accessibility or offer a navigation path to Drive.
-   await page.route('https://drive.google.com/**',r=>r.abort());
-   await page.goto('http://127.0.0.1:8765/index.html',{waitUntil:'domcontentloaded'});
+   const driveRequests=[];
+   await page.route('https://drive.google.com/**',route=>{
+    driveRequests.push(route.request().url());
+    return route.abort();
+   });
+   await page.goto(origin,{waitUntil:'domcontentloaded'});
    await page.locator('#enterAtlas').click();
-   for(const id of ['AN2-F3','AN2-F12','JN2-F3','JN1-F11','BN5-F8(B)']){
+   for(const id of ['AN2-F3','AN2-F12','JN2-F3','JN1-F11','BN5-F8(B)','JN1-F32']){
     await page.evaluate(code=>window.setCurrent(code),id);
     const cards=page.locator('#main .image-card');
     assert.ok(await cards.count()>0,id+' images must remain present');
@@ -32,15 +37,24 @@ const {webkit,chromium,devices}=require('playwright');
       assert.equal(await page.locator('#openOriginal').isVisible(),true,'Original control for local photos');
       await page.locator('#closeViewer').click();
     }
-    const remote=page.locator('#main .image-wrap[data-file^="https://drive.google.com/"]');
-    if(await remote.count()){
-      await remote.first().click();
-      assert.equal(await page.locator('#openOriginal').isVisible(),false,'No navigation to Drive for external photos');
+    assert.equal(await page.locator('#main img[src*="drive.google.com"]').count(),0,id);
+    if(id==='JN1-F32'){
+      const microscopy=page.locator('#main .image-wrap[data-file^="assets/jn1-f32/microscopy/"]');
+      assert.equal(await microscopy.count(),12);
+      for(const image of await microscopy.locator('img').all()){
+        await image.scrollIntoViewIfNeeded();
+        assert.ok(await image.evaluate(async element=>{await element.decode();return element.naturalWidth>0;}));
+      }
+      await microscopy.nth(8).click();
+      assert.ok(await page.locator('#viewerImg').evaluate(async image=>{await image.decode();return image.naturalWidth>0;}));
+      assert.match(await page.locator('#viewerCap').innerText(),/software length annotations/);
       await page.locator('#closeViewer').click();
+      assert.equal(await page.locator('#main .image-wrap[data-name="JN1-F32SP.JPG"]').count(),1);
     }
    }
+   assert.deepEqual(driveRequests,[],'Unexpected Drive requests '+name);
    assert.deepEqual(errors,[],'Unexpected JS error '+name);
-   console.log('PASS '+name+': public source links removed, original specimen cards preserved, no external-original navigation');
+   console.log('PASS '+name+': public source links removed, original specimen cards preserved, all JN1-F32 images decode, and no Drive requests');
    await ctx.close();
   }finally{await browser.close();}
  }

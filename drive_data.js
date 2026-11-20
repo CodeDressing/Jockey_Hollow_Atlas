@@ -7,12 +7,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3204.HEIC",
     "caption": "Rutgers Drive — BN1-F16 wild field view (IMG_3204)",
-    "original": "https://drive.google.com/thumbnail?id=1Ucwx3FBb0T9eMCNLcx_k7jJw4rQ3TudF&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1Ucwx3FBb0T9eMCNLcx_k7jJw4rQ3TudF&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3204.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1Ucwx3FBb0T9eMCNLcx_k7jJw4rQ3TudF/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -22,12 +20,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3208.HEIC",
     "caption": "Rutgers Drive — BN1-F18 wild field view (IMG_3208)",
-    "original": "https://drive.google.com/thumbnail?id=1EFWvU9B5-9z6K9XBNTX0_I_x27tDh8pK&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1EFWvU9B5-9z6K9XBNTX0_I_x27tDh8pK&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3208.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1EFWvU9B5-9z6K9XBNTX0_I_x27tDh8pK/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -37,12 +33,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3209.HEIC",
     "caption": "Rutgers Drive — BN1-F18 wild field view (IMG_3209)",
-    "original": "https://drive.google.com/thumbnail?id=1dLPJvq5C6OfPTWycmWgoJWNYWqoi8D2Y&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1dLPJvq5C6OfPTWycmWgoJWNYWqoi8D2Y&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3209.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1dLPJvq5C6OfPTWycmWgoJWNYWqoi8D2Y/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -52,12 +46,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3210.HEIC",
     "caption": "Rutgers Drive — BN1-F18 wild field view (IMG_3210)",
-    "original": "https://drive.google.com/thumbnail?id=1uLF1gdcBqQF9uwMgpdjltyvPFbPjmAk-&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1uLF1gdcBqQF9uwMgpdjltyvPFbPjmAk-&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3210.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1uLF1gdcBqQF9uwMgpdjltyvPFbPjmAk-/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -67,12 +59,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3211.HEIC",
     "caption": "Rutgers Drive — BN1-F19 wild field view (IMG_3211)",
-    "original": "https://drive.google.com/thumbnail?id=11gQKpw5WlCu6M5htszuholu6C62rh0UH&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=11gQKpw5WlCu6M5htszuholu6C62rh0UH&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3211.HEIC",
-    "drive_view": "https://drive.google.com/file/d/11gQKpw5WlCu6M5htszuholu6C62rh0UH/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -82,12 +72,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3212.HEIC",
     "caption": "Rutgers Drive — BN1-F19 wild field view (IMG_3212)",
-    "original": "https://drive.google.com/thumbnail?id=1VqN2RJZ54PkXzQa2LxV-7qSRH58SlOAM&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1VqN2RJZ54PkXzQa2LxV-7qSRH58SlOAM&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3212.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1VqN2RJZ54PkXzQa2LxV-7qSRH58SlOAM/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -97,12 +85,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3213.HEIC",
     "caption": "Rutgers Drive — BN1-F19 wild field view (IMG_3213)",
-    "original": "https://drive.google.com/thumbnail?id=1Go7-2pK4ZdEzm3vd-mNBjlYftC-coH_K&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1Go7-2pK4ZdEzm3vd-mNBjlYftC-coH_K&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3213.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1Go7-2pK4ZdEzm3vd-mNBjlYftC-coH_K/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -112,12 +98,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3214.HEIC",
     "caption": "Rutgers Drive — BN1-F19 wild field view (IMG_3214)",
-    "original": "https://drive.google.com/thumbnail?id=1u2tWN7KdWPqawsKdFF_yc-zCZvbq3hiy&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1u2tWN7KdWPqawsKdFF_yc-zCZvbq3hiy&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3214.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1u2tWN7KdWPqawsKdFF_yc-zCZvbq3hiy/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -127,12 +111,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3215.HEIC",
     "caption": "Rutgers Drive — BN1-F19 wild field view (IMG_3215)",
-    "original": "https://drive.google.com/thumbnail?id=1WZeDD543WEyKMo_cwpTgZ3SPLlnuMKER&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1WZeDD543WEyKMo_cwpTgZ3SPLlnuMKER&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3215.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1WZeDD543WEyKMo_cwpTgZ3SPLlnuMKER/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -142,12 +124,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3216.HEIC",
     "caption": "Rutgers Drive — BN1-F19 wild field view (IMG_3216)",
-    "original": "https://drive.google.com/thumbnail?id=1-WCFLlu2E7XDCynwjNiJiqJPuSW_DrFp&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1-WCFLlu2E7XDCynwjNiJiqJPuSW_DrFp&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3216.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1-WCFLlu2E7XDCynwjNiJiqJPuSW_DrFp/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -157,12 +137,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3217.HEIC",
     "caption": "Rutgers Drive — BN1-F19 wild field view (IMG_3217)",
-    "original": "https://drive.google.com/thumbnail?id=1MeruHb28pWJWc2EL09iek0MC7tTnt63l&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1MeruHb28pWJWc2EL09iek0MC7tTnt63l&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3217.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1MeruHb28pWJWc2EL09iek0MC7tTnt63l/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -172,12 +150,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3218.HEIC",
     "caption": "Rutgers Drive — BN1-F20 wild field view (IMG_3218)",
-    "original": "https://drive.google.com/thumbnail?id=1XsQiZ4Ed8knMUV7JnBnFWRWpezfblnRz&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1XsQiZ4Ed8knMUV7JnBnFWRWpezfblnRz&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3218.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1XsQiZ4Ed8knMUV7JnBnFWRWpezfblnRz/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -187,12 +163,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3219.HEIC",
     "caption": "Rutgers Drive — BN1-F20 wild field view (IMG_3219)",
-    "original": "https://drive.google.com/thumbnail?id=1RjbvH37On76KokHh6vAkiZ-HlJgKf-d8&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1RjbvH37On76KokHh6vAkiZ-HlJgKf-d8&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3219.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1RjbvH37On76KokHh6vAkiZ-HlJgKf-d8/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -202,12 +176,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3220.HEIC",
     "caption": "Rutgers Drive — BN1-F20 wild field view (IMG_3220)",
-    "original": "https://drive.google.com/thumbnail?id=1qZDikqT5sRqI2N1sCP6RelqbteeQgRMs&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1qZDikqT5sRqI2N1sCP6RelqbteeQgRMs&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3220.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1qZDikqT5sRqI2N1sCP6RelqbteeQgRMs/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -217,12 +189,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3221.HEIC",
     "caption": "Rutgers Drive — BN1-F20 wild field view (IMG_3221)",
-    "original": "https://drive.google.com/thumbnail?id=187VaWorYs6dxdytqX3qBjOtlzSq5AoTO&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=187VaWorYs6dxdytqX3qBjOtlzSq5AoTO&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3221.HEIC",
-    "drive_view": "https://drive.google.com/file/d/187VaWorYs6dxdytqX3qBjOtlzSq5AoTO/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -232,12 +202,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3222.HEIC",
     "caption": "Rutgers Drive — BN1-F20 wild field view (IMG_3222)",
-    "original": "https://drive.google.com/thumbnail?id=13QS3iKn-v--azKo3lVOvgP4z7SBBpOay&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=13QS3iKn-v--azKo3lVOvgP4z7SBBpOay&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3222.HEIC",
-    "drive_view": "https://drive.google.com/file/d/13QS3iKn-v--azKo3lVOvgP4z7SBBpOay/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -247,12 +215,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3223.HEIC",
     "caption": "Rutgers Drive — BN1-F20 wild field view (IMG_3223)",
-    "original": "https://drive.google.com/thumbnail?id=12EuvpLpecHUkM8bmeiiNQzmthq7n929c&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=12EuvpLpecHUkM8bmeiiNQzmthq7n929c&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3223.HEIC",
-    "drive_view": "https://drive.google.com/file/d/12EuvpLpecHUkM8bmeiiNQzmthq7n929c/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -262,12 +228,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3224.HEIC",
     "caption": "Rutgers Drive — BN1-F20 wild field view (IMG_3224)",
-    "original": "https://drive.google.com/thumbnail?id=1DXL7PfVxUFlDv66ESocsjeUA6RUC9Z0W&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1DXL7PfVxUFlDv66ESocsjeUA6RUC9Z0W&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3224.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1DXL7PfVxUFlDv66ESocsjeUA6RUC9Z0W/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -277,12 +241,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3225.HEIC",
     "caption": "Rutgers Drive — BN1-F20 wild field view (IMG_3225)",
-    "original": "https://drive.google.com/thumbnail?id=1Bwx2S6AolyHexYjhqZznxx2UXwhhWqMh&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1Bwx2S6AolyHexYjhqZznxx2UXwhhWqMh&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3225.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1Bwx2S6AolyHexYjhqZznxx2UXwhhWqMh/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -292,12 +254,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3226.HEIC",
     "caption": "Rutgers Drive — BN1-F20 wild field view (IMG_3226)",
-    "original": "https://drive.google.com/thumbnail?id=11y3gqxoT6U3KW6zbgOBaUbqQ_yKWuVMu&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=11y3gqxoT6U3KW6zbgOBaUbqQ_yKWuVMu&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3226.HEIC",
-    "drive_view": "https://drive.google.com/file/d/11y3gqxoT6U3KW6zbgOBaUbqQ_yKWuVMu/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -307,12 +267,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3227.HEIC",
     "caption": "Rutgers Drive — BN1-F20 wild field view (IMG_3227)",
-    "original": "https://drive.google.com/thumbnail?id=1jnMRHqw5fhrmxuSCacnQJt6wAkQs5pKH&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1jnMRHqw5fhrmxuSCacnQJt6wAkQs5pKH&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3227.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1jnMRHqw5fhrmxuSCacnQJt6wAkQs5pKH/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -322,12 +280,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3228.HEIC",
     "caption": "Rutgers Drive — BN1-F20 wild field view (IMG_3228)",
-    "original": "https://drive.google.com/thumbnail?id=1MdB-aiUNB-Kpvr6PvZmXLAVbfR7P7izu&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1MdB-aiUNB-Kpvr6PvZmXLAVbfR7P7izu&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3228.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1MdB-aiUNB-Kpvr6PvZmXLAVbfR7P7izu/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -337,12 +293,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3229.HEIC",
     "caption": "Rutgers Drive — BN1-F20 wild field view (IMG_3229)",
-    "original": "https://drive.google.com/thumbnail?id=1wBZ6gZ3zRHIHV3gl8TzJfYuwbBRC5BWu&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1wBZ6gZ3zRHIHV3gl8TzJfYuwbBRC5BWu&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3229.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1wBZ6gZ3zRHIHV3gl8TzJfYuwbBRC5BWu/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -352,12 +306,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3230.HEIC",
     "caption": "Rutgers Drive — BN1-F20 wild field view (IMG_3230)",
-    "original": "https://drive.google.com/thumbnail?id=1amtrm15uMPQllLXKvLUfMhPuEyEg0J_S&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1amtrm15uMPQllLXKvLUfMhPuEyEg0J_S&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3230.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1amtrm15uMPQllLXKvLUfMhPuEyEg0J_S/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -367,12 +319,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3231.HEIC",
     "caption": "Rutgers Drive — BN1-F20 wild field view (IMG_3231)",
-    "original": "https://drive.google.com/thumbnail?id=1ULFDAtFm2lVanRioH3o3dq8eJfSLbvi1&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1ULFDAtFm2lVanRioH3o3dq8eJfSLbvi1&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3231.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1ULFDAtFm2lVanRioH3o3dq8eJfSLbvi1/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -382,12 +332,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3232.HEIC",
     "caption": "Rutgers Drive — BN1-F21 wild field view (IMG_3232)",
-    "original": "https://drive.google.com/thumbnail?id=1La7mGrRtyxiEvrQGjdkoH4hqCqAmt91z&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1La7mGrRtyxiEvrQGjdkoH4hqCqAmt91z&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3232.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1La7mGrRtyxiEvrQGjdkoH4hqCqAmt91z/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -397,12 +345,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3233.HEIC",
     "caption": "Rutgers Drive — BN1-F21 wild field view (IMG_3233)",
-    "original": "https://drive.google.com/thumbnail?id=1ot2g-aShfmBtd3HwCNPv-5gevUIu1DXX&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1ot2g-aShfmBtd3HwCNPv-5gevUIu1DXX&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3233.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1ot2g-aShfmBtd3HwCNPv-5gevUIu1DXX/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -412,12 +358,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3234.HEIC",
     "caption": "Rutgers Drive — BN1-F21 wild field view (IMG_3234)",
-    "original": "https://drive.google.com/thumbnail?id=1xSnoI9rD3t1EWVj6Q6juzlHuIghfr3Y2&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1xSnoI9rD3t1EWVj6Q6juzlHuIghfr3Y2&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3234.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1xSnoI9rD3t1EWVj6Q6juzlHuIghfr3Y2/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -427,12 +371,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3235.HEIC",
     "caption": "Rutgers Drive — BN1-F21 wild field view (IMG_3235)",
-    "original": "https://drive.google.com/thumbnail?id=1tJtp9CnHNfTrqbdowd744V_YKdI_hC9S&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1tJtp9CnHNfTrqbdowd744V_YKdI_hC9S&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3235.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1tJtp9CnHNfTrqbdowd744V_YKdI_hC9S/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -442,12 +384,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3236.HEIC",
     "caption": "Rutgers Drive — BN1-F21 wild field view (IMG_3236)",
-    "original": "https://drive.google.com/thumbnail?id=1gkcCRuAyrjBPGqd8wnPDNowhERH496Hu&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1gkcCRuAyrjBPGqd8wnPDNowhERH496Hu&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3236.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1gkcCRuAyrjBPGqd8wnPDNowhERH496Hu/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -457,12 +397,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3237.HEIC",
     "caption": "Rutgers Drive — BN1-F21 wild field view (IMG_3237)",
-    "original": "https://drive.google.com/thumbnail?id=1xdEdRa33wKqK8xttZknD_2qLE1Z99C2B&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1xdEdRa33wKqK8xttZknD_2qLE1Z99C2B&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3237.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1xdEdRa33wKqK8xttZknD_2qLE1Z99C2B/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -472,12 +410,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3238.HEIC",
     "caption": "Rutgers Drive — BN1-F22 wild field view (IMG_3238)",
-    "original": "https://drive.google.com/thumbnail?id=1W_BbxSh--vvYzPpV1JCkaQ1pwSHhNUok&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1W_BbxSh--vvYzPpV1JCkaQ1pwSHhNUok&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3238.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1W_BbxSh--vvYzPpV1JCkaQ1pwSHhNUok/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -487,12 +423,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3239.HEIC",
     "caption": "Rutgers Drive — BN1-F22 wild field view (IMG_3239)",
-    "original": "https://drive.google.com/thumbnail?id=1hFe92GAaTGLjhKQCASqoKYYB6VQEeDto&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1hFe92GAaTGLjhKQCASqoKYYB6VQEeDto&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3239.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1hFe92GAaTGLjhKQCASqoKYYB6VQEeDto/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -502,12 +436,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3240.HEIC",
     "caption": "Rutgers Drive — BN1-F22 wild field view (IMG_3240)",
-    "original": "https://drive.google.com/thumbnail?id=1eAEolBZNjU2YpSoV4DL7BvDgeqe_Az56&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1eAEolBZNjU2YpSoV4DL7BvDgeqe_Az56&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3240.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1eAEolBZNjU2YpSoV4DL7BvDgeqe_Az56/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -517,12 +449,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3241.HEIC",
     "caption": "Rutgers Drive — BN1-F23 wild field view (IMG_3241)",
-    "original": "https://drive.google.com/thumbnail?id=1OXn9yPliBlpS5tW0D_tlhvV8HvBCXKkT&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1OXn9yPliBlpS5tW0D_tlhvV8HvBCXKkT&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3241.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1OXn9yPliBlpS5tW0D_tlhvV8HvBCXKkT/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -532,12 +462,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3242.HEIC",
     "caption": "Rutgers Drive — BN1-F23 wild field view (IMG_3242)",
-    "original": "https://drive.google.com/thumbnail?id=1PHiwCUvgpRp592-slR3qUE3ds4JMtPSx&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1PHiwCUvgpRp592-slR3qUE3ds4JMtPSx&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3242.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1PHiwCUvgpRp592-slR3qUE3ds4JMtPSx/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -547,12 +475,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3243.HEIC",
     "caption": "Rutgers Drive — BN1-F23 wild field view (IMG_3243)",
-    "original": "https://drive.google.com/thumbnail?id=1iE0O7U6mSg5iDkoJe1kURcAQOq00Gyyo&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1iE0O7U6mSg5iDkoJe1kURcAQOq00Gyyo&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3243.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1iE0O7U6mSg5iDkoJe1kURcAQOq00Gyyo/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -562,12 +488,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3244.HEIC",
     "caption": "Rutgers Drive — BN1-F23 wild field view (IMG_3244)",
-    "original": "https://drive.google.com/thumbnail?id=12OyejsqYzev1EzHNg3PqKY5N68HHY3B-&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=12OyejsqYzev1EzHNg3PqKY5N68HHY3B-&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3244.HEIC",
-    "drive_view": "https://drive.google.com/file/d/12OyejsqYzev1EzHNg3PqKY5N68HHY3B-/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -577,12 +501,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3245.HEIC",
     "caption": "Rutgers Drive — BN1-F23 wild field view (IMG_3245)",
-    "original": "https://drive.google.com/thumbnail?id=1KQ19aSdce06XrfJXCsfBXHi4A1ZgMDpk&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1KQ19aSdce06XrfJXCsfBXHi4A1ZgMDpk&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3245.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1KQ19aSdce06XrfJXCsfBXHi4A1ZgMDpk/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -592,12 +514,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3246.HEIC",
     "caption": "Rutgers Drive — BN1-F23 wild field view (IMG_3246)",
-    "original": "https://drive.google.com/thumbnail?id=1_jKC_f7Eh61hoSwLmNvM37A7akAWZdq1&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1_jKC_f7Eh61hoSwLmNvM37A7akAWZdq1&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3246.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1_jKC_f7Eh61hoSwLmNvM37A7akAWZdq1/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -607,12 +527,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3247.HEIC",
     "caption": "Rutgers Drive — BN1-F23 wild field view (IMG_3247)",
-    "original": "https://drive.google.com/thumbnail?id=1MYfYJqLCLy18D5z8rkP9sP96KCsB8U49&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1MYfYJqLCLy18D5z8rkP9sP96KCsB8U49&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3247.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1MYfYJqLCLy18D5z8rkP9sP96KCsB8U49/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -622,12 +540,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3248.HEIC",
     "caption": "Rutgers Drive — BN1-F23 wild field view (IMG_3248)",
-    "original": "https://drive.google.com/thumbnail?id=1S_sBGJlip3tDEXhrF1c0r_Ij7eqYNqni&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1S_sBGJlip3tDEXhrF1c0r_Ij7eqYNqni&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3248.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1S_sBGJlip3tDEXhrF1c0r_Ij7eqYNqni/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -637,12 +553,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3249.HEIC",
     "caption": "Rutgers Drive — BN1-F23 wild field view (IMG_3249)",
-    "original": "https://drive.google.com/thumbnail?id=1xFnV2siABvPHV2cPJ1glvtthZ6SYg68X&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1xFnV2siABvPHV2cPJ1glvtthZ6SYg68X&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3249.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1xFnV2siABvPHV2cPJ1glvtthZ6SYg68X/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -652,12 +566,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3250.HEIC",
     "caption": "Rutgers Drive — BN1-F24 wild field view (IMG_3250)",
-    "original": "https://drive.google.com/thumbnail?id=1bMSTn623CLgUzhSLFN6Ay5dP_q5zyzPa&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1bMSTn623CLgUzhSLFN6Ay5dP_q5zyzPa&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3250.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1bMSTn623CLgUzhSLFN6Ay5dP_q5zyzPa/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -667,12 +579,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3251.HEIC",
     "caption": "Rutgers Drive — BN1-F24 wild field view (IMG_3251)",
-    "original": "https://drive.google.com/thumbnail?id=12q22qpWPHhV6URFPCdrM4Q3rilD7Xc2d&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=12q22qpWPHhV6URFPCdrM4Q3rilD7Xc2d&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3251.HEIC",
-    "drive_view": "https://drive.google.com/file/d/12q22qpWPHhV6URFPCdrM4Q3rilD7Xc2d/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -682,12 +592,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3252.HEIC",
     "caption": "Rutgers Drive — BN1-F24 wild field view (IMG_3252)",
-    "original": "https://drive.google.com/thumbnail?id=1jruBK8RZ-7-zrqjRUjr_7ynOfyHOvhSp&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1jruBK8RZ-7-zrqjRUjr_7ynOfyHOvhSp&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3252.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1jruBK8RZ-7-zrqjRUjr_7ynOfyHOvhSp/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -697,12 +605,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3253.HEIC",
     "caption": "Rutgers Drive — BN1-F24 wild field view (IMG_3253)",
-    "original": "https://drive.google.com/thumbnail?id=1BFLX1NN9OXHqyLltPoTeoubmHxynuuEv&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1BFLX1NN9OXHqyLltPoTeoubmHxynuuEv&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3253.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1BFLX1NN9OXHqyLltPoTeoubmHxynuuEv/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -712,12 +618,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3254.HEIC",
     "caption": "Rutgers Drive — BN1-F24 wild field view (IMG_3254)",
-    "original": "https://drive.google.com/thumbnail?id=1AxmnnZuQI92nz5bTEYnsChCkdGVw72mf&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1AxmnnZuQI92nz5bTEYnsChCkdGVw72mf&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3254.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1AxmnnZuQI92nz5bTEYnsChCkdGVw72mf/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -727,12 +631,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3255.HEIC",
     "caption": "Rutgers Drive — BN1-F24 wild field view (IMG_3255)",
-    "original": "https://drive.google.com/thumbnail?id=1Rb7bep3o9IZdbDwdKorBYGyefJ5-jvX7&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1Rb7bep3o9IZdbDwdKorBYGyefJ5-jvX7&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3255.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1Rb7bep3o9IZdbDwdKorBYGyefJ5-jvX7/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -742,12 +644,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3256.HEIC",
     "caption": "Rutgers Drive — BN1-F24 wild field view (IMG_3256)",
-    "original": "https://drive.google.com/thumbnail?id=1l58AZlAZG1Ni0QoCebYYORQTJRuLLoWm&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1l58AZlAZG1Ni0QoCebYYORQTJRuLLoWm&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3256.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1l58AZlAZG1Ni0QoCebYYORQTJRuLLoWm/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -757,12 +657,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3257.HEIC",
     "caption": "Rutgers Drive — BN1-F24 wild field view (IMG_3257)",
-    "original": "https://drive.google.com/thumbnail?id=1xeGviRU5td8dDvtwa2qWuD9q8XAdwzd1&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1xeGviRU5td8dDvtwa2qWuD9q8XAdwzd1&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3257.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1xeGviRU5td8dDvtwa2qWuD9q8XAdwzd1/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -772,12 +670,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3258.HEIC",
     "caption": "Rutgers Drive — BN1-F24 wild field view (IMG_3258)",
-    "original": "https://drive.google.com/thumbnail?id=14wIQ0AtOc044yz7tljvnk9F_7pps1Ucc&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=14wIQ0AtOc044yz7tljvnk9F_7pps1Ucc&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3258.HEIC",
-    "drive_view": "https://drive.google.com/file/d/14wIQ0AtOc044yz7tljvnk9F_7pps1Ucc/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -787,12 +683,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3259.HEIC",
     "caption": "Rutgers Drive — BN1-F24 wild field view (IMG_3259)",
-    "original": "https://drive.google.com/thumbnail?id=1_Ndd5DXvz05hvnc1gNXocJ9zg-jPYsxs&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1_Ndd5DXvz05hvnc1gNXocJ9zg-jPYsxs&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3259.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1_Ndd5DXvz05hvnc1gNXocJ9zg-jPYsxs/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -802,12 +696,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3260.HEIC",
     "caption": "Rutgers Drive — BN1-F24 wild field view (IMG_3260)",
-    "original": "https://drive.google.com/thumbnail?id=1D_uhy92mzwbIiv_5zOHtpSMwrarnYov5&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1D_uhy92mzwbIiv_5zOHtpSMwrarnYov5&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3260.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1D_uhy92mzwbIiv_5zOHtpSMwrarnYov5/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -817,12 +709,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3261.HEIC",
     "caption": "Rutgers Drive — BN1-F24 wild field view (IMG_3261)",
-    "original": "https://drive.google.com/thumbnail?id=1Oh8XuNXLDxDI5KBbUOEqDehsZ5vG2rXr&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1Oh8XuNXLDxDI5KBbUOEqDehsZ5vG2rXr&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3261.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1Oh8XuNXLDxDI5KBbUOEqDehsZ5vG2rXr/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -832,12 +722,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3262.HEIC",
     "caption": "Rutgers Drive — BN1-F25 wild field view (IMG_3262)",
-    "original": "https://drive.google.com/thumbnail?id=1OoTyItAi_0fS5V0BDTijKoJujVU284D6&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1OoTyItAi_0fS5V0BDTijKoJujVU284D6&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3262.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1OoTyItAi_0fS5V0BDTijKoJujVU284D6/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -847,12 +735,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3263.HEIC",
     "caption": "Rutgers Drive — BN1-F25 wild field view (IMG_3263)",
-    "original": "https://drive.google.com/thumbnail?id=1LhnTylOzH5gqz1H4RGJQjBQ83ZrrvxVX&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1LhnTylOzH5gqz1H4RGJQjBQ83ZrrvxVX&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3263.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1LhnTylOzH5gqz1H4RGJQjBQ83ZrrvxVX/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -862,12 +748,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3264.HEIC",
     "caption": "Rutgers Drive — BN1-F25 wild field view (IMG_3264)",
-    "original": "https://drive.google.com/thumbnail?id=1fcHbba0bf9jamBKDjtFAKocE_7YRo0pR&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1fcHbba0bf9jamBKDjtFAKocE_7YRo0pR&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3264.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1fcHbba0bf9jamBKDjtFAKocE_7YRo0pR/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -877,12 +761,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3265.HEIC",
     "caption": "Rutgers Drive — BN1-F26 wild field view (IMG_3265)",
-    "original": "https://drive.google.com/thumbnail?id=1j352xGPWCzSeGOaaTXMFwYxX-UnRDdFW&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1j352xGPWCzSeGOaaTXMFwYxX-UnRDdFW&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3265.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1j352xGPWCzSeGOaaTXMFwYxX-UnRDdFW/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -892,12 +774,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3266.HEIC",
     "caption": "Rutgers Drive — BN1-F26 wild field view (IMG_3266)",
-    "original": "https://drive.google.com/thumbnail?id=1IzoVnyDzesSWlaeQiuAc8HzfFWHk1bo_&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1IzoVnyDzesSWlaeQiuAc8HzfFWHk1bo_&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3266.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1IzoVnyDzesSWlaeQiuAc8HzfFWHk1bo_/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -907,12 +787,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3267.HEIC",
     "caption": "Rutgers Drive — BN1-F25 wild field view (IMG_3267)",
-    "original": "https://drive.google.com/thumbnail?id=1hdRk7qdHOFgrwx8aqgepQfMh2SoN49_N&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1hdRk7qdHOFgrwx8aqgepQfMh2SoN49_N&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3267.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1hdRk7qdHOFgrwx8aqgepQfMh2SoN49_N/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -922,12 +800,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3268.HEIC",
     "caption": "Rutgers Drive — BN1-F25 wild field view (IMG_3268)",
-    "original": "https://drive.google.com/thumbnail?id=1im7erEdtaWIjsIBEqVRo-2AeLPmv-xX0&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1im7erEdtaWIjsIBEqVRo-2AeLPmv-xX0&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3268.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1im7erEdtaWIjsIBEqVRo-2AeLPmv-xX0/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -937,12 +813,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3269.HEIC",
     "caption": "Rutgers Drive — BN1-F25 wild field view (IMG_3269)",
-    "original": "https://drive.google.com/thumbnail?id=1WAXdN7bB-aQ7SePdRVP02KlJjQRWGQIU&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1WAXdN7bB-aQ7SePdRVP02KlJjQRWGQIU&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3269.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1WAXdN7bB-aQ7SePdRVP02KlJjQRWGQIU/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -952,12 +826,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3270.HEIC",
     "caption": "Rutgers Drive — BN1-F25 wild field view (IMG_3270)",
-    "original": "https://drive.google.com/thumbnail?id=1hzSG0s5h_75rHjlC3mz31wQKy4h9Krwu&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1hzSG0s5h_75rHjlC3mz31wQKy4h9Krwu&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3270.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1hzSG0s5h_75rHjlC3mz31wQKy4h9Krwu/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -967,12 +839,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3271.HEIC",
     "caption": "Rutgers Drive — BN1-F25 wild field view (IMG_3271)",
-    "original": "https://drive.google.com/thumbnail?id=1Dd06Y36IxoTRMCq51jhQvxbCAD_U0kX-&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1Dd06Y36IxoTRMCq51jhQvxbCAD_U0kX-&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3271.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1Dd06Y36IxoTRMCq51jhQvxbCAD_U0kX-/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -982,12 +852,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3272.HEIC",
     "caption": "Rutgers Drive — BN1-F25 wild field view (IMG_3272)",
-    "original": "https://drive.google.com/thumbnail?id=1lV0jN8b2DrxkybNLt2xk8RgSj7jkitEl&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1lV0jN8b2DrxkybNLt2xk8RgSj7jkitEl&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3272.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1lV0jN8b2DrxkybNLt2xk8RgSj7jkitEl/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -997,12 +865,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3273.HEIC",
     "caption": "Rutgers Drive — BN1-F25 wild field view (IMG_3273)",
-    "original": "https://drive.google.com/thumbnail?id=1seebpnPSUWwJfgQTu6xKgEOYY3HHgMOj&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1seebpnPSUWwJfgQTu6xKgEOYY3HHgMOj&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3273.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1seebpnPSUWwJfgQTu6xKgEOYY3HHgMOj/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1012,12 +878,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3274.HEIC",
     "caption": "Rutgers Drive — BN1-F27 wild field view (IMG_3274)",
-    "original": "https://drive.google.com/thumbnail?id=1gKH50TRUPCbn2GbRgWErMtSlyKun4vrC&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1gKH50TRUPCbn2GbRgWErMtSlyKun4vrC&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3274.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1gKH50TRUPCbn2GbRgWErMtSlyKun4vrC/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1027,12 +891,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3275.HEIC",
     "caption": "Rutgers Drive — BN1-F27 wild field view (IMG_3275)",
-    "original": "https://drive.google.com/thumbnail?id=1P6PMRLIMJsqbftB4eJk4maf6u3QJR9lD&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1P6PMRLIMJsqbftB4eJk4maf6u3QJR9lD&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3275.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1P6PMRLIMJsqbftB4eJk4maf6u3QJR9lD/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1042,12 +904,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3276.HEIC",
     "caption": "Rutgers Drive — BN1-F27 wild field view (IMG_3276)",
-    "original": "https://drive.google.com/thumbnail?id=1pi_xTOx4kRy_xylOEDrAQrs46SFmfCBF&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1pi_xTOx4kRy_xylOEDrAQrs46SFmfCBF&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3276.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1pi_xTOx4kRy_xylOEDrAQrs46SFmfCBF/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1057,12 +917,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3277.HEIC",
     "caption": "Rutgers Drive — BN1-F27 wild field view (IMG_3277)",
-    "original": "https://drive.google.com/thumbnail?id=1q2WYRjYBJmenIpH0tDF4AqI0giFb2hiv&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1q2WYRjYBJmenIpH0tDF4AqI0giFb2hiv&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3277.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1q2WYRjYBJmenIpH0tDF4AqI0giFb2hiv/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1072,12 +930,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3278.HEIC",
     "caption": "Rutgers Drive — BN1-F27 wild field view (IMG_3278)",
-    "original": "https://drive.google.com/thumbnail?id=1-1ayJ4uiXK3UEGbUcFiq0bjEgZt_lK_7&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1-1ayJ4uiXK3UEGbUcFiq0bjEgZt_lK_7&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3278.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1-1ayJ4uiXK3UEGbUcFiq0bjEgZt_lK_7/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1087,12 +943,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3279.HEIC",
     "caption": "Rutgers Drive — BN1-F28 wild field view (IMG_3279)",
-    "original": "https://drive.google.com/thumbnail?id=1p9OgOayNql-NS4oQZjV2-5rXjj2tElKX&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1p9OgOayNql-NS4oQZjV2-5rXjj2tElKX&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3279.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1p9OgOayNql-NS4oQZjV2-5rXjj2tElKX/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1102,12 +956,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3280.HEIC",
     "caption": "Rutgers Drive — BN1-F29 wild field view (IMG_3280)",
-    "original": "https://drive.google.com/thumbnail?id=1PCyEPtVWHpMBiSOJbjhqy344L-1R3Fr6&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1PCyEPtVWHpMBiSOJbjhqy344L-1R3Fr6&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3280.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1PCyEPtVWHpMBiSOJbjhqy344L-1R3Fr6/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1117,12 +969,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3281.HEIC",
     "caption": "Rutgers Drive — BN1-F29 wild field view (IMG_3281)",
-    "original": "https://drive.google.com/thumbnail?id=1jYInzXWbtOwh29IxCO8pAN1RReou96xe&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1jYInzXWbtOwh29IxCO8pAN1RReou96xe&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3281.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1jYInzXWbtOwh29IxCO8pAN1RReou96xe/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1132,12 +982,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3282.HEIC",
     "caption": "Rutgers Drive — BN1-F29 wild field view (IMG_3282)",
-    "original": "https://drive.google.com/thumbnail?id=1NT-qUGa2KmuU-madg_IRmEUan2PxpRyr&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1NT-qUGa2KmuU-madg_IRmEUan2PxpRyr&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3282.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1NT-qUGa2KmuU-madg_IRmEUan2PxpRyr/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1147,12 +995,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3283.HEIC",
     "caption": "Rutgers Drive — BN1-F29 wild field view (IMG_3283)",
-    "original": "https://drive.google.com/thumbnail?id=1nK-uoFqwWZ0AmswMWHtjtx5pNLsiBTAm&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1nK-uoFqwWZ0AmswMWHtjtx5pNLsiBTAm&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3283.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1nK-uoFqwWZ0AmswMWHtjtx5pNLsiBTAm/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1162,12 +1008,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3284.HEIC",
     "caption": "Rutgers Drive — BN1-F29 wild field view (IMG_3284)",
-    "original": "https://drive.google.com/thumbnail?id=1i-MdtTX8Ag-6vAL0AfRFxbfLLjVY01bB&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1i-MdtTX8Ag-6vAL0AfRFxbfLLjVY01bB&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3284.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1i-MdtTX8Ag-6vAL0AfRFxbfLLjVY01bB/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1177,12 +1021,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3285.HEIC",
     "caption": "Rutgers Drive — BN1-F29 wild field view (IMG_3285)",
-    "original": "https://drive.google.com/thumbnail?id=1mFBk3LXHbvy-UW8fLa0kFZlwfySNJQwt&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1mFBk3LXHbvy-UW8fLa0kFZlwfySNJQwt&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3285.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1mFBk3LXHbvy-UW8fLa0kFZlwfySNJQwt/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1192,12 +1034,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3286.HEIC",
     "caption": "Rutgers Drive — BN1-F30 wild field view (IMG_3286)",
-    "original": "https://drive.google.com/thumbnail?id=1wceICT0ynxpLIASEZj7A9L6NdiIQGZQ8&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1wceICT0ynxpLIASEZj7A9L6NdiIQGZQ8&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3286.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1wceICT0ynxpLIASEZj7A9L6NdiIQGZQ8/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1207,12 +1047,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3287.HEIC",
     "caption": "Rutgers Drive — BN1-F30 wild field view (IMG_3287)",
-    "original": "https://drive.google.com/thumbnail?id=1EOjYD347EObK82o7f_MeyU76C7juCVaE&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1EOjYD347EObK82o7f_MeyU76C7juCVaE&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3287.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1EOjYD347EObK82o7f_MeyU76C7juCVaE/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1222,12 +1060,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3288.HEIC",
     "caption": "Rutgers Drive — BN1-F31 wild field view (IMG_3288)",
-    "original": "https://drive.google.com/thumbnail?id=1AVVjl5IJtZgRw3hjCyj-WBQW3IT-pZrN&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1AVVjl5IJtZgRw3hjCyj-WBQW3IT-pZrN&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3288.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1AVVjl5IJtZgRw3hjCyj-WBQW3IT-pZrN/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1237,12 +1073,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3289.HEIC",
     "caption": "Rutgers Drive — BN1-F31 wild field view (IMG_3289)",
-    "original": "https://drive.google.com/thumbnail?id=18UKv-LnsxOc1FP4vm3ETTN7iCscL_inU&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=18UKv-LnsxOc1FP4vm3ETTN7iCscL_inU&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3289.HEIC",
-    "drive_view": "https://drive.google.com/file/d/18UKv-LnsxOc1FP4vm3ETTN7iCscL_inU/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1252,12 +1086,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3290.HEIC",
     "caption": "Rutgers Drive — BN1-F31 wild field view (IMG_3290)",
-    "original": "https://drive.google.com/thumbnail?id=1NzpD5916puRFopJ-QHVwCtGmqA8xop6i&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1NzpD5916puRFopJ-QHVwCtGmqA8xop6i&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3290.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1NzpD5916puRFopJ-QHVwCtGmqA8xop6i/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1267,12 +1099,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3291.HEIC",
     "caption": "Rutgers Drive — BN1-F31 wild field view (IMG_3291)",
-    "original": "https://drive.google.com/thumbnail?id=1OVyEIHQtpBv8az2TVLrHP6aHNwtycYgS&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1OVyEIHQtpBv8az2TVLrHP6aHNwtycYgS&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3291.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1OVyEIHQtpBv8az2TVLrHP6aHNwtycYgS/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1282,12 +1112,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3292.HEIC",
     "caption": "Rutgers Drive — BN1-F31 wild field view (IMG_3292)",
-    "original": "https://drive.google.com/thumbnail?id=1yvtgoUFA3yzmD73U7nvVL6KAMPtlSfHT&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1yvtgoUFA3yzmD73U7nvVL6KAMPtlSfHT&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3292.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1yvtgoUFA3yzmD73U7nvVL6KAMPtlSfHT/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1297,12 +1125,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3293.HEIC",
     "caption": "Rutgers Drive — BN1-F31 wild field view (IMG_3293)",
-    "original": "https://drive.google.com/thumbnail?id=1_LjtgAMMXO61ue7lkrfgwuRtuPshIvnh&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1_LjtgAMMXO61ue7lkrfgwuRtuPshIvnh&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3293.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1_LjtgAMMXO61ue7lkrfgwuRtuPshIvnh/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1312,12 +1138,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3294.HEIC",
     "caption": "Rutgers Drive — BN1-F31 wild field view (IMG_3294)",
-    "original": "https://drive.google.com/thumbnail?id=1a0YZEcWMoENYMYLvHWq22fwSeLMML-cR&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1a0YZEcWMoENYMYLvHWq22fwSeLMML-cR&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3294.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1a0YZEcWMoENYMYLvHWq22fwSeLMML-cR/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1327,12 +1151,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3295.HEIC",
     "caption": "Rutgers Drive — BN1-F32 wild field view (IMG_3295)",
-    "original": "https://drive.google.com/thumbnail?id=1PEzHvW00wZwqzvb_F_19QGmUKMeA0zRO&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1PEzHvW00wZwqzvb_F_19QGmUKMeA0zRO&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3295.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1PEzHvW00wZwqzvb_F_19QGmUKMeA0zRO/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1342,12 +1164,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3296.HEIC",
     "caption": "Rutgers Drive — BN1-F32 wild field view (IMG_3296)",
-    "original": "https://drive.google.com/thumbnail?id=1ILA-COn0k9WEDpYuDhOgnjQttYyzEkAK&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1ILA-COn0k9WEDpYuDhOgnjQttYyzEkAK&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3296.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1ILA-COn0k9WEDpYuDhOgnjQttYyzEkAK/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1357,12 +1177,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3297.HEIC",
     "caption": "Rutgers Drive — BN1-F32 wild field view (IMG_3297)",
-    "original": "https://drive.google.com/thumbnail?id=1keDtGuJwvVmUl6nssI9dk_M_tjsY6WgY&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1keDtGuJwvVmUl6nssI9dk_M_tjsY6WgY&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3297.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1keDtGuJwvVmUl6nssI9dk_M_tjsY6WgY/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1372,12 +1190,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3298.HEIC",
     "caption": "Rutgers Drive — BN1-F32 wild field view (IMG_3298)",
-    "original": "https://drive.google.com/thumbnail?id=1d0keD33Jwre6lhzkyKrssw0gM_IXjbeo&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1d0keD33Jwre6lhzkyKrssw0gM_IXjbeo&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3298.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1d0keD33Jwre6lhzkyKrssw0gM_IXjbeo/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1387,12 +1203,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3299.HEIC",
     "caption": "Rutgers Drive — BN1-F32 wild field view (IMG_3299)",
-    "original": "https://drive.google.com/thumbnail?id=1Mv-5yB3s5rTZQIy9uI5mS1fZFhznbhxx&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1Mv-5yB3s5rTZQIy9uI5mS1fZFhznbhxx&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3299.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1Mv-5yB3s5rTZQIy9uI5mS1fZFhznbhxx/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1402,12 +1216,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3300.HEIC",
     "caption": "Rutgers Drive — BN1-F32 wild field view (IMG_3300)",
-    "original": "https://drive.google.com/thumbnail?id=1CmSa13PjWMDUuir5SS8ZjR0EGTVnzFCg&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1CmSa13PjWMDUuir5SS8ZjR0EGTVnzFCg&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3300.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1CmSa13PjWMDUuir5SS8ZjR0EGTVnzFCg/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1417,12 +1229,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3301.HEIC",
     "caption": "Rutgers Drive — BN1-F33 wild field view (IMG_3301)",
-    "original": "https://drive.google.com/thumbnail?id=1Ilzj_RohjtBDadHis2DIdJP6Gc74Ws3y&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1Ilzj_RohjtBDadHis2DIdJP6Gc74Ws3y&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3301.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1Ilzj_RohjtBDadHis2DIdJP6Gc74Ws3y/view",
     "verified_label": true,
-    "assignment_basis": "visible specimen label in frame"
+    "assignment_basis": "visible specimen label in frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1432,12 +1242,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3302.HEIC",
     "caption": "Rutgers Drive — BN1-F33 wild field view (IMG_3302)",
-    "original": "https://drive.google.com/thumbnail?id=1rJu3y05TTSdOijw3TP0oIKtj1LXVVkGf&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1rJu3y05TTSdOijw3TP0oIKtj1LXVVkGf&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3302.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1rJu3y05TTSdOijw3TP0oIKtj1LXVVkGf/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1447,12 +1255,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3303.HEIC",
     "caption": "Rutgers Drive — BN1-F33 wild field view (IMG_3303)",
-    "original": "https://drive.google.com/thumbnail?id=1UJU_2Oif-dhbCQZUrCUv5Z_3Z57pvRfc&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1UJU_2Oif-dhbCQZUrCUv5Z_3Z57pvRfc&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3303.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1UJU_2Oif-dhbCQZUrCUv5Z_3Z57pvRfc/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1462,12 +1268,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3304.HEIC",
     "caption": "Rutgers Drive — BN1-F34 wild field view (IMG_3304)",
-    "original": "https://drive.google.com/thumbnail?id=1Ft6AhA713Tz-G36OYxrD9AEJZ-616VsD&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1Ft6AhA713Tz-G36OYxrD9AEJZ-616VsD&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3304.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1Ft6AhA713Tz-G36OYxrD9AEJZ-616VsD/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1477,12 +1281,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3305.HEIC",
     "caption": "Rutgers Drive — BN1-F34 wild field view (IMG_3305)",
-    "original": "https://drive.google.com/thumbnail?id=1I5-eKi0apm63AVlcKgos4HCjQDLPONZD&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1I5-eKi0apm63AVlcKgos4HCjQDLPONZD&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3305.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1I5-eKi0apm63AVlcKgos4HCjQDLPONZD/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "BN1 2026",
@@ -1492,12 +1294,10 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "IMG_3306.HEIC",
     "caption": "Rutgers Drive — BN1-F34 wild field view (IMG_3306)",
-    "original": "https://drive.google.com/thumbnail?id=1psfrBSa9kBI83DHIjUb0PiByhx_AJIp2&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1psfrBSa9kBI83DHIjUb0PiByhx_AJIp2&sz=w1200",
     "source_relpath": "BN1 2026/IMG_3306.HEIC",
-    "drive_view": "https://drive.google.com/file/d/1psfrBSa9kBI83DHIjUb0PiByhx_AJIp2/view",
     "verified_label": false,
-    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame"
+    "assignment_basis": "continuous same-specimen capture sequence adjacent to labeled frame",
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1507,10 +1307,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F20WV3.HEIC",
     "caption": "Rutgers Drive — AN2-F20WV3",
-    "original": "https://drive.google.com/thumbnail?id=140WEagspE1xvZCiSmm4Tq1_QISzJO1oS&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=140WEagspE1xvZCiSmm4Tq1_QISzJO1oS&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F20WV3",
-    "drive_view": "https://drive.google.com/file/d/140WEagspE1xvZCiSmm4Tq1_QISzJO1oS/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1520,10 +1318,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F20WV1.HEIC",
     "caption": "Rutgers Drive — AN2-F20WV1",
-    "original": "https://drive.google.com/thumbnail?id=1IeqE97y22RTp4GEMRY0i0ulqa0D-TeB6&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1IeqE97y22RTp4GEMRY0i0ulqa0D-TeB6&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F20WV1",
-    "drive_view": "https://drive.google.com/file/d/1IeqE97y22RTp4GEMRY0i0ulqa0D-TeB6/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1533,10 +1329,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F17WV10.HEIC",
     "caption": "Rutgers Drive — AN2-F17WV10",
-    "original": "https://drive.google.com/thumbnail?id=1Ef-2L-u6pUMtRsnYsKuh-U5_A3BdwhXF&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1Ef-2L-u6pUMtRsnYsKuh-U5_A3BdwhXF&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F17WV10",
-    "drive_view": "https://drive.google.com/file/d/1Ef-2L-u6pUMtRsnYsKuh-U5_A3BdwhXF/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1546,10 +1340,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F17WV9.HEIC",
     "caption": "Rutgers Drive — AN2-F17WV9",
-    "original": "https://drive.google.com/thumbnail?id=1XxmyMwQtZakE_vfvlF0i49fIeebN73ov&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1XxmyMwQtZakE_vfvlF0i49fIeebN73ov&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F17WV9",
-    "drive_view": "https://drive.google.com/file/d/1XxmyMwQtZakE_vfvlF0i49fIeebN73ov/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1559,10 +1351,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F17WV8.HEIC",
     "caption": "Rutgers Drive — AN2-F17WV8",
-    "original": "https://drive.google.com/thumbnail?id=1hWhzEnK9xvOLGHZcbsXZ1kwxY8lPVbvU&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1hWhzEnK9xvOLGHZcbsXZ1kwxY8lPVbvU&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F17WV8",
-    "drive_view": "https://drive.google.com/file/d/1hWhzEnK9xvOLGHZcbsXZ1kwxY8lPVbvU/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1572,10 +1362,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F17WV7.HEIC",
     "caption": "Rutgers Drive — AN2-F17WV7",
-    "original": "https://drive.google.com/thumbnail?id=1coi5NTWY6PO2xTbjSQKKDNJf2VJzQl0s&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1coi5NTWY6PO2xTbjSQKKDNJf2VJzQl0s&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F17WV7",
-    "drive_view": "https://drive.google.com/file/d/1coi5NTWY6PO2xTbjSQKKDNJf2VJzQl0s/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1585,10 +1373,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F17WV6.HEIC",
     "caption": "Rutgers Drive — AN2-F17WV6",
-    "original": "https://drive.google.com/thumbnail?id=1dMm2kG6_bkaG3C0gCimTEbGMmot7v2F8&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1dMm2kG6_bkaG3C0gCimTEbGMmot7v2F8&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F17WV6",
-    "drive_view": "https://drive.google.com/file/d/1dMm2kG6_bkaG3C0gCimTEbGMmot7v2F8/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1598,10 +1384,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F17WV5.HEIC",
     "caption": "Rutgers Drive — AN2-F17WV5",
-    "original": "https://drive.google.com/thumbnail?id=1eFoUCXws2Tcc8EeaYPXJa-nyqeVKOqNO&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1eFoUCXws2Tcc8EeaYPXJa-nyqeVKOqNO&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F17WV5",
-    "drive_view": "https://drive.google.com/file/d/1eFoUCXws2Tcc8EeaYPXJa-nyqeVKOqNO/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1611,10 +1395,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F17WV4.HEIC",
     "caption": "Rutgers Drive — AN2-F17WV4",
-    "original": "https://drive.google.com/thumbnail?id=1IzOHgqL6puwYclcvquYRdIA7o5KuLz9M&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1IzOHgqL6puwYclcvquYRdIA7o5KuLz9M&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F17WV4",
-    "drive_view": "https://drive.google.com/file/d/1IzOHgqL6puwYclcvquYRdIA7o5KuLz9M/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1624,10 +1406,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F17WV3.HEIC",
     "caption": "Rutgers Drive — AN2-F17WV3",
-    "original": "https://drive.google.com/thumbnail?id=1LNq2EIi7h6ZXrRk3PZRETpU_CGSaMcb-&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1LNq2EIi7h6ZXrRk3PZRETpU_CGSaMcb-&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F17WV3",
-    "drive_view": "https://drive.google.com/file/d/1LNq2EIi7h6ZXrRk3PZRETpU_CGSaMcb-/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1637,10 +1417,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F17WV2.HEIC",
     "caption": "Rutgers Drive — AN2-F17WV2",
-    "original": "https://drive.google.com/thumbnail?id=1mkPT9L8mmyy6gEm1l62qjtYeKFxMhZZH&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1mkPT9L8mmyy6gEm1l62qjtYeKFxMhZZH&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F17WV2",
-    "drive_view": "https://drive.google.com/file/d/1mkPT9L8mmyy6gEm1l62qjtYeKFxMhZZH/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1650,10 +1428,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F17WV1.HEIC",
     "caption": "Rutgers Drive — AN2-F17WV1",
-    "original": "https://drive.google.com/thumbnail?id=1odDrT-2BmABUfZgwY1N1BHswBc1W_0fP&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1odDrT-2BmABUfZgwY1N1BHswBc1W_0fP&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F17WV1",
-    "drive_view": "https://drive.google.com/file/d/1odDrT-2BmABUfZgwY1N1BHswBc1W_0fP/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1663,10 +1439,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F7WV2.HEIC",
     "caption": "Rutgers Drive — AN2-F7WV2",
-    "original": "https://drive.google.com/thumbnail?id=1gICT3Z8zDJng9oY36nwkg-KmwY2D--il&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1gICT3Z8zDJng9oY36nwkg-KmwY2D--il&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F7WV2",
-    "drive_view": "https://drive.google.com/file/d/1gICT3Z8zDJng9oY36nwkg-KmwY2D--il/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1676,10 +1450,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F7WV1.HEIC",
     "caption": "Rutgers Drive — AN2-F7WV1",
-    "original": "https://drive.google.com/thumbnail?id=1v51IFzpwZKdnLKUB60KwoMV4-RyDVbLw&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1v51IFzpwZKdnLKUB60KwoMV4-RyDVbLw&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F7WV1",
-    "drive_view": "https://drive.google.com/file/d/1v51IFzpwZKdnLKUB60KwoMV4-RyDVbLw/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1689,10 +1461,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F5WV6.HEIC",
     "caption": "Rutgers Drive — AN2-F5WV6",
-    "original": "https://drive.google.com/thumbnail?id=1C02plTHnGPxOFMvDjOj18YAQsE3M-21G&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1C02plTHnGPxOFMvDjOj18YAQsE3M-21G&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F5WV6",
-    "drive_view": "https://drive.google.com/file/d/1C02plTHnGPxOFMvDjOj18YAQsE3M-21G/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1702,10 +1472,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F5WV5.HEIC",
     "caption": "Rutgers Drive — AN2-F5WV5",
-    "original": "https://drive.google.com/thumbnail?id=1gE3pzQcI6AOZFS93nrbn8JMnAlz424PE&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1gE3pzQcI6AOZFS93nrbn8JMnAlz424PE&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F5WV5",
-    "drive_view": "https://drive.google.com/file/d/1gE3pzQcI6AOZFS93nrbn8JMnAlz424PE/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1715,10 +1483,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F5WV4.HEIC",
     "caption": "Rutgers Drive — AN2-F5WV4",
-    "original": "https://drive.google.com/thumbnail?id=1HXbH32Gv7wujNCiOOtBhSAzbtRU7QuAr&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1HXbH32Gv7wujNCiOOtBhSAzbtRU7QuAr&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F5WV4",
-    "drive_view": "https://drive.google.com/file/d/1HXbH32Gv7wujNCiOOtBhSAzbtRU7QuAr/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1728,10 +1494,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F5WV3.HEIC",
     "caption": "Rutgers Drive — AN2-F5WV3",
-    "original": "https://drive.google.com/thumbnail?id=1NVch1BwWjywGAn-8okuhqauIEcek8SSy&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1NVch1BwWjywGAn-8okuhqauIEcek8SSy&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F5WV3",
-    "drive_view": "https://drive.google.com/file/d/1NVch1BwWjywGAn-8okuhqauIEcek8SSy/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1741,10 +1505,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F5WV2.HEIC",
     "caption": "Rutgers Drive — AN2-F5WV2",
-    "original": "https://drive.google.com/thumbnail?id=13FVMeSXhBIFEaC31TLyHUpUAJoFlKfmZ&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=13FVMeSXhBIFEaC31TLyHUpUAJoFlKfmZ&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F5WV2",
-    "drive_view": "https://drive.google.com/file/d/13FVMeSXhBIFEaC31TLyHUpUAJoFlKfmZ/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1754,10 +1516,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F5WV1.HEIC",
     "caption": "Rutgers Drive — AN2-F5WV1",
-    "original": "https://drive.google.com/thumbnail?id=1aWwDPqwVO3_Krs6fhM-EdjuYr3vWKMSc&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1aWwDPqwVO3_Krs6fhM-EdjuYr3vWKMSc&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F5WV1",
-    "drive_view": "https://drive.google.com/file/d/1aWwDPqwVO3_Krs6fhM-EdjuYr3vWKMSc/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1767,10 +1527,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F4.HEIC",
     "caption": "Rutgers Drive — AN2-F4",
-    "original": "https://drive.google.com/thumbnail?id=1_2tZiP2L1ngVnAXt-HCffEO1-bJf89hv&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1_2tZiP2L1ngVnAXt-HCffEO1-bJf89hv&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F4",
-    "drive_view": "https://drive.google.com/file/d/1_2tZiP2L1ngVnAXt-HCffEO1-bJf89hv/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1780,10 +1538,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F3V2W.HEIC",
     "caption": "Rutgers Drive — AN2-F3V2W",
-    "original": "https://drive.google.com/thumbnail?id=1xTJsp9YNhCCpzMBpr4QpqrzTsQ_7an7d&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1xTJsp9YNhCCpzMBpr4QpqrzTsQ_7an7d&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F3V2W",
-    "drive_view": "https://drive.google.com/file/d/1xTJsp9YNhCCpzMBpr4QpqrzTsQ_7an7d/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1793,10 +1549,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F8V9.HEIC",
     "caption": "Rutgers Drive — AN2-F8V9",
-    "original": "https://drive.google.com/thumbnail?id=1cAq7XUgEgz5bYlBbIRdIPivnzHMim1la&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1cAq7XUgEgz5bYlBbIRdIPivnzHMim1la&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F8V9",
-    "drive_view": "https://drive.google.com/file/d/1cAq7XUgEgz5bYlBbIRdIPivnzHMim1la/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1806,10 +1560,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F8V8.HEIC",
     "caption": "Rutgers Drive — AN2-F8V8",
-    "original": "https://drive.google.com/thumbnail?id=19YCY2WwSapncVPPncpk5wU7f_ab3TbH9&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=19YCY2WwSapncVPPncpk5wU7f_ab3TbH9&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F8V8",
-    "drive_view": "https://drive.google.com/file/d/19YCY2WwSapncVPPncpk5wU7f_ab3TbH9/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1819,10 +1571,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F8V7.HEIC",
     "caption": "Rutgers Drive — AN2-F8V7",
-    "original": "https://drive.google.com/thumbnail?id=1fA2NlGO6M67YQZxAeyVqE2P9nEofgUOd&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1fA2NlGO6M67YQZxAeyVqE2P9nEofgUOd&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F8V7",
-    "drive_view": "https://drive.google.com/file/d/1fA2NlGO6M67YQZxAeyVqE2P9nEofgUOd/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1832,10 +1582,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F8V5.HEIC",
     "caption": "Rutgers Drive — AN2-F8V5",
-    "original": "https://drive.google.com/thumbnail?id=1k9S90Q-ZnCdmSa991dMv_PjUxAJKG_WZ&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1k9S90Q-ZnCdmSa991dMv_PjUxAJKG_WZ&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F8V5",
-    "drive_view": "https://drive.google.com/file/d/1k9S90Q-ZnCdmSa991dMv_PjUxAJKG_WZ/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1845,10 +1593,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F8V4.HEIC",
     "caption": "Rutgers Drive — AN2-F8V4",
-    "original": "https://drive.google.com/thumbnail?id=1KYN5Qn3pQMxx60fLdsj8iOPaU4uhm4_p&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1KYN5Qn3pQMxx60fLdsj8iOPaU4uhm4_p&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F8V4",
-    "drive_view": "https://drive.google.com/file/d/1KYN5Qn3pQMxx60fLdsj8iOPaU4uhm4_p/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1858,10 +1604,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F8V3.HEIC",
     "caption": "Rutgers Drive — AN2-F8V3",
-    "original": "https://drive.google.com/thumbnail?id=1f4kFqekr5juLniG8eOCWB-_Y5MC8N_mi&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1f4kFqekr5juLniG8eOCWB-_Y5MC8N_mi&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F8V3",
-    "drive_view": "https://drive.google.com/file/d/1f4kFqekr5juLniG8eOCWB-_Y5MC8N_mi/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1871,10 +1615,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F8V2.HEIC",
     "caption": "Rutgers Drive — AN2-F8V2",
-    "original": "https://drive.google.com/thumbnail?id=1jdHsq07fiM6E1uenQGOAjKJdQlkYSD5y&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1jdHsq07fiM6E1uenQGOAjKJdQlkYSD5y&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F8V2",
-    "drive_view": "https://drive.google.com/file/d/1jdHsq07fiM6E1uenQGOAjKJdQlkYSD5y/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1884,10 +1626,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F8V1.HEIC",
     "caption": "Rutgers Drive — AN2-F8V1",
-    "original": "https://drive.google.com/thumbnail?id=1-9Y-1PdyXPQFeW5d5vUAhIKhRIKMvSEk&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1-9Y-1PdyXPQFeW5d5vUAhIKhRIKMvSEk&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F8V1",
-    "drive_view": "https://drive.google.com/file/d/1-9Y-1PdyXPQFeW5d5vUAhIKhRIKMvSEk/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1897,10 +1637,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F7.HEIC",
     "caption": "Rutgers Drive — AN2-F7",
-    "original": "https://drive.google.com/thumbnail?id=1kyVMYcp3CiemAhnqqBv-aaOm3SPQfH3l&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1kyVMYcp3CiemAhnqqBv-aaOm3SPQfH3l&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F7",
-    "drive_view": "https://drive.google.com/file/d/1kyVMYcp3CiemAhnqqBv-aaOm3SPQfH3l/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1910,10 +1648,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F6V6.HEIC",
     "caption": "Rutgers Drive — AN2-F6V6",
-    "original": "https://drive.google.com/thumbnail?id=1KchkeiArpc5ekne6ILP5d-h-buKdNufI&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1KchkeiArpc5ekne6ILP5d-h-buKdNufI&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F6V6",
-    "drive_view": "https://drive.google.com/file/d/1KchkeiArpc5ekne6ILP5d-h-buKdNufI/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1923,10 +1659,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F6V5.HEIC",
     "caption": "Rutgers Drive — AN2-F6V5",
-    "original": "https://drive.google.com/thumbnail?id=1G0D4tpqRJzR05RNAh9I_oVrcdpfAp9MC&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1G0D4tpqRJzR05RNAh9I_oVrcdpfAp9MC&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F6V5",
-    "drive_view": "https://drive.google.com/file/d/1G0D4tpqRJzR05RNAh9I_oVrcdpfAp9MC/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1936,10 +1670,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F6V4.HEIC",
     "caption": "Rutgers Drive — AN2-F6V4",
-    "original": "https://drive.google.com/thumbnail?id=1f8qFLr7mn7GBuBr1HkGulDOhO_1bGqFS&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1f8qFLr7mn7GBuBr1HkGulDOhO_1bGqFS&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F6V4",
-    "drive_view": "https://drive.google.com/file/d/1f8qFLr7mn7GBuBr1HkGulDOhO_1bGqFS/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1949,10 +1681,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F6V3.HEIC",
     "caption": "Rutgers Drive — AN2-F6V3",
-    "original": "https://drive.google.com/thumbnail?id=1hLRjFbeH5qtqbo94KVfX5sHh-w_dyX8w&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1hLRjFbeH5qtqbo94KVfX5sHh-w_dyX8w&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F6V3",
-    "drive_view": "https://drive.google.com/file/d/1hLRjFbeH5qtqbo94KVfX5sHh-w_dyX8w/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1962,10 +1692,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F6V2.HEIC",
     "caption": "Rutgers Drive — AN2-F6V2",
-    "original": "https://drive.google.com/thumbnail?id=1FEJYuLmGh-E3t0b6Nm5M5rTLJY73725P&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1FEJYuLmGh-E3t0b6Nm5M5rTLJY73725P&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F6V2",
-    "drive_view": "https://drive.google.com/file/d/1FEJYuLmGh-E3t0b6Nm5M5rTLJY73725P/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1975,10 +1703,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F6V1.HEIC",
     "caption": "Rutgers Drive — AN2-F6V1",
-    "original": "https://drive.google.com/thumbnail?id=1Uzw8capGc1I4dijkGM5W_T3y3Tk5Lg9d&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1Uzw8capGc1I4dijkGM5W_T3y3Tk5Lg9d&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F6V1",
-    "drive_view": "https://drive.google.com/file/d/1Uzw8capGc1I4dijkGM5W_T3y3Tk5Lg9d/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -1988,10 +1714,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F2V6.HEIC",
     "caption": "Rutgers Drive — AN2-F2V6",
-    "original": "https://drive.google.com/thumbnail?id=1NIhboK01Lm2q5ogGSVhCOIWRwYmPK-5v&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1NIhboK01Lm2q5ogGSVhCOIWRwYmPK-5v&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F2V6",
-    "drive_view": "https://drive.google.com/file/d/1NIhboK01Lm2q5ogGSVhCOIWRwYmPK-5v/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -2001,10 +1725,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F2V5.HEIC",
     "caption": "Rutgers Drive — AN2-F2V5",
-    "original": "https://drive.google.com/thumbnail?id=1PdTwnbqTH3jR6PC4pemLybuS--YwxQTK&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1PdTwnbqTH3jR6PC4pemLybuS--YwxQTK&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F2V5",
-    "drive_view": "https://drive.google.com/file/d/1PdTwnbqTH3jR6PC4pemLybuS--YwxQTK/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -2014,10 +1736,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F2V4.HEIC",
     "caption": "Rutgers Drive — AN2-F2V4",
-    "original": "https://drive.google.com/thumbnail?id=1HT2i2nUMiu-nSuTt1WRujZ3Ire5IaaTW&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1HT2i2nUMiu-nSuTt1WRujZ3Ire5IaaTW&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F2V4",
-    "drive_view": "https://drive.google.com/file/d/1HT2i2nUMiu-nSuTt1WRujZ3Ire5IaaTW/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -2027,10 +1747,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F2V3.HEIC",
     "caption": "Rutgers Drive — AN2-F2V3",
-    "original": "https://drive.google.com/thumbnail?id=1DrJNrzuDTn0gGG5DDSefjZ0Cigf8r1Pt&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1DrJNrzuDTn0gGG5DDSefjZ0Cigf8r1Pt&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F2V3",
-    "drive_view": "https://drive.google.com/file/d/1DrJNrzuDTn0gGG5DDSefjZ0Cigf8r1Pt/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -2040,10 +1758,8 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F2.HEIC",
     "caption": "Rutgers Drive — AN2-F2",
-    "original": "https://drive.google.com/thumbnail?id=1Y6u6OeQHtW6TmPG39pl3YNXuTxCH7mxx&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1Y6u6OeQHtW6TmPG39pl3YNXuTxCH7mxx&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F2",
-    "drive_view": "https://drive.google.com/file/d/1Y6u6OeQHtW6TmPG39pl3YNXuTxCH7mxx/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -2053,10 +1769,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F1V6.HEIC",
     "caption": "Verified field-context series — AN2-F1V6",
-    "original": "https://drive.google.com/thumbnail?id=1B5RxZmsVoKB5sKa171JQ8qtjXyKzRrTS&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1B5RxZmsVoKB5sKa171JQ8qtjXyKzRrTS&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F1V6",
-    "drive_view": "https://drive.google.com/file/d/1B5RxZmsVoKB5sKa171JQ8qtjXyKzRrTS/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -2066,10 +1780,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F1V5.HEIC",
     "caption": "Verified field-context series — AN2-F1V5",
-    "original": "https://drive.google.com/thumbnail?id=1zIS81bPJaArflrHbjvuL4mEr103-LYry&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1zIS81bPJaArflrHbjvuL4mEr103-LYry&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F1V5",
-    "drive_view": "https://drive.google.com/file/d/1zIS81bPJaArflrHbjvuL4mEr103-LYry/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -2079,10 +1791,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F1V3.HEIC",
     "caption": "Verified field-context series — AN2-F1V3",
-    "original": "https://drive.google.com/thumbnail?id=1eCvcLZHYUS9hqgh0V870Ip8p8mlspJna&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1eCvcLZHYUS9hqgh0V870Ip8p8mlspJna&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F1V3",
-    "drive_view": "https://drive.google.com/file/d/1eCvcLZHYUS9hqgh0V870Ip8p8mlspJna/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -2092,10 +1802,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F1V2.HEIC",
     "caption": "Verified field-context series — AN2-F1V2",
-    "original": "https://drive.google.com/thumbnail?id=1zP9UrpSFrs-esMKxA-SCdN4bpjQTsiVf&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1zP9UrpSFrs-esMKxA-SCdN4bpjQTsiVf&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F1V2",
-    "drive_view": "https://drive.google.com/file/d/1zP9UrpSFrs-esMKxA-SCdN4bpjQTsiVf/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026",
@@ -2105,10 +1813,8 @@ window.DRIVE_PHOTOS = [
     "category": "Wild / field context",
     "filename": "AN2-F1.HEIC",
     "caption": "Verified field-context series — AN2-F1",
-    "original": "https://drive.google.com/thumbnail?id=1aBdIz1Vd_Q45PWMdlpemBfvhkAk1WlRG&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1aBdIz1Vd_Q45PWMdlpemBfvhkAk1WlRG&sz=w1200",
     "source_relpath": "AN2 2026/AN2-F1",
-    "drive_view": "https://drive.google.com/file/d/1aBdIz1Vd_Q45PWMdlpemBfvhkAk1WlRG/view"
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2118,11 +1824,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F1.JPG",
     "caption": "Verified laboratory specimen view — AN2-F1",
-    "original": "https://drive.google.com/thumbnail?id=1f6-n7J8CeSXz_8JvNVT16_xO1SzkjUlz&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1f6-n7J8CeSXz_8JvNVT16_xO1SzkjUlz&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F1.JPG",
-    "drive_view": "https://drive.google.com/file/d/1f6-n7J8CeSXz_8JvNVT16_xO1SzkjUlz/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2132,11 +1836,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F1V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F1V2",
-    "original": "https://drive.google.com/thumbnail?id=1aoCvQW_H6lGXfH0UTe1tmhbXN50xjFdE&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1aoCvQW_H6lGXfH0UTe1tmhbXN50xjFdE&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F1V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1aoCvQW_H6lGXfH0UTe1tmhbXN50xjFdE/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2146,11 +1848,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F2",
-    "original": "https://drive.google.com/thumbnail?id=12E4JWRMu6-q2C-gXXXsK0XnQUZDS6nUV&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=12E4JWRMu6-q2C-gXXXsK0XnQUZDS6nUV&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F2.JPG",
-    "drive_view": "https://drive.google.com/file/d/12E4JWRMu6-q2C-gXXXsK0XnQUZDS6nUV/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2160,11 +1860,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F2V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F2V2",
-    "original": "https://drive.google.com/thumbnail?id=1xr4VtyGh1lE2xjv1uMJQWpYP0XkppfCu&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1xr4VtyGh1lE2xjv1uMJQWpYP0XkppfCu&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F2V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1xr4VtyGh1lE2xjv1uMJQWpYP0XkppfCu/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2174,11 +1872,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F3.JPG",
     "caption": "Verified laboratory specimen view — AN2-F3",
-    "original": "https://drive.google.com/thumbnail?id=1js47xRNUCBrHYUPbEMKggkW5mHe-16by&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1js47xRNUCBrHYUPbEMKggkW5mHe-16by&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F3.JPG",
-    "drive_view": "https://drive.google.com/file/d/1js47xRNUCBrHYUPbEMKggkW5mHe-16by/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2188,12 +1884,10 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F3V2.JPG",
     "caption": "Verified laboratory specimen view — AN3-F3 (visible label overrides source filename AN2-F3V2.JPG)",
-    "original": "https://drive.google.com/thumbnail?id=1Lxlw8VrerbMpVnlTMXQOnECX_ooj0EYY&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1Lxlw8VrerbMpVnlTMXQOnECX_ooj0EYY&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F3V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1Lxlw8VrerbMpVnlTMXQOnECX_ooj0EYY/view",
     "verified_label": true,
-    "assignment_basis": "visible handwritten AN3 F3 label in frame; visible label overrides conflicting AN2-F3 filename"
+    "assignment_basis": "visible handwritten AN3 F3 label in frame; visible label overrides conflicting AN2-F3 filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2203,12 +1897,10 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F3V3.JPG",
     "caption": "Verified laboratory specimen view — AN3-F3 (visible label overrides source filename AN2-F3V3.JPG)",
-    "original": "https://drive.google.com/thumbnail?id=1kGqtMpKCEKePVI6iqS5_fRZnioKjN5tA&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1kGqtMpKCEKePVI6iqS5_fRZnioKjN5tA&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F3V3.JPG",
-    "drive_view": "https://drive.google.com/file/d/1kGqtMpKCEKePVI6iqS5_fRZnioKjN5tA/view",
     "verified_label": true,
-    "assignment_basis": "visible handwritten AN3 F3 label in frame; visible label overrides conflicting AN2-F3 filename"
+    "assignment_basis": "visible handwritten AN3 F3 label in frame; visible label overrides conflicting AN2-F3 filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2218,12 +1910,10 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F3V4.JPG",
     "caption": "Verified laboratory specimen view — AN3-F3 (visible label overrides source filename AN2-F3V4.JPG)",
-    "original": "https://drive.google.com/thumbnail?id=1qrK7KLgNUa_NRfXcS-V5piCSphvnxkFA&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1qrK7KLgNUa_NRfXcS-V5piCSphvnxkFA&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F3V4.JPG",
-    "drive_view": "https://drive.google.com/file/d/1qrK7KLgNUa_NRfXcS-V5piCSphvnxkFA/view",
     "verified_label": true,
-    "assignment_basis": "visible handwritten AN3 F3 label in frame; visible label overrides conflicting AN2-F3 filename"
+    "assignment_basis": "visible handwritten AN3 F3 label in frame; visible label overrides conflicting AN2-F3 filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2233,11 +1923,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F4.JPG",
     "caption": "Verified laboratory specimen view — AN2-F4",
-    "original": "https://drive.google.com/thumbnail?id=1W1yTOEWIpoT38jXIrQCHRu8MaQXsex56&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1W1yTOEWIpoT38jXIrQCHRu8MaQXsex56&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F4.JPG",
-    "drive_view": "https://drive.google.com/file/d/1W1yTOEWIpoT38jXIrQCHRu8MaQXsex56/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2247,11 +1935,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F4V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F4V2",
-    "original": "https://drive.google.com/thumbnail?id=1ALI9YAGVUmES5HaosuA_TDij2Obr1b8l&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1ALI9YAGVUmES5HaosuA_TDij2Obr1b8l&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F4V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1ALI9YAGVUmES5HaosuA_TDij2Obr1b8l/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2261,11 +1947,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F5.JPG",
     "caption": "Verified laboratory specimen view — AN2-F5",
-    "original": "https://drive.google.com/thumbnail?id=1DPHkwtounbGF1PMeBvSZjCWr0XopSSV9&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1DPHkwtounbGF1PMeBvSZjCWr0XopSSV9&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F5.JPG",
-    "drive_view": "https://drive.google.com/file/d/1DPHkwtounbGF1PMeBvSZjCWr0XopSSV9/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2275,11 +1959,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F5V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F5V2",
-    "original": "https://drive.google.com/thumbnail?id=1Bpa2Fzgs4IWTolAGqD7GErU9lWG-Lear&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1Bpa2Fzgs4IWTolAGqD7GErU9lWG-Lear&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F5V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1Bpa2Fzgs4IWTolAGqD7GErU9lWG-Lear/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2289,11 +1971,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F6.JPG",
     "caption": "Verified laboratory specimen view — AN2-F6",
-    "original": "https://drive.google.com/thumbnail?id=17Mfq83caaha1C1xqUqsp8qfp1vG8PKKx&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=17Mfq83caaha1C1xqUqsp8qfp1vG8PKKx&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F6.JPG",
-    "drive_view": "https://drive.google.com/file/d/17Mfq83caaha1C1xqUqsp8qfp1vG8PKKx/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2303,11 +1983,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F6V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F6V2",
-    "original": "https://drive.google.com/thumbnail?id=1ADkgP0Hb95WaM7JDhRbhei3hQh6lWicV&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1ADkgP0Hb95WaM7JDhRbhei3hQh6lWicV&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F6V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1ADkgP0Hb95WaM7JDhRbhei3hQh6lWicV/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2317,11 +1995,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F7.JPG",
     "caption": "Verified laboratory specimen view — AN2-F7",
-    "original": "https://drive.google.com/thumbnail?id=1IaEiwNEOSva_J1S6z1zQZtFm6JAVDyBn&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1IaEiwNEOSva_J1S6z1zQZtFm6JAVDyBn&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F7.JPG",
-    "drive_view": "https://drive.google.com/file/d/1IaEiwNEOSva_J1S6z1zQZtFm6JAVDyBn/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2331,11 +2007,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F7V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F7V2",
-    "original": "https://drive.google.com/thumbnail?id=1bVKXop7SeKbpEzy-KWIAYIjXkUEvHJvt&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1bVKXop7SeKbpEzy-KWIAYIjXkUEvHJvt&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F7V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1bVKXop7SeKbpEzy-KWIAYIjXkUEvHJvt/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2345,11 +2019,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F8.JPG",
     "caption": "Verified laboratory specimen view — AN2-F8",
-    "original": "https://drive.google.com/thumbnail?id=1Qqg7KNVKbNUG7oLL_p53HPalaa5vceYc&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1Qqg7KNVKbNUG7oLL_p53HPalaa5vceYc&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F8.JPG",
-    "drive_view": "https://drive.google.com/file/d/1Qqg7KNVKbNUG7oLL_p53HPalaa5vceYc/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2359,11 +2031,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F8V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F8V2",
-    "original": "https://drive.google.com/thumbnail?id=1kV3ZCbw1Ct0uKEPJnERNMCGrU10LvCQg&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1kV3ZCbw1Ct0uKEPJnERNMCGrU10LvCQg&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F8V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1kV3ZCbw1Ct0uKEPJnERNMCGrU10LvCQg/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2373,11 +2043,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F9.JPG",
     "caption": "Verified laboratory specimen view — AN2-F9",
-    "original": "https://drive.google.com/thumbnail?id=148GLvTrnEYcw4x5t24S_DBMuXvcZRWxS&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=148GLvTrnEYcw4x5t24S_DBMuXvcZRWxS&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F9.JPG",
-    "drive_view": "https://drive.google.com/file/d/148GLvTrnEYcw4x5t24S_DBMuXvcZRWxS/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2387,11 +2055,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F9V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F9V2",
-    "original": "https://drive.google.com/thumbnail?id=1gdflKqU4yIjzHJCI_i_eXcKWYuxUodAh&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1gdflKqU4yIjzHJCI_i_eXcKWYuxUodAh&sz=w1200",
     "source_relpath": "AN2 verified lab views/AN2-F9V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1gdflKqU4yIjzHJCI_i_eXcKWYuxUodAh/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2401,11 +2067,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F10.JPG",
     "caption": "Verified laboratory specimen view — AN2-F10",
-    "original": "https://drive.google.com/thumbnail?id=1GrMhvJurTnTxXEDmL5oXagvEFVBeBOVt&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1GrMhvJurTnTxXEDmL5oXagvEFVBeBOVt&sz=w1200",
     "source_relpath": "AN2 verified lab views/AN2-F10.JPG",
-    "drive_view": "https://drive.google.com/file/d/1GrMhvJurTnTxXEDmL5oXagvEFVBeBOVt/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2415,11 +2079,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F10V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F10V2",
-    "original": "https://drive.google.com/thumbnail?id=1HmZt5KJSQqyZwvdkYDicQPfOA2mKrvLG&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1HmZt5KJSQqyZwvdkYDicQPfOA2mKrvLG&sz=w1200",
     "source_relpath": "AN2 verified lab views/AN2-F10V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1HmZt5KJSQqyZwvdkYDicQPfOA2mKrvLG/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2429,11 +2091,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F11.JPG",
     "caption": "Verified laboratory specimen view — AN2-F11",
-    "original": "https://drive.google.com/thumbnail?id=1zOgg9gf0CoNuUyYePZvSZtSiG_PxUzeT&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1zOgg9gf0CoNuUyYePZvSZtSiG_PxUzeT&sz=w1200",
     "source_relpath": "AN2 verified lab views/AN2-F11.JPG",
-    "drive_view": "https://drive.google.com/file/d/1zOgg9gf0CoNuUyYePZvSZtSiG_PxUzeT/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2443,11 +2103,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F11V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F11V2",
-    "original": "https://drive.google.com/thumbnail?id=1mv6_n6jvFxgQScFd53bmzsOJxORMQt8C&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1mv6_n6jvFxgQScFd53bmzsOJxORMQt8C&sz=w1200",
     "source_relpath": "AN2 verified lab views/AN2-F11V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1mv6_n6jvFxgQScFd53bmzsOJxORMQt8C/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2457,11 +2115,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F11V3.JPG",
     "caption": "Verified laboratory specimen view — AN2-F11V3",
-    "original": "https://drive.google.com/thumbnail?id=1qbj2p51NZlfPUzO2PB32LYZAGRK-VUYE&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1qbj2p51NZlfPUzO2PB32LYZAGRK-VUYE&sz=w1200",
     "source_relpath": "AN2 verified lab views/AN2-F11V3.JPG",
-    "drive_view": "https://drive.google.com/file/d/1qbj2p51NZlfPUzO2PB32LYZAGRK-VUYE/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2471,11 +2127,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F12.JPG",
     "caption": "Verified laboratory specimen view — AN2-F12",
-    "original": "https://drive.google.com/thumbnail?id=1FMKVoK7muxRwk_VNIm2vfwAMRfNOsWhP&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1FMKVoK7muxRwk_VNIm2vfwAMRfNOsWhP&sz=w1200",
     "source_relpath": "AN2 verified lab views/AN2-F12.JPG",
-    "drive_view": "https://drive.google.com/file/d/1FMKVoK7muxRwk_VNIm2vfwAMRfNOsWhP/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2485,11 +2139,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F12V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F12V2",
-    "original": "https://drive.google.com/thumbnail?id=1M7r6Cf8M5PeeIp1PtJ-_I9X_vUW49-IC&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1M7r6Cf8M5PeeIp1PtJ-_I9X_vUW49-IC&sz=w1200",
     "source_relpath": "AN2 verified lab views/AN2-F12V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1M7r6Cf8M5PeeIp1PtJ-_I9X_vUW49-IC/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2499,11 +2151,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F13-LABEL.JPG",
     "caption": "Verified laboratory specimen view — AN2-F13-LABEL",
-    "original": "https://drive.google.com/thumbnail?id=15Ip4yxROlMZI1bIzRrqhuhcUWuYTYtGA&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=15Ip4yxROlMZI1bIzRrqhuhcUWuYTYtGA&sz=w1200",
     "source_relpath": "AN2 verified lab views/AN2-F13-LABEL.JPG",
-    "drive_view": "https://drive.google.com/file/d/15Ip4yxROlMZI1bIzRrqhuhcUWuYTYtGA/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2513,11 +2163,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F13V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F13V2",
-    "original": "https://drive.google.com/thumbnail?id=1oUzziduVSXC19GGH4HXo0hzICU1DRNTQ&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1oUzziduVSXC19GGH4HXo0hzICU1DRNTQ&sz=w1200",
     "source_relpath": "AN2 verified lab views/AN2-F13V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1oUzziduVSXC19GGH4HXo0hzICU1DRNTQ/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2527,11 +2175,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F13V3.JPG",
     "caption": "Verified laboratory specimen view — AN2-F13V3",
-    "original": "https://drive.google.com/thumbnail?id=17A9TeQj-JejrLNCvBrbHN9nFpJ1ReV_S&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=17A9TeQj-JejrLNCvBrbHN9nFpJ1ReV_S&sz=w1200",
     "source_relpath": "AN2 verified lab views/AN2-F13V3.JPG",
-    "drive_view": "https://drive.google.com/file/d/17A9TeQj-JejrLNCvBrbHN9nFpJ1ReV_S/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2541,11 +2187,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F14.JPG",
     "caption": "Verified laboratory specimen view — AN2-F14",
-    "original": "https://drive.google.com/thumbnail?id=1ODxw6BuU8vVFfWE-r-oDoGJJ5NRr2gnE&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1ODxw6BuU8vVFfWE-r-oDoGJJ5NRr2gnE&sz=w1200",
     "source_relpath": "AN2 verified lab views/AN2-F14.JPG",
-    "drive_view": "https://drive.google.com/file/d/1ODxw6BuU8vVFfWE-r-oDoGJJ5NRr2gnE/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2555,11 +2199,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F14V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F14V2",
-    "original": "https://drive.google.com/thumbnail?id=1gHJguzJTkCiiLZlFy6aTGhttdL1V4kTR&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1gHJguzJTkCiiLZlFy6aTGhttdL1V4kTR&sz=w1200",
     "source_relpath": "AN2 verified lab views/AN2-F14V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1gHJguzJTkCiiLZlFy6aTGhttdL1V4kTR/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2569,11 +2211,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F15.JPG",
     "caption": "Verified laboratory specimen view — AN2-F15",
-    "original": "https://drive.google.com/thumbnail?id=1gjyXQef7pnLKI8bJ1Vmyyu5KDjs4JYox&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1gjyXQef7pnLKI8bJ1Vmyyu5KDjs4JYox&sz=w1200",
     "source_relpath": "AN2 verified lab views/AN2-F15.JPG",
-    "drive_view": "https://drive.google.com/file/d/1gjyXQef7pnLKI8bJ1Vmyyu5KDjs4JYox/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2583,11 +2223,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F15V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F15V2",
-    "original": "https://drive.google.com/thumbnail?id=1ps6b1z_v4mcWUqXTJmegUhPTOjfnyIVx&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1ps6b1z_v4mcWUqXTJmegUhPTOjfnyIVx&sz=w1200",
     "source_relpath": "AN2 verified lab views/AN2-F15V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1ps6b1z_v4mcWUqXTJmegUhPTOjfnyIVx/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2597,11 +2235,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F16.JPG",
     "caption": "Verified laboratory specimen view — AN2-F16",
-    "original": "https://drive.google.com/thumbnail?id=1jsbA5A5Xf2jGnczrUXpPdcto1lMt9Hjq&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1jsbA5A5Xf2jGnczrUXpPdcto1lMt9Hjq&sz=w1200",
     "source_relpath": "AN2 verified lab views/AN2-F16.JPG",
-    "drive_view": "https://drive.google.com/file/d/1jsbA5A5Xf2jGnczrUXpPdcto1lMt9Hjq/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2611,11 +2247,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F16V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F16V2",
-    "original": "https://drive.google.com/thumbnail?id=1O_phydkPUBwIsSY5SxpsBKRGXNKRk-m_&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1O_phydkPUBwIsSY5SxpsBKRGXNKRk-m_&sz=w1200",
     "source_relpath": "AN2 verified lab views/AN2-F16V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1O_phydkPUBwIsSY5SxpsBKRGXNKRk-m_/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2625,11 +2259,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F17.JPG",
     "caption": "Verified laboratory specimen view — AN2-F17",
-    "original": "https://drive.google.com/thumbnail?id=1m0QOFfuWkbbe-faxU1fDZq0rMCTPvH7D&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1m0QOFfuWkbbe-faxU1fDZq0rMCTPvH7D&sz=w1200",
     "source_relpath": "AN2 verified lab views/AN2-F17.JPG",
-    "drive_view": "https://drive.google.com/file/d/1m0QOFfuWkbbe-faxU1fDZq0rMCTPvH7D/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2639,11 +2271,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F17V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F17V2",
-    "original": "https://drive.google.com/thumbnail?id=1gxQZvvbzNTBdneE4S3uVkC27ZklJemKo&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1gxQZvvbzNTBdneE4S3uVkC27ZklJemKo&sz=w1200",
     "source_relpath": "AN2 verified lab views/AN2-F17V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1gxQZvvbzNTBdneE4S3uVkC27ZklJemKo/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2653,11 +2283,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F11-LAB.JPG",
     "caption": "Verified laboratory specimen view — JN1-F11-LAB",
-    "original": "https://drive.google.com/thumbnail?id=1jNBSyTaoxsv9_PgZSZIYJkqQo3BcILKP&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1jNBSyTaoxsv9_PgZSZIYJkqQo3BcILKP&sz=w1200",
     "source_relpath": "JN1 verified lab views/JN1-F11-LAB.JPG",
-    "drive_view": "https://drive.google.com/file/d/1jNBSyTaoxsv9_PgZSZIYJkqQo3BcILKP/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2667,11 +2295,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F17V4.JPG",
     "caption": "Verified laboratory specimen view — AN2-F17V4",
-    "original": "https://drive.google.com/thumbnail?id=1ymJukW_eC3WgGhlrMhmza-cwALvAgGVz&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1ymJukW_eC3WgGhlrMhmza-cwALvAgGVz&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F17V4.JPG",
-    "drive_view": "https://drive.google.com/file/d/1ymJukW_eC3WgGhlrMhmza-cwALvAgGVz/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2681,11 +2307,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F17V5.JPG",
     "caption": "Verified laboratory specimen view — AN2-F17V5",
-    "original": "https://drive.google.com/thumbnail?id=19iGV0o4A4ieX0YQDTkLBD7wq9ZvOywJ5&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=19iGV0o4A4ieX0YQDTkLBD7wq9ZvOywJ5&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F17V5.JPG",
-    "drive_view": "https://drive.google.com/file/d/19iGV0o4A4ieX0YQDTkLBD7wq9ZvOywJ5/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2695,11 +2319,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F18.JPG",
     "caption": "Verified laboratory specimen view — AN2-F18",
-    "original": "https://drive.google.com/thumbnail?id=1T4TRezwGGR2EaQ0mRU1khVIVF5SFRTSH&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1T4TRezwGGR2EaQ0mRU1khVIVF5SFRTSH&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F18.JPG",
-    "drive_view": "https://drive.google.com/file/d/1T4TRezwGGR2EaQ0mRU1khVIVF5SFRTSH/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2709,11 +2331,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F18V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F18V2",
-    "original": "https://drive.google.com/thumbnail?id=1soQ5Na1IEem2kQfeSVgRyMcOEmbkxRnb&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1soQ5Na1IEem2kQfeSVgRyMcOEmbkxRnb&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F18V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1soQ5Na1IEem2kQfeSVgRyMcOEmbkxRnb/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2723,11 +2343,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F19.JPG",
     "caption": "Verified laboratory specimen view — AN2-F19",
-    "original": "https://drive.google.com/thumbnail?id=1YIT14GQAumwQkSmn3rmKpNVqY5NrFb9A&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1YIT14GQAumwQkSmn3rmKpNVqY5NrFb9A&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F19.JPG",
-    "drive_view": "https://drive.google.com/file/d/1YIT14GQAumwQkSmn3rmKpNVqY5NrFb9A/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2737,11 +2355,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F19V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F19V2",
-    "original": "https://drive.google.com/thumbnail?id=1kMT3aBZWQwrhy7Hhaf5uKuF1eJHhSfCX&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1kMT3aBZWQwrhy7Hhaf5uKuF1eJHhSfCX&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F19V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1kMT3aBZWQwrhy7Hhaf5uKuF1eJHhSfCX/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2751,11 +2367,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F20.JPG",
     "caption": "Verified laboratory specimen view — AN2-F20",
-    "original": "https://drive.google.com/thumbnail?id=19F25TBnXfFbtmjRlA_h5WHVZB-zGnx2t&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=19F25TBnXfFbtmjRlA_h5WHVZB-zGnx2t&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F20.JPG",
-    "drive_view": "https://drive.google.com/file/d/19F25TBnXfFbtmjRlA_h5WHVZB-zGnx2t/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2765,11 +2379,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F21.JPG",
     "caption": "Verified laboratory specimen view — AN2-F21",
-    "original": "https://drive.google.com/thumbnail?id=13jTaYWZEdjSA6knsWS1rucmx50Fnjz4u&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=13jTaYWZEdjSA6knsWS1rucmx50Fnjz4u&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F21.JPG",
-    "drive_view": "https://drive.google.com/file/d/13jTaYWZEdjSA6knsWS1rucmx50Fnjz4u/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2779,11 +2391,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F21V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F21V2",
-    "original": "https://drive.google.com/thumbnail?id=18TGjfw67tRTY5462QCps84NkoKqGh8MU&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=18TGjfw67tRTY5462QCps84NkoKqGh8MU&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F21V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/18TGjfw67tRTY5462QCps84NkoKqGh8MU/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2793,11 +2403,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F22.JPG",
     "caption": "Verified laboratory specimen view — AN2-F22",
-    "original": "https://drive.google.com/thumbnail?id=1l19SrqZiIbJF_hwWrr4iEvNoc2jylwnE&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1l19SrqZiIbJF_hwWrr4iEvNoc2jylwnE&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F22.JPG",
-    "drive_view": "https://drive.google.com/file/d/1l19SrqZiIbJF_hwWrr4iEvNoc2jylwnE/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2807,11 +2415,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F22V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F22V2",
-    "original": "https://drive.google.com/thumbnail?id=1hmBLksN4okFnZW9Nh9bz3VVQBnkjvKav&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1hmBLksN4okFnZW9Nh9bz3VVQBnkjvKav&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F22V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1hmBLksN4okFnZW9Nh9bz3VVQBnkjvKav/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2821,11 +2427,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F23.JPG",
     "caption": "Verified laboratory specimen view — AN2-F23",
-    "original": "https://drive.google.com/thumbnail?id=1ZBUW-b-CCi99snCpaWmFX_SLee5HFG8J&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1ZBUW-b-CCi99snCpaWmFX_SLee5HFG8J&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F23.JPG",
-    "drive_view": "https://drive.google.com/file/d/1ZBUW-b-CCi99snCpaWmFX_SLee5HFG8J/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2835,11 +2439,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F23V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F23V2",
-    "original": "https://drive.google.com/thumbnail?id=1P68wlEwaEyHe4AExA39q-kfal0F5McvI&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1P68wlEwaEyHe4AExA39q-kfal0F5McvI&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F23V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1P68wlEwaEyHe4AExA39q-kfal0F5McvI/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2849,11 +2451,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F24.JPG",
     "caption": "Verified laboratory specimen view — AN2-F24",
-    "original": "https://drive.google.com/thumbnail?id=13617QUUCdCJf6sqWH6N6sSKoNmfuK0oM&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=13617QUUCdCJf6sqWH6N6sSKoNmfuK0oM&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F24.JPG",
-    "drive_view": "https://drive.google.com/file/d/13617QUUCdCJf6sqWH6N6sSKoNmfuK0oM/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2863,11 +2463,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F24V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F24V2",
-    "original": "https://drive.google.com/thumbnail?id=1GiZfxdi385ewHZE9fUY-yO52ii9wAko6&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1GiZfxdi385ewHZE9fUY-yO52ii9wAko6&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F24V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1GiZfxdi385ewHZE9fUY-yO52ii9wAko6/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2877,11 +2475,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F25.JPG",
     "caption": "Verified laboratory specimen view — AN2-F25",
-    "original": "https://drive.google.com/thumbnail?id=1a9C_thysm1imcCtnBQzYxJN1U0p3-bfi&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1a9C_thysm1imcCtnBQzYxJN1U0p3-bfi&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F25.JPG",
-    "drive_view": "https://drive.google.com/file/d/1a9C_thysm1imcCtnBQzYxJN1U0p3-bfi/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2891,11 +2487,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F25V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F25V2",
-    "original": "https://drive.google.com/thumbnail?id=1iOKsZgmuFvKNObzMcgXLRxG5t9Ss8s5V&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1iOKsZgmuFvKNObzMcgXLRxG5t9Ss8s5V&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F25V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1iOKsZgmuFvKNObzMcgXLRxG5t9Ss8s5V/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2905,11 +2499,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F25V3.JPG",
     "caption": "Verified laboratory specimen view — AN2-F25V3",
-    "original": "https://drive.google.com/thumbnail?id=167sACExBXqztTwnJ-E1mraYuExvsnMZO&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=167sACExBXqztTwnJ-E1mraYuExvsnMZO&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F25V3.JPG",
-    "drive_view": "https://drive.google.com/file/d/167sACExBXqztTwnJ-E1mraYuExvsnMZO/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2919,11 +2511,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F25V4.JPG",
     "caption": "Verified laboratory specimen view — AN2-F25V4",
-    "original": "https://drive.google.com/thumbnail?id=1OSXs2S_MGUC5YiEnw5ULZyUCvlu3SrPL&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1OSXs2S_MGUC5YiEnw5ULZyUCvlu3SrPL&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F25V4.JPG",
-    "drive_view": "https://drive.google.com/file/d/1OSXs2S_MGUC5YiEnw5ULZyUCvlu3SrPL/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2933,11 +2523,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F26.JPG",
     "caption": "Verified laboratory specimen view — AN2-F26",
-    "original": "https://drive.google.com/thumbnail?id=1aeALRI3H1n8D1bL_3L0XhepX3gQkUSNe&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1aeALRI3H1n8D1bL_3L0XhepX3gQkUSNe&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F26.JPG",
-    "drive_view": "https://drive.google.com/file/d/1aeALRI3H1n8D1bL_3L0XhepX3gQkUSNe/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2947,11 +2535,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F26V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F26V2",
-    "original": "https://drive.google.com/thumbnail?id=1S-8bDKsJZnZO17pn5lGqx7M034iIxH6N&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1S-8bDKsJZnZO17pn5lGqx7M034iIxH6N&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F26V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1S-8bDKsJZnZO17pn5lGqx7M034iIxH6N/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2961,11 +2547,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F27.JPG",
     "caption": "Verified laboratory specimen view — AN2-F27",
-    "original": "https://drive.google.com/thumbnail?id=1s6S8fxEU-95mLLt5pN50oFHO5HcN5dMd&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1s6S8fxEU-95mLLt5pN50oFHO5HcN5dMd&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F27.JPG",
-    "drive_view": "https://drive.google.com/file/d/1s6S8fxEU-95mLLt5pN50oFHO5HcN5dMd/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2975,11 +2559,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F27V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F27V2",
-    "original": "https://drive.google.com/thumbnail?id=1s5wgVFFvaRL70zBlHhQ4EMBvD8ta-r5f&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1s5wgVFFvaRL70zBlHhQ4EMBvD8ta-r5f&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F27V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1s5wgVFFvaRL70zBlHhQ4EMBvD8ta-r5f/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2989,11 +2571,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F28.JPG",
     "caption": "Verified laboratory specimen view — AN2-F28",
-    "original": "https://drive.google.com/thumbnail?id=1vYIrVJL-EE34t2XUMX4MyKGzLDRVwB08&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1vYIrVJL-EE34t2XUMX4MyKGzLDRVwB08&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F28.JPG",
-    "drive_view": "https://drive.google.com/file/d/1vYIrVJL-EE34t2XUMX4MyKGzLDRVwB08/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3003,11 +2583,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F28V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F28V2",
-    "original": "https://drive.google.com/thumbnail?id=1hpz1mMpJ-CT7OVhiYA9RuUOKSbou1P3r&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1hpz1mMpJ-CT7OVhiYA9RuUOKSbou1P3r&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F28V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1hpz1mMpJ-CT7OVhiYA9RuUOKSbou1P3r/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3017,11 +2595,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F28V3.JPG",
     "caption": "Verified laboratory specimen view — AN2-F28V3",
-    "original": "https://drive.google.com/thumbnail?id=1LEVfaFCeeo6nLM94G4HzgSqz-lLFJfHs&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1LEVfaFCeeo6nLM94G4HzgSqz-lLFJfHs&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F28V3.JPG",
-    "drive_view": "https://drive.google.com/file/d/1LEVfaFCeeo6nLM94G4HzgSqz-lLFJfHs/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3031,11 +2607,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F29.JPG",
     "caption": "Verified laboratory specimen view — AN2-F29",
-    "original": "https://drive.google.com/thumbnail?id=1o7KnNAzArRU13XRQCiJSYN8dV7UCMHbw&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1o7KnNAzArRU13XRQCiJSYN8dV7UCMHbw&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F29.JPG",
-    "drive_view": "https://drive.google.com/file/d/1o7KnNAzArRU13XRQCiJSYN8dV7UCMHbw/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3045,11 +2619,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F29V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F29V2",
-    "original": "https://drive.google.com/thumbnail?id=1muFSngbi6qpFVGOAt5Zzw-Z6gc1uqDke&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1muFSngbi6qpFVGOAt5Zzw-Z6gc1uqDke&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F29V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1muFSngbi6qpFVGOAt5Zzw-Z6gc1uqDke/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3059,11 +2631,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F30.JPG",
     "caption": "Verified laboratory specimen view — AN2-F30",
-    "original": "https://drive.google.com/thumbnail?id=1PeNbEq9hf0JIcvc8ujUNJqMNV53LI18z&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1PeNbEq9hf0JIcvc8ujUNJqMNV53LI18z&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F30.JPG",
-    "drive_view": "https://drive.google.com/file/d/1PeNbEq9hf0JIcvc8ujUNJqMNV53LI18z/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3073,11 +2643,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F30V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F30V2",
-    "original": "https://drive.google.com/thumbnail?id=1neg5iU8LgFqPUlt7TSfAFIkza_D5YPJR&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1neg5iU8LgFqPUlt7TSfAFIkza_D5YPJR&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F30V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1neg5iU8LgFqPUlt7TSfAFIkza_D5YPJR/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3087,11 +2655,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F31.JPG",
     "caption": "Verified laboratory specimen view — AN2-F31",
-    "original": "https://drive.google.com/thumbnail?id=1ZDOocbSLUkLZmEqVnkQhNAcT5GTWV2d9&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1ZDOocbSLUkLZmEqVnkQhNAcT5GTWV2d9&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F31.JPG",
-    "drive_view": "https://drive.google.com/file/d/1ZDOocbSLUkLZmEqVnkQhNAcT5GTWV2d9/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3101,11 +2667,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F31V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F31V2",
-    "original": "https://drive.google.com/thumbnail?id=10DCEtw-NwEIVtmVjkOU4TyxZonNPkBQU&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=10DCEtw-NwEIVtmVjkOU4TyxZonNPkBQU&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F31V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/10DCEtw-NwEIVtmVjkOU4TyxZonNPkBQU/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3115,11 +2679,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F32.JPG",
     "caption": "Verified laboratory specimen view — AN2-F32",
-    "original": "https://drive.google.com/thumbnail?id=13tuYLpIp7mQ5SHxzxPALcv6IP61hJM5l&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=13tuYLpIp7mQ5SHxzxPALcv6IP61hJM5l&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F32.JPG",
-    "drive_view": "https://drive.google.com/file/d/13tuYLpIp7mQ5SHxzxPALcv6IP61hJM5l/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3129,11 +2691,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F32V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F32V2",
-    "original": "https://drive.google.com/thumbnail?id=172ZdfVqvePBt3jprDpbtu6HORUbMCsE5&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=172ZdfVqvePBt3jprDpbtu6HORUbMCsE5&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F32V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/172ZdfVqvePBt3jprDpbtu6HORUbMCsE5/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3143,11 +2703,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F32V3.JPG",
     "caption": "Verified laboratory specimen view — AN2-F32V3",
-    "original": "https://drive.google.com/thumbnail?id=1mUlu2J-H5yYSo6xXZSWLc_lQbV2pCiQf&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1mUlu2J-H5yYSo6xXZSWLc_lQbV2pCiQf&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F32V3.JPG",
-    "drive_view": "https://drive.google.com/file/d/1mUlu2J-H5yYSo6xXZSWLc_lQbV2pCiQf/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3157,11 +2715,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F34.JPG",
     "caption": "Verified laboratory specimen view — AN2-F34",
-    "original": "https://drive.google.com/thumbnail?id=1_rPh5uAefNWjGR0al7TwYMOxF93hcrXD&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1_rPh5uAefNWjGR0al7TwYMOxF93hcrXD&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F34.JPG",
-    "drive_view": "https://drive.google.com/file/d/1_rPh5uAefNWjGR0al7TwYMOxF93hcrXD/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3171,11 +2727,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F34V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F34V2",
-    "original": "https://drive.google.com/thumbnail?id=1WZxr3LHFuwrprt_dQVHjPY70y1Tdx8OD&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1WZxr3LHFuwrprt_dQVHjPY70y1Tdx8OD&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F34V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1WZxr3LHFuwrprt_dQVHjPY70y1Tdx8OD/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3185,11 +2739,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F35.JPG",
     "caption": "Verified laboratory specimen view — AN2-F35",
-    "original": "https://drive.google.com/thumbnail?id=1wqcB_btlEt7KVvU5Niiz0SMDbxuqJ6cN&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1wqcB_btlEt7KVvU5Niiz0SMDbxuqJ6cN&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F35.JPG",
-    "drive_view": "https://drive.google.com/file/d/1wqcB_btlEt7KVvU5Niiz0SMDbxuqJ6cN/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3199,11 +2751,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F36.JPG",
     "caption": "Verified laboratory specimen view — AN2-F36",
-    "original": "https://drive.google.com/thumbnail?id=1k4PPgw8oBhHzx_msm3J-ar1CyZ5CUj84&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1k4PPgw8oBhHzx_msm3J-ar1CyZ5CUj84&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F36.JPG",
-    "drive_view": "https://drive.google.com/file/d/1k4PPgw8oBhHzx_msm3J-ar1CyZ5CUj84/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3213,11 +2763,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F36V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F36V2",
-    "original": "https://drive.google.com/thumbnail?id=1m2JRGkUjsz3guexow-W_hGGgWaDfqlSg&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1m2JRGkUjsz3guexow-W_hGGgWaDfqlSg&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F36V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1m2JRGkUjsz3guexow-W_hGGgWaDfqlSg/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3227,11 +2775,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F37.JPG",
     "caption": "Verified laboratory specimen view — AN2-F37",
-    "original": "https://drive.google.com/thumbnail?id=1aIE7iA_Ft0STVUWi4216G5msxhyMpkSc&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1aIE7iA_Ft0STVUWi4216G5msxhyMpkSc&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F37.JPG",
-    "drive_view": "https://drive.google.com/file/d/1aIE7iA_Ft0STVUWi4216G5msxhyMpkSc/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3241,11 +2787,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F37V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F37V2",
-    "original": "https://drive.google.com/thumbnail?id=1GHH7ghGGrILPWoMOrXMFHwC0UpqUcU5D&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1GHH7ghGGrILPWoMOrXMFHwC0UpqUcU5D&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F37V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1GHH7ghGGrILPWoMOrXMFHwC0UpqUcU5D/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3255,11 +2799,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F38.JPG",
     "caption": "Verified laboratory specimen view — AN2-F38",
-    "original": "https://drive.google.com/thumbnail?id=1DQMvMD6YzsoGQrp4u7CYvP3MD0Edfsou&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1DQMvMD6YzsoGQrp4u7CYvP3MD0Edfsou&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F38.JPG",
-    "drive_view": "https://drive.google.com/file/d/1DQMvMD6YzsoGQrp4u7CYvP3MD0Edfsou/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3269,11 +2811,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F38V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F38V2",
-    "original": "https://drive.google.com/thumbnail?id=1-H8CNPWqY0Na9_Ef7MCx_QLAfg9lV9py&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1-H8CNPWqY0Na9_Ef7MCx_QLAfg9lV9py&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F38V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1-H8CNPWqY0Na9_Ef7MCx_QLAfg9lV9py/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3283,11 +2823,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F38V3.JPG",
     "caption": "Verified laboratory specimen view — AN2-F38V3",
-    "original": "https://drive.google.com/thumbnail?id=1pxmnc3d1XUpiJFDIw6RUDckTIKqOTZyI&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1pxmnc3d1XUpiJFDIw6RUDckTIKqOTZyI&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F38V3.JPG",
-    "drive_view": "https://drive.google.com/file/d/1pxmnc3d1XUpiJFDIw6RUDckTIKqOTZyI/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3297,11 +2835,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F38V4.JPG",
     "caption": "Verified laboratory specimen view — AN2-F38V4",
-    "original": "https://drive.google.com/thumbnail?id=1Kf30mM9-JB45puqaXnoBT72ENq1Ln4H0&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1Kf30mM9-JB45puqaXnoBT72ENq1Ln4H0&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F38V4.JPG",
-    "drive_view": "https://drive.google.com/file/d/1Kf30mM9-JB45puqaXnoBT72ENq1Ln4H0/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3311,11 +2847,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F40.JPG",
     "caption": "Verified laboratory specimen view — AN2-F40",
-    "original": "https://drive.google.com/thumbnail?id=1UywfKeCq-eKFxFSgt1uLGA0qA4ljPJNl&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1UywfKeCq-eKFxFSgt1uLGA0qA4ljPJNl&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F40.JPG",
-    "drive_view": "https://drive.google.com/file/d/1UywfKeCq-eKFxFSgt1uLGA0qA4ljPJNl/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3325,11 +2859,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F40V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F40V2",
-    "original": "https://drive.google.com/thumbnail?id=16GBIxnMJfdM5788cWIyrTKZc3n3ieBSv&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=16GBIxnMJfdM5788cWIyrTKZc3n3ieBSv&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F40V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/16GBIxnMJfdM5788cWIyrTKZc3n3ieBSv/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3339,11 +2871,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F41.JPG",
     "caption": "Verified laboratory specimen view — AN2-F41",
-    "original": "https://drive.google.com/thumbnail?id=1UE3GOyVo9sn70FJ81cradwja_18JXuq2&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1UE3GOyVo9sn70FJ81cradwja_18JXuq2&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F41.JPG",
-    "drive_view": "https://drive.google.com/file/d/1UE3GOyVo9sn70FJ81cradwja_18JXuq2/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3353,11 +2883,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F41V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F41V2",
-    "original": "https://drive.google.com/thumbnail?id=1u63YKOmOmgRfEelnBPMOvI2JJ3XGKCIh&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1u63YKOmOmgRfEelnBPMOvI2JJ3XGKCIh&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F41V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1u63YKOmOmgRfEelnBPMOvI2JJ3XGKCIh/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3367,11 +2895,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F42.JPG",
     "caption": "Verified laboratory specimen view — AN2-F42",
-    "original": "https://drive.google.com/thumbnail?id=1RZA1oykKT6nnp9PyzQ2wGvuckFYN1s8n&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1RZA1oykKT6nnp9PyzQ2wGvuckFYN1s8n&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F42.JPG",
-    "drive_view": "https://drive.google.com/file/d/1RZA1oykKT6nnp9PyzQ2wGvuckFYN1s8n/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3381,11 +2907,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F42V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F42V2",
-    "original": "https://drive.google.com/thumbnail?id=1flLW6laUF-YnX2A7KeAX2aX-oq_vu5LX&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1flLW6laUF-YnX2A7KeAX2aX-oq_vu5LX&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F42V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1flLW6laUF-YnX2A7KeAX2aX-oq_vu5LX/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3395,11 +2919,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F44.JPG",
     "caption": "Verified laboratory specimen view — AN2-F44",
-    "original": "https://drive.google.com/thumbnail?id=1prybktuTofdm-fCDiDFOaNKr8E-N1lmU&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1prybktuTofdm-fCDiDFOaNKr8E-N1lmU&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F44.JPG",
-    "drive_view": "https://drive.google.com/file/d/1prybktuTofdm-fCDiDFOaNKr8E-N1lmU/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3409,11 +2931,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F44V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F44V2",
-    "original": "https://drive.google.com/thumbnail?id=1_SUqypdkXXe85QaI4qTkRkWFRLqdvKiy&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1_SUqypdkXXe85QaI4qTkRkWFRLqdvKiy&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F44V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1_SUqypdkXXe85QaI4qTkRkWFRLqdvKiy/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3423,11 +2943,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F44V3.JPG",
     "caption": "Verified laboratory specimen view — AN2-F44V3",
-    "original": "https://drive.google.com/thumbnail?id=16T_JPPcJvfzP4gO34Qzy4hjPJW75pzF6&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=16T_JPPcJvfzP4gO34Qzy4hjPJW75pzF6&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F44V3.JPG",
-    "drive_view": "https://drive.google.com/file/d/16T_JPPcJvfzP4gO34Qzy4hjPJW75pzF6/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3437,11 +2955,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F45.JPG",
     "caption": "Verified laboratory specimen view — AN2-F45",
-    "original": "https://drive.google.com/thumbnail?id=1P0L529TMIsdoW1Cc9qMp6FgmlDDQ94bC&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1P0L529TMIsdoW1Cc9qMp6FgmlDDQ94bC&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F45.JPG",
-    "drive_view": "https://drive.google.com/file/d/1P0L529TMIsdoW1Cc9qMp6FgmlDDQ94bC/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3451,11 +2967,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "AN2-F45V2.JPG",
     "caption": "Verified laboratory specimen view — AN2-F45V2",
-    "original": "https://drive.google.com/thumbnail?id=1VsuhAcI86krozahP49MP1w8jvtYLP6cR&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1VsuhAcI86krozahP49MP1w8jvtYLP6cR&sz=w1200",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F45V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1VsuhAcI86krozahP49MP1w8jvtYLP6cR/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3465,11 +2979,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F29.JPG",
     "caption": "Verified laboratory specimen view — JN1-F29",
-    "original": "https://drive.google.com/thumbnail?id=18Q0rQDQ99rac6JC59AnnvvL1NYehOTuo&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=18Q0rQDQ99rac6JC59AnnvvL1NYehOTuo&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F29.JPG",
-    "drive_view": "https://drive.google.com/file/d/18Q0rQDQ99rac6JC59AnnvvL1NYehOTuo/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3479,11 +2991,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F29V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F29V2",
-    "original": "https://drive.google.com/thumbnail?id=1TBQCUHxBszYv-DlNmZn-Du5BI5Wmzfoi&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1TBQCUHxBszYv-DlNmZn-Du5BI5Wmzfoi&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F29V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1TBQCUHxBszYv-DlNmZn-Du5BI5Wmzfoi/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3493,11 +3003,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F12.JPG",
     "caption": "Verified laboratory specimen view — JN1-F12",
-    "original": "https://drive.google.com/thumbnail?id=10JDPpDSXpeLFjjHurccT8lvHZ2KOe3d5&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=10JDPpDSXpeLFjjHurccT8lvHZ2KOe3d5&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F12.JPG",
-    "drive_view": "https://drive.google.com/file/d/10JDPpDSXpeLFjjHurccT8lvHZ2KOe3d5/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3507,11 +3015,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F5V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F5V2",
-    "original": "https://drive.google.com/thumbnail?id=19PwEpB9Q8MtrOxg_PjObzVLZmmEMtTqx&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=19PwEpB9Q8MtrOxg_PjObzVLZmmEMtTqx&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F5V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/19PwEpB9Q8MtrOxg_PjObzVLZmmEMtTqx/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3521,11 +3027,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F6.JPG",
     "caption": "Verified laboratory specimen view — JN1-F6",
-    "original": "https://drive.google.com/thumbnail?id=1jxfXLLT2JuA9Un6HTf7Qclcxvn39Njcv&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1jxfXLLT2JuA9Un6HTf7Qclcxvn39Njcv&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F6.JPG",
-    "drive_view": "https://drive.google.com/file/d/1jxfXLLT2JuA9Un6HTf7Qclcxvn39Njcv/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3535,11 +3039,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F6V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F6V2",
-    "original": "https://drive.google.com/thumbnail?id=1hS_ahQI2D60w3k9VWIbFJuO8qQ-WCDeJ&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1hS_ahQI2D60w3k9VWIbFJuO8qQ-WCDeJ&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F6V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1hS_ahQI2D60w3k9VWIbFJuO8qQ-WCDeJ/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3549,11 +3051,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F7.JPG",
     "caption": "Verified laboratory specimen view — JN1-F7",
-    "original": "https://drive.google.com/thumbnail?id=1_Fhjn9W9l84bRXVmVxEGuyha3BCKdmyo&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1_Fhjn9W9l84bRXVmVxEGuyha3BCKdmyo&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F7.JPG",
-    "drive_view": "https://drive.google.com/file/d/1_Fhjn9W9l84bRXVmVxEGuyha3BCKdmyo/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3563,11 +3063,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F7V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F7V2",
-    "original": "https://drive.google.com/thumbnail?id=1a7v3s5rOUO0YrjipCDWuB3QNAlIg9Bzt&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1a7v3s5rOUO0YrjipCDWuB3QNAlIg9Bzt&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F7V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1a7v3s5rOUO0YrjipCDWuB3QNAlIg9Bzt/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3577,11 +3075,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F8.JPG",
     "caption": "Verified laboratory specimen view — JN1-F8",
-    "original": "https://drive.google.com/thumbnail?id=1opiDb7tacfIOAKb9SbGmzdFw62wmmPqY&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1opiDb7tacfIOAKb9SbGmzdFw62wmmPqY&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F8.JPG",
-    "drive_view": "https://drive.google.com/file/d/1opiDb7tacfIOAKb9SbGmzdFw62wmmPqY/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3591,11 +3087,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F8V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F8V2",
-    "original": "https://drive.google.com/thumbnail?id=1UT5SuriGsWeWziFxnUcCZWi-Ee3ptv0F&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1UT5SuriGsWeWziFxnUcCZWi-Ee3ptv0F&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F8V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1UT5SuriGsWeWziFxnUcCZWi-Ee3ptv0F/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3605,11 +3099,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F9.JPG",
     "caption": "Verified laboratory specimen view — JN1-F9",
-    "original": "https://drive.google.com/thumbnail?id=1EZ1l9EgxtezfUEH0SaGLrkSNVnuhGzT3&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1EZ1l9EgxtezfUEH0SaGLrkSNVnuhGzT3&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F9.JPG",
-    "drive_view": "https://drive.google.com/file/d/1EZ1l9EgxtezfUEH0SaGLrkSNVnuhGzT3/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3619,11 +3111,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F9V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F9V2",
-    "original": "https://drive.google.com/thumbnail?id=1OVbtQgDXM4_aCpPnAx5aDpnjuqIwfRSS&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1OVbtQgDXM4_aCpPnAx5aDpnjuqIwfRSS&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F9V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1OVbtQgDXM4_aCpPnAx5aDpnjuqIwfRSS/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3633,11 +3123,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F10.JPG",
     "caption": "Verified laboratory specimen view — JN1-F10",
-    "original": "https://drive.google.com/thumbnail?id=1hELW_-VBV1qt2QIah08gbtrACC1dKNS5&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1hELW_-VBV1qt2QIah08gbtrACC1dKNS5&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F10.JPG",
-    "drive_view": "https://drive.google.com/file/d/1hELW_-VBV1qt2QIah08gbtrACC1dKNS5/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3647,11 +3135,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F10V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F10V2",
-    "original": "https://drive.google.com/thumbnail?id=1kxcFrCbXqIjulkpVnc-3Qj6RuNbObqc9&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1kxcFrCbXqIjulkpVnc-3Qj6RuNbObqc9&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F10V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1kxcFrCbXqIjulkpVnc-3Qj6RuNbObqc9/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3661,11 +3147,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F11.JPG",
     "caption": "Verified laboratory specimen view — JN1-F11",
-    "original": "https://drive.google.com/thumbnail?id=19CUYbSI2Gx3KfXzcnn0Cjmtft8d6i7Ns&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=19CUYbSI2Gx3KfXzcnn0Cjmtft8d6i7Ns&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F11.JPG",
-    "drive_view": "https://drive.google.com/file/d/19CUYbSI2Gx3KfXzcnn0Cjmtft8d6i7Ns/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3675,11 +3159,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F12V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F12V2",
-    "original": "https://drive.google.com/thumbnail?id=1r_W4JC3mJvW16LmzJV0HC4OxHUm4xFu6&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1r_W4JC3mJvW16LmzJV0HC4OxHUm4xFu6&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F12V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1r_W4JC3mJvW16LmzJV0HC4OxHUm4xFu6/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3689,11 +3171,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F13-REPEAT.JPG",
     "caption": "Verified laboratory specimen repeat view — JN1-F13-REPEAT",
-    "original": "https://drive.google.com/thumbnail?id=1XSYV6JCQeqIK-VfAUgOnrfGdKD6E5daS&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1XSYV6JCQeqIK-VfAUgOnrfGdKD6E5daS&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F13-REPEAT.JPG",
-    "drive_view": "https://drive.google.com/file/d/1XSYV6JCQeqIK-VfAUgOnrfGdKD6E5daS/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3703,11 +3183,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F13-REPEAT-V2.JPG",
     "caption": "Verified laboratory specimen repeat view — JN1-F13-REPEAT-V2",
-    "original": "https://drive.google.com/thumbnail?id=1IV9ifpArvoj-CavXnub4CfnvLEtSS-yD&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1IV9ifpArvoj-CavXnub4CfnvLEtSS-yD&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F13-REPEAT-V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1IV9ifpArvoj-CavXnub4CfnvLEtSS-yD/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3717,11 +3195,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F13.JPG",
     "caption": "Verified laboratory specimen view — JN1-F13",
-    "original": "https://drive.google.com/thumbnail?id=1i1Gc2A2ZA0FF71kSbJE_pceaHQhAkr4k&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1i1Gc2A2ZA0FF71kSbJE_pceaHQhAkr4k&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F13.JPG",
-    "drive_view": "https://drive.google.com/file/d/1i1Gc2A2ZA0FF71kSbJE_pceaHQhAkr4k/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3731,11 +3207,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F14.JPG",
     "caption": "Verified laboratory specimen view — JN1-F14",
-    "original": "https://drive.google.com/thumbnail?id=12ZEYT8l3ATnO1FUDzl-gcwImudgOY-sT&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=12ZEYT8l3ATnO1FUDzl-gcwImudgOY-sT&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F14.JPG",
-    "drive_view": "https://drive.google.com/file/d/12ZEYT8l3ATnO1FUDzl-gcwImudgOY-sT/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3745,11 +3219,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F14V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F14V2",
-    "original": "https://drive.google.com/thumbnail?id=1uOzltOO_gQ03j8gr8AbDqUCn3QtG5hnD&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1uOzltOO_gQ03j8gr8AbDqUCn3QtG5hnD&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F14V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1uOzltOO_gQ03j8gr8AbDqUCn3QtG5hnD/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3759,11 +3231,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F15.JPG",
     "caption": "Verified laboratory specimen view — JN1-F15",
-    "original": "https://drive.google.com/thumbnail?id=1D0i-smIve8ZEpul_kIKGI5TwOwieOTSS&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1D0i-smIve8ZEpul_kIKGI5TwOwieOTSS&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F15.JPG",
-    "drive_view": "https://drive.google.com/file/d/1D0i-smIve8ZEpul_kIKGI5TwOwieOTSS/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3773,11 +3243,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F15V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F15V2",
-    "original": "https://drive.google.com/thumbnail?id=1TsRN6wMOZ5nDs5eQdcz3bX0F_3CclSPO&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1TsRN6wMOZ5nDs5eQdcz3bX0F_3CclSPO&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F15V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1TsRN6wMOZ5nDs5eQdcz3bX0F_3CclSPO/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3787,11 +3255,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F15V3.JPG",
     "caption": "Verified laboratory specimen view — JN1-F15V3",
-    "original": "https://drive.google.com/thumbnail?id=1CnimOHWAG8ERgVtFp62blaavomWe3Rm9&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1CnimOHWAG8ERgVtFp62blaavomWe3Rm9&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F15V3.JPG",
-    "drive_view": "https://drive.google.com/file/d/1CnimOHWAG8ERgVtFp62blaavomWe3Rm9/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3801,11 +3267,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F16.JPG",
     "caption": "Verified laboratory specimen view — JN1-F16",
-    "original": "https://drive.google.com/thumbnail?id=1BRpB794Qf1XeDNEZG70G0Lw70FPRTdP4&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1BRpB794Qf1XeDNEZG70G0Lw70FPRTdP4&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F16.JPG",
-    "drive_view": "https://drive.google.com/file/d/1BRpB794Qf1XeDNEZG70G0Lw70FPRTdP4/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3815,11 +3279,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F16V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F16V2",
-    "original": "https://drive.google.com/thumbnail?id=1gBjkg2BGYdijN2xPf9Im1AloR-mPgBno&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1gBjkg2BGYdijN2xPf9Im1AloR-mPgBno&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F16V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1gBjkg2BGYdijN2xPf9Im1AloR-mPgBno/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3829,11 +3291,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F17.JPG",
     "caption": "Verified laboratory specimen view — JN1-F17",
-    "original": "https://drive.google.com/thumbnail?id=1tw3GSsjnNhdYynbcJMW1JY3ctj0samgY&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1tw3GSsjnNhdYynbcJMW1JY3ctj0samgY&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F17.JPG",
-    "drive_view": "https://drive.google.com/file/d/1tw3GSsjnNhdYynbcJMW1JY3ctj0samgY/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3843,11 +3303,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F18.JPG",
     "caption": "Verified laboratory specimen view — JN1-F18",
-    "original": "https://drive.google.com/thumbnail?id=1OpX5Cm3vKLkTsMlNMAtudX555DGiw3Ot&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1OpX5Cm3vKLkTsMlNMAtudX555DGiw3Ot&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F18.JPG",
-    "drive_view": "https://drive.google.com/file/d/1OpX5Cm3vKLkTsMlNMAtudX555DGiw3Ot/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3857,11 +3315,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F18V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F18V2",
-    "original": "https://drive.google.com/thumbnail?id=1E8AU5m7_ziKoGTJX88AzCRlVhHKlsXzK&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1E8AU5m7_ziKoGTJX88AzCRlVhHKlsXzK&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F18V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1E8AU5m7_ziKoGTJX88AzCRlVhHKlsXzK/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3871,11 +3327,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F20.JPG",
     "caption": "Verified laboratory specimen view — JN1-F20",
-    "original": "https://drive.google.com/thumbnail?id=1EkL_qvPDbSFvg0A9RyejGiftThZgG_oj&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1EkL_qvPDbSFvg0A9RyejGiftThZgG_oj&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F20.JPG",
-    "drive_view": "https://drive.google.com/file/d/1EkL_qvPDbSFvg0A9RyejGiftThZgG_oj/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3885,11 +3339,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F20V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F20V2",
-    "original": "https://drive.google.com/thumbnail?id=1-19FUxOF7bCY6imRngB7OoUP6PD7P56N&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1-19FUxOF7bCY6imRngB7OoUP6PD7P56N&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F20V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1-19FUxOF7bCY6imRngB7OoUP6PD7P56N/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3899,11 +3351,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F21.JPG",
     "caption": "Verified laboratory specimen view — JN1-F21",
-    "original": "https://drive.google.com/thumbnail?id=1AxxAdxpvMU0dASeQPhR-eagDl-je69f0&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1AxxAdxpvMU0dASeQPhR-eagDl-je69f0&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F21.JPG",
-    "drive_view": "https://drive.google.com/file/d/1AxxAdxpvMU0dASeQPhR-eagDl-je69f0/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3913,11 +3363,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F21V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F21V2",
-    "original": "https://drive.google.com/thumbnail?id=1qk0uV4a1ZZ50J-2sPX4xdgsu2gV8_1JB&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1qk0uV4a1ZZ50J-2sPX4xdgsu2gV8_1JB&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F21V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1qk0uV4a1ZZ50J-2sPX4xdgsu2gV8_1JB/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3927,11 +3375,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F21V3.JPG",
     "caption": "Verified laboratory specimen view — JN1-F21V3",
-    "original": "https://drive.google.com/thumbnail?id=1PJ80gYELoGPsy2zdHhh4fp54-Ii7bvJB&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1PJ80gYELoGPsy2zdHhh4fp54-Ii7bvJB&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F21V3.JPG",
-    "drive_view": "https://drive.google.com/file/d/1PJ80gYELoGPsy2zdHhh4fp54-Ii7bvJB/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3941,11 +3387,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F22.JPG",
     "caption": "Verified laboratory specimen view — JN1-F22",
-    "original": "https://drive.google.com/thumbnail?id=1Ry_aMtUUnBH-oH0we2_WUlEk0hP7rlFO&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1Ry_aMtUUnBH-oH0we2_WUlEk0hP7rlFO&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F22.JPG",
-    "drive_view": "https://drive.google.com/file/d/1Ry_aMtUUnBH-oH0we2_WUlEk0hP7rlFO/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3955,11 +3399,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F22V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F22V2",
-    "original": "https://drive.google.com/thumbnail?id=1c-k_EJUh5ycwLBncRX7-FPDPAPWkwZq1&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1c-k_EJUh5ycwLBncRX7-FPDPAPWkwZq1&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F22V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1c-k_EJUh5ycwLBncRX7-FPDPAPWkwZq1/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3969,11 +3411,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F23.JPG",
     "caption": "Verified laboratory specimen view — JN1-F23",
-    "original": "https://drive.google.com/thumbnail?id=1DkYL3ohNemOzta6qV6WWW76qRuX2PhK5&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1DkYL3ohNemOzta6qV6WWW76qRuX2PhK5&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F23.JPG",
-    "drive_view": "https://drive.google.com/file/d/1DkYL3ohNemOzta6qV6WWW76qRuX2PhK5/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3983,11 +3423,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F23V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F23V2",
-    "original": "https://drive.google.com/thumbnail?id=1s_Ypj9pIZzJjAsVdW6V7C6mr9FroVcV6&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1s_Ypj9pIZzJjAsVdW6V7C6mr9FroVcV6&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F23V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1s_Ypj9pIZzJjAsVdW6V7C6mr9FroVcV6/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3997,11 +3435,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F23V3.JPG",
     "caption": "Verified laboratory specimen view — JN1-F23V3",
-    "original": "https://drive.google.com/thumbnail?id=197yS2T7Pq7XMh4HEWKKwqqky9kMMbEoV&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=197yS2T7Pq7XMh4HEWKKwqqky9kMMbEoV&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F23V3.JPG",
-    "drive_view": "https://drive.google.com/file/d/197yS2T7Pq7XMh4HEWKKwqqky9kMMbEoV/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -4011,11 +3447,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F23V4.JPG",
     "caption": "Verified laboratory specimen view — JN1-F23V4",
-    "original": "https://drive.google.com/thumbnail?id=1oEkewgk64WRvbz8XEAJ2tpx0sYb0I2rQ&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1oEkewgk64WRvbz8XEAJ2tpx0sYb0I2rQ&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F23V4.JPG",
-    "drive_view": "https://drive.google.com/file/d/1oEkewgk64WRvbz8XEAJ2tpx0sYb0I2rQ/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -4025,11 +3459,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F24.JPG",
     "caption": "Verified laboratory specimen view — JN1-F24",
-    "original": "https://drive.google.com/thumbnail?id=1TFpWTFtUEAXy_EMSepRVm8fDlzz18NXh&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1TFpWTFtUEAXy_EMSepRVm8fDlzz18NXh&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F24.JPG",
-    "drive_view": "https://drive.google.com/file/d/1TFpWTFtUEAXy_EMSepRVm8fDlzz18NXh/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -4039,11 +3471,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F24V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F24V2",
-    "original": "https://drive.google.com/thumbnail?id=1U_v-apGcKJyOR3Lm8zUnz0_Ivg1IDK-T&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1U_v-apGcKJyOR3Lm8zUnz0_Ivg1IDK-T&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F24V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1U_v-apGcKJyOR3Lm8zUnz0_Ivg1IDK-T/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -4053,11 +3483,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F25.JPG",
     "caption": "Verified laboratory specimen view — JN1-F25",
-    "original": "https://drive.google.com/thumbnail?id=1_89xyzXYR6xv_4hFufqFqSbV-tiSycix&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1_89xyzXYR6xv_4hFufqFqSbV-tiSycix&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F25.JPG",
-    "drive_view": "https://drive.google.com/file/d/1_89xyzXYR6xv_4hFufqFqSbV-tiSycix/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -4067,11 +3495,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F25V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F25V2",
-    "original": "https://drive.google.com/thumbnail?id=1rcT7j-FPs-O4MBYwrKU9O3fGlwuMKiUX&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1rcT7j-FPs-O4MBYwrKU9O3fGlwuMKiUX&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F25V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1rcT7j-FPs-O4MBYwrKU9O3fGlwuMKiUX/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -4081,11 +3507,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F26.JPG",
     "caption": "Verified laboratory specimen view — JN1-F26",
-    "original": "https://drive.google.com/thumbnail?id=1kWZ4AYwU745H2U8lAveZOtS_MYdi8EEc&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1kWZ4AYwU745H2U8lAveZOtS_MYdi8EEc&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F26.JPG",
-    "drive_view": "https://drive.google.com/file/d/1kWZ4AYwU745H2U8lAveZOtS_MYdi8EEc/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -4095,11 +3519,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F26V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F26V2",
-    "original": "https://drive.google.com/thumbnail?id=1lIANNNLOHtwKymL2ltbkd6bShJffa7uZ&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1lIANNNLOHtwKymL2ltbkd6bShJffa7uZ&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F26V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1lIANNNLOHtwKymL2ltbkd6bShJffa7uZ/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -4109,11 +3531,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F27.JPG",
     "caption": "Verified laboratory specimen view — JN1-F27",
-    "original": "https://drive.google.com/thumbnail?id=1V_nSrmZQAePTKm3A_-wG3p0dIWUY30Pm&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1V_nSrmZQAePTKm3A_-wG3p0dIWUY30Pm&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F27.JPG",
-    "drive_view": "https://drive.google.com/file/d/1V_nSrmZQAePTKm3A_-wG3p0dIWUY30Pm/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -4123,11 +3543,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F27V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F27V2",
-    "original": "https://drive.google.com/thumbnail?id=1WlcnJ9cMRuZ6gItoBRykn4CHS-i9GYwz&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1WlcnJ9cMRuZ6gItoBRykn4CHS-i9GYwz&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F27V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1WlcnJ9cMRuZ6gItoBRykn4CHS-i9GYwz/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -4137,11 +3555,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F28.JPG",
     "caption": "Verified laboratory specimen view — JN1-F28",
-    "original": "https://drive.google.com/thumbnail?id=1f4NknnJYDMrsd2kHvkKFZVgfX0RvUFb6&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1f4NknnJYDMrsd2kHvkKFZVgfX0RvUFb6&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F28.JPG",
-    "drive_view": "https://drive.google.com/file/d/1f4NknnJYDMrsd2kHvkKFZVgfX0RvUFb6/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -4151,11 +3567,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F28V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F28V2",
-    "original": "https://drive.google.com/thumbnail?id=1PupZRLtdv7jVHpt4F8RD2fq43rybRAaY&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1PupZRLtdv7jVHpt4F8RD2fq43rybRAaY&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F28V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/1PupZRLtdv7jVHpt4F8RD2fq43rybRAaY/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -4165,11 +3579,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F28V3.JPG",
     "caption": "Verified laboratory specimen view — JN1-F28V3",
-    "original": "https://drive.google.com/thumbnail?id=1N2YYDXmibP6lf2QJcw3esBd6tD35Yx8C&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1N2YYDXmibP6lf2QJcw3esBd6tD35Yx8C&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F28V3.JPG",
-    "drive_view": "https://drive.google.com/file/d/1N2YYDXmibP6lf2QJcw3esBd6tD35Yx8C/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -4179,11 +3591,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F32.JPG",
     "caption": "Verified laboratory specimen view — JN1-F32",
-    "original": "https://drive.google.com/thumbnail?id=1bGdGFAv4hoApCjgNUOK0HyUs1ZIfITbl&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1bGdGFAv4hoApCjgNUOK0HyUs1ZIfITbl&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F32.JPG",
-    "drive_view": "https://drive.google.com/file/d/1bGdGFAv4hoApCjgNUOK0HyUs1ZIfITbl/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "JN1 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -4193,11 +3603,9 @@ window.DRIVE_PHOTOS = [
     "category": "Source macro / specimen",
     "filename": "JN1-F32V2.JPG",
     "caption": "Verified laboratory specimen view — JN1-F32V2",
-    "original": "https://drive.google.com/thumbnail?id=13E1FMkwmPe7ROlz7T0cO55_Xp9AB6AIs&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=13E1FMkwmPe7ROlz7T0cO55_Xp9AB6AIs&sz=w1200",
     "source_relpath": "JN1 2026/MycoScope Verified Lab Views 2026-09-20/JN1-F32V2.JPG",
-    "drive_view": "https://drive.google.com/file/d/13E1FMkwmPe7ROlz7T0cO55_Xp9AB6AIs/view",
-    "verified_label": true
+    "verified_label": true,
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F34",
@@ -4207,12 +3615,10 @@ window.DRIVE_PHOTOS = [
     "category": "Spore print / preparation",
     "filename": "IMG_2026-09-24-09-15-25-442.jpg",
     "caption": "AN2-F34 spore-print preparation — foil/slide view A (user-supplied 2026-09-24)",
-    "original": "https://drive.google.com/thumbnail?id=1haplMvTMozjTc60AIYV0omBzbVkAczjH&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1haplMvTMozjTc60AIYV0omBzbVkAczjH&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F34/IMG_2026-09-24-09-15-25-442.jpg",
-    "drive_view": "https://drive.google.com/file/d/1haplMvTMozjTc60AIYV0omBzbVkAczjH/view",
     "verified_label": true,
-    "assignment_basis": "visible handwritten AN2 F34 label on slide"
+    "assignment_basis": "visible handwritten AN2 F34 label on slide",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F34",
@@ -4222,12 +3628,10 @@ window.DRIVE_PHOTOS = [
     "category": "Spore print / preparation",
     "filename": "IMG_2026-09-24-09-15-20-482.jpg",
     "caption": "AN2-F34 spore-print preparation — foil/slide view B (user-supplied 2026-09-24)",
-    "original": "https://drive.google.com/thumbnail?id=1Yj0NVaBeLlx-W45CPSH-6-5qvS3Iq5G7&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1Yj0NVaBeLlx-W45CPSH-6-5qvS3Iq5G7&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F34/IMG_2026-09-24-09-15-20-482.jpg",
-    "drive_view": "https://drive.google.com/file/d/1Yj0NVaBeLlx-W45CPSH-6-5qvS3Iq5G7/view",
     "verified_label": true,
-    "assignment_basis": "visible handwritten AN2 F34 label on slide"
+    "assignment_basis": "visible handwritten AN2 F34 label on slide",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F34",
@@ -4237,12 +3641,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F34 SPMV1.png",
     "caption": "AN2-F34 microscopy field 1 — annotated spore measurements (user-supplied 2026-09-24)",
-    "original": "https://drive.google.com/thumbnail?id=1HFjrUrh2-17M41NbonZCQBCFCKkI6tP5&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1HFjrUrh2-17M41NbonZCQBCFCKkI6tP5&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F34/AN2-F34 SPMV1.png",
-    "drive_view": "https://drive.google.com/file/d/1HFjrUrh2-17M41NbonZCQBCFCKkI6tP5/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F34 accession in source filename"
+    "assignment_basis": "explicit AN2-F34 accession in source filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F34",
@@ -4252,12 +3654,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F34 SPMV2.png",
     "caption": "AN2-F34 microscopy field 2 — annotated spore measurements (user-supplied 2026-09-24)",
-    "original": "https://drive.google.com/thumbnail?id=1pK2BCEf7y7vfhMTUBOcXuC978jjh_vt3&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1pK2BCEf7y7vfhMTUBOcXuC978jjh_vt3&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F34/AN2-F34 SPMV2.png",
-    "drive_view": "https://drive.google.com/file/d/1pK2BCEf7y7vfhMTUBOcXuC978jjh_vt3/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F34 accession in source filename"
+    "assignment_basis": "explicit AN2-F34 accession in source filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F34",
@@ -4267,12 +3667,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F34 SPMV3.png",
     "caption": "AN2-F34 microscopy field 3 — annotated spore measurements (user-supplied 2026-09-24)",
-    "original": "https://drive.google.com/thumbnail?id=1pCgETwxhu4G5PCVaGWl-0BJzZoC0-lya&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1pCgETwxhu4G5PCVaGWl-0BJzZoC0-lya&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F34/AN2-F34 SPMV3.png",
-    "drive_view": "https://drive.google.com/file/d/1pCgETwxhu4G5PCVaGWl-0BJzZoC0-lya/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F34 accession in source filename"
+    "assignment_basis": "explicit AN2-F34 accession in source filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F34",
@@ -4282,12 +3680,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F34 SPMV4.png",
     "caption": "AN2-F34 microscopy field 4 — annotated spore measurements (user-supplied 2026-09-24)",
-    "original": "https://drive.google.com/thumbnail?id=1fqX4xsd3Sswn38liUyaWfezGtPmMecHS&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1fqX4xsd3Sswn38liUyaWfezGtPmMecHS&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F34/AN2-F34 SPMV4.png",
-    "drive_view": "https://drive.google.com/file/d/1fqX4xsd3Sswn38liUyaWfezGtPmMecHS/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F34 accession in source filename"
+    "assignment_basis": "explicit AN2-F34 accession in source filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F34",
@@ -4297,12 +3693,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F34 SPMV5.png",
     "caption": "AN2-F34 microscopy field 5 — annotated spore measurements (user-supplied 2026-09-24)",
-    "original": "https://drive.google.com/thumbnail?id=1eZnI3bf3sWC-gJ0nJRREXfixwJnUcuRx&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1eZnI3bf3sWC-gJ0nJRREXfixwJnUcuRx&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F34/AN2-F34 SPMV5.png",
-    "drive_view": "https://drive.google.com/file/d/1eZnI3bf3sWC-gJ0nJRREXfixwJnUcuRx/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F34 accession in source filename"
+    "assignment_basis": "explicit AN2-F34 accession in source filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F25",
@@ -4312,12 +3706,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F25 SPMV1.png",
     "caption": "AN2-F25 microscopy field 1 (user-supplied 2026-09-24)",
-    "original": "https://drive.google.com/thumbnail?id=1b-j1Lv1GzMfJqJd3boGg3OgC6MoYJh3u&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1b-j1Lv1GzMfJqJd3boGg3OgC6MoYJh3u&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV1.png",
-    "drive_view": "https://drive.google.com/file/d/1b-j1Lv1GzMfJqJd3boGg3OgC6MoYJh3u/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F25 accession in source filename"
+    "assignment_basis": "explicit AN2-F25 accession in source filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F25",
@@ -4327,12 +3719,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F25 SPMV2.png",
     "caption": "AN2-F25 microscopy field 2 with annotated measurements (user-supplied 2026-09-24)",
-    "original": "https://drive.google.com/thumbnail?id=1Nc4Nn36605NhMoMr_ACKpYIojhDYcjJj&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1Nc4Nn36605NhMoMr_ACKpYIojhDYcjJj&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV2.png",
-    "drive_view": "https://drive.google.com/file/d/1Nc4Nn36605NhMoMr_ACKpYIojhDYcjJj/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F25 accession in source filename"
+    "assignment_basis": "explicit AN2-F25 accession in source filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F25",
@@ -4342,12 +3732,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F25 SPMV3.png",
     "caption": "AN2-F25 microscopy field 3 with annotated measurements (user-supplied 2026-09-24)",
-    "original": "https://drive.google.com/thumbnail?id=1eOqJOi4Sq1DDcz2xydGeRF3gsxkXm9pD&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1eOqJOi4Sq1DDcz2xydGeRF3gsxkXm9pD&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV3.png",
-    "drive_view": "https://drive.google.com/file/d/1eOqJOi4Sq1DDcz2xydGeRF3gsxkXm9pD/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F25 accession in source filename"
+    "assignment_basis": "explicit AN2-F25 accession in source filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F25",
@@ -4357,12 +3745,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F25 SPMV4.png",
     "caption": "AN2-F25 microscopy field 4 (user-supplied 2026-09-24)",
-    "original": "https://drive.google.com/thumbnail?id=1jB52S-PsdjYNoYla87ZfXugPpQFNFb8q&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1jB52S-PsdjYNoYla87ZfXugPpQFNFb8q&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV4.png",
-    "drive_view": "https://drive.google.com/file/d/1jB52S-PsdjYNoYla87ZfXugPpQFNFb8q/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F25 accession in source filename"
+    "assignment_basis": "explicit AN2-F25 accession in source filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F25",
@@ -4372,12 +3758,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F25 SPMV5.png",
     "caption": "AN2-F25 microscopy field 5 with annotated measurements (user-supplied 2026-09-24)",
-    "original": "https://drive.google.com/thumbnail?id=1K35DlKEjfBhkLSmTJIn8WX3U0QjBogMZ&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1K35DlKEjfBhkLSmTJIn8WX3U0QjBogMZ&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV5.png",
-    "drive_view": "https://drive.google.com/file/d/1K35DlKEjfBhkLSmTJIn8WX3U0QjBogMZ/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F25 accession in source filename"
+    "assignment_basis": "explicit AN2-F25 accession in source filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F25",
@@ -4387,12 +3771,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F25 SPMV6.png",
     "caption": "AN2-F25 microscopy field 6 with annotated measurements (user-supplied 2026-09-24)",
-    "original": "https://drive.google.com/thumbnail?id=1ANOXo_OO5pq8wHU44dSSFfbieXVenihA&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1ANOXo_OO5pq8wHU44dSSFfbieXVenihA&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV6.png",
-    "drive_view": "https://drive.google.com/file/d/1ANOXo_OO5pq8wHU44dSSFfbieXVenihA/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F25 accession in source filename"
+    "assignment_basis": "explicit AN2-F25 accession in source filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F25",
@@ -4402,12 +3784,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F25 SPMV7.png",
     "caption": "AN2-F25 microscopy field 7 with annotated measurements (user-supplied 2026-09-24)",
-    "original": "https://drive.google.com/thumbnail?id=1LJ2xKTIKRw9kyXpvB2UAjyKafe548Ntw&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1LJ2xKTIKRw9kyXpvB2UAjyKafe548Ntw&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV7.png",
-    "drive_view": "https://drive.google.com/file/d/1LJ2xKTIKRw9kyXpvB2UAjyKafe548Ntw/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F25 accession in source filename"
+    "assignment_basis": "explicit AN2-F25 accession in source filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F36",
@@ -4417,12 +3797,10 @@ window.DRIVE_PHOTOS = [
     "category": "Spore print / preparation",
     "filename": "IMG_2026-09-25-13-57-23-196.jpg",
     "caption": "AN2-F36 spore-print preparation — foil/slide macro view A; visible orange-brown fragments with sparse fine brown particulate deposit (user-supplied 2026-09-25)",
-    "original": "https://drive.google.com/thumbnail?id=1eyK5XFZFD8bzwpiai5vZXokepunUCkb7&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1eyK5XFZFD8bzwpiai5vZXokepunUCkb7&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F36/IMG_2026-09-25-13-57-23-196.jpg",
-    "drive_view": "https://drive.google.com/file/d/1eyK5XFZFD8bzwpiai5vZXokepunUCkb7/view",
     "verified_label": true,
-    "assignment_basis": "visible handwritten AN2 F36 label on slide"
+    "assignment_basis": "visible handwritten AN2 F36 label on slide",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F36",
@@ -4432,12 +3810,10 @@ window.DRIVE_PHOTOS = [
     "category": "Spore print / preparation",
     "filename": "IMG_2026-09-25-13-57-18-789.jpg",
     "caption": "AN2-F36 spore-print preparation — foil/slide macro view B; fine diffuse brown speckling adjacent to orange-brown fragments (user-supplied 2026-09-25)",
-    "original": "https://drive.google.com/thumbnail?id=1-7xFBmPzzYqDZ7caP-dOXYd-pCnjKfS-&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1-7xFBmPzzYqDZ7caP-dOXYd-pCnjKfS-&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F36/IMG_2026-09-25-13-57-18-789.jpg",
-    "drive_view": "https://drive.google.com/file/d/1-7xFBmPzzYqDZ7caP-dOXYd-pCnjKfS-/view",
     "verified_label": true,
-    "assignment_basis": "visible handwritten AN2 F36 label on slide"
+    "assignment_basis": "visible handwritten AN2 F36 label on slide",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F38",
@@ -4447,12 +3823,10 @@ window.DRIVE_PHOTOS = [
     "category": "Spore print / preparation",
     "filename": "IMG_2026-09-26-13-57-19-259.jpg",
     "caption": "AN2-F38 spore-print preparation — foil/slide macro view A; no definite broad deposit visible, only a minute pale yellow-brown fleck (user-supplied 2026-09-26)",
-    "original": "https://drive.google.com/thumbnail?id=1zI3DIR7YEkOvlD8RRfUhhZFQtSGGkoq1&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1zI3DIR7YEkOvlD8RRfUhhZFQtSGGkoq1&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F38/IMG_2026-09-26-13-57-19-259.jpg",
-    "drive_view": "https://drive.google.com/file/d/1zI3DIR7YEkOvlD8RRfUhhZFQtSGGkoq1/view",
     "verified_label": true,
-    "assignment_basis": "visible handwritten AN2 F38 label on slide"
+    "assignment_basis": "visible handwritten AN2 F38 label on slide",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F38",
@@ -4462,12 +3836,10 @@ window.DRIVE_PHOTOS = [
     "category": "Spore print / preparation",
     "filename": "IMG_2026-09-26-13-57-36-308.jpg",
     "caption": "AN2-F38 spore-print preparation — foil/slide macro view B; deposit remains visually inconclusive at macro scale (user-supplied 2026-09-26)",
-    "original": "https://drive.google.com/thumbnail?id=1FRq8wNbA3TLOSADSaNHtM2UEhRfap3BD&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1FRq8wNbA3TLOSADSaNHtM2UEhRfap3BD&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F38/IMG_2026-09-26-13-57-36-308.jpg",
-    "drive_view": "https://drive.google.com/file/d/1FRq8wNbA3TLOSADSaNHtM2UEhRfap3BD/view",
     "verified_label": true,
-    "assignment_basis": "visible handwritten AN2 F38 label on slide"
+    "assignment_basis": "visible handwritten AN2 F38 label on slide",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F36",
@@ -4477,12 +3849,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F36 failure v1.png",
     "caption": "AN2-F36 non-diagnostic microscopy field 1 (user-supplied 2026-09-26)",
-    "original": "https://drive.google.com/thumbnail?id=1C2RWRrq2YyGziXXw8XeqSeGamNV8gH9N&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1C2RWRrq2YyGziXXw8XeqSeGamNV8gH9N&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F36/AN2-F36 failure v1.png",
-    "drive_view": "https://drive.google.com/file/d/1C2RWRrq2YyGziXXw8XeqSeGamNV8gH9N/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F36 accession in source filename; user marked series as failed microscopy capture"
+    "assignment_basis": "explicit AN2-F36 accession in source filename; user marked series as failed microscopy capture",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F36",
@@ -4492,12 +3862,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F36 failure v2.png",
     "caption": "AN2-F36 non-diagnostic microscopy field 2 (user-supplied 2026-09-26)",
-    "original": "https://drive.google.com/thumbnail?id=1S4L-9ebo9z4spwbikBEqJ7alnLXaLzVh&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1S4L-9ebo9z4spwbikBEqJ7alnLXaLzVh&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F36/AN2-F36 failure v2.png",
-    "drive_view": "https://drive.google.com/file/d/1S4L-9ebo9z4spwbikBEqJ7alnLXaLzVh/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F36 accession in source filename; user marked series as failed microscopy capture"
+    "assignment_basis": "explicit AN2-F36 accession in source filename; user marked series as failed microscopy capture",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F36",
@@ -4507,12 +3875,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F36 failure v3.png",
     "caption": "AN2-F36 non-diagnostic microscopy field 3 (user-supplied 2026-09-26)",
-    "original": "https://drive.google.com/thumbnail?id=10k_ls0gUawdmVH86IbLGl-5lQxDBpNzd&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=10k_ls0gUawdmVH86IbLGl-5lQxDBpNzd&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F36/AN2-F36 failure v3.png",
-    "drive_view": "https://drive.google.com/file/d/10k_ls0gUawdmVH86IbLGl-5lQxDBpNzd/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F36 accession in source filename; user marked series as failed microscopy capture"
+    "assignment_basis": "explicit AN2-F36 accession in source filename; user marked series as failed microscopy capture",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F36",
@@ -4522,12 +3888,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F36 failure v4.png",
     "caption": "AN2-F36 non-diagnostic microscopy field 4; annotated 15.27 µm object (user-supplied 2026-09-26)",
-    "original": "https://drive.google.com/thumbnail?id=1V8c4m3S28eS8v4jGRusB10nonIwd_yC3&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1V8c4m3S28eS8v4jGRusB10nonIwd_yC3&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F36/AN2-F36 failure v4.png",
-    "drive_view": "https://drive.google.com/file/d/1V8c4m3S28eS8v4jGRusB10nonIwd_yC3/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F36 accession in source filename; user marked series as failed microscopy capture"
+    "assignment_basis": "explicit AN2-F36 accession in source filename; user marked series as failed microscopy capture",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F36",
@@ -4537,12 +3901,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F36 failure v5.png",
     "caption": "AN2-F36 non-diagnostic microscopy field 5; annotated 33.47 µm aggregate (user-supplied 2026-09-26)",
-    "original": "https://drive.google.com/thumbnail?id=1TLSVS0Aj4LDtvVmTQcfxJeugGj4lUlCU&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1TLSVS0Aj4LDtvVmTQcfxJeugGj4lUlCU&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F36/AN2-F36 failure v5.png",
-    "drive_view": "https://drive.google.com/file/d/1TLSVS0Aj4LDtvVmTQcfxJeugGj4lUlCU/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F36 accession in source filename; user marked series as failed microscopy capture"
+    "assignment_basis": "explicit AN2-F36 accession in source filename; user marked series as failed microscopy capture",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F36",
@@ -4552,12 +3914,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F36 failure v6.png",
     "caption": "AN2-F36 non-diagnostic microscopy field 6; annotated 28.62 µm object (user-supplied 2026-09-26)",
-    "original": "https://drive.google.com/thumbnail?id=1GC7mhSEi2cU-GpW9PO80PyMsQ1Q07CQk&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1GC7mhSEi2cU-GpW9PO80PyMsQ1Q07CQk&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F36/AN2-F36 failure v6.png",
-    "drive_view": "https://drive.google.com/file/d/1GC7mhSEi2cU-GpW9PO80PyMsQ1Q07CQk/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F36 accession in source filename; user marked series as failed microscopy capture"
+    "assignment_basis": "explicit AN2-F36 accession in source filename; user marked series as failed microscopy capture",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F36",
@@ -4567,12 +3927,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F36 failure v7.png",
     "caption": "AN2-F36 non-diagnostic microscopy field 7 (user-supplied 2026-09-26)",
-    "original": "https://drive.google.com/thumbnail?id=19Sa8AUHtCwvl9Q4u7SsCfbuQsJxCLT8Y&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=19Sa8AUHtCwvl9Q4u7SsCfbuQsJxCLT8Y&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F36/AN2-F36 failure v7.png",
-    "drive_view": "https://drive.google.com/file/d/19Sa8AUHtCwvl9Q4u7SsCfbuQsJxCLT8Y/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F36 accession in source filename; user marked series as failed microscopy capture"
+    "assignment_basis": "explicit AN2-F36 accession in source filename; user marked series as failed microscopy capture",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F36",
@@ -4582,12 +3940,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F36 failure v8.png",
     "caption": "AN2-F36 non-diagnostic microscopy field 8 (user-supplied 2026-09-26)",
-    "original": "https://drive.google.com/thumbnail?id=1zfz0p7w32O_LJpOHtL35_-zCRisvlla-&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1zfz0p7w32O_LJpOHtL35_-zCRisvlla-&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F36/AN2-F36 failure v8.png",
-    "drive_view": "https://drive.google.com/file/d/1zfz0p7w32O_LJpOHtL35_-zCRisvlla-/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F36 accession in source filename; user marked series as failed microscopy capture"
+    "assignment_basis": "explicit AN2-F36 accession in source filename; user marked series as failed microscopy capture",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F36",
@@ -4597,12 +3953,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F36 failure v9.png",
     "caption": "AN2-F36 non-diagnostic microscopy field 9 (user-supplied 2026-09-26)",
-    "original": "https://drive.google.com/thumbnail?id=1AaNJGlNtaI5RXOPSuM-i5mBPN51dJa40&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1AaNJGlNtaI5RXOPSuM-i5mBPN51dJa40&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F36/AN2-F36 failure v9.png",
-    "drive_view": "https://drive.google.com/file/d/1AaNJGlNtaI5RXOPSuM-i5mBPN51dJa40/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F36 accession in source filename; user marked series as failed microscopy capture"
+    "assignment_basis": "explicit AN2-F36 accession in source filename; user marked series as failed microscopy capture",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F38",
@@ -4612,12 +3966,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F38 V1.png",
     "caption": "AN2-F38 microscopy field 1 with annotated minute-particle measurements (user-supplied 2026-09-26)",
-    "original": "https://drive.google.com/thumbnail?id=1jKS4hm6AjSYtH0FM0-6Ewku00d70HTwC&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1jKS4hm6AjSYtH0FM0-6Ewku00d70HTwC&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F38/AN2-F38 V1.png",
-    "drive_view": "https://drive.google.com/file/d/1jKS4hm6AjSYtH0FM0-6Ewku00d70HTwC/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F38 accession in source filename"
+    "assignment_basis": "explicit AN2-F38 accession in source filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F38",
@@ -4627,12 +3979,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F38 V2.png",
     "caption": "AN2-F38 microscopy field 2 (user-supplied 2026-09-26)",
-    "original": "https://drive.google.com/thumbnail?id=1QcV-ma4qMnNE8bdC4bm7n0kyYTwqLUL3&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1QcV-ma4qMnNE8bdC4bm7n0kyYTwqLUL3&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F38/AN2-F38 V2.png",
-    "drive_view": "https://drive.google.com/file/d/1QcV-ma4qMnNE8bdC4bm7n0kyYTwqLUL3/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F38 accession in source filename"
+    "assignment_basis": "explicit AN2-F38 accession in source filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F38",
@@ -4642,12 +3992,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F38 V3.png",
     "caption": "AN2-F38 microscopy field 3 with annotated 6.13 µm object (user-supplied 2026-09-26)",
-    "original": "https://drive.google.com/thumbnail?id=1B4Xfau7EUmrK67mcaXFM8VL2w5O_s_ml&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1B4Xfau7EUmrK67mcaXFM8VL2w5O_s_ml&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F38/AN2-F38 V3.png",
-    "drive_view": "https://drive.google.com/file/d/1B4Xfau7EUmrK67mcaXFM8VL2w5O_s_ml/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F38 accession in source filename"
+    "assignment_basis": "explicit AN2-F38 accession in source filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F38",
@@ -4657,12 +4005,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F38 V4.png",
     "caption": "AN2-F38 microscopy field 4 with annotated minute-particle measurements (user-supplied 2026-09-26)",
-    "original": "https://drive.google.com/thumbnail?id=1NQtokpml1IE1VVYvZwE1FxfEghZQxBmn&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1NQtokpml1IE1VVYvZwE1FxfEghZQxBmn&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F38/AN2-F38 V4.png",
-    "drive_view": "https://drive.google.com/file/d/1NQtokpml1IE1VVYvZwE1FxfEghZQxBmn/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F38 accession in source filename"
+    "assignment_basis": "explicit AN2-F38 accession in source filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F38",
@@ -4672,12 +4018,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F38 V5.png",
     "caption": "AN2-F38 microscopy field 5 with annotated minute-particle measurements (user-supplied 2026-09-26)",
-    "original": "https://drive.google.com/thumbnail?id=1vHb_8Sz1nwDdhO5t0kIn32S0-tVYc6aF&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1vHb_8Sz1nwDdhO5t0kIn32S0-tVYc6aF&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F38/AN2-F38 V5.png",
-    "drive_view": "https://drive.google.com/file/d/1vHb_8Sz1nwDdhO5t0kIn32S0-tVYc6aF/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F38 accession in source filename"
+    "assignment_basis": "explicit AN2-F38 accession in source filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F38",
@@ -4687,12 +4031,10 @@ window.DRIVE_PHOTOS = [
     "category": "Microscopy",
     "filename": "AN2-F38 V6.png",
     "caption": "AN2-F38 microscopy field 6 (user-supplied 2026-09-26)",
-    "original": "https://drive.google.com/thumbnail?id=1xxyokrL_-_AdwzBZzw2qugLmZKkx2Xz5&sz=w2400",
-    "thumb": "https://drive.google.com/thumbnail?id=1xxyokrL_-_AdwzBZzw2qugLmZKkx2Xz5&sz=w1200",
     "source_relpath": "Rutgers_MycoScope/AN2-F38/AN2-F38 V6.png",
-    "drive_view": "https://drive.google.com/file/d/1xxyokrL_-_AdwzBZzw2qugLmZKkx2Xz5/view",
     "verified_label": true,
-    "assignment_basis": "explicit AN2-F38 accession in source filename"
+    "assignment_basis": "explicit AN2-F38 accession in source filename",
+    "publication_status": "archive-only"
   },
   {
     "folder": "AN2-F38 user-supplied wild and specimen set 2026-10-01",

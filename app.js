@@ -89,7 +89,14 @@ function mergeDrivePhotos(){
       }
     }
     const original=p.original;
-    if(!original) continue;
+    if(!original?.startsWith('assets/')){
+      (target.archivedPhotos??=[]).push({
+        filename:p.filename||'',
+        caption:p.caption||'',
+        category:p.category||driveCategory(p)
+      });
+      continue;
+    }
     const duplicate=(target.images||[]).some(im=>im.original===original||(
       String(im.filename||'').toLowerCase()===String(p.filename||'').toLowerCase() &&
       String(im.original||'').toLowerCase()===String(original).toLowerCase()
@@ -101,9 +108,8 @@ function mergeDrivePhotos(){
       filename:p.filename||original.split('/').pop(),
       caption:p.caption||`Google Drive source — ${p.filename||'additional photograph'}`,
       original,
-      thumb:p.thumb||original,
-      driveSource:p.source_relpath||'',
-      driveView:p.drive_view||''
+      thumb:p.thumb?.startsWith('assets/')?p.thumb:original,
+      driveSource:p.source_relpath||''
     });
   }
 }
@@ -223,14 +229,13 @@ function mergeMovies(){
       data.push(target);byCode.set(code,target);
     }
     target.movies=target.movies||[];
-    if(target.movies.some(v=>v.filename===m.filename||v.driveView===m.drive_view)) continue;
+    if(target.movies.some(v=>v.filename===m.filename||(m.preview&&v.preview===m.preview))) continue;
     target.movies.push({
       category:m.category||'Movie / video',
       filename:m.filename,
       sourceFilename:m.source_filename||m.filename,
       caption:m.caption||m.filename,
       preview:m.preview,
-      driveView:m.drive_view,
       poster:m.poster||'',
       sourceRelpath:m.source_relpath||'',
       durationSeconds:m.duration_seconds||null,
@@ -529,8 +534,6 @@ function renderSpec(){
   if(!s)return;
   const groups={};
   (s.images||[]).filter(im=>imageType==='ALL'||im.category===imageType).forEach(im=>(groups[im.category]??=[]).push(im));
-  // Show authenticated Atlas-hosted assets first: Drive thumbnail endpoints can block Safari.
-  for(const items of Object.values(groups))items.sort((a,b)=>Number(/^https?:\/\//i.test(a.thumb||a.original||''))-Number(/^https?:\/\//i.test(b.thumb||b.original||'')));
   const sum=Object.entries(s.summary||{}).map(([k,v])=>`<div class="summary-item readable-section"><div class="section-read-head"><h4>${esc(k)}</h4>${sectionReadButton("Read section")}</div><p>${glossaryText(v)}</p></div>`).join('');
   const cats=new Set((s.images||[]).map(im=>im.category));
   const hasWild=cats.has('Wild / field context');
@@ -547,7 +550,11 @@ function renderSpec(){
   const mat=effectiveCompleteness.map(([k,v])=>`<div>${esc(k)}</div><div class="${cls(v)}">${esc(v)}</div>`).join('');
   const pairStatus=hasWild&&hasLab?'COMPLETE':(!hasWild&&!hasLab?'MISSING WILD + LAB':(!hasWild?'MISSING WILD':'MISSING LAB'));
   const pairClass=hasWild&&hasLab?'yes':'no';
-  const galleries=Object.entries(groups).sort(([,left],[,right])=>Number(left.every(im=>/^https?:\/\//i.test(im.thumb||im.original||'')))-Number(right.every(im=>/^https?:\/\//i.test(im.thumb||im.original||'')))).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map((im,i)=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-thumb="${esc(im.thumb||im.original)}" data-caption="${esc(displayLabel(im.caption))}" data-name="${esc(im.filename)}"><img loading="${i<2?'eager':'lazy'}" decoding="async" src="${esc((im.original&&!/^https?:\/\//i.test(im.original))?im.original:(im.thumb||im.original))}" alt="${esc(displayLabel(im.caption))}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${esc(im.caption)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}</div></article>`).join('')}</div></section>`).join('');
+  const galleries=Object.entries(groups).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map((im,i)=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-thumb="${esc(im.thumb||im.original)}" data-caption="${esc(displayLabel(im.caption))}" data-name="${esc(im.filename)}"><img loading="${i<2?'eager':'lazy'}" decoding="async" src="${esc(im.original)}" alt="${esc(displayLabel(im.caption))}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${esc(im.caption)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}</div></article>`).join('')}</div></section>`).join('');
+  const archived=(s.archivedPhotos||[]).filter(im=>imageType==='ALL'||im.category===imageType);
+  const archiveDetails=archived.length
+    ? `<details class="section card"><summary>Archived photo records · ${archived.length}</summary><p>Image files are unavailable in the public Atlas.</p><ul>${archived.map(im=>`<li><strong>${esc(im.filename)}</strong> · ${esc(im.category)}${im.caption?`: ${esc(im.caption)}`:''}</li>`).join('')}</ul></details>`
+    : '';
   const movieRows=(s.movies||[]).filter(m=>imageType==='ALL'||imageType==='Movie / video');
   const movieGallery=movieRows.length?`<section class="section"><h2>Movie / video <span>${movieRows.length}</span></h2><div class="gallery">${movieRows.map(m=>`<article class="image-card movie-card"><div class="movie-wrap">${m.preview&&!/^https?:\/\//i.test(m.preview)?`<iframe src="${esc(m.preview)}" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>`:(m.poster&&!/^https?:\/\//i.test(m.poster)?`<img src="${esc(m.poster)}" alt="${esc(m.caption)}">`:`<span class="image-load-error">Video not hosted on this site</span>`)}</div><div class="caption"><strong>${esc(m.caption)}</strong><code>${esc(m.sourceFilename||m.filename)}</code>${m.durationSeconds?`<small class="drive-source">Duration: ${Math.round(m.durationSeconds)} seconds</small>`:''}${m.note?`<small class="drive-source">${esc(m.note)}</small>`:''}</div></article>`).join('')}</div></section>`:'';
   const recordState=fullDataSetState(s);
@@ -563,7 +570,7 @@ function renderSpec(){
   const coverageHtml=coverageRows.map(([name,count])=>`<div><span>${esc(name)}</span><strong>${count}</strong></div>`).join('');
   const evidenceBanner=`<div class="evidence-state-note"><strong>${esc(evidenceStateLabel(s))}</strong><p>Documentation coverage is separate from identification, microscopic interpretation, specimen custody, and image publication rights.</p><div class="evidence-coverage" aria-label="Evidence source counts">${coverageHtml}</div><p><strong>Microscopy:</strong> ${coverage.groups.has('Microscopy')?'Images recorded; consult the accession-specific interpretation for validated spore findings.':'No microscopy photographs linked in this view.'} <strong>Identification:</strong> Not established by this coverage label. <strong>Publication rights:</strong> Not established by image presence.</p>${scientificHold(s)?'<p><strong>Scientific publication HOLD:</strong> Existing accession-specific voucher, custody and image-rights requirements remain unresolved.</p>':''}</div>`;
   const eyebrow=s.archiveIndex?`MASTER RECORD ${s.archiveIndex} / ${masterCount}`:'RESEARCH ARCHIVE';
-  $('main').innerHTML=`<div class="spec-head"><div><div class="eyebrow">${eyebrow} ${fullBadge}</div><h1>${esc(s.code)}</h1><div class="record-status readable-section"><p class="status">${glossaryText(s.status)}</p>${sectionReadButton("Read overview")}</div>${evidenceBanner}</div><div class="navBtns"><button onclick="nav(-1)">← Previous</button><button onclick="nav(1)">Next →</button></div></div><div class="hero"><div class="summary-grid">${sum}</div><aside class="card readable-section"><div class="section-read-head"><h3>Data completeness</h3>${sectionReadButton("Read section")}</div><div class="matrix"><div>Wild + lab pairing</div><div class="${pairClass}">${pairStatus}</div>${mat}</div>${s.sourceLine?`<div class="sourceLine readable-section"><div class="section-read-head"><strong>Source / provenance</strong>${sectionReadButton("Read section")}</div><p>${glossaryText(s.sourceLine)}</p></div>`:''}</aside></div>${renderMeasurements(s)}${galleries||''}${movieGallery||''}${(!galleries&&!movieGallery)?'<div class="empty">No media match the selected filter.</div>':''}`;
+  $('main').innerHTML=`<div class="spec-head"><div><div class="eyebrow">${eyebrow} ${fullBadge}</div><h1>${esc(s.code)}</h1><div class="record-status readable-section"><p class="status">${glossaryText(s.status)}</p>${sectionReadButton("Read overview")}</div>${evidenceBanner}</div><div class="navBtns"><button onclick="nav(-1)">← Previous</button><button onclick="nav(1)">Next →</button></div></div><div class="hero"><div class="summary-grid">${sum}</div><aside class="card readable-section"><div class="section-read-head"><h3>Data completeness</h3>${sectionReadButton("Read section")}</div><div class="matrix"><div>Wild + lab pairing</div><div class="${pairClass}">${pairStatus}</div>${mat}</div>${s.sourceLine?`<div class="sourceLine readable-section"><div class="section-read-head"><strong>Source / provenance</strong>${sectionReadButton("Read section")}</div><p>${glossaryText(s.sourceLine)}</p></div>`:''}</aside></div>${renderMeasurements(s)}${galleries}${movieGallery}${archiveDetails}${(!galleries&&!movieGallery&&!archiveDetails)?'<div class="empty">No media match the selected filter.</div>':''}`;
   $('recordCount').textContent=`${(s.images||[]).length} source images${(s.movies||[]).length?` · ${(s.movies||[]).length} movies`:''} · ${esc(displayLabel(s.collection))} · ${esc(s.family)}`;
   document.querySelectorAll('.image-wrap').forEach(el=>{
     el.onclick=()=>openViewer(el.dataset.file,el.dataset.caption,el.dataset.name);
@@ -574,11 +581,8 @@ function renderSpec(){
       const fallback=el.dataset.thumb;
       if(thumbnail.dataset.fallbackTried!=='1'){
         thumbnail.dataset.fallbackTried='1';
-        // When an Atlas-hosted original fails, attempt its verified thumbnail.
-        // When a Drive thumbnail fails, automatically attempt its original URL.
-        const candidate=/^https?:\/\//i.test(original)?original:fallback;
-        if(candidate&&thumbnail.getAttribute('src')!==candidate){
-          thumbnail.src=candidate;
+        if(fallback&&fallback!==original){
+          thumbnail.src=fallback;
           return;
         }
       }
@@ -588,7 +592,7 @@ function renderSpec(){
       thumbnail.style.display='none';
       const note=document.createElement('span');
       note.className='image-load-error';
-      note.textContent=/^https?:\/\//i.test(thumbnail.src)?'Photo unavailable from this archive':'Original image unavailable';
+      note.textContent='Original image unavailable';
       el.appendChild(note);
     };
     // Only the first two images per category are eager; larger original files remain lazy

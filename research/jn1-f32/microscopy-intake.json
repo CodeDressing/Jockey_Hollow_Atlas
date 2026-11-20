@@ -1,0 +1,93 @@
+{
+  "accession": "JN1-F32",
+  "intake_date": "2026-11-20",
+  "source": "Researcher-supplied Atlas publication package",
+  "publication_authority": "Researcher explicitly requested publication of these 12 microscopy captures in the public Atlas",
+  "gallery": "research/jn1_f32_microscopy_gallery_20261120.js",
+  "images": [
+    {
+      "image": 1,
+      "filename": "JN1-F32 SPM (1).png",
+      "sha256": "db008d5b08b056db9e6488e4046521a685fa329e24d64c79d900206d6c8aface",
+      "size_bytes": 1277209,
+      "caption": "JN1-F32 — spore-print microscopy, original capture 1 of 12. Dispersed, discrete rounded to subrounded objects with refractile peripheral rims; several flattened or asymmetric profiles. No measurement overlays. Spore identity, actual wall thickness, taxon and calibration are not independently confirmed."
+    },
+    {
+      "image": 2,
+      "filename": "JN1-F32 SPM (2).png",
+      "sha256": "421fe7723fc12229f1b9511ca2e439a595707f5c4d5c77a036cda57719ec3c37",
+      "size_bytes": 1297059,
+      "caption": "JN1-F32 — spore-print microscopy, original capture 2 of 12. Same general field as image 1, with numerous on-image linear annotations. Annotation values are unverified instrument/software readings. Spore identity, actual wall thickness, taxon and calibration are not independently confirmed."
+    },
+    {
+      "image": 3,
+      "filename": "JN1-F32 SPM (3).png",
+      "sha256": "cfac91b9cfe30c3ecfee89130998fc6f9cf80d489bdeca39f4f8274ed637886b",
+      "size_bytes": 1448598,
+      "caption": "JN1-F32 — spore-print microscopy, original capture 3 of 12. Dense aggregation of round-to-ovoid profiles adjacent to pigmented granular material and threadlike structures; overlapping objects limit boundary assessment. Spore identity, actual wall thickness, taxon and calibration are not independently confirmed."
+    },
+    {
+      "image": 4,
+      "filename": "JN1-F32 SPM (4).png",
+      "sha256": "9a8007d01bb11937e538df62ca4380f0db4b208773190854752aa2a20a6b2d48",
+      "size_bytes": 1261393,
+      "caption": "JN1-F32 — spore-print microscopy, original capture 4 of 12. Relatively dispersed profiles with circular, ovoid and asymmetric outlines; peripheral contrast varies across the field. Spore identity, actual wall thickness, taxon and calibration are not independently confirmed."
+    },
+    {
+      "image": 5,
+      "filename": "JN1-F32 SPM (5).png",
+      "sha256": "31db3d0dd0b8d240b59fca64b017362ed7cd8dd5f1d0ebc9169c979d5eab8295",
+      "size_bytes": 1364247,
+      "caption": "JN1-F32 — spore-print microscopy, original capture 5 of 12. Annotated counterpart to image 4 showing individually selected object spans; measurement metadata and calibration are unverified. Spore identity, actual wall thickness, taxon and calibration are not independently confirmed."
+    },
+    {
+      "image": 6,
+      "filename": "JN1-F32 SPM (6).png",
+      "sha256": "cb4b4f738424c014dd9f1040621f12323558af2f9120b96007c0222dfd3d5a17",
+      "size_bytes": 1385272,
+      "caption": "JN1-F32 — spore-print microscopy, original capture 6 of 12. Sparser annotated field with dispersed peripheral-rimmed objects; individual spans annotated by the capture software. Spore identity, actual wall thickness, taxon and calibration are not independently confirmed."
+    },
+    {
+      "image": 7,
+      "filename": "JN1-F32 SPM (7).png",
+      "sha256": "f306f49c487b7949c959b82b1414876288c9168c09ef718e53424265eb42f189",
+      "size_bytes": 1449036,
+      "caption": "JN1-F32 — spore-print microscopy, original capture 7 of 12. Crowded microscopic field with many overlapping spore-like objects adjoining granular/tissue-like aggregates; some outlines obscured. Spore identity, actual wall thickness, taxon and calibration are not independently confirmed."
+    },
+    {
+      "image": 8,
+      "filename": "JN1-F32 SPM (8).png",
+      "sha256": "a4493bc84d414686e5c9ff1af002bd6a4378a0f5df6402cd0d115e3f54b72fdf",
+      "size_bytes": 951893,
+      "caption": "JN1-F32 — spore-print microscopy, original capture 8 of 12. Annotated counterpart to image 7; scattered selected structures bear on-image micrometer labels, not independently validated. Spore identity, actual wall thickness, taxon and calibration are not independently confirmed."
+    },
+    {
+      "image": 9,
+      "filename": "JN1-F32 SPM (9).png",
+      "sha256": "ef78d90acb8848f088a64b1a4f5d6364a095c0d468a8705ac365641b3c7e05e5",
+      "size_bytes": 1494668,
+      "caption": "JN1-F32 — spore-print microscopy, original capture 9 of 12. Dense overlapping bodies near granular material of undetermined origin. A few software length annotations appear near the lower edge; crowding limits interpretation of individual profiles. Spore identity, actual wall thickness, taxon and calibration are not independently confirmed."
+    },
+    {
+      "image": 10,
+      "filename": "JN1-F32 SPM (10).png",
+      "sha256": "eb670a01ee677ff0d4036d5b7fd6bd2edcfae4fdf23d8c383ac4f575f139558c",
+      "size_bytes": 1459543,
+      "caption": "JN1-F32 — spore-print microscopy, original capture 10 of 12. Annotated counterpart to image 9; some software measurement marks lie in crowded areas with adjacent or overlapping profiles. Spore identity, actual wall thickness, taxon and calibration are not independently confirmed."
+    },
+    {
+      "image": 11,
+      "filename": "JN1-F32 SPM (11).png",
+      "sha256": "69db04f838c0fb4fb901fba442ef52ddbcccc793905884cf8b1c1182b905e940",
+      "size_bytes": 1508598,
+      "caption": "JN1-F32 — spore-print microscopy, original capture 11 of 12. Multiple brownish granular clusters and many rounded to irregular spore-like profiles; source of granular material unconfirmed. Spore identity, actual wall thickness, taxon and calibration are not independently confirmed."
+    },
+    {
+      "image": 12,
+      "filename": "JN1-F32 SPM (12).png",
+      "sha256": "c6615d4ebe6b2be974fe2755363345342e74385e0470d6209ba8a815c199ed7c",
+      "size_bytes": 1373013,
+      "caption": "JN1-F32 — spore-print microscopy, original capture 12 of 12. Annotated counterpart to image 11; selected objects have length marks, with calibration status not independently established. Spore identity, actual wall thickness, taxon and calibration are not independently confirmed."
+    }
+  ]
+}

@@ -183,6 +183,12 @@ def main():
     ap.add_argument("--quality",type=int,default=93)
     args=ap.parse_args()
 
+    if DRIVE_JS.is_file() and '"publication_status": "archive-only"' in DRIVE_JS.read_text(encoding="utf-8"):
+        raise SystemExit(
+            "This importer would replace the Atlas archive catalog. "
+            "Use docs/ATLAS_IMAGE_PUBLICATION.md to publish reviewed image copies."
+        )
+
     src=args.rutgers_folder.expanduser().resolve()
     if not src.is_dir():
         raise SystemExit(f"Rutgers folder not found: {src}")

@@ -75,10 +75,8 @@ async function checkHttp(url,filepath) {
      assert.equal(await first.getAttribute('loading'),'eager','iPhone thumbnails must be eager');
     }
     if(id==='AN2-F12'){
-     const remote=page.locator('.image-wrap img[src*="drive.google.com/thumbnail"]').first();
-     assert.ok(await remote.count()>0,'AN2-F12 must preserve separate external Drive evidence');
-     await page.waitForFunction(()=>!!document.querySelector('.image-wrap .image-load-error'),null,{timeout:15000});
-     assert.equal(await page.locator('#main a[href*="drive.google.com/"]').count(),0,'Private archive photo must NOT offer a public Drive navigation link');
+     assert.equal(await page.locator('#main img[src*="drive.google.com"]').count(),0);
+     assert.ok(await page.getByText(/Archived photo records/).isVisible(),'Archive metadata must remain visible');
     }
     if(id==='BN5-F8(B)'){
      const p=page.locator('.image-wrap[data-name="bn5-f8(b)v2.jpg"] img');
