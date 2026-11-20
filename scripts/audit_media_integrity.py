@@ -11,8 +11,8 @@ import urllib.parse
 import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-FIELDS = re.compile(r'["\\\'](?:original|thumb)["\\\']\\s*:\\s*["\\\']([^"\\\']+)["\\\']')
-SPECIMEN = re.compile(r'["\\\']specimen["\\\']\\s*:\\s*["\\\']([^"\\\']+)["\\\']')
+FIELDS = re.compile(r'["\\'](?:original|thumb)["\\']\s*:\s*["\\']([^"\\']+)["\\']')
+SPECIMEN = re.compile(r'["\\']specimen["\\']\s*:\s*["\\']([^"\\']+)["\\']')
 TARGETS = {"JN1-F15", "AN2-F1", "AN2-F3", "AN2-F7"}
 HEADERS = {"User-Agent": "JockeyHollowAtlas-MediaAudit/1.0", "Accept": "image/*"}
 
@@ -23,8 +23,8 @@ def check(url, timeout):
             status = response.status
             mime = response.headers.get("Content-Type", "").split(";")[0].lower()
             sample = response.read(32)
-            magic = (sample.startswith(b"\\x89PNG\\r\\n\\x1a\\n")
-                     or sample.startswith(b"\\xff\\xd8\\xff")
+            magic = (sample.startswith(b"\x89PNG\r\n\x1a\n")
+                     or sample.startswith(b"\xff\xd8\xff")
                      or sample.startswith((b"GIF87a", b"GIF89a"))
                      or sample.startswith(b"RIFF") and b"WEBP" in sample[:16])
             return ("PASS" if status == 200 and mime.startswith("image/") and magic else "FAIL",
@@ -39,7 +39,7 @@ def records():
             continue
         text = file.read_text(encoding="utf-8", errors="replace")
         # Explicitly labeled object records; skip unrelated JavaScript code.
-        for obj in re.finditer(r'\\{[^{}]{0,5000}\\}', text):
+        for obj in re.finditer(r'\{[^{}]{0,5000}\}', text):
             block = obj.group()
             specimen = SPECIMEN.search(block)
             if not specimen or specimen.group(1).upper() not in TARGETS:
