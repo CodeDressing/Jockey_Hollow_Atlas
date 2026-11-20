@@ -145,6 +145,112 @@ const atlasRestoredImages = {
       "path": "assets/an2-f41/field/an2-f41-field-5.webp",
       "caption": "Overhead field view of the red-orange cap on foil next to the AN2-F41 label."
     }
+  },
+  "AN2-F17": {
+    "AN2-F17WV10.HEIC": {
+      "path": "assets/an2-f17/field/an2-f17wv10-field.webp",
+      "caption": "Field-context photograph for AN2-F17 showing the specimen or its collection setting."
+    },
+    "AN2-F17WV9.HEIC": {
+      "path": "assets/an2-f17/field/an2-f17wv9-field.webp",
+      "caption": "Field-context photograph for AN2-F17 showing the specimen or its collection setting."
+    },
+    "AN2-F17WV8.HEIC": {
+      "path": "assets/an2-f17/field/an2-f17wv8-field.webp",
+      "caption": "Field-context photograph for AN2-F17 showing the specimen or its collection setting."
+    },
+    "AN2-F17WV7.HEIC": {
+      "path": "assets/an2-f17/field/an2-f17wv7-field.webp",
+      "caption": "Field-context photograph for AN2-F17 showing the specimen or its collection setting."
+    },
+    "AN2-F17WV6.HEIC": {
+      "path": "assets/an2-f17/field/an2-f17wv6-field.webp",
+      "caption": "Field-context photograph for AN2-F17 showing the specimen or its collection setting."
+    },
+    "AN2-F17WV5.HEIC": {
+      "path": "assets/an2-f17/field/an2-f17wv5-field.webp",
+      "caption": "Field-context photograph for AN2-F17 showing the specimen or its collection setting."
+    },
+    "AN2-F17WV4.HEIC": {
+      "path": "assets/an2-f17/field/an2-f17wv4-field.webp",
+      "caption": "Field-context photograph for AN2-F17 showing the specimen or its collection setting."
+    },
+    "AN2-F17WV3.HEIC": {
+      "path": "assets/an2-f17/field/an2-f17wv3-field.webp",
+      "caption": "Field-context photograph for AN2-F17 showing the specimen or its collection setting."
+    },
+    "AN2-F17WV2.HEIC": {
+      "path": "assets/an2-f17/field/an2-f17wv2-field.webp",
+      "caption": "Field-context photograph for AN2-F17 showing the specimen or its collection setting."
+    },
+    "AN2-F17WV1.HEIC": {
+      "path": "assets/an2-f17/field/an2-f17wv1-field.webp",
+      "caption": "Field-context photograph for AN2-F17 showing the specimen or its collection setting."
+    },
+    "AN2-F17.JPG": {
+      "path": "assets/an2-f17/specimen/an2-f17.webp",
+      "caption": "Verified laboratory specimen view — AN2-F17"
+    },
+    "AN2-F17V2.JPG": {
+      "path": "assets/an2-f17/specimen/an2-f17v2.webp",
+      "caption": "Verified laboratory specimen view — AN2-F17V2"
+    },
+    "AN2-F17V4.JPG": {
+      "path": "assets/an2-f17/specimen/an2-f17v4.webp",
+      "caption": "Verified laboratory specimen view — AN2-F17V4"
+    },
+    "AN2-F17V5.JPG": {
+      "path": "assets/an2-f17/specimen/an2-f17v5.webp",
+      "caption": "Verified laboratory specimen view — AN2-F17V5"
+    },
+    "AN2-F17 SPM V1.png": {
+      "path": "assets/an2-f17/microscopy/an2-f17-spm-v1.webp",
+      "caption": "AN2-F17 — annotated spore microscopy field 1"
+    },
+    "AN2-F17 SPM V2.png": {
+      "path": "assets/an2-f17/microscopy/an2-f17-spm-v2.webp",
+      "caption": "AN2-F17 — annotated spore microscopy field 2"
+    },
+    "AN2-F17 SPM V3.png": {
+      "path": "assets/an2-f17/microscopy/an2-f17-spm-v3.webp",
+      "caption": "AN2-F17 — annotated spore microscopy field 3"
+    },
+    "AN2-F17 SPM V4.png": {
+      "path": "assets/an2-f17/microscopy/an2-f17-spm-v4.webp",
+      "caption": "AN2-F17 — morphology field 4 showing repeated spores in multiple orientations"
+    },
+    "AN2-F17 SPM V5.png": {
+      "path": "assets/an2-f17/microscopy/an2-f17-spm-v5.webp",
+      "caption": "AN2-F17 — annotated spore microscopy field 5"
+    },
+    "AN2-F17 SPM V6.png": {
+      "path": "assets/an2-f17/microscopy/an2-f17-spm-v6.webp",
+      "caption": "AN2-F17 — morphology field 6 showing abundant spores and needle-like side profiles"
+    },
+    "AN2-F17 SPM V7.png": {
+      "path": "assets/an2-f17/microscopy/an2-f17-spm-v7.webp",
+      "caption": "AN2-F17 — morphology field 7 showing angular, semi-angular, irregular and elongate spore profiles"
+    },
+    "AN2-F17 SPM V8 non-spore plant matter.png": {
+      "path": "assets/an2-f17/microscopy/an2-f17-spm-v8-non-spore-plant-matter.webp",
+      "caption": "AN2-F17 — non-spore plant-like matter documented during microscopy; excluded from spore measurements Instrument calibration was not independently verified in this restoration."
+    },
+    "AN2-F17 SPM V9 non-spore plant matter.png": {
+      "path": "assets/an2-f17/microscopy/an2-f17-spm-v9-non-spore-plant-matter.webp",
+      "caption": "AN2-F17 — second non-spore plant-like matter field; excluded from spore measurements Instrument calibration was not independently verified in this restoration."
+    },
+    "AN2-F17 spore print (1).jpg": {
+      "path": "assets/an2-f17/preparation/an2-f17-spore-print-1.webp",
+      "caption": "AN2-F17 — spore-print/preparation view 1; accession-labeled slide with pale cream to khaki deposit"
+    },
+    "AN2-F17 spore print (2).jpg": {
+      "path": "assets/an2-f17/preparation/an2-f17-spore-print-2.webp",
+      "caption": "AN2-F17 — spore-print/preparation view 2; cream to khaki to light-brown deposit documented on foil"
+    },
+    "AN2-F17 spore print (3).jpg": {
+      "path": "assets/an2-f17/preparation/an2-f17-spore-print-3.webp",
+      "caption": "AN2-F17 — spore-print/preparation view 3; accession continuity with labeled slide and pale tan-brown deposit"
+    }
   }
 };
 

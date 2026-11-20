@@ -28,7 +28,7 @@ const {webkit,chromium,firefox,devices}=require('playwright');
     await page.evaluate(code=>window.setCurrent(code),id);
     const cards=page.locator('#main .image-card');
     const count=await cards.count();
-    assert.ok(count>0 || id==='AN2-F17',id+' images must remain present');
+    assert.ok(count>0,id+' images must remain present');
     assert.equal(await page.locator('#main a[href*="drive.google.com"]').count(),0,'No public Drive links in '+id);
     assert.equal(await page.locator('#main iframe[src*="drive.google.com"]').count(),0,'No Drive embeds in '+id);
     assert.ok(!(await page.locator('#main').innerText()).includes('Open source in Google Drive'),'Source button must be absent');
@@ -88,6 +88,10 @@ const {webkit,chromium,firefox,devices}=require('playwright');
         }
         await page.locator('#closeViewer').click();
       }
+    }
+    if(id==='AN2-F17'){
+      assert.equal(count,26);
+      assert.equal(await page.locator('#main summary').filter({hasText:'Archived photo records'}).count(),0);
     }
     if(id==='AN2-F41'){
       assert.equal(count,25,'Show the 24 recovered views with the already published spore-print view');
