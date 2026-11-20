@@ -123,3 +123,18 @@ window.DRIVE_PHOTOS.push(...[
         "source_relpath":  "assets/jn1-f16/microscopy/JN1-F16 SPM (10).png"
     }
 ]);
+// JN1-F16 researcher observations and interpretation limits.
+window.SPECIMEN_ENRICHMENTS = window.SPECIMEN_ENRICHMENTS || {};
+const jn1F16Evidence = window.SPECIMEN_ENRICHMENTS['JN1-F16'] || {};
+window.SPECIMEN_ENRICHMENTS['JN1-F16'] = {
+    ...jn1F16Evidence,
+    summary: {
+        ...jn1F16Evidence.summary,
+        'Spore print (researcher observation)': 'Sparse yellow-orange to amber deposit, as reported by the researcher.',
+        'Microscopic morphology': 'Predominantly elongated, narrowly ellipsoid to fusiform, almond-shaped spore-like bodies. Some outlines are asymmetric or slightly curved.',
+        'Internal inclusions': 'Variable dark or refractile inclusions. Some appear guttule-like. Their identity and composition remain unresolved.',
+        'Optical boundaries': 'Prominent optical outlines are visible. Biological wall thickness and surface ornamentation remain unconfirmed.',
+        'Provisional instrument annotations': 'Several annotations indicate approximately 9–14 µm longitudinally and 3–5 µm transversely. Calibration and measurement validation remain pending.',
+        'Photographic evidence': 'Five microscopic fields are represented by ten images, with one unannotated and one instrument-annotated capture per field. Species identity is unresolved.'
+    }
+};
