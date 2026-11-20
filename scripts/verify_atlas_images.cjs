@@ -88,10 +88,11 @@ function gallery() {
   return {images, records, archived, sourcePaths};
 }
 
-async function decodeImage(bytes, file) {
+async function decodeImage(bytes, file, expected) {
   const sharp = require('sharp');
   const {info} = await sharp(bytes, {failOn: 'error'}).raw().toBuffer({resolveWithObject: true});
   assert.ok(info.width > 0 && info.height > 0, 'Image has no decoded pixels: ' + file);
+  if (expected) assert.deepEqual([info.width, info.height], [expected.width, expected.height], file);
 }
 
 // SECTION 02 — Evidence manifests
@@ -133,6 +134,25 @@ function verifyManifests({records, images, sourcePaths}) {
   return {manifests, captures};
 }
 
+function verifyRestorationManifest({records, images}) {
+  const manifest = JSON.parse(read('research/atlas_priority_display_manifest_20261120.json'));
+  assert.ok(manifest.publication_authority);
+  assert.equal(manifest.images.length, 32);
+  const paths = new Set();
+  for (const entry of manifest.images) {
+    const {accession, filename, path: file, sha256, width, height} = entry;
+    assert.ok(!paths.has(file), 'Duplicate restoration manifest path: ' + file);
+    paths.add(file);
+    const image = images.get(file);
+    assert.equal(image?.sha, sha256, 'Missing or changed restoration asset: ' + file);
+    const associations = Array.from(records).flatMap(record => (record.images || [])
+      .filter(photo => decodeURIComponent(photo.original) === file)
+      .map(photo => [record.code, photo.filename]));
+    assert.deepEqual(associations, [[accession, filename]], file);
+    image.dimensions = {width, height};
+  }
+}
+
 // SECTION 03 — Anonymous HTTP verification
 async function verifyHttp(origin, images, accessOnly, decode) {
   const base = new URL(origin);
@@ -142,7 +162,7 @@ async function verifyHttp(origin, images, accessOnly, decode) {
   const byteDifferences = [];
   async function worker() {
     while (queue.length) {
-      const {file, type, size, sha} = queue.pop();
+      const {file, type, size, sha, dimensions} = queue.pop();
       const url = new URL(file.split('/').map(encodeURIComponent).join('/'), base);
       try {
         const response = await fetch(url, {redirect: 'error', signal: AbortSignal.timeout(45000)});
@@ -151,7 +171,7 @@ async function verifyHttp(origin, images, accessOnly, decode) {
         assert.equal(mime, type);
         const body = Buffer.from(await response.arrayBuffer());
         assert.ok(hasImageSignature(body, type), 'Invalid image signature');
-        if (decode) await decodeImage(body, file);
+        if (decode) await decodeImage(body, file, dimensions);
         if (body.length !== size || sha256(body) !== sha) {
           byteDifferences.push({file, expectedBytes: size, receivedBytes: body.length,
             cdnOptimization: response.headers.get('cf-polished')});
@@ -180,11 +200,14 @@ async function main() {
     'Usage: node scripts/verify_atlas_images.cjs [--decode] [--access-only] [http-origin]');
   const inventory = gallery();
   const manifests = verifyManifests(inventory);
+  verifyRestorationManifest(inventory);
   console.log(JSON.stringify({records: inventory.records.length, uniqueImagePaths: inventory.images.size,
     archivedPhotoRecords: inventory.archived, ...manifests}));
   if (origins[0]) await verifyHttp(origins[0], inventory.images, accessOnly, decode);
   else if (decode) {
-    for (const {file} of inventory.images.values()) await decodeImage(fs.readFileSync(path.join(root, file)), file);
+    for (const {file, dimensions} of inventory.images.values()) {
+      await decodeImage(fs.readFileSync(path.join(root, file)), file, dimensions);
+    }
     console.log('Decoded all ' + inventory.images.size + ' local image paths');
   }
 }

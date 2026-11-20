@@ -1,0 +1,261 @@
+{
+  "publication_authority": "RUT19WORKEX Priority release, 2026-11-20",
+  "images": [
+    {
+      "accession": "AN2-F9",
+      "filename": "AN2-F9 SPMV1 (1).png",
+      "path": "assets/an2-f9/microscopy/an2-f9-spmv1-1.webp",
+      "sha256": "0d8485dd24e25afc5a7b23661639c8c36fda47dc04d2e7725d3a1f055368bdde",
+      "width": 1091,
+      "height": 821
+    },
+    {
+      "accession": "AN2-F9",
+      "filename": "AN2-F9 SPMV1 (10).png",
+      "path": "assets/an2-f9/microscopy/an2-f9-spmv1-10.webp",
+      "sha256": "87f6c072f0ad19be491fbcb8d78d177082f40b0d14d30a79dcfa563a51aef336",
+      "width": 1088,
+      "height": 813
+    },
+    {
+      "accession": "AN2-F9",
+      "filename": "AN2-F9 SPMV1 (2).png",
+      "path": "assets/an2-f9/microscopy/an2-f9-spmv1-2.webp",
+      "sha256": "39916000882a5a0619cca565a993e1aaeb3c36a44bf14433f31789b270fb3ff9",
+      "width": 1090,
+      "height": 811
+    },
+    {
+      "accession": "AN2-F9",
+      "filename": "AN2-F9 SPMV1 (5).png",
+      "path": "assets/an2-f9/microscopy/an2-f9-spmv1-5.webp",
+      "sha256": "01c378b540cac96a6b2ca86e50d15c406edd1a6a17d31f3f841c87bf9543c565",
+      "width": 1093,
+      "height": 816
+    },
+    {
+      "accession": "AN2-F9",
+      "filename": "AN2-F9 SPMV1 (7).png",
+      "path": "assets/an2-f9/microscopy/an2-f9-spmv1-7.webp",
+      "sha256": "d13431a91f60e8518a8a05952fba66e0f611832e4d89cea71d272f796279e110",
+      "width": 1096,
+      "height": 814
+    },
+    {
+      "accession": "AN2-F9",
+      "filename": "AN2-F9 SPMV1 (8).png",
+      "path": "assets/an2-f9/microscopy/an2-f9-spmv1-8.webp",
+      "sha256": "31a9cddc26bee157528e5cbb88f660b97a2039d60f426020319d4f928a23ed54",
+      "width": 1094,
+      "height": 816
+    },
+    {
+      "accession": "AN2-F9",
+      "filename": "AN2-F9 SPMV1 (9).png",
+      "path": "assets/an2-f9/microscopy/an2-f9-spmv1-9.webp",
+      "sha256": "b9d688a61d36356cb08b0980b41b302f773fdcbcc8dc70f93de9e65b8d56dd59",
+      "width": 1086,
+      "height": 816
+    },
+    {
+      "accession": "AN2-F9",
+      "filename": "AN2-F9.JPG",
+      "path": "assets/an2-f9/specimen/an2-f9.webp",
+      "sha256": "e6e8c5620981562ca3eccceb57b6856ef935c6e743434cceb8dfc049c2bf0606",
+      "width": 2048,
+      "height": 1536
+    },
+    {
+      "accession": "AN2-F9",
+      "filename": "AN2-F9V2.JPG",
+      "path": "assets/an2-f9/specimen/an2-f9v2.webp",
+      "sha256": "3589be969f093b35707f22877ac63f6cefa46ebc476e4b1dadb0376939d78d15",
+      "width": 2048,
+      "height": 1536
+    },
+    {
+      "accession": "AN2-F9",
+      "filename": "IMG_2026-09-30-16-09-11-416.jpg",
+      "path": "assets/an2-f9/preparation/img-2026-09-30-16-09-11-416.webp",
+      "sha256": "9af7d2b0d986874cd934b7bc4f8d644b8ad26e20a56b008bfb9c3e6dfddd1038",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "accession": "AN2-F9",
+      "filename": "IMG_2026-09-30-16-09-14-953.jpg",
+      "path": "assets/an2-f9/preparation/img-2026-09-30-16-09-14-953.webp",
+      "sha256": "18cdc10ab3191391b2ed43a79b3dab8387d9461a538f170d052ea7d44d572495",
+      "width": 2048,
+      "height": 1535
+    },
+    {
+      "accession": "AN2-F9",
+      "filename": "IMG_6001.jpg",
+      "path": "assets/an2-f9/field/img-6001.webp",
+      "sha256": "fa2a396303b2796aee52b13a530330edbb2ca31666fec679fd1020d4121be9d6",
+      "width": 745,
+      "height": 993
+    },
+    {
+      "accession": "AN2-F9",
+      "filename": "IMG_6003.jpg",
+      "path": "assets/an2-f9/field/img-6003.webp",
+      "sha256": "961a3d4f7d55f124bbc6120a702eea8010e2e55d31484a0630fb82cee8d5ff12",
+      "width": 745,
+      "height": 993
+    },
+    {
+      "accession": "AN2-F9",
+      "filename": "IMG_6004.jpg",
+      "path": "assets/an2-f9/field/img-6004.webp",
+      "sha256": "d70e04b16fdfaaafec1ddfadf8fb57760c4a2687db3fd710031e400e15cad8fc",
+      "width": 745,
+      "height": 993
+    },
+    {
+      "accession": "AN2-F9",
+      "filename": "IMG_6005.jpg",
+      "path": "assets/an2-f9/field/img-6005.webp",
+      "sha256": "60a7f4306e8be985dbee55f5829c33e365180742e419123b9d83ac394b2ced77",
+      "width": 745,
+      "height": 993
+    },
+    {
+      "accession": "AN2-F9",
+      "filename": "IMG_6006.jpg",
+      "path": "assets/an2-f9/field/img-6006.webp",
+      "sha256": "301f398cb2d7bf6098f971228ed4c23e4ea2598eb1b65ec10815ace08e619137",
+      "width": 745,
+      "height": 993
+    },
+    {
+      "accession": "AN2-F9",
+      "filename": "IMG_6007.jpg",
+      "path": "assets/an2-f9/specimen/img-6007.webp",
+      "sha256": "10f40b80eff764cc72fe463d56696b04df2ec15a59c84199f9574ed77c089c71",
+      "width": 745,
+      "height": 993
+    },
+    {
+      "accession": "AN2-F9",
+      "filename": "IMG_6008.jpg",
+      "path": "assets/an2-f9/specimen/img-6008.webp",
+      "sha256": "e5eedd5e68a036b49c4995c3e7cc560243affc6ac583ea41c2c3f9b7c0e487e3",
+      "width": 745,
+      "height": 993
+    },
+    {
+      "accession": "AN2-F9",
+      "filename": "IMG_6009.jpg",
+      "path": "assets/an2-f9/specimen/img-6009.webp",
+      "sha256": "53168a6ab42ab89a585560bd713f6717dec4368fb2e71123e8931c774946f076",
+      "width": 745,
+      "height": 993
+    },
+    {
+      "accession": "AN2-F34",
+      "filename": "AN2-F34 SPMV1.png",
+      "path": "assets/an2-f34/microscopy/an2-f34-spmv1.webp",
+      "sha256": "e16ef6b34f7d81350254ca600778f0dd6a244c42f2f1bb0d5b1c164b44f0f05d",
+      "width": 1020,
+      "height": 765
+    },
+    {
+      "accession": "AN2-F34",
+      "filename": "AN2-F34 SPMV2.png",
+      "path": "assets/an2-f34/microscopy/an2-f34-spmv2.webp",
+      "sha256": "e2dedc39dd9bba032482ef47c523106a5dc1128696d2fe153cea64461229e27a",
+      "width": 1021,
+      "height": 765
+    },
+    {
+      "accession": "AN2-F34",
+      "filename": "AN2-F34 SPMV3.png",
+      "path": "assets/an2-f34/microscopy/an2-f34-spmv3.webp",
+      "sha256": "1df109daab78785d0234ec99e12537e7ab7db562e074a41aaa0ca12cd3653a13",
+      "width": 1022,
+      "height": 769
+    },
+    {
+      "accession": "AN2-F34",
+      "filename": "AN2-F34 SPMV4.png",
+      "path": "assets/an2-f34/microscopy/an2-f34-spmv4.webp",
+      "sha256": "e6aaad8d6bd1f3eff8543ecb2c806162031ca135a2a875ead9832e5b0ea72b09",
+      "width": 1019,
+      "height": 764
+    },
+    {
+      "accession": "AN2-F34",
+      "filename": "AN2-F34 SPMV5.png",
+      "path": "assets/an2-f34/microscopy/an2-f34-spmv5.webp",
+      "sha256": "2d7b6b9a62517f0c164ef72fc91c0db95b69e99a5fb8793a956efbdbdedf0fde",
+      "width": 1023,
+      "height": 765
+    },
+    {
+      "accession": "AN2-F34",
+      "filename": "AN2-F34.JPG",
+      "path": "assets/an2-f34/specimen/an2-f34.webp",
+      "sha256": "d138b37084795b0e917b476eb8b66b458b8b3019190c13a8a7cbab707b9d4ad1",
+      "width": 2048,
+      "height": 1536
+    },
+    {
+      "accession": "AN2-F34",
+      "filename": "AN2-F34SP.JPG",
+      "path": "assets/originals/AN2-F34SP.JPG",
+      "sha256": "7b88b06b8f093067262eafa6774675c553f05bf33635f8a11a3f1c49d600f0be",
+      "width": 2048,
+      "height": 1536
+    },
+    {
+      "accession": "AN2-F34",
+      "filename": "AN2-F34V2.JPG",
+      "path": "assets/an2-f34/specimen/an2-f34v2.webp",
+      "sha256": "bff4b0a75a5d96186fdcdac0183a80f6aad2cf527dc6bd40c1ee598342ece623",
+      "width": 2048,
+      "height": 1536
+    },
+    {
+      "accession": "AN2-F34",
+      "filename": "IMG_2026-09-24-09-15-20-482.jpg",
+      "path": "assets/an2-f34/preparation/img-2026-09-24-09-15-20-482.webp",
+      "sha256": "1ef24afc2eb5824734b8e28b3ce138d7f2f032eb9f2a111bd6fc4165c5898094",
+      "width": 2018,
+      "height": 1514
+    },
+    {
+      "accession": "AN2-F34",
+      "filename": "IMG_2026-09-24-09-15-25-442.jpg",
+      "path": "assets/an2-f34/preparation/img-2026-09-24-09-15-25-442.webp",
+      "sha256": "a8327e6aa1492155bddd5c94f20a893aa11c49d09d8fe71c1e619558f96fe648",
+      "width": 1915,
+      "height": 1436
+    },
+    {
+      "accession": "AN2-F34",
+      "filename": "IMG_6152.jpg",
+      "path": "assets/an2-f34/field/img-6152.webp",
+      "sha256": "b17879a0441c35a43d192071398d71727563836fb4035ad035a2f36c3f8041b2",
+      "width": 745,
+      "height": 993
+    },
+    {
+      "accession": "AN2-F34",
+      "filename": "IMG_6153.jpg",
+      "path": "assets/an2-f34/field/img-6153.webp",
+      "sha256": "7528272aa573a1ff379ced4df19310dbbe11c6ec0430bfe6f6000f295ab2d28f",
+      "width": 745,
+      "height": 993
+    },
+    {
+      "accession": "AN2-F34",
+      "filename": "IMG_6154.jpg",
+      "path": "assets/an2-f34/field/img-6154.webp",
+      "sha256": "80bb5ba5b11d7b7762f745c0f80033ff7a42a91e15566efc51ea57d017bf6580",
+      "width": 745,
+      "height": 993
+    }
+  ]
+}

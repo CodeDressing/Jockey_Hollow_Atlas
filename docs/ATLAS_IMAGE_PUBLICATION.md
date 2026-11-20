@@ -19,3 +19,11 @@
 The source catalogs contained 329 legacy rows in `drive_data.js`, 100 in `bn1_drive_data.js` and 129 in `supplemental_media.js`. These 558 rows represented 458 unique Drive image IDs and 1,674 URL occurrences across original, thumbnail and source-view fields. Anonymous thumbnail GETs for all 458 unique IDs landed on a Google Accounts sign-in page. The old video catalog also linked a Drive poster and two video URLs. The public catalog retains the descriptions and accessions for these records as text.
 
 The [JN1-F32 dossier](../research/jn1-f32/RESEARCH_NOTES.md) and [capture manifest](../research/jn1-f32/microscopy-intake.json) document the 12 authorized PNGs and the limits of the evidence.
+
+## 04 — RUT19WORKEX Priority restoration
+
+The inherited checkpoint was GitHub `da27dd5698d34edad3e146ef2cd2731e34ae8839` and Render `dep-dc07c0vlk1mc73etib6g`. It had 852 gallery cards, 1,454 anonymously accessible image paths and 437 archive rows. The review inventory accounted for 458 unique original captures, 327 accession-linked review records, 100 shared-source references and 10 inherited holds.
+
+The Priority release adds 19 AN2-F9 display images and 12 AN2-F34 display images. It matches one AN2-F34 archive entry to an existing gallery card. The [display manifest](../research/atlas_priority_display_manifest_20261120.json) ties the 32 gallery associations to published paths, dimensions and checksums. All 32 source captures matched the private inventory. The 12 microscopy copies preserve decoded pixels and visible annotations. The reviewed captions preserve calibration uncertainty.
+
+The expected result is 883 gallery cards, 1,485 image paths and 405 archive rows, including the two held AN2-F12 originals. The 10 inherited holds and 22 subsequent assignment or evidence holds remain in force. Shared-source references retain their archive records. The private handoff register lists 273 Follow-on associations, of which 259 require new derivatives and 14 reuse public assets. File-specific clearance must be confirmed before any of those associations are released.
