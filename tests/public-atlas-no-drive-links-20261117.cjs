@@ -23,7 +23,7 @@ const {webkit,chromium,firefox,devices}=require('playwright');
    });
    await page.goto(origin,{waitUntil:'domcontentloaded'});
    await page.locator('#enterAtlas').click();
-   const priorities=['AN2-F1','AN2-F41','AN2-F3','AN2-F7','AN2-F12','AN2-F17','AN2-F32','JN1-F15','JN1-F16','JN1-F32'];
+   const priorities=['AN2-F1','AN2-F41','AN2-F3','AN2-F7','AN2-F9','AN2-F12','AN2-F34','AN2-F17','AN2-F32','JN1-F15','JN1-F16','JN1-F32'];
    for(const id of [...priorities,'JN2-F3','JN1-F11','BN5-F8(B)']){
     await page.evaluate(code=>window.setCurrent(code),id);
     const cards=page.locator('#main .image-card');
@@ -59,6 +59,30 @@ const {webkit,chromium,firefox,devices}=require('playwright');
       assert.ok(await page.locator('#viewerImg').evaluate(async image=>{await image.decode();return image.naturalWidth>0;}));
       assert.match(await page.locator('#viewerCap').innerText(),/AN2-F1 label/);
       await page.locator('#closeViewer').click();
+    }
+    if(id==='AN2-F9'||id==='AN2-F34'){
+      assert.equal(await page.locator('#main summary').filter({hasText:'Archived photo records'}).count(),0,id);
+      const expectedCount=id==='AN2-F9'?19:13;
+      assert.equal(count,expectedCount,id+' visible gallery count');
+      if(id==='AN2-F34'){
+        assert.equal(await local.filter({has:page.locator('img[alt]')}).count(),expectedCount);
+        assert.equal(await page.locator('#main .image-wrap[data-name="AN2-F34SP.JPG"]').count(),1);
+      }
+      for(const card of await local.all()){
+        await card.scrollIntoViewIfNeeded();
+        if(settings.hasTouch) await card.tap();
+        else await card.click();
+        const viewer=page.locator('#viewerImg');
+        assert.equal(await viewer.getAttribute('src'),await card.getAttribute('data-file'));
+        assert.ok(await viewer.evaluate(async image=>{await image.decode();return image.naturalWidth>0;}));
+        await page.locator('#closeViewer').click();
+      }
+    }
+    if(id==='AN2-F12'){
+      assert.equal(count,23,'Preserve the existing AN2-F12 gallery');
+      const archive=page.locator('#main summary').filter({hasText:'Archived photo records'});
+      assert.equal(await archive.count(),1,'Preserve the two held AN2-F12 views');
+      assert.match(await archive.innerText(),/2/);
     }
     if(id==='JN1-F15'){
       assert.equal(await page.locator('#main .image-wrap[data-file^="assets/jn1-f15/microscopy/"]').count(),14);

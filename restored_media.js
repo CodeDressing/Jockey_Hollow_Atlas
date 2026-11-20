@@ -505,6 +505,139 @@ const atlasRestoredImages = {
       "path": "assets/originals/JN1-F32SP.JPG",
       "caption": "JN1-F32 — spore-print / preparation documentation"
     }
+  },
+  "AN2-F9": {
+    "AN2-F9.JPG": {
+      "path": "assets/an2-f9/specimen/an2-f9.webp",
+      "caption": "AN2-F9 — Laboratory specimen view showing irregular brown upper surfaces and paler margins beside the AN2-F9 foil label."
+    },
+    "AN2-F9V2.JPG": {
+      "path": "assets/an2-f9/specimen/an2-f9v2.webp",
+      "caption": "AN2-F9 — Laboratory underside view showing the densely textured, tooth-like surface beside the AN2-F9 foil label."
+    },
+    "AN2-F9 SPMV1 (9).png": {
+      "path": "assets/an2-f9/microscopy/an2-f9-spmv1-9.webp",
+      "caption": "AN2-F9 — Microscopy field showing dispersed rounded bodies and several dense aggregates."
+    },
+    "AN2-F9 SPMV1 (10).png": {
+      "path": "assets/an2-f9/microscopy/an2-f9-spmv1-10.webp",
+      "caption": "AN2-F9 — Microscopy field showing rounded bodies and embedded length annotations. Calibration was not independently verified during restoration."
+    },
+    "AN2-F9 SPMV1 (1).png": {
+      "path": "assets/an2-f9/microscopy/an2-f9-spmv1-1.webp",
+      "caption": "AN2-F9 — Microscopy field showing separated groups of rounded bodies and embedded length annotations. Calibration was not independently verified during restoration."
+    },
+    "AN2-F9 SPMV1 (2).png": {
+      "path": "assets/an2-f9/microscopy/an2-f9-spmv1-2.webp",
+      "caption": "AN2-F9 — Microscopy field showing scattered rounded bodies and embedded length annotations. Calibration was not independently verified during restoration."
+    },
+    "AN2-F9 SPMV1 (5).png": {
+      "path": "assets/an2-f9/microscopy/an2-f9-spmv1-5.webp",
+      "caption": "AN2-F9 — Microscopy field showing a dense central aggregate and smaller groups of rounded bodies."
+    },
+    "AN2-F9 SPMV1 (7).png": {
+      "path": "assets/an2-f9/microscopy/an2-f9-spmv1-7.webp",
+      "caption": "AN2-F9 — Microscopy field showing clusters of rounded bodies distributed across the field."
+    },
+    "AN2-F9 SPMV1 (8).png": {
+      "path": "assets/an2-f9/microscopy/an2-f9-spmv1-8.webp",
+      "caption": "AN2-F9 — Microscopy field showing dispersed rounded bodies and dense aggregates on a greenish background."
+    },
+    "IMG_2026-09-30-16-09-14-953.jpg": {
+      "path": "assets/an2-f9/preparation/img-2026-09-30-16-09-14-953.webp",
+      "caption": "AN2-F9 — Close view of the AN2-F9 labeled slide and pale scattered material on foil."
+    },
+    "IMG_2026-09-30-16-09-11-416.jpg": {
+      "path": "assets/an2-f9/preparation/img-2026-09-30-16-09-11-416.webp",
+      "caption": "AN2-F9 — Wider view of the AN2-F9 labeled slide and foil preparation."
+    },
+    "IMG_6004.jpg": {
+      "path": "assets/an2-f9/field/img-6004.webp",
+      "caption": "AN2-F9 — Field close-up of the tooth-like underside and pale margin against wood."
+    },
+    "IMG_6005.jpg": {
+      "path": "assets/an2-f9/field/img-6005.webp",
+      "caption": "AN2-F9 — Alternate field close-up of the tooth-like underside and pale margin against wood."
+    },
+    "IMG_6006.jpg": {
+      "path": "assets/an2-f9/field/img-6006.webp",
+      "caption": "AN2-F9 — Field-series view of collected material on foil bearing the AN2-F9 label."
+    },
+    "IMG_6007.jpg": {
+      "path": "assets/an2-f9/specimen/img-6007.webp",
+      "caption": "AN2-F9 — Specimen close-up showing densely packed tooth-like structures and darker marks on the underside."
+    },
+    "IMG_6008.jpg": {
+      "path": "assets/an2-f9/specimen/img-6008.webp",
+      "caption": "AN2-F9 — Closer specimen view showing tooth-like structures near the pale margin."
+    },
+    "IMG_6009.jpg": {
+      "path": "assets/an2-f9/specimen/img-6009.webp",
+      "caption": "AN2-F9 — Specimen overview showing both upper and lower surfaces on AN2-F9 labeled foil."
+    },
+    "IMG_6003.jpg": {
+      "path": "assets/an2-f9/field/img-6003.webp",
+      "caption": "AN2-F9 — Field context showing overlapping brown fruit bodies at the base of a tree among leaf litter."
+    },
+    "IMG_6001.jpg": {
+      "path": "assets/an2-f9/field/img-6001.webp",
+      "caption": "AN2-F9 — Field context showing overlapping fruit bodies near wood with the AN2-F9 foil label in the foreground."
+    }
+  },
+  "AN2-F34": {
+    "AN2-F34.JPG": {
+      "path": "assets/an2-f34/specimen/an2-f34.webp",
+      "caption": "AN2-F34 — Laboratory view of the brown upper cap surface with pale areas beside the AN2-F34 foil label."
+    },
+    "AN2-F34V2.JPG": {
+      "path": "assets/an2-f34/specimen/an2-f34v2.webp",
+      "caption": "AN2-F34 — Laboratory underside view showing the stipe and textured brown surface beside the AN2-F34 foil label."
+    },
+    "IMG_2026-09-24-09-15-25-442.jpg": {
+      "path": "assets/an2-f34/preparation/img-2026-09-24-09-15-25-442.webp",
+      "caption": "AN2-F34 — Brighter preparation view showing amber-brown material on foil and a slide labeled AN2-F34."
+    },
+    "IMG_2026-09-24-09-15-20-482.jpg": {
+      "path": "assets/an2-f34/preparation/img-2026-09-24-09-15-20-482.webp",
+      "caption": "AN2-F34 — Alternate exposure of the foil and slide preparation showing amber-brown material beside the AN2-F34 label."
+    },
+    "AN2-F34 SPMV1.png": {
+      "path": "assets/an2-f34/microscopy/an2-f34-spmv1.webp",
+      "caption": "AN2-F34 — Microscopy field showing clusters of elongated brown bodies and embedded dimension labels. Calibration was not independently verified during restoration."
+    },
+    "AN2-F34 SPMV2.png": {
+      "path": "assets/an2-f34/microscopy/an2-f34-spmv2.webp",
+      "caption": "AN2-F34 — Microscopy field showing scattered elongated brown bodies and embedded dimension labels. Calibration was not independently verified during restoration."
+    },
+    "AN2-F34 SPMV3.png": {
+      "path": "assets/an2-f34/microscopy/an2-f34-spmv3.webp",
+      "caption": "AN2-F34 — Microscopy field showing elongated brown bodies in small groups and embedded dimension labels. Calibration was not independently verified during restoration."
+    },
+    "AN2-F34 SPMV4.png": {
+      "path": "assets/an2-f34/microscopy/an2-f34-spmv4.webp",
+      "caption": "AN2-F34 — Microscopy field showing overlapping groups of elongated brown bodies and embedded dimension labels. Calibration was not independently verified during restoration."
+    },
+    "AN2-F34 SPMV5.png": {
+      "path": "assets/an2-f34/microscopy/an2-f34-spmv5.webp",
+      "caption": "AN2-F34 — Microscopy field showing separate and clustered elongated brown bodies with embedded dimension labels. Calibration was not independently verified during restoration."
+    },
+    "AN2-F34SP.JPG": {
+      "path": "assets/originals/AN2-F34SP.JPG",
+      "caption": "AN2-F34 — Existing laboratory spore-print view showing an uneven brown deposit on paper beside the AN2-F34 foil label.",
+      "thumb": "assets/thumbs/AN2-F34SP.jpg"
+    },
+    "IMG_6152.jpg": {
+      "path": "assets/an2-f34/field/img-6152.webp",
+      "caption": "AN2-F34 — Field-series view of a collected specimen showing the underside and stipe beside the AN2-F34 foil label."
+    },
+    "IMG_6153.jpg": {
+      "path": "assets/an2-f34/field/img-6153.webp",
+      "caption": "AN2-F34 — Field-series profile of a collected specimen showing the stipe and underside beside the AN2-F34 foil label."
+    },
+    "IMG_6154.jpg": {
+      "path": "assets/an2-f34/field/img-6154.webp",
+      "caption": "AN2-F34 — Field-series view of the collected specimen's upper cap surface beside the AN2-F34 foil label."
+    }
   }
 };
 
