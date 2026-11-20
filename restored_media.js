@@ -251,6 +251,260 @@ const atlasRestoredImages = {
       "path": "assets/an2-f17/preparation/an2-f17-spore-print-3.webp",
       "caption": "AN2-F17 — spore-print/preparation view 3; accession continuity with labeled slide and pale tan-brown deposit"
     }
+  },
+  "AN2-F3": {
+    "AN2-F3V2W.HEIC": {
+      "path": "assets/an2-f3/field/an2-f3v2w-field.webp",
+      "caption": "Field-context photograph for AN2-F3 showing the specimen or its collection setting."
+    },
+    "AN2-F3.JPG": {
+      "path": "assets/an2-f3/specimen/an2-f3.webp",
+      "caption": "Verified laboratory specimen view — AN2-F3"
+    },
+    "AN2-F3SP.JPG": {
+      "path": "assets/an2-f3/preparation/an2-f3sp.webp",
+      "caption": "AN2-F3 — spore-print documentation"
+    },
+    "AN2-F3 SPM (1).png": {
+      "path": "assets/an2-f3/AN2-F3_SPM_01.png",
+      "caption": "AN2-F3 — annotated microscopy field; three fully legible linear measurements visible Instrument calibration was not independently verified in this restoration."
+    },
+    "AN2-F3 SPM (2).png": {
+      "path": "assets/an2-f3/AN2-F3_SPM_02.png",
+      "caption": "AN2-F3 — microscopy field showing repeated brown rounded to broadly ellipsoid spore-like bodies"
+    },
+    "AN2-F3 SPM (3).png": {
+      "path": "assets/an2-f3/microscopy/an2-f3-spm-3.webp",
+      "caption": "AN2-F3 — dense microscopy field showing abundant repeated brown spore-like bodies"
+    },
+    "AN2-F3 SPM (4).png": {
+      "path": "assets/an2-f3/microscopy/an2-f3-spm-4.webp",
+      "caption": "AN2-F3 — annotated microscopy field; sixteen fully legible linear measurements recorded in the legacy catalog Instrument calibration was not independently verified in this restoration."
+    },
+    "AN2-F3 SPM (5).png": {
+      "path": "assets/an2-f3/microscopy/an2-f3-spm-5.webp",
+      "caption": "AN2-F3 — microscopy field showing clustered brown rounded to broadly ellipsoid spore-like bodies"
+    },
+    "AN2-F3 SPM (6).png": {
+      "path": "assets/an2-f3/microscopy/an2-f3-spm-6.webp",
+      "caption": "AN2-F3 — microscopy field showing dense clustered brown spore-like bodies"
+    },
+    "AN2-F3 SPM (7).png": {
+      "path": "assets/an2-f3/microscopy/an2-f3-spm-7.webp",
+      "caption": "AN2-F3 — microscopy field showing abundant repeated spore-like bodies across the mount"
+    },
+    "AN2-F3 SPM (8).png": {
+      "path": "assets/an2-f3/microscopy/an2-f3-spm-8.webp",
+      "caption": "AN2-F3 — microscopy field showing abundant brown spore-like bodies with variable focus depth"
+    },
+    "AN2-F3 SPM (9).png": {
+      "path": "assets/an2-f3/microscopy/an2-f3-spm-9.webp",
+      "caption": "AN2-F3 — microscopy field showing numerous brown rounded to broadly ellipsoid spore-like bodies"
+    },
+    "AN2-F3 SPM (10).png": {
+      "path": "assets/an2-f3/microscopy/an2-f3-spm-10.webp",
+      "caption": "AN2-F3 — annotated microscopy field; thirteen fully legible linear measurements recorded in the legacy catalog Instrument calibration was not independently verified in this restoration."
+    },
+    "AN2-F3 SPM (11).png": {
+      "path": "assets/an2-f3/microscopy/an2-f3-spm-11.webp",
+      "caption": "AN2-F3 — annotated microscopy field; ten fully legible linear measurements used; one cropped annotation excluded rather than inferred Instrument calibration was not independently verified in this restoration."
+    },
+    "AN2-F3 field hymenophore underside 2026-10-03.jpg": {
+      "path": "assets/an2-f3/field/an2-f3-field-hymenophore-underside-2026-10-03.webp",
+      "caption": "AN2-F3 — field underside view documenting a poroid, tubular hymenophore with a dense angular-to-polygonal pore field, pileus-margin relationship, and dark textured stipe; used as direct macromorphology evidence"
+    },
+    "AN2-F3 spore print geometric pore pattern 01.jpg": {
+      "path": "assets/an2-f3/preparation/an2-f3-spore-print-geometric-pore-pattern-01.webp",
+      "caption": "AN2-F3 — black spore deposit on foil preserving a dense geometric pattern corresponding to the poroid hymenophore footprint; macroscopic spore-print / preparation evidence"
+    },
+    "AN2-F3 spore print geometric pore pattern 02.jpg": {
+      "path": "assets/an2-f3/preparation/an2-f3-spore-print-geometric-pore-pattern-02.webp",
+      "caption": "AN2-F3 — second view of the black spore deposit showing the organized pore-field pattern reproduced on foil; macroscopic spore-print / preparation evidence"
+    },
+    "AN2-F3 spore extraction slide black deposit.jpg": {
+      "path": "assets/an2-f3/preparation/an2-f3-spore-extraction-slide-black-deposit.webp",
+      "caption": "AN2-F3 — labeled laboratory slide with dark black-brown extracted spore material; preparation / extraction evidence"
+    }
+  },
+  "AN2-F7": {
+    "AN2-F7WV2.HEIC": {
+      "path": "assets/an2-f7/field/an2-f7wv2-field.webp",
+      "caption": "Field-context photograph for AN2-F7 showing the specimen or its collection setting."
+    },
+    "AN2-F7WV1.HEIC": {
+      "path": "assets/an2-f7/field/an2-f7wv1-field.webp",
+      "caption": "Field-context photograph for AN2-F7 showing the specimen or its collection setting."
+    },
+    "AN2-F7.HEIC": {
+      "path": "assets/an2-f7/specimen/an2-f7-field.webp",
+      "caption": "Field-context photograph for AN2-F7 showing the specimen or its collection setting."
+    },
+    "AN2-F7.JPG": {
+      "path": "assets/an2-f7/specimen/an2-f7.webp",
+      "caption": "Verified laboratory specimen view — AN2-F7"
+    },
+    "AN2-F7V2.JPG": {
+      "path": "assets/an2-f7/specimen/an2-f7v2.webp",
+      "caption": "Verified laboratory specimen view — AN2-F7V2"
+    },
+    "AN2-F7 SPM (1).png": {
+      "path": "assets/an2-f7/microscopy/an2-f7-spm-1.webp",
+      "caption": "AN2-F7 — annotated spore-mount field; nine fully legible measurements recorded in the legacy catalog Instrument calibration was not independently verified in this restoration."
+    },
+    "AN2-F7 SPM (2).png": {
+      "path": "assets/an2-f7/microscopy/an2-f7-spm-2.webp",
+      "caption": "AN2-F7 — microscopy field showing abundant repeated rounded to broadly ellipsoid spores"
+    },
+    "AN2-F7 SPM (3).png": {
+      "path": "assets/an2-f7/microscopy/an2-f7-spm-3.webp",
+      "caption": "AN2-F7 — microscopy field showing abundant repeated rounded to broadly ellipsoid spores"
+    },
+    "AN2-F7 SPM (4).png": {
+      "path": "assets/an2-f7/microscopy/an2-f7-spm-4.webp",
+      "caption": "AN2-F7 — microscopy field showing abundant repeated rounded to broadly ellipsoid spores"
+    },
+    "AN2-F7 SPM (5).png": {
+      "path": "assets/an2-f7/microscopy/an2-f7-spm-5.webp",
+      "caption": "AN2-F7 — annotated spore-mount field; sixteen fully legible measurements recorded in the legacy catalog Instrument calibration was not independently verified in this restoration."
+    },
+    "AN2-F7 SPM (6).png": {
+      "path": "assets/an2-f7/microscopy/an2-f7-spm-6.webp",
+      "caption": "AN2-F7 — microscopy field showing abundant repeated rounded to broadly ellipsoid spores"
+    },
+    "AN2-F7 SPM (7).png": {
+      "path": "assets/an2-f7/microscopy/an2-f7-spm-7.webp",
+      "caption": "AN2-F7 — microscopy field showing abundant repeated rounded to broadly ellipsoid spores"
+    },
+    "AN2-F7 SPM (8).png": {
+      "path": "assets/an2-f7/microscopy/an2-f7-spm-8.webp",
+      "caption": "AN2-F7 — microscopy field showing abundant repeated rounded to broadly ellipsoid spores"
+    },
+    "AN2-F7 SPM (9).png": {
+      "path": "assets/an2-f7/microscopy/an2-f7-spm-9.webp",
+      "caption": "AN2-F7 — microscopy field showing abundant repeated rounded to broadly ellipsoid spores"
+    },
+    "AN2-F7 SPM (10).png": {
+      "path": "assets/an2-f7/microscopy/an2-f7-spm-10.webp",
+      "caption": "AN2-F7 — annotated spore-mount field; eighteen fully legible measurements recorded in the legacy catalog Instrument calibration was not independently verified in this restoration."
+    },
+    "AN2-F7 SPM (11).png": {
+      "path": "assets/an2-f7/microscopy/an2-f7-spm-11.webp",
+      "caption": "AN2-F7 — microscopy field showing abundant repeated rounded to broadly ellipsoid spores"
+    },
+    "AN2-F7 prep macro 1.jpg": {
+      "path": "assets/an2-f7/preparation/an2-f7-prep-macro-1.webp",
+      "caption": "AN2-F7 — close preparation view showing foil, pale powdery deposit, and accession-linked slide edge"
+    },
+    "AN2-F7 prep macro 2.jpg": {
+      "path": "assets/an2-f7/preparation/an2-f7-prep-macro-2.webp",
+      "caption": "AN2-F7 — preparation overview with foil deposit and handwritten AN2 F7 slide label visible"
+    },
+    "AN2-F7 prep macro 3.jpg": {
+      "path": "assets/an2-f7/preparation/an2-f7-prep-macro-3.webp",
+      "caption": "AN2-F7 — alternate preparation overview of the same accession-linked foil and labeled slide setup"
+    },
+    "AN2-F7 prep microscope stage.jpg": {
+      "path": "assets/an2-f7/preparation/an2-f7-prep-microscope-stage.webp",
+      "caption": "AN2-F7 — accession-labeled preparation slide positioned on microscope stage during the microscopy workflow"
+    }
+  },
+  "AN2-F32": {
+    "AN2-F32.JPG": {
+      "path": "assets/an2-f32/specimen/an2-f32.webp",
+      "caption": "Verified laboratory specimen view — AN2-F32"
+    },
+    "AN2-F32V2.JPG": {
+      "path": "assets/an2-f32/specimen/an2-f32v2.webp",
+      "caption": "Verified laboratory specimen view — AN2-F32V2"
+    },
+    "AN2-F32V3.JPG": {
+      "path": "assets/an2-f32/specimen/an2-f32v3.webp",
+      "caption": "Verified laboratory specimen view — AN2-F32V3"
+    },
+    "AN2-F32SP.JPG": {
+      "path": "assets/originals/AN2-F32SP.JPG",
+      "caption": "AN2-F32 — spore-print documentation"
+    },
+    "AN3-F32 SPM (1).png": {
+      "path": "assets/an2-f32/microscopy/an3-f32-spm-1.webp",
+      "caption": "AN2-F32 — confirmed spore microscopy, calibrated measurement field 1; source filename carries AN3-F32 label"
+    },
+    "AN3-F32 SPM (2).png": {
+      "path": "assets/an2-f32/microscopy/an3-f32-spm-2.webp",
+      "caption": "AN2-F32 — confirmed spore microscopy, calibrated measurement field 2; source filename carries AN3-F32 label"
+    },
+    "AN3-F32 SPM (3).png": {
+      "path": "assets/an2-f32/microscopy/an3-f32-spm-3.webp",
+      "caption": "AN2-F32 — confirmed spore microscopy, calibrated measurement field 3; source filename carries AN3-F32 label"
+    },
+    "AN3-F32 SPM (4).png": {
+      "path": "assets/an2-f32/microscopy/an3-f32-spm-4.webp",
+      "caption": "AN2-F32 — confirmed spore microscopy, morphology field 4; source filename carries AN3-F32 label"
+    },
+    "AN3-F32 SPM (5).png": {
+      "path": "assets/an2-f32/microscopy/an3-f32-spm-5.webp",
+      "caption": "AN2-F32 — confirmed spore microscopy, calibrated measurement field 5; source filename carries AN3-F32 label"
+    },
+    "AN3-F32 SPM (6).png": {
+      "path": "assets/an2-f32/microscopy/an3-f32-spm-6.webp",
+      "caption": "AN2-F32 — confirmed spore microscopy, broad morphology field 6; source filename carries AN3-F32 label"
+    },
+    "AN3-F32 SPM (7).png": {
+      "path": "assets/an2-f32/microscopy/an3-f32-spm-7.webp",
+      "caption": "AN2-F32 — confirmed spore microscopy, broad morphology field 7; source filename carries AN3-F32 label"
+    },
+    "AN2-F32 field (1).jpg": {
+      "path": "assets/an2-f32/field/an2-f32-field-1.webp",
+      "caption": "AN2-F32 — in-situ field view showing brown pileus, crowded true gills, brown to pale-brown stipe, decomposing wood, soil, and leaf litter"
+    },
+    "AN2-F32 field (2).jpg": {
+      "path": "assets/an2-f32/field/an2-f32-field-2.webp",
+      "caption": "AN2-F32 — in-situ dorsal field view of brown to reddish-brown pileus beside decomposing wood and leaf litter"
+    },
+    "AN2-F32 field (3).jpg": {
+      "path": "assets/an2-f32/field/an2-f32-field-3.webp",
+      "caption": "AN2-F32 — accession-labeled underside field view documenting crowded true gills and brown to pale-brown stipe"
+    },
+    "AN2-F32 field (4).jpg": {
+      "path": "assets/an2-f32/field/an2-f32-field-4.webp",
+      "caption": "AN2-F32 — accession-labeled pileus field view documenting brown pileus and surface bruising/discoloration"
+    },
+    "AN2-F32 field (5).jpg": {
+      "path": "assets/an2-f32/field/an2-f32-field-5.webp",
+      "caption": "AN2-F32 — accession-labeled underside field view showing crowded gills, yellowish to brown bruising, and stipe"
+    },
+    "AN2-F32 field (6).jpg": {
+      "path": "assets/an2-f32/field/an2-f32-field-6.webp",
+      "caption": "AN2-F32 — close underside field view documenting crowded true gills, brown bruising, and stipe attachment"
+    }
+  },
+  "JN1-F15": {
+    "JN1-F15.JPG": {
+      "path": "assets/jn1-f15/specimen/jn1-f15.webp",
+      "caption": "Verified laboratory specimen view — JN1-F15"
+    },
+    "JN1-F15V2.JPG": {
+      "path": "assets/jn1-f15/specimen/jn1-f15v2.webp",
+      "caption": "Verified laboratory specimen view — JN1-F15V2"
+    },
+    "JN1-F15V3.JPG": {
+      "path": "assets/jn1-f15/specimen/jn1-f15v3.webp",
+      "caption": "Verified laboratory specimen view — JN1-F15V3"
+    }
+  },
+  "JN1-F32": {
+    "JN1-F32.JPG": {
+      "path": "assets/jn1-f32/specimen/jn1-f32.webp",
+      "caption": "Verified laboratory specimen view — JN1-F32"
+    },
+    "JN1-F32V2.JPG": {
+      "path": "assets/jn1-f32/specimen/jn1-f32v2.webp",
+      "caption": "Verified laboratory specimen view — JN1-F32V2"
+    },
+    "JN1-F32SP.JPG": {
+      "path": "assets/originals/JN1-F32SP.JPG",
+      "caption": "JN1-F32 — spore-print / preparation documentation"
+    }
   }
 };
 
