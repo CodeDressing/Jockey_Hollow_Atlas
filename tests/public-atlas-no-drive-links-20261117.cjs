@@ -23,7 +23,7 @@ const {webkit,chromium,firefox,devices}=require('playwright');
    });
    await page.goto(origin,{waitUntil:'domcontentloaded'});
    await page.locator('#enterAtlas').click();
-   const priorities=['AN2-F1','AN2-F3','AN2-F7','AN2-F12','AN2-F17','AN2-F32','JN1-F15','JN1-F16','JN1-F32'];
+   const priorities=['AN2-F1','AN2-F41','AN2-F3','AN2-F7','AN2-F12','AN2-F17','AN2-F32','JN1-F15','JN1-F16','JN1-F32'];
    for(const id of [...priorities,'JN2-F3','JN1-F11','BN5-F8(B)']){
     await page.evaluate(code=>window.setCurrent(code),id);
     const cards=page.locator('#main .image-card');
@@ -88,6 +88,17 @@ const {webkit,chromium,firefox,devices}=require('playwright');
         }
         await page.locator('#closeViewer').click();
       }
+    }
+    if(id==='AN2-F41'){
+      assert.equal(count,25,'Show the 24 recovered views with the already published spore-print view');
+      assert.equal(await page.locator('#main summary').filter({hasText:'Archived photo records'}).count(),0);
+      assert.equal(await local.filter({has:page.locator('img[alt]')}).count(),25);
+      assert.equal(await page.locator('#main .image-wrap[data-file^="assets/an2-f41/microscopy/"]').count(),13);
+      assert.equal(await page.locator('#main .image-wrap[data-name="AN2-F41SP.JPG"]').count(),1);
+      await page.locator('#main .image-wrap[data-name="AN2-F41 SPM (5).png"]').click();
+      assert.ok(await page.locator('#viewerImg').evaluate(async image=>{await image.decode();return image.naturalWidth>0;}));
+      assert.match(await page.locator('#viewerCap').innerText(),/Calibration remains unverified/);
+      await page.locator('#closeViewer').click();
     }
     if(id==='JN1-F32'){
       const microscopy=page.locator('#main .image-wrap[data-file^="assets/jn1-f32/microscopy/"]');
