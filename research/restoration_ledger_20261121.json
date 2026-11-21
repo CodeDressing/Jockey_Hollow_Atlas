@@ -1,0 +1,44 @@
+{
+  "campaign": "Rutgers historical master restoration",
+  "updated_utc": "2026-11-21",
+  "scope": "JN1-F4 first-pass source reconciliation",
+  "entries": [
+    {
+      "accession": "JN1-F4",
+      "source_document": "Rutgers Mycology Visual Specimen Atlas — ACTIVE MASTER — BN5 Microscopy & Field Integration — 422 Records",
+      "source_url": "https://docs.google.com/document/d/11rV-I3DClTs3L6_YjVqAZOXzpEVJkGNdyq31oFOpW5o/edit",
+      "source_locator": "JN1-F4 section; SOURCE IMAGES: JN1-F4SP.JPG",
+      "historical_recovered": [
+        "faint pale circular/radial spore-print-attempt deposit",
+        "pale whitish to light gray apparent print color",
+        "print paper substrate",
+        "historical image reference JN1-F4SP.JPG",
+        "absence of calibrated size and microscopy *in this source*"
+      ],
+      "historical_unavailable": [
+        "cap and intact fruit-body morphology",
+        "hymenophore",
+        "stipe and veil",
+        "habitat and original field substrate",
+        "calibrated measurements"
+      ],
+      "scientific_review": [
+        "Historical print appearance alone does not establish microscopic spores or species",
+        "Research report of 21 microscopy photographs not independently reconciled",
+        "Existing modern evidence must be preserved"
+      ],
+      "files_intended": [
+        "research/jn1_f4_historical_recovery_20261121.js",
+        "research/restoration_ledger_20261121.json",
+        "index.html"
+      ],
+      "source_original_image_verified": false,
+      "source_original_image_public": false,
+      "restoration_status": "source-bounded-description-prepared",
+      "publication_status": "PR pending",
+      "ci_status": "unverified",
+      "production_status": "unverified",
+      "commit_sha": null
+    }
+  ]
+}
