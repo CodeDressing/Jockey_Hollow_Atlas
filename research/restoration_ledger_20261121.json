@@ -34,11 +34,34 @@
       ],
       "source_original_image_verified": false,
       "source_original_image_public": false,
-      "restoration_status": "source-bounded-description-prepared",
-      "publication_status": "PR pending",
-      "ci_status": "unverified",
-      "production_status": "unverified",
-      "commit_sha": null
+      "restoration_status": "historical-spore-print-description-merged",
+      "publication_status": "merged-to-main",
+      "ci_status": "passed: Atlas microscopy intake acceptance; Atlas gallery integrity; MycoSim free browser release gate",
+      "production_status": "Render reported live for merge commit b92801a6a143652d302f4aea6b6d9596f00a2fb1; browser rendering not independently verified",
+      "commit_sha": "b92801a6a143652d302f4aea6b6d9596f00a2fb1",
+      "pull_request": 82,
+      "render_deploy_id": "dep-dc0uha7b9u1s73fneaug",
+      "reported_microscopy_photos": 21,
+      "reconciled_microscopy_photos": 0,
+      "public_original_photographs_added": 0,
+      "historical_image_hold": [
+        "JN1-F4SP.JPG referenced in source, raw file not independently located",
+        "21 reported microscopy photographs not tied to verified source binaries"
+      ],
+      "verification_outcome": {
+        "github": "PR #82 merged",
+        "ci": "3/3 passing",
+        "render": "live for merge commit",
+        "public_browser": "not tested interactively",
+        "desktop": "not tested interactively",
+        "mobile": "not tested interactively"
+      },
+      "next_steps": [
+        "Inspect exact JN1-F4 record in a live desktop/mobile browser",
+        "Trace original JN1-F4SP.JPG in Drive or approved source manifest",
+        "Reconcile 21 reported images before publication",
+        "Continue other historical records from source-by-source audits"
+      ]
     }
   ]
 }
