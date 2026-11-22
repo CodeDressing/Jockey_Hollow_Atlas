@@ -1,0 +1,331 @@
+{
+  "accession": "AN2-F36",
+  "archive_rows_reviewed": 20,
+  "new_gallery_captures": 19,
+  "archive_rows_mapped_to_existing_gallery": 1,
+  "additional_identical_drive_microscopy_copies_excluded": 9,
+  "release_scope": "The researcher confirmed public release clearance for the 19 named field, specimen, foil-preparation and microscopy photographs in this accession batch.",
+  "scientific_scope": "Inherited captions and source data are preserved. The microscopy series remains non-diagnostic. Embedded annotations are preserved as capture annotations.",
+  "records": [
+    {
+      "filename": "AN2-F36.JPG",
+      "category": "Source macro / specimen",
+      "archive_record": "drive_data.js:225",
+      "capture_sha256": "61a19449f22eadeef1e8e46d45a1a4f96281da24831cac52e2a89bfdef0e69aa",
+      "capture_bytes": 566918,
+      "dimensions": [
+        2048,
+        1536
+      ],
+      "gallery_path": "assets/an2-f36/specimen/AN2-F36.JPG",
+      "gallery_sha256": "61a19449f22eadeef1e8e46d45a1a4f96281da24831cac52e2a89bfdef0e69aa",
+      "thumbnail_path": "assets/an2-f36/specimen/AN2-F36.JPG",
+      "thumbnail_sha256": "61a19449f22eadeef1e8e46d45a1a4f96281da24831cac52e2a89bfdef0e69aa",
+      "disposition": "Published exact copy of the original."
+    },
+    {
+      "filename": "AN2-F36V2.JPG",
+      "category": "Source macro / specimen",
+      "archive_record": "drive_data.js:226",
+      "capture_sha256": "26116f9c610f359a974ea5dc3f5112dae162e0f1151aca11cae2d093d82e501c",
+      "capture_bytes": 524001,
+      "dimensions": [
+        2048,
+        1536
+      ],
+      "gallery_path": "assets/an2-f36/specimen/AN2-F36V2.JPG",
+      "gallery_sha256": "26116f9c610f359a974ea5dc3f5112dae162e0f1151aca11cae2d093d82e501c",
+      "thumbnail_path": "assets/an2-f36/specimen/AN2-F36V2.JPG",
+      "thumbnail_sha256": "26116f9c610f359a974ea5dc3f5112dae162e0f1151aca11cae2d093d82e501c",
+      "disposition": "Published exact copy of the original."
+    },
+    {
+      "filename": "IMG_2026-09-25-13-57-23-196.jpg",
+      "category": "Spore print / preparation",
+      "archive_record": "drive_data.js:311",
+      "capture_sha256": "aac5e233a7b19a342a54659192d3691c9450e3e2e16933bcc22c1b8bd9df5bba",
+      "capture_bytes": 458715,
+      "dimensions": [
+        2048,
+        1535
+      ],
+      "gallery_path": "assets/an2-f36/preparation/IMG_2026-09-25-13-57-23-196.jpg",
+      "gallery_sha256": "aac5e233a7b19a342a54659192d3691c9450e3e2e16933bcc22c1b8bd9df5bba",
+      "thumbnail_path": "assets/an2-f36/preparation/IMG_2026-09-25-13-57-23-196.jpg",
+      "thumbnail_sha256": "aac5e233a7b19a342a54659192d3691c9450e3e2e16933bcc22c1b8bd9df5bba",
+      "disposition": "Published exact copy of the original."
+    },
+    {
+      "filename": "IMG_2026-09-25-13-57-18-789.jpg",
+      "category": "Spore print / preparation",
+      "archive_record": "drive_data.js:312",
+      "capture_sha256": "48db4e7f044d9d86a1158b0c84baa56708219a555b0bbb6e6414b222cf5332ad",
+      "capture_bytes": 533957,
+      "dimensions": [
+        2048,
+        1536
+      ],
+      "gallery_path": "assets/an2-f36/preparation/IMG_2026-09-25-13-57-18-789.jpg",
+      "gallery_sha256": "48db4e7f044d9d86a1158b0c84baa56708219a555b0bbb6e6414b222cf5332ad",
+      "thumbnail_path": "assets/an2-f36/preparation/IMG_2026-09-25-13-57-18-789.jpg",
+      "thumbnail_sha256": "48db4e7f044d9d86a1158b0c84baa56708219a555b0bbb6e6414b222cf5332ad",
+      "disposition": "Published exact copy of the original."
+    },
+    {
+      "filename": "AN2-F36 failure v1.png",
+      "category": "Microscopy",
+      "archive_record": "drive_data.js:315",
+      "capture_sha256": "84d59d8108ee5f8e7c8d8a1f8766909467efa5cb75a6e3a19b12548215825130",
+      "capture_bytes": 1837362,
+      "dimensions": [
+        1098,
+        817
+      ],
+      "gallery_path": "assets/an2-f36/microscopy/AN2-F36 failure v1.png",
+      "gallery_sha256": "84d59d8108ee5f8e7c8d8a1f8766909467efa5cb75a6e3a19b12548215825130",
+      "thumbnail_path": "assets/an2-f36/microscopy/AN2-F36 failure v1.png",
+      "thumbnail_sha256": "84d59d8108ee5f8e7c8d8a1f8766909467efa5cb75a6e3a19b12548215825130",
+      "disposition": "Published exact copy of the original."
+    },
+    {
+      "filename": "AN2-F36 failure v2.png",
+      "category": "Microscopy",
+      "archive_record": "drive_data.js:316",
+      "capture_sha256": "9445c87151d8bb6dd99b855d68efcc345a988375eede019f11026c6a1a6cfc26",
+      "capture_bytes": 1702181,
+      "dimensions": [
+        1085,
+        817
+      ],
+      "gallery_path": "assets/an2-f36/microscopy/AN2-F36 failure v2.png",
+      "gallery_sha256": "9445c87151d8bb6dd99b855d68efcc345a988375eede019f11026c6a1a6cfc26",
+      "thumbnail_path": "assets/an2-f36/microscopy/AN2-F36 failure v2.png",
+      "thumbnail_sha256": "9445c87151d8bb6dd99b855d68efcc345a988375eede019f11026c6a1a6cfc26",
+      "disposition": "Published exact copy of the original."
+    },
+    {
+      "filename": "AN2-F36 failure v3.png",
+      "category": "Microscopy",
+      "archive_record": "drive_data.js:317",
+      "capture_sha256": "bccbb2ec027b28b668849651e3e3f68c7df73f44a103d36b11299a672fc929e1",
+      "capture_bytes": 1644813,
+      "dimensions": [
+        1086,
+        814
+      ],
+      "gallery_path": "assets/an2-f36/microscopy/AN2-F36 failure v3.png",
+      "gallery_sha256": "bccbb2ec027b28b668849651e3e3f68c7df73f44a103d36b11299a672fc929e1",
+      "thumbnail_path": "assets/an2-f36/microscopy/AN2-F36 failure v3.png",
+      "thumbnail_sha256": "bccbb2ec027b28b668849651e3e3f68c7df73f44a103d36b11299a672fc929e1",
+      "disposition": "Published exact copy of the original."
+    },
+    {
+      "filename": "AN2-F36 failure v4.png",
+      "category": "Microscopy",
+      "archive_record": "drive_data.js:318",
+      "capture_sha256": "9412b18670af1ed5dbdac7a722e81bc9f6f38ec0e6e0e4c2f744518ce655e99f",
+      "capture_bytes": 1712340,
+      "dimensions": [
+        1099,
+        813
+      ],
+      "gallery_path": "assets/an2-f36/microscopy/AN2-F36 failure v4.png",
+      "gallery_sha256": "9412b18670af1ed5dbdac7a722e81bc9f6f38ec0e6e0e4c2f744518ce655e99f",
+      "thumbnail_path": "assets/an2-f36/microscopy/AN2-F36 failure v4.png",
+      "thumbnail_sha256": "9412b18670af1ed5dbdac7a722e81bc9f6f38ec0e6e0e4c2f744518ce655e99f",
+      "disposition": "Published exact copy of the original."
+    },
+    {
+      "filename": "AN2-F36 failure v5.png",
+      "category": "Microscopy",
+      "archive_record": "drive_data.js:319",
+      "capture_sha256": "dbf24ab04682cd2fe6f11f0f749558d787cee769e2aa95f04e556110faa45a38",
+      "capture_bytes": 1662755,
+      "dimensions": [
+        1092,
+        813
+      ],
+      "gallery_path": "assets/an2-f36/microscopy/AN2-F36 failure v5.png",
+      "gallery_sha256": "dbf24ab04682cd2fe6f11f0f749558d787cee769e2aa95f04e556110faa45a38",
+      "thumbnail_path": "assets/an2-f36/microscopy/AN2-F36 failure v5.png",
+      "thumbnail_sha256": "dbf24ab04682cd2fe6f11f0f749558d787cee769e2aa95f04e556110faa45a38",
+      "disposition": "Published exact copy of the original."
+    },
+    {
+      "filename": "AN2-F36 failure v6.png",
+      "category": "Microscopy",
+      "archive_record": "drive_data.js:320",
+      "capture_sha256": "dda1144e255ec0bc6392231742b6a6bbf0c7a596de0d09e62bceb9b721756301",
+      "capture_bytes": 1699626,
+      "dimensions": [
+        1088,
+        808
+      ],
+      "gallery_path": "assets/an2-f36/microscopy/AN2-F36 failure v6.png",
+      "gallery_sha256": "dda1144e255ec0bc6392231742b6a6bbf0c7a596de0d09e62bceb9b721756301",
+      "thumbnail_path": "assets/an2-f36/microscopy/AN2-F36 failure v6.png",
+      "thumbnail_sha256": "dda1144e255ec0bc6392231742b6a6bbf0c7a596de0d09e62bceb9b721756301",
+      "disposition": "Published exact copy of the original."
+    },
+    {
+      "filename": "AN2-F36 failure v7.png",
+      "category": "Microscopy",
+      "archive_record": "drive_data.js:321",
+      "capture_sha256": "b404fce08840b3a1226bb584a91886f2bb0ce43d0d4c734af23105946791a6bf",
+      "capture_bytes": 1833222,
+      "dimensions": [
+        1088,
+        821
+      ],
+      "gallery_path": "assets/an2-f36/microscopy/AN2-F36 failure v7.png",
+      "gallery_sha256": "b404fce08840b3a1226bb584a91886f2bb0ce43d0d4c734af23105946791a6bf",
+      "thumbnail_path": "assets/an2-f36/microscopy/AN2-F36 failure v7.png",
+      "thumbnail_sha256": "b404fce08840b3a1226bb584a91886f2bb0ce43d0d4c734af23105946791a6bf",
+      "disposition": "Published exact copy of the original."
+    },
+    {
+      "filename": "AN2-F36 failure v8.png",
+      "category": "Microscopy",
+      "archive_record": "drive_data.js:322",
+      "capture_sha256": "cbed14374f2b33c01c844fdcaebb6324dc979d88cbee1327c4a0ebd9d0e68c33",
+      "capture_bytes": 1750422,
+      "dimensions": [
+        1089,
+        818
+      ],
+      "gallery_path": "assets/an2-f36/microscopy/AN2-F36 failure v8.png",
+      "gallery_sha256": "cbed14374f2b33c01c844fdcaebb6324dc979d88cbee1327c4a0ebd9d0e68c33",
+      "thumbnail_path": "assets/an2-f36/microscopy/AN2-F36 failure v8.png",
+      "thumbnail_sha256": "cbed14374f2b33c01c844fdcaebb6324dc979d88cbee1327c4a0ebd9d0e68c33",
+      "disposition": "Published exact copy of the original."
+    },
+    {
+      "filename": "AN2-F36 failure v9.png",
+      "category": "Microscopy",
+      "archive_record": "drive_data.js:323",
+      "capture_sha256": "eedfef8ed5d46f452a4fba212b8a3c80fd53abc4c441d95eca6eb70f79e8abd8",
+      "capture_bytes": 1783798,
+      "dimensions": [
+        1090,
+        819
+      ],
+      "gallery_path": "assets/an2-f36/microscopy/AN2-F36 failure v9.png",
+      "gallery_sha256": "eedfef8ed5d46f452a4fba212b8a3c80fd53abc4c441d95eca6eb70f79e8abd8",
+      "thumbnail_path": "assets/an2-f36/microscopy/AN2-F36 failure v9.png",
+      "thumbnail_sha256": "eedfef8ed5d46f452a4fba212b8a3c80fd53abc4c441d95eca6eb70f79e8abd8",
+      "disposition": "Published exact copy of the original."
+    },
+    {
+      "filename": "AN2-F36SP.JPG",
+      "category": "Spore print / preparation",
+      "archive_record": "supplemental_media.js:442",
+      "capture_sha256": "e550ac05dbab55b813483201bfa8f22c3f34916aa92c4bb1a0f22a1e6b1613d4",
+      "capture_bytes": 556670,
+      "dimensions": [
+        2048,
+        1536
+      ],
+      "gallery_path": "assets/originals/AN2-F36SP.JPG",
+      "gallery_sha256": "85e37da4a5d399574f8aa489bf3d3e2013bcc9547d63bef9d3bf1847062b3bab",
+      "thumbnail_path": "assets/thumbs/AN2-F36SP.jpg",
+      "thumbnail_sha256": "cf3bd06201d3e187ad0fa670490191373c4a37e287ff0d5b957ed82b3c840a27",
+      "disposition": "Existing public derivative of the same capture. Preserve one gallery card."
+    },
+    {
+      "filename": "AN2-F36 field (1).jpg",
+      "category": "Wild / field context",
+      "archive_record": "supplemental_media.js:513",
+      "capture_sha256": "739e7655c289e01296ad221bab60e6a8281622b22739105c537c910c06b5af84",
+      "capture_bytes": 331035,
+      "dimensions": [
+        775,
+        1033
+      ],
+      "gallery_path": "assets/an2-f36/field/AN2-F36 field (1).jpg",
+      "gallery_sha256": "739e7655c289e01296ad221bab60e6a8281622b22739105c537c910c06b5af84",
+      "thumbnail_path": "assets/an2-f36/field/AN2-F36 field (1).jpg",
+      "thumbnail_sha256": "739e7655c289e01296ad221bab60e6a8281622b22739105c537c910c06b5af84",
+      "disposition": "Published exact copy of the original."
+    },
+    {
+      "filename": "AN2-F36 field (2).jpg",
+      "category": "Wild / field context",
+      "archive_record": "supplemental_media.js:514",
+      "capture_sha256": "814ea2e30d3b63ea2f572f02b6c98d5927faac9d7ec35091d5162ddfade91050",
+      "capture_bytes": 299181,
+      "dimensions": [
+        775,
+        1033
+      ],
+      "gallery_path": "assets/an2-f36/field/AN2-F36 field (2).jpg",
+      "gallery_sha256": "814ea2e30d3b63ea2f572f02b6c98d5927faac9d7ec35091d5162ddfade91050",
+      "thumbnail_path": "assets/an2-f36/field/AN2-F36 field (2).jpg",
+      "thumbnail_sha256": "814ea2e30d3b63ea2f572f02b6c98d5927faac9d7ec35091d5162ddfade91050",
+      "disposition": "Published exact copy of the original."
+    },
+    {
+      "filename": "AN2-F36 field (3).jpg",
+      "category": "Wild / field context",
+      "archive_record": "supplemental_media.js:515",
+      "capture_sha256": "cdafbf3760827dbd795ec786c1f6dd298be5f7d961f737ee39306e5169d080d6",
+      "capture_bytes": 177920,
+      "dimensions": [
+        775,
+        1033
+      ],
+      "gallery_path": "assets/an2-f36/field/AN2-F36 field (3).jpg",
+      "gallery_sha256": "cdafbf3760827dbd795ec786c1f6dd298be5f7d961f737ee39306e5169d080d6",
+      "thumbnail_path": "assets/an2-f36/field/AN2-F36 field (3).jpg",
+      "thumbnail_sha256": "cdafbf3760827dbd795ec786c1f6dd298be5f7d961f737ee39306e5169d080d6",
+      "disposition": "Published exact copy of the original."
+    },
+    {
+      "filename": "AN2-F36 field (4).jpg",
+      "category": "Wild / field context",
+      "archive_record": "supplemental_media.js:516",
+      "capture_sha256": "5db006fa1f9ce48032765a9762ab71a2138ecfd7e1dc64656c63d61630ca44be",
+      "capture_bytes": 185800,
+      "dimensions": [
+        775,
+        1033
+      ],
+      "gallery_path": "assets/an2-f36/field/AN2-F36 field (4).jpg",
+      "gallery_sha256": "5db006fa1f9ce48032765a9762ab71a2138ecfd7e1dc64656c63d61630ca44be",
+      "thumbnail_path": "assets/an2-f36/field/AN2-F36 field (4).jpg",
+      "thumbnail_sha256": "5db006fa1f9ce48032765a9762ab71a2138ecfd7e1dc64656c63d61630ca44be",
+      "disposition": "Published exact copy of the original."
+    },
+    {
+      "filename": "AN2-F36 field (5).jpg",
+      "category": "Wild / field context",
+      "archive_record": "supplemental_media.js:517",
+      "capture_sha256": "ce45dda8d2b0ceaa906a43c5cc994b3735f46e810cf7664355d79e80160a3adf",
+      "capture_bytes": 214473,
+      "dimensions": [
+        775,
+        1033
+      ],
+      "gallery_path": "assets/an2-f36/field/AN2-F36 field (5).jpg",
+      "gallery_sha256": "ce45dda8d2b0ceaa906a43c5cc994b3735f46e810cf7664355d79e80160a3adf",
+      "thumbnail_path": "assets/an2-f36/field/AN2-F36 field (5).jpg",
+      "thumbnail_sha256": "ce45dda8d2b0ceaa906a43c5cc994b3735f46e810cf7664355d79e80160a3adf",
+      "disposition": "Published exact copy of the original."
+    },
+    {
+      "filename": "AN2-F36 field (6).jpg",
+      "category": "Wild / field context",
+      "archive_record": "supplemental_media.js:518",
+      "capture_sha256": "9ea5f681a17b6ac790ac99e493c523abadd1ae375eb9e1fc5cbd22794da93d01",
+      "capture_bytes": 260547,
+      "dimensions": [
+        775,
+        1033
+      ],
+      "gallery_path": "assets/an2-f36/field/AN2-F36 field (6).jpg",
+      "gallery_sha256": "9ea5f681a17b6ac790ac99e493c523abadd1ae375eb9e1fc5cbd22794da93d01",
+      "thumbnail_path": "assets/an2-f36/field/AN2-F36 field (6).jpg",
+      "thumbnail_sha256": "9ea5f681a17b6ac790ac99e493c523abadd1ae375eb9e1fc5cbd22794da93d01",
+      "disposition": "Published exact copy of the original."
+    }
+  ]
+}

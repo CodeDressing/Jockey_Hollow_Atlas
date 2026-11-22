@@ -3,6 +3,89 @@
 // SECTION 01 — Public restoration register
 // These entries contain public image paths, display captions, and catalog keys.
 const atlasRestoredImages = {
+  "AN2-F36": {
+    "AN2-F36.JPG": {
+      "path": "assets/an2-f36/specimen/AN2-F36.JPG",
+      "caption": "Verified laboratory specimen view — AN2-F36"
+    },
+    "AN2-F36V2.JPG": {
+      "path": "assets/an2-f36/specimen/AN2-F36V2.JPG",
+      "caption": "Verified laboratory specimen view — AN2-F36V2"
+    },
+    "IMG_2026-09-25-13-57-23-196.jpg": {
+      "path": "assets/an2-f36/preparation/IMG_2026-09-25-13-57-23-196.jpg",
+      "caption": "AN2-F36 spore-print preparation — foil/slide macro view A; visible orange-brown fragments with sparse fine brown particulate deposit (user-supplied 2026-09-25)"
+    },
+    "IMG_2026-09-25-13-57-18-789.jpg": {
+      "path": "assets/an2-f36/preparation/IMG_2026-09-25-13-57-18-789.jpg",
+      "caption": "AN2-F36 spore-print preparation — foil/slide macro view B; fine diffuse brown speckling adjacent to orange-brown fragments (user-supplied 2026-09-25)"
+    },
+    "AN2-F36 failure v1.png": {
+      "path": "assets/an2-f36/microscopy/AN2-F36 failure v1.png",
+      "caption": "AN2-F36 non-diagnostic microscopy field 1 (user-supplied 2026-09-26)"
+    },
+    "AN2-F36 failure v2.png": {
+      "path": "assets/an2-f36/microscopy/AN2-F36 failure v2.png",
+      "caption": "AN2-F36 non-diagnostic microscopy field 2 (user-supplied 2026-09-26)"
+    },
+    "AN2-F36 failure v3.png": {
+      "path": "assets/an2-f36/microscopy/AN2-F36 failure v3.png",
+      "caption": "AN2-F36 non-diagnostic microscopy field 3 (user-supplied 2026-09-26)"
+    },
+    "AN2-F36 failure v4.png": {
+      "path": "assets/an2-f36/microscopy/AN2-F36 failure v4.png",
+      "caption": "AN2-F36 non-diagnostic microscopy field 4; annotated 15.27 µm object (user-supplied 2026-09-26)"
+    },
+    "AN2-F36 failure v5.png": {
+      "path": "assets/an2-f36/microscopy/AN2-F36 failure v5.png",
+      "caption": "AN2-F36 non-diagnostic microscopy field 5; annotated 33.47 µm aggregate (user-supplied 2026-09-26)"
+    },
+    "AN2-F36 failure v6.png": {
+      "path": "assets/an2-f36/microscopy/AN2-F36 failure v6.png",
+      "caption": "AN2-F36 non-diagnostic microscopy field 6; annotated 28.62 µm object (user-supplied 2026-09-26)"
+    },
+    "AN2-F36 failure v7.png": {
+      "path": "assets/an2-f36/microscopy/AN2-F36 failure v7.png",
+      "caption": "AN2-F36 non-diagnostic microscopy field 7 (user-supplied 2026-09-26)"
+    },
+    "AN2-F36 failure v8.png": {
+      "path": "assets/an2-f36/microscopy/AN2-F36 failure v8.png",
+      "caption": "AN2-F36 non-diagnostic microscopy field 8 (user-supplied 2026-09-26)"
+    },
+    "AN2-F36 failure v9.png": {
+      "path": "assets/an2-f36/microscopy/AN2-F36 failure v9.png",
+      "caption": "AN2-F36 non-diagnostic microscopy field 9 (user-supplied 2026-09-26)"
+    },
+    "AN2-F36SP.JPG": {
+      "thumb": "assets/thumbs/AN2-F36SP.jpg",
+      "path": "assets/originals/AN2-F36SP.JPG",
+      "caption": "AN2-F36 — spore-print / preparation documentation"
+    },
+    "AN2-F36 field (1).jpg": {
+      "path": "assets/an2-f36/field/AN2-F36 field (1).jpg",
+      "caption": "AN2-F36 — in-situ forest-floor field view showing intact fruit body, orange-yellow pileus, pale gills, elongated stipe, and soil/leaf-litter substrate"
+    },
+    "AN2-F36 field (2).jpg": {
+      "path": "assets/an2-f36/field/AN2-F36 field (2).jpg",
+      "caption": "AN2-F36 — dorsal pileus field view; orange-yellow cap photographed in leaf litter"
+    },
+    "AN2-F36 field (3).jpg": {
+      "path": "assets/an2-f36/field/AN2-F36 field (3).jpg",
+      "caption": "AN2-F36 — underside field view showing pale gills, pale yellow stipe, basal tissue, and attached soil/leaf litter"
+    },
+    "AN2-F36 field (4).jpg": {
+      "path": "assets/an2-f36/field/AN2-F36 field (4).jpg",
+      "caption": "AN2-F36 — second underside field view showing gill spacing, stipe, and soil-bearing base"
+    },
+    "AN2-F36 field (5).jpg": {
+      "path": "assets/an2-f36/field/AN2-F36 field (5).jpg",
+      "caption": "AN2-F36 — accession-labeled field handling view with orange-yellow pileus and AN2-F36 foil label"
+    },
+    "AN2-F36 field (6).jpg": {
+      "path": "assets/an2-f36/field/AN2-F36 field (6).jpg",
+      "caption": "AN2-F36 — accession-labeled field handling view showing gills, stipe, basal tissue, and AN2-F36 label"
+    }
+  },
   "AN2-F38": {
     "AN2-F38.JPG": {
       "path": "assets/an2-f38/specimen/AN2-F38.JPG",
