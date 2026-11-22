@@ -4,6 +4,12 @@ const {webkit,chromium,firefox,devices}=require('playwright');
 async function checkGlossary(page, hasTouch){
  const activate=locator=>hasTouch?locator.tap():locator.click();
  const dialog=page.getByRole('dialog');
+ async function checkSpeech(button, expected){
+  const before=await page.evaluate(()=>window.glossarySpoken.length);
+  await activate(button);
+  await page.waitForFunction(count=>window.glossarySpoken.length>count,before);
+  assert.equal(await page.evaluate(()=>window.glossarySpoken.at(-1)),expected);
+ }
  async function checkTerm(term, word, pronunciation, definition){
   await activate(term);
   assert.equal(await dialog.isVisible(),true);
@@ -18,9 +24,8 @@ async function checkGlossary(page, hasTouch){
   }),'Glossary dialog must fit inside the visual viewport');
   const pronounce=dialog.getByRole('button',{name:'Pronounce',exact:true});
   assert.ok(await pronounce.evaluate(el=>el===document.activeElement));
-  await activate(pronounce);
-  await activate(dialog.getByRole('button',{name:'Read definition',exact:true}));
-  assert.deepEqual(await page.evaluate(()=>window.glossarySpoken.slice(-2)),[word,definition]);
+  await checkSpeech(pronounce,word);
+  await checkSpeech(dialog.getByRole('button',{name:'Read definition',exact:true}),definition);
   await activate(dialog.getByRole('button',{name:'Close',exact:true}));
   assert.equal(await dialog.isVisible(),false);
   assert.ok(await term.evaluate(el=>el===document.activeElement));
@@ -42,9 +47,8 @@ async function checkGlossary(page, hasTouch){
   const text=await panel.locator('p').textContent();
   assert.ok(text.includes(phrase));
   await checkTerm(panel.locator('[data-glossary='+entry.word+']'),entry.word,entry.pronunciation,entry.definition);
-  await activate(panel.getByRole('button',{name:'Read section',exact:true}));
   const expected=(await panel.locator('h4').textContent())+' '+text;
-  assert.equal(await page.evaluate(()=>window.glossarySpoken.at(-1)),expected);
+  await checkSpeech(panel.getByRole('button',{name:'Read section',exact:true}),expected);
  }
  await checkTerm(page.locator('.sourceLine [data-glossary=accession]').first(),'accession',null,
   'A uniquely tracked specimen or collection record entered into an archive, herbarium, laboratory, or database.');
@@ -85,9 +89,11 @@ async function checkGlossary(page, hasTouch){
    const page=await ctx.newPage();
    await page.addInitScript(()=>{
     window.glossarySpoken=[];
-    if(!window.speechSynthesis)window.speechSynthesis={cancel(){}};
-    if(!window.SpeechSynthesisUtterance)window.SpeechSynthesisUtterance=class {constructor(text){this.text=text;}};
-    window.speechSynthesis.speak=utterance=>window.glossarySpoken.push(utterance.text);
+    Object.defineProperty(window,'speechSynthesis',{value:{
+     cancel(){},
+     speak(utterance){window.glossarySpoken.push(utterance.text);}
+    }});
+    window.SpeechSynthesisUtterance=class {constructor(text){this.text=text;}};
    });
    const errors=[];page.on('pageerror',e=>errors.push(e.message));
    // Private Drive photographs may be unavailable to public visitors. Never
