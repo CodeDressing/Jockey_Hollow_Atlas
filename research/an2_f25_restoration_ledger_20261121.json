@@ -1,0 +1,132 @@
+{
+  "accession": "AN2-F25",
+  "campaign": "DEO AN2-F25 archived-photograph restoration",
+  "audit_date": "2026-11-21",
+  "user_reported_unavailable_archived_records": 17,
+  "verified_archive_records_in_drive_data_js": 11,
+  "originals_verified": 11,
+  "public_images_in_scope": 11,
+  "existing_visible_images_reported_by_researcher": 2,
+  "existing_visible_images_unchanged": true,
+  "source_groups": [
+    "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
+    "Rutgers_MycoScope/AN2-F25"
+  ],
+  "source_drive_folder_ids": [
+    "13AOKWCXJtfPZD8LXt84KwC9CAjThYm6M",
+    "1SFM4mVD7d4jgyxcIqJbWxgpPq9GdqSXu"
+  ],
+  "source_items": [
+    {
+      "filename": "AN2-F25.JPG",
+      "drive_id": "1a9C_thysm1imcCtnBQzYxJN1U0p3-bfi",
+      "size_bytes": 681427,
+      "git_blob_sha": "57abe700c2ec5a124554985561ce48b6c90eb099",
+      "site_path": "assets/an2-f25/specimen/AN2-F25.JPG",
+      "verification": "source file name and type checked against Drive original; Git blob created",
+      "public_status": "pending production verification"
+    },
+    {
+      "filename": "AN2-F25V2.JPG",
+      "drive_id": "1iOKsZgmuFvKNObzMcgXLRxG5t9Ss8s5V",
+      "size_bytes": 610096,
+      "git_blob_sha": "4bb8c80310c3268c21d7f6ba8721e9be3eba7a93",
+      "site_path": "assets/an2-f25/specimen/AN2-F25V2.JPG",
+      "verification": "source file name and type checked against Drive original; Git blob created",
+      "public_status": "pending production verification"
+    },
+    {
+      "filename": "AN2-F25V3.JPG",
+      "drive_id": "167sACExBXqztTwnJ-E1mraYuExvsnMZO",
+      "size_bytes": 599805,
+      "git_blob_sha": "831255bbd7d90dd6858c165e83082faa030b0ac6",
+      "site_path": "assets/an2-f25/specimen/AN2-F25V3.JPG",
+      "verification": "source file name and type checked against Drive original; Git blob created",
+      "public_status": "pending production verification"
+    },
+    {
+      "filename": "AN2-F25V4.JPG",
+      "drive_id": "1OSXs2S_MGUC5YiEnw5ULZyUCvlu3SrPL",
+      "size_bytes": 572606,
+      "git_blob_sha": "3c877ee02a0e76df3963a134dc31b1a3e1311c5d",
+      "site_path": "assets/an2-f25/specimen/AN2-F25V4.JPG",
+      "verification": "source file name and type checked against Drive original; Git blob created",
+      "public_status": "pending production verification"
+    },
+    {
+      "filename": "AN2-F25 SPMV1.png",
+      "drive_id": "1b-j1Lv1GzMfJqJd3boGg3OgC6MoYJh3u",
+      "size_bytes": 1421196,
+      "git_blob_sha": "c06c95590da0d4b39994da87dfac569e38da0b9d",
+      "site_path": "assets/an2-f25/microscopy/AN2-F25 SPMV1.png",
+      "verification": "source file name and type checked against Drive original; Git blob created",
+      "public_status": "pending production verification"
+    },
+    {
+      "filename": "AN2-F25 SPMV2.png",
+      "drive_id": "1Nc4Nn36605NhMoMr_ACKpYIojhDYcjJj",
+      "size_bytes": 960293,
+      "git_blob_sha": "b6e36a7202035ea31c84a287bf36baa4e26ac664",
+      "site_path": "assets/an2-f25/microscopy/AN2-F25 SPMV2.png",
+      "verification": "source file name and type checked against Drive original; Git blob created",
+      "public_status": "pending production verification"
+    },
+    {
+      "filename": "AN2-F25 SPMV3.png",
+      "drive_id": "1eOqJOi4Sq1DDcz2xydGeRF3gsxkXm9pD",
+      "size_bytes": 893040,
+      "git_blob_sha": "c9fe84b3f25830978024465f61f63e171754239e",
+      "site_path": "assets/an2-f25/microscopy/AN2-F25 SPMV3.png",
+      "verification": "source file name and type checked against Drive original; Git blob created",
+      "public_status": "pending production verification"
+    },
+    {
+      "filename": "AN2-F25 SPMV4.png",
+      "drive_id": "1jB52S-PsdjYNoYla87ZfXugPpQFNFb8q",
+      "size_bytes": 977256,
+      "git_blob_sha": "65bca549a8511cdebd64631ea150067a59ac782b",
+      "site_path": "assets/an2-f25/microscopy/AN2-F25 SPMV4.png",
+      "verification": "source file name and type checked against Drive original; Git blob created",
+      "public_status": "pending production verification"
+    },
+    {
+      "filename": "AN2-F25 SPMV5.png",
+      "drive_id": "1K35DlKEjfBhkLSmTJIn8WX3U0QjBogMZ",
+      "size_bytes": 991904,
+      "git_blob_sha": "06de0e1bf016b945ddc5755d2a444a9b08af60cc",
+      "site_path": "assets/an2-f25/microscopy/AN2-F25 SPMV5.png",
+      "verification": "source file name and type checked against Drive original; Git blob created",
+      "public_status": "pending production verification"
+    },
+    {
+      "filename": "AN2-F25 SPMV6.png",
+      "drive_id": "1ANOXo_OO5pq8wHU44dSSFfbieXVenihA",
+      "size_bytes": 947109,
+      "git_blob_sha": "f5986436e5846cacc6c32e9f7fd6ee67a7904d8e",
+      "site_path": "assets/an2-f25/microscopy/AN2-F25 SPMV6.png",
+      "verification": "source file name and type checked against Drive original; Git blob created",
+      "public_status": "pending production verification"
+    },
+    {
+      "filename": "AN2-F25 SPMV7.png",
+      "drive_id": "1LJ2xKTIKRw9kyXpvB2UAjyKafe548Ntw",
+      "size_bytes": 935738,
+      "git_blob_sha": "2e88f3522a2caa012d983668d925daa1140a62a8",
+      "site_path": "assets/an2-f25/microscopy/AN2-F25 SPMV7.png",
+      "verification": "source file name and type checked against Drive original; Git blob created",
+      "public_status": "pending production verification"
+    }
+  ],
+  "unreconciled_reported_archive_count": 6,
+  "unreconciled_reason": "Atlas UI reports 17 archived records, but drive_data.js currently contains 11 exact accession-linked archive entries. Inspect master data.js/other galleries for additional records; do not invent six source files.",
+  "duplicates": "Existing two visible source photos preserved. Filename/visual overlap against newly restored laboratory photos requires public comparison.",
+  "scientific_status": "No species determination or microscopy measurement inference from restored file names.",
+  "release": {
+    "branch": "restoration/an2-f25-gallery-20261121",
+    "commit_sha": null,
+    "pr": null,
+    "ci": "pending",
+    "render": "pending",
+    "public_acceptance": "pending"
+  }
+}

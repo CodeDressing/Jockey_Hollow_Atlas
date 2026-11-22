@@ -2477,7 +2477,9 @@ window.DRIVE_PHOTOS = [
     "caption": "Verified laboratory specimen view — AN2-F25",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F25.JPG",
     "verified_label": true,
-    "publication_status": "archive-only"
+    "publication_status": "public-restored-2026-11-21",
+    "original": "assets/an2-f25/specimen/AN2-F25.JPG",
+    "thumb": "assets/an2-f25/specimen/AN2-F25.JPG"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2489,7 +2491,9 @@ window.DRIVE_PHOTOS = [
     "caption": "Verified laboratory specimen view — AN2-F25V2",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F25V2.JPG",
     "verified_label": true,
-    "publication_status": "archive-only"
+    "publication_status": "public-restored-2026-11-21",
+    "original": "assets/an2-f25/specimen/AN2-F25V2.JPG",
+    "thumb": "assets/an2-f25/specimen/AN2-F25V2.JPG"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2501,7 +2505,9 @@ window.DRIVE_PHOTOS = [
     "caption": "Verified laboratory specimen view — AN2-F25V3",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F25V3.JPG",
     "verified_label": true,
-    "publication_status": "archive-only"
+    "publication_status": "public-restored-2026-11-21",
+    "original": "assets/an2-f25/specimen/AN2-F25V3.JPG",
+    "thumb": "assets/an2-f25/specimen/AN2-F25V3.JPG"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -2513,7 +2519,9 @@ window.DRIVE_PHOTOS = [
     "caption": "Verified laboratory specimen view — AN2-F25V4",
     "source_relpath": "AN2 2026/MycoScope Verified Lab Views 2026-09-20/AN2-F25V4.JPG",
     "verified_label": true,
-    "publication_status": "archive-only"
+    "publication_status": "public-restored-2026-11-21",
+    "original": "assets/an2-f25/specimen/AN2-F25V4.JPG",
+    "thumb": "assets/an2-f25/specimen/AN2-F25V4.JPG"
   },
   {
     "folder": "AN2 2026/MycoScope Verified Lab Views 2026-09-20",
@@ -3709,7 +3717,9 @@ window.DRIVE_PHOTOS = [
     "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV1.png",
     "verified_label": true,
     "assignment_basis": "explicit AN2-F25 accession in source filename",
-    "publication_status": "archive-only"
+    "publication_status": "public-restored-2026-11-21",
+    "original": "assets/an2-f25/microscopy/AN2-F25%20SPMV1.png",
+    "thumb": "assets/an2-f25/microscopy/AN2-F25%20SPMV1.png"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F25",
@@ -3722,7 +3732,9 @@ window.DRIVE_PHOTOS = [
     "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV2.png",
     "verified_label": true,
     "assignment_basis": "explicit AN2-F25 accession in source filename",
-    "publication_status": "archive-only"
+    "publication_status": "public-restored-2026-11-21",
+    "original": "assets/an2-f25/microscopy/AN2-F25%20SPMV2.png",
+    "thumb": "assets/an2-f25/microscopy/AN2-F25%20SPMV2.png"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F25",
@@ -3735,7 +3747,9 @@ window.DRIVE_PHOTOS = [
     "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV3.png",
     "verified_label": true,
     "assignment_basis": "explicit AN2-F25 accession in source filename",
-    "publication_status": "archive-only"
+    "publication_status": "public-restored-2026-11-21",
+    "original": "assets/an2-f25/microscopy/AN2-F25%20SPMV3.png",
+    "thumb": "assets/an2-f25/microscopy/AN2-F25%20SPMV3.png"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F25",
@@ -3748,7 +3762,9 @@ window.DRIVE_PHOTOS = [
     "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV4.png",
     "verified_label": true,
     "assignment_basis": "explicit AN2-F25 accession in source filename",
-    "publication_status": "archive-only"
+    "publication_status": "public-restored-2026-11-21",
+    "original": "assets/an2-f25/microscopy/AN2-F25%20SPMV4.png",
+    "thumb": "assets/an2-f25/microscopy/AN2-F25%20SPMV4.png"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F25",
@@ -3761,7 +3777,9 @@ window.DRIVE_PHOTOS = [
     "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV5.png",
     "verified_label": true,
     "assignment_basis": "explicit AN2-F25 accession in source filename",
-    "publication_status": "archive-only"
+    "publication_status": "public-restored-2026-11-21",
+    "original": "assets/an2-f25/microscopy/AN2-F25%20SPMV5.png",
+    "thumb": "assets/an2-f25/microscopy/AN2-F25%20SPMV5.png"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F25",
@@ -3774,7 +3792,9 @@ window.DRIVE_PHOTOS = [
     "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV6.png",
     "verified_label": true,
     "assignment_basis": "explicit AN2-F25 accession in source filename",
-    "publication_status": "archive-only"
+    "publication_status": "public-restored-2026-11-21",
+    "original": "assets/an2-f25/microscopy/AN2-F25%20SPMV6.png",
+    "thumb": "assets/an2-f25/microscopy/AN2-F25%20SPMV6.png"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F25",
@@ -3787,7 +3807,9 @@ window.DRIVE_PHOTOS = [
     "source_relpath": "Rutgers_MycoScope/AN2-F25/AN2-F25 SPMV7.png",
     "verified_label": true,
     "assignment_basis": "explicit AN2-F25 accession in source filename",
-    "publication_status": "archive-only"
+    "publication_status": "public-restored-2026-11-21",
+    "original": "assets/an2-f25/microscopy/AN2-F25%20SPMV7.png",
+    "thumb": "assets/an2-f25/microscopy/AN2-F25%20SPMV7.png"
   },
   {
     "folder": "Rutgers_MycoScope/AN2-F36",
