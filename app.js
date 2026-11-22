@@ -319,20 +319,23 @@ const GLOSSARY=Object.freeze({
   furfuraceous:{definition:"Scaly or bran-like, with a fine scurfy coating.",pronounce:"fer-fer-AY-shus"},
   glabrous:{definition:"Smooth; lacking hairs, spines, or ornamentation.",pronounce:"GLAY-brus"},
   globose:{definition:"Nearly spherical in shape.",pronounce:"GLOH-bohs"},
+  fusiform:{definition:"Spindle-shaped. Wider in the middle and narrower toward both ends.",pronunciation:"FYOO-zuh-form"},
+  olivaceous:{definition:"Olive-colored, usually a muted, brownish green.",pronunciation:"ah-lih-VAY-shuhs"},
   pyriform:{definition:"Pear-shaped; broader above and narrower below.",pronounce:"PEER-ih-form"},
   turbiniform:{definition:"Spinning-top shaped; broad above and strongly tapered below.",pronounce:"turbiniform"},
 });
 
 const glossaryPattern=new RegExp("\\b("+Object.keys(GLOSSARY).sort((x,y)=>y.length-x.length).join("|")+")\\b","gi");
 
-function glossaryText(value){
-  const raw=String(value??"").replace(/Google Drive/gi,'research archive').replace(/Drive-only/gi,'archive-only');
+function glossaryText(value, preserveText=false){
+  const original=String(value??"");
+  const raw=preserveText?original:original.replace(/Google Drive/gi,'research archive').replace(/Drive-only/gi,'archive-only');
   let out="",last=0;
   raw.replace(glossaryPattern,(match,...args)=>{
     const offset=args[args.length-2];
     out+=esc(raw.slice(last,offset));
     const key=match.toLowerCase();
-    out+='<button type="button" class="glossary-term" data-glossary="'+esc(key)+'" title="Define and pronounce '+esc(match)+'">'+esc(match)+'</button>';
+    out+='<button type="button" class="glossary-term" data-glossary="'+esc(key)+'" aria-haspopup="dialog" title="Define and pronounce '+esc(match)+'">'+esc(match)+'</button>';
     last=offset+match.length;
     return match;
   });
@@ -353,20 +356,55 @@ function sectionReadButton(label="Read back"){
   return '<button type="button" class="readback-btn" aria-label="'+esc(label)+'">🔊 '+esc(label)+'</button>';
 }
 
+let glossaryAnchor=null;
+
+function closeGlossary(restoreFocus=true){
+  if(!glossaryAnchor)return false;
+  const anchor=glossaryAnchor;
+  glossaryAnchor=null;
+  $('glossaryPopover').classList.remove('open');
+  if(restoreFocus)anchor.focus({preventScroll:true});
+  return true;
+}
+
+function positionGlossary(){
+  if(!glossaryAnchor)return;
+  const pop=$('glossaryPopover');
+  const viewport=window.visualViewport;
+  const left=viewport?.offsetLeft??0, top=viewport?.offsetTop??0;
+  const width=viewport?.width??document.documentElement.clientWidth;
+  const height=viewport?.height??document.documentElement.clientHeight;
+  const gap=10;
+  pop.style.width=Math.min(320,width-2*gap)+"px";
+  pop.style.maxHeight=(height-2*gap)+"px";
+  const anchor=glossaryAnchor.getBoundingClientRect();
+  const bounds=pop.getBoundingClientRect();
+  const below=anchor.bottom+gap;
+  const above=anchor.top-gap-bounds.height;
+  const bottom=top+height-gap-bounds.height;
+  pop.style.left=Math.max(left+gap,Math.min(anchor.left,left+width-gap-bounds.width))+"px";
+  pop.style.top=Math.max(top+gap,Math.min(below<=bottom?below:above,bottom))+"px";
+}
+
 function openGlossaryTerm(key,anchor){
   const item=GLOSSARY[String(key||"").toLowerCase()];
   if(!item)return;
   let pop=document.getElementById("glossaryPopover");
   if(!pop){pop=document.createElement("div");pop.id="glossaryPopover";pop.className="glossary-popover";document.body.appendChild(pop);}
   const term=String(key);
-  pop.innerHTML='<div class="glossary-kicker">MYCOLOGY GLOSSARY</div><strong>'+esc(term)+'</strong><p>'+esc(item.definition)+'</p><div class="glossary-actions"><button type="button" data-glossary-pronounce>Pronounce</button><button type="button" data-glossary-read>Read definition</button><button type="button" data-glossary-close>Close</button></div>';
-  const rect=anchor.getBoundingClientRect();
-  pop.style.left=Math.min(window.innerWidth-330,Math.max(10,rect.left))+"px";
-  pop.style.top=Math.min(window.innerHeight-190,Math.max(10,rect.bottom+8))+"px";
+  const pronunciation=item.pronunciation?'<span class="glossary-pronunciation">'+esc(item.pronunciation)+'</span>':'';
+  pop.setAttribute('role','dialog');
+  pop.setAttribute('aria-labelledby','glossaryTermTitle');
+  pop.setAttribute('aria-describedby','glossaryDefinition');
+  pop.innerHTML='<div class="glossary-kicker">MYCOLOGY GLOSSARY</div><strong id="glossaryTermTitle">'+esc(term)+'</strong>'+pronunciation+'<p id="glossaryDefinition">'+esc(item.definition)+'</p><div class="glossary-actions"><button type="button" data-glossary-pronounce>Pronounce</button><button type="button" data-glossary-read>Read definition</button><button type="button" data-glossary-close>Close</button></div>';
+  glossaryAnchor=anchor;
   pop.classList.add("open");
-  pop.querySelector("[data-glossary-pronounce]").onclick=()=>speakText(item.pronounce||term,.82);
-  pop.querySelector("[data-glossary-read]").onclick=()=>speakText(term+". "+item.definition,.92);
-  pop.querySelector("[data-glossary-close]").onclick=()=>pop.classList.remove("open");
+  positionGlossary();
+  const pronounce=pop.querySelector("[data-glossary-pronounce]");
+  pronounce.onclick=()=>speakText(item.pronounce||term,.82);
+  pop.querySelector("[data-glossary-read]").onclick=()=>speakText(item.definition,.92);
+  pop.querySelector("[data-glossary-close]").onclick=()=>closeGlossary();
+  pronounce.focus({preventScroll:true});
 }
 const $=id=>document.getElementById(id);
 const FULL_DATA_SET_CODES=new Set(['JN2-F3','AN2-F3','AN2-F7','AN2-F9','AN2-F12','AN2-F25','AN2-F34','AN2-F38','AN2-F41','AN2-F36','AN2-F32','AN2-F17']);
@@ -532,6 +570,7 @@ function renderMeasurements(s){
 function renderSpec(){
   const s=data.find(x=>x.code===current);
   if(!s)return;
+  closeGlossary(false);
   const groups={};
   (s.images||[]).filter(im=>imageType==='ALL'||im.category===imageType).forEach(im=>(groups[im.category]??=[]).push(im));
   const sum=Object.entries(s.summary||{}).map(([k,v])=>`<div class="summary-item readable-section"><div class="section-read-head"><h4>${esc(k)}</h4>${sectionReadButton("Read section")}</div><p>${glossaryText(v)}</p></div>`).join('');
@@ -547,16 +586,16 @@ function renderSpec(){
     if(k==='Microscopy imagery') return [k,hasMicro?'Yes':v];
     return [k,v];
   });
-  const mat=effectiveCompleteness.map(([k,v])=>`<div>${esc(k)}</div><div class="${cls(v)}">${esc(v)}</div>`).join('');
+  const mat=effectiveCompleteness.map(([k,v])=>`<div>${glossaryText(k,true)}</div><div class="${cls(v)}">${glossaryText(v,true)}</div>`).join('');
   const pairStatus=hasWild&&hasLab?'COMPLETE':(!hasWild&&!hasLab?'MISSING WILD + LAB':(!hasWild?'MISSING WILD':'MISSING LAB'));
   const pairClass=hasWild&&hasLab?'yes':'no';
-  const galleries=Object.entries(groups).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map((im,i)=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-thumb="${esc(im.thumb||im.original)}" data-caption="${esc(displayLabel(im.caption))}" data-name="${esc(im.filename)}"><img loading="${i<2?'eager':'lazy'}" decoding="async" src="${esc(im.original)}" alt="${esc(displayLabel(im.caption))}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${esc(im.caption)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}</div></article>`).join('')}</div></section>`).join('');
+  const galleries=Object.entries(groups).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map((im,i)=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-thumb="${esc(im.thumb||im.original)}" data-caption="${esc(displayLabel(im.caption))}" data-name="${esc(im.filename)}"><img loading="${i<2?'eager':'lazy'}" decoding="async" src="${esc(im.original)}" alt="${esc(displayLabel(im.caption))}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${glossaryText(im.caption,true)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}</div></article>`).join('')}</div></section>`).join('');
   const archived=(s.archivedPhotos||[]).filter(im=>imageType==='ALL'||im.category===imageType);
   const archiveDetails=archived.length
-    ? `<details class="section card"><summary>Archived photo records · ${archived.length}</summary><p>Image files are unavailable in the public Atlas.</p><ul>${archived.map(im=>`<li><strong>${esc(im.filename)}</strong> · ${esc(im.category)}${im.caption?`: ${esc(im.caption)}`:''}</li>`).join('')}</ul></details>`
+    ? `<details class="section card"><summary>Archived photo records · ${archived.length}</summary><p>Image files are unavailable in the public Atlas.</p><ul>${archived.map(im=>`<li><strong>${esc(im.filename)}</strong> · ${esc(im.category)}${im.caption?`: ${glossaryText(im.caption,true)}`:''}</li>`).join('')}</ul></details>`
     : '';
   const movieRows=(s.movies||[]).filter(m=>imageType==='ALL'||imageType==='Movie / video');
-  const movieGallery=movieRows.length?`<section class="section"><h2>Movie / video <span>${movieRows.length}</span></h2><div class="gallery">${movieRows.map(m=>`<article class="image-card movie-card"><div class="movie-wrap">${m.preview&&!/^https?:\/\//i.test(m.preview)?`<iframe src="${esc(m.preview)}" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>`:(m.poster&&!/^https?:\/\//i.test(m.poster)?`<img src="${esc(m.poster)}" alt="${esc(m.caption)}">`:`<span class="image-load-error">Video not hosted on this site</span>`)}</div><div class="caption"><strong>${esc(m.caption)}</strong><code>${esc(m.sourceFilename||m.filename)}</code>${m.durationSeconds?`<small class="drive-source">Duration: ${Math.round(m.durationSeconds)} seconds</small>`:''}${m.note?`<small class="drive-source">${esc(m.note)}</small>`:''}</div></article>`).join('')}</div></section>`:'';
+  const movieGallery=movieRows.length?`<section class="section"><h2>Movie / video <span>${movieRows.length}</span></h2><div class="gallery">${movieRows.map(m=>`<article class="image-card movie-card"><div class="movie-wrap">${m.preview&&!/^https?:\/\//i.test(m.preview)?`<iframe src="${esc(m.preview)}" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>`:(m.poster&&!/^https?:\/\//i.test(m.poster)?`<img src="${esc(m.poster)}" alt="${esc(m.caption)}">`:`<span class="image-load-error">Video not hosted on this site</span>`)}</div><div class="caption"><strong>${glossaryText(m.caption,true)}</strong><code>${esc(m.sourceFilename||m.filename)}</code>${m.durationSeconds?`<small class="drive-source">Duration: ${Math.round(m.durationSeconds)} seconds</small>`:''}${m.note?`<small class="drive-source">${glossaryText(m.note,true)}</small>`:''}</div></article>`).join('')}</div></section>`:'';
   const recordState=fullDataSetState(s);
   const fullBadge=recordState==='FULL'?'<span class="fullset-badge">CURATED FULL DATA SET</span>':recordState==='PARTIAL'?'<span class="fullset-badge partial-badge">PARTIAL DATA SET</span>':'<span class="fullset-badge limited-badge">LIMITED RECORD</span>';
   const coverage=evidenceCoverage(s);
@@ -601,13 +640,15 @@ function renderSpec(){
   });
 }
 
-$('main').onclick=e=>{
+document.addEventListener('click',e=>{
   const glossary=e.target.closest('.glossary-term');
   if(glossary){
     e.preventDefault();e.stopPropagation();
     openGlossaryTerm(glossary.dataset.glossary,glossary);
-    return;
   }
+});
+
+$('main').onclick=e=>{
   const read=e.target.closest('.readback-btn');
   if(read){
     e.preventDefault();e.stopPropagation();
@@ -615,7 +656,7 @@ $('main').onclick=e=>{
     if(!section)return;
     const clone=section.cloneNode(true);
     clone.querySelectorAll('.readback-btn,.glossary-actions').forEach(x=>x.remove());
-    speakText(clone.textContent.replace(/\s+/g,' ').trim());
+    speakText(Array.from(clone.childNodes,node=>node.textContent).join(' ').replace(/\s+/g,' ').trim());
   }
 };
 function syncSearch(v){
@@ -658,7 +699,7 @@ function apply(){img.style.transform=`translate(calc(-50% + ${tx}px),calc(-50% +
 function clamp(v){return Math.max(.05,Math.min(20,v))}
 function fit(){tx=ty=0;requestAnimationFrame(()=>{if(!img.naturalWidth)return;scale=Math.min(stage.clientWidth/img.naturalWidth,stage.clientHeight/img.naturalHeight,.98);apply()})}
 function openViewer(src,cap,name){
-  $('viewerCap').textContent=cap;$('viewerName').textContent=name;
+  $('viewerCap').innerHTML=glossaryText(cap,true);$('viewerName').textContent=name;
   const localOriginal=!/^https?:\/\//i.test(src);
   $('openOriginal').hidden=!localOriginal;
   $('openOriginal').onclick=localOriginal?()=>window.open(src,'_blank','noopener'):null;
@@ -668,7 +709,7 @@ function openViewer(src,cap,name){
   };
   img.src=src;viewer.classList.add('open');document.body.style.overflow='hidden';
 }
-function closeViewer(){viewer.classList.remove('open');img.src='';$('openOriginal').hidden=false;active.clear();document.body.style.overflow=''}
+function closeViewer(){closeGlossary(false);viewer.classList.remove('open');img.src='';$('openOriginal').hidden=false;active.clear();document.body.style.overflow=''}
 $('closeViewer').onclick=closeViewer;$('fit').onclick=fit;$('oneToOne').onclick=()=>{scale=1;tx=ty=0;apply()};
 $('zoomIn').onclick=()=>{scale=clamp(scale*1.25);apply()};$('zoomOut').onclick=()=>{scale=clamp(scale/1.25);apply()};
 stage.onwheel=e=>{e.preventDefault();scale=clamp(scale*(e.deltaY<0?1.12:.89));apply()};
@@ -676,7 +717,17 @@ stage.ondblclick=fit;
 stage.onpointerdown=e=>{stage.setPointerCapture?.(e.pointerId);active.set(e.pointerId,{x:e.clientX,y:e.clientY});if(active.size===2){const p=[...active.values()];pinchDist=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y);pinchScale=scale}};
 stage.onpointermove=e=>{if(!active.has(e.pointerId))return;const old=active.get(e.pointerId);active.set(e.pointerId,{x:e.clientX,y:e.clientY});if(active.size===2){const p=[...active.values()];const d=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y);if(pinchDist)scale=clamp(pinchScale*d/pinchDist)}else{tx+=e.clientX-old.x;ty+=e.clientY-old.y}apply()};
 const end=e=>active.delete(e.pointerId);stage.onpointerup=end;stage.onpointercancel=end;
-window.onkeydown=e=>{if(e.key==='Escape')closeViewer()};
+window.onkeydown=e=>{
+  if(e.key!=='Escape'||e.defaultPrevented)return;
+  if(closeGlossary()){
+    e.preventDefault();
+    return;
+  }
+  if(viewer.classList.contains('open'))closeViewer();
+};
+window.addEventListener('resize',positionGlossary);
+window.visualViewport?.addEventListener('resize',positionGlossary);
+window.visualViewport?.addEventListener('scroll',positionGlossary);
 window.onresize=()=>viewer.classList.contains('open')&&fit();
 
 fillFilters();renderList();renderSpec();
