@@ -3,6 +3,61 @@
 // SECTION 01 — Public restoration register
 // These entries contain public image paths, display captions, and catalog keys.
 const atlasRestoredImages = {
+  "AN2-F38": {
+    "AN2-F38.JPG": {
+      "path": "assets/an2-f38/specimen/AN2-F38.JPG",
+      "caption": "Verified laboratory specimen view — AN2-F38"
+    },
+    "AN2-F38V2.JPG": {
+      "path": "assets/an2-f38/specimen/AN2-F38V2.JPG",
+      "caption": "Verified laboratory specimen view — AN2-F38V2"
+    },
+    "AN2-F38V3.JPG": {
+      "path": "assets/an2-f38/specimen/AN2-F38V3.JPG",
+      "caption": "Verified laboratory specimen view — AN2-F38V3"
+    },
+    "AN2-F38V4.JPG": {
+      "path": "assets/an2-f38/specimen/AN2-F38V4.JPG",
+      "caption": "Verified laboratory specimen view — AN2-F38V4"
+    },
+    "IMG_2026-09-26-13-57-19-259.jpg": {
+      "path": "assets/an2-f38/preparation/IMG_2026-09-26-13-57-19-259.jpg",
+      "caption": "AN2-F38 spore-print preparation — foil/slide macro view A; no definite broad deposit visible, only a minute pale yellow-brown fleck (user-supplied 2026-09-26)"
+    },
+    "IMG_2026-09-26-13-57-36-308.jpg": {
+      "path": "assets/an2-f38/preparation/IMG_2026-09-26-13-57-36-308.jpg",
+      "caption": "AN2-F38 spore-print preparation — foil/slide macro view B; deposit remains visually inconclusive at macro scale (user-supplied 2026-09-26)"
+    },
+    "AN2-F38 V1.png": {
+      "path": "assets/an2-f38/microscopy/AN2-F38 V1.png",
+      "caption": "AN2-F38 microscopy field 1 with annotated minute-particle measurements (user-supplied 2026-09-26)"
+    },
+    "AN2-F38 V2.png": {
+      "path": "assets/an2-f38/microscopy/AN2-F38 V2.png",
+      "caption": "AN2-F38 microscopy field 2 (user-supplied 2026-09-26)"
+    },
+    "AN2-F38 V3.png": {
+      "path": "assets/an2-f38/microscopy/AN2-F38 V3.png",
+      "caption": "AN2-F38 microscopy field 3 with annotated 6.13 µm object (user-supplied 2026-09-26)"
+    },
+    "AN2-F38 V4.png": {
+      "path": "assets/an2-f38/microscopy/AN2-F38 V4.png",
+      "caption": "AN2-F38 microscopy field 4 with annotated minute-particle measurements (user-supplied 2026-09-26)"
+    },
+    "AN2-F38 V5.png": {
+      "path": "assets/an2-f38/microscopy/AN2-F38 V5.png",
+      "caption": "AN2-F38 microscopy field 5 with annotated minute-particle measurements (user-supplied 2026-09-26)"
+    },
+    "AN2-F38 V6.png": {
+      "path": "assets/an2-f38/microscopy/AN2-F38 V6.png",
+      "caption": "AN2-F38 microscopy field 6 (user-supplied 2026-09-26)"
+    },
+    "AN2-F38SP.JPG": {
+      "path": "assets/originals/AN2-F38SP.JPG",
+      "thumb": "assets/thumbs/AN2-F38SP.jpg",
+      "caption": "AN2-F38 — spore-print / preparation documentation"
+    }
+  },
   "AN2-F1": {
     "AN2-F1V6.HEIC": {
       "path": "assets/an2-f1/field/an2-f1v6.webp",
