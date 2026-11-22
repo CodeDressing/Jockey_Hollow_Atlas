@@ -23,7 +23,7 @@ const {webkit,chromium,firefox,devices}=require('playwright');
    });
    await page.goto(origin,{waitUntil:'domcontentloaded'});
    await page.locator('#enterAtlas').click();
-   const priorities=['AN2-F1','AN2-F41','AN2-F3','AN2-F7','AN2-F9','AN2-F12','AN2-F34','AN2-F17','AN2-F32','JN1-F15','JN1-F16','JN1-F32'];
+   const priorities=['AN2-F1','AN2-F41','AN2-F3','AN2-F7','AN2-F9','AN2-F12','AN2-F34','AN2-F17','AN2-F32','AN2-F38','JN1-F15','JN1-F16','JN1-F32'];
    for(const id of [...priorities,'JN2-F3','JN1-F11','BN5-F8(B)']){
     await page.evaluate(code=>window.setCurrent(code),id);
     const cards=page.locator('#main .image-card');
@@ -83,6 +83,26 @@ const {webkit,chromium,firefox,devices}=require('playwright');
       const archive=page.locator('#main summary').filter({hasText:'Archived photo records'});
       assert.equal(await archive.count(),1,'Preserve the two held AN2-F12 views');
       assert.match(await archive.innerText(),/2/);
+    }
+    if(id==='AN2-F38'){
+      const manifest=require('../research/an2_f38_media_restoration_20261121.json');
+      assert.equal(count,20,'Display the 12 restored captures and all eight existing captures');
+      assert.equal(await page.locator('#main summary').filter({hasText:'Archived photo records'}).count(),0);
+      for(const record of manifest.records){
+        const card=local.and(page.locator(`[data-name="${record.filename}"]`));
+        assert.equal(await card.count(),1,record.filename);
+        assert.equal(await card.getAttribute('data-file'),record.gallery_path);
+        if(record.thumbnail_path){
+          assert.equal(await card.getAttribute('data-thumb'),record.thumbnail_path);
+        }
+        await card.scrollIntoViewIfNeeded();
+        if(settings.hasTouch) await card.tap();
+        else await card.click();
+        const viewer=page.locator('#viewerImg');
+        assert.ok(await viewer.evaluate(async image=>{await image.decode();return image.naturalWidth>0;}));
+        assert.equal(await viewer.getAttribute('src'),record.gallery_path);
+        await page.locator('#closeViewer').click();
+      }
     }
     if(id==='JN1-F15'){
       assert.equal(await page.locator('#main .image-wrap[data-file^="assets/jn1-f15/microscopy/"]').count(),14);
