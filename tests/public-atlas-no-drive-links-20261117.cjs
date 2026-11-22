@@ -107,7 +107,7 @@ async function checkGlossary(page, hasTouch){
    await page.locator('#enterAtlas').click();
    await checkGlossary(page,settings.hasTouch);
    console.log(name+': glossary controls, readback content, viewport and keyboard focus passed');
-   const priorities=['AN2-F1','AN2-F41','AN2-F3','AN2-F7','AN2-F9','AN2-F12','AN2-F34','AN2-F17','AN2-F32','AN2-F36','AN2-F38','JN1-F15','JN1-F16','JN1-F32'];
+   const priorities=['AN2-F1','AN2-F41','AN2-F3','AN2-F7','AN2-F9','AN2-F12','AN2-F34','AN2-F17','AN2-F32','AN2-F36','AN2-F38','JN1-F15','JN1-F16','JN1-F25','JN1-F32'];
    for(const id of [...priorities,'JN2-F3','JN1-F11','BN5-F8(B)']){
     await page.evaluate(code=>window.setCurrent(code),id);
     const cards=page.locator('#main .image-card');
@@ -234,6 +234,30 @@ async function checkGlossary(page, hasTouch){
       assert.ok(await page.locator('#viewerImg').evaluate(async image=>{await image.decode();return image.naturalWidth>0;}));
       assert.match(await page.locator('#viewerCap').innerText(),/Calibration remains unverified/);
       await page.locator('#closeViewer').click();
+    }
+    if(id==='JN1-F25'){
+      assert.equal(count,23,'Preserve 16 existing views and add seven restored views');
+      assert.equal(await local.filter({has:page.locator('img[alt]')}).count(),23);
+      assert.equal(await page.locator('#main .image-wrap[data-file^="assets/jn1-f25/microscopy/"]').count(),15);
+      assert.equal(await page.locator('#main .image-wrap[data-name="JN1-F25SP.JPG"]').count(),1);
+      assert.equal(await page.locator('#main .image-wrap[data-file^="assets/jn1-f25/field/"]').count(),5);
+      assert.equal(await page.locator('#main .image-wrap[data-file^="assets/jn1-f25/specimen/"]').count(),2);
+      assert.match(await page.locator('#main .record-status').innerText(),/Identification unresolved/);
+      assert.match(await page.locator('#main .summary-grid').innerText(),/No definite deposit or reliable print color/);
+      const restored=page.locator('#main .image-wrap[data-file^="assets/jn1-f25/field/"], #main .image-wrap[data-file^="assets/jn1-f25/specimen/"]');
+      for(const card of await restored.all()){
+        const thumbnail=card.locator('img');
+        const preview=await thumbnail.getAttribute('src');
+        assert.match(preview,/-thumb\.webp$/);
+        assert.ok(await thumbnail.evaluate(image=>image.naturalWidth<=384));
+        if(settings.hasTouch) await card.tap();
+        else await card.click();
+        const viewer=page.locator('#viewerImg');
+        const original=await card.getAttribute('data-file');
+        assert.equal(await viewer.getAttribute('src'),original);
+        assert.ok(await viewer.evaluate(async image=>{await image.decode();return image.naturalWidth>384;}));
+        await page.locator('#closeViewer').click();
+      }
     }
     if(id==='JN1-F32'){
       const microscopy=page.locator('#main .image-wrap[data-file^="assets/jn1-f32/microscopy/"]');

@@ -4,7 +4,7 @@ const path=require('node:path');
 const vm=require('node:vm');
 const {webkit,chromium,devices}=require('playwright');
 const root=path.resolve(__dirname,'..');
-const base='https://jockey-hollow-atlas.onrender.com/';
+const base='https://jockey-hollow-atlas.pages.dev/';
 const checks=[
  'assets/originals/JN2-F3SPMV1.png',
  'assets/thumbs/JN2-F3SPMV1.jpg',
