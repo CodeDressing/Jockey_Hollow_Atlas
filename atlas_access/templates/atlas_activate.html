@@ -1,0 +1,9 @@
+{% extends "atlas_base.html" %}
+{% block body %}
+<h1>Activate your Atlas account</h1>
+{% if validlink %}
+  <form method="post">{% csrf_token %}{{ form.as_p }}<button>Set password</button></form>
+{% else %}
+  <p>This invitation link is unavailable. Ask the Atlas owner for a new invitation.</p>
+{% endif %}
+{% endblock %}

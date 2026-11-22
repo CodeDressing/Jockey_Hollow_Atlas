@@ -1,0 +1,43 @@
+{% extends "atlas_base.html" %}
+{% block body %}
+<h1>Jockey Hollow Atlas</h1>
+{% if limited_beta %}
+  <section aria-labelledby="showcase">
+    <h2 id="showcase">Limited Beta</h2>
+    {% for accession, record in records.items %}
+      <article>
+        <h3>{{ record.title }} · {{ accession }}</h3>
+        <p>{{ record.description }}</p>
+        {% for image in record.images %}
+          <a href="{% url 'atlas-beta-image' accession forloop.counter0 %}">
+            <img src="{% url 'atlas-beta-image' accession forloop.counter0 %}" alt="{{ record.title }}" loading="lazy">
+          </a>
+        {% endfor %}
+      </article>
+    {% empty %}
+      <p>No specimens have been approved for the public showcase yet.</p>
+    {% endfor %}
+  </section>
+{% endif %}
+<section aria-labelledby="access">
+  <h2 id="access">Atlas access</h2>
+  {% if user.is_authenticated %}
+    <p>Your account does not currently have Atlas viewing access.</p>
+  {% else %}
+    <p><a href="{% url 'account_login' %}" id="atlas-account-link">Sign in</a> · <a href="{% url 'account_reset_password' %}">Recover your account</a></p>
+    {% if guests_enabled %}
+      <form method="post" action="{% url 'atlas-redeem' %}">
+        {% csrf_token %}
+        <label for="access-code">Guest access code</label>
+        <input required name="code" id="access-code" maxlength="32" autocomplete="off" spellcheck="false" autocapitalize="none">
+        <button>View Atlas</button>
+      </form>
+    {% endif %}
+  {% endif %}
+</section>
+<script>
+  if (/^#[A-Za-z0-9-]+$/.test(location.hash)) {
+    try { sessionStorage.setItem("atlas-return-accession", location.hash); } catch {}
+  }
+</script>
+{% endblock %}
