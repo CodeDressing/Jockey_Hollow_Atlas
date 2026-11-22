@@ -67,7 +67,14 @@ async function check(browser, label, options) {
     await page.locator("#closeViewer").click();
     const search = page.locator(options.isMobile ? "#mSearch" : "#search");
     await search.fill("AN2-F38");
-    assert.match(await page.locator(options.isMobile ? "#mSpec" : "#specList").innerText(), /AN2-F38/);
+    if (options.isMobile) {
+      const results = page.locator("#mSpec");
+      await results.locator('option[value="AN2-F38"]').waitFor({state: "attached"});
+      await results.selectOption("AN2-F38");
+    } else {
+      await page.locator("#specList").getByText("AN2-F38", {exact: false}).first().click();
+    }
+    await page.locator("#main .image-wrap[data-file^='assets/an2-f38/']").first().waitFor();
     await page.getByRole("button", {name: "Sign out"}).click();
     assert.equal((await anonymous.request.get(origin + photo)).status(), 404);
     django("shell", "-c", "from atlas_access.models import AccessPolicy; AccessPolicy.objects.update(mode='private')");
