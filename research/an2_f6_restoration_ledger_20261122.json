@@ -1,0 +1,390 @@
+{
+  "accession": "AN2-F6",
+  "observation_date": "2026-11-22",
+  "attribution": "Direct researcher observations and supplied original microscopy captures",
+  "preparation": "Water mount without immersion oil",
+  "objective_magnification": null,
+  "independent_scale_calibration": null,
+  "original_custody": "Eleven supplied PNG attachments retained unmodified. Published files are derivatives.",
+  "identification_status": "unresolved",
+  "existing_public_media": [
+    "AN2-F6SP.JPG"
+  ],
+  "possible_same_field_pairs": [
+    [
+      1,
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      5,
+      6
+    ]
+  ],
+  "measurement_register": [
+    {
+      "record": 1,
+      "length_um": "16.59",
+      "width_um": "5.42",
+      "reported_wall_span_um": "1.60",
+      "q": "3.06"
+    },
+    {
+      "record": 2,
+      "length_um": "18.75",
+      "width_um": "5.91",
+      "reported_wall_span_um": "0.88",
+      "q": "3.17"
+    },
+    {
+      "record": 3,
+      "length_um": "17.66",
+      "width_um": null,
+      "reported_wall_span_um": null,
+      "q": null
+    },
+    {
+      "record": 4,
+      "length_um": "13.14",
+      "width_um": "5.87",
+      "reported_wall_span_um": "1.02",
+      "q": "2.24"
+    },
+    {
+      "record": 5,
+      "length_um": "16.29",
+      "width_um": "5.70",
+      "reported_wall_span_um": "0.56",
+      "q": "2.86"
+    },
+    {
+      "record": 6,
+      "length_um": "15.03",
+      "width_um": "6.17",
+      "reported_wall_span_um": "0.89",
+      "q": "2.44"
+    },
+    {
+      "record": 7,
+      "length_um": "15.29",
+      "width_um": "6.15",
+      "reported_wall_span_um": "0.76",
+      "q": "2.49"
+    }
+  ],
+  "inclusion_um": {
+    "spore": 1,
+    "reported_span": "1.52",
+    "endpoint_status": "unverified"
+  },
+  "separate_structures_um": {
+    "diameters": [
+      "20.45",
+      "20.13"
+    ],
+    "frame": 7,
+    "identity": "unconfirmed; possible pileus tissue"
+  },
+  "overlay_assessment": {
+    "matching_long_axis_overlays": {
+      "frame_4": "16.59",
+      "frame_6": "17.66",
+      "frame_8": "13.14",
+      "frame_9": "16.29"
+    },
+    "wall_discrepancy": {
+      "record": 1,
+      "reported": "1.60",
+      "visible_local_overlay": "1.62",
+      "decision": "Keep both; anatomical endpoints and correspondence unverified."
+    },
+    "record_3": "The 0.88 µm nearby overlay is not promoted to a missing width or wall value.",
+    "additional_measurements_adopted": 0,
+    "limitations": "Overlapping overlays, optical boundary ambiguity, and lack of a calibration reference preclude independent quantitative confirmation."
+  },
+  "frames": [
+    {
+      "frame": 1,
+      "original_filename": "AN2-F6 SPM (1).png",
+      "original_sha256": "62ef2e83f5af09584e8c2997f176776896da8e3c83a0ae37077b4ede101377ea",
+      "original_bytes": 1429818,
+      "dimensions_px": [
+        1022,
+        768
+      ],
+      "original_color_mode": "RGBA",
+      "embedded_metadata_keys": [],
+      "derivative_codec": "WebP quality 95, full dimensions, no crop or tonal edits",
+      "gallery_path": "assets/an2-f6/microscopy/an2-f6-spm-01.webp",
+      "gallery_sha256": "da98f79d78dc9e58374bffdb18511ec57a145d7674327e2d3df02762520e7e7e",
+      "gallery_bytes": 108792,
+      "caption": "A lower-left, elongated almond-shaped body with a dark outline and mottled interior. Several similar profiles are grouped near the upper right. The 0.91 µm short overlay has no confirmed anatomical endpoints."
+    },
+    {
+      "frame": 2,
+      "original_filename": "AN2-F6 SPM (2).png",
+      "original_sha256": "d44f71af03c2aff4f58995a49ef45c6ba028e78de0173af60fde3c1e019f6a72",
+      "original_bytes": 1347058,
+      "dimensions_px": [
+        1010,
+        739
+      ],
+      "original_color_mode": "RGBA",
+      "embedded_metadata_keys": [],
+      "derivative_codec": "WebP quality 95, full dimensions, no crop or tonal edits",
+      "gallery_path": "assets/an2-f6/microscopy/an2-f6-spm-02.webp",
+      "gallery_sha256": "c4026c4a3f03605b374d3fb5ae3718fa1291d4cdf475f0dd8b833cc710c13b86",
+      "gallery_bytes": 108774,
+      "caption": "Second capture of the field in frame 1 with additional overlays. The 16.34 µm label lies along the lower-left body's long axis. Upper-cluster labels of 5.05 and 5.59 µm have no independently confirmed endpoints or register pairing."
+    },
+    {
+      "frame": 3,
+      "original_filename": "AN2-F6 SPM (3).png",
+      "original_sha256": "76c45a42f7b1e70fe92c6630433b47304711f4e81ebb790149e25af85e0c63fd",
+      "original_bytes": 1324941,
+      "dimensions_px": [
+        1003,
+        754
+      ],
+      "original_color_mode": "RGBA",
+      "embedded_metadata_keys": [],
+      "derivative_codec": "WebP quality 95, full dimensions, no crop or tonal edits",
+      "gallery_path": "assets/an2-f6/microscopy/an2-f6-spm-03.webp",
+      "gallery_sha256": "1e17da6f49218d08eca17f270545781de7ade9c299f50fb85fe268fdaf896b86",
+      "gallery_bytes": 85878,
+      "caption": "Unannotated view of an isolated elongated body near the center-right. Several round internal features are visible. Their composition is unresolved."
+    },
+    {
+      "frame": 4,
+      "original_filename": "AN2-F6 SPM (4).png",
+      "original_sha256": "39afb66c67a42ddcefb84c606d521c6527869e0925b5d247b2378f0a980c6333",
+      "original_bytes": 1346911,
+      "dimensions_px": [
+        1017,
+        762
+      ],
+      "original_color_mode": "RGBA",
+      "embedded_metadata_keys": [],
+      "derivative_codec": "WebP quality 95, full dimensions, no crop or tonal edits",
+      "gallery_path": "assets/an2-f6/microscopy/an2-f6-spm-04.webp",
+      "gallery_sha256": "0d92531f44ca1bb5b083fa84a8eccec5a6c5bb69240fe19d49b86da85222de57",
+      "gallery_bytes": 91714,
+      "caption": "Annotated view of the body in frame 3. The 16.59 µm long-axis overlay matches the reported Spore 1 length. A visible 1.62 µm short-span label differs from the 1.60 µm reported wall value. The short span is unverified."
+    },
+    {
+      "frame": 5,
+      "original_filename": "AN2-F6 SPM (5).png",
+      "original_sha256": "1530abef4afe1961c8e612c7a6ebd9569ce27800825b361367a7d27a25be2400",
+      "original_bytes": 1348507,
+      "dimensions_px": [
+        1020,
+        761
+      ],
+      "original_color_mode": "RGBA",
+      "embedded_metadata_keys": [],
+      "derivative_codec": "WebP quality 95, full dimensions, no crop or tonal edits",
+      "gallery_path": "assets/an2-f6/microscopy/an2-f6-spm-05.webp",
+      "gallery_sha256": "5c16f6d08be61295de6b92058c07aa818ed49f2ba19bb9da13a11808429a110d",
+      "gallery_bytes": 85388,
+      "caption": "Unannotated view of a single elongated, slightly asymmetric body with a dark outline. No sharply delimited round inclusion is resolved in this image."
+    },
+    {
+      "frame": 6,
+      "original_filename": "AN2-F6 SPM (6).png",
+      "original_sha256": "c85457410dcccbdec7dcf62eea3591e11bfb23b69b2e692691a6a760470a09eb",
+      "original_bytes": 1337549,
+      "dimensions_px": [
+        1018,
+        761
+      ],
+      "original_color_mode": "RGBA",
+      "embedded_metadata_keys": [],
+      "derivative_codec": "WebP quality 95, full dimensions, no crop or tonal edits",
+      "gallery_path": "assets/an2-f6/microscopy/an2-f6-spm-06.webp",
+      "gallery_sha256": "c070203069c1b2f0c2f4ead0d5346ddf5a1487d32a68dd6432377ca8571ba4cb",
+      "gallery_bytes": 88062,
+      "caption": "Annotated view of the body in frame 5. The overlay reads 17.66 µm along the long axis, matching the reported Spore 3 length. A separate 0.88 µm short-span label does not establish a width or wall measurement for that record."
+    },
+    {
+      "frame": 7,
+      "original_filename": "AN2-F6 SPM (7).png",
+      "original_sha256": "b17b5422e64eee309f3cd68d5851df4a633fd0c835e508c62b72795ff129a8da",
+      "original_bytes": 1345941,
+      "dimensions_px": [
+        1014,
+        755
+      ],
+      "original_color_mode": "RGBA",
+      "embedded_metadata_keys": [],
+      "derivative_codec": "WebP quality 95, full dimensions, no crop or tonal edits",
+      "gallery_path": "assets/an2-f6/microscopy/an2-f6-spm-07.webp",
+      "gallery_sha256": "4b65fc5336fadd2184848ad419c41f881cf6078229f6787a3d5d4c33d381a0e9",
+      "gallery_bytes": 95544,
+      "caption": "Two rounded, granular structures with overlays reading 20.45 and 20.13 µm across the visible profiles. Possible pileus tissue was proposed by the researcher. The anatomical identity of both structures remains unresolved."
+    },
+    {
+      "frame": 8,
+      "original_filename": "AN2-F6 SPM (8).png",
+      "original_sha256": "8a0c4a659cae73d50eb79a317d44e039d97bb340d606c665f2427157d068405e",
+      "original_bytes": 1360721,
+      "dimensions_px": [
+        1017,
+        758
+      ],
+      "original_color_mode": "RGBA",
+      "embedded_metadata_keys": [],
+      "derivative_codec": "WebP quality 95, full dimensions, no crop or tonal edits",
+      "gallery_path": "assets/an2-f6/microscopy/an2-f6-spm-08.webp",
+      "gallery_sha256": "da7630d3f6edc797723bdd9eb5d24730b0343ac4f0f34505e045f4b0a90082cc",
+      "gallery_bytes": 95542,
+      "caption": "One elongated body beside granular material. Visible 13.14 and 1.02 µm overlay values agree with the reported Spore 4 length and short-span reading. Other labels are partly obscured and wall boundaries remain unverified."
+    },
+    {
+      "frame": 9,
+      "original_filename": "AN2-F6 SPM (9).png",
+      "original_sha256": "937f9ea0ec3eb8d2fc3220e39a7bc26bd50360f3a922060b3b7626e9257e29d2",
+      "original_bytes": 1624276,
+      "dimensions_px": [
+        1019,
+        758
+      ],
+      "original_color_mode": "RGBA",
+      "embedded_metadata_keys": [],
+      "derivative_codec": "WebP quality 95, full dimensions, no crop or tonal edits",
+      "gallery_path": "assets/an2-f6/microscopy/an2-f6-spm-09.webp",
+      "gallery_sha256": "acea5f377c0ded9004845b3ec37c1b9f247bef45e9ed49da4d6949e17ff98c46",
+      "gallery_bytes": 190614,
+      "caption": "Clustered elongated bodies in granular material with overlapping measurement labels. The visible 16.29 and 0.56 µm labels agree with reported Spore 5 values. Overlapping labels and optical boundaries prevent independent verification of the paired register."
+    },
+    {
+      "frame": 10,
+      "original_filename": "AN2-F6 SPM (10).png",
+      "original_sha256": "e2a1f1f0cd802c0856f629590f461e5653222f594528e9580f209265b5829c27",
+      "original_bytes": 1475366,
+      "dimensions_px": [
+        1017,
+        761
+      ],
+      "original_color_mode": "RGBA",
+      "embedded_metadata_keys": [],
+      "derivative_codec": "WebP quality 95, full dimensions, no crop or tonal edits",
+      "gallery_path": "assets/an2-f6/microscopy/an2-f6-spm-10.webp",
+      "gallery_sha256": "633ad73afa65b7a6f35466e18a894b3b03b0dc381223eaa7c981e5c7c25c1de1",
+      "gallery_bytes": 134748,
+      "caption": "Upper-left aggregate with several elongated profiles and a more isolated annotated profile below it. A 0.63 µm local span is readable. Its anatomical meaning and register correspondence are unresolved."
+    },
+    {
+      "frame": 11,
+      "original_filename": "AN2-F6 SPM (11).png",
+      "original_sha256": "2f2a871aa68a373d864dacf6236620160aa174ff68241e1e1998b1ccd151f623",
+      "original_bytes": 1372091,
+      "dimensions_px": [
+        1017,
+        760
+      ],
+      "original_color_mode": "RGBA",
+      "embedded_metadata_keys": [],
+      "derivative_codec": "WebP quality 95, full dimensions, no crop or tonal edits",
+      "gallery_path": "assets/an2-f6/microscopy/an2-f6-spm-11.webp",
+      "gallery_sha256": "260f7e44c1aad6c9c18f5f7943e46d332606c1b1d4364a1f51f27ac377cac971",
+      "gallery_bytes": 91494,
+      "caption": "Unannotated view of an isolated elongated body with a clear outline and localized internal contrast. Other blurred rings in the field are outside the visible body and are not counted as internal inclusions."
+    }
+  ],
+  "historical_recovery": {
+    "search_aliases": [
+      "AN2-F6",
+      "AN2 F6",
+      "AN2F6",
+      "AN2_F6"
+    ],
+    "archive_index": "Rutgers AN2 2026 and the verified laboratory subset, as documented in the existing AN2 historical evidence audit.",
+    "retrieved_and_viewed": [
+      {
+        "indexed_filename": "AN2-F6V1.HEIC",
+        "bytes": 1280067,
+        "sha256": "06e5624f899eb229013962c48d71234a45c032e06c344a398b3a6f4c292256a2",
+        "visible_evidence": "Two gilled fruit bodies in leaf litter, photographed from above at an oblique angle. Larger cap is brown with a depressed-looking center and darker edge; smaller cap is paler.",
+        "access": "archive-only"
+      },
+      {
+        "indexed_filename": "AN2-F6V2.HEIC",
+        "bytes": 1710481,
+        "sha256": "e0c185435f02db2db52083020c99f21652640db876bcd6e916ea4010729f1f38",
+        "visible_evidence": "Low-angle view of two fruit bodies among leaves and twigs. The larger brown cap has a downcurved edge and a slender yellow-brown stipe.",
+        "access": "archive-only"
+      },
+      {
+        "indexed_filename": "AN2-F6V3.HEIC",
+        "bytes": 1764306,
+        "sha256": "83d94fdac08a143284e44e7dfb884d0809e3af563f0016acc9fa814ab46d5e76",
+        "visible_evidence": "A closely comparable low-angle view showing both fruit bodies and their stipes among leaves and twigs.",
+        "access": "archive-only"
+      },
+      {
+        "indexed_filename": "AN2-F6V4.HEIC",
+        "bytes": 1936620,
+        "sha256": "56b709751d9f2a817984d40c1b4ed85f3c9655d3391bc799c064fb0388fde638",
+        "visible_evidence": "Both fruit bodies above foil labeled AN2 F6. Woodland litter is visible; exact attachment substrate is unverified.",
+        "access": "archive-only"
+      },
+      {
+        "indexed_filename": "AN2-F6V5.HEIC",
+        "bytes": 2044339,
+        "sha256": "1675e4315bcf719acd80015f316a4bf8602c3eac63bc898c1719303745cd2e87",
+        "visible_evidence": "Accession-marked foil with the larger collected fruit body. The bent yellow-brown stipe and dark gilled underside are visible.",
+        "access": "archive-only"
+      },
+      {
+        "indexed_filename": "AN2-F6V6.HEIC",
+        "bytes": 1716485,
+        "sha256": "4350faf6ca6a362f6e8f0ce98bc5b3b0b40810f48c5b5285d162138b01c74a5c",
+        "visible_evidence": "Accession-marked foil with two handled fruit bodies; the undersides show gills. Exact gill attachment is unresolved.",
+        "access": "archive-only"
+      },
+      {
+        "indexed_filename": "AN2-F6.JPG",
+        "bytes": 597725,
+        "sha256": "105c365143d3e871817e50a6eed1d062e24ba11d821ce04e0e5ed3814bd42b45",
+        "visible_evidence": "Two fruit bodies with yellow-brown stipes beside accession-marked foil. Soil and other specimen material are visible near the frame edges.",
+        "access": "archive-only"
+      },
+      {
+        "indexed_filename": "AN2-F6V2.JPG",
+        "bytes": 618617,
+        "sha256": "7a546e5ca8889dc968a0d591e3fd36860b61e427b9a324ba29c97fd2780f3dff",
+        "visible_evidence": "Second labeled laboratory view of two collected fruit bodies on paper. Yellow-brown stipes and adherent debris are visible. Other material appears near frame edges.",
+        "access": "archive-only"
+      }
+    ],
+    "historical_text": [
+      {
+        "source": "Existing Atlas historical master transcription",
+        "result": "Earlier inconclusive print attempt records an unreliable faint pale tan-gray trace; no historical spore dimensions or determination are supported by that entry."
+      },
+      {
+        "source": "403-record Master Revision 2 BN5 macro update, searchable text export",
+        "result": "The AN2 listing skips from AN2-F5 to AN2-F7; no AN2-F6 entry was located in this revision."
+      },
+      {
+        "source": "422-record active master and 396-record AN2 revision",
+        "result": "Direct active-master retrieval timed out. The attempted 396-record text response did not provide a usable AN2-F6 passage. The retained historical master transcription is the basis for the earlier print description."
+      }
+    ],
+    "publication": "The earlier print-attempt image remains in the gallery. Recovered historical photographs retain archive-only status. No private archive URLs are added to the public record.",
+    "provenance_note": "The previously indexed laboratory V2 locator returned 404. A filename search found a current same-name JPEG whose AN2 F6 foil label and specimen arrangement were verified visually.",
+    "existing_print_source_check": {
+      "filename": "AN2-F6SP.JPG",
+      "dimensions_px": [
+        2048,
+        1536
+      ],
+      "archive_sha256": "779050ac789be3e684779fce09ba281eb7dc484c4c27698081dacfb5a0f0922c",
+      "existing_atlas_sha256": "f21ceca168681c297d51f403a04ef3fcf383e797d13e2ac20c5e50ebf0173a79",
+      "decision": "Matching scene and accession label in two encoded versions. Preserve the existing published copy without adding a redundant gallery entry."
+    }
+  }
+}
