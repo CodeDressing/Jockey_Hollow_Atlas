@@ -1,0 +1,164 @@
+{
+  "accession": "JN1-F25",
+  "source_document": "Rutgers Mycology Visual Specimen Atlas — ACTIVE MASTER — BN5 Microscopy & Field Integration — 422 Records",
+  "source_locator": "JN1-F25 section; SOURCE IMAGES: JN1-F25SP.JPG",
+  "historical_recovered": [
+    "The historical print attempt shows a specimen fragment and debris on light paper, with no definite spore deposit or reliable deposit color.",
+    "Two accession-labeled macro views document the stipe profile and gilled underside."
+  ],
+  "user_attachments": 5,
+  "historical_lab_photographs_recovered": 2,
+  "inherited_public_media": {
+    "spore_print_attempt": {
+      "path": "assets/originals/JN1-F25SP.JPG",
+      "sha256": "bd2cf2691a78f36a31e394ce3443f13b33517f1868c7e5c5b02dcb5e01de1aea",
+      "bytes": 275659
+    },
+    "microscopy_count": 15,
+    "microscopy_manifest": "research/jn1_f25_microscopy_manifest_20261121.json"
+  },
+  "public_gallery_count_expected": 23,
+  "missing_information": [
+    "Original Drive binary for JN1-F25SP.JPG",
+    "Calibrated dimensions",
+    "Exact gill attachment",
+    "Collection date and site",
+    "Verified host or point of attachment",
+    "Microscope objective, preparation and calibration",
+    "Confirmed spores, spore-print color and species identification"
+  ],
+  "deployment_target": "https://jockey-hollow-atlas.pages.dev/",
+  "source_commit": "f77e594e43d91c83d8aecc1d84ea0a43b62a235e",
+  "baseline_commit": "53809cc11dd38154d58e02df10465e9b354d39f2",
+  "release_tracking": "Cloudflare Pages production check on the main merge commit and anonymous browser acceptance recorded in the release pull request.",
+  "public_media": [
+    {
+      "source_filename": "download(4).jpg",
+      "caption": "In-situ low-angle view of a pale stipe, gilled underside and irregular cap edge above leaf litter.",
+      "public_asset": {
+        "path": "assets/jn1-f25/field/jn1-f25-in-situ-stipe-profile.webp",
+        "bytes": 208348,
+        "width": 708,
+        "height": 944,
+        "sha256": "26ecb9c50c315a3fd28101cb704e2da23746db44ea13ddea3b3570543a4c1c09"
+      },
+      "thumbnail": {
+        "path": "assets/jn1-f25/field/jn1-f25-in-situ-stipe-profile-thumb.webp",
+        "bytes": 32736,
+        "width": 288,
+        "height": 384,
+        "sha256": "d8851e800fda6756054dc40c895054cb9d50432445c4da5c44563b510b3ea8a8"
+      }
+    },
+    {
+      "source_filename": "download(3).jpg",
+      "caption": "In-situ upper view of the pale cap among leaf litter, showing buff to yellow-brown marks and fine surface cracking near the margin.",
+      "public_asset": {
+        "path": "assets/jn1-f25/field/jn1-f25-in-situ-cap-leaf-litter.webp",
+        "bytes": 252490,
+        "width": 708,
+        "height": 944,
+        "sha256": "063377b04e6354a9989220999f56322760dfe9cfcfa7463a2123b9f4831cbf78"
+      },
+      "thumbnail": {
+        "path": "assets/jn1-f25/field/jn1-f25-in-situ-cap-leaf-litter-thumb.webp",
+        "bytes": 37242,
+        "width": 288,
+        "height": 384,
+        "sha256": "d761403a5da469d7143943421a56f05af3efbf38968c844f653b37b546c6abbe"
+      }
+    },
+    {
+      "source_filename": "download.jpg",
+      "caption": "Hand-held upper view showing a cream to buff cap with an irregular damaged edge beside foil marked JN1 F25.",
+      "public_asset": {
+        "path": "assets/jn1-f25/field/jn1-f25-handled-cap-accession-label.webp",
+        "bytes": 202322,
+        "width": 708,
+        "height": 944,
+        "sha256": "e7bc4c228d72179478e28e022c39c87f1ac0f79ecbc801d5047a4805a556fef4"
+      },
+      "thumbnail": {
+        "path": "assets/jn1-f25/field/jn1-f25-handled-cap-accession-label-thumb.webp",
+        "bytes": 27590,
+        "width": 288,
+        "height": 384,
+        "sha256": "e6dd1cfda2e915a4cee8e2f02bbbf8cc79f52d87eb5f69d87ad554b54d8d16f3"
+      }
+    },
+    {
+      "source_filename": "download(1).jpg",
+      "caption": "Side view on accession-labeled foil showing the pale stipe, a rounded basal end with adhering debris and part of the cap.",
+      "public_asset": {
+        "path": "assets/jn1-f25/field/jn1-f25-handled-stipe-and-base.webp",
+        "bytes": 184808,
+        "width": 958,
+        "height": 719,
+        "sha256": "1a4575734d878c19d6b9ba3b33d4858bc9883e3d2a4031ce20fc7f873cc2d057"
+      },
+      "thumbnail": {
+        "path": "assets/jn1-f25/field/jn1-f25-handled-stipe-and-base-thumb.webp",
+        "bytes": 19236,
+        "width": 384,
+        "height": 288,
+        "sha256": "3299c7aca865ffc7683c3be7634120cb87a84186a1d765bb117ed5d2dba2df2f"
+      }
+    },
+    {
+      "source_filename": "download(2).jpg",
+      "caption": "Close view of crowded cream gills, several shorter gills and the junction with the pale upper stipe.",
+      "public_asset": {
+        "path": "assets/jn1-f25/field/jn1-f25-handled-gills-and-upper-stipe.webp",
+        "bytes": 91198,
+        "width": 708,
+        "height": 944,
+        "sha256": "028ee480935fce8a9a26edec852cf357de207ae85721804b1dad55906470e438"
+      },
+      "thumbnail": {
+        "path": "assets/jn1-f25/field/jn1-f25-handled-gills-and-upper-stipe-thumb.webp",
+        "bytes": 16056,
+        "width": 288,
+        "height": 384,
+        "sha256": "0da4028951fde861c4cd30d721c953a8bd6110e02714b0199c29c6f777766751"
+      }
+    },
+    {
+      "source_filename": "JN1-F25.JPG",
+      "caption": "Cropped historical lab side view showing the pale stipe, damaged cap edge and accession-marked foil.",
+      "public_asset": {
+        "path": "assets/jn1-f25/specimen/jn1-f25-lab-stipe-profile.webp",
+        "bytes": 144940,
+        "width": 1225,
+        "height": 863,
+        "sha256": "0705e54a5617f12c06b50f34a8da44ad435fd9d20da6a819873f05ad88b40f33"
+      },
+      "thumbnail": {
+        "path": "assets/jn1-f25/specimen/jn1-f25-lab-stipe-profile-thumb.webp",
+        "bytes": 13570,
+        "width": 384,
+        "height": 271,
+        "sha256": "d6d9a3e8d0a27226d9df8eb6b017efe16a79f6fed109d6822586755e548dc2c6"
+      }
+    },
+    {
+      "source_filename": "JN1-F25V2.JPG",
+      "caption": "Cropped historical lab underside view showing crowded pale gills and a pale stipe beside accession-marked foil.",
+      "public_asset": {
+        "path": "assets/jn1-f25/specimen/jn1-f25-lab-underside-and-stipe.webp",
+        "bytes": 197152,
+        "width": 1365,
+        "height": 1089,
+        "sha256": "513f6a4da8567556c69b4bded785381f38c3afd1f414463218456b9cf4e608d9"
+      },
+      "thumbnail": {
+        "path": "assets/jn1-f25/specimen/jn1-f25-lab-underside-and-stipe-thumb.webp",
+        "bytes": 14326,
+        "width": 384,
+        "height": 306,
+        "sha256": "b416cf963ba6811575b07e3490e850b26f37fd551a80aa25a20e6176fb864082"
+      }
+    }
+  ],
+  "source_review": "Twenty-two identifiable historical and comparative sources reviewed. Two matching texts contain the same print-attempt account. Exact accession image searches returned two laboratory views.",
+  "publication_scope": "Five approved field views and two approved laboratory crops. Archival originals are retained by their custodian."
+}
