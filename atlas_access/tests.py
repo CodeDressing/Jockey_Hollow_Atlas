@@ -8,13 +8,14 @@ from allauth.mfa.models import Authenticator
 from allauth.mfa.recovery_codes.internal.auth import RecoveryCodes
 from allauth.mfa.totp.internal.auth import format_hotp_value, hotp_value
 from django.contrib.auth import get_user_model
+from django.conf import settings
 from django.core import mail
-from django.test import Client, TestCase
+from django.test import Client, TestCase, override_settings
 from django.urls import reverse
 from django.utils import timezone
 
 from .accounts import create_invitation
-from .models import AccessEvent, GuestCode, GuestSession, Membership
+from .models import AccessEvent, AccessPolicy, GuestCode, GuestSession, Membership
 from .viewer import inventory
 from .views import digest
 
@@ -22,6 +23,7 @@ from .views import digest
 class AccessTests(TestCase):
     @classmethod
     def setUpTestData(cls):
+        AccessPolicy.objects.filter(pk=1).update(lockdown_enabled=True)
         cls.password = secrets.token_urlsafe(24)
         cls.owner, cls.viewer, cls.pending = [
             get_user_model().objects.create_user(email=email, username=email, password=cls.password)
@@ -199,3 +201,75 @@ class AccessTests(TestCase):
         owner = self.sign_in_owner()
         owner.post("/owner/", {"action": "mode", "mode": "limited_beta"})
         self.assertContains(anon.get("/"), "No specimens have been approved")
+
+
+    def test_lockdown_switch_preserves_the_public_landing_and_revokes_entry(self):
+        owner = self.sign_in_owner()
+        visitor = Client(enforce_csrf_checks=True)
+        direct = Client()
+        passphrase = secrets.token_hex(8)
+        with override_settings(ATLAS_ENTRY_PASSPHRASE=passphrase):
+            owner.post("/owner/", {"action": "disable-lockdown"})
+            response = visitor.get("/")
+            try:
+                self.assertEqual(b"".join(response.streaming_content), (settings.REPO_ROOT / "index.html").read_bytes())
+            finally:
+                response.close()
+            self.full(visitor, True)
+            self.assertContains(owner.get("/owner/"), "Turn lockdown on")
+
+            owner.post("/owner/", {"action": "enable-lockdown"})
+            locked = visitor.get("/")
+            self.assertContains(locked, 'type="password"')
+            self.assertNotContains(locked, passphrase)
+            self.assertNotContains(locked, 'src="data.js"')
+            self.full(visitor, False)
+            self.assertEqual(visitor.get("/styles.css").status_code, 200)
+            self.assertEqual(visitor.post("/unlock/", {"passphrase": passphrase}).status_code, 403)
+            token = visitor.cookies["csrftoken"].value
+            payload = {"csrfmiddlewaretoken": token}
+            for wrong in ("", "X" + passphrase, passphrase + " "):
+                with self.subTest(wrong=bool(wrong)):
+                    denied = visitor.post("/unlock/", {**payload, "passphrase": wrong})
+                    self.assertContains(denied, "Incorrect passphrase", status_code=400)
+                    self.assertNotContains(denied, passphrase, status_code=400)
+                    self.full(visitor, False)
+            accepted = visitor.post("/unlock/", {**payload, "passphrase": passphrase})
+            self.assertRedirects(accepted, "/", fetch_redirect_response=False)
+            self.assertContains(visitor.get("/"), "DOMContentLoaded")
+            self.full(visitor, True)
+            self.full(direct, False)
+            self.assertEqual(visitor.get("/owner/").status_code, 302)
+
+            with override_settings(ATLAS_ENTRY_PASSPHRASE=secrets.token_hex(8)):
+                self.full(visitor, False)
+            session = visitor.session
+            proof = session["atlas_entry"]
+            proof["expires"] = timezone.now().timestamp() - 1
+            session["atlas_entry"] = proof
+            session.save()
+            self.full(visitor, False)
+
+            visitor.post("/unlock/", {**payload, "passphrase": passphrase})
+            self.full(visitor, True)
+            owner.post("/owner/", {"action": "disable-lockdown"})
+            self.full(direct, True)
+            owner.post("/owner/", {"action": "enable-lockdown"})
+            self.full(visitor, False)
+            self.assertContains(owner.get("/owner/"), "Turn lockdown off")
+            self.assertEqual(AccessEvent.objects.filter(actor=self.owner, action="enable-lockdown").count(), 2)
+
+    def test_lockdown_requires_server_configuration_and_limits_retries(self):
+        owner = self.sign_in_owner()
+        visitor = Client()
+        with override_settings(ATLAS_ENTRY_PASSPHRASE=""):
+            owner.post("/owner/", {"action": "disable-lockdown"})
+            owner.post("/owner/", {"action": "enable-lockdown"})
+            self.assertFalse(AccessPolicy.objects.get(pk=1).lockdown_enabled)
+        secret = secrets.token_urlsafe(18)
+        with override_settings(ATLAS_ENTRY_PASSPHRASE=secret):
+            owner.post("/owner/", {"action": "enable-lockdown"})
+            for _ in range(8):
+                self.assertEqual(visitor.post("/unlock/", {"passphrase": "incorrect"}).status_code, 400)
+            self.assertEqual(visitor.post("/unlock/", {"passphrase": secret}).status_code, 429)
+            self.full(visitor, False)

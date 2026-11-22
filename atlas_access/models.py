@@ -6,6 +6,8 @@ class AccessPolicy(models.Model):
     private = "private"
     beta = "limited_beta"
     mode = models.CharField(max_length=16, choices=[(private, "Private"), (beta, "Limited Beta")], default=private)
+    lockdown_enabled = models.BooleanField(default=False)
+    lockdown_generation = models.PositiveBigIntegerField(default=0)
     guests_enabled = models.BooleanField(default=False)
     guest_generation = models.PositiveBigIntegerField(default=0)
 

@@ -1,6 +1,6 @@
 const assert = require("node:assert/strict");
 const {spawn, execFileSync} = require("node:child_process");
-const {mkdtempSync, rmSync} = require("node:fs");
+const {mkdtempSync, readFileSync, rmSync} = require("node:fs");
 const {tmpdir} = require("node:os");
 const path = require("node:path");
 const {randomBytes} = require("node:crypto");
@@ -10,8 +10,10 @@ const origin = "http://127.0.0.1:8000";
 const temp = mkdtempSync(path.join(tmpdir(), "atlas-access-"));
 const python = process.env.ATLAS_PYTHON || "python";
 const password = randomBytes(24).toString("base64url");
+const passphrase = randomBytes(12).toString("hex");
 const env = {...process.env, ATLAS_LOCAL_TEST: "1", DJANGO_SETTINGS_MODULE: "atlas_access.settings",
-  ATLAS_TEST_DATABASE: path.join(temp, "test.sqlite3"), ATLAS_TEST_VIEWER_PASSWORD: password};
+  ATLAS_TEST_DATABASE: path.join(temp, "test.sqlite3"), ATLAS_TEST_VIEWER_PASSWORD: password,
+  ATLAS_ENTRY_PASSPHRASE: passphrase};
 const photo = "/assets/an2-f36/field/AN2-F36%20field%20(1).jpg";
 
 function django(...args) {
@@ -32,7 +34,19 @@ async function check(browser, label, options) {
   const anonymous = await browser.newContext(options);
   try {
     const page = await anonymous.newPage();
-    await page.goto(origin + "/#AN2-F36");
+    const setLockdown = enabled => django("shell", "-c",
+      "from django.db.models import F; from atlas_access.models import AccessPolicy; " +
+      `AccessPolicy.objects.update(lockdown_enabled=${enabled ? "True" : "False"}, lockdown_generation=F("lockdown_generation")+1)`);
+    setLockdown(false);
+    const publicLanding = await page.goto(origin + "/#AN2-F36");
+    assert.deepEqual(await publicLanding.body(), readFileSync("index.html"));
+    await page.locator("#enterAtlas").waitFor();
+    assert.equal(await page.locator('input[type="password"]').count(), 0);
+    assert.deepEqual(await page.locator(".entry-actions button").allTextContents(), ["Enter Atlas", "Play Hyphae Run"]);
+    assert.equal((await anonymous.request.get(origin + photo)).status(), 200);
+
+    setLockdown(true);
+    await page.reload();
     await page.getByRole("link", {name: "Sign in"}).waitFor();
     assert.equal(await page.locator("script[src='data.js']").count(), 0);
     assert.equal((await anonymous.request.get(origin + photo)).status(), 404);
@@ -78,9 +92,49 @@ async function check(browser, label, options) {
     await page.getByRole("button", {name: "Sign out"}).click();
     assert.equal((await anonymous.request.get(origin + photo)).status(), 404);
     django("shell", "-c", "from atlas_access.models import AccessPolicy; AccessPolicy.objects.update(mode='private')");
+    await page.goto(origin + "/#AN2-F36");
     await page.reload();
     assert.equal(await page.getByRole("heading", {name: "Limited Beta"}).count(), 0);
-    console.log(label + " access, bookmark, search, gallery, sign-out and mode switching passed");
+    const input = page.getByLabel("Atlas passphrase");
+    const enter = page.getByRole("button", {name: "Enter Atlas", exact: true});
+    assert.equal(await input.getAttribute("type"), "password");
+    assert.ok(await enter.isDisabled());
+    const dimmed = await enter.evaluate(node => Number(getComputedStyle(node).opacity));
+    const box = await input.boundingBox();
+    const button = await enter.boundingBox();
+    if (options.viewport?.width === 320) {
+      assert.ok(button.y > box.y + box.height, "narrow phone should stack the controls");
+    } else {
+      assert.ok(box.x + box.width <= button.x && Math.abs(box.y - button.y) < 2,
+        "passphrase box should be immediately left of Enter Atlas");
+    }
+    await input.fill("incorrect");
+    assert.ok(await enter.isEnabled());
+    assert.ok(await enter.evaluate(node => Number(getComputedStyle(node).opacity)) > dimmed);
+    await input.fill("");
+    assert.ok(await enter.isDisabled());
+    await input.fill("incorrect");
+    await input.press("Enter");
+    await page.getByRole("alert").filter({hasText: "Incorrect passphrase"}).waitFor();
+    assert.equal(await page.locator("script[src='data.js']").count(), 0);
+    assert.equal((await anonymous.request.get(origin + photo)).status(), 404);
+    await input.fill(passphrase);
+    await page.locator("#enterAtlas:enabled").waitFor();
+    const [unlockResponse] = await Promise.all([
+      page.waitForResponse(response => new URL(response.url()).pathname === "/unlock/" && response.request().method() === "POST"),
+      input.press("Enter"),
+    ]);
+    assert.equal(unlockResponse.status(), 302, "Valid passphrase should redirect to the Atlas");
+    await page.locator("#entryGate").waitFor({state: "hidden", timeout: 7000});
+    await page.locator("#main .image-wrap[data-file^='assets/an2-f36/']").first().waitFor();
+    assert.equal((await anonymous.request.get(origin + photo)).status(), 200);
+
+    setLockdown(false);
+    const restored = await page.goto(origin + "/");
+    assert.deepEqual(await restored.body(), readFileSync("index.html"));
+    assert.equal(await page.locator('input[type="password"]').count(), 0);
+    assert.deepEqual(await page.locator(".entry-actions button").allTextContents(), ["Enter Atlas", "Play Hyphae Run"]);
+    console.log(label + " account access, passphrase states, direct links, gallery and public layout passed");
   } finally {
     await anonymous.close();
   }
@@ -100,7 +154,11 @@ async function run() {
     ].join("; "));
     server = spawn(python, ["-m", "django", "runserver", "127.0.0.1:8000", "--noreload"], {env, stdio: "ignore"});
     await waitForServer();
-    const browsers = [[chromium, "Desktop Chromium", {}], [chromium, "Android Chromium", devices["Pixel 7"]]];
+    const browsers = [
+      [chromium, "Desktop Chromium", {}],
+      [chromium, "Android Chromium", devices["Pixel 7"]],
+      [chromium, "320px Chromium", {...devices["Pixel 7"], viewport: {width: 320, height: 740}}],
+    ];
     if (!process.env.ATLAS_SKIP_WEBKIT) browsers.push([webkit, "iPhone WebKit", devices["iPhone 13"]]);
     for (const [engine, name, options] of browsers) {
       const browser = await engine.launch();

@@ -20,6 +20,7 @@ urlpatterns = [
     path("", views.atlas, name="atlas"),
     path("index.html", views.atlas),
     path("healthz", health),
+    path("unlock/", views.unlock, name="atlas-unlock"),
     path("guest/redeem/", views.redeem, name="atlas-redeem"),
     path("sign-out/", views.sign_out, name="atlas-sign-out"),
     path("owner/", views.owner, name="atlas-owner"),

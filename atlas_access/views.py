@@ -5,6 +5,7 @@ import secrets
 from allauth.account.authentication import get_authentication_records
 from allauth.account.models import EmailAddress
 from allauth.mfa.models import Authenticator
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import get_user_model, logout
 from django.middleware.csrf import get_token
@@ -19,7 +20,7 @@ from django.http import Http404, HttpResponse, HttpResponseForbidden
 from django.shortcuts import redirect, render
 from django.urls import reverse, reverse_lazy
 from django.utils import timezone
-from django.utils.crypto import salted_hmac
+from django.utils.crypto import constant_time_compare, salted_hmac
 from django.utils.http import urlencode
 from django.views.decorators.http import require_http_methods, require_POST, require_safe
 
@@ -28,6 +29,8 @@ from .models import AccessEvent, AccessPolicy, GuestCode, GuestSession, Membersh
 from .viewer import serve, showcase
 
 CODE_PATTERN = re.compile(r"[A-Za-z0-9_-]{32}")
+ENTRY_STYLES = frozenset({"styles.css", "codedressing.css"})
+ENTRY_LIFETIME_SECONDS = 7200
 
 
 def no_cache(get_response):
@@ -59,8 +62,17 @@ def can_view(request, policy):
     membership = member_for(request)
     if membership:
         return membership.role == "viewer" or owner_mfa(request)
-    session_id = request.session.get("atlas_guest")
     now = timezone.now()
+    entry = request.session.get("atlas_entry")
+    secret = settings.ATLAS_ENTRY_PASSPHRASE
+    if entry and secret:
+        if (
+            entry["generation"] == policy.lockdown_generation
+            and entry["expires"] > now.timestamp()
+            and constant_time_compare(entry["key"], digest("atlas-entry-session", secret))
+        ):
+            return True
+    session_id = request.session.get("atlas_guest")
     return bool(
         not request.user.is_authenticated and policy.guests_enabled and session_id
         and GuestSession.objects.filter(
@@ -73,6 +85,8 @@ def can_view(request, policy):
 @require_safe
 def atlas(request):
     policy = AccessPolicy.objects.get(pk=1)
+    if not policy.lockdown_enabled:
+        return serve("index.html")
     member = member_for(request)
     if member and member.role == "owner" and not owner_mfa(request):
         return redirect("atlas-owner")
@@ -98,19 +112,29 @@ def atlas(request):
             html = b"".join(source.streaming_content).decode("utf-8")
         finally:
             source.close()
+        if request.session.pop("atlas_enter_once", False):
+            restore += """<script>document.addEventListener("DOMContentLoaded", () => {
+              document.querySelector("#enterAtlas").click();
+            });</script>"""
         return HttpResponse(html.replace("</head>", restore + "</head>", 1).replace(
             '<div class="topbar">', '<div class="topbar">' + str(links), 1,
         ))
+    return lockdown_landing(request, policy)
+
+
+def lockdown_landing(request, policy, error="", status=200):
     return render(request, "atlas_landing.html", {
         "guests_enabled": policy.guests_enabled,
         "limited_beta": policy.mode == AccessPolicy.beta,
         "records": showcase() if policy.mode == AccessPolicy.beta else {},
-    })
+        "entry_error": error,
+    }, status=status)
 
 
 @require_safe
 def file(request, path):
-    if not can_view(request, AccessPolicy.objects.get(pk=1)):
+    policy = AccessPolicy.objects.get(pk=1)
+    if policy.lockdown_enabled and path not in ENTRY_STYLES and not can_view(request, policy):
         raise Http404
     return serve(path)
 
@@ -126,16 +150,44 @@ def beta_image(request, accession, index):
     return serve(path)
 
 
+def within_attempt_limit(request, now, scope):
+    window = now.replace(minute=(now.minute // 10) * 10, second=0, microsecond=0)
+    source = request.META.get("REMOTE_ADDR", "")
+    attempt, _ = RedemptionAttempt.objects.get_or_create(source=digest(scope, source), window=window)
+    return RedemptionAttempt.objects.filter(pk=attempt.pk, attempts__lt=8).update(attempts=F("attempts") + 1)
+
+
+@require_POST
+def unlock(request):
+    policy = AccessPolicy.objects.get(pk=1)
+    if not policy.lockdown_enabled:
+        return redirect("atlas")
+    now = timezone.now()
+    if not within_attempt_limit(request, now, "atlas-entry-rate"):
+        response = lockdown_landing(request, policy, "Too many attempts. Try again in a few minutes.", status=429)
+        response["Retry-After"] = "600"
+        return response
+    secret = settings.ATLAS_ENTRY_PASSPHRASE
+    supplied = request.POST.get("passphrase", "")
+    if not secret or len(supplied) > 256 or not constant_time_compare(supplied, secret):
+        return lockdown_landing(request, policy, "Incorrect passphrase. Try again.", status=400)
+    # A policy change after this read makes the issued proof stale on the next request.
+    request.session.cycle_key()
+    request.session["atlas_entry"] = {
+        "generation": policy.lockdown_generation,
+        "key": digest("atlas-entry-session", secret),
+        "expires": now.timestamp() + ENTRY_LIFETIME_SECONDS,
+    }
+    request.session["atlas_enter_once"] = True
+    return redirect("atlas")
+
+
 @require_POST
 def redeem(request):
     if request.user.is_authenticated:
         return HttpResponseForbidden()
     now = timezone.now()
-    window = now.replace(minute=(now.minute // 10) * 10, second=0, microsecond=0)
-    source = request.META.get("REMOTE_ADDR", "")
-    attempt, _ = RedemptionAttempt.objects.get_or_create(source=digest("atlas-rate", source), window=window)
-    allowed = RedemptionAttempt.objects.filter(pk=attempt.pk, attempts__lt=8).update(attempts=F("attempts") + 1)
-    if not allowed:
+    if not within_attempt_limit(request, now, "atlas-rate"):
         response = HttpResponse("Too many attempts. Try again in a few minutes.", status=429)
         response["Retry-After"] = "600"
         return response
@@ -232,7 +284,17 @@ def owner(request):
     with transaction.atomic():
         policy = AccessPolicy.objects.select_for_update().get(pk=1)
         code = None
-        if action == "mode" and request.POST.get("mode") in (AccessPolicy.private, AccessPolicy.beta):
+        if action in ("enable-lockdown", "disable-lockdown"):
+            enabled = action == "enable-lockdown"
+            if enabled and not settings.ATLAS_ENTRY_PASSPHRASE:
+                messages.error(request, "Configure the private entry passphrase before enabling lockdown.")
+                return redirect("atlas-owner")
+            if policy.lockdown_enabled != enabled:
+                policy.lockdown_enabled = enabled
+                policy.lockdown_generation += 1
+                policy.save(update_fields=["lockdown_enabled", "lockdown_generation"])
+            detail = "On" if enabled else "Off"
+        elif action == "mode" and request.POST.get("mode") in (AccessPolicy.private, AccessPolicy.beta):
             policy.mode = request.POST["mode"]
             policy.save(update_fields=["mode"])
             detail = policy.get_mode_display()

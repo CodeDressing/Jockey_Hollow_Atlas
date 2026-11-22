@@ -77,3 +77,5 @@ EMAIL_BACKEND = (
     "django.core.mail.backends.locmem.EmailBackend" if LOCAL else "atlas_access.accounts.BrevoEmailBackend"
 )
 DEFAULT_FROM_EMAIL = "atlas@example.test" if LOCAL else os.environ["ATLAS_FROM_EMAIL"]
+
+ATLAS_ENTRY_PASSPHRASE = os.environ.get("ATLAS_ENTRY_PASSPHRASE", "")

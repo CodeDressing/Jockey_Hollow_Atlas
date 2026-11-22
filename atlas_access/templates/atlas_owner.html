@@ -4,6 +4,15 @@
 <h1>Owner dashboard</h1>
 <section>
   <h2>Visitor access</h2>
+  <p>Lockdown <strong>{% if policy.lockdown_enabled %}On{% else %}Off{% endif %}</strong></p>
+  <form method="post">{% csrf_token %}
+    {% if policy.lockdown_enabled %}
+      <button name="action" value="disable-lockdown">Turn lockdown off</button>
+    {% else %}
+      <button name="action" value="enable-lockdown">Turn lockdown on</button>
+    {% endif %}
+  </form>
+  <p>The visitor mode below applies when lockdown is on.</p>
   <p>Active mode <strong>{{ policy.get_mode_display }}</strong></p>
   <form method="post">{% csrf_token %}
     <input type="hidden" name="action" value="mode">
