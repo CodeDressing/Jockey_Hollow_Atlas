@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Access temporarily restricted | Jockey Hollow Atlas{% endblock %}
+{% block header %}
+<nav aria-label="Atlas information"><a href="#about">About the Atlas</a></nav>
+{% endblock %}
+{% block main %}
+<section class="landing" aria-labelledby="restriction">
+  <div class="intro">
+    <p class="status"><span aria-hidden="true"></span> Restricted access</p>
+    <h1 id="restriction">Jockey Hollow Atlas <span>Access Temporarily Restricted</span></h1>
+    <p class="lead">The Jockey Hollow Atlas scientific collection is temporarily unavailable for public browsing. Collection records and research assets are being preserved while access is managed.</p>
+  </div>
+  <aside class="card" aria-labelledby="status-heading">
+    <h2 id="status-heading">Collection status</h2>
+    <dl class="facts">
+      <div><dt>Collection access</dt><dd>Restricted</dd></div>
+      <div><dt>Research records</dt><dd>Preservation in progress</dd></div>
+      <div><dt>Public browsing</dt><dd>Disabled</dd></div>
+      <div><dt>Administrative access</dt><dd>Authenticated management only</dd></div>
+    </dl>
+  </aside>
+</section>
+<section class="about" id="about" aria-labelledby="about-heading">
+  <div>
+    <h2 id="about-heading">About the Atlas</h2>
+    <p>The Atlas documents fungal specimens through field observations, laboratory photographs, spore prints, microscopy, and accession records.</p>
+  </div>
+  <div>
+    <h2>Collection information</h2>
+    <p>Specimen pages bring collection notes, recorded measurements, and linked imagery together for comparison.</p>
+  </div>
+</section>
+{% endblock %}

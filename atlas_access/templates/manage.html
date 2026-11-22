@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Access management | Jockey Hollow Atlas{% endblock %}
+{% block header %}
+<form method="post" action="{{ url_for('sign_out') }}">
+  <input type="hidden" name="csrf" value="{{ csrf }}">
+  <button class="quiet" type="submit">Sign out</button>
+</form>
+{% endblock %}
+{% block main %}
+<div class="admin-heading">
+  <p class="status {% if mode == 'PUBLIC' %}public{% endif %}"><span aria-hidden="true"></span> {{ 'Public access' if mode == 'PUBLIC' else 'Restricted access' }}</p>
+  <h1>Atlas management</h1>
+</div>
+<nav class="section-nav" aria-label="Management sections">
+  <a href="#overview">Overview</a><a href="#access">Access management</a>
+  <a href="#readiness">Collection readiness</a><a href="#deployment">Deployment status</a>
+  <a href="#audit">Audit history</a>
+</nav>
+<div class="admin-grid">
+  <section class="card" id="overview" aria-labelledby="overview-heading">
+    <h2 id="overview-heading">Overview</h2>
+    <dl class="facts">
+      <div><dt>Operating mode</dt><dd>{{ mode }}</dd></div>
+      <div><dt>Atlas access</dt><dd>{{ 'Open to anonymous visitors' if mode == 'PUBLIC' else 'Blocked at the server' }}</dd></div>
+      <div><dt>Public reopening</dt><dd>{{ 'Owner confirmation required' if release_enabled else 'Locked by deployment configuration' }}</dd></div>
+      <div><dt>Latest audit event</dt><dd>{{ audit[0][1] if audit else 'No recorded events' }}</dd></div>
+    </dl>
+  </section>
+  <section class="card" id="access" aria-labelledby="access-heading">
+    <h2 id="access-heading">Access management</h2>
+    {% if error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
+    <p id="access-impact">Public mode makes the published Atlas and its gallery files available to anonymous visitors. Restricted mode blocks new requests to those files. Copies already downloaded remain with their recipients.</p>
+    <form method="post" action="{{ url_for('mode') }}" aria-describedby="access-impact">
+      <input type="hidden" name="csrf" value="{{ csrf }}">
+      <label for="mode">Target mode</label>
+      <select id="mode" name="mode" required>
+        <option value="">Choose a mode</option>
+        <option value="RESTRICTED">RESTRICTED</option>
+        <option value="PUBLIC" {% if not release_enabled %}disabled{% endif %}>PUBLIC</option>
+      </select>
+      <label for="confirmation">Type the target mode to confirm</label>
+      <input id="confirmation" name="confirmation" required maxlength="10" spellcheck="false" autocomplete="off">
+      <button type="submit">Apply access change</button>
+    </form>
+  </section>
+  <section class="card" id="readiness" aria-labelledby="readiness-heading">
+    <h2 id="readiness-heading">Collection readiness</h2>
+    <p>Inventory verified when this publication package was built.</p>
+    <dl class="facts">
+      <div><dt>Accession records</dt><dd>{{ summary.accessions }}</dd></div>
+      <div><dt>Unique published image paths</dt><dd>{{ summary.imagePaths }}</dd></div>
+      <div><dt>Archive-only entries in the inventory</dt><dd>{{ summary.archivalEntries }}</dd></div>
+    </dl>
+  </section>
+  <section class="card" id="deployment" aria-labelledby="deployment-heading">
+    <h2 id="deployment-heading">Deployment status</h2>
+    <dl class="facts">
+      <div><dt>Source commit</dt><dd>{% if commit %}<code>{{ commit }}</code>{% else %}Unavailable{% endif %}</dd></div>
+      <div><dt>Deployment ID</dt><dd>{% if deployment %}<code>{{ deployment }}</code>{% else %}Unavailable{% endif %}</dd></div>
+      <div><dt>Rollback reference</dt><dd>{% if rollback %}<code>{{ rollback }}</code>{% else %}Unavailable{% endif %}</dd></div>
+      <div><dt>Provider deployment history</dt><dd>Available in the hosting dashboard</dd></div>
+    </dl>
+  </section>
+  <section class="card wide" id="audit" aria-labelledby="audit-heading">
+    <h2 id="audit-heading">Audit history</h2>
+    {% if audit %}
+    <table>
+      <caption>Most recent recorded administrative events</caption>
+      <thead><tr><th scope="col">Time (UTC)</th><th scope="col">Event</th></tr></thead>
+      <tbody>{% for time, event in audit %}<tr><td>{{ time }}</td><td>{{ event }}</td></tr>{% endfor %}</tbody>
+    </table>
+    {% else %}<p>No administrative events have been recorded.</p>{% endif %}
+  </section>
+</div>
+{% endblock %}

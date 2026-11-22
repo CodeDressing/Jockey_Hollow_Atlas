@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Owner sign-in | Jockey Hollow Atlas{% endblock %}
+{% block main %}
+<section class="card sign-in" aria-labelledby="owner-heading">
+  <h1 id="owner-heading">Owner sign-in</h1>
+  <p>Enter the owner access key to manage the Atlas.</p>
+  {% if error %}<p class="error" id="sign-in-error" role="alert">{{ error }}</p>{% endif %}
+  <form method="post" action="{{ url_for('manage') }}">
+    <input type="hidden" name="csrf" value="{{ csrf }}">
+    <label for="key">Owner access key</label>
+    <input id="key" name="key" type="password" autocomplete="current-password" required maxlength="43" {% if error %}aria-describedby="sign-in-error"{% endif %}>
+    <button type="submit">Sign in</button>
+  </form>
+</section>
+{% endblock %}
