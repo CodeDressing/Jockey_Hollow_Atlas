@@ -1,0 +1,142 @@
+{
+  "accession": "JN1-F25",
+  "source": "2026-11-21 researcher-provided conversation originals",
+  "count": 15,
+  "files": [
+    {
+      "sequence": 1,
+      "source_filename": "JN1-F25 SPM  (1)(1).png",
+      "published_filename": "JN1-F25 SPM (1).png",
+      "sha256": "76b24d2163c1c41538f18f5d75b36d418ed01cae6e048aaed37ef1d037fe1fc0",
+      "bytes": 1377958,
+      "category": "Microscopy",
+      "description": "Original microscope image; instrument annotation retained where present; calibration and cell identification unresolved"
+    },
+    {
+      "sequence": 2,
+      "source_filename": "JN1-F25 SPM  (2)(1).png",
+      "published_filename": "JN1-F25 SPM (2).png",
+      "sha256": "778a5295ca984cf373d8c07fe9835fa8f7763d1a7095646f54b4aba07881a169",
+      "bytes": 1476838,
+      "category": "Microscopy",
+      "description": "Original microscope image; instrument annotation retained where present; calibration and cell identification unresolved"
+    },
+    {
+      "sequence": 3,
+      "source_filename": "JN1-F25 SPM  (3)(1).png",
+      "published_filename": "JN1-F25 SPM (3).png",
+      "sha256": "424e434f6d28e063b83888ca9b5158ed2d3edc0e00194c1c7aba6c347a42961a",
+      "bytes": 1483697,
+      "category": "Microscopy",
+      "description": "Original microscope image; instrument annotation retained where present; calibration and cell identification unresolved"
+    },
+    {
+      "sequence": 4,
+      "source_filename": "JN1-F25 SPM  (4)(1).png",
+      "published_filename": "JN1-F25 SPM (4).png",
+      "sha256": "5733b617077c5231f6af53d2d2eda6f4b43644f3702b9461d987dd60916a2abb",
+      "bytes": 1594376,
+      "category": "Microscopy",
+      "description": "Original microscope image; instrument annotation retained where present; calibration and cell identification unresolved"
+    },
+    {
+      "sequence": 5,
+      "source_filename": "JN1-F25 SPM  (5)(1).png",
+      "published_filename": "JN1-F25 SPM (5).png",
+      "sha256": "8f2e1e598866dd72b401835601bd17aa804cd38e29d0c6576e1be8636ecd5f6c",
+      "bytes": 1997534,
+      "category": "Microscopy",
+      "description": "Original microscope image; instrument annotation retained where present; calibration and cell identification unresolved"
+    },
+    {
+      "sequence": 6,
+      "source_filename": "JN1-F25 SPM  (6)(1).png",
+      "published_filename": "JN1-F25 SPM (6).png",
+      "sha256": "a364de3d071ef729969aef51738b29d45f02ee22d18ddeda94f444c981edab25",
+      "bytes": 1867647,
+      "category": "Microscopy",
+      "description": "Original microscope image; instrument annotation retained where present; calibration and cell identification unresolved"
+    },
+    {
+      "sequence": 7,
+      "source_filename": "JN1-F25 SPM  (7)(1).png",
+      "published_filename": "JN1-F25 SPM (7).png",
+      "sha256": "ca92055f341c72b97e2c79f03f42fcf083cfe3ab4b4bf18f3827ecd4ae766951",
+      "bytes": 1562024,
+      "category": "Microscopy",
+      "description": "Original microscope image; instrument annotation retained where present; calibration and cell identification unresolved"
+    },
+    {
+      "sequence": 8,
+      "source_filename": "JN1-F25 SPM  (8)(1).png",
+      "published_filename": "JN1-F25 SPM (8).png",
+      "sha256": "31260febfe5d6139de40fb2ad2a948f5c65e555592717ec164e3222d1f58155f",
+      "bytes": 1747043,
+      "category": "Microscopy",
+      "description": "Original microscope image; instrument annotation retained where present; calibration and cell identification unresolved"
+    },
+    {
+      "sequence": 9,
+      "source_filename": "JN1-F25 SPM  (9)(1).png",
+      "published_filename": "JN1-F25 SPM (9).png",
+      "sha256": "73722f7fef554dc9c029f67a72845b764e74e8cca05805addbfd6597a058651f",
+      "bytes": 1468755,
+      "category": "Microscopy",
+      "description": "Original microscope image; instrument annotation retained where present; calibration and cell identification unresolved"
+    },
+    {
+      "sequence": 10,
+      "source_filename": "JN1-F25 SPM  (10)(1).png",
+      "published_filename": "JN1-F25 SPM (10).png",
+      "sha256": "8ab80ad494a68bc502a2540eb7fadc7785f026bb5b0de3024c47e42629683a3f",
+      "bytes": 1420400,
+      "category": "Microscopy",
+      "description": "Original microscope image; instrument annotation retained where present; calibration and cell identification unresolved"
+    },
+    {
+      "sequence": 11,
+      "source_filename": "JN1-F25 SPM  (11)(1).png",
+      "published_filename": "JN1-F25 SPM (11).png",
+      "sha256": "04cd310fbf13852690e1a07c623c75f4afe22941520cb2d57b3e730e1ec59ade",
+      "bytes": 1411616,
+      "category": "Microscopy",
+      "description": "Original microscope image; instrument annotation retained where present; calibration and cell identification unresolved"
+    },
+    {
+      "sequence": 12,
+      "source_filename": "JN1-F25 SPM  (12)(1).png",
+      "published_filename": "JN1-F25 SPM (12).png",
+      "sha256": "ac3027bf245c4009fcbaae3db08bd03a46541da5dcfd4819cf563d4d11af5420",
+      "bytes": 1368092,
+      "category": "Microscopy",
+      "description": "Original microscope image; instrument annotation retained where present; calibration and cell identification unresolved"
+    },
+    {
+      "sequence": 13,
+      "source_filename": "JN1-F25 SPM  (13)(1).png",
+      "published_filename": "JN1-F25 SPM (13).png",
+      "sha256": "e5d1623ae81f5a3cde74ae049a8fc71a7c1836b6d59b7dff3cac97eb590103ef",
+      "bytes": 1534739,
+      "category": "Microscopy",
+      "description": "Original microscope image; instrument annotation retained where present; calibration and cell identification unresolved"
+    },
+    {
+      "sequence": 14,
+      "source_filename": "JN1-F25 SPM  (14)(1).png",
+      "published_filename": "JN1-F25 SPM (14).png",
+      "sha256": "b584b0a5c1e8e5d67c8ecfc95d8533986a9c173f9963f7f19b074013f1c4bc19",
+      "bytes": 1491073,
+      "category": "Microscopy",
+      "description": "Original microscope image; instrument annotation retained where present; calibration and cell identification unresolved"
+    },
+    {
+      "sequence": 15,
+      "source_filename": "JN1-F25 SPM  (15)(1).png",
+      "published_filename": "JN1-F25 SPM (15).png",
+      "sha256": "f0f4a628b171e5f048a0eb672237de555e20ddf366b7b4ce5af0beb7d33b1e46",
+      "bytes": 1475926,
+      "category": "Microscopy",
+      "description": "Original microscope image; instrument annotation retained where present; calibration and cell identification unresolved"
+    }
+  ]
+}

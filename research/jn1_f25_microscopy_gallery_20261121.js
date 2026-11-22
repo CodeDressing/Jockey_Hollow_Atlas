@@ -1,0 +1,185 @@
+// JN1-F25 researcher microscopy originals (2026-11-21).
+// Do not interpret coarse granular masses as verified spores; overlays remain provisional.
+window.DRIVE_PHOTOS = window.DRIVE_PHOTOS || [];
+window.DRIVE_PHOTOS.push(...[
+  {
+    "folder": "JN1-F25 researcher microscopy intake 2026-11-21",
+    "collection": "JN1",
+    "family": "JN",
+    "specimen": "JN1-F25",
+    "category": "Microscopy",
+    "filename": "JN1-F25 SPM (1).png",
+    "caption": "JN1-F25 — microscopy frame 1 of 15, original researcher image. Granular tissue-like aggregates and smaller rounded or ellipsoid structures may be present; neither individual spore identity nor calibrated spore measurements are established. Any instrument measurement overlays are provisional. Identification unresolved.",
+    "original": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%281%29.png",
+    "thumb": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%281%29.png",
+    "source_relpath": "assets/jn1-f25/microscopy/JN1-F25 SPM (1).png"
+  },
+  {
+    "folder": "JN1-F25 researcher microscopy intake 2026-11-21",
+    "collection": "JN1",
+    "family": "JN",
+    "specimen": "JN1-F25",
+    "category": "Microscopy",
+    "filename": "JN1-F25 SPM (2).png",
+    "caption": "JN1-F25 — microscopy frame 2 of 15, original researcher image. Granular tissue-like aggregates and smaller rounded or ellipsoid structures may be present; neither individual spore identity nor calibrated spore measurements are established. Any instrument measurement overlays are provisional. Identification unresolved.",
+    "original": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%282%29.png",
+    "thumb": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%282%29.png",
+    "source_relpath": "assets/jn1-f25/microscopy/JN1-F25 SPM (2).png"
+  },
+  {
+    "folder": "JN1-F25 researcher microscopy intake 2026-11-21",
+    "collection": "JN1",
+    "family": "JN",
+    "specimen": "JN1-F25",
+    "category": "Microscopy",
+    "filename": "JN1-F25 SPM (3).png",
+    "caption": "JN1-F25 — microscopy frame 3 of 15, original researcher image. Granular tissue-like aggregates and smaller rounded or ellipsoid structures may be present; neither individual spore identity nor calibrated spore measurements are established. Any instrument measurement overlays are provisional. Identification unresolved.",
+    "original": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%283%29.png",
+    "thumb": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%283%29.png",
+    "source_relpath": "assets/jn1-f25/microscopy/JN1-F25 SPM (3).png"
+  },
+  {
+    "folder": "JN1-F25 researcher microscopy intake 2026-11-21",
+    "collection": "JN1",
+    "family": "JN",
+    "specimen": "JN1-F25",
+    "category": "Microscopy",
+    "filename": "JN1-F25 SPM (4).png",
+    "caption": "JN1-F25 — microscopy frame 4 of 15, original researcher image. Granular tissue-like aggregates and smaller rounded or ellipsoid structures may be present; neither individual spore identity nor calibrated spore measurements are established. Any instrument measurement overlays are provisional. Identification unresolved.",
+    "original": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%284%29.png",
+    "thumb": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%284%29.png",
+    "source_relpath": "assets/jn1-f25/microscopy/JN1-F25 SPM (4).png"
+  },
+  {
+    "folder": "JN1-F25 researcher microscopy intake 2026-11-21",
+    "collection": "JN1",
+    "family": "JN",
+    "specimen": "JN1-F25",
+    "category": "Microscopy",
+    "filename": "JN1-F25 SPM (5).png",
+    "caption": "JN1-F25 — microscopy frame 5 of 15, original researcher image. Granular tissue-like aggregates and smaller rounded or ellipsoid structures may be present; neither individual spore identity nor calibrated spore measurements are established. Any instrument measurement overlays are provisional. Identification unresolved.",
+    "original": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%285%29.png",
+    "thumb": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%285%29.png",
+    "source_relpath": "assets/jn1-f25/microscopy/JN1-F25 SPM (5).png"
+  },
+  {
+    "folder": "JN1-F25 researcher microscopy intake 2026-11-21",
+    "collection": "JN1",
+    "family": "JN",
+    "specimen": "JN1-F25",
+    "category": "Microscopy",
+    "filename": "JN1-F25 SPM (6).png",
+    "caption": "JN1-F25 — microscopy frame 6 of 15, original researcher image. Granular tissue-like aggregates and smaller rounded or ellipsoid structures may be present; neither individual spore identity nor calibrated spore measurements are established. Any instrument measurement overlays are provisional. Identification unresolved.",
+    "original": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%286%29.png",
+    "thumb": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%286%29.png",
+    "source_relpath": "assets/jn1-f25/microscopy/JN1-F25 SPM (6).png"
+  },
+  {
+    "folder": "JN1-F25 researcher microscopy intake 2026-11-21",
+    "collection": "JN1",
+    "family": "JN",
+    "specimen": "JN1-F25",
+    "category": "Microscopy",
+    "filename": "JN1-F25 SPM (7).png",
+    "caption": "JN1-F25 — microscopy frame 7 of 15, original researcher image. Granular tissue-like aggregates and smaller rounded or ellipsoid structures may be present; neither individual spore identity nor calibrated spore measurements are established. Any instrument measurement overlays are provisional. Identification unresolved.",
+    "original": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%287%29.png",
+    "thumb": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%287%29.png",
+    "source_relpath": "assets/jn1-f25/microscopy/JN1-F25 SPM (7).png"
+  },
+  {
+    "folder": "JN1-F25 researcher microscopy intake 2026-11-21",
+    "collection": "JN1",
+    "family": "JN",
+    "specimen": "JN1-F25",
+    "category": "Microscopy",
+    "filename": "JN1-F25 SPM (8).png",
+    "caption": "JN1-F25 — microscopy frame 8 of 15, original researcher image. Granular tissue-like aggregates and smaller rounded or ellipsoid structures may be present; neither individual spore identity nor calibrated spore measurements are established. Any instrument measurement overlays are provisional. Identification unresolved.",
+    "original": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%288%29.png",
+    "thumb": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%288%29.png",
+    "source_relpath": "assets/jn1-f25/microscopy/JN1-F25 SPM (8).png"
+  },
+  {
+    "folder": "JN1-F25 researcher microscopy intake 2026-11-21",
+    "collection": "JN1",
+    "family": "JN",
+    "specimen": "JN1-F25",
+    "category": "Microscopy",
+    "filename": "JN1-F25 SPM (9).png",
+    "caption": "JN1-F25 — microscopy frame 9 of 15, original researcher image. Granular tissue-like aggregates and smaller rounded or ellipsoid structures may be present; neither individual spore identity nor calibrated spore measurements are established. Any instrument measurement overlays are provisional. Identification unresolved.",
+    "original": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%289%29.png",
+    "thumb": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%289%29.png",
+    "source_relpath": "assets/jn1-f25/microscopy/JN1-F25 SPM (9).png"
+  },
+  {
+    "folder": "JN1-F25 researcher microscopy intake 2026-11-21",
+    "collection": "JN1",
+    "family": "JN",
+    "specimen": "JN1-F25",
+    "category": "Microscopy",
+    "filename": "JN1-F25 SPM (10).png",
+    "caption": "JN1-F25 — microscopy frame 10 of 15, original researcher image. Granular tissue-like aggregates and smaller rounded or ellipsoid structures may be present; neither individual spore identity nor calibrated spore measurements are established. Any instrument measurement overlays are provisional. Identification unresolved.",
+    "original": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%2810%29.png",
+    "thumb": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%2810%29.png",
+    "source_relpath": "assets/jn1-f25/microscopy/JN1-F25 SPM (10).png"
+  },
+  {
+    "folder": "JN1-F25 researcher microscopy intake 2026-11-21",
+    "collection": "JN1",
+    "family": "JN",
+    "specimen": "JN1-F25",
+    "category": "Microscopy",
+    "filename": "JN1-F25 SPM (11).png",
+    "caption": "JN1-F25 — microscopy frame 11 of 15, original researcher image. Granular tissue-like aggregates and smaller rounded or ellipsoid structures may be present; neither individual spore identity nor calibrated spore measurements are established. Any instrument measurement overlays are provisional. Identification unresolved.",
+    "original": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%2811%29.png",
+    "thumb": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%2811%29.png",
+    "source_relpath": "assets/jn1-f25/microscopy/JN1-F25 SPM (11).png"
+  },
+  {
+    "folder": "JN1-F25 researcher microscopy intake 2026-11-21",
+    "collection": "JN1",
+    "family": "JN",
+    "specimen": "JN1-F25",
+    "category": "Microscopy",
+    "filename": "JN1-F25 SPM (12).png",
+    "caption": "JN1-F25 — microscopy frame 12 of 15, original researcher image. Granular tissue-like aggregates and smaller rounded or ellipsoid structures may be present; neither individual spore identity nor calibrated spore measurements are established. Any instrument measurement overlays are provisional. Identification unresolved.",
+    "original": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%2812%29.png",
+    "thumb": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%2812%29.png",
+    "source_relpath": "assets/jn1-f25/microscopy/JN1-F25 SPM (12).png"
+  },
+  {
+    "folder": "JN1-F25 researcher microscopy intake 2026-11-21",
+    "collection": "JN1",
+    "family": "JN",
+    "specimen": "JN1-F25",
+    "category": "Microscopy",
+    "filename": "JN1-F25 SPM (13).png",
+    "caption": "JN1-F25 — microscopy frame 13 of 15, original researcher image. Granular tissue-like aggregates and smaller rounded or ellipsoid structures may be present; neither individual spore identity nor calibrated spore measurements are established. Any instrument measurement overlays are provisional. Identification unresolved.",
+    "original": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%2813%29.png",
+    "thumb": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%2813%29.png",
+    "source_relpath": "assets/jn1-f25/microscopy/JN1-F25 SPM (13).png"
+  },
+  {
+    "folder": "JN1-F25 researcher microscopy intake 2026-11-21",
+    "collection": "JN1",
+    "family": "JN",
+    "specimen": "JN1-F25",
+    "category": "Microscopy",
+    "filename": "JN1-F25 SPM (14).png",
+    "caption": "JN1-F25 — microscopy frame 14 of 15, original researcher image. Granular tissue-like aggregates and smaller rounded or ellipsoid structures may be present; neither individual spore identity nor calibrated spore measurements are established. Any instrument measurement overlays are provisional. Identification unresolved.",
+    "original": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%2814%29.png",
+    "thumb": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%2814%29.png",
+    "source_relpath": "assets/jn1-f25/microscopy/JN1-F25 SPM (14).png"
+  },
+  {
+    "folder": "JN1-F25 researcher microscopy intake 2026-11-21",
+    "collection": "JN1",
+    "family": "JN",
+    "specimen": "JN1-F25",
+    "category": "Microscopy",
+    "filename": "JN1-F25 SPM (15).png",
+    "caption": "JN1-F25 — microscopy frame 15 of 15, original researcher image. Granular tissue-like aggregates and smaller rounded or ellipsoid structures may be present; neither individual spore identity nor calibrated spore measurements are established. Any instrument measurement overlays are provisional. Identification unresolved.",
+    "original": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%2815%29.png",
+    "thumb": "assets/jn1-f25/microscopy/JN1-F25%20SPM%20%2815%29.png",
+    "source_relpath": "assets/jn1-f25/microscopy/JN1-F25 SPM (15).png"
+  }
+]);
