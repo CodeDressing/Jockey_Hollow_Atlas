@@ -589,7 +589,7 @@ function renderSpec(){
   const mat=effectiveCompleteness.map(([k,v])=>`<div>${glossaryText(k,true)}</div><div class="${cls(v)}">${glossaryText(v,true)}</div>`).join('');
   const pairStatus=hasWild&&hasLab?'COMPLETE':(!hasWild&&!hasLab?'MISSING WILD + LAB':(!hasWild?'MISSING WILD':'MISSING LAB'));
   const pairClass=hasWild&&hasLab?'yes':'no';
-  const galleries=Object.entries(groups).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map((im,i)=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-thumb="${esc(im.thumb||im.original)}" data-caption="${esc(displayLabel(im.caption))}" data-name="${esc(im.filename)}"><img loading="${i<2?'eager':'lazy'}" decoding="async" src="${esc(im.original)}" alt="${esc(displayLabel(im.caption))}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${glossaryText(im.caption,true)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}</div></article>`).join('')}</div></section>`).join('');
+  const galleries=Object.entries(groups).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map((im,i)=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-thumb="${esc(im.preferThumbnail?im.original:im.thumb||im.original)}" data-caption="${esc(displayLabel(im.caption))}" data-name="${esc(im.filename)}"><img loading="${i<2?'eager':'lazy'}" decoding="async" src="${esc(im.preferThumbnail&&im.thumb||im.original)}" alt="${esc(displayLabel(im.caption))}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${glossaryText(im.caption,true)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}</div></article>`).join('')}</div></section>`).join('');
   const archived=(s.archivedPhotos||[]).filter(im=>imageType==='ALL'||im.category===imageType);
   const archiveDetails=archived.length
     ? `<details class="section card"><summary>Archived photo records · ${archived.length}</summary><p>Image files are unavailable in the public Atlas.</p><ul>${archived.map(im=>`<li><strong>${esc(im.filename)}</strong> · ${esc(im.category)}${im.caption?`: ${glossaryText(im.caption,true)}`:''}</li>`).join('')}</ul></details>`
@@ -616,11 +616,10 @@ function renderSpec(){
     const thumbnail=el.querySelector('img');
     if(!thumbnail)return;
     thumbnail.onerror=()=>{
-      const original=el.dataset.file;
       const fallback=el.dataset.thumb;
       if(thumbnail.dataset.fallbackTried!=='1'){
         thumbnail.dataset.fallbackTried='1';
-        if(fallback&&fallback!==original){
+        if(fallback&&fallback!==thumbnail.getAttribute('src')){
           thumbnail.src=fallback;
           return;
         }
