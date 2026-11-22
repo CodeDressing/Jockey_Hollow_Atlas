@@ -4,8 +4,8 @@
   "audit_date": "2026-11-21",
   "user_reported_unavailable_archived_records": 17,
   "verified_archive_records_in_drive_data_js": 11,
-  "originals_verified": 11,
-  "public_images_in_scope": 11,
+  "originals_verified": 17,
+  "public_images_in_scope": 17,
   "existing_visible_images_reported_by_researcher": 2,
   "existing_visible_images_unchanged": true,
   "source_groups": [
@@ -115,10 +115,64 @@
       "site_path": "assets/an2-f25/microscopy/AN2-F25 SPMV7.png",
       "verification": "source file name and type checked against Drive original; Git blob created",
       "public_status": "pending production verification"
+    },
+    {
+      "filename": "AN2-25SP.JPG",
+      "drive_id": "1f-qbDOoqwQe8qaOWY1IRCj4fEzs7loXx",
+      "size_bytes": 583090,
+      "git_blob_sha": "0757a506edca1f20348ea99fb264497258c74e7b",
+      "site_path": "assets/an2-f25/spore-print/AN2-25SP.JPG",
+      "verification": "source filename and MIME checked against original Google Drive file; Git blob created",
+      "public_status": "pending production verification"
+    },
+    {
+      "filename": "AN2-F25SP.JPG",
+      "drive_id": "16x_mrY3-geK1LqGvQBEAAUODHen_j4VU",
+      "size_bytes": 550734,
+      "git_blob_sha": "d0c9e539046be97b01ca8a46092c9c289b27c41f",
+      "site_path": "assets/an2-f25/spore-print/AN2-F25SP.JPG",
+      "verification": "source filename and MIME checked against original Google Drive file; Git blob created",
+      "public_status": "pending production verification"
+    },
+    {
+      "filename": "IMG_6121.jpg",
+      "drive_id": "16beYprEoK2yN8boQNmG4hh7qWLIqsQXU",
+      "size_bytes": 182065,
+      "git_blob_sha": "08fa029fe7cfae761064d2d43f35192bc174cc2e",
+      "site_path": "assets/an2-f25/field/IMG_6121.jpg",
+      "verification": "source filename and MIME checked against original Google Drive file; Git blob created",
+      "public_status": "pending production verification"
+    },
+    {
+      "filename": "IMG_6123.jpg",
+      "drive_id": "1xDLMzJF-lLWamkGilypbADxbuZjTBW_u",
+      "size_bytes": 199502,
+      "git_blob_sha": "743501c564ab05d70a3cfdb84656b719ce2c3ab2",
+      "site_path": "assets/an2-f25/field/IMG_6123.jpg",
+      "verification": "source filename and MIME checked against original Google Drive file; Git blob created",
+      "public_status": "pending production verification"
+    },
+    {
+      "filename": "IMG_6124.jpg",
+      "drive_id": "11mv8Gd6WSYIq2xgPHiDd9_kzhitg64fc",
+      "size_bytes": 174980,
+      "git_blob_sha": "a58e8f1be35477c1b2e035dd5ccaa7ea19a931b3",
+      "site_path": "assets/an2-f25/field/IMG_6124.jpg",
+      "verification": "source filename and MIME checked against original Google Drive file; Git blob created",
+      "public_status": "pending production verification"
+    },
+    {
+      "filename": "IMG_6125.jpg",
+      "drive_id": "1oUCN_wtWLri1Jah_hDgv-a4ZJOnM2j00",
+      "size_bytes": 183865,
+      "git_blob_sha": "96c6c0938b551bbc02b94d50bf65670aa2c28462",
+      "site_path": "assets/an2-f25/field/IMG_6125.jpg",
+      "verification": "source filename and MIME checked against original Google Drive file; Git blob created",
+      "public_status": "pending production verification"
     }
   ],
-  "unreconciled_reported_archive_count": 6,
-  "unreconciled_reason": "Atlas UI reports 17 archived records, but drive_data.js currently contains 11 exact accession-linked archive entries. Inspect master data.js/other galleries for additional records; do not invent six source files.",
+  "unreconciled_reported_archive_count": 0,
+  "unreconciled_reason": "Reconciled 11 drive_data.js plus 6 supplemental_media.js records",
   "duplicates": "Existing two visible source photos preserved. Filename/visual overlap against newly restored laboratory photos requires public comparison.",
   "scientific_status": "No species determination or microscopy measurement inference from restored file names.",
   "release": {
@@ -127,6 +181,13 @@
     "pr": null,
     "ci": "pending",
     "render": "pending",
-    "public_acceptance": "pending"
-  }
+    "public_acceptance": "pending",
+    "followon_branch": "restoration/an2-f25-remaining-six-20261121",
+    "initial_merge_commit": "dd9427b7f3399196d60459577bbf1b17e12e8e70",
+    "initial_render": "live",
+    "followon_ci": "pending",
+    "followon_render": "pending"
+  },
+  "verified_archive_records_in_supplemental_media_js": 6,
+  "verified_archive_records_total": 17
 }
