@@ -1,5 +1,75 @@
 const assert=require('node:assert/strict');
 const {webkit,chromium,firefox,devices}=require('playwright');
+
+async function checkGlossary(page, hasTouch){
+ const activate=locator=>hasTouch?locator.tap():locator.click();
+ const dialog=page.getByRole('dialog');
+ async function checkTerm(term, word, pronunciation, definition){
+  await activate(term);
+  assert.equal(await dialog.isVisible(),true);
+  assert.equal(await dialog.locator('strong').textContent(),word);
+  if(pronunciation)assert.equal(await dialog.locator('.glossary-pronunciation').textContent(),pronunciation);
+  assert.equal(await dialog.locator('p').textContent(),definition);
+  assert.ok(await dialog.evaluate(el=>{
+   const rect=el.getBoundingClientRect();
+   const viewport=window.visualViewport;
+   return rect.left>=viewport.offsetLeft && rect.top>=viewport.offsetTop &&
+    rect.right<=viewport.offsetLeft+viewport.width+1 && rect.bottom<=viewport.offsetTop+viewport.height+1;
+  }),'Glossary dialog must fit inside the visual viewport');
+  const pronounce=dialog.getByRole('button',{name:'Pronounce',exact:true});
+  assert.ok(await pronounce.evaluate(el=>el===document.activeElement));
+  await activate(pronounce);
+  await activate(dialog.getByRole('button',{name:'Read definition',exact:true}));
+  assert.deepEqual(await page.evaluate(()=>window.glossarySpoken.slice(-2)),[word,definition]);
+  await activate(dialog.getByRole('button',{name:'Close',exact:true}));
+  assert.equal(await dialog.isVisible(),false);
+  assert.ok(await term.evaluate(el=>el===document.activeElement));
+  await term.press('Enter');
+  assert.equal(await dialog.isVisible(),true);
+  await page.keyboard.press('Escape');
+  assert.equal(await dialog.isVisible(),false);
+  assert.ok(await term.evaluate(el=>el===document.activeElement));
+ }
+
+ const fusiform={word:'fusiform',pronunciation:'FYOO-zuh-form',definition:'Spindle-shaped. Wider in the middle and narrower toward both ends.'};
+ const olivaceous={word:'olivaceous',pronunciation:'ah-lih-VAY-shuhs',definition:'Olive-colored, usually a muted, brownish green.'};
+ await page.evaluate(()=>window.setCurrent('AN2-F41'));
+ for(const [heading, phrase, entry] of [
+  ['Spore shape','narrowly ellipsoid to fusiform,',fusiform],
+  ['Hymenophore','brownish/olivaceous in the field photographs.',olivaceous]
+ ]){
+  const panel=page.locator('.summary-item').filter({has:page.locator('h4').filter({hasText:new RegExp('^'+heading+'$','i')})});
+  const text=await panel.locator('p').textContent();
+  assert.ok(text.includes(phrase));
+  await checkTerm(panel.locator('[data-glossary='+entry.word+']'),entry.word,entry.pronunciation,entry.definition);
+  await activate(panel.getByRole('button',{name:'Read section',exact:true}));
+  const expected=(await panel.locator('h4').textContent())+' '+text;
+  assert.equal(await page.evaluate(()=>window.glossarySpoken.at(-1)),expected);
+ }
+ await checkTerm(page.locator('.sourceLine [data-glossary=accession]').first(),'accession',null,
+  'A uniquely tracked specimen or collection record entered into an archive, herbarium, laboratory, or database.');
+ assert.ok(await page.evaluate(()=>{
+  const original='FUSIFORM, (Olivaceous); <fusiform> subfusiform olivaceousness.';
+  const rendered=document.createElement('div');
+  rendered.innerHTML=window.glossaryText(original);
+  return rendered.textContent===original &&
+   [...rendered.querySelectorAll('button')].map(button=>button.textContent).join('|')==='FUSIFORM|Olivaceous|fusiform';
+ }));
+
+ await page.evaluate(()=>window.setCurrent('JN1-F16'));
+ const notes=page.locator('.summary-item').filter({has:page.locator('h4').filter({hasText:/^microscopic morphology$/i})});
+ assert.equal(await notes.locator('[data-glossary=fusiform]').count(),1);
+ const captions=page.locator('.caption [data-glossary=fusiform]');
+ assert.equal(await captions.count(),10);
+ await checkTerm(captions.first(),fusiform.word,fusiform.pronunciation,fusiform.definition);
+ const card=page.locator('.image-card').filter({has:page.locator('.caption [data-glossary=fusiform]')}).first();
+ await activate(card.locator('.image-wrap'));
+ await checkTerm(page.locator('#viewerCap [data-glossary=fusiform]'),fusiform.word,fusiform.pronunciation,fusiform.definition);
+ assert.equal(await page.locator('#viewer').isVisible(),true);
+ await page.keyboard.press('Escape');
+ assert.equal(await page.locator('#viewer').isVisible(),false);
+}
+
 (async()=>{
  const origin=process.env.ATLAS_ORIGIN||'http://127.0.0.1:8765/';
  for(const [name,engine,settings] of [
@@ -13,6 +83,12 @@ const {webkit,chromium,firefox,devices}=require('playwright');
   try{
    const ctx=await browser.newContext(settings);
    const page=await ctx.newPage();
+   await page.addInitScript(()=>{
+    window.glossarySpoken=[];
+    if(!window.speechSynthesis)window.speechSynthesis={cancel(){}};
+    if(!window.SpeechSynthesisUtterance)window.SpeechSynthesisUtterance=class {constructor(text){this.text=text;}};
+    window.speechSynthesis.speak=utterance=>window.glossarySpoken.push(utterance.text);
+   });
    const errors=[];page.on('pageerror',e=>errors.push(e.message));
    // Private Drive photographs may be unavailable to public visitors. Never
    // depend on their accessibility or offer a navigation path to Drive.
@@ -23,6 +99,8 @@ const {webkit,chromium,firefox,devices}=require('playwright');
    });
    await page.goto(origin,{waitUntil:'domcontentloaded'});
    await page.locator('#enterAtlas').click();
+   await checkGlossary(page,settings.hasTouch);
+   console.log(name+': glossary controls, readback content, viewport and keyboard focus passed');
    const priorities=['AN2-F1','AN2-F41','AN2-F3','AN2-F7','AN2-F9','AN2-F12','AN2-F34','AN2-F17','AN2-F32','AN2-F36','AN2-F38','JN1-F15','JN1-F16','JN1-F32'];
    for(const id of [...priorities,'JN2-F3','JN1-F11','BN5-F8(B)']){
     await page.evaluate(code=>window.setCurrent(code),id);
