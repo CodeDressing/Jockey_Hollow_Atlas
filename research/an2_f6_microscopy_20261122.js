@@ -25,6 +25,8 @@ window.SPECIMEN_ENRICHMENTS["AN2-F6"] = {
     ]
   ],
   "images": [
+    {"category":"Historical laboratory","filename":"AN2-F6.JPG","caption":"Historical laboratory view: two collected gilled fruit bodies and accession foil labeled AN2 F6. Upper-edge unrelated specimen material is outside the accession-specific interpretation; no species identification is inferred.","original":"assets/an2-f6/historical/an2-f6-lab-01.jpg"},
+    {"category":"Historical laboratory","filename":"AN2-F6V2.JPG","caption":"Second original laboratory view of the same accession-labeled pair on white paper; slender yellow-brown stipes and attached soil/debris visible. Historical specimen evidence, not a new collection event.","original":"assets/an2-f6/historical/an2-f6-lab-02.jpg"},
     {
       "category": "Microscopy",
       "filename": "AN2-F6 SPM (1).png",
