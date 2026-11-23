@@ -23,6 +23,9 @@
     let targetX = 0;
     let targetY = 0;
     let lastPointerType = '';
+    let pressX = 0;
+    let pressY = 0;
+    let dragged = false;
 
     function hideFollower() {
       cancelAnimationFrame(frame);
@@ -51,6 +54,11 @@
     }
 
     function moveFollower(event) {
+      if (event.pointerType === 'mouse' && (event.buttons & 1) &&
+          Math.hypot(event.clientX - pressX, event.clientY - pressY) > 5) {
+        dragged = true;
+      }
+
       if (event.pointerType !== 'mouse' || event.buttons ||
           event.target.closest?.('img, canvas, #viewerStage, .glossary-popover, [role="tooltip"]')) {
         hideFollower();
@@ -69,7 +77,7 @@
     function showRipple(event) {
       // Older browsers expose click as a MouseEvent, without pointerType.
       const pointerType = event.pointerType ?? lastPointerType;
-      if (pointerType !== 'mouse' || !event.isTrusted || !event.detail) return;
+      if (pointerType !== 'mouse' || !event.isTrusted || !event.detail || dragged) return;
 
       const ripple = document.createElement('div');
       ripple.className = 'atlas-click-ripple';
@@ -91,6 +99,9 @@
     window.addEventListener('pointermove', moveFollower, options);
     window.addEventListener('pointerdown', event => {
       lastPointerType = event.pointerType;
+      pressX = event.clientX;
+      pressY = event.clientY;
+      dragged = false;
       hideFollower();
     }, options);
     window.addEventListener('pointerout', event => {
