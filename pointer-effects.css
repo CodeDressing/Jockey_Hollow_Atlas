@@ -1,0 +1,44 @@
+.atlas-pointer-effects {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow: hidden;
+  contain: strict;
+}
+
+.entry-gate:not(.hidden) ~ .atlas-pointer-effects {
+  z-index: 2001;
+}
+
+.atlas-pointer-effects,
+.atlas-pointer-effects * {
+  pointer-events: none;
+}
+
+.atlas-pointer-follower,
+.atlas-click-ripple {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(169, 245, 202, 0.6);
+}
+
+.atlas-pointer-follower {
+  top: -9px;
+  left: -9px;
+  width: 18px;
+  height: 18px;
+  box-shadow: 0 0 6px rgba(169, 245, 202, 0.22);
+  will-change: transform;
+}
+
+.atlas-click-ripple {
+  width: 48px;
+  height: 48px;
+  margin: -24px 0 0 -24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atlas-pointer-effects {
+    display: none;
+  }
+}
