@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-15",
+  "scope": "Seven user-uploaded original spore-print/preparation photographs",
+  "status": "NOT uploaded as binaries; NOT verified live",
+  "source": "researcher photographs provided in chat",
+  "policy": "Do not replace similarly named existing binaries. Preserve all originals, verify SHA-256, connect by exact accession only.",
+  "archive": "Rutgers_BN5_JN1_F11_originals_20261115.zip",
+  "files": [
+    {
+      "filename": "BN5-F22SPV1.JPG",
+      "specimen": "BN5-F22",
+      "size_bytes": 627993,
+      "sha256": "ff96ff87e7afb8f66432036bdcc842b315670d4930db2b1277140c874e8dadc0",
+      "planned_path": "assets/intake-20261115/BN5-F22/BN5-F22SPV1.JPG"
+    },
+    {
+      "filename": "BN5-F22SPV2.JPG",
+      "specimen": "BN5-F22",
+      "size_bytes": 571427,
+      "sha256": "5896b6db1a4ad5603d2f33a00e47bfc4a7bfc50cb105986e05d2d4d363793795",
+      "planned_path": "assets/intake-20261115/BN5-F22/BN5-F22SPV2.JPG"
+    },
+    {
+      "filename": "BN5-F22SPV3.JPG",
+      "specimen": "BN5-F22",
+      "size_bytes": 661528,
+      "sha256": "5a38d4cc1b5d529b0ef7ce17222002fe39a127cded79610495d720f0187b4e6c",
+      "planned_path": "assets/intake-20261115/BN5-F22/BN5-F22SPV3.JPG"
+    },
+    {
+      "filename": "BN5-F25SPV1.JPG",
+      "specimen": "BN5-F25",
+      "size_bytes": 490687,
+      "sha256": "1094d7c040c40f1fce36fa403c48ffdc9acad718de1d6ea55150741bc1438372",
+      "planned_path": "assets/intake-20261115/BN5-F25/BN5-F25SPV1.JPG"
+    },
+    {
+      "filename": "BN5-F25SPV3.JPG",
+      "specimen": "BN5-F25",
+      "size_bytes": 587946,
+      "sha256": "2cc7f93bfd1af43d2c1a1446ba4a3fbfce728b2d9379b9ed847489cde8e4b744",
+      "planned_path": "assets/intake-20261115/BN5-F25/BN5-F25SPV3.JPG"
+    },
+    {
+      "filename": "BN5-F8(B)SP.JPG",
+      "specimen": "BN5-F8(B)",
+      "size_bytes": 707282,
+      "sha256": "79c844bb55d4659015ca10350ed095510ac9f42346890bbe5cd5167590df3094",
+      "planned_path": "assets/intake-20261115/BN5-F8(B)/BN5-F8(B)SP.JPG"
+    },
+    {
+      "filename": "BN5-F8(B)SPV2.JPG",
+      "specimen": "BN5-F8(B)",
+      "size_bytes": 719813,
+      "sha256": "5a2b36d72bd2630e089834fdccc23762ad5207521f617bd8136489d1dd0dae17",
+      "planned_path": "assets/intake-20261115/BN5-F8(B)/BN5-F8(B)SPV2.JPG"
+    }
+  ]
+}
