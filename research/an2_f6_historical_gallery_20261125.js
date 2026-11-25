@@ -1,5 +1,9 @@
-// Public derivatives of the eight historical AN2-F6 photographs.
+// Historical AN2-F6 gallery views and the existing master spore-print preview.
 (() => {
+  const master = window.ATLAS_DATA.find(({ code }) => code === "AN2-F6");
+  const sporePrint = master?.images.find(({ filename }) => filename === "AN2-F6SP.JPG");
+  if (sporePrint?.thumb) sporePrint.preferThumbnail = true;
+
   const restoredPhotos = [
     {
       "category": "Wild / field context",

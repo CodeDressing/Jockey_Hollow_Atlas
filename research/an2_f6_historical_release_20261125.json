@@ -4,7 +4,7 @@
   "derivative_processing": {
     "field": "Orientation applied, native dimensions, sRGB, metadata stripped, WebP quality 95.",
     "laboratory": "Orientation applied, cropped to the two AN2-F6 fruit bodies and accession label, sRGB, metadata stripped, JPEG quality 96 with 4:4:4 chroma.",
-    "thumbnails": "Fit within 480 × 480 pixels, metadata stripped, WebP quality 86."
+    "thumbnails": "The eight restored derivatives have WebP thumbnails fitted within 480 × 480 pixels, with metadata stripped and WebP quality 86. The spore-print view uses its existing master JPEG and JPEG thumbnail."
   },
   "images": [
     {
@@ -102,6 +102,18 @@
         1050
       ],
       "crop": "1330x1050+475+220"
+    },
+    {
+      "source_filename": "AN2-F6SP.JPG",
+      "path": "assets/originals/AN2-F6SP.JPG",
+      "thumb": "assets/thumbs/AN2-F6SP.jpg",
+      "sha256": "f21ceca168681c297d51f403a04ef3fcf383e797d13e2ac20c5e50ebf0173a79",
+      "thumb_sha256": "012bd6585df5fed2f6f87b31943dd7ad2267c18f470651d8087031682807f193",
+      "dimensions_px": [
+        2048,
+        1536
+      ],
+      "crop": null
     }
   ]
 }
