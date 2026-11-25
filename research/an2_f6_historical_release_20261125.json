@@ -1,0 +1,119 @@
+{
+  "accession": "AN2-F6",
+  "release_authority": "The researcher confirmed public release clearance for the eight browser derivatives on November 25, 2026.",
+  "derivative_processing": {
+    "field": "Orientation applied, native dimensions, sRGB, metadata stripped, WebP quality 95.",
+    "laboratory": "Orientation applied, cropped to the two AN2-F6 fruit bodies and accession label, sRGB, metadata stripped, JPEG quality 96 with 4:4:4 chroma.",
+    "thumbnails": "The eight restored derivatives have WebP thumbnails fitted within 480 × 480 pixels, with metadata stripped and WebP quality 86. The spore-print view uses its existing master JPEG and JPEG thumbnail."
+  },
+  "images": [
+    {
+      "source_filename": "AN2-F6V1.HEIC",
+      "path": "assets/an2-f6/field/an2-f6-field-01.webp",
+      "thumb": "assets/an2-f6/field/an2-f6-field-01-thumb.webp",
+      "sha256": "66d75678487f694c7fb9f5d2e64301b920d5b73f46ee82fbae183dae05fffe5c",
+      "thumb_sha256": "ce2d0616eb93dcddb60d8865e13a10d64f81fa6f7d5c7888abcc91b349044aad",
+      "dimensions_px": [
+        4032,
+        3024
+      ],
+      "crop": null
+    },
+    {
+      "source_filename": "AN2-F6V2.HEIC",
+      "path": "assets/an2-f6/field/an2-f6-field-02.webp",
+      "thumb": "assets/an2-f6/field/an2-f6-field-02-thumb.webp",
+      "sha256": "cbf379bd369a66f72ec379d4818bc4029b5d07fe0b13c06dd33da2360c55f512",
+      "thumb_sha256": "6fe7c2b523aae23412c3b9e740c1528f41a0fb11faedd1572d1af8cfeecda45d",
+      "dimensions_px": [
+        4032,
+        3024
+      ],
+      "crop": null
+    },
+    {
+      "source_filename": "AN2-F6V3.HEIC",
+      "path": "assets/an2-f6/field/an2-f6-field-03.webp",
+      "thumb": "assets/an2-f6/field/an2-f6-field-03-thumb.webp",
+      "sha256": "4ef6db9f3d72185a6ae91293fef2fec4cf6882fa850ac0ac4ec19c1ff693600c",
+      "thumb_sha256": "e322a1f136d3a66d026e85ce027692c383faca1415da5ad65613f1661338c596",
+      "dimensions_px": [
+        4032,
+        3024
+      ],
+      "crop": null
+    },
+    {
+      "source_filename": "AN2-F6V4.HEIC",
+      "path": "assets/an2-f6/field/an2-f6-field-04.webp",
+      "thumb": "assets/an2-f6/field/an2-f6-field-04-thumb.webp",
+      "sha256": "5541052f521802c4c0ccc0f08ba1bbc2bef90d701cc4a4abe3addbd1c42df749",
+      "thumb_sha256": "77749f1843a55a7566e700285ee08943ececf32848cbefe0fc722dc03e6dd86b",
+      "dimensions_px": [
+        4032,
+        3024
+      ],
+      "crop": null
+    },
+    {
+      "source_filename": "AN2-F6V5.HEIC",
+      "path": "assets/an2-f6/field/an2-f6-field-05.webp",
+      "thumb": "assets/an2-f6/field/an2-f6-field-05-thumb.webp",
+      "sha256": "a9ac6c65747dc52da2d1203ffafcec05801d0a72f7326d6cbc3612d24c9fdf60",
+      "thumb_sha256": "f0f9dd42a6e755183dee121571d59ebcb145eb5ebe183b4806e01389f7fd5ec5",
+      "dimensions_px": [
+        4032,
+        3024
+      ],
+      "crop": null
+    },
+    {
+      "source_filename": "AN2-F6V6.HEIC",
+      "path": "assets/an2-f6/field/an2-f6-field-06.webp",
+      "thumb": "assets/an2-f6/field/an2-f6-field-06-thumb.webp",
+      "sha256": "24f6ca78731ec2231cd3399410661e0f17dff72136b3b9a07d3673c6527cf03c",
+      "thumb_sha256": "0e1c26f649920d51b60c4fa0407491176d5536fe266c1b6d9252745485af99a7",
+      "dimensions_px": [
+        4032,
+        3024
+      ],
+      "crop": null
+    },
+    {
+      "source_filename": "AN2-F6.JPG",
+      "path": "assets/an2-f6/specimen/an2-f6-lab-01.jpg",
+      "thumb": "assets/an2-f6/specimen/an2-f6-lab-01-thumb.webp",
+      "sha256": "f74e6ba38dca2400c11ddf49b112a9844e2b6c95e451bd81a7bd24ac8505bec6",
+      "thumb_sha256": "0870bb28d51fcd103d048945e03b696c3eb3227b5c37885538892790abafb69c",
+      "dimensions_px": [
+        1510,
+        1100
+      ],
+      "crop": "1510x1100+100+220"
+    },
+    {
+      "source_filename": "AN2-F6V2.JPG",
+      "path": "assets/an2-f6/specimen/an2-f6-lab-02.jpg",
+      "thumb": "assets/an2-f6/specimen/an2-f6-lab-02-thumb.webp",
+      "sha256": "6664608b6f786830d80c1cfe7e3aa498c3139c0ab83eba3e0914007c787d4000",
+      "thumb_sha256": "8fdb23f9e9a197105b076f7008004ce4042f0cf81a3c5be4088e60df86900b42",
+      "dimensions_px": [
+        1330,
+        1050
+      ],
+      "crop": "1330x1050+475+220"
+    },
+    {
+      "source_filename": "AN2-F6SP.JPG",
+      "path": "assets/originals/AN2-F6SP.JPG",
+      "thumb": "assets/thumbs/AN2-F6SP.jpg",
+      "sha256": "f21ceca168681c297d51f403a04ef3fcf383e797d13e2ac20c5e50ebf0173a79",
+      "thumb_sha256": "012bd6585df5fed2f6f87b31943dd7ad2267c18f470651d8087031682807f193",
+      "dimensions_px": [
+        2048,
+        1536
+      ],
+      "crop": null
+    }
+  ]
+}

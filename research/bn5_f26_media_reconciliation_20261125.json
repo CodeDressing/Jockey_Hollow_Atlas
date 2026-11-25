@@ -1,0 +1,256 @@
+{
+  "accession": "BN5-F26",
+  "verified_on": "2026-11-25",
+  "historical_audit": "research/bn5_f26_historical_recovery_20261123.json",
+  "source_scope": "Embedded archive image bytes verified. Earlier standalone camera files were not independently located under the cited filenames.",
+  "identification_status": "HOLD",
+  "sources": {
+    "chart": {
+      "title": "bn1 bn5 cn jn_ Master",
+      "locator": "BN5 - F26, labeled chart image beside the source-photo filename. Cross-check: Rutgers Mycology Atlas - BN5 Field Matched Rev3, p. 223."
+    },
+    "active": {
+      "title": "Rutgers Mycology Visual Specimen Atlas — ACTIVE MASTER — BN5 Microscopy & Field Integration — 422 Records",
+      "locator": "BN5-F26 field/macromorphology and microscopy plates, and the associated source-image register."
+    }
+  },
+  "media_counts": {
+    "prior_public_views": 15,
+    "new_distinct_views": 0,
+    "higher_resolution_replacements": 1,
+    "resulting_public_views": 15
+  },
+  "records": [
+    {
+      "source_filename": "bn5-f26.jpg",
+      "category": "Source macro / specimen",
+      "source": "chart",
+      "archive_sha256": "0992dc2637dbe828db5900d313030f236362bf0667a5627cd7b10bff8b971b0e",
+      "archive_dimensions_px": [
+        1980,
+        1485
+      ],
+      "gallery_path": "assets/bn5-f26/specimen/bn5-f26-chart.jpg",
+      "gallery_sha256": "0debff35cdc5c947b9c53276ea63f85d3c583644c25b5301a21e77c31e89681c",
+      "thumbnail_path": "assets/thumbs/bn5-f26.jpg",
+      "thumbnail_sha256": "afec5d33cfe7adf9c6c58f13ae8ac1e1356c708a4235806567a43b8482f60992",
+      "archive_match": "same labeled chart frame, full-dimension JPEG derivative",
+      "prior_gallery_path": "assets/originals/bn5-f26.jpg",
+      "prior_gallery_sha256": "69b3dacefecbc9f7838766b3221a43e8efae88b20acf436a64d7e7ff341c7fd1",
+      "prior_gallery_dimensions_px": [
+        780,
+        540
+      ]
+    },
+    {
+      "source_filename": "bn5-f26wv1.jpg",
+      "category": "Wild / field context",
+      "source": "active",
+      "archive_sha256": "915986ba25535df62c5f2f2927eedcc2b2f08c4301598c134065a05c0f6864e9",
+      "archive_dimensions_px": [
+        1536,
+        2048
+      ],
+      "gallery_path": "assets/originals/bn5-f26wv1.jpg",
+      "gallery_sha256": "915986ba25535df62c5f2f2927eedcc2b2f08c4301598c134065a05c0f6864e9",
+      "thumbnail_path": "assets/thumbs/bn5-f26wv1.jpg",
+      "thumbnail_sha256": "af2264b56f381d18cb57b85c225fceaabe57887ea03e28faf8221e5ea988c487",
+      "archive_match": "byte-identical to the embedded Active Master photograph"
+    },
+    {
+      "source_filename": "BN5-F26WV2.jpg",
+      "category": "Wild / field context",
+      "source": "active",
+      "archive_sha256": "09ce5cda7217cf8a71a11efbf1b6da6bc24b56359321135e89c5056a5a733a33",
+      "archive_dimensions_px": [
+        1536,
+        2048
+      ],
+      "gallery_path": "assets/originals/BN5-F26WV2.jpg",
+      "gallery_sha256": "09ce5cda7217cf8a71a11efbf1b6da6bc24b56359321135e89c5056a5a733a33",
+      "thumbnail_path": "assets/thumbs/BN5-F26WV2.jpg",
+      "thumbnail_sha256": "b94d28f82a281bd35c49c90f22af95e9ba6b1a19d1d3399e26c7d84d580a47aa",
+      "archive_match": "byte-identical to the embedded Active Master photograph"
+    },
+    {
+      "source_filename": "BN5-F26WV4.jpg",
+      "category": "Wild / field context",
+      "source": "active",
+      "archive_sha256": "d450b53a00ca23f6b3fabc8312afe82a2df36c691b3da23ff236aaee70e1ba8b",
+      "archive_dimensions_px": [
+        1536,
+        2048
+      ],
+      "gallery_path": "assets/originals/BN5-F26WV4.jpg",
+      "gallery_sha256": "d450b53a00ca23f6b3fabc8312afe82a2df36c691b3da23ff236aaee70e1ba8b",
+      "thumbnail_path": "assets/thumbs/BN5-F26WV4.jpg",
+      "thumbnail_sha256": "5af69828daa17b43a069a9b9a0f562499fb9adbced09f3ab2fad5a46ef0bb332",
+      "archive_match": "byte-identical to the embedded Active Master photograph"
+    },
+    {
+      "source_filename": "BN5-F26WV5.jpg",
+      "category": "Wild / field context",
+      "source": "active",
+      "archive_sha256": "ffd38eeb6336f973c8ef46d41189bde27d3b5d34bda97283ca707963dc32b6be",
+      "archive_dimensions_px": [
+        1536,
+        2048
+      ],
+      "gallery_path": "assets/originals/BN5-F26WV5.jpg",
+      "gallery_sha256": "ffd38eeb6336f973c8ef46d41189bde27d3b5d34bda97283ca707963dc32b6be",
+      "thumbnail_path": "assets/thumbs/BN5-F26WV5.jpg",
+      "thumbnail_sha256": "0764b8ef3e535a7c2dcb31d9d112826b1a9084d98bf98366cab7480c123950b6",
+      "archive_match": "byte-identical to the embedded Active Master photograph"
+    },
+    {
+      "source_filename": "BN5-F26WV6.jpg",
+      "category": "Wild / field context",
+      "source": "active",
+      "archive_sha256": "dc215efba0c8d3c7dbb24f7d461e91780f65bc9434452839c78c640d1545955e",
+      "archive_dimensions_px": [
+        1536,
+        2048
+      ],
+      "gallery_path": "assets/originals/BN5-F26WV6.jpg",
+      "gallery_sha256": "dc215efba0c8d3c7dbb24f7d461e91780f65bc9434452839c78c640d1545955e",
+      "thumbnail_path": "assets/thumbs/BN5-F26WV6.jpg",
+      "thumbnail_sha256": "5927f07aee111705e9c23d440996d79893446d3fb1350137d0f131fc4a70c82a",
+      "archive_match": "byte-identical to the embedded Active Master photograph"
+    },
+    {
+      "source_filename": "BN5-F26WV7.jpg",
+      "category": "Wild / field context",
+      "source": "active",
+      "archive_sha256": "54dcfbcb955de1e2d62299e51d0d172196f545b9557e3ea9275b8ce78ab6f643",
+      "archive_dimensions_px": [
+        1536,
+        2048
+      ],
+      "gallery_path": "assets/originals/BN5-F26WV7.jpg",
+      "gallery_sha256": "54dcfbcb955de1e2d62299e51d0d172196f545b9557e3ea9275b8ce78ab6f643",
+      "thumbnail_path": "assets/thumbs/BN5-F26WV7.jpg",
+      "thumbnail_sha256": "1080630d88a2fe25c7265912193704c279e60fe6e1e1f741844b336b41abe03c",
+      "archive_match": "byte-identical to the embedded Active Master photograph"
+    },
+    {
+      "source_filename": "BN5-F26WV8.jpg",
+      "category": "Wild / field context",
+      "source": "active",
+      "archive_sha256": "2b5d29c0ed0a7be090784cedb3603622c9149cf94c5f0debd0fa9fe73c319ad0",
+      "archive_dimensions_px": [
+        1536,
+        2048
+      ],
+      "gallery_path": "assets/originals/BN5-F26WV8.jpg",
+      "gallery_sha256": "2b5d29c0ed0a7be090784cedb3603622c9149cf94c5f0debd0fa9fe73c319ad0",
+      "thumbnail_path": "assets/thumbs/BN5-F26WV8.jpg",
+      "thumbnail_sha256": "0566519108fd950d2adcaaa0cae7bc6ca13a8a17b95878a8c43bad8c56db8f6c",
+      "archive_match": "byte-identical to the embedded Active Master photograph"
+    },
+    {
+      "source_filename": "BN5-F26WV9.jpg",
+      "category": "Wild / field context",
+      "source": "active",
+      "archive_sha256": "9d3d74761ef4aa293d9c88983a97b190726ad82a6bee9489fe7b3cd9a2ed6737",
+      "archive_dimensions_px": [
+        1536,
+        2048
+      ],
+      "gallery_path": "assets/originals/BN5-F26WV9.jpg",
+      "gallery_sha256": "9d3d74761ef4aa293d9c88983a97b190726ad82a6bee9489fe7b3cd9a2ed6737",
+      "thumbnail_path": "assets/thumbs/BN5-F26WV9.jpg",
+      "thumbnail_sha256": "c14b9424b443ce270c387a75c031ad9fdfa43356bb7fb3247b52646c493981d6",
+      "archive_match": "byte-identical to the embedded Active Master photograph"
+    },
+    {
+      "source_filename": "BN5-F26SPV2.JPG",
+      "category": "Spore print / preparation",
+      "source": "active",
+      "archive_sha256": "2990145d7ba0037be490faa2ccdc82183fccf30ff310162fbbee8ef61fd000bb",
+      "archive_dimensions_px": [
+        2048,
+        1536
+      ],
+      "gallery_path": "assets/originals/BN5-F26SPV2.JPG",
+      "gallery_sha256": "2990145d7ba0037be490faa2ccdc82183fccf30ff310162fbbee8ef61fd000bb",
+      "thumbnail_path": "assets/thumbs/BN5-F26SPV2.jpg",
+      "thumbnail_sha256": "2bcc292e18bf99001816ea02c45ad1bd619ed19dfeb9336d2fd20d9e52db6484",
+      "archive_match": "byte-identical to the embedded Active Master photograph"
+    },
+    {
+      "source_filename": "BN5-F26SPV3.JPG",
+      "category": "Spore print / preparation",
+      "source": "active",
+      "archive_sha256": "22b770355432b2f04d3af1d7126f386020a35de2ae750b70cb9035ac927b69f0",
+      "archive_dimensions_px": [
+        2048,
+        1536
+      ],
+      "gallery_path": "assets/originals/BN5-F26SPV3.JPG",
+      "gallery_sha256": "22b770355432b2f04d3af1d7126f386020a35de2ae750b70cb9035ac927b69f0",
+      "thumbnail_path": "assets/thumbs/BN5-F26SPV3.jpg",
+      "thumbnail_sha256": "c7267975e8c1e89a74d79963f9c4b191f654e8e522ed711b05d31f36c081771e",
+      "archive_match": "byte-identical to the embedded Active Master photograph"
+    },
+    {
+      "source_filename": "BN5-F26SPMV1.png",
+      "category": "Microscopy",
+      "source": "active",
+      "archive_sha256": "12a32857da522c08c50220e9321749759020b9aa26821f7b5d6e43e65d489a45",
+      "archive_dimensions_px": [
+        1025,
+        769
+      ],
+      "gallery_path": "assets/originals/BN5-F26SPMV1.png",
+      "gallery_sha256": "12a32857da522c08c50220e9321749759020b9aa26821f7b5d6e43e65d489a45",
+      "thumbnail_path": "assets/thumbs/BN5-F26SPMV1.jpg",
+      "thumbnail_sha256": "0f889bf2e1a3721e916747879453e75d78919c6452efb450ffc6a2250df87e80",
+      "archive_match": "byte-identical to the embedded Active Master photograph"
+    },
+    {
+      "source_filename": "BN5-F26SPMV2.png",
+      "category": "Microscopy",
+      "source": "active",
+      "archive_sha256": "e0494abf53c12d575cd314e47a3fb9bc751cf218ad685fe2e161411a515c104e",
+      "archive_dimensions_px": [
+        1024,
+        767
+      ],
+      "gallery_path": "assets/originals/BN5-F26SPMV2.png",
+      "gallery_sha256": "e0494abf53c12d575cd314e47a3fb9bc751cf218ad685fe2e161411a515c104e",
+      "thumbnail_path": "assets/thumbs/BN5-F26SPMV2.jpg",
+      "thumbnail_sha256": "4310bb938fffc10a2d43a500c16333a0be625ef7898d23abe21e8cdcbd19c897",
+      "archive_match": "byte-identical to the embedded Active Master photograph"
+    },
+    {
+      "source_filename": "BN5-F26SPMV3.png",
+      "category": "Microscopy",
+      "source": "active",
+      "archive_sha256": "d48e56e673762a6e1083f12852b02c6576376a4c500813f2175f9eb730af23e9",
+      "archive_dimensions_px": [
+        1022,
+        766
+      ],
+      "gallery_path": "assets/originals/BN5-F26SPMV3.png",
+      "gallery_sha256": "d48e56e673762a6e1083f12852b02c6576376a4c500813f2175f9eb730af23e9",
+      "thumbnail_path": "assets/thumbs/BN5-F26SPMV3.jpg",
+      "thumbnail_sha256": "4bd3badb2d0051d1c0c64333cea8a6c68fa8bf239dcd9c56a90e90034ab76a27",
+      "archive_match": "byte-identical to the embedded Active Master photograph"
+    },
+    {
+      "source_filename": "BN5-F26SPMV4.png",
+      "category": "Microscopy",
+      "source": "active",
+      "archive_sha256": "a64d3adc9626c7e1a4ae1490388e796221c300e2b15fc1cd622e111c1346a961",
+      "archive_dimensions_px": [
+        1025,
+        765
+      ],
+      "gallery_path": "assets/originals/BN5-F26SPMV4.png",
+      "gallery_sha256": "a64d3adc9626c7e1a4ae1490388e796221c300e2b15fc1cd622e111c1346a961",
+      "thumbnail_path": "assets/thumbs/BN5-F26SPMV4.jpg",
+      "thumbnail_sha256": "5f00a0e76fb6b17786c6fa12a7d6b9fc8b7a2fe9531e2c70d380019fecfc486f",
+      "archive_match": "byte-identical to the embedded Active Master photograph"
+    }
+  ]
+}
