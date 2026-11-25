@@ -411,7 +411,7 @@ function openGlossaryTerm(key,anchor){
   pronounce.focus({preventScroll:true});
 }
 const $=id=>document.getElementById(id);
-const FULL_DATA_SET_CODES=new Set(['JN2-F3','AN2-F3','AN2-F7','AN2-F9','AN2-F12','AN2-F25','AN2-F34','AN2-F38','AN2-F41','AN2-F36','AN2-F32','AN2-F17']);
+const FULL_DATA_SET_CODES=new Set(['JN2-F3','AN2-F3','AN2-F7','AN2-F9','AN2-F12','AN2-F25','AN2-F34','AN2-F38','AN2-F41','AN2-F36','AN2-F32','AN2-F17','BN5-F26']);
 const linkedAccession=decodeURIComponent(window.location.hash.slice(1)).trim().toUpperCase();
 let current=data.find(s=>String(s.code||'').toUpperCase()===linkedAccession)?.code||data[0]?.code||null,filter='',family='ALL',collection='ALL',imageType='ALL',workflow='ALL';
 const esc=s=>String(s??'').replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');

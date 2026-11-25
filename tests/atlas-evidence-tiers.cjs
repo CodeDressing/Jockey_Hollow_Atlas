@@ -30,6 +30,21 @@ const assert=require('node:assert/strict');
       assert.match(await page.locator('#main .evidence-state-note').innerText(),/Scientific publication HOLD/,'AN2-F12 hold preserved');
       await page.locator('#workflowFilter').selectOption('FULL');
       assert.ok(await page.locator('#specList .spec-btn').count()>0,'curated full sets retained');
+      for(const list of ['fullSetList','mobileFullSetList']){
+        assert.equal(await page.locator('#'+list+' [data-code="BN5-F26"]').count(),1);
+      }
+      for(const list of ['partialSetList','mobilePartialSetList']){
+        assert.equal(await page.locator('#'+list+' [data-code="BN5-F26"]').count(),0);
+      }
+      assert.equal(await page.locator('#specList [data-code="BN5-F26"]').count(),1);
+      await page.evaluate(()=>window.setCurrent('BN5-F26'));
+      assert.match(await page.locator('#main .fullset-badge').innerText(),/CURATED FULL DATA SET/);
+      assert.match(await page.locator('#main .record-status .status').innerText(),/formal taxonomic review.*identification unresolved/i);
+      assert.equal(await page.locator('#main .image-card').count(),15);
+      const headings=await page.locator('#main .summary-item h4').allTextContents();
+      const sections=['Collection documentation','Macroscopic description','Spore-print documentation',
+        'Microscopic documentation','Scientific interpretation','Taxonomic review requirements'];
+      assert.deepEqual(headings.filter(heading=>sections.includes(heading)),sections);
       await page.locator('#workflowFilter').selectOption('OTHER');
       assert.ok(await page.locator('#specList .spec-btn').count()>0,'limited records retained');
       await page.locator('#workflowFilter').selectOption('ALL');
