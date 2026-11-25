@@ -1,0 +1,124 @@
+{
+  "accession": "BN5-F26",
+  "document_type": "historical source reconciliation; not a publication certificate",
+  "audit_date": "2026-11-23",
+  "status": "partial",
+  "identification_status": "HOLD",
+  "source": {
+    "title": "Rutgers Mycology Visual Specimen Atlas — ACTIVE MASTER — BN5 Microscopy & Field Integration — 422 Records",
+    "drive_id": "11rV-I3DClTs3L6_YjVqAZOXzpEVJkGNdyq31oFOpW5o",
+    "section": "BN5-F26",
+    "evidence_type": "historical source transcription; original image files not reauthenticated in this audit"
+  },
+  "comparison_source": {
+    "title": "AA Master Total — Visual Specimen Atlas",
+    "drive_id": "1OHR-O8YvU7Y_kFnuipCi1w5g18XBJFDLMTQWV9g5O18",
+    "section": "BN5-F26"
+  },
+  "historical_observations": {
+    "original_chart": {
+      "pileus_diameter_cm": "1.8 (recorded; unverified method)",
+      "stipe_cm": {
+        "top": "0.3",
+        "mid": "0.3",
+        "base": "0.3",
+        "height": "2.2"
+      },
+      "notes": "Small brown agaricoid, cap with deeper brown central depression; pale cream-buff lamellae; pale stipe; no persistent ring/volva visible; basal debris but attachment substrate uncertain."
+    },
+    "field_addendum": {
+      "pileus": "Tan to cinnamon brown, broadly convex to nearly plane; moist/glossy-looking, smooth to very finely fibrillose; thin slightly irregular margin.",
+      "hymenophore": "Pale cream to buff, moderately spaced lamellae with lamellulae and occasional branching; described as broadly adnate to short-decurrent in field views. Earlier detached specimen assessment could not confirm attachment.",
+      "stipe": "Pale cream to tan, slender, longitudinally fibrillose, slightly curved, ochraceous/brownish staining; base not intact.",
+      "habitat": "Deciduous forest floor with leaf litter and decomposing wood in context; precise substrate attachment unconfirmed."
+    }
+  },
+  "historical_microscopy": {
+    "image_filenames": [
+      "BN5-F26SPMV1.png",
+      "BN5-F26SPMV2.png",
+      "BN5-F26SPMV3.png",
+      "BN5-F26SPMV4.png"
+    ],
+    "recorded_interpretation": "Globose to subglobose spore-like structures with some broadly ellipsoid views; hyaline/weakly refractile and apparently smooth-walled. Mature spore identity and diagnostic anatomy not independently confirmed.",
+    "measurements": {
+      "count": 45,
+      "axis": "single software-annotated axis only",
+      "min_um": "3.97",
+      "max_um": "7.74",
+      "mean_um": "5.92",
+      "median_um": "5.98",
+      "sample_sd_um": "0.93",
+      "individual_values": "not transcribed in this audit; avoid treating aggregate as complete paired-spore dataset"
+    },
+    "unknowns": [
+      "objective and magnification",
+      "calibration method",
+      "mounting medium or stain",
+      "two-axis spore dimensions",
+      "Q/Qm",
+      "basidia",
+      "cystidia",
+      "clamp connections",
+      "reagent response"
+    ]
+  },
+  "print_evidence": {
+    "files": [
+      "BN5-F26SPV2.JPG",
+      "BN5-F26SPV3.JPG"
+    ],
+    "status": "historical slide/foil preparation views; controlled spore-print color not established"
+  },
+  "historical_image_candidates": {
+    "original_chart": [
+      "bn5-f26.jpg"
+    ],
+    "field_context": [
+      "bn5-f26wv1.jpg",
+      "BN5-F26WV2.jpg",
+      "BN5-F26WV4.jpg",
+      "BN5-F26WV5.jpg",
+      "BN5-F26WV6.jpg",
+      "BN5-F26WV7.jpg",
+      "BN5-F26WV8.jpg",
+      "BN5-F26WV9.jpg"
+    ],
+    "print_prep": [
+      "BN5-F26SPV2.JPG",
+      "BN5-F26SPV3.JPG"
+    ],
+    "microscopy": [
+      "BN5-F26SPMV1.png",
+      "BN5-F26SPMV2.png",
+      "BN5-F26SPMV3.png",
+      "BN5-F26SPMV4.png"
+    ],
+    "original_file_sha256": "not independently acquired",
+    "source_file_dimensions": "not independently acquired",
+    "publication_authority": "not verified",
+    "published_derivative_count_verified": 0,
+    "production_url_checks": "not performed"
+  },
+  "source_reconciliation": [
+    "Earlier chart describes exact gill attachment as uncertain after disassembly; later field addendum interprets adnate to short-decurrent. Preserve both as source-dependent observations.",
+    "Source heading 'VISIBLE SPORE DEPOSIT' does not independently establish a controlled spore-print color."
+  ],
+  "release_gates": [
+    "Locate original image bytes and validate accession labels and hashes",
+    "Verify image-specific publication permission",
+    "Check live gallery and existing media to avoid duplicates",
+    "Confirm existing access-control state before any deployment",
+    "Run regression tests and protected browser checks"
+  ],
+  "safety": {
+    "unrelated_accessions_modified": false,
+    "atlas_security_modified": false,
+    "original_images_modified": false
+  },
+  "deployment": {
+    "status": "not attempted",
+    "reason": "Originals, publication authorization and production access policy not verified"
+  },
+  "provenance_notice": "Historical claims copied conservatively from the cited Drive source. This ledger does not assert original image verification or production publication."
+}
