@@ -26,3 +26,31 @@ window.SPECIMEN_ENRICHMENTS['JN1-F32'] = {
     'JN1-F32 interpretation': 'The objects are provisionally described as spore-like. Identification, maturity, and diagnostic microscopic features remain unresolved.'
   }
 };
+
+// SECTION 03 — Researcher-supplied spore-print macroscopic views.
+window.SPECIMEN_ENRICHMENTS['JN1-F32'].images = [
+  {
+    "category": "Spore print / preparation",
+    "filename": "JN1-F32 SP V1.JPG",
+    "caption": "Spore-print preparation on foil with a slide labeled JN1 F32. A group of brown particles is visible above the slide. The image does not establish the material’s identity.",
+    "original": "assets/jn1-f32/spore-print/jn1-f32-sp-v1.webp",
+    "thumb": "assets/jn1-f32/spore-print/jn1-f32-sp-v1-thumb.webp",
+    "preferThumbnail": true
+  },
+  {
+    "category": "Spore print / preparation",
+    "filename": "JN1-F32 SP V3.JPG",
+    "caption": "Oblique view of the JN1 F32 spore-print preparation. Brown particles are visible on the foil above the labeled slide.",
+    "original": "assets/jn1-f32/spore-print/jn1-f32-sp-v3.webp",
+    "thumb": "assets/jn1-f32/spore-print/jn1-f32-sp-v3-thumb.webp",
+    "preferThumbnail": true
+  },
+  {
+    "category": "Spore print / preparation",
+    "filename": "JN1-F 32 SP V4.JPG",
+    "caption": "View of the labeled JN1 F32 slide on foil, with a small patch of pale granular material near the center of the slide. The image does not establish the material’s identity.",
+    "original": "assets/jn1-f32/spore-print/jn1-f32-sp-v4.webp",
+    "thumb": "assets/jn1-f32/spore-print/jn1-f32-sp-v4-thumb.webp",
+    "preferThumbnail": true
+  }
+];
