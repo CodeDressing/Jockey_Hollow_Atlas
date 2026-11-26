@@ -1,0 +1,89 @@
+{
+  "accession": "JN1-F32",
+  "source": "Three researcher-supplied files named in the paired JN2-F31 and JN1-F32 execution order. The images show the JN1 F32 marking.",
+  "release_authority": "The paired restoration order directs gallery integration of these three verified photographs. Only cropped, metadata-stripped viewing copies are included here.",
+  "scientific_scope": "Macroscopic preparation photographs. The existing historical print, microscopy views and provisional Scientific record are preserved. Particle identity, color of a diagnostic spore deposit and microscope calibration remain unresolved.",
+  "records": [
+    {
+      "source_filename": "JN1-F32 SP V1.JPG",
+      "source_bytes": 476854,
+      "source_sha256": "e6e3c6a9ead44d90e79a3744671d7d21f61795f5f1477df3e926fac496d90d3d",
+      "source_dimensions_px": [
+        2048,
+        1536
+      ],
+      "crop_xyxy_px": [
+        90,
+        155,
+        2048,
+        1440
+      ],
+      "gallery_path": "assets/jn1-f32/spore-print/jn1-f32-sp-v1.webp",
+      "gallery_dimensions_px": [
+        1958,
+        1285
+      ],
+      "gallery_sha256": "56b31561f89d44a1287751238c5082625b80191c87c95caec2bb198132f2ebd6",
+      "thumbnail_path": "assets/jn1-f32/spore-print/jn1-f32-sp-v1-thumb.webp",
+      "thumbnail_dimensions_px": [
+        480,
+        315
+      ],
+      "thumbnail_sha256": "db34990a1ce5778aee446339f3eb1aff9233ced844e6dbb61c66c9820e6784ff"
+    },
+    {
+      "source_filename": "JN1-F32 SP V3.JPG",
+      "source_bytes": 489310,
+      "source_sha256": "5f996aaaabca7d9bf97c85ff453dfcdc393a06ec3080ad1f71fd646b999c16f9",
+      "source_dimensions_px": [
+        2048,
+        1536
+      ],
+      "crop_xyxy_px": [
+        90,
+        140,
+        2048,
+        1490
+      ],
+      "gallery_path": "assets/jn1-f32/spore-print/jn1-f32-sp-v3.webp",
+      "gallery_dimensions_px": [
+        1958,
+        1350
+      ],
+      "gallery_sha256": "521dc31b17ccd11e6c818f54f3b5aa2dd0b230ac6c351076ae1ba4ac1e508824",
+      "thumbnail_path": "assets/jn1-f32/spore-print/jn1-f32-sp-v3-thumb.webp",
+      "thumbnail_dimensions_px": [
+        480,
+        331
+      ],
+      "thumbnail_sha256": "c9e880af21cd0c085261f1b4306db0362376cfc33cba2db43644d2282596816b"
+    },
+    {
+      "source_filename": "JN1-F 32 SP V4.JPG",
+      "source_bytes": 512935,
+      "source_sha256": "c182c962d2fa1fa72ffcfd120e09bd7d2b7813eed2fdba5f2745830dc5bb2e8c",
+      "source_dimensions_px": [
+        2048,
+        1536
+      ],
+      "crop_xyxy_px": [
+        0,
+        150,
+        2048,
+        1430
+      ],
+      "gallery_path": "assets/jn1-f32/spore-print/jn1-f32-sp-v4.webp",
+      "gallery_dimensions_px": [
+        2048,
+        1280
+      ],
+      "gallery_sha256": "c6b34591a95acd2d5ba966c5dad25ee84329d1e1a9f0fb16c2f4c71e388c6c0c",
+      "thumbnail_path": "assets/jn1-f32/spore-print/jn1-f32-sp-v4-thumb.webp",
+      "thumbnail_dimensions_px": [
+        480,
+        300
+      ],
+      "thumbnail_sha256": "a7f0770fc61e294dd4f837aa5af53e7e0e9a93b07717e0f1e1dbcab4cb575d04"
+    }
+  ]
+}
