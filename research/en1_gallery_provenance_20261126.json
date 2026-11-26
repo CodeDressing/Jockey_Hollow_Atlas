@@ -1,0 +1,50 @@
+{
+  "source": "Rutgers Mycology Atlas - BN5 Field Matched Rev3, accession charts and in-frame labels. Source page numbers are physical PDF pages.",
+  "scope": "Remove four cross-accession gallery associations using in-frame labels and identical gallery file bytes. Keep both historical repository asset files and all source scientific text.",
+  "associations": [
+    {
+      "incorrect": "EN1-F6",
+      "verified": "EN1-F4",
+      "incorrect_path": "assets/originals/EN1-F6_IMG2.jpg",
+      "verified_path": "assets/originals/en1-f4.JPG",
+      "source_pages": [
+        397,
+        396
+      ],
+      "sha256": "d53ea235ae049a7ba9dd74e1e7c6893dd513bea46a1fc30e75c9420d40b48c9e"
+    },
+    {
+      "incorrect": "EN1-F7",
+      "verified": "EN1-F6",
+      "incorrect_path": "assets/originals/EN1-F7_IMG2.jpg",
+      "verified_path": "assets/originals/en1-f6.JPG",
+      "source_pages": [
+        399,
+        397
+      ],
+      "sha256": "928235810338793539c8060c49aeaa7d35bf77d28af4e65256c2e99e595f7889"
+    },
+    {
+      "incorrect": "EN1-F11",
+      "verified": "EN1-F8",
+      "incorrect_path": "assets/originals/en1-f11.JPG",
+      "verified_path": "assets/originals/en1-f8v2.JPG",
+      "source_pages": [
+        401,
+        400
+      ],
+      "sha256": "ec58c08fc4d5f62182856db6da467b135ba597b4cf0169163a5ac8e22a26bed0"
+    },
+    {
+      "incorrect": "EN1-F22",
+      "verified": "EN1-F20",
+      "incorrect_path": "assets/originals/EN1-F22_IMG2.jpg",
+      "verified_path": "assets/originals/en1-f20.JPG",
+      "source_pages": [
+        410,
+        409
+      ],
+      "sha256": "dc713125370d3c9fb699f8206e84834ffe9c6da05c98135d875f95a71222916c"
+    }
+  ]
+}
