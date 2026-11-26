@@ -415,6 +415,7 @@ const FULL_DATA_SET_CODES=new Set(['JN2-F3','AN2-F3','AN2-F7','AN2-F9','AN2-F12'
 const linkedAccession=decodeURIComponent(window.location.hash.slice(1)).trim().toUpperCase();
 let current=data.find(s=>String(s.code||'').toUpperCase()===linkedAccession)?.code||data[0]?.code||null,filter='',family='ALL',collection='ALL',imageType='ALL',workflow='ALL';
 const esc=s=>String(s??'').replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+const photoCategoryLabel=category=>category==='Spore print / preparation'?'Spore Print (SP)':category;
 const displayLabel=s=>String(s??'').replace(/Google Drive/gi,'research archive').replace(/Drive-only/gi,'archive-only').replace(/Drive archive/gi,'research archive');
 const cls=v=>{v=String(v||'').toLowerCase();return v==='yes'?'yes':v==='no'?'no':'partial'};
 const families=[...new Set(data.map(x=>x.family).filter(Boolean))];
@@ -593,10 +594,10 @@ function renderSpec(){
   const mat=effectiveCompleteness.map(([k,v])=>`<div>${glossaryText(k,true)}</div><div class="${cls(v)}">${glossaryText(v,true)}</div>`).join('');
   const pairStatus=hasWild&&hasLab?'COMPLETE':(!hasWild&&!hasLab?'MISSING WILD + LAB':(!hasWild?'MISSING WILD':'MISSING LAB'));
   const pairClass=hasWild&&hasLab?'yes':'no';
-  const galleries=Object.entries(groups).map(([cat,ims])=>`<section class="section"><h2>${esc(cat)} <span>${ims.length}</span></h2><div class="gallery">${ims.map((im,i)=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-thumb="${esc(im.preferThumbnail?im.original:im.thumb||im.original)}" data-caption="${esc(displayLabel(im.caption))}" data-name="${esc(im.filename)}"><img loading="${i<2?'eager':'lazy'}" decoding="async" src="${esc(im.preferThumbnail&&im.thumb||im.original)}" alt="${esc(displayLabel(im.caption))}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${glossaryText(im.caption,true)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}</div></article>`).join('')}</div></section>`).join('');
+  const galleries=Object.entries(groups).map(([cat,ims])=>`<section class="section"><h2>${esc(photoCategoryLabel(cat))} <span>${ims.length}</span></h2><div class="gallery">${ims.map((im,i)=>`<article class="image-card"><div class="image-wrap" data-file="${esc(im.original)}" data-thumb="${esc(im.preferThumbnail?im.original:im.thumb||im.original)}" data-caption="${esc(displayLabel(im.caption))}" data-name="${esc(im.filename)}"><img loading="${i<2?'eager':'lazy'}" decoding="async" src="${esc(im.preferThumbnail&&im.thumb||im.original)}" alt="${esc(displayLabel(im.caption))}"><span class="zoom-badge">Tap / click to inspect</span></div><div class="caption"><strong>${glossaryText(im.caption,true)}</strong><code>${esc(im.filename)}</code>${im.driveSource?`<small class="drive-source">${esc(im.driveSource)}</small>`:''}</div></article>`).join('')}</div></section>`).join('');
   const archived=(s.archivedPhotos||[]).filter(im=>imageType==='ALL'||im.category===imageType);
   const archiveDetails=archived.length
-    ? `<details class="section card"><summary>Archived photo records · ${archived.length}</summary><p>Image files are unavailable in the public Atlas.</p><ul>${archived.map(im=>`<li><strong>${esc(im.filename)}</strong> · ${esc(im.category)}${im.caption?`: ${glossaryText(im.caption,true)}`:''}</li>`).join('')}</ul></details>`
+    ? `<details class="section card"><summary>Archived photo records · ${archived.length}</summary><p>Image files are unavailable in the public Atlas.</p><ul>${archived.map(im=>`<li><strong>${esc(im.filename)}</strong> · ${esc(photoCategoryLabel(im.category))}${im.caption?`: ${glossaryText(im.caption,true)}`:''}</li>`).join('')}</ul></details>`
     : '';
   const movieRows=(s.movies||[]).filter(m=>imageType==='ALL'||imageType==='Movie / video');
   const movieGallery=movieRows.length?`<section class="section"><h2>Movie / video <span>${movieRows.length}</span></h2><div class="gallery">${movieRows.map(m=>`<article class="image-card movie-card"><div class="movie-wrap">${m.preview&&!/^https?:\/\//i.test(m.preview)?`<iframe src="${esc(m.preview)}" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>`:(m.poster&&!/^https?:\/\//i.test(m.poster)?`<img src="${esc(m.poster)}" alt="${esc(m.caption)}">`:`<span class="image-load-error">Video not hosted on this site</span>`)}</div><div class="caption"><strong>${glossaryText(m.caption,true)}</strong><code>${esc(m.sourceFilename||m.filename)}</code>${m.durationSeconds?`<small class="drive-source">Duration: ${Math.round(m.durationSeconds)} seconds</small>`:''}${m.note?`<small class="drive-source">${glossaryText(m.note,true)}</small>`:''}</div></article>`).join('')}</div></section>`:'';
@@ -606,7 +607,7 @@ function renderSpec(){
   const coverageRows=[
     ['Field photographs',coverage.groups.get('Wild / field context')||0],
     ['Specimen / laboratory photographs',coverage.groups.get('Source macro / specimen')||0],
-    ['Spore-print / preparation photographs',coverage.groups.get('Spore print / preparation')||0],
+    ['Spore Print (SP) photographs',coverage.groups.get('Spore print / preparation')||0],
     ['Microscopy photographs',coverage.groups.get('Microscopy')||0],
     ['Linked measurement records',coverage.measurements]
   ];
