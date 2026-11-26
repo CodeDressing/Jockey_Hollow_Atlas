@@ -1,0 +1,31 @@
+name: Atlas controlled access
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'atlas_access/**'
+      - 'tests/controlled-access-browser.cjs'
+      - '.github/workflows/atlas-controlled-access.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  access:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      ATLAS_LOCAL_TEST: '1'
+      DJANGO_SETTINGS_MODULE: atlas_access.settings
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install -r atlas_access/requirements.txt
+      - run: node scripts/verify_atlas_images.cjs && node atlas_access/build_viewer.cjs
+      - run: python -m django test atlas_access -v 2
+      - run: npm install --no-save playwright@1.56.1 && npx playwright install --with-deps chromium webkit
+      - run: node tests/controlled-access-browser.cjs

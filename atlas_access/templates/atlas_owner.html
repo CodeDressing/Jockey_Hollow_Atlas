@@ -1,0 +1,90 @@
+{% extends "atlas_base.html" %}
+{% block title %}Owner dashboard · Jockey Hollow Atlas{% endblock %}
+{% block body %}
+<h1>Owner dashboard</h1>
+<section>
+  <h2>Visitor access</h2>
+  <p>Lockdown <strong>{% if policy.lockdown_enabled %}On{% else %}Off{% endif %}</strong></p>
+  <form method="post">{% csrf_token %}
+    {% if policy.lockdown_enabled %}
+      <button name="action" value="disable-lockdown">Turn lockdown off</button>
+    {% else %}
+      <button name="action" value="enable-lockdown">Turn lockdown on</button>
+    {% endif %}
+  </form>
+  <p>The visitor mode below applies when lockdown is on.</p>
+  <p>Active mode <strong>{{ policy.get_mode_display }}</strong></p>
+  <form method="post">{% csrf_token %}
+    <input type="hidden" name="action" value="mode">
+    <label for="mode">Access mode</label>
+    <select id="mode" name="mode">
+      <option value="private" {% if policy.mode == 'private' %}selected{% endif %}>Private</option>
+      <option value="limited_beta" {% if policy.mode == 'limited_beta' %}selected{% endif %}>Limited Beta</option>
+    </select>
+    <button>Save mode</button>
+  </form>
+</section>
+<section>
+  <h2>Viewer accounts</h2>
+  <form method="post">{% csrf_token %}
+    <input type="hidden" name="action" value="invite">
+    <label for="viewer-email">Verified email address</label>
+    <input required type="email" id="viewer-email" name="email" maxlength="254">
+    <button>Send or reissue invitation</button>
+  </form>
+  <ul>
+    {% for viewer in viewers %}
+      <li>{{ viewer.user.email }}
+        {% if viewer.active %} · Active{% elif viewer.invited_at %} · Invitation pending{% else %} · Revoked{% endif %}
+        {% if viewer.active or viewer.invited_at %}
+          <form method="post">{% csrf_token %}
+            <input type="hidden" name="action" value="revoke-viewer">
+            <input type="hidden" name="id" value="{{ viewer.id }}">
+            <button>Revoke viewer</button>
+          </form>
+        {% endif %}
+      </li>
+    {% empty %}<li>No viewer invitations yet.</li>{% endfor %}
+  </ul>
+</section>
+<section>
+  <h2>Guest access</h2>
+  <form method="post">{% csrf_token %}
+    {% if policy.guests_enabled %}
+      <button name="action" value="disable-guests">Disable guest access and revoke guest sessions</button>
+    {% else %}
+      <button name="action" value="enable-guests">Enable guest access</button>
+    {% endif %}
+  </form>
+  {% if policy.guests_enabled %}
+    <form method="post">{% csrf_token %}<button name="action" value="new-code">Generate single-use code</button></form>
+    <p>Codes expire after one hour. Guest sessions last two hours.</p>
+  {% endif %}
+  {% if new_code %}<p>Copy this code now. It is shown once. <code id="new-code">{{ new_code }}</code></p>{% endif %}
+  <ul>
+    {% for code in codes %}
+      <li>Code {{ code.id }} · Expires {{ code.expires_at|date:"Y-m-d H:i T" }}
+        {% if code.generation != policy.guest_generation %} · Invalidated
+        {% elif code.redeemed_at %} · Redeemed{% endif %}
+        {% if code.generation == policy.guest_generation %}
+          <form method="post">{% csrf_token %}
+            <input type="hidden" name="id" value="{{ code.id }}">
+            <button name="action" value="revoke-code">Revoke code</button>
+            {% if code.guestsession and not code.guestsession.revoked_at %}
+              <button name="action" value="revoke-session">Revoke session</button>
+            {% endif %}
+          </form>
+        {% endif %}
+      </li>
+    {% empty %}<li>No active or previously issued codes to display.</li>{% endfor %}
+  </ul>
+</section>
+<section>
+  <h2>Recent access changes</h2>
+  <ul>
+    {% for event in events %}
+      <li>{{ event.happened_at|date:"Y-m-d H:i T" }} · {{ event.actor.email }} · {{ event.action }} · {{ event.detail }}</li>
+    {% empty %}<li>No changes recorded.</li>{% endfor %}
+  </ul>
+</section>
+{% endblock %}
