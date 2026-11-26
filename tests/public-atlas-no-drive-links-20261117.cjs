@@ -107,7 +107,7 @@ async function checkGlossary(page, hasTouch){
    await page.locator('#enterAtlas').click();
    await checkGlossary(page,settings.hasTouch);
    console.log(name+': glossary controls, readback content, viewport and keyboard focus passed');
-   const priorities=['AN2-F1','AN2-F41','AN2-F3','AN2-F7','AN2-F9','AN2-F12','AN2-F34','AN2-F17','AN2-F32','AN2-F36','AN2-F38','JN1-F15','JN1-F16','JN1-F25','JN1-F32'];
+   const priorities=['AN2-F1','AN2-F41','AN2-F3','AN2-F7','AN2-F9','AN2-F12','AN2-F34','AN2-F17','AN2-F32','AN2-F36','AN2-F38','JN1-F15','JN1-F16','JN1-F25','JN1-F29','JN1-F32'];
    for(const id of [...priorities,'JN2-F3','JN1-F11','BN5-F8(B)']){
     await page.evaluate(code=>window.setCurrent(code),id);
     const cards=page.locator('#main .image-card');
@@ -258,6 +258,31 @@ async function checkGlossary(page, hasTouch){
         assert.ok(await viewer.evaluate(async image=>{await image.decode();return image.naturalWidth>384;}));
         await page.locator('#closeViewer').click();
       }
+    }
+    if(id==='JN1-F29'){
+      const filter=page.locator(settings.hasTouch?'#mImage':'#imageFilter');
+      await filter.selectOption('Spore print / preparation');
+      const prints=page.locator('#main .image-wrap');
+      assert.equal(await prints.count(),3);
+      assert.ok(await page.getByRole('heading',{name:/^Spore Print \(SP\) 3$/}).isVisible());
+      const names=['JN1-F29 SP.JPG','JN1-F29 SP2.JPG','JN1-F29 SP 3.JPG'];
+      for(const [index,card] of (await prints.all()).entries()){
+        assert.equal(await card.getAttribute('data-name'),names[index]);
+        const thumb=card.locator('img');
+        await thumb.scrollIntoViewIfNeeded();
+        assert.equal(await thumb.evaluate(async img=>{await img.decode();return img.naturalWidth;}),480);
+        if(settings.hasTouch) await card.tap();
+        else await card.click();
+        const viewer=page.locator('#viewerImg');
+        assert.equal(await viewer.getAttribute('src'),await card.getAttribute('data-file'));
+        assert.equal(await viewer.evaluate(async img=>{await img.decode();return img.naturalWidth;}),2048);
+        await page.locator('#closeViewer').click();
+      }
+      await filter.selectOption('Microscopy');
+      assert.equal(await page.locator('#main .image-wrap').count(),17);
+      await filter.selectOption('Wild / field context');
+      assert.equal(await page.locator('#main .image-wrap').count(),5);
+      await filter.selectOption('ALL');
     }
     if(id==='JN1-F32'){
       const microscopy=page.locator('#main .image-wrap[data-file^="assets/jn1-f32/microscopy/"]');
