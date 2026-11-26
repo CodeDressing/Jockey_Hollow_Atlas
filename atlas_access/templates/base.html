@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111a17">
+  <title>{% block title %}Jockey Hollow Atlas{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('stylesheet') }}">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="shell masthead-inner">
+      <a class="brand" href="{{ url_for('atlas') }}">
+        <span class="brand-mark" aria-hidden="true">JH</span>
+        <span><strong>Jockey Hollow Atlas</strong><small>Scientific Research Collection</small></span>
+      </a>
+      {% block header %}{% endblock %}
+    </div>
+  </header>
+  <main class="shell" id="main" tabindex="-1">{% block main %}{% endblock %}</main>
+  <footer class="shell footer">
+    <span>Jockey Hollow Atlas</span>
+    <span>Fungal specimen documentation and research</span>
+  </footer>
+</body>
+</html>

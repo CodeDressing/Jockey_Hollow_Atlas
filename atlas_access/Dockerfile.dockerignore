@@ -1,0 +1,7 @@
+.git
+**/.env
+**/.env.*
+**/__pycache__
+**/.pytest_cache
+atlas_access/state
+atlas_access/collection
