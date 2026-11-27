@@ -386,5 +386,32 @@
       "existing_atlas_sha256": "f21ceca168681c297d51f403a04ef3fcf383e797d13e2ac20c5e50ebf0173a79",
       "decision": "Matching scene and accession label in two encoded versions. Preserve the existing published copy without adding a redundant gallery entry."
     }
-  }
+  },
+  "publication_candidates": [
+    {
+      "filename": "AN2-F6.JPG",
+      "gallery_path": "assets/an2-f6/historical/an2-f6-lab-01.jpg",
+      "original_sha256": "105c365143d3e871817e50a6eed1d062e24ba11d821ce04e0e5ed3814bd42b45",
+      "original_bytes": 597725,
+      "dimensions_px": [
+        2048,
+        1536
+      ],
+      "git_blob_sha": "31e06d8c1853dc98b77b7937af5958e8a72096be",
+      "status": "isolated-branch staged candidate; NOT production-verified"
+    },
+    {
+      "filename": "AN2-F6V2.JPG",
+      "gallery_path": "assets/an2-f6/historical/an2-f6-lab-02.jpg",
+      "original_sha256": "7a546e5ca8889dc968a0d591e3fd36860b61e427b9a324ba29c97fd2780f3dff",
+      "original_bytes": 618617,
+      "dimensions_px": [
+        2048,
+        1536
+      ],
+      "git_blob_sha": "ed592985131f621f238e2f4476308d95a4bc6fef",
+      "status": "isolated-branch staged candidate; NOT production-verified"
+    }
+  ],
+  "production_verification": "NOT TESTED; production access-control and deployment state not certified; no claim of live publication."
 }
